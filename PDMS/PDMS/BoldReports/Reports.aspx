@@ -28,7 +28,7 @@
             --border-color: #e0e0e0;
         }
 
-        body {
+        #reportsPageWrapper {
             background: #f4f5fa;
             font-size: 14px;
         }
@@ -50,13 +50,6 @@
         }
 
 
-
-        /* Header styles */
-        h1 {
-            color: #4a4a90;
-            font-size: 24px;
-            font-weight: bold;
-        }
 
         /* Button styling in header */
         .header-buttons .btn {
@@ -385,6 +378,11 @@
    ========================================================= */
 
         .page-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
             width: 100%;
             padding: 20px 15px;
             margin-bottom: 20px;
@@ -432,21 +430,19 @@
         /* Right-side buttons */
 
         .action-buttons {
-            display: block;
-            padding-top: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
             white-space: nowrap;
         }
 
             .action-buttons .page-button {
-                display: inline-block;
-                margin-left: 8px;
+                display: inline-flex;
+                align-items: center;
                 vertical-align: middle;
                 text-decoration: none;
             }
-
-                .action-buttons .page-button:first-child {
-                    margin-left: 0;
-                }
 
             .action-buttons .material-icons-outlined {
                 display: inline-block;
@@ -605,6 +601,11 @@
         /* Page header */
 
         .page-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
             width: 100%;
             margin: 0 0 20px;
             padding: 20px 15px;
@@ -612,16 +613,6 @@
             border: 1px solid #e6e4f2;
             border-radius: 10px 10px 0 0;
         }
-
-            .page-container:before,
-            .page-container:after {
-                display: table;
-                content: " ";
-            }
-
-            .page-container:after {
-                clear: both;
-            }
 
         .page-heading {
             display: table;
@@ -660,21 +651,19 @@
         /* Header buttons */
 
         .action-buttons {
-            display: block;
-            padding-top: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
             white-space: nowrap;
         }
 
             .action-buttons .page-button {
-                display: inline-block;
-                margin-left: 8px;
+                display: inline-flex;
+                align-items: center;
                 vertical-align: middle;
                 text-decoration: none;
             }
-
-                .action-buttons .page-button:first-child {
-                    margin-left: 0;
-                }
 
             .action-buttons .material-icons-outlined {
                 display: inline-block;

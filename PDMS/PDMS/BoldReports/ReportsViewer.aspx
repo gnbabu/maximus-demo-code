@@ -24,7 +24,7 @@
         }
 
 
-        body {
+        #myDrafts {
             background: #f4f5fa;
             font-size: 14px;
         }
@@ -47,13 +47,6 @@
 
         /* Container styling */
 
-
-        /* Header styles */
-        h1 {
-            color: #4a4a90;
-            font-size: 24px;
-            font-weight: bold;
-        }
 
         /* Button styling in header */
         .header-buttons .btn {
@@ -370,6 +363,11 @@
         }
 
         .page-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
             width: 100%;
             padding: 20px 15px;
             margin: 0 0 20px;
@@ -377,16 +375,6 @@
             border: 1px solid #e6e4f2;
             border-radius: 6px;
         }
-
-            .page-container:before,
-            .page-container:after {
-                display: table;
-                content: " ";
-            }
-
-            .page-container:after {
-                clear: both;
-            }
 
         .page-heading {
             display: table;
@@ -423,20 +411,18 @@
             }
 
         .action-buttons {
-            display: block;
-            padding-top: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
             white-space: nowrap;
         }
 
             .action-buttons .btn {
-                display: inline-block;
-                margin-left: 8px;
+                display: inline-flex;
+                align-items: center;
                 vertical-align: middle;
             }
-
-                .action-buttons .btn:first-child {
-                    margin-left: 0;
-                }
 
         @media (max-width: 767px) {
 
