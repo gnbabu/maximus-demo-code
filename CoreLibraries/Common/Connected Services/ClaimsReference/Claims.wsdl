@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://mes.gov/InquireClaimsRequest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mes.gov/Claims" xmlns:ns5="http://mes.gov/SearchClaimsResponses" xmlns:ns4="http://mes.gov/SearchClaimsRequest" xmlns:ns0="http://mes.gov/AddUpdateClaimsRequest" xmlns:ns3="http://mes.gov/InquireClaimsResponse" xmlns:ns1="http://mes.gov/AddUpdateClaimsResponse" name="Claims" targetNamespace="http://mes.gov/Claims" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import schemaLocation="AddUpdateClaimsRequest.xsd" namespace="http://mes.gov/AddUpdateClaimsRequest" />
+      <xsd:import schemaLocation="AddUpdateClaimsResponse.xsd" namespace="http://mes.gov/AddUpdateClaimsResponse" />
+      <xsd:import schemaLocation="InquireClaimsRequest.xsd" namespace="http://mes.gov/InquireClaimsRequest" />
+      <xsd:import schemaLocation="InquireClaimsResponse.xsd" namespace="http://mes.gov/InquireClaimsResponse" />
+      <xsd:import schemaLocation="SearchClaimsRequest.xsd" namespace="http://mes.gov/SearchClaimsRequest" />
+      <xsd:import schemaLocation="SearchClaimsResponses.xsd" namespace="http://mes.gov/SearchClaimsResponses" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AddUpdateRequest">
+    <wsdl:part name="parameters" element="ns0:AddUpdateClaimsRequest" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdateResponse">
+    <wsdl:part name="parameters" element="ns1:AddUpdateClaimsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InquireRequest">
+    <wsdl:part name="parameters" element="ns2:InquireClaimsRequest" />
+  </wsdl:message>
+  <wsdl:message name="InquireResponse">
+    <wsdl:part name="parameters" element="ns3:InquireClaimsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchRequest">
+    <wsdl:part name="parameters" element="ns4:SearchClaimsRequest" />
+  </wsdl:message>
+  <wsdl:message name="SearchResponses">
+    <wsdl:part name="parameters" element="ns5:SearchClaimsResponses" />
+  </wsdl:message>
+  <wsdl:portType name="portType">
+    <wsdl:operation name="AddUpdateClaims">
+      <wsdl:input name="AddUpdateRequest" message="tns:AddUpdateRequest" />
+      <wsdl:output name="AddUpdateResponse" message="tns:AddUpdateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="InquireClaims">
+      <wsdl:input name="InquireRequest" message="tns:InquireRequest" />
+      <wsdl:output name="InquireResponse" message="tns:InquireResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchClaims">
+      <wsdl:input name="SearchRequest" message="tns:SearchRequest" />
+      <wsdl:output name="SearchResponses" message="tns:SearchResponses" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPEventSourceBinding" type="tns:portType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddUpdateClaims">
+      <soap:operation soapAction="http://mes.gov/AddUpdateClaims" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquireClaims">
+      <soap:operation soapAction="http://mes.gov/InquireClaims" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchClaims">
+      <soap:operation soapAction="http://mes.gov/SearchClaims" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClaimsWS">
+    <wsdl:port name="SOAPEventSource" binding="tns:SOAPEventSourceBinding">
+      <soap:address location="http://localhost:7800/claims/serviceentrypoint" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

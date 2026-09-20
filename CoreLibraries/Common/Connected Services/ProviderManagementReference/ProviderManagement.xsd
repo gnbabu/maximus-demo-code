@@ -1,0 +1,107 @@
+<xs:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/providermanagement" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mes.gov/providermanagement">
+   <xs:include schemaLocation="ProviderManagement_InlineSchema.xsd"/>
+   <xs:include schemaLocation="ProviderManagement_MessageHeader.xsd"/>
+   <xs:element name="EnrollProvider">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="tns:MessageHeader"/>
+            <xs:element name="Payload" type="tns:EnrollRequestPayload"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="EnrollProviderResponse">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="SITransactionKey" type="tns:String32" minOccurs="0"/>
+            <xs:element name="ModuleTransactionId" type="tns:String50" minOccurs="0"/>
+            <xs:element name="AdditionalModuleTransactionId" type="tns:String50" minOccurs="0"/>
+            <xs:element name="ResponseCode" type="xs:string"/>
+            <xs:element name="ResponseType" type="xs:string"/>
+            <xs:element name="ODSProviderDemographicsId" type="xs:integer" minOccurs="0"/>
+            <xs:element name="ResponseMessage" type="xs:string"/>
+            <xs:element name="ResponseDetails" type="xs:string" minOccurs="0"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="InquireProvider">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="tns:MessageHeader"/>
+            <xs:element ref="tns:SearchProvider" minOccurs="1" maxOccurs="1"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="InquireProviderResponse">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="SITransactionKey" type="tns:String32" minOccurs="0"/>
+            <xs:element name="ResponseCode" type="xs:string"/>
+            <xs:element name="ResponseType" type="xs:string"/>
+            <xs:element name="ResponseMessage" type="xs:string"/>
+            <xs:element name="ResponseDetails" type="xs:string" minOccurs="0"/>
+            <xs:element name="MessageHeader" type="tns:InqResMessageHeader" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="ResponsePayload" minOccurs="0">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="ProviderInformation" type="tns:InquireProviderInformation" maxOccurs="200" minOccurs="0"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="InquireProviderHistory">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="tns:MessageHeader"/>
+            <xs:element ref="tns:SearchProviderHistory" minOccurs="1" maxOccurs="1"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="InquireProviderHistoryResponse">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="SITransactionKey" type="tns:String32" minOccurs="0"/>
+            <xs:element name="ResponseCode" type="xs:string"/>
+            <xs:element name="ResponseType" type="xs:string"/>
+            <xs:element name="ResponseMessage" type="xs:string"/>
+            <xs:element name="ResponseDetails" type="xs:string" minOccurs="0"/>
+            <xs:element name="MessageHeader" type="tns:InqMessageHeader" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="ResponsePayload" minOccurs="0">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="ProviderInformation" type="tns:InquireProviderHistoryInformation" maxOccurs="1" minOccurs="0"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="UpdateProvider">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="tns:MessageHeader"/>
+            <xs:element name="Payload" type="tns:UpdateRequestPayload"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="UpdateProviderResponse">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="SITransactionKey" type="tns:String32" minOccurs="0"/>
+            <xs:element name="ModuleTransactionId" type="tns:String50" minOccurs="0"/>
+            <xs:element name="AdditionalModuleTransactionId" type="tns:String50" minOccurs="0"/>
+            <xs:element name="ResponseCode" type="xs:string"/>
+            <xs:element name="ResponseType" type="xs:string"/>
+            <xs:element name="ODSProviderDemographicsId" type="xs:integer" minOccurs="0"/>
+            <xs:element name="ResponseMessage" type="xs:string"/>
+            <xs:element name="ResponseDetails" type="xs:string" minOccurs="0"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>
+<!--Version: 1.11.1-->
+<!--Change Description: Added InqResMessageHeader for Inquire Provider Response-->
+<!--Change by: Vinay Shet-->
+<!--Last updated: 10/22/2021-->
+<!--Updated Date: 1/20/2022-->

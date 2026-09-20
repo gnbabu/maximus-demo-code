@@ -1,0 +1,2889 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://service.operationmgmt.fi/ClaimsService/dental" xmlns:hdr="http://schemas.fi.x12/header" elementFormDefault="qualified" targetNamespace="http://service.operationmgmt.fi/ClaimsService/dental" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="HeaderX12Schema.xsd" />
+  <xs:element name="DentalClaim837" type="tns:DentalClaim837Type" />
+  <xs:complexType name="BHTType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="BHT01_HierarchicalStructureCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						0019 - Information
+						Source, Subscriber, Dependent
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="BHT02_TransactionSetPurposeCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="BHT03_ReferenceIdentification">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="BHT04_Date">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="8" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="BHT05_Time">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="8" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="BHT06_TransactionTypeCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						31 - Subrogation, CH -
+						Chargeable, RP - Reporting
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NM1Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="NM101_EntityIdentifierCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						41 - Submitter
+						77 -
+						Service Location
+						82 - Rendering Provider
+						85 - Billing Provider
+						87 -
+						Pay-to Provider
+						IL - Insured or Subscriber
+						PR - Payer
+						DN - Referring
+						Provider, P3 - Primary Care Provider
+						DD Assistant Surgeon
+						DQ -
+						Supervising Physician
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NM102_EntityTypeQualifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						1 - Person, 2 -
+						Non-Person Entity
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NM103_SubmitterLastOrOrganizationName">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="60" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NM104_SubmitterFirstName">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NM105_SubmitterMiddleName">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="25" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NM106_NamePrefix">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NM107_NameSuffix">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NM108_IdentificationCodeQualifier">
+        <xs:annotation>
+          <xs:documentation>
+						XX - NPI
+						II - Standard Unique Identifier for
+						Individuals
+						MI - Member Identification number
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NM109_SubmitterIdentifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="80" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NM110_EntityRelationshipCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NM111_EntityIdentifierCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NM112_NameLastOrOrganizationName">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="60" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PERType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PER01_ContactFunctionCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PER02_SubmitterContactName">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="60" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PER03_CommunicationNumberQualifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PER04_CommunicationNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="256" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PER05_CommunicationNumberQualifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PER06_CommunicationNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="256" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PER07_CommunicationNumberQualifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PER08_CommunicationNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="256" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PER09_ContactInquiryReference">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubmitterDetails_1000AType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SubmitterName_1000A" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="2" name="SubmitterContactInformation_1000A" type="tns:PERType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReceiverDetails_1000BType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ReceiverName_1000B" type="tns:NM1Type" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HLType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="HL01_HierarchicalIdNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HL02_HierarchicalParentIdNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HL03_HierarchicalLevelCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HL04_HierarchicalChildCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PRVType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PRV01_ProviderCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						BI - Billing
+						RF-
+						Referring
+						PE - Performing
+						AS - Assistant Surgeon
+						PE - Performing
+						AS
+						Assistant Surgeon
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PRV02_ReferenceIdentificationQualifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						PXC - Health Care
+						Provider Taxonomy Code
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PRV03_ProviderTaxonomyCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PRV04_StateOrProvinceCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PRV05_ProviderSpecialtyInformation">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PRV06_ProviderOrganizationCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="N3Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="N301_BillingProviderAddressLine">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="55" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="N302_BillingProviderAddressLine">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="55" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="N4Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="N401_BillingProviderCityName">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="N402_BillingProviderStateOrProvinceCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="N403_BillingProviderPostalZoneOrZipCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="N404_CountryCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="N405_LocationQualifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="N406_LocationIdentifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="N407_CountrySubdivisionCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="REFType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="REF01_ReferenceIdentificationQualifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						EI - Employer's
+						Identification Number, SY - Social Security Number
+						OB - State
+						License Number, 1G - Provider UPIN
+						SY - Social Security Number
+						Y4 -
+						Agency Claim Number
+						2U - Payer Identification Number,EI -
+						Employer???s Identification
+						Number,FY - Claim Office Number,NF-
+						National Association of
+						Insurance Commissioners (NAIC) Code
+						G2 -
+						Provider Commercial Number, LU - Location Number
+						G3 -
+						Predetermination of Benefits Identification Number
+						4N - Special
+						Payment Reference Number
+						F8 - Original Reference Number
+						9F -
+						Referral Number
+						G1 - Prior Authorization Number
+						9A - Repriced Claim
+						Reference Number
+						9C - Adjusted Repriced Claim Reference
+						D9 - Claim
+						Number
+						0B - State License Number,1G - Provider UPIN Number,G2 -
+						Provider
+						Commercial Number
+						0B - State License Number,1G - Provider
+						UPIN Number,G2 - Provider
+						Commercial Number
+						0B - State License
+						Number,G2 - Provider Commercial Number,LU -
+						Location Number
+						0B -
+						State License Number,1G - Provider UPIN Number,G2 - Provider
+						Commercial Number,LU- Location Number
+						0B - State License Number,1G
+						- Provider UPIN Number,G2 - Provider
+						Commercial Number, LU-
+						Location Number
+						SY - Social Security Number
+						2U - Payer
+						Identification Number, EI - Employer???s Identification
+						Number, FY -
+						Claim Office Number, NF- National Association of
+						Insurance
+						Commissioners (NAIC) Code
+						G1 - Prior Authorization Number
+						9F -
+						Referral Number
+						T4 - Signal Code
+						G3 - Predetermination of Benefits
+						Identification Number
+						F8 - Original Reference Number
+						0B - State
+						License Number,1G - Provider UPIN Number,G2 - Provider
+						Commercial
+						Number
+						0B - State License Number,1G - Provider UPIN Number,G2 -
+						Provider
+						Commercial Number, LU- Location Number
+						0B - State License
+						Number,1G - Provider UPIN Number,G2 - Provider
+						Commercial
+						Number,LU- Location Number
+						G2 - Provider Commercial Number, LU -
+						Location Number
+						0B - State License Number,G2 - Provider Commercial
+						Number,LU -
+						Location Number
+						0B - State License Number, 1G - Provider
+						UPIN Number,G2 - Provider
+						Commercial Number,LU - Location Number
+						G3
+						- Predetermination of Benefits Identification Number
+						G1 - Prior
+						Authorization Number
+						6R - Provider Control Number
+						9A - Repriced
+						Claim Reference Number
+						9C - Adjusted Repriced Claim Reference
+						Number
+						9F - Referral Number
+						0B - State License Number,1G - Provider
+						UPIN Number, G2 - Provider
+						Commercial Number,LU - Location Number
+						0B - State License Number,1G - Provider UPIN Number,G2 - Provider
+						Commercial Number,LU - Location Number
+						0B - State License Number,1G
+						- Provider UPIN Number,G2 - Provider
+						Commercial Number,LU -
+						Location Number
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="REF02_BillingProviderTaxIdentificationNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="REF03_Description">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="80" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="REF04_ReferenceIdentifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProviderInfo_2010AAType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="BillingProviderName_2010AA" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BillingProviderAddress_2010AA" type="tns:N3Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BillingProviderCityStateZipCode_2010AA" type="tns:N4Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BillingProviderTaxIdentification_2010AA" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="2" name="BillingProviderUpinLicenseInformation_2010AA" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="2" name="BillingProviderContactInformation_2010AA" type="tns:PERType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PayToInfo_2010ABType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PayToAddressName_2010AB" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PayToAddressAddress_2010AB" type="tns:N3Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PayToAddressCityStateZipCode_2010AB" type="tns:N4Type" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PayToPlan_2010ACType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PayToPlanName_2010AC" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PayToPlanAddress_2010AC" type="tns:N3Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PayToPlanCityStateZipCode_2010AC" type="tns:N4Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PayToPlanSecondaryIdentification_2010AC" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PayToPlanTaxIdentification_2010AC" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BillingProviderDetails_2000AType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="BillingProviderHierarchicalLevel_2000A" type="tns:HLType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BillingProviderSpecialtyInformation_2000A" type="tns:PRVType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProviderInfo_2010AA" type="tns:ProviderInfo_2010AAType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PayToInfo_2010AB" type="tns:PayToInfo_2010ABType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PayToPlan_2010AC" type="tns:PayToPlan_2010ACType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SBRType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SBR01_PayerResponsibilitySequenceNumberCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						A - Payer Four, B -
+						Payer Five, C - Payer Six, D - Payer Seven, E -
+						Payer Eight, F -
+						Payer Nine, G - Payer Ten, H - Payer Eleven, P -
+						Primary, S -
+						Secondary, T - Tertiary, U Unknown
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SBR02_IndividualRelationshipCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						01 - Spouse, 18 - Self,
+						19 - Child, 20 - Employee, 21 - Unknown, 39 - Organ Donor, 40 -
+						Cadaver Donor, 53 - Life Partner, G8 - Other Relationship
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SBR03_SubscriberGroupOrPolicyNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SBR04_SubscriberGroupName">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="60" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SBR05_InsuranceTypeCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						12 - Medicare Secondary
+						Working Aged Beneficiary or Spouse with
+						Employer Group Health
+						Plan,13 - Medicare Secondary End-Stage Renal
+						Disease Beneficiary in
+						the Mandated Coordination Period with an
+						Employer???s Group Health
+						Plan,14 - Medicare Secondary, No-fault
+						Insurance including Auto is
+						Primary,15 - Medicare Secondary
+						Worker???s Compensation,16 - Medicare
+						Secondary Public Health
+						Service (PHS)or Other Federal Agency,41 -
+						Medicare Secondary Black
+						Lung ,42 - Medicare Secondary Veteran???s
+						Administration,43-
+						Medicare Secondary Disabled Beneficiary Under
+						Age 65 with Large
+						Group Health Plan (LGHP),47 - Medicare Secondary,
+						Other Liability
+						Insurance is Primary
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SBR06_CoordinationOfBenefitsCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SBR07_YesNoConditionOrResponseCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SBR08_EmploymentStatusCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SBR09_ClaimFilingIndicatorCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						11 Other Non-Federal
+						Programs, 12 Preferred Provider Organization
+						(PPO), 13 Point of
+						Service (POS), 14 Exclusive Provider
+						Organization (EPO), 15 -
+						Indemnity Insurance, 16 - Health
+						Maintenance Organization (HMO)
+						Medicare, Risk, 17- Dental
+						Maintenance Organization, AM -
+						Automobile Medical, BL - Blue
+						Cross/Blue Shield, CH - Champus, CI -
+						Commercial Insurance Co., DS
+						- Disability, FI - Federal Employees
+						Program, HM - Health
+						Maintenance Organization, LM - Liability
+						Medical, MA - Medicare
+						Part A, MB - Medicare Part B, MC - Medicaid,
+						OF - Other Federal
+						Program, TV - Title V, VA - Veterans Affairs
+						Plan, WC - Workers???
+						Compensation Health Claim, ZZ - Mutually
+						Defined
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DMGType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DMG01_DateTimePeriodFormatQualifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						D8 - CCYYMMDD
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DMG02_SubscriberBirthDate">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DMG03_SubscriberGenderCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						F - Female, M - Male, U
+						- Unknown
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DMG04_MaritalStatusCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DMG05_CompositeRaceOrEthnicityInformation">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DMG06_CitizenshipStatusCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DMG07_CountryCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DMG08_BasisOfVerificationCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DMG09_Quantity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DMG10_CodeListQualifierCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DMG11_IndustryCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubscriberInfo_2010BAType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SubscriberName_2010BA" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubscriberAddress_2010BA" type="tns:N3Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubscriberCityStateZipCode_2010BA" type="tns:N4Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubscriberDemographicInformation_2010BA" type="tns:DMGType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubscriberSecondaryIdentification_2010BA" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PropertyAndCasualtyClaimNumber_2010BA" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PayerInfo_2010BBType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PayerName_2010BB" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PayerAddress_2010BB" type="tns:N3Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PayerCityStateZipCode_2010BB" type="tns:N4Type" />
+      <xs:element minOccurs="0" maxOccurs="3" name="PayerSecondaryIdentification_2010BB" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BillingProviderSecondaryIdentification_2010BB" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubscriberDetails_2000BType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SubscriberHierarchicalLevel_2000B" type="tns:HLType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubscriberInformation_2000B" type="tns:SBRType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubscriberInfo_2010BA" type="tns:SubscriberInfo_2010BAType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PayerInfo_2010BB" type="tns:PayerInfo_2010BBType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PATType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PAT01_IndividualRelationshipCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PAT02_PatientLocationCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PAT03_EmploymentStatusCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PAT04_StudentStatusCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PAT05_DateTimePeriodFormatQualifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PAT06_DateTimePeriod">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PAT07_UnitOrBasisForMeasurementCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PAT08_Weight">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PAT09_YesNoConditionOrResponseCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PatientDetails_2010CAType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PatientName_2010CA" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PatientAddress_2010CA" type="tns:N3Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PatientCityStateZipCode_2010CA" type="tns:N4Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PatientDemographicInformation_2010CA" type="tns:DMGType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PropertyAndCasualtyClaimNumber_2010CA" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CLMType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM01_PatientControlNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="38" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM02_TotalClaimChargeAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM03_ClaimFilingIndicatorCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM04_NonInstitutionalClaimTypeCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM05_HealthCareServiceLocationInformation">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM05_1_PlaceOfServiceCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM05_2_FacilityCodeQualifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						B - Place of Service
+						Codes for Professional or Dental Services
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM05_3_ClaimFrequencyCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM06_ProviderOrSupplierSignatureIndicator">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						N - No, Y - Yes
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM07_AssignmentOrPlanParticipationCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						A - Assigned, C - Not
+						Assigned
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM08_BenefitsAssignmentCertificationIndicator">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						N - No, W - Not
+						Applicable, Y - Yes
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM09_ReleaseOfInformationCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						I - Informed Consent to
+						Release Medical Information for Conditions
+						or Diagnoses Regulated
+						by Federal Statutes, Y - Yes Provider has a
+						Signed Statement
+						Permitting Release of Medical Billing Data
+						Related to a Claim
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM10_PatientSignatureSourceCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM11_RelatedCausesInformation">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM11_1_RelatedCausesCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						AA - Auto Accident, EM
+						- Employment, OA - Other Accident
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM11_2_RelatedCausesCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						AA - Auto Accident, EM
+						- Employment, OA - Other Accident
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM11_3_RelatedCausesCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM11_4_AutoAccidentStateOrProvinceCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM11_5_CountryCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM12_SpecialProgramIndicator">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						01 - EPSDT or CHAP,02 -
+						Physically Handicapped Childrens Program,03
+						- Special Federal
+						Funding,05 - Disability
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM13_YesNoConditionOrResponseCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM14_LevelOfServiceCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM15_YesNoConditionOrResponseCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM16_ProviderAgreementCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM17_ClaimStatusCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM18_YesNoConditionOrResponseCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM19_PredeterminationOfBenefitsCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						PB - Predetermination
+						of Dental Benefits
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CLM20_DelayReasonCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						1 - Proof of
+						Eligibility Unknown or Unavailable,2 - Litigation,3 -
+						Authorization Delays,4 - Delay in Certifying Provider,5 - Delay in
+						Supplying Billing Forms,6 - Delay in Delivery of Custom-made
+						Appliances,7 - Third Party Processing Delay,8 - Delay in
+						Eligibility Determination,9 - Original Claim Rejected or Denied
+						Due to a Reason Unrelated to the Billing Limitation Rules,10 -
+						Administration Delay in the Prior Approval Process,11 - Other,15 -
+						Natural Disaster
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DTPType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DTP01_DateTimeQualifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						050 - Received
+						139
+						Estimated
+						196 - Start
+						198 - Completion
+						439 - Accident
+						441 Prior
+						Placement
+						446 - Replacement
+						452 - Appliance Placement
+						472 - Service
+						Date
+						573 - Date Claim Paid
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DTP02_DateTimePeriodFormatQualifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						D8 - CCYYMMDD, RD8 -
+						CCYYMMDD-CCYYMMDD
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DTP03_AccidentDate">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DN1Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DN101_OrthodonticTreatmentMonthsCount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DN102_OrthodonticTreatmentMonthsRemainingCount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DN103_YesNoConditionOrResponseCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DN104_OrthodonticTreatmentIndicator">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="80" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DN2Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DN201_ToothNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DN202_ToothStatusCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						E - To Be Extracted, M
+						- Missing
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DN203_Quantity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DN204_DateTimePeriodFormatQualifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DN205_DateTimePeriod">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DN206_CodeListQualifierCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						JP - Universal National
+						Tooth Designation System
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PWKType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PWK01_AttachmentReportTypeCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						B4- Referral Form,DA-
+						Dental Models,DG - Diagnostic Report,EB -
+						Explanation of Benefits
+						(Coordination of Benefits or,Medicare
+						Secondary Payor),OZ - Support
+						Data for Claim,P6 - Periodontal
+						Charts,RB - Radiology Films,RR -
+						Radiology Reports
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PWK02_AttachmentTransmissionCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						AA - Available on
+						Request at Provider Site,BM - By Mail,EL -
+						Electronically Only,EM
+						-E-Mail,FT - File Transfer,FX - By Fax
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PWK03_ReportCopiesNeeded">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PWK04_EntityIdentifierCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PWK05_IdentificationCodeQualifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						AC - Attachment Control
+						Number
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PWK06_AttachmentControlNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PWK07_Description">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="80" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PWK08_ActionsIndicated">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PWK09_RequestCategoryCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CN1Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CN101_ContractTypeCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						02 - Per Diem, 03 -
+						Variable Per Diem, 04 - Flat, 05 - Capitated, 06
+						- Percent, 09
+						-Other
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CN102_ContractAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CN103_ContractPercentage">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="6" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CN104_ContractCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CN105_TermsDiscountPercentage">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="6" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CN106_ContractVersionIdentifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AMTType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AMT01_AmountQualifierCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						F5 - Patient Amount
+						Paid
+						D - Payor Amount Paid
+						EAF - Amount Owed
+						A8 - Noncovered Charges
+						- Actual
+						T - Tax
+						EAF - Amount Owed
+
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AMT02_PatientAmountPaid">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AMT03_CreditDebitFlagCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="K3Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="K301_FixedFormatInformation">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="80" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="K302_RecordFormatCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="K303_CompositeUnitOfMeasure">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NTEType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="NTE01_NoteReferenceCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NTE02_ClaimNoteText">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="80" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HIType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI01_HealthCareCodeInformation">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI01_1_CodeListQualifierCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI01_2_PrincipalDiagnosisCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI01_3_DateTimePeriodFormatQualifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI01_4_DateTimePeriod">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI01_5_MonetaryAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI01_6_Quantity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI01_7_VersionIdentifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI01_8_IndustryCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI01_9_YesNoConditionOrResponseCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI02_HealthCareCodeInformation">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI02_1_CodeListQualifierCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI02_2_DiagnosisCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI02_3_DateTimePeriodFormatQualifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI02_4_DateTimePeriod">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI02_5_MonetaryAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI02_6_Quantity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI02_7_VersionIdentifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI02_8_IndustryCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI02_9_YesNoConditionOrResponseCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI03_HealthCareCodeInformation">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI03_1_CodeListQualifierCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI03_2_DiagnosisCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI03_3_DateTimePeriodFormatQualifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI03_4_DateTimePeriod">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI03_5_MonetaryAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI03_6_Quantity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI03_7_VersionIdentifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI03_8_IndustryCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI03_9_YesNoConditionOrResponseCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI04_HealthCareCodeInformation">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI04_1_CodeListQualifierCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI04_2_DiagnosisCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI04_3_DateTimePeriodFormatQualifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI04_4_DateTimePeriod">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI04_5_MonetaryAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI04_6_Quantity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI04_7_VersionIdentifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI04_8_IndustryCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HI04_9_YesNoConditionOrResponseCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HCPType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP01_PricingMethodology">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						00 - Zero Pricing (Not
+						Covered Under Contract),01 - Priced as Billed
+						at 100%,02 - Priced
+						at the Standard Fee Schedule,03- Priced at a
+						Contractual
+						Percentage,04 - Bundled Pricing,05 - Peer Review
+						Pricing,06 - Per
+						Diem Pricing,07 - Flat Rate Pricing,08 -
+						Combination Pricing,09 -
+						Maternity Pricing,10 - Other Pricing,11 -
+						Lower of Cost,12 - Ratio
+						of Cost,13 - Cost Reimbursed,14 -
+						Adjustment Pricing
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP02_RepricedAllowedAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP03_RepricedSavedAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP04_RepricingOrganizationIdentifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP05_RepricingPerDiemOrFlatRateAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="9" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP06_RepricedApprovedAmbulatoryPatientGroupCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP07_MonetaryAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP08_ProductServiceId">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="48" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP09_ProductServiceIdQualifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP10_ProductServiceId">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="48" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP11_UnitOrBasisForMeasurementCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP12_Quantity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP13_RejectReasonCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP14_PolicyComplianceCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HCP15_ExceptionCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReferingProviderDetails_2310AType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferringProviderName_2310A" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferringProviderSpecialtyInformation_2310A" type="tns:PRVType" />
+      <xs:element minOccurs="0" maxOccurs="3" name="ReferringProviderSecondaryIdentification_2310A" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RenderingProviderDetails_2310BType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="RenderingProviderName_2310B" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RenderingProviderSpecialtyInformation_2310B" type="tns:PRVType" />
+      <xs:element minOccurs="0" maxOccurs="4" name="RenderingProviderSecondaryIdentification_2310B" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServiceFacilityDetails_2310CType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceFacilityLocationName_2310C" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceFacilityLocationAddress_2310C" type="tns:N3Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceFacilityLocationCityStateZipcode_2310C" type="tns:N4Type" />
+      <xs:element minOccurs="0" maxOccurs="3" name="ServiceFacilityLocationSecondaryIdentification_2310C" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AssistantSurgeon_2310DType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AssistantSurgeonName_2310D" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AssistantSurgeonSpecialtyInformation_2310D" type="tns:PRVType" />
+      <xs:element minOccurs="0" maxOccurs="4" name="AssistantSurgeonSecondaryIdentification_2310D" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SupervisingProvider_2310EType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SupervisingProviderName_2310E" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="4" name="SupervisingProviderSecondaryIdentification_2310E" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CASType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS01_ClaimAdjustmentGroupCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						CO - Contractual
+						Obligations, CR - Correction and Reversals, OA -
+						Other adjustments,
+						PI - Payor Initiated Reductions, PR - Patient
+						Responsibility
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS02_AdjustmentReasonCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="5" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS03_AdjustmentAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS04_AdjustmentQuantity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS05_AdjustmentReasonCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="5" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS06_AdjustmentAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS07_AdjustmentQuantity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS08_AdjustmentReasonCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="5" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS09_AdjustmentAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS10_AdjustmentQuantity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS11_AdjustmentReasonCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="5" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS12_AdjustmentAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS13_AdjustmentQuantity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS14_AdjustmentReasonCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="5" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS15_AdjustmentAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS16_AdjustmentQuantity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS17_AdjustmentReasonCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="5" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS18_AdjustmentAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CAS19_AdjustmentQuantity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OIType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="OI01_ClaimFilingIndicatorCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="OI02_ClaimSubmissionReasonCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="OI03_BenefitsAssignmentCertificationIndicator">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						N - No,W - Not
+						Applicable,Y - Yes
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="OI04_PatientSignatureSourceCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="OI05_ProviderAgreementCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="OI06_ReleaseOfInformationCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						I - Informed Consent to
+						Release Medical Information for Conditions
+						or Diagnoses Regulated
+						by Federal Statutes, Y - Yes Provider has a
+						Signed Statement
+						Permitting Release of Medical Billing Data
+						Related to a Claim
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MOAType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOA01_ReimbursementRate">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOA02_HcpcsPayableAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOA03_ClaimPaymentRemarkCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOA04_ClaimPaymentRemarkCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOA05_ClaimPaymentRemarkCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOA06_ClaimPaymentRemarkCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOA07_ClaimPaymentRemarkCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOA08_MonetaryAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOA09_MonetaryAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubscriberInfo_2330AType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherSubscriberName_2330A" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherSubscriberAddress_2330A" type="tns:N3Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherSubscriberCityStateZipCode_2330A" type="tns:N4Type" />
+      <xs:element minOccurs="0" maxOccurs="2" name="OtherSubscriberSecondaryIdentification_2330A" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PayerInfo_2330BType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherPayerName_2330B" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherPayerAddress_2330B" type="tns:N3Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherPayerCityStateZipCode_2330B" type="tns:N4Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ClaimCheckOrRemittanceDate_2330B" type="tns:DTPType" />
+      <xs:element minOccurs="0" maxOccurs="3" name="OtherPayerSecondaryIdentifier_2330B" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherPayerPriorAuthorizationNumber_2330B" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherPayerReferralNumber_2330B" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherPayerClaimAdjustmentIndicator_2330B" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherPayerPredeterminationIdentification_2330B" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherPayerClaimControlNumber_2330B" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReferingProviderDetails_2330CType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherPayerReferringProvider_2330C" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="3" name="OtherPayerReferringProviderSecondaryIdentification_2330C" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RenderingProviderDetails_2330DType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherPayerRenderingProvider_2330D" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="3" name="OtherPayerRenderingProviderSecondaryIdentification_2330D" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SupervisingProviderDetails_2330EType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherPayerSupervisingProvider_2330E" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="3" name="OtherPayerSupervisingProviderSecondaryIdentification_2330E" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BillingProviderDetails_2330FType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherPayerBillingProvider_2330F" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="2" name="OtherPayerBillingProviderSecondaryIdentification_2330F" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServiceFacilityLocationDetails_2330GType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherPayerServiceFacilityLocation_2330G" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="3" name="OtherPayerServiceFacilityLocationSecondaryIdentification_2330G" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AssistantSurgeonDetails_2330HType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherPayerAssistantSurgeon_2330H" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="2" name="OtherPayerAssistantSurgeonSecondaryIdentification_2330H" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OtherPayer_2320Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="10" name="OtherSubscriberInformation_2320" type="tns:SBRType" />
+      <xs:element minOccurs="0" maxOccurs="5" name="ClaimLevelAdjustments_2320" type="tns:CASType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CobPayerPaidAmount_2320" type="tns:AMTType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RemainingPatientLiability_2320" type="tns:AMTType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CobTotalNonCoveredAmount_2320" type="tns:AMTType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OtherInsuranceCoverageInformation_2320" type="tns:OIType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OutpatientAdjudicationInformation_2320" type="tns:MOAType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubscriberInfo_2330A" type="tns:SubscriberInfo_2330AType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PayerInfo_2330B" type="tns:PayerInfo_2330BType" />
+      <xs:element minOccurs="0" maxOccurs="2" name="ReferingProviderDetails_2330C" type="tns:ReferingProviderDetails_2330CType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RenderingProviderDetails_2330D" type="tns:RenderingProviderDetails_2330DType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SupervisingProviderDetails_2330E" type="tns:SupervisingProviderDetails_2330EType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BillingProviderDetails_2330F" type="tns:BillingProviderDetails_2330FType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceFacilityLocationDetails_2330G" type="tns:ServiceFacilityLocationDetails_2330GType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AssistantSurgeonDetails_2330H" type="tns:AssistantSurgeonDetails_2330HType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LXType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="LX01_AssignedNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="6" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SV3Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV301_CompositeMedicalProcedureIdentifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV301_1_ProductOrServiceIdQualifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						AD- American Dental
+						Association Codes
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV301_2_ProcedureCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="48" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV301_3_ProcedureModifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV301_4_ProcedureModifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV301_5_ProcedureModifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV301_6_ProcedureModifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV301_7_ProcedureCodeDescription">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="80" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV301_8_ProductServiceId">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="48" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV302_LineItemChargeAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV303_PlaceOfServiceCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV304_OralCavityDesignation">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV304_1_OralCavityDesignationCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV304_2_OralCavityDesignationCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV304_3_OralCavityDesignationCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV304_4_OralCavityDesignationCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV304_5_OralCavityDesignationCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV305_ProsthesisCrownInlayCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						I - Initial Placement,
+						R - Replacement
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV306_ProcedureCount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV307_Description">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="80" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV308_CopayStatusCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV309_ProviderAgreementCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV310_YesNoConditionOrResponseCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV311_CompositeDiagnosisCodePointer">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV311_1_DiagnosisCodePointer">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV311_2_DiagnosisCodePointer">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV311_3_DiagnosisCodePointer">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SV311_4_DiagnosisCodePointer">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TOOType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="TOO01_CodeListQualifierCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						JP - Universal National
+						Tooth Designation System
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TOO02_ToothCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TOO03_ToothSurface">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TOO03_1_ToothSurfaceCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						B - Buccal,D - Distal,F
+						- Facial,I - Incisal,L - Lingual,M -
+						Mesial,O - Occlusal
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TOO03_2_ToothSurfaceCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						B - Buccal,D - Distal,F
+						- Facial,I - Incisal,L - Lingual,M -
+						Mesial,O - Occlusal
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TOO03_3_ToothSurfaceCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						B - Buccal,D - Distal,F
+						- Facial,I - Incisal,L - Lingual,M -
+						Mesial,O - Occlusal
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TOO03_4_ToothSurfaceCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						B - Buccal,D - Distal,F
+						- Facial,I - Incisal,L - Lingual,M -
+						Mesial,O - Occlusal
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TOO03_5_ToothSurfaceCode">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						B - Buccal,D - Distal,F
+						- Facial,I - Incisal,L - Lingual,M -
+						Mesial,O - Occlusal
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RenderingProviderDetails_2420AType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="RenderingProviderName_2420A" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RenderingProviderSpecialtyInformation_2420A" type="tns:PRVType" />
+      <xs:element minOccurs="0" maxOccurs="20" name="RenderingProviderSecondaryIdentification_2420A" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AssistantSurgeonDetails_2420BType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AssistantSurgeonName_2420B" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AssistantSurgeonSpecialtyInformation_2420B" type="tns:PRVType" />
+      <xs:element minOccurs="0" maxOccurs="20" name="AssistantSurgeonSecondaryIdentification_2420B" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SupervisingProviderDetails_2420CType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SupervisingProviderName_2420C" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="20" name="SupervisingProviderSecondaryIdentification_2420C" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServiceFacilityLocationDetails_2420DType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceFacilityLocationName_2420D" type="tns:NM1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceFacilityLocationAddress_2420D" type="tns:N3Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceFacilityLocationCityStateZipCode_2420D" type="tns:N4Type" />
+      <xs:element minOccurs="0" maxOccurs="20" name="ServiceFacilityLocationSecondaryIdentification_2420D" type="tns:REFType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SVDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SVD01_OtherPayerPrimaryIdentifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="80" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SVD02_ServiceLinePaidAmount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SVD03_CompositeMedicalProcedureIdentifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SVD03_1_ProductOrServiceIdQualifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+						AD - American Dental
+						Association Codes,ER - Jurisdiction Specific
+						Procedure and Supply
+						Codes
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SVD03_2_ProcedureCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="48" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SVD03_3_ProcedureModifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SVD03_4_ProcedureModifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SVD03_5_ProcedureModifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SVD03_6_ProcedureModifier">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SVD03_7_ProcedureCodeDescription">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="80" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SVD03_8_ProductServiceId">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="48" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SVD04_ProductServiceId">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="48" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SVD05_PaidServiceUnitCount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SVD06_BundledOrUnbundledLineNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="6" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LineAdjudicationDetails_2430Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="LineAdjudicationInformation_2430" type="tns:SVDType" />
+      <xs:element minOccurs="0" maxOccurs="5" name="ClaimLevelAdjustments_2430" type="tns:CASType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LineCheckOrRemittanceDate_2430" type="tns:DTPType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RemainingPatientLiability_2430" type="tns:AMTType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServiceLineDetails_2400Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceLineNumber_2400" type="tns:LXType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DentalService_2400" type="tns:SV3Type" />
+      <xs:element minOccurs="0" maxOccurs="32" name="ToothInformation_2400" type="tns:TOOType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateServiceDate_2400" type="tns:DTPType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DatePriorPlacement_2400" type="tns:DTPType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateAppliancePlacement_2400" type="tns:DTPType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateReplacement_2400" type="tns:DTPType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateTreatmentStart_2400" type="tns:DTPType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateTreatmentCompletion_2400" type="tns:DTPType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ContractInformation_2400" type="tns:CN1Type" />
+      <xs:element minOccurs="0" maxOccurs="5" name="ServicePredeterminationIdentification_2400" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="5" name="PriorAuthorization_2400" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LineItemControlNumber_2400" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RepricedClaimNumber_2400" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AdjustedRepricedClaimNumber_2400" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="5" name="ReferralNumber_2400" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SalesTaxAmount_2400" type="tns:AMTType" />
+      <xs:element minOccurs="0" maxOccurs="10" name="FileInformation_2400" type="tns:K3Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LinePricingRepricingInformation_2400" type="tns:HCPType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RenderingProviderDetails_2420A" type="tns:RenderingProviderDetails_2420AType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AssistantSurgeonDetails_2420B" type="tns:AssistantSurgeonDetails_2420BType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SupervisingProviderDetails_2420C" type="tns:SupervisingProviderDetails_2420CType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceFacilityLocationDetails_2420D" type="tns:ServiceFacilityLocationDetails_2420DType" />
+      <xs:element minOccurs="0" maxOccurs="15" name="LineAdjudicationDetails_2430" type="tns:LineAdjudicationDetails_2430Type" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ClaimDetails_2300Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ClaimInformation_2300" type="tns:CLMType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateAccident_2300" type="tns:DTPType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateAppliancePlacement_2300" type="tns:DTPType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateServiceDate_2300" type="tns:DTPType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateRepricerReceivedDate_2300" type="tns:DTPType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OrthodonticTotalMonthsOfTreatment_2300" type="tns:DN1Type" />
+      <xs:element minOccurs="0" maxOccurs="35" name="ToothStatus_2300" type="tns:DN2Type" />
+      <xs:element minOccurs="0" maxOccurs="10" name="ClaimSupplementalInformation_2300" type="tns:PWKType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ContractInformation_2300" type="tns:CN1Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PatientAmountPaid_2300" type="tns:AMTType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PredeterminationIdentification_2300" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceAuthorizationExceptionCode_2300" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PayerClaimControlNumber_2300" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferralNumber_2300" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PriorAuthorization_2300" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RepricedClaimNumber_2300" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AdjustedRepricedClaimNumber_2300" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ClaimIdentifierForTransmissionIntermediaries_2300" type="tns:REFType" />
+      <xs:element minOccurs="0" maxOccurs="10" name="FileInformation_2300" type="tns:K3Type" />
+      <xs:element minOccurs="0" maxOccurs="5" name="ClaimNote_2300" type="tns:NTEType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="HealthCareDiagnosisCode_2300" type="tns:HIType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ClaimPricingRepricingInformation_2300" type="tns:HCPType" />
+      <xs:element minOccurs="0" maxOccurs="2" name="ReferingProviderDetails_2310A" type="tns:ReferingProviderDetails_2310AType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RenderingProviderDetails_2310B" type="tns:RenderingProviderDetails_2310BType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceFacilityDetails_2310C" type="tns:ServiceFacilityDetails_2310CType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AssistantSurgeon_2310D" type="tns:AssistantSurgeon_2310DType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SupervisingProvider_2310E" type="tns:SupervisingProvider_2310EType" />
+      <xs:element minOccurs="0" maxOccurs="10" name="OtherPayer_2320" type="tns:OtherPayer_2320Type" />
+      <xs:element minOccurs="0" maxOccurs="50" name="ServiceLineDetails_2400" type="tns:ServiceLineDetails_2400Type" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PatientHierarchical_2000CType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PatientHierarchicalLevel_2000C" type="tns:HLType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PatientInformation_2000C" type="tns:PATType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PatientDetails_2010CA" type="tns:PatientDetails_2010CAType" />
+      <xs:element minOccurs="0" maxOccurs="100" name="ClaimDetails_2300" type="tns:ClaimDetails_2300Type" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BHTContainterType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="BeginningOfHierarchicalTransaction" type="tns:BHTType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubmitterDetails_1000A" type="tns:SubmitterDetails_1000AType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReceiverDetails_1000B" type="tns:ReceiverDetails_1000BType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BillingProviderDetails_2000A" type="tns:BillingProviderDetails_2000AType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubscriberDetails_2000B" type="tns:SubscriberDetails_2000BType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PatientHierarchical_2000C" type="tns:PatientHierarchical_2000CType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DentalClaim837Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" ref="tns:InterchangeControlHeader" />
+      <xs:element minOccurs="0" maxOccurs="1" ref="tns:FunctionalGroupHeader" />
+      <xs:element minOccurs="0" maxOccurs="1" ref="tns:TransactionSetHeader" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BHTContainter" type="tns:BHTContainterType" />
+      <xs:element minOccurs="0" maxOccurs="1" ref="tns:TransactionSetTrailer" />
+      <xs:element minOccurs="0" maxOccurs="1" ref="tns:FunctionalGroupTrailer" />
+      <xs:element minOccurs="0" maxOccurs="1" ref="tns:InterchangeControlTrailer" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

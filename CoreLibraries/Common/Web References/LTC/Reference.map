@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/WSDL CR/CostReports.wsdl" filename="CostReports.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/WSDL CR/CostReports_MessageHeader.xsd" filename="CostReports_MessageHeader.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/WSDL CR/CostReports.xsd" filename="CostReports.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/WSDL CR/CostReports_Datatypes.xsd" filename="CostReports_Datatypes.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/WSDL CR/CostReports_InlineSchema.xsd" filename="CostReports_InlineSchema.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

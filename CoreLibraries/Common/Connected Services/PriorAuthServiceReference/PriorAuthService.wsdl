@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:reqrsp="http://schema.caremgmt.fi.com/PriorAuthReqResp" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.caremgmt.fi/PriorAuthService" xmlns:chdr="http://schema.common.fi/Header" name="PriorAuthService" targetNamespace="http://service.caremgmt.fi/PriorAuthService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.caremgmt.fi/PriorAuthService">
+      <xsd:include schemaLocation="./PriorAuthRequestResponse.xsd" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AddUpdatePriorAuthRequest">
+    <wsdl:part name="parameters" element="tns:AddUpdatePriorAuthRequest" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdatePriorAuthResponse">
+    <wsdl:part name="parameters" element="tns:AddUpdatePriorAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="InquirePriorAuthRequest">
+    <wsdl:part name="parameters" element="tns:InquirePriorAuthRequest" />
+  </wsdl:message>
+  <wsdl:message name="InquirePriorAuthResponse">
+    <wsdl:part name="parameters" element="tns:InquirePriorAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchPriorAuthRequest">
+    <wsdl:part name="parameters" element="tns:SearchPriorAuthRequest" />
+  </wsdl:message>
+  <wsdl:message name="SearchPriorAuthResponse">
+    <wsdl:part name="parameters" element="tns:SearchPriorAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceivePriorAuthUpdatesRequest">
+    <wsdl:part name="parameters" element="tns:ReceivePriorAuthUpdatesRequest" />
+  </wsdl:message>
+  <wsdl:message name="ReceivePriorAuthUpdatesResponse">
+    <wsdl:part name="parameters" element="tns:ReceivePriorAuthUpdatesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PriorAuthService">
+    <wsdl:operation name="AddUpdatePriorAuth">
+      <wsdl:input message="tns:AddUpdatePriorAuthRequest" />
+      <wsdl:output message="tns:AddUpdatePriorAuthResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="InquirePriorAuth">
+      <wsdl:input message="tns:InquirePriorAuthRequest" />
+      <wsdl:output message="tns:InquirePriorAuthResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPriorAuth">
+      <wsdl:input message="tns:SearchPriorAuthRequest" />
+      <wsdl:output message="tns:SearchPriorAuthResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceivePriorAuthUpdates">
+      <wsdl:input message="tns:ReceivePriorAuthUpdatesRequest" />
+      <wsdl:output message="tns:ReceivePriorAuthUpdatesResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PriorAuthServiceSOAP" type="tns:PriorAuthService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddUpdatePriorAuth">
+      <soap:operation soapAction="http://service.caremgmt.fi/PriorAuthService/AddUpdatePriorAuth" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquirePriorAuth">
+      <soap:operation soapAction="http://service.caremgmt.fi/PriorAuthService/InquirePriorAuth" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPriorAuth">
+      <soap:operation soapAction="http://service.caremgmt.fi/PriorAuthService/SearchPriorAuth" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceivePriorAuthUpdates">
+      <soap:operation soapAction="http://service.caremgmt.fi/PriorAuthService/ReceivePriorAuthUpdates" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PriorAuthService">
+    <wsdl:port name="PriorAuthServiceSOAP" binding="tns:PriorAuthServiceSOAP">
+      <soap:address location="http://www.example.org/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

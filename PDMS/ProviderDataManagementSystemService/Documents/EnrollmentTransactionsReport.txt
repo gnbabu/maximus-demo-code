@@ -1,0 +1,33 @@
+﻿<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>[[REPORT_TITLE]]</title>
+	</head>
+	<body style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f9f9f9;">
+		<table style="width: 100%; border-collapse: collapse; background-color: white; border: 1px solid #ddd;">
+			<!-- Header Section -->
+			<tr style="background-color: #4f81bd; color: white;">
+				<td colspan="4" style="font-size: 18px; font-weight: bold; padding: 10px; text-align: left;">[[REPORT_TITLE]]</td>
+			</tr>
+			<!-- Status Section -->
+			<tr style="background-color: #e7e6e6;">
+				<td style="padding: 8px; font-weight: bold; border: 1px solid #ddd; width: 15%">Date:</td>
+				<td style="padding: 8px; border: 1px solid #ddd;width: 40%">[[REPORT_DATE]]</td>
+				<td style="padding: 8px; font-weight: bold; border: 1px solid #ddd;">Completed by:</td>
+				<td style="padding: 8px; border: 1px solid #ddd;">[[REPORT_USER]]</td>
+			</tr>
+			<tr style="background-color: #e7e6e6;">
+				<td colspan="1" style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Description:</td>
+				<td colspan="3" style="padding: 8px; border: 1px solid #ddd;">[[REPORT_DESCP]]</td>
+			</tr>
+		</table>
+		<br/>
+		<!-- Main Table -->
+		[[REPORT_TABLE]]
+		
+		<br/><br/>
+		<!-- Attachment Notes -->
+		<span style="font-style: italic">[[FINAL_NOTE]]</span>
+	</body>
+</html>

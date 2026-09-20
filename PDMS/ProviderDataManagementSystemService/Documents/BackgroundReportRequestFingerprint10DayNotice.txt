@@ -1,0 +1,69 @@
+
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<p>
+<br />
+<b>Subject:</b> : Request to Supply Fingerprints
+</p>								
+
+<p>On [[BACKGROUNDDATE]], Ohio Medicaid notified you that the provider and every owner associated with your application or re-validation are required to submit fingerprints in order to complete a federal criminal background check. You are receiving this notice because the provider and/or all owners have failed to submit fingerprints.</p>
+
+<p>The following individuals have 10 days to submit fingerprints and comply with this requirement. Failure to do so will result in a denial of the application or re-validation.</p>
+
+<ul>
+[[PROVIDER_LIST]]
+</ul>
+
+<p>To obtain a background check, visit or contact a Web Check location. A complete list of BCI WebCheck vendors is available at the Ohio Attorney General website: https://www.ohioattorneygeneral.gov/. Under the “Business” heading (at bottom of page), select “Background Check”.   You must instruct the WebCheck vendor that you need an Ohio background check for the purpose of “Application for Medicaid Provider/Owner and Employee and/or code [[CODE]].” Additionally, instruct the WebCheck vendor that the BCI must mail the background check results directly to:</p>
+<p>
+The Ohio Department of Medicaid</p>
+<p>
+Attention: BCII Coordinator</p>
+<p>P.O. Box 183017</p>
+<p>
+Columbus, Ohio 43218-3017</p>
+
+
+<p>If you have any questions, please email <a href="mailto:bureaunetworkmanagement@medicaid.ohio.gov">bureaunetworkmanagement@medicaid.ohio.gov</a></p>
+Sincerely,<br />
+    <br />
+Ohio Medicaid Provider Compliance
+</td>
+</tr>
+</table>

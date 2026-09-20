@@ -1,0 +1,49 @@
+[
+	{
+		"first_name": "Douglas",
+		"last_name": "Gibson",
+		"dob": "06/05/1990",
+		"last_4_ssn": "3553",
+		"board_type": "MEDICAL BOARD",
+		"license_number": "OH3383783",
+		"license_status": "Inactive",
+		"license_sub_status": "Lapsed",
+		"disciplinary_action": "No",
+		"begin_date": "2004-01-01",
+		"end_date": "2020-05-31",
+		"address_1":"109 E Main St",
+		"address_2":"",
+		"city": "Columbus",
+		"state": "OH",
+		"zip": "43215",
+		"county": "Franklin",
+		"endorsements":[
+			{
+				"endorsement_number":"APRN.CNP.15105",
+				"endorsement_status":"Closed",
+				"endorsement_substatus":"XXXX",
+				"endorsement_boardaction":"No",
+				"endorsement_issuedate":"2013-05-09",
+				"endorsement_expirationdate":"2017-12-31",
+				"specialityandfocus":[
+					{
+					"endorsement_speciality":"PEDIATRIC PRIMARY CARE",
+					"endorsement_focus":"XXXX",
+					"certifying_organization":"Pediatric Nursing Certification Board",
+					"certificate_date":"",
+					"certificate_expiration":"2018-02-28"
+					},
+					{
+					"endorsement_speciality":"XXXXX",
+					"endorsement_focus":"XXXXXX",
+					"certifying_organization":"XXXX",
+					"certificate_date":"XXXX",
+					"certificate_expiration":"XXXX"
+					}
+				]
+			}
+		]
+	}
+]
+
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://ohio.gov/HospiceRequestResponse" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ohio.gov/HospiceRequestResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="HospiceRequestResponse.xsd" />
+  <xs:element name="InquireResponse">
+    <xs:annotation>
+      <xs:documentation>
+This element contains the response elements to inquire the detail for an existing Hospice application from MITS.
+</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="HospiceRequestResponse" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="EpisodeOfCare">
+          <xs:annotation>
+            <xs:documentation>
+								This element contains the Episode of Care elements.
+							</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PriceChangeDate" type="xs:date" />
+              <xs:element name="Sequence" type="xs:int" />
+              <xs:element name="StartDate" type="xs:date" />
+              <xs:element name="EndDate" type="xs:date" />
+              <xs:element name="NoBenefitDays" type="xs:int" />
+              <xs:element name="NoCalendarDays" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Errors">
+          <xs:annotation>
+            <xs:documentation>
+								This element contains the error response 
+						</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ErrorCode" type="xs:string" />
+              <xs:element name="SevCode" type="xs:string" />
+              <xs:element name="ErrorDesc" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:tns="http://mes.gov/attachment" elementFormDefault="qualified" targetNamespace="http://mes.gov/attachment" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="Attachment_InlineSchema.xsd" />
+  <xsd:include schemaLocation="Attachment_MessageHeader.xsd" />
+  <xsd:element ibmSchExtn:docRoot="true" name="SendAttachment">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="tns:MessageHeader" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="Payload">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element minOccurs="1" maxOccurs="1" name="AttachmentInfo" type="tns:SendAttachmentInformation" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="SendAttachmentResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="SITransactionKey" type="tns:String32" />
+        <xsd:element minOccurs="0" name="ModuleTransactionId" type="tns:String50" />
+        <xsd:element minOccurs="0" name="AdditionalModuleTransactionId" type="tns:String50" />
+        <xsd:element minOccurs="1" maxOccurs="unbounded" name="Response" type="tns:AttachmentResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="AttachmentResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="IndexId" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ResponseCode" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ResponseType" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ResponseMessage" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ResponseDetails" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

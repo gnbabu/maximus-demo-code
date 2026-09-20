@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) by John (DS) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:tns="http://mes.gov/financialservice" targetNamespace="http://mes.gov/financialservice" elementFormDefault="qualified">
+	<xsd:include schemaLocation="FinancialService_MessageHeader.xsd"/>
+	<xsd:include schemaLocation="FinancialService_InlineSchema.xsd"/>
+	<xsd:element name="Inquire1099" ibmSchExtn:docRoot="true">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="tns:MessageHeader"/>
+				<xsd:element ref="tns:Search1099" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Inquire1099Response" ibmSchExtn:docRoot="true">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="SITransactionKey" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ModuleTransactionId" type="tns:String50" minOccurs="0"/>
+		    	<xsd:element name="AdditionalModuleTransactionId" type="tns:String50" minOccurs="0"/>
+				<xsd:element name="ResponseCode" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ResponseType" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="Success"/>
+							<xsd:enumeration value="Failure"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="ResponseMessage" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ResponseDetails" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="Inquire1099ResponsePayload" type="tns:Inquire1099Information" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="InquireTransactionHistory" ibmSchExtn:docRoot="true">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="tns:MessageHeader"/>
+				<xsd:element ref="tns:SearchTransactionHistory" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="InquireTransactionHistoryResponse" ibmSchExtn:docRoot="true">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="SITransactionKey" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ModuleTransactionId" type="tns:String20" minOccurs="0"/>
+		    	<xsd:element name="AdditionalModuleTransactionId" type="tns:String20" minOccurs="0"/>
+				<xsd:element name="ResponseCode" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="ResponseType" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="Success"/>
+							<xsd:enumeration value="Failure"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="ResponseMessage" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ResponseDetails" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="InquireTransactionHistoryResponsePayload" type="tns:TransactionHistory" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

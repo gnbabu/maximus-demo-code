@@ -1,0 +1,75 @@
+﻿<header>
+<style type="text/css">
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    
+[[TOADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+     
+ <tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<p><b>Subject:</b>Comprehensive Primary Care Non-Renewal Notification</p>
+</p>
+
+<p>
+Dear Provider:
+</p>
+<p>Your Comprehensive Primary Care (CPC) provider number [[MEDICAID_CPC_ID]] was not renewed for the [[upcoming_program_year]] CPC program year. 
+Your organization did not meet the attestation requirements specified in rule 5160-19-01 of the Ohio Administrative Code (OAC) to continue your
+participation. As a result, your organization, [[MedicaidId]] will no longer be participating in Ohio’s CPC program as of [[full_date_program_year]].</p> 
+ 
+
+<p>If you disagree, you may request an administrative review pursuant to OAC 5160-70-02 that allows for reconsideration of actions not subject to hearing under Chapter 119 of the Revised Code.</p> 
+
+ 
+
+<p style="page-break-before: always;">If you would like an administrative review, please send a written request including all information that you consider relevant to this action to: <a href="mailto:Ohio-CPC-Enrollment@medicaid.ohio.gov">Ohio-CPC-Enrollment@medicaid.ohio.gov</a></p>
+
+ 
+<p>Thank you for your past participation in Ohio’s Comprehensive Primary Care program. More information and updates about program participation can be
+ found at on the Ohio Department of Medicaid (ODM) CPC webpage <a Href="[[CPC_AdditionalInfo_Link]]">here</a>. If you have any questions, feel free to contact us at (800)686-1516 or IHD@medicaid.ohio.gov.</p>
+
+ 
+Sincerely,<br/> 
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Director_Signature.png" style="margin-bottom:1px;text-align:center;" /></p></div><br/>
+Ohio Medicaid Provider Network Management <br/>
+</td>
+</tr>
+</table>

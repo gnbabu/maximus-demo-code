@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="CONTACT_MECHANISM_ROLE_TYPE_ID" type="xs:int" minOccurs="0" />
+                <xs:element name="CONTACT_MECHANISM_ROLE_TYPE" type="xs:string" minOccurs="0" />
+                <xs:element name="LAST_MODIFIED_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LAST_MODIFIED_USER" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table>
+    <CONTACT_MECHANISM_ROLE_TYPE_ID>1</CONTACT_MECHANISM_ROLE_TYPE_ID>
+    <CONTACT_MECHANISM_ROLE_TYPE>Mail To</CONTACT_MECHANISM_ROLE_TYPE>
+    <LAST_MODIFIED_DATE_TIME>2012-06-06T13:35:20.66-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+  </Table>
+  <Table>
+    <CONTACT_MECHANISM_ROLE_TYPE_ID>2</CONTACT_MECHANISM_ROLE_TYPE_ID>
+    <CONTACT_MECHANISM_ROLE_TYPE>Pay To</CONTACT_MECHANISM_ROLE_TYPE>
+    <LAST_MODIFIED_DATE_TIME>2012-06-06T13:35:20.66-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+  </Table>
+  <Table>
+    <CONTACT_MECHANISM_ROLE_TYPE_ID>3</CONTACT_MECHANISM_ROLE_TYPE_ID>
+    <CONTACT_MECHANISM_ROLE_TYPE>Servicing</CONTACT_MECHANISM_ROLE_TYPE>
+    <LAST_MODIFIED_DATE_TIME>2012-06-06T13:35:20.66-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+  </Table>
+  <Table>
+    <CONTACT_MECHANISM_ROLE_TYPE_ID>4</CONTACT_MECHANISM_ROLE_TYPE_ID>
+    <CONTACT_MECHANISM_ROLE_TYPE>Credentialing</CONTACT_MECHANISM_ROLE_TYPE>
+    <LAST_MODIFIED_DATE_TIME>2012-06-06T13:35:20.66-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+  </Table>
+</NewDataSet>

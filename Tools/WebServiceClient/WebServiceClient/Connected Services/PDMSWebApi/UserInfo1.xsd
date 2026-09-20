@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="UserDetailModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountExpires" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BadPasswordCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BadPasswordTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GivenName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastLogonTimestamp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LogonCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PwdLastSet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelephoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhenChanged" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhenCreated" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserDetailModel" nillable="true" type="tns:UserDetailModel" />
+  <xs:complexType name="UserAgentProvAssnModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Provider" nillable="true" type="tns:ArrayOfUserAgentProvAssnProviderModel" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="tns:UserAgentProvAssnResultModel" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:UserAgentProvAssnUserModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserAgentProvAssnModel" nillable="true" type="tns:UserAgentProvAssnModel" />
+  <xs:complexType name="ArrayOfUserAgentProvAssnProviderModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserAgentProvAssnProviderModel" nillable="true" type="tns:UserAgentProvAssnProviderModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserAgentProvAssnProviderModel" nillable="true" type="tns:ArrayOfUserAgentProvAssnProviderModel" />
+  <xs:complexType name="UserAgentProvAssnProviderModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PracticeMCDID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PracticeMITSAdministrator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PracticeNPI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvActiveIndicator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvCurrentcontractEndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvDateLastLogon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvEmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvProviderID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvRolesAssignedToAgent" nillable="true" type="tns:ArrayOfUserAgentProvRolesModel" />
+      <xs:element minOccurs="0" name="ProvUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProviderMCDID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProviderNPI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RenderingProviderPracticeAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RenderingProviderPracticeCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RenderingProviderPracticeContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RenderingProviderPracticeEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RenderingProviderPracticeFax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RenderingProviderPracticeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RenderingProviderPracticeState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RenderingProviderPracticeTelephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RenderingProviderPracticeZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SAKDefaultProvider" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserAgentProvAssnProviderModel" nillable="true" type="tns:UserAgentProvAssnProviderModel" />
+  <xs:complexType name="ArrayOfUserAgentProvRolesModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserAgentProvRolesModel" nillable="true" type="tns:UserAgentProvRolesModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserAgentProvRolesModel" nillable="true" type="tns:ArrayOfUserAgentProvRolesModel" />
+  <xs:complexType name="UserAgentProvRolesModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WebRoleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WebRoleDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WebRoleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserAgentProvRolesModel" nillable="true" type="tns:UserAgentProvRolesModel" />
+  <xs:complexType name="UserAgentProvAssnResultModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReturnStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnStatusDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserAgentProvAssnResultModel" nillable="true" type="tns:UserAgentProvAssnResultModel" />
+  <xs:complexType name="UserAgentProvAssnUserModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActiveIndicator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentContractEndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateLastLogon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SAKWebUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserTypeDesc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserAgentProvAssnUserModel" nillable="true" type="tns:UserAgentProvAssnUserModel" />
+</xs:schema>

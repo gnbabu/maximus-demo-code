@@ -1,0 +1,1 @@
+On [[CURRENTDATE]], ProviderController.ValidNPIinNPPESApi() tried to use the NPIRegistry to look-up NPI #[[NPI]], but it failed two times in a row.  The system used the back-up NPI data to return results to the user instead.

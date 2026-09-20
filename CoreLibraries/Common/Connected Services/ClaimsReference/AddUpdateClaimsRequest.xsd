@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns2="http://mes.gov/DentalClaims" xmlns:msh="http://mes.gov/claims" xmlns:ns0="http://mes.gov/PhysicianClaims" xmlns="http://mes.gov/AddUpdateClaimsRequest" xmlns:ns1="http://mes.gov/InstitutionalClaims" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://mes.gov/AddUpdateClaimsRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="PhysicianClaims.xsd" namespace="http://mes.gov/PhysicianClaims" />
+  <xs:import schemaLocation="InstitutionalClaims.xsd" namespace="http://mes.gov/InstitutionalClaims" />
+  <xs:import schemaLocation="DentalClaims.xsd" namespace="http://mes.gov/DentalClaims" />
+  <xs:import schemaLocation="Claims_MessageHeader.xsd" namespace="http://mes.gov/claims" />
+  <xs:element name="AddUpdateClaimsRequest">
+    <xs:annotation>
+      <xs:documentation>
+This element contains the request elements to add or update Claims in the MITS system.
+</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" ref="msh:MessageHeader" />
+        <xs:element minOccurs="0" ref="ns0:PhysicianClaims" />
+        <xs:element minOccurs="0" ref="ns1:InstitutionalClaims" />
+        <xs:element minOccurs="0" ref="ns2:DentalClaims" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

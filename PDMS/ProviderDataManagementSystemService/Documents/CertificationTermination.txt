@@ -1,0 +1,68 @@
+
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<b>Subject: </b>Termination Due to Loss of DODD Certification
+</p>
+
+<p>
+Dear:
+</p>
+<p>
+It has recently come to our attention from the Centers for Medicare and Medicaid Services, (CMS) that you have decided to voluntarily terminate your provider agreement. The Medicaid provider agreement requires a provider to meet all provider eligibility requirements for the particular provider type and Ohio Administrative Code (OAC) 5160-1-17.6 requires the termination of the Medicaid provider agreement when a provider does not hold a license, permit, or certificate that is a condition of eligibility for participation in the Medicaid program. As a Medicaid provider, you are required to hold an active certification from the Ohio Department of Medicaid services.</p>
+<p>You are, therefore, notified that your provider agreement with the Ohio Department of Medicaid, (ODM) is terminated effective immediately. Ohio law affords no appeal of this action pursuant to Chapter 119 of the Revised Code.  (See Revised Code 5164.38(D) (1) and OAC 5160-70-02.)</p>
+
+<p>You are further notified that effective with the terminated status of your certification to provide (Provider Type) Medicaid services you were no longer an "eligible provider" within the provisions of the provider agreement for Medicaid or Disability Assistance services.  Any claims filed for services rendered after (termination date) under provider number [[MEDICAID]] will be denied <u><b>including those services for which you may have received prior authorization.</b></u>  If there have been claims paid for services rendered after that date they may be subject to recovery by ODM.</p>
+<p>If you disagree with this termination, you may request an administrative review pursuant to OAC 5160-70-02 that allows for reconsideration of actions not subject to hearing under Chapter 119 of the Revised Code. </p>
+<p style="page-break-before: always;">If you would like an administrative review, please send a written request including all information that you consider relevant to this action to:</p>
+<div style="text-align:center"><b>
+Maureen M. Corcoran, Director<br/ >
+Ohio Department of Medicaid<br/ >
+PO Box 182709<br/ >
+Columbus, Ohio 43218-2709<br/ >
+
+</b></div>
+
+<p>If you reactivate your (LICENSE TYPE) license at some time in the future and you wish to reinstate your provider agreement you may submit a new application including all the necessary information. The necessary documentation can be downloaded from the PNM web site and the application form is found at:  [[PDMSURL]] If you require additional information or assistance, please contact me at (614) 752- 3573.</p>
+Sincerely,<br />
+    <br />
+Ohio Medicaid Provider Compliance
+</td>
+</tr>
+</table>
+

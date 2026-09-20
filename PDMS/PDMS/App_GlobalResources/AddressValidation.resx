@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ADDR_ERROR_CODE_00" xml:space="preserve">
+    <value>Default High-rise or Rural Route answer</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_01" xml:space="preserve">
+    <value>Five Digit Zip no match, match found in finance number</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_02" xml:space="preserve">
+    <value>Input add-on not found, replaced with correct add-on</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_03" xml:space="preserve">
+    <value>No correlation between city and unique zip code, five digit zip deleted, no match</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_04" xml:space="preserve">
+    <value>City name corrected</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_05" xml:space="preserve">
+    <value>Address standardized</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_06" xml:space="preserve">
+    <value>Street number is not a precise match to street range type. For example, an alphanumeric number like 10A fell within a numeric range of 1 to 99</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_07" xml:space="preserve">
+    <value>Address non-deliverable. No add-on assigned</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_08" xml:space="preserve">
+    <value>Secondary number is not a precise match to secondary range type. See error 06 for details</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_09" xml:space="preserve">
+    <value>Address is delivery point alternate</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_10" xml:space="preserve">
+    <value>City is a part of multiple counties</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_11" xml:space="preserve">
+    <value>Results failed multi-component rule used by CASS, no validated answer possible. List of possible results returned. Absolute value of return code (rc) equal to number of results returned</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_12" xml:space="preserve">
+    <value>Highrise default answer returned, all possible apartment range results returned. Last result in array is proceeded by a record padded with "Z"’s</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_13" xml:space="preserve">
+    <value>Military address</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_14" xml:space="preserve">
+    <value>Street address with appended apartment number</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_15" xml:space="preserve">
+    <value>Near matches placed in results field</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_16" xml:space="preserve">
+    <value>Preferred city name used</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_17" xml:space="preserve">
+    <value>No match found in multiple-word range, search dropped down to one-word range</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_18" xml:space="preserve">
+    <value>DPV False Positive</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_19" xml:space="preserve">
+    <value>Record found in Early Warning System file, no match</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_20" xml:space="preserve">
+    <value>Input street name modified</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_21" xml:space="preserve">
+    <value>Account marked for DPV False Positive</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_22" xml:space="preserve">
+    <value>Account marked for LACS Link False Positive</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_23" xml:space="preserve">
+    <value>Unique zip no match with no city correlation, zip code deleted</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_24" xml:space="preserve">
+    <value>LACS False Positive</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_30" xml:space="preserve">
+    <value>Foreign Address</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_31" xml:space="preserve">
+    <value>Geocoder files missing or corrupt</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_40" xml:space="preserve">
+    <value>Multiple matches: wrong input Post-Directional</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_41" xml:space="preserve">
+    <value>Multiple matches: wrong input Pre-Directional</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_42" xml:space="preserve">
+    <value>Multiple matches: wrong input Street Suffix</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_43" xml:space="preserve">
+    <value>Zip Code is PO Box or Rural Route only</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_44" xml:space="preserve">
+    <value>Large amount of data dropped</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_45" xml:space="preserve">
+    <value>Street Suffix was modified</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_46" xml:space="preserve">
+    <value>Street Directional was modified</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_47" xml:space="preserve">
+    <value>Address requires apartment/suite number: none input</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_48" xml:space="preserve">
+    <value>Multiple matches: would resolve provided a pre-directional</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_49" xml:space="preserve">
+    <value>Multiple matches: would resolve provided a post-directional</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_50" xml:space="preserve">
+    <value>Multiple matches: would resolve provided a street suffix</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_51" xml:space="preserve">
+    <value>Address does not require apartment/suite: none input</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_52" xml:space="preserve">
+    <value>Address does not require apartment/suite: wrong input</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_57" xml:space="preserve">
+    <value>Address not standardized: not enough information provided</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_58" xml:space="preserve">
+    <value>Address not standardized: invalid Zip Code</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_59" xml:space="preserve">
+    <value>Address not standardized: address belongs to a US Territory</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_60" xml:space="preserve">
+    <value>Expired Verification Database</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_61" xml:space="preserve">
+    <value>House number is not on street</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_62" xml:space="preserve">
+    <value>Street is not in the Zip Code provided</value>
+  </data>
+  <data name="ADDR_ERROR_CODE_64" xml:space="preserve">
+    <value>Internal error</value>
+  </data>
+</root>

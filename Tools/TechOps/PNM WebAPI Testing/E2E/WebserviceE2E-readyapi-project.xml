@@ -1,0 +1,2510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="efc2cc3d-1fa5-4a8e-8ffb-86a585fb388c" created="3.3.2" activeEnvironment="Default environment" name="PNMWebAPITestingE2E" resourceRoot="" updated="3.3.2 2020-08-19T12:03:33Z" abortOnError="false" runType="SEQUENTIAL" soapui-version="5.6.0" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="645596d8-b430-49e5-8102-a5886b011d0a" wsaVersion="NONE" name="ProviderApplicationStatusInqService" type="wsdl" bindingName="{http://Maximus.OHPNM.Services/}usernameHttpsService" soapVersion="1_1" anonymous="optional" definition="https://webapi.ohpnm-testing.omes.maximus.com:10443/ProviderApplicationStatusInqService.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://webapi.ohpnm-testing.omes.maximus.com:10443/ProviderApplicationStatusInqService.svc?singleWsdl"><con:part><con:url>https://webapi.ohpnm-testing.omes.maximus.com:10443/ProviderApplicationStatusInqService.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ProviderApplicationStatusInqService" targetNamespace="http://Maximus.OHPNM.Services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://Maximus.OHPNM.Services/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsp:Policy wsu:Id="usernameHttpsService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10/>
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy/>
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://hp.com/OhioMITS/Interfaces/AppStatusInquiryRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://hp.com/OhioMITS/Interfaces/AppStatusInquiryRequest">
+      <xs:element name="AppStatusInquiryRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="MessageHeader">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="1" name="BusinessFlow" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="StateCode" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="RequestorSystem" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="ModuleTransactionId" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="SubscriberSystem" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="AdditionalModuleTransactionId" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="SITransactionKey" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="RequestTimestamp" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="1" name="appStatusInquiry">
+              <xs:complexType>
+                <xs:attribute name="atn" type="xs:string"/>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="1" name="clientsecuritykey" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="transactionId" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://hp.com/OhioMITS/Interfaces/AppStatusInquiryResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://hp.com/OhioMITS/Interfaces/AppStatusInquiryResponse">
+      <xs:element name="AppStatusInquiryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="SITransactionKey" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="appStatusInquiryError">
+              <xs:complexType>
+                <xs:attribute name="errorCode" type="xs:string"/>
+                <xs:attribute name="errorDescription" type="xs:string"/>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="1" name="appStatusInquiry" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="responseStatus" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ProvideAppStatusInquiryDataRequest">
+    <wsdl:part name="parameters" element="q1:AppStatusInquiryRequest" xmlns:q1="http://hp.com/OhioMITS/Interfaces/AppStatusInquiryRequest"/>
+  </wsdl:message>
+  <wsdl:message name="ProvideAppStatusInquiryDataResponse">
+    <wsdl:part name="parameters" element="q2:AppStatusInquiryResponse" xmlns:q2="http://hp.com/OhioMITS/Interfaces/AppStatusInquiryResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ProviderApplicationStatusInqService">
+    <wsdl:operation name="ProvideAppStatusInquiryData">
+      <wsdl:input wsaw:Action="http://Maximus.OHPNM.Services/ProviderApplicationStatusInqService/ProvideAppStatusInquiryData" name="ProvideAppStatusInquiryDataRequest" message="tns:ProvideAppStatusInquiryDataRequest"/>
+      <wsdl:output wsaw:Action="http://Maximus.OHPNM.Services/ProviderApplicationStatusInqService/ProvideAppStatusInquiryDataResponse" name="ProvideAppStatusInquiryDataResponse" message="tns:ProvideAppStatusInquiryDataResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="usernameHttpsService" type="tns:ProviderApplicationStatusInqService">
+    <wsp:PolicyReference URI="#usernameHttpsService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ProvideAppStatusInquiryData">
+      <soap:operation soapAction="http://Maximus.OHPNM.Services/ProviderApplicationStatusInqService/ProvideAppStatusInquiryData" style="document"/>
+      <wsdl:input name="ProvideAppStatusInquiryDataRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ProvideAppStatusInquiryDataResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProviderApplicationStatusInqService">
+    <wsdl:port name="usernameHttpsService" binding="tns:usernameHttpsService">
+      <soap:address location="https://webapi.ohpnm-testing.omes.maximus.com:10443/ProviderApplicationStatusInqService.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/ProviderApplicationStatusInqService.svc</con:endpoint></con:endpoints><con:operation id="562e4e07-264e-4aa0-8b00-204d9a8cf966" isOneWay="false" action="http://Maximus.OHPNM.Services/ProviderApplicationStatusInqService/ProvideAppStatusInquiryData" name="ProvideAppStatusInquiryData" bindingOperationName="ProvideAppStatusInquiryData" type="Request-Response" outputName="ProvideAppStatusInquiryDataResponse" inputName="ProvideAppStatusInquiryDataRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="31253124-52e7-49d7-be0a-041b6accf938" name="ProvideAppStatusInquiryDataRequest1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/ProviderApplicationStatusInqService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:app="http://hp.com/OhioMITS/Interfaces/AppStatusInquiryRequest" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soapenv:Header>\r
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">\r
+         <wsse:UsernameToken wsu:Id="UsernameToken-CA46AC940C04840BEC16310454045443">\r
+            <wsse:Username>MCD-pnminthtssit</wsse:Username>\r
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">T5Ey#63vWx8!</wsse:Password>\r
+            <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">T9d6AufrSqY8AO/xcDk9Ng==</wsse:Nonce>\r
+            <wsu:Created>2021-09-07T20:10:04.544Z</wsu:Created>\r
+         </wsse:UsernameToken>\r
+      </wsse:Security>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <app:AppStatusInquiryRequest>\r
+         <!--Optional:-->\r
+         <app:MessageHeader>\r
+            <!--Optional:-->\r
+            <app:BusinessFlow>AppStatusInquiryRequest</app:BusinessFlow>\r
+            <!--Optional:-->\r
+            <app:StateCode>OH</app:StateCode>\r
+            <!--Optional:-->\r
+            <app:RequestorSystem>IVR</app:RequestorSystem>\r
+            <!--Optional:-->\r
+            <!--Optional:-->\r
+            <app:SubscriberSystem>PNM</app:SubscriberSystem>\r
+            <!--Optional:-->\r
+            <!--Optional:-->\r
+            <app:SITransactionKey>rdgergfdzg4363453</app:SITransactionKey>\r
+            <app:RequestTimestamp>2021-04-16T00:00:00.000-04:00</app:RequestTimestamp>\r
+         </app:MessageHeader>\r
+         <!--Optional:-->\r
+         <app:appStatusInquiry atn="489832"/>\r
+         <!--Optional:-->\r
+         <app:clientsecuritykey>?q</app:clientsecuritykey>\r
+         <!--Optional:-->\r
+         <app:transactionId>?q</app:transactionId>\r
+      </app:AppStatusInquiryRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>MCD-pnminthtssit</con:username><con:password>T5Ey#63vWx8!</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://Maximus.OHPNM.Services/ProviderApplicationStatusInqService/ProvideAppStatusInquiryData"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="905f5950-5fd6-4b54-b8b3-3b09abb581f7" wsaVersion="NONE" name="PartialProviderManagement" type="wsdl" bindingName="{http://Maximus.OHPNM.Services/}usernameHttpsService" soapVersion="1_1" anonymous="optional" definition="https://webapi.ohpnm-testing.omes.maximus.com:10443/PartialProviderManagement.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://webapi.ohpnm-testing.omes.maximus.com:10443/PartialProviderManagement.svc?singleWsdl"><con:part><con:url>https://webapi.ohpnm-testing.omes.maximus.com:10443/PartialProviderManagement.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PartialProviderManagementService" targetNamespace="http://Maximus.OHPNM.Services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://Maximus.OHPNM.Services/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsp:Policy wsu:Id="usernameHttpsService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10/>
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy/>
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/partialprovidermanagement" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mes.gov/partialprovidermanagement">
+      <xs:element name="SubmitPartialProvider">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="MessageHeader" nillable="true">
+              <xs:complexType>
+                <xs:complexContent mixed="false">
+                  <xs:extension base="tns:InqMessageHeader">
+                    <xs:sequence>
+                      <xs:element minOccurs="0" maxOccurs="1" name="SITransactionKey" type="xs:string"/>
+                    </xs:sequence>
+                  </xs:extension>
+                </xs:complexContent>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="Payload" nillable="true" type="tns:SubmitPartialProviderRequestPayload"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="InqMessageHeader">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="BusinessFlow" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="1" maxOccurs="1" name="StateCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="1" maxOccurs="1" name="RequestorSystem" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ModuleTransactionId" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SubscriberSystem" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AdditionalModuleTransactionId" type="xs:string"/>
+          <xs:element minOccurs="1" maxOccurs="1" name="RequestTimestamp" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SubmitPartialProviderRequestPayload">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="ProviderInformation" nillable="true" type="tns:SubmitPartialProviderInformation"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SubmitPartialProviderInformation">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderDemographics" type="tns:PartialProviderDemographics"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderAddress" type="tns:ArrayOfSubmitPartialProviderInformationAddress"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderContact" type="tns:ArrayOfSubmitPartialProviderInformationContact"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderApplication" type="tns:ArrayOfPartialProviderApplication"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderOwnerships" type="tns:ArrayOfPartialProviderOwnershipList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderAlternateIdentifiers" type="tns:ArrayOfPartialProviderAlternateIdList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderType" type="tns:ArrayOfPartialProviderTypeList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderAffiliations" type="tns:ArrayOfPartialProviderAffiliationList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnerRelationship" type="tns:ArrayOfPartialOwnerRelationshipList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderManagedEmployees" type="tns:ArrayOfPartialProviderManagedEmployeesListProviderManagedEmployee"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderBusinessStatus" type="tns:ArrayOfPartialProviderBusinessStatusList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderTaxonomyClassification" type="tns:ArrayOfPartialTaxonomyClassificationList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderProgramAffiliations" type="tns:ArrayOfPartialProgramAffiliationsList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderEFTEnrollment" type="tns:ArrayOfPartialEFTEnrollmentList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderServices" type="tns:ArrayOfPartialProviderServicesList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderDocuments" type="tns:ArrayOfPartialProviderDocumentsList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderCHOP" type="tns:ArrayOfPartialProviderCHOPList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderAttestations" type="tns:ArrayOfPartialProviderAttestationsList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderLanguage" type="tns:ArrayOfPartialProviderLanguageList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderReviews" type="tns:ArrayOfPartialProviderReviewsList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderServiceLocation" type="tns:ArrayOfPartialProviderServiceLocation"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderDemographics">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderId" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="TaxId" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderRoleCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="NationalProviderIdentifier" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="FirstName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="MiddleName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LastName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Prefix" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Suffix" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SSN" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Gender" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EntityType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LegalProviderName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderBusinessName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderTaxName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="TeachingIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnershipCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="PracticeTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderProfitStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="NewPatientIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EnrollmentType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="DateOfDeath" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Race" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="MedicareInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="PCPStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="PCPTermDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="BirthCountry" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="BirthCity" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="BirthState" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="PaymentTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvRiskLevel" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvDirectorySearchIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvIHSAssoCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvDemographicsSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfSubmitPartialProviderInformationAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Address">
+            <xs:complexType>
+              <xs:complexContent mixed="false">
+                <xs:extension base="tns:PartialProviderAddress">
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ProvAddressSrcKey" type="xs:string"/>
+                  </xs:sequence>
+                </xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressLine1" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressLine2" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="City" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="State" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CountyCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ZipCode5" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ZipCode4" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Country" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="BorderStateIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressNameTypeIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvOrgAddressName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvOrgAddressFirstName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvOrgAddressMiddleName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvOrgAddressLastName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvOrgPhoneNumber1" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvOrgPhoneNumberExt1" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvOrgPhoneNumber2" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvOrgPhoneNumberExt2" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvOrgFaxNumber1" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvOrgFaxNumber2" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvAddressContactName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvEmail" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvAddressLongitude" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvAddressLatitude" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="HandicapAccessibilityIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfSubmitPartialProviderInformationContact">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Contact">
+            <xs:complexType>
+              <xs:complexContent mixed="false">
+                <xs:extension base="tns:PartialProviderContactList">
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ProvContactSrcKey" type="xs:string"/>
+                  </xs:sequence>
+                </xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderContactList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ContactType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ContactDetail" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ContactInstruction" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="PreferredContactIndicator" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderApplication">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Application" type="tns:PartialProviderApplication"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderApplication">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ApplicationId" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ApplicationCreatedDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ApprovalDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="StatePlanEnrollCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EnrollMethodCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvEnrollStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CountyCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="NonMedicaidApplicationProviderType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AdditionalApplicationId" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ApplicationType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ApplicationStatus" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ApplicationLegalStatus" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ApplicationFeeConfirmation" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SingleSignOnAssignedID" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SingleSignOnSelectedID" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AdditionalUserID" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SingleSignOnRole" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvApplicationSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderOwnershipList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ProviderOwnership" type="tns:PartialProviderOwnershipList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderOwnershipList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnershipDetails">
+            <xs:complexType>
+              <xs:complexContent mixed="false">
+                <xs:extension base="tns:PartialOwner">
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ProvOwnrDtlSrcKey" type="xs:string"/>
+                  </xs:sequence>
+                </xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnerAddress" type="tns:ArrayOfPartialProviderOwnershipListAddress"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialOwner">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:PartialOwnerCommon">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+              <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+              <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+              <xs:choice minOccurs="1" maxOccurs="1">
+                <xs:element minOccurs="0" maxOccurs="1" name="OwnerIndividual">
+                  <xs:complexType>
+                    <xs:complexContent mixed="false">
+                      <xs:extension base="tns:PartialOwnerIndividual">
+                        <xs:sequence>
+                          <xs:element minOccurs="0" maxOccurs="1" name="OwnerIndvSrcKey" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:extension>
+                    </xs:complexContent>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" maxOccurs="1" name="OwnerOrganization">
+                  <xs:complexType>
+                    <xs:complexContent mixed="false">
+                      <xs:extension base="tns:PartialOwnerOrganization">
+                        <xs:sequence>
+                          <xs:element minOccurs="0" maxOccurs="1" name="OwnerOrgSrcKey" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:extension>
+                    </xs:complexContent>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="PartialOwnerCommon">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnerType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnerAffiliationType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnPercentage" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SanctionInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SanctionExplain" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="RelationshipInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CriminalOffenseInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CriminalOffenseExplain" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LicenseSuspendInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LicenseSuspendExplain" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="PenaltyInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="PenaltyExplain" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CntrlIntrstOthrProvEntityInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CntrlIntrstOthrProvEntityExplain" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnrSubcntrctrTrnxInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnrSubcntrctrDetails" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnrSubcntrctrBsnssTrnxInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnrSubcntrctrBsnssTrnxDetails" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="TransactionAmount" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="TransactionDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnerOutOfStateResidentIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnerOutOfStateResidentExplain" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnerStateFederalOffenseInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnerStateFederalOffenseExplain" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="FingerprintStatusIndicator" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialOwnerIndividual">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="FirstName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="MiddleName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LastName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SSN" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialOwnerOrganization">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnerOrgName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OrgTaxIdNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderOwnershipListAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Address">
+            <xs:complexType>
+              <xs:complexContent mixed="false">
+                <xs:extension base="tns:PartialOwnerAddress">
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ProvOwnrAdrsSrcKey" type="xs:string"/>
+                  </xs:sequence>
+                </xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialOwnerAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressLine1" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressLine2" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="City" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="State" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CountyCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ZipCode5" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ZipCode4" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Country" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderAlternateIdList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AlternateIdentifier" type="tns:PartialProviderAlternateIdList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderAlternateIdList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AlternateIdType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AlternateId" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvAlternateIdSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderTypeList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Type" type="tns:PartialProviderTypeList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderTypeList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvTypeSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderAffiliationList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Affiliations" type="tns:PartialProviderAffiliationList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderAffiliationList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderId" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="NPI" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderAffiliationTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AdditionalInfo1" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AdditionalInfo2" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvAffiliationSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialOwnerRelationshipList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Relationship" type="tns:PartialOwnerRelationshipList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialOwnerRelationshipList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:choice minOccurs="1" maxOccurs="1">
+            <xs:element minOccurs="0" maxOccurs="1" name="Owner1SSN" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="Owner1OrgTaxIdNumber" type="xs:string"/>
+          </xs:choice>
+          <xs:choice minOccurs="1" maxOccurs="1">
+            <xs:element minOccurs="0" maxOccurs="1" name="Owner2SSN" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="Owner2OrgTaxIdNumber" type="xs:string"/>
+          </xs:choice>
+          <xs:element minOccurs="0" maxOccurs="1" name="RelationType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnrRltnshpSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderManagedEmployeesListProviderManagedEmployee">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ProviderManagedEmployee">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="1" name="ManagedEmployee">
+                  <xs:complexType>
+                    <xs:complexContent mixed="false">
+                      <xs:extension base="tns:ManageEmployee">
+                        <xs:sequence>
+                          <xs:element minOccurs="0" maxOccurs="1" name="ProvMngdEmplySrcKey" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:extension>
+                    </xs:complexContent>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" maxOccurs="1" name="ManagedEmployeeAddress" type="tns:ArrayOfPartialProviderManagedEmployeesListProviderManagedEmployeeAddress"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ManageEmployee">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="FirstName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="MiddleName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LastName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ManageEmployeesType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnerAffiliationType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ManageEmployeesInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SSN" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SanctionInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SanctionExplain" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="RelationshipInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CriminalOffenseInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CriminalOffenseExplain" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LicenseSuspendInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LicenseSuspendExplain" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="PenaltyInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="PenaltyExplain" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CntrlIntrstOthrProvEntityInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CntrlIntrstOthrProvEntityExplain" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnrSubcntrctrTrnxInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnrSubcntrctrDetails" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnrSubcntrctrBsnssTrnxInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnrSubcntrctrBsnssTrnxDetails" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="TransactionAmount" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="TransactionDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnerOutOfStateResidentIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnerOutOfStateResidentExplain" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnerStateFederalOffenseInd" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OwnerStateFederalOffenseExplain" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="FingerprintStatusIndicator" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderManagedEmployeesListProviderManagedEmployeeAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Address">
+            <xs:complexType>
+              <xs:complexContent mixed="false">
+                <xs:extension base="tns:EnrollOwnerAddress">
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ProvOwnrAdrsSrcKey" type="xs:string"/>
+                  </xs:sequence>
+                </xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EnrollOwnerAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressLine1" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressLine2" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="City" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="State" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CountyCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ZipCode5" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ZipCode4" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Country" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderBusinessStatusList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessStatus" type="tns:PartialProviderBusinessStatusList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderBusinessStatusList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="BusinessStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EnrollmentBusinessStatusReasonCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvBsnsStatusSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialTaxonomyClassificationList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxonomyClassification" type="tns:PartialTaxonomyClassificationList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialTaxonomyClassificationList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ClassificationTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ClassificationCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvTxnmyClsfctnSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProgramAffiliationsList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ProgramAffiliation" type="tns:PartialProgramAffiliationsList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProgramAffiliationsList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AffiliatedProgramCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="API" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AffiliatedProgramId" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProgramAffiationStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProgramAffiliationStatusReason" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="PgmAffltnSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialEFTEnrollmentList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EFTEnrollment" type="tns:PartialEFTEnrollmentList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialEFTEnrollmentList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EFTEnrollmentId" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="FinancialInstitutionAccountNumber" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="FinancialInstitutionAccountType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="FinancialInstitutionName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="FinancialInstitutionRoutingNumber" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderContactFirstName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderContactLastName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderContactMiddleName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderContactPhoneNumber" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderContactPhoneNumberExtension" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderContactTitle" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvEFTEnrollmentSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderServicesList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Services" type="tns:PartialProviderServicesList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderServicesList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderService" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderServiceID" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Provsvcsrckey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderDocumentsList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Documents" type="tns:PartialProviderDocumentsList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderDocumentsList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="DocName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="DocType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="DocExt" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="DocDescription" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ContentBase64binary" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Provdocsrckey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderCHOPList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CHOP" type="tns:PartialProviderCHOPList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderCHOPList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="MedicaidProviderSellerId" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CHOPAmount" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CHOPTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="MasterLeaseAmount" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SubLeaseAmount" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Provchopsrckey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderAttestationsList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Attestations" type="tns:PartialProviderAttestationsList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderAttestationsList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvAttestationTypeIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvAttestationCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvResponseIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvDateSigned" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Provattssrckey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderLanguageList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Languages" type="tns:PartialProviderLanguageList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderLanguageList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Language" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Provlngsrccode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderReviewsList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Review" type="tns:PartialProviderReviewsList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderReviewsList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderReviewTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderReviewID" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProposedEffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Provrvwsrccode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderServiceLocation">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceLocation" type="tns:PartialProviderServiceLocation"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderServiceLocation">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LocationName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LocationCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="OrgStateOwnedIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ServiceLocationAddress" type="tns:ArrayOfPartialProviderServiceLocationAddress"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ServiceLocationContact" type="tns:ArrayOfPartialProviderServiceLocationContact"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderLicense" type="tns:ArrayOfPartialProviderServiceLocationLicense"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderCertification" type="tns:ArrayOfPartialProviderCertificationList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderIdentifier" type="tns:ArrayOfPartialProviderIdentifierList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderFacility" type="tns:ArrayOfPartialProviderFacilityList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderTaxonomy" type="tns:ArrayOfPartialProviderTaxonomyList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderSpecialty" type="tns:ArrayOfPartialProviderSpecialtyList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderType" type="tns:ArrayOfPartialProviderTypeList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderRestriction" type="tns:ArrayOfPartialProviderRestrictionList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SiteVisits" type="tns:ArrayOfPartialVisitList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderTraining" type="tns:ArrayOfPartialProviderTrainingList"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvSvcLocationSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderServiceLocationAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Address">
+            <xs:complexType>
+              <xs:complexContent mixed="false">
+                <xs:extension base="tns:PartialProviderAddress">
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="SvcLctnAdrsSrcKey" type="xs:string"/>
+                  </xs:sequence>
+                </xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderServiceLocationContact">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Contact">
+            <xs:complexType>
+              <xs:complexContent mixed="false">
+                <xs:extension base="tns:PartialProviderContactList">
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="SvcLctnCntctSrcKey" type="xs:string"/>
+                  </xs:sequence>
+                </xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderServiceLocationLicense">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="License">
+            <xs:complexType>
+              <xs:complexContent mixed="false">
+                <xs:extension base="tns:PartialProviderLicense">
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="LicenseCertifications" type="tns:ArrayOfPartialLicenseCertificationsList"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ProvLicenseSrcKey" type="xs:string"/>
+                  </xs:sequence>
+                </xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderLicense">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LicenseType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LicenseNumber" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LicenseeStateCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LicenseIssueBoardNotes" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Status" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="StatusReason" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CountyCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialLicenseCertificationsList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Certifications" type="tns:PartialLicenseCertificationsList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialLicenseCertificationsList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CertificationId" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CertifyingOrg" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CertificationFocus" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CertificationSpeciality" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvLicenseCertSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderCertificationList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Certification" type="tns:PartialProviderCertificationList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderCertificationList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CertificateNumber" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CertificateType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvCrtfctnSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderIdentifierList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Identifier" type="tns:PartialProviderIdentifierList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderIdentifierList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="IdentifierTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="IssuingEntityID" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="IdentifierID" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvIdentifierSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderFacilityList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Facility" type="tns:PartialProviderFacilityList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderFacilityList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="FacilityId" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="BedTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="BedCount" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvFacilitySrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderTaxonomyList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Taxonomy" type="tns:PartialProviderTaxonomyList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderTaxonomyList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="TaxonomyCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="PrimaryTaxonomyIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvTxnmySrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderSpecialtyList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Specialty" type="tns:PartialProviderSpecialtyList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderSpecialtyList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="PrimarySpecialityIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SpecialtyCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvSpcltySrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderRestrictionList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Restriction" type="tns:PartialProviderRestrictionList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderRestrictionList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ReviewReason" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ReviewType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="RestrictionClass" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ClaimType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="IncludeExcludeIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="LowCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="HighCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProvRestrictionSrcKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialVisitList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Visit" type="tns:PartialVisitList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialVisitList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SiteVisitResult" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SiteVisitText" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SiteVisitID" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Provvstsrckey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPartialProviderTrainingList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Training" type="tns:PartialProviderTrainingList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartialProviderTrainingList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecordStatusCode" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="TrainingType" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="TrainingCompleteIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="TrainingId" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="Provtrnsrckey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SubmitPartialProviderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="SITransactionKey" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="ModuleTransactionId" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="AdditionalModuleTransactionId" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="ResponseType" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="ODSProviderDemographicsId" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="ResponseDetails" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="submitPartialProviderRequest">
+    <wsdl:part name="parameters" element="q1:SubmitPartialProvider" xmlns:q1="http://mes.gov/partialprovidermanagement"/>
+  </wsdl:message>
+  <wsdl:message name="submitPartialProviderResponse">
+    <wsdl:part name="parameters" element="q2:SubmitPartialProviderResponse" xmlns:q2="http://mes.gov/partialprovidermanagement"/>
+  </wsdl:message>
+  <wsdl:portType name="PartialProviderManagement">
+    <wsdl:operation name="SubmitPartialProvider">
+      <wsdl:input wsaw:Action="http://Maximus.OHPNM.Services/PartialProviderManagement/SubmitPartialProvider" name="submitPartialProviderRequest" message="tns:submitPartialProviderRequest"/>
+      <wsdl:output wsaw:Action="http://Maximus.OHPNM.Services/PartialProviderManagement/SubmitPartialProviderResponse" name="submitPartialProviderResponse" message="tns:submitPartialProviderResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="usernameHttpsService" type="tns:PartialProviderManagement">
+    <wsp:PolicyReference URI="#usernameHttpsService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SubmitPartialProvider">
+      <soap:operation soapAction="http://Maximus.OHPNM.Services/PartialProviderManagement/SubmitPartialProvider" style="document"/>
+      <wsdl:input name="submitPartialProviderRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitPartialProviderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PartialProviderManagementService">
+    <wsdl:port name="usernameHttpsService" binding="tns:usernameHttpsService">
+      <soap:address location="https://webapi.ohpnm-testing.omes.maximus.com:10443/PartialProviderManagement.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/PartialProviderManagement.svc</con:endpoint></con:endpoints><con:operation id="5f72de60-e055-446f-8e16-655376f4f35c" isOneWay="false" action="http://Maximus.OHPNM.Services/PartialProviderManagement/SubmitPartialProvider" name="SubmitPartialProvider" bindingOperationName="SubmitPartialProvider" type="Request-Response" outputName="submitPartialProviderResponse" inputName="submitPartialProviderRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bc321d1c-d284-45e8-93ae-111958254dc3" name="SubmitPartialProviderRequest1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/PartialProviderManagement.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns="http://mes.gov/partialprovidermanagement" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Header>
+		<wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+			<wsse:UsernameToken wsu:Id="UsernameToken-CA46AC940C04840BEC16310459416944">
+				<wsse:Username>MCD-pnminthtssit</wsse:Username>
+				<wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">T5Ey#63vWx8!</wsse:Password>
+				<wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">N9AS95WK93YB+OeOhZFEcQ==</wsse:Nonce>
+				<wsu:Created>2021-09-07T20:19:01.694Z</wsu:Created>
+			</wsse:UsernameToken>
+		</wsse:Security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<SubmitPartialProvider>
+			<MessageHeader>
+				<BusinessFlow>SubmitPartialProvider</BusinessFlow>
+				<StateCode>OH</StateCode>
+				<RequestorSystem>PNM</RequestorSystem>
+				<ModuleTransactionId>371330</ModuleTransactionId>
+				<SubscriberSystem>PCW</SubscriberSystem>
+				<AdditionalModuleTransactionId/>
+				<RequestTimestamp>2021-05-19T08:37:32</RequestTimestamp>
+			</MessageHeader>
+			<Payload>
+				<ProviderInformation>
+					<ProviderDemographics>
+						<RecordStatusCode/>
+						<ProviderId/>
+						<TaxId>652369856</TaxId>
+						<ProviderRoleCode/>
+						<NationalProviderIdentifier>1003150319</NationalProviderIdentifier>
+						<FirstName/>
+						<MiddleName/>
+						<LastName/>
+						<Prefix/>
+						<Suffix/>
+						<SSN/>
+						<Gender>N</Gender>
+						<EntityType>O</EntityType>
+						<ProviderName>COMFORCARE LLC</ProviderName>
+						<LegalProviderName>COMFORCARE LLC</LegalProviderName>
+						<ProviderBusinessName/>
+						<ProviderTaxName/>
+						<TeachingIndicator/>
+						<OwnershipCode/>
+						<PracticeTypeCode/>
+						<ProviderProfitStatusCode/>
+						<NewPatientIndicator>N</NewPatientIndicator>
+						<EnrollmentType/>
+						<EffectiveDate>2021-05-19T08:37:29</EffectiveDate>
+						<EndDate>2299-12-31T00:00:00</EndDate>
+						<DateOfBirth/>
+						<DateOfDeath/>
+						<Race/>
+						<MedicareInd/>
+						<PCPStatusCode/>
+						<PCPTermDate/>
+						<BirthCountry/>
+						<BirthCity/>
+						<BirthState/>
+						<PaymentTypeCode/>
+						<ProvRiskLevel/>
+						<ProvDirectorySearchIndicator/>
+						<ProvIHSAssoCode/>
+						<ProvDemographicsSrcKey/>
+					</ProviderDemographics>
+					<ProviderAddress/>
+					<ProviderContact/>
+					<ProviderApplication>
+						<Application>
+							<RecordStatusCode/>
+							<ApplicationId>549987</ApplicationId>
+							<ApplicationCreatedDate>2021-05-19T08:37:29</ApplicationCreatedDate>
+							<ApprovalDate/>
+							<StatePlanEnrollCode/>
+							<EnrollMethodCode/>
+							<ProvEnrollStatusCode/>
+							<EffectiveDate>2021-05-19T08:37:29</EffectiveDate>
+							<EndDate/>
+							<CountyCode/>
+							<NonMedicaidApplicationProviderType/>
+							<AdditionalApplicationId/>
+							<ApplicationType>Initial
+							</ApplicationType>
+							<ApplicationStatus>NOT PROCESSED</ApplicationStatus>
+							<ApplicationLegalStatus/>
+							<ApplicationFeeConfirmation/>
+							<SingleSignOnAssignedID>7535138570</SingleSignOnAssignedID>
+							<SingleSignOnSelectedID/>
+							<AdditionalUserID/>
+							<SingleSignOnRole/>
+							<EmailAddress>faizur.qa@gmail.com</EmailAddress>
+							<ProvApplicationSrcKey/>
+						</Application>
+					</ProviderApplication>
+					<ProviderOwnerships/>
+					<ProviderAlternateIdentifiers>
+						<AlternateIdentifier>
+							<RecordStatusCode/>
+							<AlternateIdType>NPI</AlternateIdType>
+							<AlternateId>1003150319</AlternateId>
+							<EffectiveDate>2021-05-19T08:37:29</EffectiveDate>
+							<EndDate>2299-12-31T00:00:00</EndDate>
+							<ProvAlternateIdSrcKey/>
+						</AlternateIdentifier>
+						<AlternateIdentifier>
+							<RecordStatusCode/>
+							<AlternateIdType>REG</AlternateIdType>
+							<AlternateId>489832</AlternateId>
+							<EffectiveDate>2021-05-19T08:37:29</EffectiveDate>
+							<EndDate>2299-12-31T00:00:00</EndDate>
+							<ProvAlternateIdSrcKey/>
+						</AlternateIdentifier>
+					</ProviderAlternateIdentifiers>
+					<ProviderType>
+						<Type>
+							<RecordStatusCode/>
+							<ProviderTypeCode>74</ProviderTypeCode>
+							<EffectiveDate>2021-05-19T08:37:29</EffectiveDate>
+							<EndDate>2299-12-31T00:00:00</EndDate>
+							<ProvTypeSrcKey/>
+						</Type>
+					</ProviderType>
+					<ProviderAffiliations/>
+					<OwnerRelationship/>
+					<ProviderManagedEmployees/>
+					<ProviderBusinessStatus/>
+					<ProviderTaxonomyClassification/>
+					<ProviderProgramAffiliations/>
+					<ProviderEFTEnrollment/>
+					<ProviderServices/>
+					<ProviderDocuments/>
+					<ProviderCHOP/>
+					<ProviderAttestations/>
+					<ProviderLanguage/>
+					<ProviderReviews/>
+					<ProviderServiceLocation/>
+				</ProviderInformation>
+			</Payload>
+		</SubmitPartialProvider>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>MCD-pnminthtssit</con:username><con:password>T5Ey#63vWx8!</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://Maximus.OHPNM.Services/PartialProviderManagement/SubmitPartialProvider"/><con:wsrmConfig version="1.2"/></con:call><con:call id="ff9d48cb-fb70-4aee-aacc-ef3cb1beb196" name="SubmitPartialProviderRequest2Doc"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/PartialProviderManagement.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns="http://mes.gov/partialprovidermanagement" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Header>
+		<wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+			<wsse:UsernameToken wsu:Id="UsernameToken-CA46AC940C04840BEC16310459416944">
+				<wsse:Username>MCD-pnminthtssit</wsse:Username>
+				<wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">T5Ey#63vWx8!</wsse:Password>
+				<wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">N9AS95WK93YB+OeOhZFEcQ==</wsse:Nonce>
+				<wsu:Created>2021-09-07T20:19:01.694Z</wsu:Created>
+			</wsse:UsernameToken>
+		</wsse:Security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<SubmitPartialProvider>
+			<MessageHeader>
+				<BusinessFlow>SubmitPartialProvider</BusinessFlow>
+				<StateCode>OH</StateCode>
+				<RequestorSystem>PNM</RequestorSystem>
+				<ModuleTransactionId>371330</ModuleTransactionId>
+				<SubscriberSystem>PCW</SubscriberSystem>
+				<AdditionalModuleTransactionId/>
+				<RequestTimestamp>2021-05-19T08:37:32</RequestTimestamp>
+			</MessageHeader>
+			<Payload>
+				<ProviderInformation>
+					<ProviderDemographics>
+						<RecordStatusCode/>
+						<ProviderId/>
+						<TaxId>652369856</TaxId>
+						<ProviderRoleCode/>
+						<NationalProviderIdentifier>1003150319</NationalProviderIdentifier>
+						<FirstName/>
+						<MiddleName/>
+						<LastName/>
+						<Prefix/>
+						<Suffix/>
+						<SSN/>
+						<Gender>N</Gender>
+						<EntityType>O</EntityType>
+						<ProviderName>COMFORCARE LLC</ProviderName>
+						<LegalProviderName>COMFORCARE LLC</LegalProviderName>
+						<ProviderBusinessName/>
+						<ProviderTaxName/>
+						<TeachingIndicator/>
+						<OwnershipCode/>
+						<PracticeTypeCode/>
+						<ProviderProfitStatusCode/>
+						<NewPatientIndicator>N</NewPatientIndicator>
+						<EnrollmentType/>
+						<EffectiveDate>2021-05-19T08:37:29</EffectiveDate>
+						<EndDate>2299-12-31T00:00:00</EndDate>
+						<DateOfBirth/>
+						<DateOfDeath/>
+						<Race/>
+						<MedicareInd/>
+						<PCPStatusCode/>
+						<PCPTermDate/>
+						<BirthCountry/>
+						<BirthCity/>
+						<BirthState/>
+						<PaymentTypeCode/>
+						<ProvRiskLevel/>
+						<ProvDirectorySearchIndicator/>
+						<ProvIHSAssoCode/>
+						<ProvDemographicsSrcKey/>
+					</ProviderDemographics>
+					<ProviderAddress/>
+					<ProviderContact/>
+					<ProviderApplication>
+						<Application>
+							<RecordStatusCode/>
+							<ApplicationId>549987</ApplicationId>
+							<ApplicationCreatedDate>2021-05-19T08:37:29</ApplicationCreatedDate>
+							<ApprovalDate/>
+							<StatePlanEnrollCode/>
+							<EnrollMethodCode/>
+							<ProvEnrollStatusCode/>
+							<EffectiveDate>2021-05-19T08:37:29</EffectiveDate>
+							<EndDate/>
+							<CountyCode/>
+							<NonMedicaidApplicationProviderType/>
+							<AdditionalApplicationId/>
+							<ApplicationType>Initial
+							</ApplicationType>
+							<ApplicationStatus>NOT PROCESSED</ApplicationStatus>
+							<ApplicationLegalStatus/>
+							<ApplicationFeeConfirmation/>
+							<SingleSignOnAssignedID>7535138570</SingleSignOnAssignedID>
+							<SingleSignOnSelectedID/>
+							<AdditionalUserID/>
+							<SingleSignOnRole/>
+							<EmailAddress>faizur.qa@gmail.com</EmailAddress>
+							<ProvApplicationSrcKey/>
+						</Application>
+					</ProviderApplication>
+					<ProviderOwnerships/>
+					<ProviderAlternateIdentifiers>
+						<AlternateIdentifier>
+							<RecordStatusCode/>
+							<AlternateIdType>NPI</AlternateIdType>
+							<AlternateId>1003150319</AlternateId>
+							<EffectiveDate>2021-05-19T08:37:29</EffectiveDate>
+							<EndDate>2299-12-31T00:00:00</EndDate>
+							<ProvAlternateIdSrcKey/>
+						</AlternateIdentifier>
+						<AlternateIdentifier>
+							<RecordStatusCode/>
+							<AlternateIdType>REG</AlternateIdType>
+							<AlternateId>489832</AlternateId>
+							<EffectiveDate>2021-05-19T08:37:29</EffectiveDate>
+							<EndDate>2299-12-31T00:00:00</EndDate>
+							<ProvAlternateIdSrcKey/>
+						</AlternateIdentifier>
+					</ProviderAlternateIdentifiers>
+					<ProviderType>
+						<Type>
+							<RecordStatusCode/>
+							<ProviderTypeCode>74</ProviderTypeCode>
+							<EffectiveDate>2021-05-19T08:37:29</EffectiveDate>
+							<EndDate>2299-12-31T00:00:00</EndDate>
+							<ProvTypeSrcKey/>
+						</Type>
+					</ProviderType>
+					<ProviderAffiliations/>
+					<OwnerRelationship/>
+					<ProviderManagedEmployees/>
+					<ProviderBusinessStatus/>
+					<ProviderTaxonomyClassification/>
+					<ProviderProgramAffiliations/>
+					<ProviderEFTEnrollment/>
+					<ProviderServices/>
+					<ProviderDocuments>
+						<Documents>
+							<DocName>test1.png</DocName>
+							<DocType>1027</DocType>
+							<DocExt>png</DocExt>
+							<DocDescription>/sites/doddprvqa/PROVAPP124089/Certification/PROV-APP-124089/11_Proof_of_a_download.png</DocDescription>
+							<ContentBase64binary>cm9oaXQ=</ContentBase64binary>
+						</Documents>
+					</ProviderDocuments>
+					<ProviderCHOP/>
+					<ProviderAttestations/>
+					<ProviderLanguage/>
+					<ProviderReviews/>
+					<ProviderServiceLocation/>
+				</ProviderInformation>
+			</Payload>
+		</SubmitPartialProvider>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>MCD-pnminthtssit</con:username><con:password>T5Ey#63vWx8!</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://Maximus.OHPNM.Services/PartialProviderManagement/SubmitPartialProvider"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="a1c1161f-0e3e-41c4-999c-acfb2a723dde" wsaVersion="NONE" name="AttachmentService" type="wsdl" bindingName="{http://Maximus.OHPNM.Services}usernameHttpsService" soapVersion="1_1" anonymous="optional" definition="https://webapi.ohpnm-testing.omes.maximus.com:10443/DocumentService/AttachmentService.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://webapi.ohpnm-testing.omes.maximus.com:10443/DocumentService/AttachmentService.svc?singleWsdl"><con:part><con:url>https://webapi.ohpnm-testing.omes.maximus.com:10443/DocumentService/AttachmentService.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="AttachmentService" targetNamespace="http://Maximus.OHPNM.Services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://Maximus.OHPNM.Services" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsp:Policy wsu:Id="usernameHttpsService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10/>
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy/>
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://Maximus.OHPNM.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="SendAttachment">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="MessageHeader" nillable="true" type="tns:SendAttachmentMessageHeader"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="Payload" nillable="true" type="tns:SendAttachmentPayLoad"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="SendAttachmentMessageHeader">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:InqMessageHeader">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="1" name="SITransactionKey" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="InqMessageHeader">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="BusinessFlow" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="1" maxOccurs="1" name="StateCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ModuleTransactionId" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="AdditionalModuleTransactionId" type="xs:string"/>
+          <xs:element minOccurs="1" maxOccurs="1" name="RequestorSystem" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="SubscriberSystem" type="xs:string"/>
+          <xs:element minOccurs="1" maxOccurs="1" name="RequestTimestamp" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendAttachmentPayLoad">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="AttachmentInfo" nillable="true" type="tns:SendAttachmentInformation"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendAttachmentInformation">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="SourceId" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AttachmentData" nillable="true" type="tns:SendAttachment"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendAttachment">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Identifiers" nillable="true" type="tns:SendAttachmentData"/>
+          <xs:element minOccurs="1" maxOccurs="1" name="DocumentType" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="1" maxOccurs="1" name="DocumentName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="1" maxOccurs="1" name="DocumentExtension" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="1" maxOccurs="1" name="AttachmentData64Binary" nillable="true" type="xs:base64Binary"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendAttachmentData">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="DocXrefType" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="1" maxOccurs="1" name="IndexId" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SendAttachmentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="SITransactionKey" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="ModuleTransactionId" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Response" type="tns:AttachmentResponse"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="AttachmentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="IndexId" type="xs:string"/>
+          <xs:element minOccurs="1" maxOccurs="1" name="ResponseCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="1" maxOccurs="1" name="ResponseType" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ResponseDetails" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendAttachmentFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SendAttachmentFault" nillable="true" type="tns:SendAttachmentFault"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="SendAttachmentRequestMsg">
+    <wsdl:part name="parameters" element="tns:SendAttachment"/>
+  </wsdl:message>
+  <wsdl:message name="SendAttachmentResponseMsg">
+    <wsdl:part name="parameters" element="tns:SendAttachmentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AttachmentService_SendAttachment_SendAttachmentFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:SendAttachmentFault"/>
+  </wsdl:message>
+  <wsdl:portType name="AttachmentService">
+    <wsdl:operation name="SendAttachment">
+      <wsdl:input wsaw:Action="SendAttachment" name="SendAttachmentRequestMsg" message="tns:SendAttachmentRequestMsg"/>
+      <wsdl:output wsaw:Action="http://Maximus.OHPNM.Services/AttachmentService/SendAttachmentResponse" name="SendAttachmentResponseMsg" message="tns:SendAttachmentResponseMsg"/>
+      <wsdl:fault wsaw:Action="http://Maximus.OHPNM.Services/AttachmentService/SendAttachmentSendAttachmentFaultFault" name="SendAttachmentFaultFault" message="tns:AttachmentService_SendAttachment_SendAttachmentFaultFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="usernameHttpsService" type="tns:AttachmentService">
+    <wsp:PolicyReference URI="#usernameHttpsService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SendAttachment">
+      <soap:operation soapAction="SendAttachment" style="document"/>
+      <wsdl:input name="SendAttachmentRequestMsg">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SendAttachmentResponseMsg">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SendAttachmentFaultFault">
+        <soap:fault use="literal" name="SendAttachmentFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AttachmentService">
+    <wsdl:port name="usernameHttpsService" binding="tns:usernameHttpsService">
+      <soap:address location="https://webapi.ohpnm-testing.omes.maximus.com:10443/DocumentService/AttachmentService.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/DocumentService/AttachmentService.svc</con:endpoint></con:endpoints><con:operation id="8fa7d1ed-080a-4096-869f-93252af34e0b" isOneWay="false" action="SendAttachment" name="SendAttachment" bindingOperationName="SendAttachment" type="Request-Response" outputName="SendAttachmentResponseMsg" inputName="SendAttachmentRequestMsg" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6932c0d0-7ac7-484e-9aa7-bba7d58e8e5d" name="SendAttachmentRequest1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/DocumentService/AttachmentService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:max="http://Maximus.OHPNM.Services" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soapenv:Header>\r
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">\r
+         <wsse:UsernameToken wsu:Id="UsernameToken-CA46AC940C04840BEC16310465062895">\r
+            <wsse:Username>MCD-pnminthtssit</wsse:Username>\r
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">T5Ey#63vWx8!</wsse:Password>\r
+            <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">MEeKTlK/pc0zexWxZETaMQ==</wsse:Nonce>\r
+            <wsu:Created>2021-09-07T20:28:26.288Z</wsu:Created>\r
+         </wsse:UsernameToken>\r
+      </wsse:Security>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <max:SendAttachment>\r
+         <max:MessageHeader>\r
+            <max:BusinessFlow>SendAttachment</max:BusinessFlow>\r
+            <max:StateCode>OH</max:StateCode>\r
+            <!--Optional:-->\r
+            <max:ModuleTransactionId>12345</max:ModuleTransactionId>\r
+            <!--Optional:-->\r
+            <max:RequestorSystem>MITS</max:RequestorSystem>\r
+            <!--Optional:-->\r
+            <max:RequestTimestamp>2020-11-13T10:35:33</max:RequestTimestamp>\r
+            <!--Optional:-->\r
+         </max:MessageHeader>\r
+         <max:Payload>\r
+            <max:AttachmentInfo>\r
+               <max:SourceId>13455588</max:SourceId>\r
+               <max:AttachmentData>\r
+                  <max:Identifiers>\r
+                     <max:DocXrefType>NPI</max:DocXrefType>\r
+                     <max:IndexId>1376037036</max:IndexId>\r
+                  </max:Identifiers>\r
+                  <max:DocumentType>251</max:DocumentType>\r
+                  <max:DocumentName>TestFileName</max:DocumentName>\r
+                  <max:DocumentExtension>txt</max:DocumentExtension>\r
+                  <max:AttachmentData64Binary>VGVzdCBmaWxlIENvbnRlbnRz</max:AttachmentData64Binary>\r
+               </max:AttachmentData>\r
+            </max:AttachmentInfo>\r
+         </max:Payload>\r
+      </max:SendAttachment>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>MCD-pnminthtssit</con:username><con:password>T5Ey#63vWx8!</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="SendAttachment"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="6e467674-0d4e-46af-b4c9-c667cd754dc7" wsaVersion="NONE" name="AcknowledgmentService" type="wsdl" bindingName="{http://Maximus.OHPNM.Services}usernameHttpsService" soapVersion="1_1" anonymous="optional" definition="https://webapi.ohpnm-testing.omes.maximus.com:10443/AcknowledgmentService.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://webapi.ohpnm-testing.omes.maximus.com:10443/AcknowledgmentService.svc?singleWsdl"><con:part><con:url>https://webapi.ohpnm-testing.omes.maximus.com:10443/AcknowledgmentService.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="AcknowledgmentService" targetNamespace="http://Maximus.OHPNM.Services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://Maximus.OHPNM.Services" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsp:Policy wsu:Id="usernameHttpsService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10/>
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy/>
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://Maximus.OHPNM.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="TargetVendorResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="RequestorSystem" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="RequestorSystemId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="TargetSystem" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="TargetSystemId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="SITransactionKey" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="ResponseCode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="ResponseType" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="ResponseMessage" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="TimeStamp" type="xs:dateTime"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="ModuleTransactionId" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="AdditionalModuleTransactionId" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EchoSoapRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="input" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EchoSoapRequestResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="EchoSoapRequestResult" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="TargetVendorResponse">
+    <wsdl:part name="parameters" element="tns:TargetVendorResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AcknowledgmentService_TargetVendorResponse_OutputMessage"/>
+  <wsdl:message name="AcknowledgmentService_EchoSoapRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:EchoSoapRequest"/>
+  </wsdl:message>
+  <wsdl:message name="AcknowledgmentService_EchoSoapRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EchoSoapRequestResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="AcknowledgmentService">
+    <wsdl:operation name="TargetVendorResponse">
+      <wsdl:input wsaw:Action="http://Maximus.OHPNM.Services/AcknowledgmentService/TargetVendorResponse" name="TargetVendorResponse" message="tns:TargetVendorResponse"/>
+      <wsdl:output wsaw:Action="http://Maximus.OHPNM.Services/AcknowledgmentService/TargetVendorResponseResponse" message="tns:AcknowledgmentService_TargetVendorResponse_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="EchoSoapRequest">
+      <wsdl:input wsaw:Action="http://Maximus.OHPNM.Services/AcknowledgmentService/EchoSoapRequest" message="tns:AcknowledgmentService_EchoSoapRequest_InputMessage"/>
+      <wsdl:output wsaw:Action="http://Maximus.OHPNM.Services/AcknowledgmentService/EchoSoapRequestResponse" message="tns:AcknowledgmentService_EchoSoapRequest_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="usernameHttpsService" type="tns:AcknowledgmentService">
+    <wsp:PolicyReference URI="#usernameHttpsService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="TargetVendorResponse">
+      <soap:operation soapAction="http://Maximus.OHPNM.Services/AcknowledgmentService/TargetVendorResponse" style="document"/>
+      <wsdl:input name="TargetVendorResponse">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EchoSoapRequest">
+      <soap:operation soapAction="http://Maximus.OHPNM.Services/AcknowledgmentService/EchoSoapRequest" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AcknowledgmentService">
+    <wsdl:port name="usernameHttpsService" binding="tns:usernameHttpsService">
+      <soap:address location="https://webapi.ohpnm-testing.omes.maximus.com:10443/AcknowledgmentService.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/AcknowledgmentService.svc</con:endpoint></con:endpoints><con:operation id="85ffa33e-c432-45f0-b170-aa2d3dd6d7ad" isOneWay="false" action="http://Maximus.OHPNM.Services/AcknowledgmentService/EchoSoapRequest" name="EchoSoapRequest" bindingOperationName="EchoSoapRequest" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation id="067e8aa8-a011-4ed2-be9d-5b84083330c8" isOneWay="false" action="http://Maximus.OHPNM.Services/AcknowledgmentService/TargetVendorResponse" name="TargetVendorResponse" bindingOperationName="TargetVendorResponse" type="Request-Response" inputName="TargetVendorResponse" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="110bbd4f-3c38-4440-8704-292d29cb0292" name="AcknowledgmentServiceRequest1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/AcknowledgmentService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:max="http://Maximus.OHPNM.Services" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soapenv:Header>\r
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">\r
+         <wsse:UsernameToken wsu:Id="UsernameToken-CA46AC940C04840BEC16310465489416">\r
+            <wsse:Username>MCD-pnminthtssit</wsse:Username>\r
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">T5Ey#63vWx8!</wsse:Password>\r
+            <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">82nqUd6BLhWw+vwVGuTRZA==</wsse:Nonce>\r
+            <wsu:Created>2021-09-07T20:29:08.941Z</wsu:Created>\r
+         </wsse:UsernameToken>\r
+      </wsse:Security>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <max:TargetVendorResponse>\r
+         <max:RequestorSystem>MITS</max:RequestorSystem>\r
+         <max:RequestorSystemId>MITS</max:RequestorSystemId>\r
+         <max:TargetSystem>PNM</max:TargetSystem>\r
+         <max:TargetSystemId>PNM</max:TargetSystemId>\r
+         <max:SITransactionKey>beca238660a5068d00af4450</max:SITransactionKey>\r
+         <max:ResponseCode>1001</max:ResponseCode>\r
+         <max:ResponseType>Success</max:ResponseType>\r
+         <max:ResponseMessage>Success</max:ResponseMessage>\r
+         <max:TimeStamp>2021-09-07T20:29:12.685Z</max:TimeStamp>\r
+         <!--Optional:-->\r
+         <max:ModuleTransactionId>371330</max:ModuleTransactionId>\r
+         <!--Optional:-->\r
+         <max:AdditionalModuleTransactionId>?</max:AdditionalModuleTransactionId>\r
+      </max:TargetVendorResponse>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>MCD-pnminthtssit</con:username><con:password>T5Ey#63vWx8!</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://Maximus.OHPNM.Services/AcknowledgmentService/TargetVendorResponse"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="4c1d6724-7ee9-4cb7-9762-2b1be4d44652" wsaVersion="NONE" name="IncidentManagementService" type="wsdl" bindingName="{http://Maximus.OHPNM.Services}usernameHttpsService" soapVersion="1_1" anonymous="optional" definition="https://webapi.ohpnm-testing.omes.maximus.com:10443/IncidentManagementService.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://webapi.ohpnm-testing.omes.maximus.com:10443/IncidentManagementService.svc?singleWsdl"><con:part><con:url>https://webapi.ohpnm-testing.omes.maximus.com:10443/IncidentManagementService.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="IncidentManagementService" targetNamespace="http://Maximus.OHPNM.Services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://Maximus.OHPNM.Services" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsp:Policy wsu:Id="usernameHttpsService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10/>
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy/>
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/incidentmanagement" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mes.gov/incidentmanagement">
+      <xs:element name="SendProviderIncidentRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="MessageHeader">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="1" maxOccurs="1" name="BusinessFlow">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="SendProviderIncident"/>
+                        <xs:enumeration value="UpdateProviderIncidentStatus"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="1" maxOccurs="1" name="StateCode" nillable="true" type="xs:string"/>
+                  <xs:element minOccurs="1" maxOccurs="1" name="RequestorSystem">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="PNM"/>
+                        <xs:enumeration value="IMS"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="1" name="SubscriberSystem" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="ModuleTransactionId" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="AdditionalModuleTransactionId" type="xs:string"/>
+                  <xs:element minOccurs="1" maxOccurs="1" name="RequestTimestamp" nillable="true" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="SITransactionKey" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="1" name="Payload">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="1" name="SendProviderIncidentInfo" type="tns:SendProviderIncidentRequest"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="SendProviderIncidentRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="MedicaidProviderID" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderName" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="IMSCaseNumber" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="CaseSubmissionDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="NODReferralDate" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ReasonForNOD" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="1" name="ReferralSentBy" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="IncidentDetails">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="1" name="IncidentCategory" type="xs:string"/>
+                <xs:element minOccurs="0" maxOccurs="1" name="IncidentSubcategory" type="xs:string"/>
+                <xs:element minOccurs="0" maxOccurs="1" name="IncidentType" type="xs:string"/>
+                <xs:element minOccurs="0" maxOccurs="1" name="IncidentID" type="xs:string"/>
+                <xs:element minOccurs="0" maxOccurs="1" name="Substantiated"/>
+                <xs:element minOccurs="0" maxOccurs="1" name="IMSAssociateID" type="xs:string"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SendProviderIncidentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="SITransactionKey" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="ResponseType" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="sendProviderIncidentRequest">
+    <wsdl:part name="parameters" element="q1:SendProviderIncidentRequest" xmlns:q1="http://mes.gov/incidentmanagement"/>
+  </wsdl:message>
+  <wsdl:message name="sendProviderIncidentResponse">
+    <wsdl:part name="parameters" element="q2:SendProviderIncidentResponse" xmlns:q2="http://mes.gov/incidentmanagement"/>
+  </wsdl:message>
+  <wsdl:portType name="IncidentManagementService">
+    <wsdl:operation name="SendProviderIncident">
+      <wsdl:input wsaw:Action="http://Maximus.OHPNM.Services/IncidentManagementService/SendProviderIncident" name="sendProviderIncidentRequest" message="tns:sendProviderIncidentRequest"/>
+      <wsdl:output wsaw:Action="http://Maximus.OHPNM.Services/IncidentManagementService/SendProviderIncidentResponse" name="sendProviderIncidentResponse" message="tns:sendProviderIncidentResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="usernameHttpsService" type="tns:IncidentManagementService">
+    <wsp:PolicyReference URI="#usernameHttpsService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SendProviderIncident">
+      <soap:operation soapAction="http://Maximus.OHPNM.Services/IncidentManagementService/SendProviderIncident" style="document"/>
+      <wsdl:input name="sendProviderIncidentRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendProviderIncidentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IncidentManagementService">
+    <wsdl:port name="usernameHttpsService" binding="tns:usernameHttpsService">
+      <soap:address location="https://webapi.ohpnm-testing.omes.maximus.com:10443/IncidentManagementService.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/IncidentManagementService.svc</con:endpoint></con:endpoints><con:operation id="a904baea-826d-4226-95ca-c154bccc5e8f" isOneWay="false" action="http://Maximus.OHPNM.Services/IncidentManagementService/SendProviderIncident" name="SendProviderIncident" bindingOperationName="SendProviderIncident" type="Request-Response" outputName="sendProviderIncidentResponse" inputName="sendProviderIncidentRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4e75a3d3-460f-4cb8-b198-39794943765b" name="SendProviderIncidentRequest1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/IncidentManagementService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:inc="http://mes.gov/incidentmanagement" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soapenv:Header>\r
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">\r
+         <wsse:UsernameToken wsu:Id="UsernameToken-CA46AC940C04840BEC16310476016898">\r
+            <wsse:Username>MCD-pnminthtssit</wsse:Username>\r
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">T5Ey#63vWx8!</wsse:Password>\r
+            <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">seQ61ixPboHg+xFQYPKMBA==</wsse:Nonce>\r
+            <wsu:Created>2021-09-07T20:46:41.689Z</wsu:Created>\r
+         </wsse:UsernameToken>\r
+      </wsse:Security>\r
+   </soapenv:Header>\r
+     <soapenv:Body>
+      <inc:SendProviderIncidentRequest>
+         <!--Optional:-->
+         <inc:MessageHeader>
+            <inc:BusinessFlow>SendProviderIncident</inc:BusinessFlow>
+            <inc:StateCode>OH</inc:StateCode>
+            <inc:RequestorSystem>IMS</inc:RequestorSystem>
+            <!--Optional:-->
+            <inc:SubscriberSystem>PNM</inc:SubscriberSystem>
+            <!--Optional:-->
+            <inc:ModuleTransactionId>99663355</inc:ModuleTransactionId>
+            <!--Optional:-->
+            
+            <inc:RequestTimestamp>2020-12-07T00:00:00</inc:RequestTimestamp>
+            <!--Optional:-->
+            <inc:SITransactionKey>beca23865fc923100a23fe71</inc:SITransactionKey>
+         </inc:MessageHeader>
+         <!--Optional:-->
+         <inc:Payload>
+            <!--Optional:-->
+            <inc:SendProviderIncidentInfo>
+               <!--Optional:-->
+               <inc:MedicaidProviderID>0100591</inc:MedicaidProviderID>
+               <!--Optional:-->
+               <inc:ProviderName>HEALTHNET INC</inc:ProviderName>
+               <!--Optional:-->
+               <inc:IMSCaseNumber>00014439</inc:IMSCaseNumber>
+               <!--Optional:-->
+               <inc:CaseSubmissionDate>2020-09-09</inc:CaseSubmissionDate>
+               <!--Optional:-->
+               <inc:NODReferralDate>2020-12-07</inc:NODReferralDate>
+               <!--Optional:-->
+               <inc:ReasonForNOD>siv atesting</inc:ReasonForNOD>
+               <!--Optional:-->
+               <inc:ReferralSentBy>005r0000003swIfAAI</inc:ReferralSentBy>
+               <!--Zero or more repetitions:-->
+               <inc:IncidentDetails>
+                  <!--Optional:-->
+                  <inc:IncidentCategory>Abuse</inc:IncidentCategory>
+                  <!--Optional:-->
+                  <inc:IncidentSubcategory>Physical abuse</inc:IncidentSubcategory>
+                  <!--Optional:-->
+                  <inc:IncidentType>Critical</inc:IncidentType>
+                  <!--Optional:-->
+                  <inc:IncidentID>I19252</inc:IncidentID>
+                  <!--Optional:-->
+                  <inc:Substantiated>Yes</inc:Substantiated>
+                  <!--Optional:-->
+                  <inc:IMSAssociateID>a1gr0000002Zn7PAAS</inc:IMSAssociateID>
+               </inc:IncidentDetails>
+            </inc:SendProviderIncidentInfo>
+         </inc:Payload>
+      </inc:SendProviderIncidentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>MCD-pnminthtssit</con:username><con:password>T5Ey#63vWx8!</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://Maximus.OHPNM.Services/IncidentManagementService/SendProviderIncident"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="cfcac512-e13e-46a9-af24-a4e4e3e2900d" wsaVersion="NONE" name="UserInfo" type="wsdl" bindingName="{http://Maximus.OHPNM.Services}usernameHttpsService" soapVersion="1_1" anonymous="optional" definition="https://webapi.ohpnm-testing.omes.maximus.com:10443/UserInfo.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://webapi.ohpnm-testing.omes.maximus.com:10443/UserInfo.svc?singleWsdl"><con:part><con:url>https://webapi.ohpnm-testing.omes.maximus.com:10443/UserInfo.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="UserInfo" targetNamespace="http://Maximus.OHPNM.Services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://Maximus.OHPNM.Services" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsp:Policy wsu:Id="usernameHttpsService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10/>
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy/>
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://Maximus.OHPNM.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models"/>
+      <xs:element name="GetUserInfoTKN">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="AuthToken" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetUserInfoTKNResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetUserInfoTKNResult" nillable="true" type="q1:UserDetailModel" xmlns:q1="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetUserInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="EncryptedPassword" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetUserInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetUserInfoResult" nillable="true" type="q2:UserDetailModel" xmlns:q2="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetUserAgentProvAssnDataTKN">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="AuthToken" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetUserAgentProvAssnDataTKNResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetUserAgentProvAssnDataTKNResult" nillable="true" type="q3:UserAgentProvAssnModel" xmlns:q3="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetUserAgentProvAssnData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="WebRoleNameSearch" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="FilterRole" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetUserAgentProvAssnDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetUserAgentProvAssnDataResult" nillable="true" type="q4:UserAgentProvAssnModel" xmlns:q4="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EchoSoapRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="input" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EchoSoapRequestResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="EchoSoapRequestResult" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models">
+      <xs:complexType name="UserDetailModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountExpires" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BadPasswordCount" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BadPasswordTime" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="EmployeeID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ErrorInfo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="GivenName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="LastLogonTimestamp" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="LogonCount" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PwdLastSet" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="SN" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TelephoneNumber" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="WhenChanged" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="WhenCreated" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UserDetailModel" nillable="true" type="tns:UserDetailModel"/>
+      <xs:complexType name="UserAgentProvAssnModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Provider" nillable="true" type="tns:ArrayOfUserAgentProvAssnProviderModel"/>
+          <xs:element minOccurs="0" name="Result" nillable="true" type="tns:UserAgentProvAssnResultModel"/>
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:UserAgentProvAssnUserModel"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UserAgentProvAssnModel" nillable="true" type="tns:UserAgentProvAssnModel"/>
+      <xs:complexType name="ArrayOfUserAgentProvAssnProviderModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="UserAgentProvAssnProviderModel" nillable="true" type="tns:UserAgentProvAssnProviderModel"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfUserAgentProvAssnProviderModel" nillable="true" type="tns:ArrayOfUserAgentProvAssnProviderModel"/>
+      <xs:complexType name="UserAgentProvAssnProviderModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PracticeMCDID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PracticeMITSAdministrator" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PracticeNPI" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProvActiveIndicator" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProvContactName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProvCurrentcontractEndDate" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProvDateLastLogon" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProvEmailAddress" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProvPhoneNumber" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProvProviderID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProvRolesAssignedToAgent" nillable="true" type="tns:ArrayOfUserAgentProvRolesModel"/>
+          <xs:element minOccurs="0" name="ProvUserName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProviderMCDID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProviderNPI" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="RenderingProviderPracticeAddress" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="RenderingProviderPracticeCity" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="RenderingProviderPracticeContactName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="RenderingProviderPracticeEmail" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="RenderingProviderPracticeFax" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="RenderingProviderPracticeName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="RenderingProviderPracticeState" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="RenderingProviderPracticeTelephone" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="RenderingProviderPracticeZipCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="SAKDefaultProvider" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UserAgentProvAssnProviderModel" nillable="true" type="tns:UserAgentProvAssnProviderModel"/>
+      <xs:complexType name="ArrayOfUserAgentProvRolesModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="UserAgentProvRolesModel" nillable="true" type="tns:UserAgentProvRolesModel"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfUserAgentProvRolesModel" nillable="true" type="tns:ArrayOfUserAgentProvRolesModel"/>
+      <xs:complexType name="UserAgentProvRolesModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="WebRoleCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="WebRoleDescription" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="WebRoleName" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UserAgentProvRolesModel" nillable="true" type="tns:UserAgentProvRolesModel"/>
+      <xs:complexType name="UserAgentProvAssnResultModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReturnStatus" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ReturnStatusCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ReturnStatusDescription" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UserAgentProvAssnResultModel" nillable="true" type="tns:UserAgentProvAssnResultModel"/>
+      <xs:complexType name="UserAgentProvAssnUserModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActiveIndicator" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CurrentContractEndDate" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DateLastLogon" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="SAKWebUser" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserRoles" nillable="true" type="tns:ArrayOfUserRolesModel"/>
+          <xs:element minOccurs="0" name="UserTypeDesc" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UserAgentProvAssnUserModel" nillable="true" type="tns:UserAgentProvAssnUserModel"/>
+      <xs:complexType name="ArrayOfUserRolesModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="UserRolesModel" nillable="true" type="tns:UserRolesModel"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfUserRolesModel" nillable="true" type="tns:ArrayOfUserRolesModel"/>
+      <xs:complexType name="UserRolesModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RoleDescription" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UserRolesModel" nillable="true" type="tns:UserRolesModel"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="UserInfo_GetUserInfoTKN_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoTKN"/>
+  </wsdl:message>
+  <wsdl:message name="UserInfo_GetUserInfoTKN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoTKNResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UserInfo_GetUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfo"/>
+  </wsdl:message>
+  <wsdl:message name="UserInfo_GetUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UserInfo_GetUserAgentProvAssnDataTKN_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAgentProvAssnDataTKN"/>
+  </wsdl:message>
+  <wsdl:message name="UserInfo_GetUserAgentProvAssnDataTKN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAgentProvAssnDataTKNResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UserInfo_GetUserAgentProvAssnData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAgentProvAssnData"/>
+  </wsdl:message>
+  <wsdl:message name="UserInfo_GetUserAgentProvAssnData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAgentProvAssnDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UserInfo_EchoSoapRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:EchoSoapRequest"/>
+  </wsdl:message>
+  <wsdl:message name="UserInfo_EchoSoapRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EchoSoapRequestResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="UserInfo">
+    <wsdl:operation name="GetUserInfoTKN">
+      <wsdl:input wsaw:Action="http://Maximus.OHPNM.Services/UserInfo/GetUserInfoTKN" message="tns:UserInfo_GetUserInfoTKN_InputMessage"/>
+      <wsdl:output wsaw:Action="http://Maximus.OHPNM.Services/UserInfo/GetUserInfoTKNResponse" message="tns:UserInfo_GetUserInfoTKN_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input wsaw:Action="http://Maximus.OHPNM.Services/UserInfo/GetUserInfo" message="tns:UserInfo_GetUserInfo_InputMessage"/>
+      <wsdl:output wsaw:Action="http://Maximus.OHPNM.Services/UserInfo/GetUserInfoResponse" message="tns:UserInfo_GetUserInfo_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAgentProvAssnDataTKN">
+      <wsdl:input wsaw:Action="http://Maximus.OHPNM.Services/UserInfo/GetUserAgentProvAssnDataTKN" message="tns:UserInfo_GetUserAgentProvAssnDataTKN_InputMessage"/>
+      <wsdl:output wsaw:Action="http://Maximus.OHPNM.Services/UserInfo/GetUserAgentProvAssnDataTKNResponse" message="tns:UserInfo_GetUserAgentProvAssnDataTKN_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAgentProvAssnData">
+      <wsdl:input wsaw:Action="http://Maximus.OHPNM.Services/UserInfo/GetUserAgentProvAssnData" message="tns:UserInfo_GetUserAgentProvAssnData_InputMessage"/>
+      <wsdl:output wsaw:Action="http://Maximus.OHPNM.Services/UserInfo/GetUserAgentProvAssnDataResponse" message="tns:UserInfo_GetUserAgentProvAssnData_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="EchoSoapRequest">
+      <wsdl:input wsaw:Action="http://Maximus.OHPNM.Services/UserInfo/EchoSoapRequest" message="tns:UserInfo_EchoSoapRequest_InputMessage"/>
+      <wsdl:output wsaw:Action="http://Maximus.OHPNM.Services/UserInfo/EchoSoapRequestResponse" message="tns:UserInfo_EchoSoapRequest_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="usernameHttpsService" type="tns:UserInfo">
+    <wsp:PolicyReference URI="#usernameHttpsService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetUserInfoTKN">
+      <soap:operation soapAction="http://Maximus.OHPNM.Services/UserInfo/GetUserInfoTKN" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="http://Maximus.OHPNM.Services/UserInfo/GetUserInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAgentProvAssnDataTKN">
+      <soap:operation soapAction="http://Maximus.OHPNM.Services/UserInfo/GetUserAgentProvAssnDataTKN" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAgentProvAssnData">
+      <soap:operation soapAction="http://Maximus.OHPNM.Services/UserInfo/GetUserAgentProvAssnData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EchoSoapRequest">
+      <soap:operation soapAction="http://Maximus.OHPNM.Services/UserInfo/EchoSoapRequest" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserInfo">
+    <wsdl:port name="usernameHttpsService" binding="tns:usernameHttpsService">
+      <soap:address location="https://webapi.ohpnm-testing.omes.maximus.com:10443/UserInfo.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/UserInfo.svc</con:endpoint></con:endpoints><con:operation id="febddb58-d5b6-47d2-ba68-15cf7e471e72" isOneWay="false" action="http://Maximus.OHPNM.Services/UserInfo/EchoSoapRequest" name="EchoSoapRequest" bindingOperationName="EchoSoapRequest" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation id="3a91f888-e33c-4cb0-81d5-85d2b6af451f" isOneWay="false" action="http://Maximus.OHPNM.Services/UserInfo/GetUserAgentProvAssnData" name="GetUserAgentProvAssnData" bindingOperationName="GetUserAgentProvAssnData" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8ae1649b-92cc-4620-9033-5ef6384edd2f" name="GetUserAgentProvAssnDataRequest1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/UserInfo.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:max="http://Maximus.OHPNM.Services" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soapenv:Header>\r
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">\r
+         <wsse:UsernameToken wsu:Id="UsernameToken-CA46AC940C04840BEC16310482411819">\r
+            <wsse:Username>MCD-pnminthtssit</wsse:Username>\r
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">T5Ey#63vWx8!</wsse:Password>\r
+            <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">5h08j/SIyMQrLJF0xQ5s/A==</wsse:Nonce>\r
+            <wsu:Created>2021-09-07T20:57:21.181Z</wsu:Created>\r
+         </wsse:UsernameToken>\r
+      </wsse:Security>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <max:GetUserAgentProvAssnData>\r
+         <!--Optional:-->\r
+         <max:UserName>1JEANNIE</max:UserName>\r
+         <!--Optional:-->\r
+         <max:WebRoleNameSearch/>\r
+         <!--Optional:-->\r
+         <max:FilterRole/>\r
+      </max:GetUserAgentProvAssnData>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>MCD-pnminthtssit</con:username><con:password>T5Ey#63vWx8!</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://Maximus.OHPNM.Services/UserInfo/GetUserAgentProvAssnData"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="d39f5546-be5f-465d-b936-faab8eab5fe7" isOneWay="false" action="http://Maximus.OHPNM.Services/UserInfo/GetUserAgentProvAssnDataTKN" name="GetUserAgentProvAssnDataTKN" bindingOperationName="GetUserAgentProvAssnDataTKN" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5c2d0e0c-921f-4487-8303-7d1de3729c8b" name="GetUserAgentProvAssnDataTKNRequest1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/UserInfo.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:max="http://Maximus.OHPNM.Services" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soapenv:Header>\r
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">\r
+         <wsse:UsernameToken wsu:Id="UsernameToken-CA46AC940C04840BEC163104914763011">\r
+            <wsse:Username>MCD-pnminthtssit</wsse:Username>\r
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">T5Ey#63vWx8!</wsse:Password>\r
+            <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">udwnoQKWsesQa4FfxpCYRg==</wsse:Nonce>\r
+            <wsu:Created>2021-09-07T21:12:27.630Z</wsu:Created>\r
+         </wsse:UsernameToken>\r
+      </wsse:Security>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <max:GetUserAgentProvAssnDataTKN>\r
+         <!--Optional:-->\r
+         <max:AuthToken>eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJLcmlzdGVuRVMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoiRkFFMTYwNDYtREMzMC00REJCLThEOUQtRkNERUEwRkVFRTY4IiwibmJmIjoxNjMxMDQ4NDUwLCJleHAiOjE2MzExMzQ4NTAsImlhdCI6MTYzMTA0ODQ1MCwiaXNzIjoiTWF4aW11cyIsImF1ZCI6IlBETVMifQ.i0GN_IL0xeROBPrFXmTTVgKnbGBl1Bikh7w3pOJ6cris_3kdQ4e6N0de-zxowpBULMWFeAS4P7Geg0DE-woyEQ</max:AuthToken>\r
+      </max:GetUserAgentProvAssnDataTKN>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>MCD-pnminthtssit</con:username><con:password>T5Ey#63vWx8!</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://Maximus.OHPNM.Services/UserInfo/GetUserAgentProvAssnDataTKN"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="af70e7cb-0ffe-445c-8367-3dd182897d6c" isOneWay="false" action="http://Maximus.OHPNM.Services/UserInfo/GetUserInfo" name="GetUserInfo" bindingOperationName="GetUserInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7ab411ca-71dd-4cb4-924d-a6cd8e683480" name="GetUserInfoRequest1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/UserInfo.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:max="http://Maximus.OHPNM.Services" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soapenv:Header>\r
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">\r
+         <wsse:UsernameToken wsu:Id="UsernameToken-CA46AC940C04840BEC16310474069807">\r
+            <wsse:Username>MCD-pnminthtssit</wsse:Username>\r
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">T5Ey#63vWx8!</wsse:Password>\r
+            <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">x8JhUeDPOSr7Td5Wda7OTw==</wsse:Nonce>\r
+            <wsu:Created>2021-09-07T20:43:26.980Z</wsu:Created>\r
+         </wsse:UsernameToken>\r
+      </wsse:Security>\r
+   </soapenv:Header>\r
+<soapenv:Body>
+      <max:GetUserInfo>
+         <!--Optional:-->
+         <max:UserName>testRN12345</max:UserName>
+         <!--Optional:-->
+         <max:EncryptedPassword>QWJjZGUxMiE=</max:EncryptedPassword>
+      </max:GetUserInfo>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>MCD-pnminthtssit</con:username><con:password>T5Ey#63vWx8!</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://Maximus.OHPNM.Services/UserInfo/GetUserInfo"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="69d1eac5-65fa-4c6d-adf3-a2e9cf6a9f24" isOneWay="false" action="http://Maximus.OHPNM.Services/UserInfo/GetUserInfoTKN" name="GetUserInfoTKN" bindingOperationName="GetUserInfoTKN" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1b98d036-582a-4fcd-8c12-afff47fbe363" name="GetUserInfoTKNRequest1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webapi.ohpnm-testing.omes.maximus.com:10443/UserInfo.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:max="http://Maximus.OHPNM.Services" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header>
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-CA46AC940C04840BEC163104861027610">
+            <wsse:Username>MCD-pnminthtssit</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">T5Ey#63vWx8!</wsse:Password>
+            <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">t+EV7fYQXjv7ONVmJkKg/A==</wsse:Nonce>
+            <wsu:Created>2021-09-07T21:03:30.276Z</wsu:Created>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <max:GetUserInfoTKN>
+         <!--Optional:-->
+         <max:AuthToken>eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJLcmlzdGVuRVMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoiRkFFMTYwNDYtREMzMC00REJCLThEOUQtRkNERUEwRkVFRTY4IiwibmJmIjoxNjMxMDQ4NDUwLCJleHAiOjE2MzExMzQ4NTAsImlhdCI6MTYzMTA0ODQ1MCwiaXNzIjoiTWF4aW11cyIsImF1ZCI6IlBETVMifQ.i0GN_IL0xeROBPrFXmTTVgKnbGBl1Bikh7w3pOJ6cris_3kdQ4e6N0de-zxowpBULMWFeAS4P7Geg0DE-woyEQ</max:AuthToken>
+      </max:GetUserInfoTKN>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>MCD-pnminthtssit</con:username><con:password>T5Ey#63vWx8!</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://Maximus.OHPNM.Services/UserInfo/GetUserInfoTKN"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:jmsConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest"><con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to SoapUI Pro tests
+
+// If hardcoding the token, uncomment and change line 5
+// token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script></con:eventHandlers><con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep"><con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new java.io.FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new java.io.PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script></con:eventHandlers><con:authRepository/><con:tags/></con:soapui-project>

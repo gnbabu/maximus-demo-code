@@ -1,0 +1,89 @@
+
+IF OBJECT_ID('dbo.SRC_ProviderLicenseTrkLog', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderLicenseTrkLog 
+ CREATE SYNONYM SRC_ProviderLicenseTrkLog FOR [DC_PDMS_REFRESH_04022017].[dbo].[PLICNSTB_TRK_LOG];
+
+
+IF OBJECT_ID('dbo.SRC_EnrollmentTrkLog', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_EnrollmentTrkLog 
+ CREATE SYNONYM SRC_EnrollmentTrkLog FOR [DC_PDMS_REFRESH_04022017].[dbo].[PENROLTB_TRK_LOG];
+
+
+IF OBJECT_ID('dbo.SRC_ProviderAddressTrkLog', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderAddressTrkLog 
+ CREATE SYNONYM SRC_ProviderAddressTrkLog FOR [DC_PDMS_REFRESH_04022017].[dbo].[PADDRSTB_TRK_LOG];
+
+
+
+IF OBJECT_ID('dbo.SRC_ProviderUpdt', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderUpdt;
+ CREATE SYNONYM SRC_ProviderUpdt FOR [DC_PDMS_REFRESH_04022017].[dbo].[DT_PROVDRTB_STG];
+
+
+IF OBJECT_ID('dbo.SRC_ProviderLicenseUpdt', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderLicenseUpdt;
+ CREATE SYNONYM SRC_ProviderLicenseUpdt FOR [DC_PDMS_REFRESH_04022017].[dbo].[DT_PLICNSTB_STG];
+
+IF OBJECT_ID('dbo.SRC_ProviderLicenseUpdtExcpt', 'SN') IS NOT NULL
+   DROP SYNONYM SRC_ProviderLicenseUpdtExcpt 
+ CREATE SYNONYM SRC_ProviderLicenseUpdtExcpt FOR [DC_PDMS_REFRESH_04022017].[dbo].[PLICNSTB_EXCPT];
+
+
+IF OBJECT_ID('dbo.SRC_ProviderAddressUpdt', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderAddressUpdt;
+ CREATE SYNONYM SRC_ProviderAddressUpdt FOR [DC_PDMS_REFRESH_04022017].[dbo].[DT_PADDRSTB_STG];
+
+
+IF OBJECT_ID('dbo.SRC_ProviderAddressUpdtExcpt', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderAddressUpdtExcpt;
+ CREATE SYNONYM SRC_ProviderAddressUpdtExcpt FOR [DC_PDMS_REFRESH_04022017].[dbo].[PADDRSTB_EXCPT];
+
+ 
+IF OBJECT_ID('dbo.SRC_EnrollmentUpdt', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_EnrollmentUpdt;
+ CREATE SYNONYM SRC_EnrollmentUpdt FOR [DC_PDMS_REFRESH_04022017].[dbo].[DT_PENROLTB_STG];
+
+ 
+IF OBJECT_ID('dbo.SRC_EnrollmentUpdtExcpt', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_EnrollmentUpdtExcpt;
+ CREATE SYNONYM SRC_EnrollmentUpdtExcpt FOR [DC_PDMS_REFRESH_04022017].[dbo].[PENROLTB_EXCPT];
+
+IF OBJECT_ID('dbo.SRC_ProviderTaxIdUpdt', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderTaxIdUpdt;
+ CREATE SYNONYM SRC_ProviderTaxIdUpdt FOR [DC_PDMS_REFRESH_04022017].[dbo].[DT_PTAXIDTB_STG];
+
+ 
+IF OBJECT_ID('dbo.SRC_ProviderTaxIdUpdtExcpt', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderTaxIdUpdtExcpt;
+ CREATE SYNONYM SRC_ProviderTaxIdUpdtExcpt FOR [DC_PDMS_REFRESH_04022017].[dbo].[PTAXIDTB_EXCPT];
+
+IF OBJECT_ID('dbo.SRC_ProviderTaxIdTrkLog', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderTaxIdTrkLog;
+ CREATE SYNONYM SRC_ProviderTaxIdTrkLog FOR [DC_PDMS_REFRESH_04022017].[dbo].[PTAXIDTB_TRK_LOG];
+
+
+IF OBJECT_ID('dbo.SRC_ProviderSpecialtyUpdt', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderSpecialtyUpdt;
+ CREATE SYNONYM SRC_ProviderSpecialtyUpdt FOR [DC_PDMS_REFRESH_04022017].[dbo].[DT_PSPECLTB_STG];
+
+IF OBJECT_ID('dbo.SRC_ProviderSpecialtyUpdtExcpt', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderSpecialtyUpdtExcpt;
+ CREATE SYNONYM SRC_ProviderSpecialtyUpdtExcpt FOR [DC_PDMS_REFRESH_04022017].[dbo].[PSPECLTB_EXCPT];
+
+IF OBJECT_ID('dbo.SRC_ProviderSpecialtyTrkLog', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderSpecialtyTrkLog;
+ CREATE SYNONYM SRC_ProviderSpecialtyTrkLog FOR [DC_PDMS_REFRESH_04022017].[dbo].[PSPECLTB_TRK_LOG];
+
+
+IF OBJECT_ID('dbo.SRC_ProviderTaxonomyUpdt', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderTaxonomyUpdt;
+ CREATE SYNONYM SRC_ProviderTaxonomyUpdt FOR [DC_PDMS_REFRESH_04022017].[dbo].[DT_PTAXONTB_STG];
+
+ 
+IF OBJECT_ID('dbo.SRC_ProviderTaxonomyUpdtExcpt', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderTaxonomyUpdtExcpt;
+ CREATE SYNONYM SRC_ProviderTaxonomyUpdtExcpt FOR [DC_PDMS_REFRESH_04022017].[dbo].[PTAXONTB_EXCPT];
+
+IF OBJECT_ID('dbo.SRC_ProviderTaxonomyTrkLog', 'SN') IS NOT NULL
+ DROP SYNONYM SRC_ProviderTaxonomyTrkLog;
+ CREATE SYNONYM SRC_ProviderTaxonomyTrkLog FOR [DC_PDMS_REFRESH_04022017].[dbo].[PTAXONTB_TRK_LOG];

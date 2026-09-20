@@ -1,0 +1,76 @@
+
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+
+<br />
+<p><b>Subject:</b>  [[LEGAL_NAME]] Letter</p>
+<p>
+Dear:
+</p>
+<p>
+This letter is to inform you that the Ohio Department of Medicaid (ODM) <b><u>cannot</u></b> accept the enclosed FBI criminal background check(s) because the report(s) did not come directly from the Bureau of Criminal Identification and Investigation (BCI&I), London, Ohio.  Effective with enactment of House Bill 119 on October 01, 2007, ODM can only accept criminal background check reports <b>if they are sent directly to ODM from BCI&I.</b>  As stated in our initial notification of the fingerprint-based requirement letter, ODM can only accept criminal background check(s) <b>that are mailed directly to ODM <u>from</u> BCI&I. Additionally, only current reports will be accepted.</b></p>
+<p>In order to comply with the fingerprint-based criminal background check requirement, you must obtain a new background check and have the results sent <u>directly</u> to ODM from BCI&I <b>or</b> write to BCI&I at the following address to request and pay for an updated “re-verification” of your recent background check:</p>
+<div style="text-align:center">
+<p>Ohio Bureau of Criminal Identification and Investigation</br>
+P.O. Box 365</br>
+London, Ohio 43140</br>
+877-224-0043 or 740-845-2000</br>
+</div>
+<p>To request a (“re-verification”) of the fingerprints BCI&I has on file, <u><b>mail a request to the above address</b></u>. Include your name, address, telephone number, social security number, and a money order or certified check for $8 made payable to “Treasurer – State of Ohio”. Personal checks cannot be accepted. Request that the Ohio Bureau of Criminal Identification and Investigation send your criminal background check results directly to our address:</p>
+<div style="text-align:center">
+<p>Ohio Department of Medicaid</br>
+P.O. Box 183017</br>
+Columbus, Ohio 43218-3017</br>
+</div>
+<p>You may also take this document and request a new set of fingerprints. Be sure to ask the WebCheck vendor to mail the BCI&I background check results directly to the Ohio Department of Medicaid. </p>
+<p>The WebCheck vendor must type in ODM’s name and address in the “mail to” field on their computer screen and transmit to BCI&I. BCI&I will read the results of your fingerprints and BCI&I will then mail us a hard copy of the results. </p>
+
+<p>If ODM does not receive your background check from BCI&I within 30 days of the date of your initial notification letter, your Medicaid application will be denied</p>
+
+<p>Please contact <a href="mailto:BureauNetworkManagement@medicaid.ohio.gov">BureauNetworkManagement@medicaid.ohio.gov</a> if you have any questions regarding this notice.</p>
+
+
+<br />
+Sincerely,
+<br />
+Ohio Medicaid Provider Compliance
+</td>
+</tr>
+</table>

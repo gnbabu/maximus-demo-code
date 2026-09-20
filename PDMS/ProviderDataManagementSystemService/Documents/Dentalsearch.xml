@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes"?>
+<DentalSearchs>
+<DentalSearch>
+    <Code>12</Code>
+    <Placeofname>Dental</Placeofname>
+</DentalSearch>
+<DentalSearch>
+    <Code>14</Code>
+    <Placeofname>Provider</Placeofname>
+</DentalSearch>
+<DentalSearch>
+    <Code>13</Code>
+    <Placeofname>Pharmacy</Placeofname>
+</DentalSearch>
+  <TypeBillSearch>
+    <Code>13</Code>
+    <Placeofname>Pharmacy</Placeofname>
+  </TypeBillSearch>
+  <OtherProviderInfoSearch>
+    <NPI>21222222</NPI>
+    <MedicaidID>12345654</MedicaidID>
+    <BusinessLastName>RiverSide</BusinessLastName>
+    <FirstName>Ketty</FirstName>
+  </OtherProviderInfoSearch>
+  <ReferringProviderSearch>
+    <NPI>1311111111</NPI>
+    <MedicaidID>12345644</MedicaidID>
+    <BusinessLastName>OH</BusinessLastName>
+    <FirstName>John</FirstName>
+  </ReferringProviderSearch>
+  <SupervisingProvidersearch>
+    <NPI>1311111111</NPI>
+    <MedicaidID>12345644</MedicaidID>
+    <BusinessLastName>OH</BusinessLastName>
+    <FirstName>John</FirstName>
+  </SupervisingProvidersearch>
+    <SearchRenderingProvider>
+    <NPI>1311111111</NPI>
+    <MedicaidID>12345644</MedicaidID>
+    <BusinessLastName>Columbus</BusinessLastName>
+    <FirstName>John</FirstName>
+  </SearchRenderingProvider>
+  <DiagnosisSearch>
+    <DiagnosisCode>ICD10</DiagnosisCode>
+    <ICDVersion>12345644</ICDVersion>
+    <DiagnosisCodeDesc>OH</DiagnosisCodeDesc>
+  </DiagnosisSearch>
+  <ProfessionalServicesearch>
+    <ProcedureCode>12</ProcedureCode>
+    <!--<ICDVersion>12</ICDVersion>-->
+    <ProcedureCodeDesc>OH</ProcedureCodeDesc>
+  </ProfessionalServicesearch>
+  <OccurrenceInformationSearch>
+    <ConditionCode>15</ConditionCode>
+      <ConditionCodeDescription>OH</ConditionCodeDescription>
+  </OccurrenceInformationSearch>
+  <OccurenceSpanInformationSearch>
+    <ConditionSpanCode></ConditionSpanCode>
+      <ConditionSpanCodeDescription>OH</ConditionSpanCodeDescription>
+  </OccurenceSpanInformationSearch>
+  <ValueCodeInformationSearch>
+    <ValueCode></ValueCode>
+      <ValueCodeDescription>OH</ValueCodeDescription>
+  </ValueCodeInformationSearch>
+  <NDCDetailsSearch>
+    <NDCCode>11122222</NDCCode>
+      <TradeName>Ibropfen</TradeName>
+  </NDCDetailsSearch>
+  
+  
+  
+
+
+</DentalSearchs>
+	

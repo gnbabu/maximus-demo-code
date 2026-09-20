@@ -1,0 +1,153 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterWorkflowPage.master.cs" Inherits="MasterWorkflowPage" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Src="~/UserControls/UserHeader.ascx" TagName="UserHeader" TagPrefix="uc1" %>
+<%@ Register Src="~/UserControls/ApplicationTreeView.ascx" TagName="AppTreeView" TagPrefix="uc2" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" lang="en" xml:lang="en" />
+        <link rel="stylesheet" type="text/css" href="http://www.tn.gov/css/2008a/A/design.css" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="http://www.tn.gov/css/2008a/print.css" media="print"/>
+        <link rel="stylesheet" type="text/css" href="http://www.tn.gov/css/2008a/handheld.css" media="handheld"/>
+        <!--[if lte IE 6]>
+			<link rel="stylesheet" href="http://www.tn.gov/css/2008a/IE5.css" type="text/css" />
+			<![endif]-->
+			<!--[if IE 6]>
+			<link rel="stylesheet" href="http://www.tn.gov/css/2008a/IE6.css" type="text/css" />
+			<![endif]-->
+			<!--[if IE 7]>
+			<link rel="stylesheet" type="text/css" href="http://www.tn.gov/css/2008a/IE7.css">
+			<![endif]-->
+        <script src="/js/TNmenu.js" type="text/javascript" ></script>
+        <script src="/js/jquery.js" type="text/javascript" ></script>
+        <script src="/js/jqAlternate-bg.js" type="text/javascript" ></script>
+        <script src="http://www.tn.gov/tenncare/disclaimer.js" type="text/javascript" ></script>
+        <link rel="stylesheet" type="text/css" href="http://www.tn.gov/tenncare/css/tenncare.css" media="screen"/>
+        <!--
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+        -->
+        <link href="Styles/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <script src="Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+        <script src="Scripts/jquery-ui.js" type="text/javascript"></script>
+        <title>PDMS Demo Site - Phase II</title>
+
+        <link href="Styles/style_vertical.css" rel="stylesheet" type="text/css" />
+        <script src="Scripts/jquery.easing.1.3.js" type="text/javascript"></script>
+        <!--
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>		
+        -->
+        <script src="Scripts/jquery.min.js" type="text/javascript"></script>
+
+    </head>
+    <body>
+        <form id="form1" runat="server">
+            <cc1:ToolkitScriptManager ID="ToolkitScriptManager1"  runat="server" />
+		    <div id="SkipToContent"><a href="#MainContent">Skip to Content</a></div>
+            <div id="PageHeader" class="NoPhoto">		
+                <div id="TNLogo"><a href="http://www.tn.gov"><img src="http://www.tn.gov/css/2008a/images/TNLogo.gif" alt="TN.GOV Logo" /></a> </div>
+                <h1><a href="http://www.tn.gov/tenncare/index.shtml" class="TNCare">TennCare</a><br />
+                <span id="CommissionerName"><a href="http://www.tn.gov/tenncare/quick-bio.shtml" class="TNCare">Darin Gordon, Deputy Commissioner</a></span></h1>
+                <div id="Sidebar2"> <!-- Opens the Sidebar DIV -->
+                    <!-- DO NOT REMOVE THIS INCLUDE -->
+                    <div id="GovernorBox2">
+                        <div style="text-align: left;padding-left: 160px;padding-top:4px">
+                            <div style="font-size: 9px; text-transform: uppercase">GOVERNOR</div>
+                            <div style="font-size: 11pt;font-weight:bold">Bill Haslam</div>
+                            <div><asp:HyperLink ID="lnkGov" runat="server" CssClass="TNCare" NavigateUrl="http://www.tn.gov/governor/" 
+                                Text="Visit Bill's Web Site" Target="_blank" /></div>
+                        </div>
+                    </div>
+                </div> <!-- Closes the Sidebar DIV -->
+            </div> <!-- OPENS THE PAGE HEADER DIV -->	 
+            <div id="mainForm">
+                <uc1:UserHeader ID="ucUserHeader" runat="server" />
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <colgroup>
+                        <col width="20%" />
+                        <col width="1%" />
+                        <col width="79%" />
+                    </colgroup>
+                    <tr valign="top">
+                        <td>
+                            <asp:Panel ID="pnlLeftBox" CssClass="LeftBox" runat="server">
+                                <asp:Menu ID="mnuLeftNav" runat="server" Orientation="Vertical" CssClass="niceList" 
+                                    DataSourceID="SiteMapDataSource1" StaticEnableDefaultPopOutImage="false" 
+                                    DynamicEnableDefaultPopOutImage="false" onprerender="mnuTop_PreRender">
+                                    <DynamicMenuStyle CssClass="niceListSubMenuItem" />
+                                    <DynamicHoverStyle CssClass="niceListSubMenuItem" />
+                                    <DynamicMenuStyle CssClass="niceListSubMenuItem" />
+                                    <DynamicMenuItemStyle CssClass="niceListSubMenuItem" />
+                                </asp:Menu>
+                                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" 
+                                    SiteMapProvider="XmlSiteMapProviderData" />
+                                <uc2:AppTreeView ID="ucAppTreeView" runat="server" />
+                            </asp:Panel>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>
+                            <asp:Panel ID="pnlRightBox" CssClass="RightBox" runat="server">
+		                        <asp:Panel ID="pnlPageHeader" runat="server" CssClass="pageHeader">
+			                        <center><asp:contentplaceholder id="PageLabelContent" runat="server">
+                                        </asp:contentplaceholder></center>
+		                        </asp:Panel>
+                                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                            </asp:Panel>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                Action: 
+                <asp:DropDownList ID="ddlAction" runat="server"></asp:DropDownList>
+                <br />
+                Notes: <asp:TextBox ID="txtNotes" runat="server"></asp:TextBox>
+                <br />
+                Parameter Name: <asp:TextBox ID="txtParamterName" runat="server"></asp:TextBox>
+                <br />
+                Parameter Value: <asp:TextBox ID="txtParamterValue" runat="server"></asp:TextBox>
+                <br />
+                <asp:Button ID="btnProcess" runat="server" Text="Process" onclick="btnProcess_Click" />
+
+                <center>
+                    <div id="Footer"> <!-- Opens the Footer DIV -->
+                        <div id="ContactInfo">
+                            <ul>
+                                <li>TennCare</li>
+                                <li>310 Great Circle Rd.</li>
+                                <li>Nashville, TN 37243 </li>
+                                <li>1-800-342-3145</li>
+                                <li><a href="../quick-contactus.shtml">Tenn.Care@tn.gov</a></li>
+                                <li class="LastListItem"><asp:Label ID="lblVersion" runat="server" Text="Version 1.0.0" /></li>
+                            </ul>
+                        </div> <!-- Closes the ContactInfo DIV -->
+                    </div> <!-- Closes the Footer DIV -->
+                </center>
+            </div>
+        </form>
+    </body>
+<!-- InstanceEnd -->
+</html>

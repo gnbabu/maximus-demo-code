@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="b25280db-20a9-4f45-a277-c8f0a0409213" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="D:\Users\Professional\Professional\ClaimsServiceProfessional.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ClaimReqRespCommon1.xsd" MetadataType="Schema" ID="be4db405-70d1-4382-a3d6-2ab2c924b575" SourceId="1" SourceUrl="file:///D:/Users/Professional/Professional/ClaimReqRespCommon.xsd" />
+    <MetadataFile FileName="CommonHeader1.xsd" MetadataType="Schema" ID="abd77c87-0ba7-407c-a6bf-e23de3a7170a" SourceId="1" SourceUrl="file:///D:/Users/Professional/Professional/CommonHeader.xsd" />
+    <MetadataFile FileName="ClaimsService1.wsdl" MetadataType="Wsdl" ID="f88a9b65-5318-4a05-abdd-f7cadfec2e5d" SourceId="1" SourceUrl="file:///D:/Users/Professional/Professional/ClaimsServiceProfessional.wsdl" />
+    <MetadataFile FileName="ClaimReqRespProfessional1.xsd" MetadataType="Schema" ID="1db1bdb9-c568-442d-9572-ecba57c21fc0" SourceId="1" SourceUrl="file:///D:/Users/Professional/Professional/ClaimReqRespProfessional.xsd" />
+    <MetadataFile FileName="HeaderX12Schema1.xsd" MetadataType="Schema" ID="cb1c45a5-0a69-43ca-befb-4cd792848144" SourceId="1" SourceUrl="file:///D:/Users/Professional/Professional/HeaderX12Schema.xsd" />
+    <MetadataFile FileName="X12Professional1.xsd" MetadataType="Schema" ID="e26b1781-fb02-4fdd-aa5b-a6b838b04ec7" SourceId="1" SourceUrl="file:///D:/Users/Professional/Professional/X12Professional.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,2455 @@
+﻿/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+	MAIN FORM - Provider Services
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+body
+{   
+	color: #000000;                         /* Main font color */
+	font-family:Arial, Verdana, sans-serif;/*tahoma,verdana,helvetica removed - Bug CSS CleanUp*/   /* Main font-family *//*"latoregular", sans-serif commented for NE*/
+	font-size: 9.5pt !important;            /* Main font size */
+    height: 100%;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	text-align: center;
+    width: 100%;
+    /*Changes for - Bug CSS CleanUp - begins*/
+    /*background-image: url("images/hd-bg.png");*/
+    background-color: #ffffff;
+    /*background-position-x: left;wd350
+    background-position-y: top;
+    background-repeat: repeat-x;
+    color: #000000;*/
+    
+    line-height:1.231;
+    /*Changes for - Bug CSS CleanUp - ends*/
+}
+
+
+#mainForm
+{
+    margin: 0 auto;         /* Firefox needs this */
+    text-align:left;
+    width: 1024px;
+    padding-bottom: 20%;
+}
+
+#mainFormPopup {
+    margin: 0 auto; /* Firefox needs this */
+    text-align: left;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+    Accessability (screen reader only links)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+    Tag Styles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*
+input[type=text], input[type=number], textarea { 
+    /*border: solid #888888 1px;*
+	font-family:tahoma,verdana,helvetica;   /* Main font-family *
+	font-size: 9.5pt !important;            /* Main font size *
+}
+
+input[type=hidden] {
+    margin: 0px;
+    padding: 0px;
+}
+
+input[type=checkbox] + label{
+    margin: 0px;
+    padding-right: 4px;
+}
+input[type=radio], input[type=checkbox] {margin: 0px 10px 0px 0px; }*/
+*/
+/*add this when have time to confirm with bas*/
+/*input:focus, input[type=text]:focus, input[type=password]:focus, select:focus, textarea:focus {
+    background-color: #FFFFCC;
+    border-color: blue;
+}*/
+
+/*add this when have time to confirm with bas*/
+ /*input[type=text].disabled, input[type=number].disabled, textarea.disabled {
+    color: #666666;
+    border: 1px solid #888888;
+    background-color: #F0F0F0;
+    cursor:not-allowed;
+}*/
+
+fieldset legend {
+    font-weight: bold;
+    text-align: left;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+	CSS - Alphabetic order
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.appHeader
+{
+    width: 950px;
+    display: table;
+}
+
+.appHeaderSub
+{
+    display: table-cell ;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: bold;
+    color: #036;
+}
+
+/************************************************************************************
+ * AjaxControlToolkit Popup Calendar
+ ************************************************************************************/
+.ajax__calendar_container 
+{
+    padding:4px;
+    position:absolute;
+    cursor:default;
+    width:240px;
+    font-size:11px;
+    text-align:center;
+    background-color: #4169e1;
+    color: White;
+}
+.ajax__calendar_body {height:139px;width:240px;position:relative;overflow:hidden;margin:auto; background-color: Silver;}
+.ajax__calendar_days, .ajax__calendar_months, .ajax__calendar_years {top:0px;left:0px;height:139px;width:170px;position:absolute;text-align:center;margin:auto;}
+.ajax__calendar_container TD  
+{
+    padding:0; 
+    color: White;
+}
+.ajax__calendar_header {height:20px;width:100%;}
+.ajax__calendar_prev {cursor:pointer;width:15px;height:15px;float:left;background-repeat:no-repeat;background-position:50% 50%;background-image:url(Images/arrow-left.gif);}
+.ajax__calendar_next {cursor:pointer;width:15px;height:15px;float:right;background-repeat:no-repeat;background-position:50% 50%;background-image:url(Images/arrow-right.gif);}
+.ajax__calendar_title {cursor:pointer;font-weight:bold;}
+.ajax__calendar_footer {height:15px;}
+.ajax__calendar_today {cursor:pointer;padding-top:3px;}
+.ajax__calendar_dayname {height:17px;width:17px;text-align:right;padding:0 2px;}
+.ajax__calendar_day {height:17px;width:18px;text-align:right;padding:0 2px;cursor:pointer;}
+.ajax__calendar_month {height:44px;width:40px;text-align:center;cursor:pointer;overflow:hidden;}
+.ajax__calendar_year {height:44px;width:40px;text-align:center;cursor:pointer;overflow:hidden;}
+
+.ajax__calendar .ajax__calendar_container {border:1px solid #646464;background-color:#ffffff;color:#000000;}
+.ajax__calendar .ajax__calendar_footer {border-top:1px solid #f5f5f5;}
+.ajax__calendar .ajax__calendar_dayname {border-bottom:1px solid #f5f5f5;}
+.ajax__calendar .ajax__calendar_day {border:1px solid #ffffff;}
+.ajax__calendar .ajax__calendar_month {border:1px solid #ffffff;}
+.ajax__calendar .ajax__calendar_year {border:1px solid #ffffff;}
+
+.ajax__calendar .ajax__calendar_active .ajax__calendar_day {background-color:#edf9ff;border-color:#0066cc;color:#0066cc;}
+.ajax__calendar .ajax__calendar_active .ajax__calendar_month {background-color:#edf9ff;border-color:#0066cc;color:#0066cc;}
+.ajax__calendar .ajax__calendar_active .ajax__calendar_year {background-color:#edf9ff;border-color:#0066cc;color:#0066cc;}
+
+.ajax__calendar .ajax__calendar_other .ajax__calendar_day {background-color:#ffffff;border-color:#ffffff;color:#646464;}
+.ajax__calendar .ajax__calendar_other .ajax__calendar_year {background-color:#ffffff;border-color:#ffffff;color:#646464;}
+
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_day {background-color:#edf9ff;border-color:#daf2fc;color:#0066cc;}
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_month {background-color:#edf9ff;border-color:#daf2fc;color:#0066cc;}
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_year {background-color:#edf9ff;border-color:#daf2fc;color:#0066cc;}
+
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_title {color:#0066cc;}
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_today {color:#0066cc;}
+
+A:link, A:visited, A:active, A:hover 
+{ 
+    color: Blue;
+    text-decoration: underline;
+    padding:3px;
+}
+
+A:hover 
+{
+    cursor: pointer;
+}
+
+/* BodyText and others - START */
+.redAsterisk
+{
+	color: #ff0000;
+	font-weight: bold;
+	font-size: 11pt;
+	vertical-align: middle;
+}
+
+.bodyText
+{
+	text-align:justify;
+	color: #000000;
+}
+
+.bodyTextRed                /* Use this class to display error messages next to form fields */
+{
+	color: #ff0000;
+	font-weight: normal;
+}
+
+.bodyTextBold
+{
+    text-align: justify;
+    color: #000000;
+    font-weight: bold;
+}
+
+.bodyTextBoldGreyed
+{
+    text-align: justify;
+    color: #000000;
+    font-weight: bold;
+    background-color: #C7C7C7;
+}
+
+.bodyTextSmall
+{
+    color: #000000;
+    text-align:justify;
+    font-weight:normal;
+    font-size:8pt
+}
+
+.bodyTextSmallRed
+{
+    color: #FF0000;
+    text-align:justify;
+    font-weight:normal;
+    font-size:8pt
+}
+
+.bodyTextSmallBold
+{
+    color: #000000;
+    text-align:justify;
+    font-weight:bold;
+    font-size:8pt
+}
+
+A.bodyText
+{
+	
+	padding-left: 10px;
+	color: #000000;
+	font-weight: bold;
+}
+
+.popControl
+{
+    background-color: White;
+    border-style: ridge;
+}
+
+.popControlHeader
+{
+    background-color: #0066FF;
+    cursor: move;
+    padding: 5px;
+}
+
+.repeaterDivider {
+    background-color: #999999;
+    height: 2px;
+    width: 100%;
+}
+/* BodyText and others - END */
+
+.button1, .button2, .button3
+{
+	background: url('images/button1.jpg');
+	background-position:left;
+    border-style: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+	height: 25px;
+    text-decoration: none;
+	width: 80px;
+	text-align:center;
+}
+
+.button2
+{
+	background: url('images/button2.jpg');
+	width: 100px;
+	text-align:center;
+}
+
+.button3
+{
+	background: url('images/button3.jpg');
+	width: 200px;
+	height: 30px;
+	text-align:center;
+}
+
+.buttonAlign
+{
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 10px;    
+}
+
+.center
+{
+    text-align: center;
+}
+
+.center_bg
+{
+	/* text-align: center; */
+}
+
+.ContentPane
+{
+    vertical-align:top;
+    width: 880px;
+    text-align: left;
+    border-color: #87cefa;
+    border-left: solid 1px;
+    border-right: solid 1px;
+    padding: 0px 10px 20px 10px;
+    margin: 0 auto;
+}
+
+#contentPanel
+{
+    vertical-align:top;
+}
+
+.formCheckBox
+{
+    padding-right:10px;
+    margin-right:10px;
+}
+
+.formDate
+{
+	width: 80px;
+}
+
+.alignLeft {
+    text-align:left;
+}
+.formField, .formFieldSmall, .formFieldMedium, .formField220, .formField300, .formFieldReadOnly, .formFieldReadOnly300, .formFieldAuto, 
+    .formField100, .formField130, .formFieldDisplay, .formFieldDisplayAuto, .formDropDown, .formDropDownAuto, .formDropDownMedium, 
+    .formDropDownLarge, .formFieldLarge, .formFieldDisplayLarge, .textEntry
+{
+	border: 1px solid #000000;
+    background-color: #FFFFFF;
+    color: #000;
+	width: 150px;
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 3px;
+    font-family: tahoma,verdana,helvetica; /* Main font-family */
+    font-size: 9.5pt !important;
+    height: 51px;
+}
+
+.modalFormField {
+    border: 1px solid #ccc;
+    background-color: #FFFFFF;
+    color: #000;
+    width: 80%;
+    font-family: "Arial Narrow";
+    font-size: 14pt !important;
+    vertical-align: top;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 3px;
+    border-radius: 4px;
+    height: 34px;
+}
+.listFullWidth {
+    width: 80%;
+    border: 1px solid #000000;
+}
+
+.textEntry {
+    border: 1px solid #d3d3d3;
+}
+
+.formField:focus, .formFieldSmall:focus, .formFieldMedium:focus, .formField220:focus, .formField300:focus, .formFieldAuto:focus,
+.formField100:focus, .formField130:focus, .formFieldLarge:focus, .textEntry:focus
+{
+    border-color: #66afe9;
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.6);
+}
+
+
+.formFieldAuto
+{
+    width: auto;
+}
+
+.formFieldMedium
+{
+	width:70px;
+}
+
+.formFieldSmall
+{
+	width:50px;
+}
+
+.formField100
+{
+	width:100px;
+}
+
+.formField130
+{
+	width:130px;
+}
+
+.formField220
+{
+	width:220px;
+}
+
+.formField300
+{
+	width:300px;
+}
+
+.formFieldLarge
+{
+	width:418px;
+}
+
+.formDropDownAuto
+{
+    width: auto;
+}
+
+.formDropDownMedium
+{
+    width: 250px;
+}
+
+.formDropDownLarge
+{
+    width: 450px;
+}
+
+.formFieldDisplay, .formFieldDisplayAuto, .formFieldDisplayAuto2, .formFieldDisplayLarge
+{
+    background-color: #f3f3f3;       /* #e3e3e3; */
+    border: none;
+    display: inline-block;
+    text-align: left;
+    width: 160px;
+}
+
+.formFieldDisplayAuto, .formFieldDisplayAuto2
+{
+    width: auto;
+}
+
+.formFieldDisplayAuto2
+{
+    background-color: transparent;
+}
+
+.formFieldDisplayLarge
+{
+    width: 425px;
+}
+
+.formFieldReadOnly, .formFieldReadOnlyBlock, .formFieldReadOnly100, .formFieldReadOnly300 {
+    background-color:#e3e3e3;
+    border: none;
+    display: inline-block;
+    text-align: left;
+    padding: 0 0 0 0; /* 1px;       Allows for the border around the formField */
+}
+
+.formFieldReadOnlyBlock
+{
+    display: inline-block;
+}
+
+.formFieldReadOnly100
+{
+    display: inline-block;
+    width: 100px;
+}
+
+.formFieldReadOnly300
+{
+    display: inline-block;
+    width: 300px;
+}
+
+.formEntry
+{
+    text-align: left;
+}
+
+A.formLink
+{ 
+    color: Blue;
+    text-decoration: underline;
+}
+
+.MatchTerm
+{
+    font-weight: bold;
+}
+
+.RadioList td 
+{     
+    margin: 0px;
+    padding: 0 5px 0 0; 
+    vertical-align: middle;
+}
+
+.DropDownList, .DropDownListMedium, .DropDownListLarge
+{     
+}
+
+.DropDownListMedium
+{
+    width: 250px;
+}
+
+.DropDownListLarge
+{
+    width: 500px;
+}
+
+A.formLink:hover 
+{
+    cursor: pointer;
+}
+
+.formPanel, .formPanelSmall
+{
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    width: 880px;
+}
+
+.formPanelSmall
+{
+    width: 400px;
+    margin-left: 200px;
+}
+
+.formPanelHeader
+{
+    font-size: 10pt;
+    font-weight: bold;
+    line-height: 25px;
+    padding-left: 2px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+	GridView
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.divGrid     {
+        width: 100%;
+        float:right;
+    }
+
+.gridview, .gridViewSmall a, .gridview-disabled
+{
+    padding-left: 1px;
+    padding-right: 1px;
+    text-align: center;
+}
+
+.gridViewSmallFont
+{
+    font-size: 8pt;
+}
+
+.gridView, .gridViewEvents
+{
+    color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	border-width: 0.03em;
+    background-color: #FFFFFF;
+    width:95%;
+}
+
+.gridViewEvents
+{
+    margin-left:0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:300px;
+}
+
+.gridViewSmall
+{
+    width:400px;
+    margin-left:200px;
+}
+
+.gridViewHeaderHistory, .gridViewHeaderHistory th
+{
+	position:relative; 
+	top:expression(this.parentNode.parentNode.parentNode.scrollTop-1);	
+}
+
+
+
+.gridViewHeader, .gridViewHeader2, .rgHeader
+{
+    background-color: #036;
+    text-align: left;
+    color: #FFFFFF;
+    border-style: solid; 
+    border-color: #000000;
+	border-width: 0.03em;
+}
+
+    .gridViewHeader th, .rgHeader th{
+    color: #FFFFFF!important;
+    text-align:left;
+    }
+
+.gridViewHeader a, .gridViewHeader a:link, .gridViewHeader a:active , .gridViewHeader a:hover, .gridViewHeader a:visited,
+.gridViewHeader th a, .gridViewHeader th a:link, .gridViewHeader th a:active , .gridViewHeader th a:hover, .gridViewHeader th a:visited,
+.rgHeader a, .rgHeader a:link, .rgHeader a:active , .rgHeader a:hover, .rgHeader a:visited,
+.rgHeader th a, .rgHeader th a:link, .rgHeader th a:active , .rgHeader th a:hover, .rgHeader th a:visited
+{
+    color: #FFFFFF!important;
+    text-align:left;
+    text-decoration: underline;
+	
+}
+
+    .gridViewHeader:disabled a:link,    .rgHeader:disabled a:link {
+    color: #CCCCCC!important;
+}
+
+.gridViewHeader2
+{
+    font-weight: bold;
+}
+
+.gridViewRow {
+    text-align: left;
+    vertical-align: top;
+}
+
+.gridViewAltRow
+{
+    background-color: #E8F0F9; /*commented for NE c6cbd1*/
+    text-align: left;
+    vertical-align: top;
+}
+
+.gridViewCommand{
+    margin-left:0px !important;
+    position:relative !important;
+}
+
+.gridViewSelected, .gridViewSelected td, .gridViewSelected tr {
+    text-align: left;
+    background-color: #FFFF66;
+}
+.gridViewSelected A, .gridViewSelected td A {
+    color: #036;
+}
+.gridViewFooter {
+    background-color: #696969;
+    text-align: left;
+}
+
+.gridViewPager table
+{    
+    float:right;
+    width:auto;
+}
+
+
+.gridViewPager td
+{    
+    background-color: #999999;
+    font-weight: bold;
+    padding-right: 6px;
+}
+
+.gridViewPager  a:link
+{    
+    color: blue;
+    font-weight: normal;
+    padding-right: 3px;
+}
+
+
+.gridViewFooter a:link
+{
+    padding-right: 5px;
+}
+
+.gridViewEmptyRow {
+    font-weight: bold; font-style: italic; color: #000;
+}
+
+/*Disabled settings*/
+.gridview-disabled {
+    color: #666666;
+    border: 1px solid #888888;
+    background-color: #F0F0F0;
+    cursor:not-allowed;
+}
+
+.gridview-disabled th {
+    background-color: #999999;
+    text-align: left;
+    color: #666666;
+}
+
+ .gridview-disabled a, .gridview-disabled .gridHeader a, gridview-disabled th a {
+    color: #666666;
+    cursor:not-allowed;
+	padding-left: 1px;
+	padding-right: 1px;
+	text-align: left;
+    text-decoration: none;
+	
+}
+ 
+  .gridview caption
+{
+    text-align:left;
+    font-weight:bold;
+    padding-top: 4px;
+    padding-bottom:4px;
+}
+
+.gridAddLink
+{
+    text-align: left;
+    padding-top: 10px;    
+}
+
+.gridAddLinkSmall
+{
+    padding-left: 200px;
+    padding-bottom: 10px;    
+}
+
+.gridHeader th 
+{ 
+    border-style: solid; 
+    border-color: #000000;
+	border-width: 0.03em;
+}
+
+.gridLink
+{
+    padding: 3px;
+}
+
+.gridPagerLabel span
+{    
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 2px;
+    background-color: Red;
+}
+
+.gridRow
+{
+    text-align: left;
+    vertical-align: top;
+}
+
+.gridCaption
+{
+    font-weight: bold;
+    padding-bottom:0px;
+}
+
+.gridviewFilter {
+    background-color: #E8F0F9 !important;
+    font: italic;
+}
+
+
+.GroupBoxNewHire    
+{        
+    border: 1px solid #ddd;        
+    display: block;
+    padding: 10px;
+    text-align: left;    
+    width: 115px;
+}
+
+#login
+{
+    padding-left:10px;
+}
+
+.mainMenu a
+{
+	color: #FFFFFF;
+	display:block;
+	font-weight: bold;
+	line-height: 50px;
+	padding: 0px 10px 0px 10px;	
+	text-align:center;
+	text-decoration: none;
+}
+
+.mainMenu a:hover
+{
+    color: #FFFFFF;
+}
+
+.menu_bg
+{
+	width: 100%;
+	background-image: url('images/nav_bg.png');
+	background-repeat:repeat-x;
+	height: 55px;
+}
+
+#menuBar
+{
+	background-color: #FFFFFF;
+	background-image: url('images/nav_bg.png');
+	background-repeat:repeat-x;
+	background-position:left;
+	height: 60px;
+	text-align:left;
+	margin: 0 auto;
+	padding-left: 20px;
+}
+
+.noticeLink a
+{
+    font-size: 12pt;
+}
+
+a.panelLink:active, a.panelLink:link, a.panelLink:visited, a.panelLink:hover 
+{
+    font-weight: bold; 
+}
+
+.panel
+{
+    text-align: center;
+    width: 880px;
+}
+
+.panelRO
+{
+    border: 1px solid #000000;
+    margin-bottom: 10px;
+    width: 880px;
+}
+
+.subMenuItem
+{
+    border-bottom: thin solid #aaa;
+}
+
+.subMenuItem a
+{
+    background-color: #2880A5;
+	color: #FFFFFF;
+	display:block;
+	font-weight: bold;
+	line-height: 25px;
+	padding-left: 10px;
+	padding-right: 15px;
+	text-align:left;
+	text-decoration: none;
+}
+
+.subMenuItem a:hover
+{
+    background-color: #1F60A9;
+}
+
+.tablePanelRO, .tablePanelROBorder, .tablePanelROBox
+{
+    border: none;
+    font-weight: normal;
+    width: 880px;
+}
+
+.tablePanelROBorder
+{
+    border: 1px solid #000000;
+}
+
+.tablePanelROBox td
+{
+    border: 1px solid #000000;
+    padding: 3px;
+}
+
+.tablePanelUI
+{
+    border: none;
+    font-weight: normal;
+    width: 880px;
+}
+
+.tableMarginAuto 
+{
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.upperCase
+{
+    text-transform:uppercase;
+}
+
+#userBar
+{
+    padding-bottom: 10px;
+}
+
+.userBar
+{
+	width: 880px;
+	padding: 0;
+}
+
+.lblAboveUserBar
+{
+    display: block;
+    margin: 5px;
+    width: 100%;
+}
+
+.QuickLinks
+{
+    text-align: center;
+    width: 230px;
+}
+
+.QuickLinks li
+{
+    padding-bottom: 10px;
+}
+
+.QuickLinks li a
+{
+    font-size: 1.0em;
+}
+
+.mainContent
+{
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+}
+
+
+
+.wizProcess
+{
+    padding: 5px;
+    width: 95%;
+    text-align: left;
+}
+
+.wizSideBar
+{
+    width: 150px;
+    background-color: #f3f3f3;
+    vertical-align: top;
+}
+
+.wizStep
+{
+    height: 100px;
+    padding-left: 5px;
+    vertical-align: top;
+    width: 100%;
+}
+
+/**************************
+    Registration Wizards CSS
+**************************/
+#header {
+    background-color: white; /*NE was #036;*/
+    color: #fff;
+    font: bold;
+}
+
+#logo
+{
+	font-size: 1.0em;
+	color: #fff;
+	text-align: center;
+}
+
+.pageHeader
+{
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #036;
+	/*padding-bottom: 5px;*/
+}
+
+table.header
+{
+    width: 100%;
+}
+
+    table.header td {
+        background-color: #036;
+        color: #fff;
+        font: normal;
+    }
+
+#loginHeader
+{
+	color: #000000;
+    text-align: center;
+    vertical-align: top;
+    padding: 10px;
+    width: 980px;
+}
+
+#loginHeader a
+{
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#loginHeader a:hover
+{
+    text-decoration: underline;
+}
+
+table.LoginControl
+{
+    border-color:#000000;
+    border-style:solid;
+    border-width:1px;
+}
+
+table.LoginControl tr.Header
+{
+	background-color: #1D587F;
+	color: #FFFFFF;
+	height: 15px;
+}
+
+table.LoginControl td.Button
+{
+	text-align: right;
+}
+
+/* GridView */
+table.gridview
+{
+    color: #000000;
+    width:95%;
+    vertical-align: top;
+}
+
+table.gridview th
+{
+    background-color: #036;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+table.gridview td, .rgRow td , .rgAltRow td
+{
+    border-left: 0px;
+	border-right: 0px;
+	font-weight: normal;
+	color: Black;
+	text-align: left;
+	vertical-align: top;
+}
+
+.repeatHeader
+{
+    color: #FFFFFF;
+    background-color: #036;
+    font-weight: bold;
+}
+
+.repeatHeader a
+{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.EnrollForm
+{
+    padding: 0;
+    vertical-align: top;
+    width: 85%;
+}
+
+.EnrollInstructions
+{
+    padding: 5px;
+    text-align: left;
+    vertical-align: top;
+    width: 15%;
+}
+
+.PanelReturn
+{
+    float: right;
+    padding-right: 20px;
+}
+
+.testing
+{
+    text-decoration: none;
+}
+
+.ServiceLocationInstances
+{
+    clear: both;
+    text-decoration: none;
+}
+
+/**********************************
+    Footer Styles
+**********************************/
+
+#sitefooter
+{
+	text-align: center;
+	margin: 10px 0;
+	border-top: 1px solid #969696;
+	padding: 10px;
+	color: #696969;
+	background-color: White;       /* #e3e3e3; */
+	height: 90px;
+}
+
+#sitefooter a:link, #sitefooter a:visited
+{
+	color: #696969;
+	/*text-decoration: none;*/
+}
+
+#sitefooter a:hover
+{
+	color: #969696;
+	text-decoration: underline;
+}
+
+/**********************************
+    Edit and Dashboard
+**********************************/
+
+.ValEditSummary
+{
+    padding-bottom: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+.Dashboard
+{
+    padding: 10px;
+    text-align: center;
+    /*width: 90%;*/ /* BEN: Not needed*/
+}
+
+/**********************************
+    Tabs
+**********************************/
+
+/*Header*/
+.Tab .ajax__tab_header
+{
+    color: #4682b4;
+    font-family:Calibri;
+    font-size: 11pt;
+    font-weight: bold;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+/*Body*/
+.Tab .ajax__tab_body
+{
+    border-top: 1px solid #e3e3e3;
+    padding-top:0px;
+}
+
+/*Tab Active*/
+.Tab .ajax__tab_active .ajax__tab_tab
+{
+    color: #ffffff;
+    background:url("images/tab_active.gif") repeat-x;
+}
+
+.Tab .ajax__tab_active .ajax__tab_inner
+{
+    color: #ffffff;
+    background:url("images/tab_left_active.gif") no-repeat left;
+    padding-left:10px;
+}
+
+.Tab .ajax__tab_active .ajax__tab_outer
+{
+    color: #ffffff;
+    background:url("images/tab_right_active.gif") no-repeat right;
+    padding-right:10px;
+}
+
+/*Tab Hover*/
+.Tab .ajax__tab_hover .ajax__tab_tab
+{
+    color: #000000;
+    cursor: pointer;
+    background:url("images/tab_hover.gif") repeat-x;
+}
+
+.Tab .ajax__tab_hover .ajax__tab_inner
+{
+    color: #000000;
+    background:url("images/tab_left_hover.gif") no-repeat left;
+    padding-left:10px;
+}
+
+.Tab .ajax__tab_hover .ajax__tab_outer
+{
+    color: #000000;
+    background:url("images/tab_right_hover.gif") no-repeat right;
+    padding-right:10px;
+}
+
+/*Tab Inactive*/
+.Tab .ajax__tab_tab
+{
+    color: #666666;
+    background:url("images/tab_Inactive.gif") repeat-x;
+    height: 22px;
+}
+
+.Tab .ajax__tab_inner
+{
+    color: #666666;
+    background:url("images/tab_left_inactive.gif") no-repeat left;
+    padding-left:10px;
+    height: 22px;
+}
+
+.Tab .ajax__tab_outer
+{
+    color: #666666;
+    background:url("images/tab_right_inactive.gif") no-repeat right;
+    padding-right:10px;
+    margin-right: 2px;
+    height: 22px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+	Accordion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.accordionHeader, .accordionHeaderSelected
+{
+    border: none;
+    color: #FFFFFF; 
+	background-color: #7d9fc2;/*commented for NE 923931*/ 
+    font-family: Arial, Sans-Serif;
+    font-weight: bolder;
+    padding: 2px;
+    margin-top: 2px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.accordionContent
+{
+    background-color: #FFFFFF;
+    border: 1px solid #2F4F4F;
+    border-top: none;
+    padding: 0;
+}
+
+.QstLink
+{
+    text-decoration: underline;
+    /*color:White!important;*/
+}
+
+a.QstLink:hover
+{
+    color: blue;
+}
+
+.QstLinkDisabled
+{
+    text-decoration: none;
+    cursor:default; 
+}
+
+a.QstLinkDisabled:hover
+{
+    text-decoration: none;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+	Miscellaneous
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.ResultHeader
+{
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.modalBackground
+{
+    background-color: Gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+.modalPopup
+{
+    background-color: #FFFFFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    padding: 0px;
+    width: auto;
+    height: auto;
+}
+
+.popHeader {
+    cursor: move;
+    padding: 5px;
+    background-color: #7d9fc2;/*changed for branding*/
+}
+.popTitle {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: left;
+}
+
+.pageIcon {
+    height: 46px;
+    width: 51px;
+}
+/************************************************************************************
+ * Boxes that hold menu and main content
+ ************************************************************************************/
+.LeftBox, .RightBox,  .UserHeaderAdmin, .RightBoxFull 
+{
+	padding:10px;
+
+	/* Rounded Corners *//*commented for NE*/
+    	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+
+	/* Background color and gradients */
+	background-color: White;
+	border:solid 1px white;
+	/* Borders *//*commented for NE*/
+    border-top: 5px solid #607078;
+	border-left: 1px solid #002232;
+	border-right: 1px solid #002232;
+	border-bottom: 1px solid #002232;
+	
+	-moz-box-shadow: 3px 3px 4px #607078;
+	-webkit-box-shadow: 3px 3px 4px #607078;
+	box-shadow: 3px 3px 4px #607078;
+}
+
+.LeftBox, .LeftBox a
+{
+    width: 220px;
+    /*background-color:#ffffff;
+    color: white;*/
+
+}
+#createAccount{
+    width: 90%;
+    margin-left: 40px;
+}
+.createAccountSteps {
+    padding: 0px;
+    margin:0px;
+    border-spacing: 0px;
+    width: 100%;
+}
+.createAccountSteps td {
+    padding: 0px;
+}
+.RightBox
+{
+    width: 760px;
+}
+ 
+
+.RightBoxFull
+{
+    width: 97%;
+}
+
+.UserHeader
+{
+    margin-bottom: 10px;
+    padding: 3px;
+    width: 99%;
+    background-color:#ffffff;/*height:222px; Bug CSS CleanUp*/
+}
+
+.UserHeaderAdmin
+{
+    margin-left: 0;
+    margin-bottom: 10px;
+    width: 400px;
+}
+/*moved from masterworkflow.master - begins for Changes for - Bug CSS CleanUp*/
+div #UserHeader_ProvInfo {
+    width:40%;
+    float:left;
+}
+.trAssignedTo {
+    vertical-align: bottom;
+}
+#UserHeader_MessagePanels {
+    width: 58%;
+    float: right;
+    margin-right: 10px;
+}
+/*moved from masterworkflow.master - ends*/
+.ProviderHeader
+{
+    background-color: White;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.EditControl
+{
+    float: right;
+}
+
+.TakeActionControl
+{
+    float: right;
+}
+
+/************************************************************************************
+ * CSS from Demo Site
+ ************************************************************************************/
+ul.niceList { 
+  margin-left:0em; 
+  padding-left:0em; 
+  margin:0.5em; 
+  color: Black;
+  font-size:8pt;
+}
+
+/*
+ul.niceList A:link, A:visited, A:active, A:hover 
+{
+    changes for NEcolor: Blue !important;
+    color: blue;
+}
+*/
+
+ul.niceList li { 
+  /*background:url(images/bullet.gif) 0em 0.5em no-repeat;*/ /* change background em accordingly */
+  padding-left: 0.8em;
+  list-style: none; 
+  color: Black;
+}
+
+.niceList ul li 
+{ 
+    /*background-image:url(images/bullet_child.gif);*/ /*BEN: this was making the li text unreadable*/
+    color: Black; 
+}
+ 
+ol.niceList li, ul.niceList li { margin-bottom:0.5em; }
+ 
+ol.niceList { 
+    margin-left:0em; 
+    padding-left:0px; 
+    color: Black;
+}
+.niceList ol li { 
+    list-style: decimal; 
+    background-image:none; 
+    padding-left:0em; 
+    color: Black;
+}
+
+.niceList ul li /*a:link */ /*BEN: removed a:link*/
+{
+    color: Black;
+} 
+
+.niceListSubMenuItem
+{
+	color: #FFFFFF;
+	border: 0.02em solid Gray;
+	width: 180px;
+}
+
+.niceListSubMenuItem a:link
+{
+    background-color: #FFFFFF;
+	color: #000000;
+	display:block;
+	line-height: 23px;
+	padding-left: 5px;
+	text-align:left;
+	font-weight: bold;
+}
+
+.niceListSubMenuItem a:hover
+{
+    background-color: #06447E;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+div#Sidebar2 div#GovernorBox2 {
+    background: url("images/header_gov.png") no-repeat scroll left top transparent;
+    border: medium none;
+    height: 57px;
+    margin: 0px 0 0;
+    position: absolute;
+    right: 0;
+    text-shadow: 1px 1px 1px #000000;
+    text-align: right;
+    top: 0;
+    width: 285px;
+}
+div#Sidebar2 #GovernorBox2 {
+    font-size: 86.2%;
+    line-height: 1.5;
+}
+div#Sidebar2 #GovernorBox2 {
+    margin: 10px 2px;
+    padding: 0;
+    width: 140px;
+}
+div#Sidebar2 #GovernorBox2  {
+    margin: 20px 0;
+}
+#GovernorBox2 {
+    background-color: #F4F1D0;
+    border: 2px solid #999999;
+}
+
+div#Sidebar2 #GovernorBox2 a {
+    color: White;
+}
+
+/***************************************************** PDMS2 **********************************************************************/
+/***************************************************** PDMS2 **********************************************************************/
+/***************************************************** PDMS2 **********************************************************************/
+
+ /*.buttonBox {
+    Old button background-color was #3d94f6 replaced with #07457E 
+    -moz-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #07457E), color-stop(1, #1e62d0) );
+    background: -moz-linear-gradient( center top, #07457E 5%, #1e62d0 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#07457E', endColorstr='#1e62d0');
+    background-color: #07457E;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #666666;
+    display: inline-block;
+    color: #ffffff;
+    font-family: arial;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 1px 6px;
+    text-decoration: none;
+    text-shadow: 1px 1px 0px #1570cd;
+}
+
+.buttonBox:hover 
+{
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #07457E) );
+	background:-moz-linear-gradient( center top, #1e62d0 5%, #07457E 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#07457E');
+	background-color:#1e62d0;
+}
+
+.buttonBox:disabled, .buttonBox input[type=submit]:disabled, .buttonBox input[type=submit][disabled=disabled], .buttonBox button[disabled=disabled] {
+    -moz-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #1e62d0) );
+    background: -moz-linear-gradient( center top, #1e62d0 5%, #1e62d0 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#1e62d0');
+    background-color: #C0C0C0;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #666666;
+    display: inline-block;
+    color: #ffffff;
+    font-family: arial;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 1px 6px;
+    text-decoration: none;
+    text-shadow: 1px 1px 0px #1570cd;
+}
+.buttonBox:active 
+{
+	position:relative;
+	top:1px;
+}*/
+
+.formFieldSmallFont
+{
+    font-size: 8pt;
+}
+
+.formFieldWidth {
+    width: auto;
+}
+
+.formLabel, .formLabelSmall, .formLabel300, .formLabelAuto, .formLabel150, .formLabel170, .formLabel200
+{
+    display: inline-block;
+    padding-right: 3px;
+    text-align: right;
+    vertical-align: top;
+    width: 130px;
+}
+
+.formLabelData {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    width: 200px;
+}
+
+.formLabelAuto
+{
+    text-align: left;
+    width: auto;
+}
+
+.formLabel150
+{
+    width: 150px;
+}
+
+.formLabel170
+{
+    width: 170px;
+}
+
+.formLabel200
+{
+    width: 215px;
+}
+
+.formLabel300
+{
+    width: 300px;
+}
+
+.formLabelSmall
+{
+    width: 80px;
+}
+
+.formLabelBoldSmall {
+    width: 80px;
+    font-size: 12pt;
+    font-weight:bold;
+}
+h4
+{
+  	color: #036;
+    font-size: 14pt !important;
+}
+
+.boxPanel, .boxPanelFull, .boxPanelFull2
+{
+	background-color: White;
+	border: 1px solid #002232;
+    height: 165px;
+	text-align: left;
+	width: 355px;
+
+	-moz-box-shadow: 3px 3px 4px #8b8989;
+	-webkit-box-shadow: 3px 3px 4px #8b8989;
+	box-shadow: 3px 3px 4px #8b8989;
+}
+
+.boxPanel {
+    height: 165px;
+}
+.boxPanelFull, .boxPanelFull2
+{
+    min-height: 100px;
+    height: auto;
+    padding: 5px;
+    width: 98%;
+}
+
+.boxPanelFull2
+{
+    padding: 0;
+}
+
+.boxPanelHeader
+{
+    color: #FFFFFF;
+	background-color: #7D9FC2; 
+	font-weight: bold;
+    height: 20px;
+    padding-top: 3px;
+    text-align: center;
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.boxPanelData
+{
+    padding: 5px;
+}
+
+.boxPanelData a
+{
+    color: Blue !important;
+}
+
+.QstRadioList td 
+{     
+    /*margin: 0px 5px 0px 0px;*/
+    padding: 0 5px 0 0; 
+    vertical-align: middle;
+}
+
+
+
+.divHistoryAndAdd
+{
+    width: 100%;
+    text-align: right;
+}   
+
+.linkNormal
+{
+    color: Blue;
+    font-weight: normal;
+}
+
+
+.btnBoxCancelLogin {
+    float: right;
+    text-align: right;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
+}
+
+.btnBox {
+    float:right;
+    text-align:right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
+}
+
+    .btnBox a, .btnBox input[type=submit] {
+        padding-right: 10px;
+    }
+        .loginBox .btnBox a, .loginBox .btnBox input[type=submit]{
+                font-size: 8.5pt;
+        }
+
+    .btnBox a {
+        background-color: transparent;
+    }
+
+    input.button {
+        cursor: pointer;
+    }
+
+    input.button-disabled, input[type=submit]:disabled,
+    input[type=submit][disabled=disabled],button[disabled=disabled] {
+        background-color: #e3e3e3;
+        border: 1px solid #666666;
+        cursor:not-allowed;
+    }
+
+.fieldLabel {
+    font-weight: bold;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    text-align: right;
+}
+
+.verticalAlignTop {
+    vertical-align: top;
+}
+
+.fieldValue {
+    padding-bottom: 3px;
+    text-align: left;
+}
+
+
+.loading {
+    font-weight:bold;
+    font-size: 12pt;
+    padding: 10px;
+}
+
+.loading img {
+    padding-right: 10px;
+}
+.wd50 {
+    width: 50px;
+}
+.wd80 {
+    width: 80px;
+}
+.wd100 {
+    width: 100px;
+}
+.wd120 {
+    width: 120px;
+}
+.wd130 {
+    width: 130px;
+}
+
+.wd150 {
+    width: 150px;
+}
+
+.wd170 {
+    width: 170px;
+}
+.wd200 {
+    width: 200px;
+}
+
+.wd225 {
+    width: 225px;
+}
+
+
+.wd250 {
+    width: 250px;
+}
+
+.wd300 {
+    width: 300px;
+}
+
+.wd350 {
+    width: 350px;
+}
+
+
+.wd400 {
+    width: 400px;
+}
+
+.wd500 {
+    width: 500px;
+}
+
+.wd550 {
+    width: 550px;
+}
+
+
+.wd650 {
+    width: 550px;
+}
+
+.wdAuto {
+    width: auto;
+}
+.wdAll {
+}
+
+.information-message {
+    color: #000;
+}
+.pg-hint {
+ color: #000;
+ font-size: 8pt;
+ font-weight: normal;
+ float:right;
+ padding-bottom: 10px;
+ padding-top: 10px;
+}
+
+.pg-hint2 {
+ color: #000;
+ font-size: 8pt;
+ font-weight: normal;
+ text-align:left;
+}
+
+
+.pg-hint3 {
+ color: #000;
+ font-size: 8pt;
+ font-weight: normal;
+ text-align:right;
+}
+
+.pg-hint3Inherit {
+ color: #000;
+ font-size: 8pt;
+ font-weight: normal;
+ text-align:left;
+}
+
+.field-hint {
+ color: #000;
+ font-size: 8pt;
+ font-weight: normal;
+ text-align:left;
+ vertical-align:middle;
+}
+
+.grid-hint {
+ color: #000;
+ font-size: 8pt;
+ font-weight: bold;
+ padding: 0px;
+ text-align: right;
+}
+
+.group-hdg {
+padding-left:10px; padding-top:10px; padding-bottom:4px;
+}
+
+.error-message {
+    color: red;
+}
+/*moved from masterworkflow.master begins Changes for - Bug CSS CleanUp*/
+#tblProviderInfo tr{
+    display: block;
+}
+#tblProviderInfo .formLabel300{
+    width:140px;
+}
+    
+#tblProviderInfo .formData{
+    width:250px;
+    display:block;
+}
+    
+.pnlSummary{
+    border:solid 2px #244887;
+    height:72px;
+    margin-top: 2px;
+    width:100%;
+}
+.val-summary {
+    padding-top: 4px;
+    padding-bottom: 10px;
+}
+.pwd-val-error{
+       display:inline;
+       padding-bottom:0px;
+}
+    .pwd-val-error ul {
+        margin:0px;
+    }
+
+.pwd-val-error li{
+    padding:0px;
+}
+
+.vert-links a{
+   display:block;
+}
+
+
+
+.failureNotification {
+    color: #D10000 !important;
+}
+#divAdmin {
+    padding-left: 54px;
+}
+#tdBtnAction {
+    padding-right: 5px;
+}
+/*moved from masterworkflow.master ends*/
+/*moved from masterpage.master Changes for - Bug CSS CleanUp begins*/
+.governorMaster1 {
+    text-align: left;
+    padding-left: 160px;
+    padding-top:4px;
+}
+.governorMaster2 {
+    font-size: 9px; 
+    text-transform: uppercase;
+}
+.governorMaster3 {
+    font-size: 11pt !important;
+    font-weight:bold !important;
+}
+/*moved from masterpage.master ends*/
+/*Changes for - Bug CSS CleanUp - begins moved lnkTNFiles*/
+div#PageHeader {
+background-attachment:scroll;
+background-clip: border-box;
+background-color: transparent;
+
+
+background-origin: padding-box;
+background-position-x:center;
+background-position-y:top;
+background-repeat: no-repeat;
+background-size: auto;
+color: #fff;
+font-family:"latoregular", sans-serif;
+font-size: 9.5pt;
+height: auto;
+line-height: 1.231;
+margin-bottom: 0px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+position:relative;
+text-align:left;
+text-shadow: 1px 1px 1px #000000;
+/*width: 1140px;*/ 
+
+}
+
+/*#StateLogo a {
+width: 100px;
+height: 80px;
+
+display:block;
+margin-bottom:auto;
+margin-left:18px;
+margin-right:auto;
+margin-top:auto;
+background-repeat:no-repeat;
+background-attachment:scroll;
+background-position-x:left;
+background-position-y:top;
+background-size: auto;
+background-origin:padding-box;
+background-clip:border-box;
+background-color:transparent;
+
+
+}
+*/
+
+div#PageHeader h1 a {
+    color: #fff;
+    text-decoration:none;
+}
+div#PageHeader h1 {
+    color: #fff;
+    float:left;
+    font-family:verdana, arial, helvetica, sans-serif;
+    font-size:120%;
+    font-weight: normal;
+    line-height: 1.231;
+    margin:0px 0px 0px 0px;
+    padding-bottom:12px;
+    padding-top:12px;
+    padding-left:0px;
+    padding-right:0px;
+    text-align:center;
+    text-shadow:1px 1px 1px #000000;
+    vertical-align:middle;
+    width:610px;
+    display:block;
+     
+}
+html {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    /*background-image: url("images/body-bg.png");*/
+    background-origin: padding-box;
+    background-size: auto;
+    background-repeat:repeat;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    
+}
+div.NoPhoto#PageHeader {
+    color: #fff;
+}
+div#SkipToContent {
+    margin-left: -1600px;
+    float:left;
+}
+#TNLogo img {
+    border-color: currentColor;
+    display:none;
+    border-style:none;
+    border-width:0;
+}
+#PageHeader {
+    position: relative;
+    /*height:110px;*/
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+
+}
+#PageHeader div#TNLogo {
+        width: 126px;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        float: left;
+}
+div#Footer ul {
+  padding: 0;
+  margin: 0;
+}
+div#Footer {
+  padding: 10px;
+  color: #ffffff;
+}
+div#Footer a {
+  color: #ffffff;
+}
+div#Footer ul li, div#Footer div#ContactInfo ul li {
+  border-right: 1px solid #306498;
+}
+div#Footer div#ContactInfo ul li {
+  padding: 0 10px;
+}
+div#Footer ul li {
+  padding: 0 10px;
+  display: inline;
+  list-style-type: none;
+}
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+#PageHeader #CommissionerName, #PageHeader a #CommissionerName {
+  font-style: italic;
+  font-size: 69.2%;
+}
+#PageHeader #CommissionerName {
+  padding: 0;
+  margin: 0;
+  color: #dedede;
+}
+div#Footer ul li.LastListItem, div#Footer div#ContactInfo ul li.LastListItem {
+  border: 0;
+}
+div#Footer div#ContactInfo {
+  padding: 5px 0;
+}
+/*Changes for - Bug CSS CleanUp - ends*/
+/*Changes for - Bug CSS CleanUp - begins login.aspx*/
+.failureNotification {
+    color: #D10000 !important;
+}
+/*Changes for - Bug CSS CleanUp - ends login.aspx*/
+/*bug NE branding begins*/
+/*header styles*/
+#header {
+    height: auto;
+    float: left;
+    width: 100%;
+    /*position:fixed;*/
+    /*z-index:1000;*/
+}
+
+.headerBg {
+    /*background-color: #E8F0F9; ;*/
+     /*background-color: #607078;*/
+    height: 80px;
+    border-top: 15px solid #2B4888;
+}
+
+/*#StateLogo {
+    background-image: url("images/District of ColumbiaGovLogo.GIF");
+    background-repeat:no-repeat;
+    background-color: #607078;
+    height: 17px;
+    margin-right: 0px;
+    padding-left: 4px;
+    text-align: left;
+    position:relative;
+}*/
+#NELogo {
+    background-color: #7D9FC2;
+    text-align: left;
+    margin:0px;
+    /*background-image:url("images/District of ColumbiaDHHSLogo.jpg");*/
+    background-repeat:no-repeat;
+}
+    #NELogo a {
+        
+    background-color: transparent;
+        padding: 0px;
+        margin: 0px;
+    }
+
+#NELogo img {
+    height: 80px;
+    width: 878px;
+}
+#programName {
+    background-color: #2B4888; /*NE was #607078;*/ 
+    /*border-bottom: 1px solid #fff;*/
+    font-family: Arial, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 13pt;
+    color: #ffffff;
+    height:20px;
+    text-align: center;
+}
+
+    
+
+/*#envVer {
+    color: #ffffff;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 0px;
+}*/
+
+
+/*reference colors for District of Columbia's 3 blue colors found in logo*/
+.darkblue {
+    background-color: #095899;
+}
+
+.medblue {
+    background-color: #7D9FC2;
+}
+
+.lightblue {
+    background-color: #E8F0F9;
+}
+#footerContent {
+    padding-top: 0px;
+    padding-bottom: 5px;
+    font-size: 80%;
+    margin-right: 19px;
+    margin-left: 17px;
+    line-height: 1;
+}
+#Footer {
+    /*changed from absolute to relative to get the footer aligned at bottom 
+    position:relative;
+    bottom:0;
+    height: 100px;
+    background-color:#607078;
+    width:100%;
+    /*changed  to get the footer aligned at bottom
+    clear:both;*/
+}
+#wrapper {
+/*min-height:100%;
+position: relative;
+/*to hide the horizontal scroll bar 
+overflow-x:hidden;*/
+
+}
+/*Messagebox.ascx styles*/
+.pnlHeader{
+    cursor: move;
+    padding: 5px;
+    background-color: #7d9fc2;
+}
+/*bug NE branding ends*/
+/* Clearable Text Box */
+
+.clearable{
+        background:url(http://i.imgur.com/z7ZSYjt.png) no-repeat right -10px center;
+        border:1px solid #999;
+        padding:3px 18px 3px 4px; /* USE the same right padding in jQ! */
+        border-radius:3px;
+        transition: background 0.4s; /*REMOVE THIS LINE IF YOU ENCOUNTER ISSUES IN Chrome (Bug 02.2014)*/
+        background-color:White;
+    }
+    .clearable.x{
+        background-position: right 5px center;
+    }
+    .clearable.onX{
+        cursor:pointer;
+    }
+            
+        /* Clearable text box end */
+
+.legend {
+    width:98%;
+}
+    .legend td {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+
+.detailSection {
+    padding-top: 10px;
+    padding-bottom:20px;
+}
+.infoBox {
+    background-color:lemonchiffon; 
+    border: solid 1px #808080; 
+    display:none; 
+    font-size:9pt;
+    height:auto; 
+    width:auto; 
+    position:absolute; 
+    z-index:9; 
+}
+.infoContent {
+     padding:5px;
+    text-align:left;
+}
+.infoTitle {
+    font-size:9pt;
+    font-weight:bold; 
+    padding-left:5px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    text-align:left;
+}
+
+.panelContent {
+    padding:10px;
+}
+
+/**********************************************************************************************************************************/
+/* Css for section header in lieu of user control Separator */
+/**********************************************************************************************************************************/
+
+ .boxContainer 
+    { 
+        /*padding: 3px;
+	     Background color and gradients  
+	    color: #FFFFFF; /* #191970;  
+	    background-color: #7D9FC2; /*changed for NE 923931*//* #b0c4de; 
+
+	    -moz-box-shadow: 3px 3px 4px #8b8989;
+	    -webkit-box-shadow: 3px 3px 4px #8b8989;
+	    box-shadow: 3px 3px 4px #8b8989;*/
+    }
+    
+    .boxLabel
+    {
+        font-size: 10pt;
+        font-weight: bold;
+    } 
+
+.sort-asc  A, .sort-asc  a:link{
+    background: url('images/icon-arrowup.png') right center no-repeat;
+}
+
+.sort-desc  A, .sort-desc  a:link{
+    background: url('images/icon-arrowdown.png') right center no-repeat;
+}
+
+#resource-link-box {
+   height: 500px; display:inline-block; padding-left: 20px; width: 900px;
+}
+.resource-header {
+        color: #036;
+        font-size: 10pt;
+        font-weight: bold;
+        padding-top: 20px;
+        padding-bottom: 4px;
+        text-align: left;
+        width: 350px;
+        text-wrap: normal;
+}
+
+.resource-sub-header {
+        color: #036;
+        font-size: 10pt;
+        font-weight: bold;
+        padding-bottom: 4px;
+        padding-left: 20px;
+        text-align: left;
+        width: auto;
+}
+
+ul.resource-link, ul.resource-sub-link {
+    margin: 0px;
+    padding-top:0px;
+    padding-left: 40px;
+    width: 360px;
+}
+
+.resource-link li, .resource-sub-link li {
+    list-style: square;
+    list-style-position: outside;
+}
+.resource-sub-link li {
+}
+.resource-link A, .resource-link  a:link, .resource-sub-link A, .resource-sub-link  a:link{
+    padding:0px;    
+    text-decoration: none;
+    text-wrap: normal;
+}
+
+.help-img {
+    border: none;
+     height:15px;
+     width:15px;
+     padding-bottom:3px;
+}
+
+.resource-link-leftbox-style {
+    padding-top: 20px;
+    width: 300px;
+    float: left;
+}
+
+.resource-link-righttbox-style {
+    padding-top: 20px; 
+    width:550px; 
+    float:right;
+}
+.auto-style1 {
+    height: 102px;
+}
+.pnlWidth 
+        {
+            width:760px;
+        }
+
+.formFieldReadOnlyBasic {
+	display: inline-block;
+}

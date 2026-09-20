@@ -1,0 +1,72 @@
+﻿[[DISPLAYOMR]]
+ <br />
+ <div> 
+	[[FROMADDRESS]]
+</div>
+<br /> 
+<br/>  
+<br/> 
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right;}										
+</style>		 
+<table id="Mytable">
+<tr>
+	<td class="left" valign=top>
+		[[TOADDRESS]]
+	</td> 
+	<td valign=top class="right">				 
+		<p>Legal Name: [[LEGALNAME]] </p>    
+		<p>[[NPILabel]]: [[GROUPNPI]]</p>      
+		<p>[[GroupMedicaidLabel]]Medicaid #: [[GROUPMEDICAID]]</p>  
+		<p>Taxonomy: [[TAXONOMY]]</p>  
+		<p>Effective Date: [[EFFECTIVEDATE]]</p>  
+	</td>
+</tr>
+<tr>
+	<td class="left">&nbsp</td>										
+	<td class="right">&nbsp</td>
+</tr>
+<tr>
+	<td class="left">[[CURRENTDATE]]</td>
+	<td class="right"></td>
+</tr>
+</table> 	 
+<br />
+Dear Provider:<br>
+p>Thank you for your interest in the Medicaid program. Based on the information you provided through your [[grouplabel]]registration and the information received from the individual provider, 
+    we have confirmed the following provider as a member of your [[groupOrPracticeLabel]]: </p>
+<style type="text/css2">
+#Mytable2{font-family:Arial; font-size:10pt;  margin:auto;width:85%;}
+#Mytable2 .left{text-align:left;}
+#Mytable2 .right{text-align:right;}
+</style>
+<table id="Mytable2">
+<tr>
+<td class="right">Provider Name: </td>
+<td class="left">[[INDIVIDUALPROVIDERNAME]]</td>
+</tr>
+<tr>
+<td class="right">Type 1 NPI: </td>
+<td class="left">[[INDIVIDUALNPI]]</td>
+</tr>
+<tr>
+<td class="right">Medicaid ID: </td>
+<td class="left">[[INDIVIDUALMEDICAIDID]]</td>
+</tr>
+<tr>
+<td class="right">Affiliation Date: </td>
+<td class="left">[[AFFILIATIONDATE]]</td>
+</tr>
+</table>
+<br>  
+<p>Please log in to the Medicaid Provider Registration Portal to maintain your provider file including member affiliation.<br/>
+<p>[[PDMSURL]]</p>
+
+<p>If you have questions <b> or any of the above information is incorrect</b>, please contact Medicaid at 1-999-999-9999 (TTY #999-999-999) 
+or email at <a href ="mailto:[[PDMSEMAIL]]">[[PDMSEMAIL]]</a>.</p>          
+Regards, <br>
+MAXIMUS Provider Screening and Enrollment Customer Service <br>
+</div>

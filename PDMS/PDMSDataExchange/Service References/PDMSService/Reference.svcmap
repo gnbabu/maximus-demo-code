@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b30fb0cd-b31c-44a7-814e-d0600792f8e7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2641/PDMSService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PDMSService.xsd" MetadataType="Schema" ID="b8f07171-30e4-480f-8277-029296a87d2b" SourceId="1" SourceUrl="http://localhost:2641/PDMSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PDMSService.wsdl" MetadataType="Wsdl" ID="a711e613-d9ae-43a0-8fd2-5a9c0dcc47e0" SourceId="1" SourceUrl="http://localhost:2641/PDMSService.svc?wsdl" />
+    <MetadataFile FileName="PDMSService1.xsd" MetadataType="Schema" ID="c5b1eda7-6e20-472b-bde5-18e9d7205f35" SourceId="1" SourceUrl="http://localhost:2641/PDMSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PDMSService2.xsd" MetadataType="Schema" ID="546d803b-0e4f-409f-b77b-649978b227cc" SourceId="1" SourceUrl="http://localhost:2641/PDMSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PDMSService3.xsd" MetadataType="Schema" ID="1b65d792-7f59-4fa4-aeb7-26694521da53" SourceId="1" SourceUrl="http://localhost:2641/PDMSService.svc?xsd=xsd4" />
+    <MetadataFile FileName="PDMSService.disco" MetadataType="Disco" ID="d57befa7-d2b0-41ed-9f3b-287de3bad41c" SourceId="1" SourceUrl="http://localhost:2641/PDMSService.svc?disco" />
+    <MetadataFile FileName="PDMSService4.xsd" MetadataType="Schema" ID="9f539bd4-0da8-498d-a731-713699136e2d" SourceId="1" SourceUrl="http://localhost:2641/PDMSService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PDMSService5.xsd" MetadataType="Schema" ID="50334439-525f-4fad-bdcb-7ca2ef7f9711" SourceId="1" SourceUrl="http://localhost:2641/PDMSService.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

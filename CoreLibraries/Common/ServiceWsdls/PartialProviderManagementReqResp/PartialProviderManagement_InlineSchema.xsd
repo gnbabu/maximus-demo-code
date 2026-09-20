@@ -1,0 +1,1278 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:provpart= "http://mes.gov/partialprovidermanagement" targetNamespace="http://mes.gov/partialprovidermanagement" xmlns:tns="http://mes.gov/partialprovidermanagement">
+	<xsd:include schemaLocation="PartialProviderManagement_Datatypes.xsd"/>
+	
+<!--Version: 1.0.0
+Change Description: License node repititions increased from 50 to 200, Attestation node repetitions increased from 10 to 200
+Change by: Jayalakshmi Rao
+Last updated: 11/13
+Updated Date: 11/16/2020-->
+
+	<!--Start of Partial Provider Service-->
+	<xsd:complexType name="SubmitPartialProviderRequestPayload">                            					         
+		<xsd:sequence> 
+			<xsd:element name="ProviderInformation" type="tns:SubmitPartialProviderInformation"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	
+	<!--End of Partial Provider Service-->
+	
+	<!-- Start of Partial provider schema -->	
+	<xsd:complexType name="SubmitPartialProviderInformation">                            					         
+		<xsd:sequence> 
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderDemographics" type="tns:PartialProviderDemographics"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAddress">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="Address">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:PartialProviderAddress">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ProvAddressSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderContact">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="10" minOccurs="0" name="Contact">
+						<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:PartialProviderContactList">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ProvContactSrcKey" type="tns:String36"/>
+											</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>			
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderApplication" type="tns:PartialProviderApplicationList"/>
+			<!-- Start of PartialProviderOwnership -->
+			 <xsd:element maxOccurs="1" minOccurs="0" name="ProviderOwnerships">
+                          <xsd:complexType>
+                           <xsd:sequence>
+                          <xsd:element maxOccurs="500" minOccurs="0" name="ProviderOwnership" type="tns:PartialProviderOwnershipList"/>
+			</xsd:sequence>
+                        </xsd:complexType>
+                        </xsd:element>
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAlternateIdentifiers">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="500" minOccurs="0" name="AlternateIdentifier" type="tns:PartialProviderAlternateIdList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+						
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderType">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="Type" type="tns:PartialProviderTypeList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAffiliations">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="10000" minOccurs="0" name="Affiliations" type="tns:PartialProviderAffiliationList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			
+				
+			<xsd:element maxOccurs="1" minOccurs="0" name="OwnerRelationship">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="2500" minOccurs="0" name="Relationship" type="tns:PartialOwnerRelationshipList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderManagedEmployees" type="tns:PartialProviderManagedEmployeesList"/>
+			<!--<xsd:element maxOccurs="1" minOccurs="0" name="ProviderManagedEmployees">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="ManagedEmployee" type="tns:PartialProviderManagedEmployeesList"/>
+                                                  <xsd:element maxOccurs="100" minOccurs="0" name="ManagedEmployeeAddress">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:PartialOwnerAddress">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name=" ProvOwnrAdrsSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+                                
+			</xsd:element>-->
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderBusinessStatus">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="BusinessStatus" type="tns:PartialProviderBusinessStatusList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<!--End of Provider Ownership change -->
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTaxonomyClassification">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="TaxonomyClassification" type="tns:PartialTaxonomyClassificationList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderProgramAffiliations">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="ProgramAffiliation" type="tns:PartialProgramAffiliationsList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+ 
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderEFTEnrollment">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="EFTEnrollment" type="tns:PartialEFTEnrollmentList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<!--OH new node elements-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderServices">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Services" type="tns:PartialProviderServicesList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderDocuments">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="35" minOccurs="0" name="Documents" type="tns:PartialProviderDocumentsList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderCHOP">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="10" minOccurs="0" name="CHOP" type="tns:PartialProviderCHOPList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAttestations">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="Attestations" type="tns:PartialProviderAttestationsList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderLanguage">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="500" minOccurs="0" name="Languages" type="tns:PartialProviderLanguageList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderReviews">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="10" minOccurs="0" name="Review" type="tns:PartialProviderReviewsList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<!-- OH Changes Start - 10102021 -->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderIndicator">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="Indicator" type="tns:PartialProviderIndicatorList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!-- OH Changes End - 10102021 -->
+			
+			<!--End of OH new node elements-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderServiceLocation">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="ServiceLocation" type="tns:PartialProviderServiceLocation"/>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>			
+		</xsd:sequence>                            					         
+	</xsd:complexType> 
+	<xsd:complexType name="PartialProviderDemographics">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="0" name="ProviderId" type="tns:String71"/>   <!-- OH Changes - 10112021 -->
+			<xsd:element minOccurs="0" name="TaxId" type="tns:String9"/>
+			<xsd:element minOccurs="0" name="ProviderRoleCode" type="tns:String50"/>   
+			<xsd:element minOccurs="0" name="NationalProviderIdentifier" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="FirstName" type="tns:String40"/>
+			<xsd:element minOccurs="0" name="MiddleName" type="tns:String40"/>
+			<xsd:element minOccurs="0" name="LastName" type="tns:String40"/>
+
+			<xsd:element minOccurs="0" name="Prefix" type="tns:String15"/>  
+			<xsd:element minOccurs="0" name="Suffix" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="SSN" type="tns:String09"/>
+			<xsd:element minOccurs="0" name="Gender" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="EntityType" type="tns:String50"/>
+			<!-- OH Changes Start - OrganizationBusinessName replacing ProviderName  -->
+			<!--<xsd:element minOccurs="0" name="ProviderName" type="tns:String100"/>-->
+			<xsd:element minOccurs="0" name="OrganizationBusinessName" type="tns:String100"/>  
+			<!-- OH Changes End - 10112021 -->
+			<xsd:element minOccurs="0" name="LegalProviderName" type="tns:String100"/>
+			<xsd:element minOccurs="0" name="ProviderBusinessName" type="tns:String100"/> 
+			<xsd:element minOccurs="0" name="ProviderTaxName" type="tns:String100"/>  
+			<xsd:element minOccurs="0" name="TeachingIndicator" type="tns:String1"/> 
+			<xsd:element minOccurs="0" name="OwnershipCode" type="tns:String50"/>  
+			<!--OH new elements-->
+			<xsd:element minOccurs="0" name="PracticeTypeCode" type="tns:String50"/>
+			<!--End of OH new elements-->
+			<xsd:element minOccurs="0" name="ProviderProfitStatusCode" type="tns:String50"/> 
+			<xsd:element minOccurs="0" name="NewPatientIndicator" type="tns:String1"/> 
+			<xsd:element minOccurs="0" name="EnrollmentType" type="tns:String50"/>    
+
+
+			<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="DateOfBirth" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="DateOfDeath" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="Race" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="MedicareInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="PCPStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="PCPTermDate" type="tns:DateType"/>
+			<!--OH new elements-->
+			<xsd:element minOccurs="0" name="BirthCountry" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="BirthCity" type="tns:String50"/> 
+			<xsd:element minOccurs="0" name="BirthState" type="tns:String50"/> 
+			<xsd:element minOccurs="0" name="PaymentTypeCode" type="tns:String50"/> 
+			<xsd:element minOccurs="0" name="ProvRiskLevel" type="tns:String20"/>
+						
+			<xsd:element minOccurs="0" name="ProvDirectorySearchIndicator" type="tns:String1"/> 			
+			<!--OH end of new elements-->
+			<xsd:element minOccurs="0" name="ProvIHSAssoCode" type="tns:String50"/>   
+			<xsd:element minOccurs="0" name="ProvDemographicsSrcKey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>                           					             
+
+	<xsd:complexType name="PartialProviderAddress">                            					         
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="0" name="AddressType" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="AddressLine1" type="tns:String60"/>
+			<xsd:element minOccurs="0" name="AddressLine2">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String60"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="City" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="State" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="CountyCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ZipCode5" type="tns:String5"/>
+			<xsd:element minOccurs="0" name="ZipCode4" type="tns:String4"/>
+			<xsd:element minOccurs="0" name="Country" type="tns:String20"/>
+			<xsd:element minOccurs="0" name="BorderStateIndicator" type="tns:String1"/> <!--TMSIS field-->
+			<!--OH New elements mapping for Address-->
+			<xsd:element minOccurs="0" name="AddressNameTypeIndicator" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressName" type="tns:String100"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressFirstName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressMiddleName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressLastName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumber1" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumberExt1" type="tns:String5"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumber2" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumberExt2" type="tns:String5"/>
+			<xsd:element minOccurs="0" name="ProvOrgFaxNumber1" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvOrgFaxNumber2" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvAddressContactName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvEmail" type="tns:String50"/>
+			<!--<xsd:element minOccurs="0" name="ProvAddressLongitude" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvAddressLatitude" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="HandicapAccessibilityIndicator" type="tns:String1"/>-->
+			<xsd:element minOccurs="0" name="HandicapAccessibilityIndicator" type="tns:Char1"/>
+			<!--end of new Address elements for OH-->
+			<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<!-- OH Changes Start - 10102021 -->
+			<xsd:element minOccurs="0" name="Latitude" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="Longitude" type="tns:String50"/>
+			<!-- OH Changes End - 10102021 -->
+		</xsd:sequence>  
+	</xsd:complexType>
+	<xsd:complexType name="PartialProviderLicense">                            					         
+		<xsd:sequence>   
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="0" name="LicenseType" type="tns:String50"/>
+			<!-- OH Changes Start - 10102021-->
+			<xsd:element minOccurs="0" name="LicenseNumber" type="tns:String25"/>
+			<!-- OH Changes End - 10102021 -->
+			<xsd:element minOccurs="0" name="LicenseeStateCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="LicenseIssueBoardNotes">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String40"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Status" type="tns:String20"/>
+			<xsd:element minOccurs="0" name="StatusReason">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String20"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="CountyCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>                           					             
+	<xsd:complexType name="PartialProviderServiceLocation">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="0" name="LocationName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="LocationCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="OrgStateOwnedIndicator" type="tns:String1"/>
+			<!-- Start OH Changes - 10102021-->
+			<xsd:element minOccurs="0" name="RAPrintIndicator" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="AllAgesSeen" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="MaxAgeSeen" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="MinAgeSeen" type="tns:String1"/>
+			<!-- End OH Changes - 10102021-->
+			<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ServiceLocationAddress">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="Address">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:PartialProviderAddress">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="SvcLctnAdrsSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ServiceLocationContact">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="600" minOccurs="0" name="Contact">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:PartialProviderContactList">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="SvcLctnCntctSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderLicense">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="License">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:PartialProviderLicense">
+										<xsd:sequence>
+											<!-- OH Start of License Certifications -->
+											<xsd:element maxOccurs="1" minOccurs="0" name="LicenseCertifications">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element maxOccurs="12" minOccurs="0" name="Certifications" type="tns:PartialLicenseCertificationsList"/>
+												</xsd:sequence>
+											</xsd:complexType>
+											</xsd:element>
+											<!-- OH End of License Certifications -->
+											<xsd:element minOccurs="0" name="ProvLicenseSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderCertification">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Certification" type="tns:PartialProviderCertificationList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderIdentifier">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="Identifier" type="tns:PartialProviderIdentifierList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderFacility">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="Facility" type="tns:PartialProviderFacilityList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTaxonomy">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Taxonomy" type="tns:PartialProviderTaxonomyList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderSpecialty">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Specialty" type="tns:PartialProviderSpecialtyList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderType">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="Type" type="tns:PartialProviderTypeList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderRestriction">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="10" minOccurs="0" name="Restriction" type="tns:PartialProviderRestrictionList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<!--Start of OH new Service location node-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="SiteVisits">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="20" minOccurs="0" name="Visit" type="tns:PartialVisitList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTraining">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="500" minOccurs="0" name="Training" type="tns:PartialProviderTrainingList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<!-- OH Changes Start - 10112021 -->
+			<xsd:element maxOccurs="1" minOccurs="0" name="PartialProviderIndicator">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Indicator" type="tns:PartialProviderIndicatorList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!-- OH Changes End - 10112021 -->
+			
+			<!--End of OH new Service location nodes-->
+			<xsd:element minOccurs="0" name="ProvSvcLocationSrcKey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType> 
+
+	<xsd:complexType name="PartialProviderApplicationList">                            					         
+		<xsd:sequence> 
+			<xsd:element maxOccurs="25" minOccurs="0" name="Application" type="tns:PartialProviderApplication"/>	
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+
+	<xsd:complexType name="PartialProviderApplication">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="0" name="ApplicationId" type="tns:String20"/> 
+			<xsd:element minOccurs="0" name="ApplicationCreatedDate">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:DateType"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ApprovalDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="StatePlanEnrollCode" type="tns:String50"/>   <!--TMSIS field-->
+			<xsd:element minOccurs="0" name="EnrollMethodCode" type="tns:String50"/>     <!--TMSIS field-->
+			<xsd:element minOccurs="0" name="ProvEnrollStatusCode" type="tns:String50"/> 
+			<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="CountyCode" type="tns:String50"/>
+			<!--OH addition of new elements-->
+			<xsd:element minOccurs="0" name="NonMedicaidApplicationProviderType" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="AdditionalApplicationId" type="tns:String20"/>			
+			<xsd:element minOccurs="0" name="ApplicationType" type="tns:String75"/>
+			<xsd:element minOccurs="0" name="ApplicationStatus" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ApplicationLegalStatus" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ApplicationFeeConfirmation" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="SingleSignOnAssignedID" type="tns:String30"/>
+			<xsd:element minOccurs="0" name="SingleSignOnSelectedID" type="tns:String30"/>
+			<xsd:element minOccurs="0" name="AdditionalUserID" type="tns:String30"/>
+			<xsd:element minOccurs="0" name="SingleSignOnRole" type="tns:String30"/>
+			<xsd:element minOccurs="0" name="EmailAddress" type="tns:String50"/>
+			<!--End of OH addition of new elements-->
+			<xsd:element minOccurs="0" name="ProvApplicationSrcKey" type="tns:String36"/> 
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+
+	<!-- End of Submit partial provider schema -->	
+
+	<!-- Start of common objects for create, update-->
+
+	<xsd:complexType name="PartialProviderOwnershipList">                            					         
+				<xsd:sequence> 
+					<xsd:element maxOccurs="1" minOccurs="0" name="OwnershipDetails">
+						<xsd:complexType>
+							<xsd:complexContent>								
+								<xsd:extension base="tns:PartialOwner">
+									<xsd:sequence>
+										<xsd:element minOccurs="0" name="ProvOwnrDtlSrcKey" type="tns:String36"/>
+									</xsd:sequence>
+								</xsd:extension>
+							</xsd:complexContent>
+
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="OwnerAddress">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element maxOccurs="2500" minOccurs="0" name="Address">
+									<xsd:complexType>
+										<xsd:complexContent>
+											<xsd:extension base="tns:PartialOwnerAddress">
+												<xsd:sequence>
+													<xsd:element minOccurs="0" name="ProvOwnrAdrsSrcKey" type="tns:String36"/>
+												</xsd:sequence>
+											</xsd:extension>
+										</xsd:complexContent>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>  
+	</xsd:complexType> 
+	
+	<xsd:complexType name="PartialOwner">
+		<xsd:complexContent>
+			<xsd:extension base="tns:PartialOwnerCommon">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+					<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+					<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+					<!-- OH Changes Start - 10112021 -->
+					<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/>
+					<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+					<!-- OH Changes End - 10112021 -->
+					<xsd:choice>
+						<xsd:element maxOccurs="1" minOccurs="0" name="OwnerIndividual">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:PartialOwnerIndividual">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="OwnerIndvSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="OwnerOrganization">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:PartialOwnerOrganization">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="OwnerOrgSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:choice>
+				</xsd:sequence>  
+			</xsd:extension>
+		</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="ManageEmployee">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="FirstName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="MiddleName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="LastName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ManageEmployeesType" type="tns:String50"/>
+                        <xsd:element minOccurs="0" name="OwnerAffiliationType" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ManageEmployeesInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="DateOfBirth">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:DateType"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="SSN" type="tns:String09"/>
+			<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+                         <xsd:element minOccurs="0" name="SanctionInd" type="tns:String1"/>
+                         <xsd:element minOccurs="0" name="SanctionExplain" type="tns:String500"/>
+                          <xsd:element minOccurs="0" name="RelationshipInd" type="tns:String1"/>
+                          <xsd:element minOccurs="0" name="CriminalOffenseInd" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="CriminalOffenseExplain" type="tns:String500"/>
+                           <xsd:element minOccurs="0" name="LicenseSuspendInd" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="LicenseSuspendExplain" type="tns:String200"/>
+                           <xsd:element minOccurs="0" name="PenaltyInd" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="PenaltyExplain" type="tns:String200"/>
+                           <xsd:element minOccurs="0" name="CntrlIntrstOthrProvEntityInd" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="CntrlIntrstOthrProvEntityExplain" type="tns:String200"/>
+                           <xsd:element minOccurs="0" name="OwnrSubcntrctrTrnxInd" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="OwnrSubcntrctrDetails" type="tns:String200"/>
+                             <xsd:element minOccurs="0" name="OwnrSubcntrctrBsnssTrnxInd" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="OwnrSubcntrctrBsnssTrnxDetails" type="tns:String200"/>
+                             <xsd:element minOccurs="0" name="TransactionAmount" type="tns:Decimal11-2"/>
+                         <xsd:element minOccurs="0" name="TransactionDate" type="tns:DateType"/>
+                           <xsd:element minOccurs="0" name="OwnerOutOfStateResidentIndicator" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="OwnerOutOfStateResidentExplain" type="tns:String200"/>
+                             <xsd:element minOccurs="0" name="OwnerStateFederalOffenseInd" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="OwnerStateFederalOffenseExplain" type="tns:String500"/>
+                           <xsd:element minOccurs="0" name="FingerprintStatusIndicator" type="tns:String20"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+<xsd:complexType name="PartialOwnerCommon">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="OwnerType" type="tns:String50"/>
+                        <xsd:element minOccurs="0" name="OwnerAffiliationType" type="tns:String50"/>                        
+			<xsd:element minOccurs="0" name="OwnPercentage" type="tns:String3"/>
+			<xsd:element minOccurs="0" name="SanctionInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="SanctionExplain" type="tns:String500"/>
+                        <xsd:element minOccurs="0" name="RelationshipInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="CriminalOffenseInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="CriminalOffenseExplain" type="tns:String500"/>
+			<xsd:element minOccurs="0" name="LicenseSuspendInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="LicenseSuspendExplain" type="tns:String200"/>
+			<xsd:element minOccurs="0" name="PenaltyInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="PenaltyExplain" type="tns:String200"/>
+			<!--OH new elements-->
+			<xsd:element minOccurs="0" name="CntrlIntrstOthrProvEntityInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="CntrlIntrstOthrProvEntityExplain" type="tns:String200"/>
+			<xsd:element minOccurs="0" name="OwnrSubcntrctrTrnxInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="OwnrSubcntrctrDetails" type="tns:String200"/>
+			<xsd:element minOccurs="0" name="OwnrSubcntrctrBsnssTrnxInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="OwnrSubcntrctrBsnssTrnxDetails" type="tns:String200"/>
+                        <xsd:element minOccurs="0" name="TransactionAmount" type="tns:Decimal11-2"/>
+                         <xsd:element minOccurs="0" name="TransactionDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="OwnerOutOfStateResidentIndicator" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="OwnerOutOfStateResidentExplain" type="tns:String200"/>
+                        <xsd:element minOccurs="0" name="OwnerStateFederalOffenseInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="OwnerStateFederalOffenseExplain" type="tns:String500"/>
+			<xsd:element minOccurs="0" name="FingerprintStatusIndicator" type="tns:String20"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+<xsd:complexType name="PartialOwnerIndividual">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="FirstName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="MiddleName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="LastName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="DateOfBirth" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="SSN" type="tns:String09"/>
+		</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="PartialOwnerOrganization">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="OwnerOrgName" type="tns:String100"/>
+			<xsd:element minOccurs="0" name="OrgTaxIdNumber" type="tns:String9"/>
+		</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="PartialOwnerAddress">                            					         
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="0" name="AddressType" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="AddressLine1">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String60"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="AddressLine2">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String60"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="City">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String50"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="State">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String50"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="CountyCode">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String50"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ZipCode5">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String5"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ZipCode4">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String4"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Country">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String20"/>
+				</xsd:simpleType>
+			</xsd:element>			
+			<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="Latitude" type="tns:String50"/>  <!-- Changes OH - 10112021 -->
+			<xsd:element minOccurs="0" name="Longitude" type="tns:String50"/>  <!-- Changes OH - 10112021 -->
+			<!-- <xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/> -->	<!-- Changes OH - 10112021 -->
+		</xsd:sequence>                            					         
+	</xsd:complexType> 
+
+
+	<xsd:complexType name="PartialProviderContactList">                            					         
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>  
+								<xsd:element minOccurs="0" name="ContactType" type="tns:String50"/>
+			<!-- OH Changes Start - 10112021-->
+								<!--<xsd:element minOccurs="0" name="ContactDetail" type="tns:String50"/>-->
+								<xsd:element minOccurs="0" name="ContactDetail" type="tns:String55"/>
+			<!-- OH Changes End - 10112021 -->
+								<xsd:element minOccurs="0" name="ContactInstruction">
+									<xsd:simpleType>
+										<xsd:union memberTypes="tns:EmptyValue tns:String225"/>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element minOccurs="0" name="PreferredContactIndicator">
+									<xsd:simpleType>
+										<xsd:union memberTypes="tns:EmptyValue tns:String1"/>
+									</xsd:simpleType>									
+								</xsd:element>
+						<!-- OH Changes Start - 10112021-->
+								<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+						<!-- OH Changes End - 10112021 -->
+		</xsd:sequence>                            					         
+	</xsd:complexType>		
+	<xsd:complexType name="PartialProviderCertificationList">                            					         
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+								<xsd:element minOccurs="0" name="CertificateNumber" type="tns:String45"/>
+								<xsd:element minOccurs="0" name="CertificateType" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="ProvCrtfctnSrcKey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="PartialProviderAffiliationList">                            					         
+		<xsd:sequence>
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+						<!-- OH Changes Start - 10112021 -->
+								<!-- <xsd:element minOccurs="0" name="ProviderId" type="tns:String20"/> -->
+						<!-- OH Changes End - 10112021-->
+								<xsd:element minOccurs="0" name="NPI" type="tns:String10"/>
+								<xsd:element minOccurs="0" name="ProviderAffiliationTypeCode" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="AdditionalInfo1" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="AdditionalInfo2" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="ProvAffiliationSrcKey" type="tns:String36"/>
+		</xsd:sequence>						                         					         
+	</xsd:complexType>
+
+	<xsd:complexType name="PartialProviderTypeList">                            					         
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+								<xsd:element minOccurs="0" name="ProviderTypeCode" type="tns:String50"/>
+								
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>				
+								<xsd:element minOccurs="0" name="ProvTypeSrcKey" type="tns:String36"/> 
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	
+	<xsd:complexType name="PartialProviderRestrictionList">                            					         
+		<xsd:sequence>
+								 <xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+								 <xsd:element minOccurs="0" name="ReviewReason" type="tns:String50"/>
+								 <xsd:element minOccurs="0" name="ReviewType" type="tns:String50"/>
+								 <xsd:element minOccurs="0" name="RestrictionClass" type="tns:String50"/>
+								 <xsd:element minOccurs="0" name="ClaimType" type="tns:String20"/>
+								 <xsd:element minOccurs="0" name="IncludeExcludeIndicator" type="tns:String1"/>
+								 <xsd:element minOccurs="0" name="LowCode" type="tns:String20"/>		 
+								 <xsd:element minOccurs="0" name="HighCode" type="tns:String20"/>
+								 <xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								 <xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								 <xsd:element minOccurs="0" name="ProvRestrictionSrcKey" type="tns:String36"/>						
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	
+	<xsd:complexType name="PartialProviderAlternateIdList">                            					         
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>  
+								<xsd:element minOccurs="0" name="AlternateIdType" type="tns:String50"/>    
+								<xsd:element minOccurs="0" name="AlternateId" type="tns:String20"/>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="ProvAlternateIdSrcKey" type="tns:String36"/>
+							
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	
+	<xsd:complexType name="PartialProviderTaxonomyList">                            					         
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+								<xsd:element minOccurs="0" name="TaxonomyCode" type="tns:String10"/>
+								<xsd:element minOccurs="0" name="PrimaryTaxonomyIndicator" type="tns:String1"/>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="ProvTxnmySrcKey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="PartialProviderSpecialtyList">                            					         
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+								<!--OH new elements-->
+								<xsd:element minOccurs="0" name="PrimarySpecialityIndicator" type="tns:String1"/>
+								<!--End of OH new elements-->
+								<xsd:element minOccurs="0" name="SpecialtyCode" type="tns:String3"/>
+								<!-- SCTASK0032239 - CR 96 Start -->
+								<xsd:element minOccurs="0" name="SpecialityStatusCode" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="SpecialityStatusReasonCode" type="tns:String50"/>
+								<!-- SCTASK0032239 - CR 96 End -->
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="ProvSpcltySrcKey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+		
+	<xsd:complexType name="PartialOwnerRelationshipList">
+		<xsd:sequence>
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+								<xsd:choice>
+									<xsd:element minOccurs="0" name="Owner1SSN" type="tns:String09"/>
+									<xsd:element minOccurs="0" name="Owner1OrgTaxIdNumber" type="tns:String9"/>
+								</xsd:choice>
+								<xsd:choice>
+									<xsd:element minOccurs="0" name="Owner2SSN" type="tns:String09"/>
+									<xsd:element minOccurs="0" name="Owner2OrgTaxIdNumber" type="tns:String9"/>
+								</xsd:choice>
+								<xsd:element minOccurs="0" name="RelationType" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="OwnrRltnshpSrcKey" type="tns:String36"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PartialProviderManagedEmployeesList">
+	<xsd:sequence>
+			<xsd:element maxOccurs="100" minOccurs="0" name="ProviderManagedEmployee">
+				<xsd:complexType>
+					<xsd:sequence>
+				<xsd:element maxOccurs="1" minOccurs="0" name="ManagedEmployee">
+					<xsd:complexType>
+						<xsd:complexContent>
+							<xsd:extension base="tns:ManageEmployee">
+								<xsd:sequence>
+									<xsd:element minOccurs="0" name="ProvMngdEmplySrcKey" type="tns:String36"/>
+								</xsd:sequence>
+							</xsd:extension>
+						</xsd:complexContent>
+					</xsd:complexType>
+				</xsd:element>
+				<!--</xsd:sequence>
+				</xsd:complexType>-->
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ManagedEmployeeAddress">
+				<!--<xsd:sequence>
+				<xsd:element maxOccurs="1" minOccurs="0" name="Address">-->
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Address">
+					<xsd:complexType>
+							<!--<xsd:sequence>-->
+						<xsd:complexContent>
+							<xsd:extension base="tns:EnrollOwnerAddress">
+								<xsd:sequence>
+									<xsd:element minOccurs="0" name=" ProvOwnrAdrsSrcKey" type="tns:String36"/>
+								</xsd:sequence>
+							</xsd:extension>
+						</xsd:complexContent>
+				<!--</xsd:sequence>-->
+				</xsd:complexType>
+				</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+				<!--</xsd:element>
+				</xsd:sequence>-->
+			</xsd:element>
+			</xsd:sequence>
+			</xsd:complexType>
+				</xsd:element>
+						
+		</xsd:sequence>          
+		<!--<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="FirstName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="MiddleName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="LastName" type="tns:String50"/>
+			<xsd:element minOccurs="1" name="ManageEmployeesType" type="tns:string50"/>
+                        <xsd:element minOccurs="1" name="OwnerAffiliationType" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="ManageEmployeesInd" type="tns:Char1"/>
+			<xsd:element minOccurs="0" name="DateOfBirth">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:DateType"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="SSN" type="tns:String09"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+                         <xsd:element minOccurs="1" name="SanctionInd" type="tns:String1"/>
+                         <xsd:element minOccurs="1" name="SanctionExplain" type="tns:String500"/>
+                          <xsd:element minOccurs="1" name="RelationshipInd" type="tns:String1"/>
+                          <xsd:element minOccurs="1" name="CriminalOffenseInd" type="tns:String1"/>
+                           <xsd:element minOccurs="1" name="CriminalOffenseExplain" type="tns:String500"/>
+                           <xsd:element minOccurs="1" name="LicenseSuspendInd" type="tns:String1"/>
+                           <xsd:element minOccurs="1" name="LicenseSuspendExplain" type="tns:String200"/>
+                           <xsd:element minOccurs="1" name="PenaltyInd" type="tns:String1"/>
+                           <xsd:element minOccurs="1" name="PenaltyExplain" type="tns:String200"/>
+                           <xsd:element minOccurs="1" name="CntrlIntrstOthrProvEntityInd" type="tns:String1"/>
+                           <xsd:element minOccurs="1" name="CntrlIntrstOthrProvEntityExplain" type="tns:String200"/>
+                           <xsd:element minOccurs="1" name="OwnrSubcntrctrTrnxInd" type="tns:String1"/>
+                           <xsd:element minOccurs="1" name="OwnrSubcntrctrDetails" type="tns:String200"/>
+                             <xsd:element minOccurs="1" name="OwnrSubcntrctrBsnssTrnxInd" type="tns:String1"/>
+                           <xsd:element minOccurs="1" name="OwnrSubcntrctrBsnssTrnxDetails" type="tns:String200"/>
+                             <xsd:element minOccurs="0" name="TransactionAmount" type="tns:Decimal11-2"/>
+                         <xsd:element minOccurs="0" name="TransactionDate" type="tns:MDateType"/>
+                           <xsd:element minOccurs="1" name="OwnerOutOfStateResidentIndicator" type="tns:String1"/>
+                           <xsd:element minOccurs="1" name="OwnerOutOfStateResidentExplain" type="tns:String200"/>
+                             <xsd:element minOccurs="1" name="OwnerStateFederalOffenseInd" type="tns:String1"/>
+                           <xsd:element minOccurs="1" name="OwnerStateFederalOffenseExplain" type="tns:String200"/>
+                           <xsd:element minOccurs="1" name="FingerprintStatusIndicator" type="tns:String20"/>						
+		</xsd:sequence> -->                           					         
+	</xsd:complexType>
+	
+	<xsd:complexType name="EnrollOwnerAddress">                            					         
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="0" name="AddressType" type="tns:String50"/>
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<xsd:element minOccurs="0" name="AddressLine1" type="tns:String60"/>
+			<!--HMP-2964 (HEAL-17628) changes end-->
+			<xsd:element minOccurs="0" name="AddressLine2">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String60"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<xsd:element minOccurs="0" name="City" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="State" type="tns:String50"/>
+			<!--HMP-3408 (HEAL-19413) changes start-->
+			<xsd:element minOccurs="0" name="CountyCode" type="tns:String50"/>
+			<!--HMP-3408 (HEAL-19413) changes start-->
+			<xsd:element minOccurs="0" name="ZipCode5" type="tns:String5"/>
+			<!--HMP-2964 (HEAL-17628) changes end-->
+			<xsd:element minOccurs="0" name="ZipCode4" type="tns:String4"/>
+			<xsd:element minOccurs="0" name="Country" type="tns:String20"/>
+			<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="Latitude" type="tns:String50"/>  <!-- OH Changes - 10112021 -->
+			<xsd:element minOccurs="0" name="Longitude" type="tns:String50"/>  <!-- OH Changes - 10112021 -->
+		</xsd:sequence>  
+	</xsd:complexType>
+	
+	<xsd:complexType name="PartialProviderBusinessStatusList">
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="BusinessStatusCode" type="tns:String50"/>
+								<!--OH new elements-->
+								<xsd:element minOccurs="0" name="EnrollmentBusinessStatusReasonCode" type="tns:String50"/>
+								<!--end of OH new elements-->
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="ProvBsnsStatusSrcKey" type="tns:String36"/>						
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of Provider Ownership change -->
+	<!--Start of TMSIS change -->
+	<xsd:complexType name="PartialProviderIdentifierList">
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="IdentifierTypeCode" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="IssuingEntityID" type="tns:String20"/>
+								<xsd:element minOccurs="0" name="IdentifierID" type="tns:String20"/>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="ProvIdentifierSrcKey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="PartialTaxonomyClassificationList">
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="ClassificationTypeCode" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="ClassificationCode" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="ProvTxnmyClsfctnSrcKey" type="tns:String36"/>						
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="PartialProgramAffiliationsList">
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="AffiliatedProgramCode" type="tns:String5"/>
+								<xsd:element minOccurs="0" name="API" type="tns:String10"/>
+								<xsd:element minOccurs="0" name="AffiliatedProgramId" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<!--OH new elements-->
+								<xsd:element minOccurs="0" name="ProgramAffiationStatusCode" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="ProgramAffiliationStatusReason" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="PgmAffltnSrcKey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	
+	
+	<xsd:complexType name="PartialEFTEnrollmentList">
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+								 <xsd:element minOccurs="0" name="EFTEnrollmentId" type="tns:String10"/>
+								 <xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								 <xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								 <xsd:element minOccurs="0" name="FinancialInstitutionAccountNumber" type="tns:String50"/>
+								 <xsd:element minOccurs="0" name="FinancialInstitutionAccountType" type="tns:String50"/>
+								 <xsd:element minOccurs="0" name="FinancialInstitutionName" type="tns:String50"/>
+								 <xsd:element minOccurs="0" name="FinancialInstitutionRoutingNumber" type="tns:String9"/>
+								 <xsd:element minOccurs="0" name="ProviderContactFirstName" type="tns:String40"/>
+								 <xsd:element minOccurs="0" name="ProviderContactLastName" type="tns:String40"/>
+								 <xsd:element minOccurs="0" name="ProviderContactMiddleName" type="tns:String40"/>
+								 <xsd:element minOccurs="0" name="ProviderContactPhoneNumber" type="tns:String50"/>
+								 <xsd:element minOccurs="0" name="ProviderContactPhoneNumberExtension" type="tns:String5"/>
+								 <xsd:element minOccurs="0" name="ProviderContactTitle" type="tns:String50"/>
+								 <xsd:element minOccurs="0" name="EFTSTATUS" type="tns:String2"/>
+								 <xsd:element minOccurs="0" name="ProvEFTEnrollmentSrcKey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	
+	
+	<xsd:complexType name="PartialProviderFacilityList">
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+								<!--OH new elements-->
+								<xsd:element minOccurs="0" name="FacilityId" type="tns:String50"/>
+								<!--End of OH new elements-->
+								<xsd:element minOccurs="0" name="BedTypeCode" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="BedCount">
+									<xsd:simpleType>
+										<xsd:union memberTypes="tns:EmptyValue tns:Int10"/>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="ProvFacilitySrcKey" type="tns:String36"/>							
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--OH ProviderServiceList start-->
+	<xsd:complexType name="PartialProviderServicesList">
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="ProviderService" type="tns:String100"/>			
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="ProviderServiceID" type="tns:String20"/>
+								<xsd:element minOccurs="0" name="Provsvcsrckey" type="tns:String36"/>							
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of OH ProviderServiceList-->
+	<!--Start of OH VisitsList-->
+	<xsd:complexType name="PartialVisitList">                            					         
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+								<xsd:element minOccurs="0" name="SiteVisitResult" type="tns:String20"/>
+								<xsd:element minOccurs="0" name="SiteVisitText" type="tns:String200"/>
+								<xsd:element minOccurs="0" name="SiteVisitID" type="tns:String10"/>		
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="Provvstsrckey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of VisitList-->
+	<!--Start of ProviderDocumentsList-->
+	<xsd:complexType name="PartialProviderDocumentsList">                            					         
+		<xsd:sequence> 
+				<!-- OH Changes Start - Sequence Changes 10112021 -->
+								<xsd:element minOccurs="0" name="Provdocsrckey" type="tns:String36"/>								   
+								<xsd:element minOccurs="0" name="DocName" type="tns:String100"/>
+								<xsd:element minOccurs="0" name="DocType" type="tns:String100"/>
+								<xsd:element minOccurs="0" name="DocExt" type="tns:String10"/>
+								<xsd:element minOccurs="0" name="DocDescription" type="tns:String100"/>
+								<xsd:element maxOccurs="1" minOccurs="0" name="ContentBase64binary">
+								   <xsd:simpleType>
+									  <xsd:union memberTypes="tns:EmptyValue tns:AttachmentData" />
+								   </xsd:simpleType>
+								</xsd:element>
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>														
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of ProviderDocumentsList-->
+	
+	<!--Start of ProviderCHOPList-->
+	<xsd:complexType name="PartialProviderCHOPList">                            					         
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+								<xsd:element minOccurs="0" name="MedicaidProviderSellerId" type="tns:String20"/>
+								<xsd:element maxOccurs="1" minOccurs="0" name="CHOPAmount">
+									<xsd:simpleType>
+										<xsd:union memberTypes="tns:EmptyValue tns:decimal11-2" />
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element minOccurs="0" name="CHOPTypeCode" type="tns:String50"/>
+								<xsd:element maxOccurs="1" minOccurs="0" name="MasterLeaseAmount">
+									<xsd:simpleType>
+										<xsd:union memberTypes="tns:EmptyValue tns:decimal11-2" />
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element maxOccurs="1" minOccurs="0" name="SubLeaseAmount">
+									<xsd:simpleType>
+										<xsd:union memberTypes="tns:EmptyValue tns:decimal11-2" />
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="Provchopsrckey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of ProviderCHOPList-->
+	
+	<!--Start of ProviderAttestationList-->
+	<xsd:complexType name="PartialProviderAttestationsList">                            					         
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+								<xsd:element minOccurs="0" name="ProvAttestationTypeIndicator" type="tns:String1"/>
+								<xsd:element minOccurs="0" name="ProvAttestationCode" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="ProvResponseIndicator" type="tns:String1"/>
+								<xsd:element minOccurs="0" name="ProvDateSigned" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="Provattssrckey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of ProviderAttestationList-->
+	
+	<!--Start of ProviderTrainingList-->
+	<xsd:complexType name="PartialProviderTrainingList">                            					         
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+								<xsd:element minOccurs="0" name="TrainingType" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="TrainingCompleteIndicator" type="tns:String1"/>
+								<xsd:element minOccurs="0" name="TrainingId" type="tns:String10"/>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="Provtrnsrckey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of ProviderTrainingList-->
+	
+	<!--Start of ProviderLanguageList-->
+	<xsd:complexType name="PartialProviderLanguageList">                            					         
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+								<xsd:element minOccurs="0" name="Language" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="Provlngsrccode" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of ProviderLanguageList-->
+	
+	<!--Start of ProviderReviewsList-->
+	<xsd:complexType name="PartialProviderReviewsList">                            					         
+		<xsd:sequence>
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+								<xsd:element minOccurs="0" name="ProviderReviewTypeCode" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="ProviderReviewID" type="tns:String20"/>
+								<xsd:element minOccurs="0" name="ProposedEffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="Provrvwsrccode" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of ProviderReviewsList-->
+	
+	<!--Start of LicenseCertificationsList-->
+	<xsd:complexType name="PartialLicenseCertificationsList">                            					         
+		<xsd:sequence> 
+								<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+								<xsd:element minOccurs="0" name="CertificationId" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="CertifyingOrg" type="tns:String75"/>
+								<xsd:element minOccurs="0" name="CertificationFocus" type="tns:String75"/>
+								<xsd:element minOccurs="0" name="CertificationSpeciality" type="tns:String75"/>
+								<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="ProvLicenseCertSrcKey" type="tns:String36"/>	
+								<!-- OH Changes Start - 10102021 -->
+								<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="LastModifieddate" type="tns:DateType"/>
+								<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+								<!-- OH Changes End - 10102021-->
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of LicenseCertificationsList-->
+	
+	<!-- OH Changes - 10102021-->
+	<!-- Start of PartialProviderIndicator -->
+	<xsd:complexType name="PartialProviderIndicatorList">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="IndicatorType" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="IndicatorDetail" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="EffectiveDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvIndicatorSrcKey" type="tns:String36"/>
+			<xsd:element minOccurs="0" name="ODSProviderIndicatorId" type="tns:Int19"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- End of PartialProviderIndicator-->
+	<!-- OH Changes - 10102021-->
+	
+	<!--End of TMSIS change -->
+	
+	<!--End of OH Certifications-->
+	
+	<!--End of TMSIS change -->
+	<!-- End of Partial Provider Schema-->
+	
+</xsd:schema>

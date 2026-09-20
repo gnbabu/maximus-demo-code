@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="New_SRp_DataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ProviderCaqhSubmitResponse" msprop:Generator_TableClassName="ProviderCaqhSubmitResponseDataTable" msprop:Generator_TableVarName="tableProviderCaqhSubmitResponse" msprop:Generator_TablePropName="ProviderCaqhSubmitResponse" msprop:Generator_RowDeletingName="ProviderCaqhSubmitResponseRowDeleting" msprop:Generator_RowChangingName="ProviderCaqhSubmitResponseRowChanging" msprop:Generator_RowEvHandlerName="ProviderCaqhSubmitResponseRowChangeEventHandler" msprop:Generator_RowDeletedName="ProviderCaqhSubmitResponseRowDeleted" msprop:Generator_UserTableName="ProviderCaqhSubmitResponse" msprop:Generator_RowChangedName="ProviderCaqhSubmitResponseRowChanged" msprop:Generator_RowEvArgName="ProviderCaqhSubmitResponseRowChangeEvent" msprop:Generator_RowClassName="ProviderCaqhSubmitResponseRow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ExtensionData" msprop:Generator_ColumnVarNameInTable="columnExtensionData" msprop:Generator_ColumnPropNameInRow="ExtensionData" msprop:Generator_ColumnPropNameInTable="ExtensionDataColumn" msprop:Generator_UserColumnName="ExtensionData" type="xs:string" minOccurs="0" />
+        <xs:element name="correlationId" msprop:Generator_ColumnVarNameInTable="columncorrelationId" msprop:Generator_ColumnPropNameInRow="correlationId" msprop:Generator_ColumnPropNameInTable="correlationIdColumn" msprop:Generator_UserColumnName="correlationId" type="xs:string" minOccurs="0" />
+        <xs:element name="errors" msprop:Generator_ColumnVarNameInTable="columnerrors" msprop:Generator_ColumnPropNameInRow="errors" msprop:Generator_ColumnPropNameInTable="errorsColumn" msprop:Generator_UserColumnName="errors" type="xs:string" minOccurs="0" />
+        <xs:element name="transactionId" msprop:Generator_ColumnVarNameInTable="columntransactionId" msprop:Generator_ColumnPropNameInRow="transactionId" msprop:Generator_ColumnPropNameInTable="transactionIdColumn" msprop:Generator_UserColumnName="transactionId" type="xs:string" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="New_SRp_DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="New_SRp_DataSet" msprop:Generator_UserDSName="New_SRp_DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ProviderCaqhSubmitResponse" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

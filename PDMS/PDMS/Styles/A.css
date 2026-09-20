@@ -1,0 +1,744 @@
+/****************************************************
+***************** COLOR PALETTE A *******************
+****************************************************/
+
+/********************** COLOR **********************
+*  The COLOR CSS file is meant for color styling and
+*  backgrounds. This file includes ALL background
+*  definitions and borders.
+*
+*  This code does include the color of the links
+*  or the color of the text.
+*
+*     DO NOT MANIPULATE OR DOWNLOAD THIS FILE
+*****************************************************/
+
+/* =============================================================================
+Links
+========================================================================== */
+a { color: #306498; }
+a:visited { color: #6E2C21; }
+a:hover { color: #333; }
+a:focus { outline: thin dotted; }
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline-style: hidden; }
+#Sidebar a, #RelatedTopics a {
+	color: #000;
+	text-decoration:none;
+	/*border-bottom: 1px solid #333;*/
+	font-size:95%;
+}
+#Sidebar a:hover, #RelatedTopics a:hover {
+	color: #000;
+	text-decoration:none;
+	border-bottom: 1px solid #fff;
+}
+#Sidebar a:visited, #RelatedTopics a:visited { color: #000; }
+#Sidebar #GovernorBox a, #Sidebar #GovernorBox a:visited { color:fff; }
+#Sidebar a:hover, #RelatedTopics a:hover { color: #000; }
+#Sidebar a:focus, #RelatedTopics a:focus { outline: thin dotted; }
+/**********************************
+-- Page Header
+**********************************/
+div#PageHeader { color: #FFF; }
+div#PageHeader.NoPhoto { color: #FFF; }
+div#PageHeader h1 a, div#PageHeader a h1 { color: #FFF; }
+/**********************************
+-- Navigation Menu
+**********************************/
+
+div#NavMenu div#SearchBox {
+	background-image: none;
+	position: absolute;
+	right: -6px;
+	top: 115px;
+	width: 250px;
+}
+div#NavMenu #TNNav {
+	background-color: #6792be;
+	display:none;
+}
+div#NavMenu ul#TNNav li { border-top: 1px solid #fff; }
+div#NavMenu ul#TNNav li {
+	background-color: #6792be;
+	background-image: url(images/nav/TN_nav.jpg);
+	background-position: top left;
+	background-repeat: repeat-x;
+}
+div#NavMenu #AgencyNav {
+	border-top: 4px solid #306498;
+	background-color: #ffffff;
+	box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.7);
+}
+div#NavMenu ul#AgencyNav li { border-top: 1px solid #fff; }
+div#NavMenu ul#AgencyNav li, div#NavMenu ul#AgencyNav li:hover ul, div#NavMenu ul#AgencyNav li.over ul { background-color: #ffffff;/*
+	background-image: url(images/nav/back-texture.png);
+	background-position: top left;
+	background-repeat: repeat-x;
+	background-image: url(images/nav/3rd_nav.jpg);
+	background-position: top left;
+	background-repeat: repeat-x;*/
+}
+div#NavMenu #SecondaryNav {
+	background-color: #ffffff;
+	box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.7);
+	border-top: 4px solid #306498;
+}
+div#NavMenu ul#SecondaryNav li { border-top: 1px solid #fff; }
+div#NavMenu ul#SecondaryNav li, div#NavMenu ul#SecondaryNav li:hover ul, div#NavMenu ul#SecondaryNav li.over ul { background-color: #ffffff;/*background-image: url(images/nav/3rd_nav.jpg);
+	background-position: top left;
+	background-repeat: repeat-x;*/
+}
+div#NavMenu #TNNav a, div#NavMenu #AgencyNav a, div#NavMenu #SecondaryNav a { color: #FFF; }
+div#NavMenu #TNNav li a, div#NavMenu #TNNav .FakeBullets { color: #FFF; }
+div#NavMenu #AgencyNav li a, div#NavMenu #AgencyNav .FakeBullets { color: #000; }
+div#NavMenu #SecondaryNav li a, div#NavMenu #SecondaryNav .FakeBullets { color: #000; }
+/**********************************
+-- Flyout Menu 
+**********************************/
+
+div#Content div#NavMenu ul.ddmenu > li ul {
+	left: 158px;
+	border-left: 2px solid #FFF;
+	border-top: 4px solid #306498;
+	border-right: 1px solid #666;
+	border-bottom: 1px solid #666;
+}
+/**********************************
+-- MainContent
+**********************************/
+
+#MainContent h1, #MainContent h2, #MainContent h3, #MainContent h4, #MainContent h5 {
+	font-family: 'QlassikMediumRegular';
+	padding-left:9px;
+	margin-bottom:9px;
+	font-weight:normal;
+}
+#MainContent h2#Billboard, #MainContent h2.Billboard, #MainContent h2.Blurb, div#MainContent h2.Blurb:first-child, div#MainContent h2.QuickLinks {
+	font-family: 'QlassikMediumRegular';
+	border-left:#306498 5px solid;
+	padding-left:9px;
+	margin-bottom:9px;
+	font-weight:normal;
+	text-shadow: -2px 2px 1px #000000;
+}
+div#MainContent h2.Blurb:first-child { margin-bottom:16px; }
+#MainContent .Blurb h1, #MainContent .Blurb h2, #MainContent .Blurb h3, #MainContent .Blurb h4, #MainContent .Blurb h5 {
+	border-left:none;
+	padding-left:9px;
+	margin-bottom:9px;
+	font-weight:normal;
+	text-shadow: none;
+}
+div#MainContent .Blurb h3 { font-size:160% }
+div#MainContent .Blurb h4, div#MainContent .Blurb h5 {
+	font-size: 140%;
+	margin-top: 18px;
+}
+div#MainContent .Blurb ul, div#MainContent .Blurb ol { margin-left:24px; }
+div#MainContent h2#Billboard, div#MainContent h2#Billboard a:link, div#MainContent h2#Billboard a:visited, div#MainContent h2#Billboard a:hover {
+	color: #ffffff;
+	padding:5px;
+}
+div#MainContent h2.Billboard, div#MainContent h2.Billboard a:link, div#MainContent h2.Billboard a:visited, div#MainContent h2.Billboard a:hover {
+	color: #ffffff;
+	padding:5px;
+}
+div#MainContent div#Billboard, div#MainContent div.Billboard {
+	border: 2px solid #648BB2;
+	border-top: 5px solid #306498;
+	-webkit-box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+	padding:10px 0 10px 0;
+}
+div#MainContent div#Billboard h3, div#MainContent div.Billboard h3 {
+	border-left: medium none;
+	font-size: 140%;
+	font-weight: normal;
+	padding-left: 0;
+}
+#MainContent .twtr-hd h3, #MainContent .twtr-hd h4 { border-left:none; }
+/********** CLASS BILLBOARD ***************/
+/*div#MainContent h2.Billboard, div#MainContent h2.Billboard a:link, div#MainContent h2.Billboard a:visited, div#MainContent h2.Billboard a:hover, div#MainContent h2.Billboard a:visited, div#MainContent h2.Billboard a:hover {
+	color: #000;
+}*/
+div#MainContent h2.Blurb, div#MainContent h2.Blurb a:link, div#MainContent h2.Blurb a:visited, div#MainContent h2.Blurb a:hover, div#MainContent h2.Blurb a:visited, div#MainContent h2.Blurb a:hover { /*	background-image: url(images/mc/mc_02.jpg);
+	background-color: #b0b0b0;
+*/	color: #fff; }
+div#MainContent div.Blurb {
+	background-color:#fff;
+	border: 1px solid #5988b8;
+	border-top: none;
+}
+div#MainContent h2.QuickLinks, div#MainContent h2.QuickLinks a:link, div#MainContent h2.QuickLinks a:visited, div#MainContent h2.QuickLinks a:hover, div#MainContent h2.QuickLinks a:visited, div#MainContent h2.QuickLinks a:hover {
+	/*	background-image: url(images/mc/mc_03.jpg);
+	background-color: #b0b0b0;
+*/	color: #fff;
+	text-shadow: -2px 2px 1px #000000;
+}
+div#MainContent #Mission { padding-top:10px; }
+#Mission h3 {
+	font-family: 'QlassikMediumRegular';
+	border: none;
+	font-size:18px;
+}
+div#MainContent div.QuickLinks {
+	border-top: 5px solid #306498;
+	border-right: 1px solid #306498;
+	border-bottom: 1px solid #306498;
+	border-left: 1px solid #306498;
+	-webkit-box-shadow: 0 5px 6px -6px black;
+	-moz-box-shadow: 0 5px 6px -6px black;
+	box-shadow: 0 5px 6px -6px black;
+}
+/**********************************
+-- Sidebar Items and Related Topics
+**********************************/
+
+div#Sidebar img { border: none; }
+#RelatedTopics, div#Sidebar #FeaturedSites, div#Sidebar #TNGOVServices, div#Sidebar #AgencyServices { padding: 5px; }
+#RelatedTopics h3, div#Sidebar #GovernorBox h3, div#Sidebar #FeaturedSites h3, div#Sidebar #TNGOVServices h3, div#Sidebar #AgencyServices h3, div#Sidebar .SidebarBox h3 {
+	color: #000;
+	padding:5px 0;
+	font-family: 'QlassikMediumRegular';
+	font-size:16px;
+	margin:0 0 5px;
+}
+#GovernorBox {
+	background-color: #f4f1d0;
+	border: 2px solid #999;
+}
+#GovernorBox ul { border-top: 2px solid #999; }
+#GovernorBox li a { color: #000; }
+/**********************************
+-- Footer
+**********************************/
+
+div#Footer {
+	color: #FFF;
+	padding:10px;/*border-top: #fff solid 2px;
+	background-image: url(../images/back-texture.png);
+	background-repeat: repeat;*/
+}
+div#Footer a { color: #000000; }
+div#Footer ul li { border-right: solid #000000 1px; }
+div#Footer ul li.LastListItem, div#Footer div#ContactInfo ul li.LastListItem { border: 0; }
+div#Footer div#ContactInfo ul li { border-right: solid #000000 1px; }
+
+/********************** Structure **********************
+*  The STRUCTURE CSS file controls all the settings for 
+*  the layout of the page such as: margin, padding, 
+*  width, height, and position.
+*
+*     DO NOT MANIPULATE OR DOWNLOAD THIS FILE
+********************************************************/
+
+
+body {
+	margin: 0;
+	padding: 0;
+}
+#SkipToContent {
+	float: left;
+	margin-left: -1600px;
+}
+#Content {
+	width: 976px;
+	margin-right: auto;
+	margin-left: auto;
+}
+div#PageHeader {
+	width: 976px;
+	margin-right: auto;
+	margin-left: auto;
+}
+/**********************************
+-- Page Header
+**********************************/
+#PageHeader {
+	margin: 0;
+	padding: 0;
+	height: 110px;
+	position: relative;
+}
+#PageHeader #HighlightLinks { display: none; }
+#PageHeader div#TNLogo {
+	margin: 0px;
+	padding: 0px;
+	width: 126px;
+	float: left;
+}
+#TNLogo img { border: 0; }
+#PageHeader h1 {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	padding: 12px 0;
+	margin-left: 35px;
+	width: 425px;
+}
+#PageHeader h1 #CommissionerName {
+	padding: 0;
+	margin: 0;
+	color:#dedede;
+}
+/**********************************
+-- Main Content
+**********************************/
+#MainContent {
+	display: inline;/* for IE... sigh */
+	float: left;
+	margin-left: 170px;
+	width: 641px;
+}
+div#MainContent {
+	margin-bottom: 30px;
+	margin-top: 0px;
+}
+div#MainContent div ul, div#MainContent div ol, div#MainContent div p, div#MainContent h1, div#MainContent h2, div#MainContent h3, div#MainContent h4, div#MainContent h5, div#MainContent h6 {
+padding: 0px 0px 0px 5px;
+	margin: 0px;}
+div#MainContent div ul li p, div#MainContent div ol li p {
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom:28px;
+}
+div#MainContent ul li h3 {
+	padding: 0px 0px 0px 5px;
+	margin: 0px;
+}
+#MainContent img.SlideShowImage {
+	float: right;
+	margin: 1.0em 0.5em;
+}
+div#MainContent h2 {
+	padding: 0px 5px;
+	margin: 0px;
+}
+div#MainContent .MoreLink { margin-left: 20px; }
+div#MainContent li.MoreLink {
+	clear: both;
+	margin-right: 7px;
+	margin-bottom: 10px;
+}
+div#MainContent div#Billboard, div#MainContent div.Billboard {
+	background-color:#fff;
+	margin: 5px 0px 30px 0px;
+	padding: 10px 0 10px 0;
+}
+div#MainContent div#Billboard ul li, div#MainContent div.Billboard ul li { margin-bottom: 10px; }
+div#MainContent div#Billboard .HeadlinesDate, div#MainContent div.Billboard .HeadlinesDate {
+	margin: 0px;
+	padding: 0px;
+}
+div#MainContent div#Billboard ul, div#MainContent div.Billboard ul {
+	margin-left: 5px;
+	padding-top: 8px;
+}
+/********** CLASS BILLBOARD ***************/
+div#MainContent div.Billboard { margin: 0px 0px 20px 0px; }
+div#MainContent div.Billboard ul li { margin-bottom: 10px; }
+div#MainContent div.Billboard .HeadlinesDate {
+	margin: 0px;
+	padding: 0px;
+}
+/******************************************/
+
+div#MainContent div.Billboard ul {
+	margin-left: 5px;
+	padding-top: 8px;
+}
+div#MainContent h2#Billboard, div#MainContent h2.Billboard, div#MainContent h2.Blurb { width: 84%; }
+div#MainContent div.Blurb {
+	border-top: 5px solid #306498;
+	box-shadow: 0 5px 6px -6px black;
+	margin: 5px 0 40px;
+	padding: 10px 0 10px 0;
+}
+div#MainContent .Blurb .MoreLink {
+	margin-right: 7px;
+	margin-bottom: 10px;
+}
+div#MainContent h2.QuickLinks {
+	width: 300px;
+	margin-top: 0px;
+}
+div#MainContent div.QuickLinks {
+	margin: 5px 0px 20px 0px;
+	padding: 0 0 10px;
+	width: 310px;
+	background-color:#fff;
+}
+div#MainContent div.QuickLinks ul {
+	margin-left: 20px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+div#MainContent .Box1 {
+	float: left;
+	clear: left;
+}
+div#MainContent .Box2 {
+	float: right;
+	clear: right;
+}
+/**********************************
+-- Navigation Menu
+**********************************/
+#NavMenu {
+	float:left;
+	width:158px;
+	margin-left: -811px;
+	margin-bottom: 30px;
+}
+div#NavMenu div#SearchBox { margin: 0px; }
+#NavMenu input#q {
+	margin: 0;
+	padding: 7px 5px 7px 24px;
+	width: 150px;
+	background-image: url(../images/search-bg.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+#NavMenu input#SearchButton {
+	background-color: #DCDCDC;
+	background-image: url("images/nav/3rd_nav.jpg");
+	background-position: left top;
+	background-repeat: repeat-x;
+	border: 1px solid #fff;
+	height: 28px;
+	-webkit-box-shadow: 0px 1px 2px 1px #333333;
+	-moz-box-shadow: 0px 1px 2px 1px #333333;
+	box-shadow: 0px 1px 2px 1px #333333;
+	cursor:pointer;
+}
+#NavMenu input#SearchButton:hover { background-color: #f5f5f5; }
+#NavMenu #SearchBox {
+	padding: 0px;
+	margin: 0px;
+}
+#NavMenu ul {
+	padding: 0px;
+	margin: 0px;
+}
+#NavMenu ul ul { font-family: sans-serif; }
+#NavMenu ul#TNNav li a, #NavMenu ul#AgencyNav li a, #NavMenu ul#SecondaryNav li a {
+	padding: 9px 0px;
+	margin-left: 5px;
+	display: block;
+}
+#TNNav a:hover, #TNNav a:active, div#NavMenu #TNNav a:visited, #AgencyNav a:hover, #AgencyNav a:active, #AgencyNav a:visited, #SecondaryNav a:hover, #SecondaryNav a:active { display: block; }
+#NavMenu ul li .FakeBullets { /*	padding-left: 5px;
+	padding-top: 3px;
+	width: 10px;
+	float: left;*/
+	display: none; }
+/**********************************
+-- Flyout Menu 
+**********************************/
+
+div#Content div#NavMenu ul.ddmenu {
+	width: 158px; /* Width of Menu Items */
+	width: 100%; /* Width of Menu Items */
+}
+div#Content div#NavMenu ul.ddmenu li { position: relative; }
+div#Content div#NavMenu ul.ddmenu li ul { /* Menu UL */
+	position: absolute;
+	left: 157px; /* Set 1px less than menu width */
+	top: -4px;
+	display: none;
+}
+/* menu width fix for non-IE*/
+div#Content div#NavMenu ul.ddmenu > li ul { left: 158px; }
+/* Styles for Menu Items */
+
+/* Fix IE. Hide from IE Mac
+html ul.ddmenu li { float: left; height: 1%; }
+html ul.ddmenu li a { height: 1%; }
+/* End */
+
+
+div#Content div#NavMenu ul.ddmenu li ul li { padding-top: 2px; }
+div#Content div#NavMenu ul.ddmenu li ul li a { padding: 0.35em 0 0.35em 0.75em; }
+/* Sub Menu Styles */
+div#Content div#NavMenu ul.ddmenu li:hover ul, div#Content div#NavMenu ul.ddmenu li.over ul {
+	display: block;
+	width: 178px; /* Width of Menu Items */
+}
+/**********************************
+-- Sidebar Menu
+**********************************/
+div#Sidebar {
+	background-color: #FFFFFF;
+	border-color: #306498;
+	border-right: 1px solid #306498;
+	border-style: solid;
+	border-width: 5px 1px 1px;
+	box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.5);
+	float: right;
+	margin-top: 48px;
+	padding-bottom: 20px;
+	width: 148px;
+	border-top: 5px solid #306498;
+	border-right: 1px solid #306498;
+	border-bottom: 1px solid #306498;
+	border-left: 1px solid #306498;
+}
+div#Sidebar ul {
+	padding: 0;
+	margin: 0;
+}
+div.AgencyLogo {
+	width: 148px;
+	margin: 10px 0;
+}
+div.AgencyLogo img {
+	margin: 0;
+	padding: 0;
+}
+div#Sidebar #GovernorBox, div#Sidebar #FeaturedSites, div#Sidebar #TNGOVServices, div#Sidebar #AgencyServices, div#Sidebar #AgencyPromo { margin: 20px 0px; }
+#RelatedTopics, div#Sidebar #FeaturedSites, div#Sidebar #TNGOVServices, div#Sidebar #AgencyServices { width: 142px; }
+#RelatedTopics h3, div#Sidebar #GovernorBox h3, div#Sidebar #FeaturedSites h3, div#Sidebar #TNGOVServices h3, div#Sidebar #AgencyServices h3 {
+	border-bottom: 1px dotted #DEDEDE;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+#RelatedTopics ul, div#Sidebar #FeaturedSites ul, div#Sidebar #TNGOVServices ul, div#Sidebar #AgencyServices ul { margin-bottom: 5px; }
+#RelatedTopics {
+	background-color:#ffffff;
+	width:148px;
+	box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.7);
+	border-top: 4px solid #306498;
+}
+#RelatedTopics h3 { margin-top:30px; }
+#RelatedTopics ul li, div#Sidebar #FeaturedSites ul li, div#Sidebar #TNGOVServices ul li, div#Sidebar #AgencyServices ul li {
+	padding-left: 0;
+	margin-left: 0.25em;
+}
+div#Sidebar #GovernorBox {
+	margin: 10px 2px;
+	padding: 0;
+	width: 140px;
+}
+div#Sidebar #GovernorBox ul { padding: 5px 0px; }
+div#Sidebar #GovernorBox ul li {
+	padding-left: 0;
+	margin-left: 1.45em;
+}
+div#NavMenu div ul li.MoreLink, div#Sidebar div ul li.MoreLink { margin: 0 10px 0 0; }
+div#Sidebar .AlertBox {
+	margin: 10px 2px;
+	padding: 0;
+}
+div#Sidebar .AlertBox img { margin: auto 0px; }
+/**********************************
+-- Footer
+**********************************/
+
+div#Footer { clear: both;/*	margin-top: 20px;
+*/ }
+div#Footer a { color: #FFF; }
+div#Footer ul {
+	padding: 0;
+	margin: 0;
+}
+div#Footer ul li {
+	padding: 0 10px;
+	display: inline;
+	list-style-type: none;
+}
+#PortalLinks {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#PortalLinks a { padding: 0 0 0 3px; }
+div#Footer div#ContactInfo { padding: 5px 0; }
+div#Footer div#ContactInfo ul li { padding: 0 10px; }
+/**********************************
+-- Other Formatting
+**********************************/
+
+br.clear { /* used for clearing img.inset pics */ clear: both; }
+.none { display: none; }
+/********************** Font **********************
+*  The FONT CSS file controls all the settings for 
+*  the text such as: size, line-height,
+*  text-decoration, etc.
+*
+*     DO NOT MANIPULATE OR DOWNLOAD THIS FILE
+**************************************************/
+
+
+body {
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	text-align: center;
+	font-size: 13px; /* Sets the font size for the entire page */
+ *font-size: small; /* x-small is for IE6/7 quirks mode */
+ *font: x-small; /* x-small is for IE6/7 quirks mode */
+	line-height: 1.231;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+/**********************************
+-- Page Header
+**********************************/
+div#PageHeader h1 {
+	font-size: 146.2%;
+	text-align: left;
+	font-weight: normal;
+	vertical-align: middle;
+}
+#PageHeader h1 #CommissionerName, #PageHeader h1 a #CommissionerName {
+	font-style: italic;
+	font-size: 69.2%;
+}
+div#PageHeader h1 a, div#PageHeader a h1 { text-decoration: none; }
+/**********************************
+-- Navigation Menu
+**********************************/
+
+#NavMenu {
+	text-align: left;
+	text-shadow: 1px 1px 1px #ffffff;
+}
+div#NavMenu #TNNav, div#NavMenu #AgencyNav, div#NavMenu #SecondaryNav {
+	font-size: 120%;
+	padding:10px 0;
+}
+div#NavMenu #TNNav ul, div#NavMenu #AgencyNav ul, div#NavMenu #SecondaryNav ul { font-size: 80%; }
+div#NavMenu ul#TNNav li, div#NavMenu ul#AgencyNav li, div#NavMenu ul#SecondaryNav li {
+	list-style-type: none;
+	line-height: 156%;/*font-weight: bold;*/
+}
+#AgencyNav>li, #SecondaryNav>li { font-family: 'QlassikMediumRegular'; }
+#AgencyNav>li { }
+li a span.FakeBullets {
+	text-decoration: none;
+	text-align: center;
+}
+div#NavMenu ul#TNNav li a, div#NavMenu ul#AgencyNav li a, div#NavMenu ul#SecondaryNav li a {
+	text-decoration: none;
+	line-height:normal;
+	border-bottom: 1px dotted #DEDEDE;
+	padding-right:5px;
+}
+div#NavMenu #TNNav a:hover, div#NavMenu #AgencyNav a:hover, div#NavMenu #SecondaryNav a:hover { text-decoration: underline; }
+div#NavMenu #TNNav a:hover span, div#NavMenu #AgencyNav a:hover span, div#NavMenu #SecondaryNav a:hover span { text-decoration: none; }
+#NavMenu input#SearchButton {
+	font-family: 'QlassikMediumRegular';
+	font-weight:normal;
+	font-size:16px;
+}
+/**********************************
+-- MainContent
+**********************************/
+#MainContent { text-align: left; }
+div#MainContent h1 {
+	font-size: 200%;
+	text-shadow: -2px 2px 1px #000000;
+}
+div#MainContent .Billboard h1 {
+	font-size: 200%;
+	text-shadow: none;
+}
+div#MainContent h2 { font-size: 200%; }
+div#MainContent h2 a:link, div#MainContent h2 a:visited, div#MainContent h2 a:hover { text-decoration: none; }
+div#MainContent div ul li h3, div#MainContent div ol li h3 { font-size: 160%; }
+div#MainContent div ul li p, div#MainContent div ol li p { font-size: 100%; }
+div#MainContent .HeadlineDate {
+	font-size: 84%;
+	margin-left:10px;
+	color:#648BB2;
+}
+div#MainContent .MoreLink {
+	text-align: right;
+	font-size:85%;
+}
+div#MainContent #Guides {
+	text-align: center;
+	padding:5px;
+}
+div#MainContent div.QuickLinks ul {
+	font-size: 92.3%;
+	line-height: 1.5;
+}
+div#MainContent div#Billboard ul, div#MainContent .MoreLink, div#MainContent div.Billboard ul, div#MainContent .MoreLink { list-style: none; }
+div#MainContent div.Billboard ul { list-style: none; }
+/******************************************/
+
+/**********************************
+-- Sidebar Items and Related Topics
+**********************************/
+
+div#Sidebar { text-align: left; }
+#RelatedTopics, div#Sidebar #FeaturedSites, div#Sidebar #TNGOVServices, div#Sidebar #AgencyServices {
+	font-size: 94%;
+	line-height: 1.5;
+}
+div#Sidebar #GovernorBox {
+	font-size: 86.2%;
+	line-height: 1.5;
+}
+#MainPromo1, #AgencyPromo {
+	padding: 24px 0 10px;
+	text-align: center;
+}
+div#Sidebar #TNGOVServices { }
+#RelatedTopics ul li, div#Sidebar ul li {
+	list-style: none;
+	margin-bottom:5px;
+}
+div#NavMenu div ul li.MoreLink, div#Sidebar div ul li.MoreLink {
+	list-style-type: none;
+	font-style: oblique;
+	background-image: url(../images/more-icon.png);
+	background-repeat: no-repeat;
+	background-position: 30px 6px;
+	display: block;
+}
+
+/**********************************
+-- Footer
+**********************************/
+
+div#Footer 
+{ 
+    color: #000000;
+    font-size: 1.1EM;
+}
+
+div#Footer a
+{ 
+    color: #000000;
+}
+
+/**********************************
+-- Added Code
+**********************************/
+
+div#Sidebar .SidebarBox {
+	margin-left: 4px;
+	line-height: 1.5;
+	width: 142px;
+}
+div#Sidebar .SidebarBox h3 {
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+div#Sidebar .SidebarBox ul { /*margin-bottom: 10px;*/
+}
+div#Sidebar .SidebarBox ul li {
+	padding-left: 0;
+	margin-left: 1.45em;
+	list-style-type: disc;
+	list-style-position: outside;
+}

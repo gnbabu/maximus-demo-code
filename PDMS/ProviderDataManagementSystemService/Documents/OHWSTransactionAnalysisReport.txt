@@ -1,0 +1,17 @@
+﻿<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>[[REPORT_TITLE]]</title>
+	</head>
+	<body style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f9f9f9;">
+		Greetings –
+		<br/>
+		<br/>
+		Attached is the transaction spreadsheet for use with updating the SI spreadsheet.  This data reflects transactions from [[START_DATE]] thru [[END_DATE]].
+		<br/>
+		<br/>
+		Thanks<br/>
+		GaryB
+	</body>
+</html>

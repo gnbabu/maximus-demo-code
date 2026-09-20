@@ -1,0 +1,4 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<p>Please log into your account at <a href="[[PDMS_URL]]">Login</a> to view a notice issued by the Ohio Department of Medicaid. You may be required to take action to maintain your Medicaid enrollment. </p>
+<p><b>REG_ID: [[REG_ID]]</b>
+</div>

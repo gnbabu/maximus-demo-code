@@ -1,0 +1,124 @@
+<definitions targetNamespace="http://mes.gov/providermanagement" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://mes.gov/providermanagement">
+   <types>
+      <xsd:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/providermanagement" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:include schemaLocation="ProviderManagement.xsd"/>
+      </xsd:schema>
+      <xsd:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/providermanagement" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         <xsd:include schemaLocation="ProviderManagement_MessageHeader.xsd"/>
+      </xsd:schema>
+   </types>
+   <message name="updateProviderRequestMsg">
+      <part element="tns:UpdateProvider" name="parameters"/>
+   </message>
+   <message name="updateProviderResponseMsg">
+      <part element="tns:UpdateProviderResponse" name="parameters"/>
+   </message>
+   <message name="inquireProviderRequestMsg">
+      <part element="tns:InquireProvider" name="parameters"/>
+   </message>
+   <message name="inquireProviderResponseMsg">
+      <part element="tns:InquireProviderResponse" name="parameters"/>
+   </message>
+   <message name="inquireProviderHistoryRequestMsg">
+      <part element="tns:InquireProviderHistory" name="parameters"/>
+   </message>
+   <message name="inquireProviderHistoryResponseMsg">
+      <part element="tns:InquireProviderHistoryResponse" name="parameters"/>
+   </message>
+   <message name="enrollProviderRequestMsg">
+      <part element="tns:EnrollProvider" name="parameters"/>
+   </message>
+   <message name="enrollProviderResponseMsg">
+      <part element="tns:EnrollProviderResponse" name="parameters"/>
+   </message>
+   <message name="updateProviderFault">
+      <part name="parameters" element="tns:Fault"/>
+   </message>
+   <message name="inquireProviderFault">
+      <part name="parameters" element="tns:Fault"/>
+   </message>
+   <message name="inquireProviderHistoryFault">
+      <part name="parameters" element="tns:Fault"/>
+   </message>
+   <message name="enrollProviderFault">
+      <part name="parameters" element="tns:Fault"/>
+   </message>
+   <portType name="ProviderManagementSoapPortType">
+      <operation name="updateProvider">
+         <input message="tns:updateProviderRequestMsg"/>
+         <output message="tns:updateProviderResponseMsg"/>
+         <fault name="fault" message="tns:updateProviderFault"/>
+      </operation>
+      <operation name="inquireProvider">
+         <input message="tns:inquireProviderRequestMsg"/>
+         <output message="tns:inquireProviderResponseMsg"/>
+         <fault name="fault" message="tns:inquireProviderFault"/>
+      </operation>
+      <operation name="inquireProviderHistory">
+         <input message="tns:inquireProviderHistoryRequestMsg"/>
+         <output message="tns:inquireProviderHistoryResponseMsg"/>
+         <fault name="fault" message="tns:inquireProviderHistoryFault"/>
+      </operation>
+      <operation name="enrollProvider">
+         <input message="tns:enrollProviderRequestMsg"/>
+         <output message="tns:enrollProviderResponseMsg"/>
+         <fault name="fault" message="tns:enrollProviderFault"/>
+      </operation>
+   </portType>
+   <binding name="providerManagementSoap" type="tns:ProviderManagementSoapPortType">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <operation name="updateProvider">
+         <soap:operation soapAction="http://mes.gov/updateProvider" style="document"/>
+         <input>
+            <soap:body use="literal"/>
+         </input>
+         <output>
+            <soap:body use="literal"/>
+         </output>
+         <fault name="fault">
+            <soap:fault name="fault" use="literal"/>
+         </fault>
+      </operation>
+      <operation name="enrollProvider">
+         <soap:operation soapAction="http://mes.gov/enrollProvider" style="document"/>
+         <input>
+            <soap:body use="literal"/>
+         </input>
+         <output>
+            <soap:body use="literal"/>
+         </output>
+         <fault name="fault">
+            <soap:fault name="fault" use="literal"/>
+         </fault>
+      </operation>
+      <operation name="inquireProvider">
+         <soap:operation soapAction="http://mes.gov/inquireProvider" style="document"/>
+         <input>
+            <soap:body use="literal"/>
+         </input>
+         <output>
+            <soap:body use="literal"/>
+         </output>
+         <fault name="fault">
+            <soap:fault name="fault" use="literal"/>
+         </fault>
+      </operation>
+      <operation name="inquireProviderHistory">
+         <soap:operation soapAction="http://mes.gov/inquireProviderHistory" style="document"/>
+         <input>
+            <soap:body use="literal"/>
+         </input>
+         <output>
+            <soap:body use="literal"/>
+         </output>
+         <fault name="fault">
+            <soap:fault name="fault" use="literal"/>
+         </fault>
+      </operation>
+   </binding>
+   <service name="ProviderManagementService">
+      <port binding="tns:providerManagementSoap" name="providerManagementSoap">
+         <soap:address location="http://localhost:7800/providerManagement/serviceentrypoint"/>
+      </port>
+   </service>
+</definitions>

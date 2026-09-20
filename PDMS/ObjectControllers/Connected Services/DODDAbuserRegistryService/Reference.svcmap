@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="53d933fe-ef93-4ad8-9c5f-69d2312fd8cf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://itsws.prodapps.dodd.ohio.gov/Abuser/Abuser.wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Abuser.wsdl" MetadataType="Wsdl" ID="396f8f1f-f67b-4c50-a1f3-9f0e0274a08d" SourceId="1" SourceUrl="https://itsws.prodapps.dodd.ohio.gov/Abuser/Abuser.wsdl" />
+    <MetadataFile FileName="xsd1.xsd" MetadataType="Schema" ID="b2ebe0aa-6a4e-4b29-a2c1-999e351e5d70" SourceId="1" SourceUrl="https://itsws.prodapps.dodd.ohio.gov/Abuser/xsd1.xsd" />
+    <MetadataFile FileName="xsd0.xsd" MetadataType="Schema" ID="fd3bbf28-4fff-49d4-a639-233412b669ff" SourceId="1" SourceUrl="https://itsws.prodapps.dodd.ohio.gov/Abuser/xsd0.xsd" />
+    <MetadataFile FileName="xsd2.xsd" MetadataType="Schema" ID="0ee7245c-a1f1-41bd-844d-70bacb06b7a4" SourceId="1" SourceUrl="https://itsws.prodapps.dodd.ohio.gov/Abuser/xsd2.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

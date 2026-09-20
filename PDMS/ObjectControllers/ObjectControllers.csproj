@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E8FA5ED-C193-4872-AC93-7E4356674B50}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MAXIMUS.Controllers.PDMS</RootNamespace>
+    <AssemblyName>ObjectControllers</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACHController.cs" />
+    <Compile Include="AuthenticationController.cs" />
+    <Compile Include="C4Controller.cs" />
+    <Compile Include="CallTrackingController.cs" />
+    <Compile Include="ClaimsController.cs" />
+    <Compile Include="CMSController.cs" />
+    <Compile Include="CredentialController.cs" />
+    <Compile Include="DataExtensions.cs" />
+    <Compile Include="DIDDController.cs" />
+    <Compile Include="DocumentsAndReportsController.cs" />
+    <Compile Include="DocumentUploadController.cs" />
+    <Compile Include="DODDHelper.cs" />
+    <Compile Include="EligibilitySearchController.cs" />
+    <Compile Include="GenMedicaidIDController.cs" />
+    <Compile Include="NUBCController.cs" />
+    <Compile Include="RDMController.cs" />
+    <Compile Include="UploadAttachmentController.cs" />
+    <Compile Include="MassEmailController.cs" />
+    <Compile Include="MembershipProvider\CustomMembershipProvider.cs" />
+    <Compile Include="MembershipProvider\CustomRoleProvider.cs" />
+    <Compile Include="ObjectControllerHelper.cs" />
+    <Compile Include="PaperRequestController.cs" />
+    <Compile Include="PriorAuthHospitalController.cs" />
+    <Compile Include="ProcessDocumentController.cs" />
+    <Compile Include="ProcessDocument\PdfConvert.cs" />
+    <Compile Include="ProcessDocument\ProcessDocuments.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderFeedController.cs" />
+    <Compile Include="ScreeningController.cs" />
+    <Compile Include="ServiceAgent\HospiceServiceController.cs" />
+    <Compile Include="ServiceAgent\ServiceAgentController.cs" />
+    <Compile Include="TransactionController.cs" />
+    <Compile Include="RegistrationController.cs" />
+    <Compile Include="UserController.cs" />
+    <Compile Include="LookupTableController.cs" />
+    <Compile Include="MMISXmlController.cs" />
+    <Compile Include="PartyController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProviderController.cs" />
+    <Compile Include="RosterController.cs" />
+    <Compile Include="StagingDataController.cs" />
+    <Compile Include="StateController.cs" />
+    <Compile Include="Web References\AbuserService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\FinancialService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WPCController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CoreLibraries\AppSettings\AppSettings.csproj">
+      <Project>{99469857-55b2-4105-96f4-85c1b44e74d6}</Project>
+      <Name>AppSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Common\Common.csproj">
+      <Project>{8C8433D2-2E2C-4A6E-9F3F-82AD7665729F}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\DataAccess\DataAccess.csproj">
+      <Project>{B18C00DF-61BA-4650-ADC7-D8736741B5B8}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Exceptions\Exceptions.csproj">
+      <Project>{D9D2F83F-7A01-4FF1-92CC-6B6241195959}</Project>
+      <Name>Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Logging\Logging.csproj">
+      <Project>{e640b94b-2908-4aad-9f47-00dafe871902}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Notifications\Notifications.csproj">
+      <Project>{818fa6b3-06b0-4b0a-84b3-02348904ee64}</Project>
+      <Name>Notifications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Model.csproj">
+      <Project>{4e52102f-0f6f-4809-a522-85585a6409f5}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectLibrary\ObjectLibrary.csproj">
+      <Project>{7AB04DF6-D3F9-49A4-9841-5D216F747ED3}</Project>
+      <Name>ObjectLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PdmsWebEvents\PdmsWebEvents.csproj">
+      <Project>{c6ee17e8-2515-406f-82d8-b7d124001341}</Project>
+      <Name>PdmsWebEvents</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\CoreLibraries\AppSettings\AppSettings.dll.config">
+      <Link>AppSettings.dll.config</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AbuserService\Abuser.wsdl" />
+    <None Include="Web References\AbuserService\Abuser1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AbuserService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AbuserService\Result.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AbuserService\xsd0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AbuserService\xsd1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AbuserService\xsd2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FinancialService\FinancialService.wsdl">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FinancialService\FinancialService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FinancialService\FinancialService_Datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FinancialService\FinancialService_InlineSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FinancialService\FinancialService_MessageHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FinancialService\Inquire1099Information.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FinancialService\Inquire1099ResponseResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FinancialService\InquireTransactionHistoryResponseResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FinancialService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\FinancialService\TransactionHistory.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ServiceAgent\HospiceResponse.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ServiceAgent\SearchResponses.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="D:\wsdl\FinancialService\FinancialService.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\FinancialService\</RelPath>
+      <UpdateFromURL>D:\wsdl\FinancialService\FinancialService.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ObjectControllers_FinancialService_FinancialServiceService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://itsws.prodapps.dodd.ohio.gov/Abuser/Abuser.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AbuserService\</RelPath>
+      <UpdateFromURL>https://itsws.prodapps.dodd.ohio.gov/Abuser/Abuser.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ObjectControllers_AbuserService_Abuser</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

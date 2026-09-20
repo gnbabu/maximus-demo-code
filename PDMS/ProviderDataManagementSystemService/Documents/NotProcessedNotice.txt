@@ -1,0 +1,53 @@
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+        [[DATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[NAME]]
+    <br /> 
+    </td>
+</tr>	
+<tr>
+<td class="left">
+     Reg ID: [[REGID]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+ </td>    
+</tr>
+
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+
+<p>
+<b>Subject: Not Processed</b>
+</p>
+
+<p>Dear Applicant:</p>
+
+<p>Your Ohio Medicaid Provider Application/Agreement could not be processed as submitted. Your provider enrollment application has been [[returnedOrCancelled]] because you failed to provide the required documentation.</p>
+
+<p>Please login to the Provider Network Management portal to submit a new application[[revalidationdate]].</p>
+
+<p>If you have any questions regarding this notice, please contact Provider Enrollment at 1-800-686-1516.</p>
+
+Sincerely,<br/>
+The Ohio Department of Medicaid<br/>
+</td>
+</tr>
+</table>

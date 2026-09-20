@@ -1,0 +1,18 @@
+﻿********************
+********************
+** IMPORTANT NOTE **
+********************
+********************
+NEVER give the ./keys/pvt.gpg or ./keys/pvt.gpg.txt files
+to ANYONE. They are for internal application use ONLY!
+They are the PRIVATE gpg keys and sharing them is a security
+violation.
+
+
+Example code:
+/*
+FileInfo fi = new FileInfo("Full_FileName_And_Path");
+Stream file = File.Create(@"C:\TEMP\" + fi.Name + ".pgp");
+PgpEncrypt pgpEnc = new PgpEncrypt(new PgpEncryptionKeys());
+pgpEnc.EncryptAndSign(file, fi);
+*/

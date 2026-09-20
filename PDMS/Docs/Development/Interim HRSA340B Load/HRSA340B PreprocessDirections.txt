@@ -1,0 +1,20 @@
+1. Download the Latest File from: https://340bopais.hrsa.gov/Reports
+Per the 9.18 design - Download 'Covered Entity Daily Report'.
+2. Hope the file format didn't change, or actually review (my analysis is in the spreadsheet)
+3. Open the file in Excel, enable editing and export as Tab-delimited Text
+4. Run the "parseAndOutpurHSRS340B.awk" script against the file you exported to text.
+Using the GNU version of gawk or Cygwin, run: gawk -f parseAndOutputHSRA340B.awk OPACE_DAILY_PUBLIC.txt
+5. Run the SSIS Package in VS 2017, adjusting the connections to file locations and connection string
+and DB target.
+6. Truncate the tables first, that isn't in the SSIS package
+
+Notes:
+This will write out two files, one with Records (Records.txt) and one with IDS (IDS.txt)
+Records.txt will have the base record, IDS will have the IDs (NPI and Medicaid).
+It is a one to many relation and there is a numeric Record ID to tie them together.
+The script accounts for a header in the file, if you remove it or it changes in number of lines, you'll 
+need to make adjustments.  If the format changes, you'll have to make adjustments.
+The syntax for running is gawk -f parseAndOutpurHSRS340B.awk <Filename.txt>
+There are helper scripts to recover if there are errors.  They take -v (variables) to output record sets, as in:
+gawk -f outputRecordIDRange.awk -v Min=1010 -v Max=10000 <Filename.txt>
+The SSIS package runs pretty clean, but there is no error handling

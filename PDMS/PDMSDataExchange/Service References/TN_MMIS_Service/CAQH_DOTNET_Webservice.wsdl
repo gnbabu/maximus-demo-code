@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tn.gov/tenncare/services/provider/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tn.gov/tenncare/services/provider/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tn.gov/tenncare/services/provider/">
+      <s:element name="SubmitProvider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcsr" type="tns:ProviderCaqhSubmitRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProviderCaqhSubmitRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="provider" type="tns:Provider" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Request">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Provider">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ProviderIdentity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="action" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="middleName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="suffixName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="primaryAddress" type="tns:Address" />
+              <s:element minOccurs="0" maxOccurs="1" name="payToName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="payToAddress" type="tns:Address" />
+              <s:element minOccurs="0" maxOccurs="1" name="mailToName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="mailingAddress" type="tns:Address" />
+              <s:element minOccurs="0" maxOccurs="1" name="servicingName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="servicingAddress" type="tns:Address" />
+              <s:element minOccurs="0" maxOccurs="1" name="phoneVoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="phoneFax" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="birthDateTime" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="attestDateTime" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="license" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="stateLicenceCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="licenseTypeCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="licenseEffectiveDateTime" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="licenseEndDateTime" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="deaEffectiveDateTime" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="deaEndDateTime" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="providerTypeCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="providerSpecialtyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="taxonomyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="disclosureRec" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="disclosureDateTime" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="enrollmentStatusCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="termDateTime" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="statusCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="countyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="groups" type="tns:ArrayOfProviderGroup" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ProviderIdentity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="providerId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="caqhId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="deaId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ssnId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="npiId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="medicareId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Address">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="street1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="street2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProviderGroup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProviderGroup" nillable="true" type="tns:ProviderGroup" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProviderGroup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="serviceName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="medicareId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="npiId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="groupEndDateTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="serviceAddress" type="tns:Address" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SubmitProviderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitProviderResult" type="tns:ProviderCaqhSubmitResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProviderCaqhSubmitResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Response">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="transactionId" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="correlationId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errors" type="tns:ArrayOfError" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfError">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Error" nillable="true" type="tns:Error" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Error">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="relatedName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProvider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcgr" type="tns:ProviderCaqhGetRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProviderCaqhGetRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="sak_trans" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetProviderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProviderResult" type="tns:ProviderCaqhGetResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProviderCaqhGetResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Response">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="providerId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="countyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="medicareId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="statusCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="groups" type="tns:ArrayOfProviderGroup" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SubmitProviderSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitProvider" />
+  </wsdl:message>
+  <wsdl:message name="SubmitProviderSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProviderSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProvider" />
+  </wsdl:message>
+  <wsdl:message name="GetProviderSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProviderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CAQH_DOTNET_WebServiceSoap">
+    <wsdl:operation name="SubmitProvider">
+      <wsdl:input message="tns:SubmitProviderSoapIn" />
+      <wsdl:output message="tns:SubmitProviderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProvider">
+      <wsdl:input message="tns:GetProviderSoapIn" />
+      <wsdl:output message="tns:GetProviderSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CAQH_DOTNET_WebServiceSoap" type="tns:CAQH_DOTNET_WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SubmitProvider">
+      <soap:operation soapAction="http://tn.gov/tenncare/services/provider/SubmitProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvider">
+      <soap:operation soapAction="http://tn.gov/tenncare/services/provider/GetProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CAQH_DOTNET_WebServiceSoap12" type="tns:CAQH_DOTNET_WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SubmitProvider">
+      <soap12:operation soapAction="http://tn.gov/tenncare/services/provider/SubmitProvider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvider">
+      <soap12:operation soapAction="http://tn.gov/tenncare/services/provider/GetProvider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CAQH_DOTNET_WebService">
+    <wsdl:port name="CAQH_DOTNET_WebServiceSoap" binding="tns:CAQH_DOTNET_WebServiceSoap">
+      <soap:address location="https://webservices.nash.tenn/tenncare_webservices/i4/CAQH/CAQH_DOTNET_Webservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CAQH_DOTNET_WebServiceSoap12" binding="tns:CAQH_DOTNET_WebServiceSoap12">
+      <soap12:address location="https://webservices.nash.tenn/tenncare_webservices/i4/CAQH/CAQH_DOTNET_Webservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

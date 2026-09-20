@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MAXIMUS.DataExchange.PDMS.Properties" GeneratedClassName="Settings">
+    <Profiles />
+    <Settings>
+        <Setting Name="PDMS_DEV01ConnectionString" Type="(Connection string)" Scope="Application">
+            <DesignTimeValue Profile="(Default)">
+                <SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ConnectionString>Data Source=UCOCDMMSQL01PDM;Initial Catalog=DC_PDMS_BUILD01;Persist Security Info=True;User ID=dcpdms;Password=dcpdms</ConnectionString>
+                    <ProviderName>System.Data.SqlClient</ProviderName>
+                </SerializableConnectionString>
+            </DesignTimeValue>
+            <Value Profile="(Default)">Data Source=UCOCDMMSQL01PDM;Initial Catalog=DC_PDMS_BUILD01;Persist Security Info=True;User ID=dcpdms;Password=dcpdms</Value>
+        </Setting>
+        <Setting Name="DC_PDMS_BUILD01ConnectionString" Type="(Connection string)" Scope="Application">
+            <DesignTimeValue Profile="(Default)">
+                <SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <ConnectionString>Data Source=UCOCDMMSQL01PDM.maxcorp.maximus;Initial Catalog=DC_PDMS_BUILD01;User ID=dcpdms;Password=dcpdms</ConnectionString>
+                    <ProviderName>System.Data.SqlClient</ProviderName>
+                </SerializableConnectionString>
+            </DesignTimeValue>
+            <Value Profile="(Default)">Data Source=UCOCDMMSQL01PDM.maxcorp.maximus;Initial Catalog=DC_PDMS_BUILD01;User ID=dcpdms;Password=dcpdms</Value>
+        </Setting>
+    </Settings>
+</SettingsFile>

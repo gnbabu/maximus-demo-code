@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://mes.gov/caremanagement" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://mes.gov/caremanagement" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/caremanagement" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="CareManagement.xsd" />
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/caremanagement" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="CareManagement_MessageHeader.xsd" />
+    </xsd:schema>
+  </types>
+  <message name="createAuthorizationRequestMsg">
+    <part name="parameters" element="tns:CreateAuthorization" />
+  </message>
+  <message name="createAuthorizationResponseMsg">
+    <part name="parameters" element="tns:CreateAuthorizationResponse" />
+  </message>
+  <message name="updateAuthorizationRequestMsg">
+    <part name="parameters" element="tns:UpdateAuthorization" />
+  </message>
+  <message name="updateAuthorizationResponseMsg">
+    <part name="parameters" element="tns:UpdateAuthorizationResponse" />
+  </message>
+  <message name="searchAuthorizationRequestMsg">
+    <part name="parameters" element="tns:SearchAuthorizationRequest" />
+  </message>
+  <message name="searchAuthorizationResponseMsg">
+    <part name="parameters" element="tns:SearchAuthorizationResponse" />
+  </message>
+  <message name="inquireAuthorizationRequestMsg">
+    <part name="parameters" element="tns:InquireAuthorizationRequest" />
+  </message>
+  <message name="inquireAuthorizationResponseMsg">
+    <part name="parameters" element="tns:InquireAuthorizationResponse" />
+  </message>
+  <message name="updateAuthorizationFault">
+    <part name="parameters" element="tns:Fault" />
+  </message>
+  <message name="inquireAuthorizationFault">
+    <part name="parameters" element="tns:Fault" />
+  </message>
+  <message name="createAuthorizationFault">
+    <part name="parameters" element="tns:Fault" />
+  </message>
+  <portType name="CareManagementSoapPortType">
+    <operation name="updateAuthorization">
+      <input message="tns:updateAuthorizationRequestMsg" />
+      <output message="tns:updateAuthorizationResponseMsg" />
+      <fault name="fault" message="tns:updateAuthorizationFault" />
+    </operation>
+    <operation name="inquireAuthorization">
+      <input message="tns:inquireAuthorizationRequestMsg" />
+      <output message="tns:inquireAuthorizationResponseMsg" />
+      <fault name="fault" message="tns:inquireAuthorizationFault" />
+    </operation>
+    <operation name="searchAuthorization">
+      <input message="tns:searchAuthorizationRequestMsg" />
+      <output message="tns:searchAuthorizationResponseMsg" />
+      <fault name="fault" message="tns:inquireAuthorizationFault" />
+    </operation>
+    <operation name="createAuthorization">
+      <input message="tns:createAuthorizationRequestMsg" />
+      <output message="tns:createAuthorizationResponseMsg" />
+      <fault name="fault" message="tns:createAuthorizationFault" />
+    </operation>
+  </portType>
+  <binding name="careManagementSoap" type="tns:CareManagementSoapPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="createAuthorization">
+      <soap:operation soapAction="http://mes.gov/createAuthorization" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="updateAuthorization">
+      <soap:operation soapAction="http://mes.gov/updateAuthorization" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="inquireAuthorization">
+      <soap:operation soapAction="http://mes.gov/inquireAuthorization" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="searchAuthorization">
+      <soap:operation soapAction="http://mes.gov/searchAuthorization" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="CareManagementService">
+    <port name="careManagementSoap" binding="tns:careManagementSoap">
+      <soap:address location="http://localhost:7800/careManagement/serviceentrypoint" />
+    </port>
+  </service>
+</definitions>

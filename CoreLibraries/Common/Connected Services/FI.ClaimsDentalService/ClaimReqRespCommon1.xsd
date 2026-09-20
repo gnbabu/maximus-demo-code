@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://service.operationmgmt.fi/ClaimsService/dental" xmlns:chdr="http://schema.common.fi/Header" elementFormDefault="qualified" targetNamespace="http://service.operationmgmt.fi/ClaimsService/dental" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="./CommonHeader.xsd" />
+  <xs:complexType name="ClaimHeaderResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="PayorType">
+        <xs:annotation>
+          <xs:documentation>
+						This is to specify if the search is for FFS
+						or MCE
+						claims and MCE Id of the MCE
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="ICN">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Internal Control Number or claim
+						Number. For FFS this should be should be
+						returned in case there is
+						no error. For MCE
+						claims since there could be delay in getting
+						response from MCE, only ResponseStatus will be
+						returned
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="ClaimType">
+        <xs:annotation>
+          <xs:documentation>
+						This is the type of claims
+						DENTAL, PROFESSIONAL,
+						INSTITUTIONAL
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="ClaimStatus">
+        <xs:annotation>
+          <xs:documentation>
+						This is the status of the claim. Same as ICN
+						reason for this to be optional
+						Possible values are
+						OPEN/DENY/PEND/ADJUCATED/PAY/VOID/DENIED/PAID/REVERSED/REVSYNCH/REV/WAITPAY/WAITDENY/WAITREV
+						For non-finalized claims are: OPEN, PEND, PAY, DENY, ADJUCATED,
+						and REV or REVSYNCH. Once the claim is imported into Flexi, the
+						values are WAITPAY, WAITDENY, WAIT REV. After financials, the
+						values are PAID, DENIED, REVERSED
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PatientAccountNumber">
+        <xs:annotation>
+          <xs:documentation>
+						This is Patient account number and will come in
+						at 2300 - CLM01
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MemberId">
+        <xs:annotation>
+          <xs:documentation>
+						Medicaid Id of the member Same as ICN reason for
+						this to be optional
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MemberName">
+        <xs:annotation>
+          <xs:documentation>
+						Member Name First + Last Same as ICN reason for
+						this to be optional
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="150" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TotalPaidAmount" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>
+						This is the total amount paid on the claim
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ClaimPaidDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>
+						This is the date on which the claim was
+						adjudicated
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AdjudicationDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>
+						This is the date on which the claim was
+						adjudicated
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="ClaimSubmissionDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>
+						This is the date on which the claim was
+						submitted
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="TotalCharges" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>
+						Total Billed Amount
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CoPayAmount" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>
+                        CoPay Amount
+                        If value is zero or not present return 0
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" name="FromDOS" type="xs:date" />
+      <xs:element minOccurs="1" name="ThruDOS" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DRGCode">
+        <xs:annotation>
+          <xs:documentation>
+						DRGCode
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="6" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="OriginalClaimICN">
+        <xs:annotation>
+          <xs:documentation>
+						Original claim ID if adjusted or reversed
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="OriginalClaimAdjustmentReason">
+        <xs:annotation>
+          <xs:documentation>
+						Original claim ID if adjusted or reversed
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="100" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RemittanceAdviceDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListOfCARC" type="tns:ListOfCARCType">
+        <xs:annotation>
+          <xs:documentation>
+						This is the container for CARCs.
+						If there is no
+						CARC this is optional.
+						But if the container is there the there
+						should at least be one CARC
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ListOfRARC" type="tns:ListOfRARCType">
+        <xs:annotation>
+          <xs:documentation>
+						This is the container for RARCs.
+						If there is no
+						RARC this is optional.
+						But if the container is there the there
+						should at least be one RARC
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NotesList" type="tns:NotesListType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListOfClaimsXtenResult" type="tns:ListOfClaimsXtenResultType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ClaimLinesResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="999" name="ClaimLineDetails" type="tns:ClaimLineDetailsType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ClaimLineDetailsType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="DetailNumber">
+        <xs:annotation>
+          <xs:documentation>
+						Claim detail Identification number
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="LineStatus">
+        <xs:annotation>
+          <xs:documentation>
+						This is the status of the line.
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="BilledAmount" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>
+						This is the total amount paid on the claim
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PaidAmount" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>
+						This is the total amount paid on the claim
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PaidServiceUnit">
+        <xs:annotation>
+          <xs:documentation>
+						PaidServiceUnit for the claim
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="IsEPSDT">
+        <xs:annotation>
+          <xs:documentation>
+						Y / N only valid on select 1500 claims where
+						indicated, otherwise a N
+						is returned
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="EAPGDetails" type="tns:EAPGDetailsType">
+        <xs:annotation>
+          <xs:documentation>
+						Line level EAPG Details
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ListOfEdits" type="tns:ListOfEditsType">
+        <xs:annotation>
+          <xs:documentation>
+						This is the container for Edits.
+						If there are no
+						Edits this is optional.
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ListOfCARC" type="tns:ListOfCARCType">
+        <xs:annotation>
+          <xs:documentation>
+						This is the container for CARCs.
+						If there is no
+						CARC this is optional.
+						But if the container is there the there
+						should at least be one CARC
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ListOfRARC" type="tns:ListOfRARCType">
+        <xs:annotation>
+          <xs:documentation>
+						This is the container for RARCs.
+						If there is no
+						RARC this is optional.
+						But if the container is there the there
+						should at least be one RARC
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ErrorsType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="10" name="ErrorDetails" type="tns:ErrorDetailsType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ErrorDetailsType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="ErrorCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ErrorDescription">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1000" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SearchClaimsRequestPayloadType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="PayorType">
+        <xs:annotation>
+          <xs:documentation>
+						This is to specify if the search is for FFS
+						or
+						MCE
+						claims.
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="FFS" />
+            <xs:enumeration value="MCE" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ICN">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Internal Control Number or claim
+						Number should be returned in case there is
+						no error
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PatientAccountNumber">
+        <xs:annotation>
+          <xs:documentation>
+						This is Patient account number and will come in
+						at 2300 - CLM01
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MemberMedicaidId">
+        <xs:annotation>
+          <xs:documentation>
+						This is the medicaid id of the member
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RenderingProviderID">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Internal Control Number of Rendering
+						Provider
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="BillingProviderID">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Internal Control Number of Billing
+						Provider
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PrescriptionNumber">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Internal Control Number or claim
+						Number should be returned in case there is
+						no error
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ClaimType">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Internal Control Number or claim
+						Number should be returned in case there is
+						no error
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Status">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Internal Control Number or claim
+						Number should be returned in case there is
+						no error
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="FromDOS" type="xs:date" />
+      <xs:element minOccurs="0" name="ThruDOS" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EOBListType">
+    <xs:annotation>
+      <xs:documentation>
+				This is a container for the EOB
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="10" name="EOB" type="tns:EOBType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EOBType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="EOBCode">
+        <xs:annotation>
+          <xs:documentation>
+						Code for Explanation of Benefit returned by payer
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="EOBExplanation">
+        <xs:annotation>
+          <xs:documentation>
+						Description for EOB code
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="500" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NotesListType">
+    <xs:annotation>
+      <xs:documentation>
+				This is a container for the list of notes
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="10" name="Notes">
+        <xs:annotation>
+          <xs:documentation>
+						Code for Explanation of Benefit returned by payer
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="500" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListOfEditsType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="99" name="Edit" type="tns:EditType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EditType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="RuleID">
+        <xs:annotation>
+          <xs:documentation>
+						Edit Rule ID value
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="EditDescription">
+        <xs:annotation>
+          <xs:documentation>
+						Description for Edit code
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="500" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListOfCARCType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="99" name="CARC" type="tns:CARCType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CARCType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CARCCode">
+        <xs:annotation>
+          <xs:documentation>
+						Claim adjustment reason code returned by payer
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CARCDescription">
+        <xs:annotation>
+          <xs:documentation>
+						Description for CARC code
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="500" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="CARCAmount" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>
+						Adjusted amount linked to CARC
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListOfRARCType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="99" name="RARC" type="tns:RARCType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RARCType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="RARCCode">
+        <xs:annotation>
+          <xs:documentation>
+						Remittance advise reason code
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RARCDescription">
+        <xs:annotation>
+          <xs:documentation>
+						Description to RARC code
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="500" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListOfDRGType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="12" name="DRG" type="tns:DRGType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DRGType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Sequence" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>
+						Diagnosis Sequence
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodeId">
+        <xs:annotation>
+          <xs:documentation>
+						Diagnosis code id
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="8" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="POA">
+        <xs:annotation>
+          <xs:documentation>
+						Present on admission
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EAPGDetailsType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="InitialEAPG">
+        <xs:annotation>
+          <xs:documentation>
+						Final Value of the EAPG
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="5" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="FinalEAPG">
+        <xs:annotation>
+          <xs:documentation>
+						Final Value of the EAPG
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="5" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PaymentAction">
+        <xs:annotation>
+          <xs:documentation>
+						This is coming from Pricing Status being returned
+						on the call
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListOfClaimsXtenResultType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="100" name="ClaimsXtenResult" type="tns:ClaimsXtenResultType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ClaimsXtenResultType">
+    <xs:annotation>
+      <xs:documentation>
+				This is the ClaimsXtenValidation results
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="RelatedHistoryNumber" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>
+						The Related History (Detail) Number is the detail
+						on the related claim.
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AuditResult">
+        <xs:annotation>
+          <xs:documentation>
+						The audit result is a 3-character indicator that
+						is broken down as
+						follows.
+						Position 1: Type of lines affected by
+						this audit (i.e. H = History Denied,
+						C = Current denied, F =
+						Flagcurrent only, R = Replace current
+						only, P ??? Pay Percent)
+						Position 2: Always ???-???
+						Position 3: Type of other lines that caused
+						or resulted from this audit
+						(i.e. H = at least one history, C =
+						Current only, N = New line)
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DatePosted" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Adjudication Date</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ErrorCode">
+        <xs:annotation>
+          <xs:documentation>
+						This is the HPA error code (not ClaimsXten)
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ErrorDescription">
+        <xs:annotation>
+          <xs:documentation>
+						This is the HPA error code description. This is
+						not coming from Xten.
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="60" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RelatedHistoryICN">
+        <xs:annotation>
+          <xs:documentation>
+						The ICN of the related claim
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="15" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AuditMessage1">
+        <xs:annotation>
+          <xs:documentation>
+						The REMIT message for the claim.
+						No limit as per
+						the field so limiting it to 5000
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="5000" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AuditMessage2">
+        <xs:annotation>
+          <xs:documentation>
+						The EOB description for the claim
+						No limit as per
+						the field so limiting it to 5000
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="5000" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

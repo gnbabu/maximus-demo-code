@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:financialservice="http://mes.gov/financialservice" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://mes.gov/financialservice" targetNamespace="http://mes.gov/financialservice" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <documentation>
+    <appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="financialServiceSoap" originalBindingStyle="document" />
+      </MRWSDLAppInfo>
+    </appinfo>
+  </documentation>
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/financialservice" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="FinancialService.xsd" />
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/financialservice" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="FinancialService_MessageHeader.xsd" />
+    </xsd:schema>
+  </types>
+  <message name="inquire1099RequestMsg">
+    <part name="parameters" element="tns:Inquire1099" />
+  </message>
+  <message name="inquire1099ResponseMsg">
+    <part name="parameters" element="tns:Inquire1099Response" />
+  </message>
+  <message name="inquire1099Fault">
+    <part name="parameters" element="tns:Fault" />
+  </message>
+  <message name="InquireTransactionHistoryRequestMsg">
+    <part name="parameters" element="tns:InquireTransactionHistory" />
+  </message>
+  <message name="InquireTransactionHistoryResponseMsg">
+    <part name="parameters" element="tns:InquireTransactionHistoryResponse" />
+  </message>
+  <message name="InquireTransactionHistoryFault">
+    <part name="parameters" element="tns:Fault" />
+  </message>
+  <portType name="FinancialServiceSoapPortType">
+    <operation name="inquire1099">
+      <input message="tns:inquire1099RequestMsg" />
+      <output message="tns:inquire1099ResponseMsg" />
+      <fault name="fault" message="tns:inquire1099Fault" />
+    </operation>
+    <operation name="inquireTransactionHistory">
+      <input message="tns:InquireTransactionHistoryRequestMsg" />
+      <output message="tns:InquireTransactionHistoryResponseMsg" />
+      <fault name="fault" message="tns:InquireTransactionHistoryFault" />
+    </operation>
+  </portType>
+  <binding name="financialServiceSoap" type="tns:FinancialServiceSoapPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="inquire1099">
+      <soap:operation soapAction="http://mes.gov/inquire1099" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="inquireTransactionHistory">
+      <soap:operation soapAction="http://mes.gov/inquireTransactionHistory" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="FinancialServiceService">
+    <port name="financialServiceSoap" binding="tns:financialServiceSoap">
+      <soap:address location="http://localhost:7800/financialService/serviceentrypoint" />
+    </port>
+  </service>
+</definitions>

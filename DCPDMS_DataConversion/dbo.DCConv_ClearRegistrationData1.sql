@@ -1,0 +1,423 @@
+USE [DC_PDMS_EDV01]
+GO
+/****** Object:  StoredProcedure [dbo].[DCConv_ClearRegistrationData]    Script Date: 7/14/2016 9:27:44 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		Richard Mays
+-- Create date: 5/10/2016
+-- Description:	Deletes the content of the registration tables
+-- =============================================
+CREATE PROCEDURE [dbo].[DCConv_ClearRegistrationData] (@pin_conv_run_id VARCHAR(20))
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	DECLARE @table VARCHAR(50);
+
+	SET @table = '';
+
+	BEGIN TRY
+		BEGIN TRANSACTION;
+
+		SET @table = 'REG_TAXONOMY';
+
+		DELETE
+		FROM [dbo].REG_TAXONOMY;
+
+		SET @table = 'REG_SPECIALTY';
+
+		DELETE
+		FROM [dbo].REG_SPECIALTY;
+
+		SET @table = 'REG_LICENSE';
+
+		DELETE
+		FROM [dbo].REG_LICENSE;
+
+		SET @table = 'REG_CLIA';
+
+		DELETE
+		FROM [dbo].REG_CLIA;
+
+		SET @table = 'REG_MEDICARE';
+
+		DELETE
+		FROM [dbo].REG_MEDICARE;
+
+		SET @table = 'REG_SERVICE_LOCATION';
+
+		DELETE
+		FROM [dbo].REG_SERVICE_LOCATION;
+
+		SET @table = 'REG_ADDITIONAL_ADDRESSES';
+
+		DELETE
+		FROM [dbo].REG_ADDITIONAL_ADDRESSES;
+
+		SET @table = 'REG_DEA';
+
+		DELETE
+		FROM [dbo].REG_DEA;
+
+		SET @table = 'REG_MEDICAID';
+
+		DELETE
+		FROM [dbo].REG_MEDICAID;
+
+		SET @table = 'REG_OWNER';
+
+		DELETE
+		FROM [dbo].REG_OWNER;
+
+		SET @table = 'REG_PROVIDER';
+
+		DELETE
+		FROM [dbo].REG_PROVIDER;
+
+		SET @table = 'REGISTRATION';
+
+		DELETE
+		FROM [dbo].REGISTRATION
+
+		SET @table = 'DCConv_KeyCrossReferences';
+
+		DELETE
+		FROM [dbo].DCConv_KeyCrossReferences;
+
+		SET @table = 'LICENSURE';
+
+		DELETE
+		FROM [dbo].LICENSURE
+
+		SET @table = 'Log';
+
+		DELETE
+		FROM [dbo].Log
+
+		SET @table = 'REG_AFFILIATION';
+
+		DELETE
+		FROM [dbo].REG_AFFILIATION
+
+		SET @table = 'COMMUNICATION_EVENT';
+
+		DELETE
+		FROM [dbo].COMMUNICATION_EVENT
+
+		DELETE
+		FROM [dbo].CONTACT_MECHANISM
+
+		SET @table = 'CONTACT_MECHANISM_ROLE';
+
+		DELETE
+		FROM [dbo].CONTACT_MECHANISM_ROLE
+
+		SET @table = 'PARTY_CONTACT_MECHANISM';
+
+		DELETE
+		FROM [dbo].PARTY_CONTACT_MECHANISM
+
+		SET @table = 'REG_AFFILIATION_CROSSOVER_XREF';
+
+		DELETE
+		FROM [dbo].REG_AFFILIATION_CROSSOVER_XREF
+
+		SET @table = 'ADDITIONAL_ADDRESSES';
+
+		DELETE
+		FROM [dbo].ADDITIONAL_ADDRESSES
+
+		SET @table = 'PARTY_IDENTIFICATION_NUMBER';
+
+		DELETE
+		FROM [dbo].PARTY_IDENTIFICATION_NUMBER
+
+
+		SET @table = 'PARTY_SPECIALTY';
+
+		DELETE
+		FROM [dbo].PARTY_SPECIALTY
+
+		SET @table = 'TELECOMMUNICATIONS_NUMBER';
+
+		DELETE
+		FROM [dbo].TELECOMMUNICATIONS_NUMBER
+
+		SET @table = 'PARTY_TAXONOMY';
+
+		DELETE
+		FROM [dbo].PARTY_TAXONOMY
+
+		SET @table = 'REG_TRANSFER_HISTORY';
+
+		DELETE
+		FROM [dbo].REG_TRANSFER_HISTORY
+
+		SET @table = 'PARTY_ROLE';
+
+		DELETE
+		FROM [dbo].PARTY_ROLE
+
+		SET @table = 'PARTY_PROVIDER_TYPE_XREF';
+
+		DELETE
+		FROM [dbo].PARTY_PROVIDER_TYPE_XREF
+
+		SET @table = 'PARTY_TYPEOFPRACTICE_XREF';
+
+		DELETE
+		FROM [dbo].PARTY_TYPEOFPRACTICE_XREF
+
+		SET @table = 'POSTAL_ADDRESS';
+
+		DELETE
+		FROM [dbo].POSTAL_ADDRESS
+
+		SET @table = 'PROVIDER_PROPERTY';
+
+		DELETE
+		FROM [dbo].PROVIDER_PROPERTY
+
+		SET @table = 'ELECTRONIC_ADDRESS';
+
+		DELETE
+		FROM [dbo].ELECTRONIC_ADDRESS
+
+		SET @table = 'TAX_ID';
+
+		DELETE
+		FROM [dbo].TAX_ID
+
+		SET @table = 'PERSON';
+
+		DELETE
+		FROM [dbo].PERSON
+
+		SET @table = 'LICENSURE_MEDICARE';
+
+		DELETE
+		FROM dbo.LICENSURE_MEDICARE
+
+		SET @table = 'ORGANIZATION';
+
+		DELETE
+		FROM [dbo].ORGANIZATION
+
+
+										SET @table = 'A_ELECTRONIC_ADDRESS';
+
+		TRUNCATE TABLE  audit.A_ELECTRONIC_ADDRESS
+
+
+		SET @table = 'A_TAX_ID';
+
+		TRUNCATE TABLE  audit.A_TAX_ID
+
+
+		SET @table = 'A_PERSON';
+
+		TRUNCATE TABLE  audit.A_PERSON
+
+
+		SET @table = 'A_LICENSURE_MEDICARE';
+
+		TRUNCATE TABLE  audit.A_LICENSURE_MEDICARE
+
+
+		SET @table = 'A_ORGANIZATION';
+
+		TRUNCATE TABLE  audit.A_ORGANIZATION
+
+
+				SET @table = 'A_REG_CLIA';
+
+		TRUNCATE TABLE audit.A_REG_CLIA
+
+		SET @table = 'A_REG_ADDITIONAL_ADDRESSES';
+
+		TRUNCATE TABLE  audit.A_REG_ADDITIONAL_ADDRESSES
+
+		SET @table = 'A_REGISTRATION';
+
+		TRUNCATE TABLE audit.A_REGISTRATION
+
+		SET @table = 'A_REG_PROVIDER';
+
+		TRUNCATE TABLE  audit.A_REG_PROVIDER
+
+		SET @table = 'A_REG_LICENSE';
+
+		TRUNCATE TABLE  audit.A_REG_LICENSE
+
+		SET @table = 'A_REG_SPECIALTY';
+
+		TRUNCATE TABLE audit.A_REG_SPECIALTY
+
+		SET @table = 'A_REG_DEA';
+
+		TRUNCATE TABLE  audit.A_REG_DEA
+
+		SET @table = 'A_REG_SERVICE_LOCATION';
+
+		TRUNCATE TABLE audit.A_REG_SERVICE_LOCATION
+
+		SET @table = 'A_REG_AFFILIATION';
+
+		TRUNCATE TABLE audit.A_REG_AFFILIATION
+
+		SET @table = 'A_REG_TAXONOMY';
+
+		TRUNCATE TABLE audit.A_REG_TAXONOMY
+
+		SET @table = 'A_REG_MEDICARE';
+
+		TRUNCATE TABLE  audit.A_REG_MEDICARE
+
+		SET @table = 'A_REG_OWNER';
+
+		TRUNCATE TABLE  audit.A_REG_OWNER
+
+		SET @table = 'A_LICENSURE';
+
+		TRUNCATE TABLE audit.A_LICENSURE
+
+		SET @table = 'A_SPECIALTY_TYPE';
+
+		TRUNCATE TABLE audit.A_SPECIALTY_TYPE
+
+		SET @table = 'A_COMMUNICATION_EVENT';
+
+		TRUNCATE TABLE audit.A_COMMUNICATION_EVENT
+
+		SET @table = 'A_REG_MEDICAID';
+
+		TRUNCATE TABLE audit.A_REG_MEDICAID
+
+		SET @table = 'A_TAXONOMY_TYPE';
+
+		TRUNCATE TABLE audit.A_TAXONOMY_TYPE
+		SET @table = 'A_PROVIDER_TYPE';
+
+		TRUNCATE TABLE audit.A_PROVIDER_TYPE
+
+		SET @table = 'A_CONTACT_MECHANISM';
+
+		TRUNCATE TABLE audit.A_CONTACT_MECHANISM
+
+		SET @table = 'A_CONTACT_MECHANISM_ROLE';
+
+		TRUNCATE TABLE audit.A_CONTACT_MECHANISM_ROLE
+
+		SET @table = 'A_PARTY_CONTACT_MECHANISM';
+
+		TRUNCATE TABLE audit.A_PARTY_CONTACT_MECHANISM
+
+		SET @table = 'CONTACT_MECHANISM';
+
+				SET @table = 'A_PARTY';
+
+		TRUNCATE TABLE  audit.A_PARTY
+
+		SET @table = 'A_REG_AFFILIATION_CROSSOVER_XREF';
+
+		TRUNCATE TABLE  audit.A_REG_AFFILIATION_CROSSOVER_XREF
+
+
+		SET @table = 'A_ADDITIONAL_ADDRESSES';
+
+		TRUNCATE TABLE  audit.A_ADDITIONAL_ADDRESSES
+
+
+		SET @table = 'A_PARTY_IDENTIFICATION_NUMBER';
+
+		TRUNCATE TABLE  audit.A_PARTY_IDENTIFICATION_NUMBER
+
+
+		SET @table = 'A_PARTY_SPECIALTY';
+
+		TRUNCATE TABLE  audit.A_PARTY_SPECIALTY
+
+		SET @table = 'A_PARTY_TAXONOMY';
+
+		TRUNCATE TABLE  audit.A_PARTY_TAXONOMY
+
+		SET @table = 'A_TELECOMMUNICATIONS_NUMBER';
+
+		TRUNCATE TABLE  audit.A_TELECOMMUNICATIONS_NUMBER
+
+
+		SET @table = 'A_PARTY_ROLE';
+
+		TRUNCATE TABLE  audit.A_PARTY_ROLE
+
+
+		SET @table = 'A_PARTY_PROVIDER_TYPE_XREF';
+
+		TRUNCATE TABLE  audit.A_PARTY_PROVIDER_TYPE_XREF
+
+		SET @table = 'A_PARTY_TYPEOFPRACTICE_XREF';
+
+		TRUNCATE TABLE  audit.A_PARTY_TYPEOFPRACTICE_XREF
+
+		SET @table = 'A_POSTAL_ADDRESS';
+
+		TRUNCATE TABLE  audit.A_POSTAL_ADDRESS
+
+
+
+		COMMIT TRANSACTION;
+	END TRY
+
+	BEGIN CATCH
+		ROLLBACK TRANSACTION;
+
+		DECLARE @ErrorMessage NVARCHAR(4000);
+		DECLARE @ErrorLine INT;
+		DECLARE @ErrorSeverity INT;
+		DECLARE @ErrorState INT;
+		DECLARE @ErrorNumber INT;
+		DECLARE @ErrorProcedure VARCHAR(128);
+
+		SELECT @ErrorMessage = ERROR_MESSAGE()
+			,@ErrorLine = ERROR_LINE()
+			,@ErrorSeverity = ERROR_SEVERITY()
+			,@ErrorState = ERROR_STATE()
+			,@ErrorNumber = ERROR_NUMBER()
+			,@ErrorProcedure = ERROR_PROCEDURE();
+
+		-- add the error to the log
+		INSERT INTO [dbo].[DCConv_Errors] (
+			[RunID]
+			,[TableContext]
+			,[ColumnContext]
+			,[ErrorLine]
+			,[ErrorNumber]
+			,[ErrorMessage]
+			,[ErrorProcedure]
+			)
+		VALUES (
+			@pin_conv_run_id
+			,@table
+			,''
+			,@ErrorLine
+			,@ErrorNumber
+			,@ErrorMessage
+			,@ErrorProcedure
+			);
+
+		-- this will be a fatal error
+		RAISERROR (
+				@ErrorMessage
+				,@ErrorSeverity
+				,@ErrorState
+				);
+	END CATCH
+END
+
+GO

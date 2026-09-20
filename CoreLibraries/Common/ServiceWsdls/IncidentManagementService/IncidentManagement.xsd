@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://mes.gov/incidentmanagement" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:tns="http://mes.gov/incidentmanagement">
+	<xsd:include schemaLocation="IncidentManagement_InlineSchema.xsd"/>
+	<xsd:include schemaLocation="IncidentManagement_MessageHeader.xsd"/>
+	<xsd:element ibmSchExtn:docRoot="true" name="SendProviderIncidentRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="tns:MessageHeader" minOccurs="1"/>
+				<xsd:element name="Payload">                            			 
+					<xsd:complexType>                            					         
+						<xsd:sequence> 
+							<xsd:element name="SendProviderIncidentInfo" type="tns:SendProviderIncidentRequest"/>
+						</xsd:sequence>                            					         
+					</xsd:complexType>
+					</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element> 
+	<xsd:element ibmSchExtn:docRoot="true" name="SendProviderIncidentResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="SITransactionKey" type="tns:String32" minOccurs="0"/>	
+				<xsd:element name="ModuleTransactionId" type="tns:String50" minOccurs="0"/>
+				<xsd:element name="AdditionalModuleTransactionId" type="tns:String50" minOccurs="0"/>
+				<xsd:element name="ResponseCode" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ResponseType" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="Success"/>
+							<xsd:enumeration value="Failure"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="ResponseMessage" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ResponseDetails" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element> 
+	<xsd:element ibmSchExtn:docRoot="true" name="UpdateProviderIncidentStatusRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="tns:MessageHeader" minOccurs="1"/>
+				<xsd:element name="Payload">                            			 
+					<xsd:complexType>                            					         
+						<xsd:sequence> 
+							<xsd:element name="UpdateProviderIncidentStatusInfo" type="tns:UpdateProviderIncidentStatusInfo"/>
+						</xsd:sequence>                            					         
+					</xsd:complexType>
+					</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element> 
+	<xsd:element ibmSchExtn:docRoot="true" name="UpdateProviderIncidentStatusResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="SITransactionKey" type="tns:String32" minOccurs="0"/>
+				<xsd:element name="ModuleTransactionId" type="tns:String50" minOccurs="0"/>
+				<xsd:element name="AdditionalModuleTransactionId" type="tns:String50" minOccurs="0"/>
+				<xsd:element name="ResponseCode" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ResponseType" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ResponseMessage" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ResponseDetails" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element> 
+	
+</xsd:schema>

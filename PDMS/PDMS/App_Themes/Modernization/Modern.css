@@ -1,0 +1,4866 @@
+﻿/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+	MAIN FORM - Provider Services
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media all and (min-width: 1200px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 990px) {
+    .text-right {
+        text-align: left !important;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    input[type=text], input[type=password], textarea, select {
+        width: 100% !important;
+    }
+
+    .text-stay-right {
+        text-align: right !important;
+    }
+
+    .adminPopUpLabelText {
+        text-align: right !important;
+    }
+
+    .provider-search-fields input[type=text],
+    .provider-search-fields input[type=password],
+    .provider-search-fields textarea,
+    .provider-search-fields select {
+        width: 100% !important;
+    }
+
+    .disenrollment-fields input[type=text],
+    .disenrollment-fields input[type=password],
+    .disenrollment-fields textarea,
+    .disenrollment-fields select {
+        width: 100% !important;
+    }
+
+
+    .fileControl { /* upload control*/
+        width: 200px !important;
+    }
+
+    table {
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+    .provider-home-btn {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-align-right {
+        margin-left: 0px;
+    }
+
+    .select-ddl-width {
+        width: 100% !important;
+    }
+
+    .provider-btn-margin {
+        margin-right: 0px;
+        margin-bottom: 5px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    input[type=text], input[type=password], textarea, select {
+        width: 100% !important;
+    }
+
+    .provider-search-fields input[type=text],
+    .provider-search-fields input[type=password],
+    .provider-search-fields textarea,
+    .provider-search-fields select {
+        width: 100% !important;
+    }
+
+    .adminPopUpFullSize {
+        height: 80%;
+        overflow: scroll;
+    }
+
+    .text-stay-right {
+        text-align: left !important;
+    }
+
+    .adminPopUpLabelText {
+        text-align: left !important;
+    }
+
+    .fileControl { /* upload control*/
+        width: 150px !important;
+    }
+
+    .provider-home-btn {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-align-right {
+        margin-left: 0px;
+    }
+
+    .select-ddl-width {
+        width: 100% !important;
+    }
+
+    .provider-btn-margin {
+        margin-right: 0px;
+        margin-bottom: 5px;
+    }
+
+    .fixed-height-footer {
+        height: 100% !important;
+    }
+
+    .hamburger-width-inmenu {
+        width: 25%;
+    }
+
+    .login-popup-scroll {
+        height: 350px;
+        overflow: auto;
+    }
+
+    .modalPopup {
+        width: 80% !important;
+        height: 80% !important;
+        margin: auto;
+        left: auto !important;
+    }
+}
+
+@media only screen and (max-width: 1120px) {
+    .formLabel, .formLabelSmall, .formLabel300, .formLabelAuto, .formLabel150, .formLabel170, .formLabel200, .formLabelleft300, .formLabelleft80 {
+        text-align: left !important;
+    }
+
+    .LoginBox .buttonBox {
+        width: auto !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .adminPopUpFullSize {
+        width: 90%;
+        height: 90%;
+        overflow: scroll;
+    }
+}
+
+@media only screen and (min-width: 760px) {
+    .adminPopUpFullSize {
+        width: 60%;
+    }
+}
+
+
+body {
+    /*background-image: linear-gradient(#ffffff,#ffffff,#f3f3f5);*/
+    color: #4C4C4C; /* Main font color */
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    font-family: "Arial Narrow";
+    font-size: 14pt !important;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(247, 247, 247, 1);
+    line-height: 1.231;
+}
+
+
+#mainForm {
+    margin: 0 auto; /* Firefox needs this */
+    text-align: left;
+    width: 90%;
+    padding-bottom: 20%;
+}
+
+#NewMainForm {
+    margin: 0 auto; /* Firefox needs this */
+    text-align: left;
+    width: 80%;
+    /*padding-bottom: 30%;*/
+    /*background-color: #ebecee;*/
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+    Tag Styles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*
+input[type=text], input[type=number], textarea {
+    border: 1px solid #ccc !important;
+    font-family: tahoma,verdana,helvetica; /* Main font-family *
+    font-size: 9.5pt !important; /* Main font size *
+    width: 300px;
+    height: 30px;
+}*/
+
+input, textarea, select {
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+    input[type=hidden] {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    input[type=checkbox] + label {
+        margin: 4px;
+        padding-right: 4px;
+        display: inline;
+    }
+/*input[type=radio], input[type=checkbox] {margin: 0px 10px 0px 0px; }*/
+/*add this when have time to confirm with bas*/
+/*input:focus, input[type=text]:focus, input[type=password]:focus, select:focus, textarea:focus {
+    background-color: #FFFFCC;
+    border-color: blue;
+}*/
+
+/*add this when have time to confirm with bas*/
+/*input[type=text].disabled, input[type=number].disabled, textarea.disabled {
+    color: #666666;
+    border: 1px solid #888888;
+    background-color: #F0F0F0;
+    cursor:not-allowed;
+}*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+	CSS - Alphabetic order
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.provider-home-btn {
+    display: flex;
+}
+
+
+.provider-btn-margin {
+    margin-right: 5px;
+}
+
+.appHeader {
+    width: 950px;
+    display: table;
+}
+
+.appHeaderSub {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: bold;
+    color: #036;
+}
+
+/************************************************************************************
+ * AjaxControlToolkit Popup Calendar
+ ************************************************************************************/
+.ajax__calendar_container {
+    padding: 2px;
+    position: absolute;
+    cursor: default;
+    width: 240px !important;
+    font-size: 13px !important;
+    text-align: center !important;
+    background-color: #DEF1F4;
+    border: solid 1px #77D5F7;
+}
+
+.ajax__calendar_body {
+    height: 139px !important;
+    width: 100% !important;
+    margin: auto;
+    background-color: #ffffff !important;
+    border: solid 1px #77D5F7;
+    font-size: 13px !important;
+}
+
+.ajax__calendar_days, .ajax__calendar_months, .ajax__calendar_years {
+    top: 0px;
+    left: 0px;
+    width: 100% !important;
+    position: absolute;
+    text-align: center !important;
+    margin: auto;
+    height: 100% !important;
+}
+
+.ajax__calendar_container TD {
+    padding: 2px !important;
+    color: #004080 !important;
+    font-size: 13px !important;
+    text-align: center !important;
+    width: auto !important;
+}
+
+.ajax__calendar_header {
+    height: 20px;
+    width: 100%;
+    background-color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.ajax__calendar_prev {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url(Images/arrow-left.gif);
+    padding-top: 3px;
+}
+
+.ajax__calendar_next {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    float: right;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url(Images/arrow-right.gif);
+    padding-top: 3px;
+}
+
+.ajax__calendar_title {
+    cursor: pointer;
+    font-weight: bold;
+    color: #004080;
+    padding-top: 3px;
+}
+
+.ajax__calendar_footer {
+    height: 20px;
+}
+
+.ajax__calendar_today {
+    cursor: pointer;
+    padding-top: 3px;
+    color: #004080;
+    font-weight: bold;
+}
+
+.ajax__calendar_dayname {
+    height: 17px;
+    width: 17px;
+    text-align: right;
+    padding: 0 2px;
+}
+
+.ajax__calendar_day {
+    height: 15px;
+    width: 18px;
+    text-align: right;
+    padding: 0 2px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ajax__calendar_month {
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    height: 40px;
+}
+
+.ajax__calendar_year {
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    height: 40px;
+}
+
+.ajax__calendar .ajax__calendar_body {
+    height: 139px !important;
+    width: 100% !important;
+    margin: auto;
+    background-color: #ffffff;
+    border: solid 1px #77D5F7;
+    font-size: 13px !important;
+}
+
+.ajax__calendar .ajax__calendar_container {
+    padding: 2px;
+    position: absolute;
+    cursor: default;
+    width: 240px !important;
+    font-size: 13px !important;
+    text-align: center !important;
+    background-color: #DEF1F4 !important;
+    border: solid 1px #77D5F7;
+}
+
+.ajax__calendar .ajax__calendar_footer {
+    height: 20px;
+}
+
+.ajax__calendar .ajax__calendar_dayname {
+    height: 17px;
+    width: 17px;
+    text-align: right;
+    padding: 0 2px;
+}
+
+.ajax__calendar .ajax__calendar_day {
+    height: 15px;
+    width: 18px;
+    text-align: right;
+    padding: 0 2px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ajax__calendar .ajax__calendar_month {
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    height: 40px;
+}
+
+.ajax__calendar .ajax__calendar_year {
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    height: 40px;
+}
+
+.ajax__calendar .ajax__calendar_days,
+.ajax__calendar .ajax__calendar_months,
+.ajax__calendar .ajax__calendar_years {
+    top: 0px;
+    left: 0px;
+    width: 100% !important;
+    position: absolute;
+    text-align: center !important;
+    margin: auto;
+    height: 100% !important;
+}
+
+
+.ajax__calendar .ajax__calendar_active .ajax__calendar_day {
+    background-color: #edf9ff;
+    border: none !important;
+    /*border-color: #0066cc;*/
+    color: #0066cc;
+}
+
+.ajax__calendar .ajax__calendar_active .ajax__calendar_month {
+    background-color: #edf9ff;
+    border: none !important;
+    /*border-color: #0066cc;*/
+    color: #0066cc;
+}
+
+.ajax__calendar .ajax__calendar_active .ajax__calendar_year {
+    background-color: #edf9ff;
+    border: none !important;
+    /*border-color: #0066cc;*/
+    color: #0066cc;
+}
+
+.ajax__calendar .ajax__calendar_other .ajax__calendar_day {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #646464;
+}
+
+.ajax__calendar .ajax__calendar_other .ajax__calendar_year {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #646464;
+}
+
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_day {
+    background-color: #edf9ff;
+    border-color: #daf2fc;
+    color: #0066cc;
+}
+
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_month {
+    background-color: #edf9ff;
+    border-color: #daf2fc;
+    color: #0066cc;
+}
+
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_year {
+    background-color: #edf9ff;
+    border-color: #daf2fc;
+    color: #0066cc;
+}
+
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_title {
+    color: #0066cc;
+}
+
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_today {
+    color: #0066cc;
+}
+
+A:link, A:visited, A:active, A:hover {
+    color: Blue;
+    text-decoration: underline;
+    padding:3px;
+}
+
+A:hover {
+    cursor: pointer;
+}
+
+/* BodyText and others - START */
+.redAsterisk {
+    color: #e00;
+    font-weight: bold;
+    font-size: 11pt;
+    vertical-align: middle;
+}
+
+.GridviewHeaderAsterisk:before {
+    content: '* ';
+    color: #e00;
+}
+
+.bodyText {
+    text-align: justify;
+    color: #000000;
+}
+
+.bodyTextRed /* Use this class to display error messages next to form fields */ {
+    color: #e00;
+    font-weight: normal;
+}
+
+.bodyTextBold {
+    text-align: justify;
+    color: #000000;
+    font-weight: normal;
+}
+
+.bodyTextBoldGreyed {
+    text-align: justify;
+    color: #000000;
+    font-weight: bold;
+    background-color: #C7C7C7;
+}
+
+.bodyTextSmall {
+    color: #000000;
+    text-align: justify;
+    font-weight: normal;
+    font-size: 12pt;
+}
+
+.bodyTextSmallRed {
+    color: #e00;
+    text-align: justify;
+    font-weight: normal;
+    font-size: 8pt;
+}
+
+.bodyTextSmallBold {
+    color: #000000;
+    text-align: justify;
+    font-weight: bold;
+    font-size: 8pt;
+}
+
+A.bodyText {
+    padding-left: 10px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.popControl {
+    background-color: White;
+    border-style: ridge;
+}
+
+.popControlHeader {
+    background-color: #0066FF;
+    cursor: move;
+    padding: 5px;
+}
+
+.repeaterDivider {
+    background-color: #999999;
+    height: 2px;
+    width: 100%;
+}
+/* BodyText and others - END */
+
+.button1, .button2, .button3 {
+    background: url('images/button1.jpg');
+    background-position: left;
+    border-style: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+    height: 25px;
+    text-decoration: none;
+    width: 80px;
+    text-align: center;
+}
+
+.button2 {
+    background: url('images/button2.jpg');
+    width: 100px;
+    text-align: center;
+}
+
+.button3 {
+    background: url('images/button3.jpg');
+    width: 200px;
+    height: 30px;
+    text-align: center;
+}
+
+.buttonAlign {
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+.center_bg {
+    /* text-align: center; */
+}
+
+.ContentPane {
+    vertical-align: top;
+    width: 880px;
+    text-align: left;
+    border-color: #87cefa;
+    border-left: solid 1px;
+    border-right: solid 1px;
+    padding: 0px 10px 20px 10px;
+    margin: 0 auto;
+}
+
+#contentPanel {
+    vertical-align: top;
+}
+
+.formCheckBox {
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.formCheckBoxDME {
+    padding-right: 10px;
+    margin-right: 10px;
+    margin-left: 0px !important;
+    border: 1px solid #ccc;
+    width: 450px;
+}
+
+.formDate {
+    width: 80px;
+}
+
+.alignLeft {
+    text-align: left;
+}
+
+.fileControl {
+    display: inline !important;
+    width: 500px;
+}
+
+.formField, .formFieldSmall, .formFieldMedium, .formField220, .formField300, .formFieldReadOnly, .formFieldReadOnly300, .formFieldAuto,
+.formField100, .formField130, .formFieldDisplay, .formFieldDisplayAuto, .formFieldMarginLeft, .formDropDown, .formDropDownAuto, .formDropDownMedium,
+.formDropDownLarge, .formFieldLarge, .formFieldDisplayLarge, .textEntry, .formFieldDate, .formFieldCheckBox, .formFieldMultiline {
+    border: 1px solid #757575;
+    background-color: #FFFFFF;
+    color: #000;
+    width: 450px;
+    /*padding: 5px 5px 5px 5px;
+    margin-bottom: 3px;
+    height: 30px;*/
+    /*font-family: tahoma,verdana,helvetica;  Main font-family  
+    font-size: 9.5pt !important;  Main font size */
+    font-family: "Arial Narrow";
+    font-size: 14pt !important;
+    vertical-align: top;
+    height: 34px;
+}
+
+.textEntry {
+    width: 90%;
+}
+
+.formFieldCheckBox {
+    background-color: none !important;
+}
+
+.textEntry {
+    border: 1px solid #757575;
+}
+
+    .formField:focus, .formFieldSmall:focus, .formFieldMedium:focus, .formField220:focus, .formField300:focus, .formFieldAuto:focus,
+    .formField100:focus, .formField130:focus, .formFieldLarge:focus, .textEntry:focus, .formFieldDate:focus, .formFieldMultiline:focus {
+        border-color: #66afe9;
+        box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.6);
+    }
+
+.formFieldAuto {
+    width: auto;
+}
+
+.formFieldMedium {
+    width: 70px;
+}
+
+.formFieldSmall {
+    width: 50px;
+}
+
+.formField100 {
+    width: 100px;
+}
+
+.formField130 {
+    width: 130px;
+}
+
+.formField220 {
+    width: 220px;
+}
+
+.formField300 {
+    width: 300px;
+}
+
+.formFieldLarge {
+    width: 500px;
+}
+
+.formFieldMultiline {
+    height: 70px;
+    width: 450px;
+}
+
+.formFieldDate {
+    width: 430px;
+}
+
+.formFieldMarginLeft {
+    margin-left: 0;
+}
+
+.formDropDownAuto {
+    width: auto;
+}
+
+.formDropDownSmall {
+    width: 100px;
+}
+
+.formDropDownMedium {
+    width: 250px;
+}
+
+
+.formDropDownLarge {
+    width: 418px;
+}
+
+.formFieldDisplay, .formFieldDisplayAuto, .formFieldDisplayAuto2, .formFieldDisplayLarge {
+    background-color: #f3f3f3; /* #e3e3e3; */
+    border: none;
+    display: inline-block;
+    text-align: left;
+    width: 160px;
+    height: auto;
+    font-size: 13px;
+}
+
+.formFieldDisplayAuto, .formFieldDisplayAuto2 {
+    width: auto;
+}
+
+.formFieldDisplayAuto2 {
+    background-color: transparent;
+}
+
+.formFieldDisplayLarge {
+    width: 425px;
+}
+
+/*   not used*/
+.formFieldDisplayPopUp {
+    border: 1px solid #ccc;
+    background-color: #FFFFFF;
+    color: #000;
+    width: 100%;
+    font-family: "Arial Narrow";
+    font-size: 14pt !important;
+    vertical-align: top;
+    height: 34px;
+}
+
+.formFieldReadOnly, .formFieldReadOnlyBlock, .formFieldReadOnly100, .formFieldReadOnly300 {
+    /*background-color:#eee;
+    border: none;
+    display: inline-block;
+    text-align: left;
+    padding: 0 0 0 0; /* 1px;       Allows for the border around the formField  
+    height: 30px;*/
+    background-color: #eee;
+    display: inline-block;
+    height: 34px;
+    padding: 6px 10px;
+    font-size: 14px;
+    line-height: normal;
+    color: #555;
+    display: inline-block;
+    text-align: left;
+}
+.formFieldReadOnlyRadio {
+    background-color: #eee;
+    display: inline-block;
+    height: 34px;
+    padding: 6px 10px;
+    font-size: 14px;
+    line-height: normal;
+    color: #555;
+    display: contents;
+    text-align: left;
+}
+.formFieldEditable {    
+    background-color: #FFFFFF;
+    display: inline-block;
+    height: 34px;
+    padding: 6px 10px;
+    font-size: 14px;
+    line-height: normal;
+    color: #555;
+    display: inline-block;
+    text-align: left;
+}
+.formFieldReadOnlyBlock {
+    display: inline-block;
+}
+
+.formFieldReadOnly100 {
+    display: inline-block;
+    width: 100px;
+}
+
+
+.formFieldReadOnly300 {
+    display: inline-block;
+    width: 300px;
+}
+
+.formFieldWidth {
+    width: 300px;
+}
+
+.formEntry {
+    text-align: left;
+}
+
+A.formLink {
+    color: Blue;
+    text-decoration: underline;
+}
+
+.MatchTerm {
+    font-weight: bold;
+}
+
+.RadioList td {
+    margin: 0px;
+    padding: 0 5px 0 0;
+    vertical-align: middle;
+}
+
+.DropDownList, .DropDownListMedium, .DropDownListLarge {
+}
+
+.DropDownListMedium {
+    width: 250px;
+}
+
+.DropDownListLarge {
+    width: 500px;
+}
+
+A.formLink:hover {
+    cursor: pointer;
+}
+
+.formPanel, .formPanelSmall {
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    width: 880px;
+}
+
+.formPanelSmall {
+    width: 400px;
+    margin-left: 200px;
+}
+
+.formPanelHeader {
+    font-size: 10pt;
+    font-weight: bold;
+    line-height: 25px;
+    padding-left: 2px;
+}
+
+
+
+.gridViewAltRowLogin {
+    text-align: left;
+    vertical-align: top;
+}
+
+
+.gridViewHeaderLogin {
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.GroupBoxNewHire {
+    border: 1px solid #ddd;
+    display: block;
+    padding: 10px;
+    text-align: left;
+    width: 115px;
+}
+
+.mainMenu a {
+    color: #FFFFFF;
+    display: block;
+    font-weight: bold;
+    line-height: 50px;
+    padding: 0px 10px 0px 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+    .mainMenu a:hover {
+        color: #FFFFFF;
+    }
+
+.menu_bg {
+    width: 100%;
+    background-image: url('images/nav_bg.png');
+    background-repeat: repeat-x;
+    height: 55px;
+}
+
+#menuBar {
+    background-color: #FFFFFF;
+    background-image: url('images/nav_bg.png');
+    background-repeat: repeat-x;
+    background-position: left;
+    height: 60px;
+    text-align: left;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.noticeLink a {
+    font-size: 12pt;
+}
+
+a.panelLink:active, a.panelLink:link, a.panelLink:visited, a.panelLink:hover {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.panel {
+    text-align: center;
+    width: 880px;
+}
+
+.panelRO {
+    border: 1px solid #000000;
+    margin-bottom: 10px;
+    width: 880px;
+}
+
+.subMenuItem {
+    border-bottom: thin solid #aaa;
+}
+
+    .subMenuItem a {
+        background-color: #2880A5;
+        color: #FFFFFF;
+        display: block;
+        font-weight: bold;
+        line-height: 25px;
+        padding-left: 10px;
+        padding-right: 15px;
+        text-align: left;
+        text-decoration: none;
+    }
+
+        .subMenuItem a:hover {
+            background-color: #1F60A9;
+        }
+
+.tablePanelRO, .tablePanelROBorder, .tablePanelROBox {
+    border: none;
+    font-weight: normal;
+    width: 880px;
+}
+
+.tablePanelROBorder {
+    border: 1px solid #000000;
+}
+
+.tablePanelROBox td {
+    border: 1px solid #000000;
+    padding: 3px;
+}
+
+.tablePanelUI {
+    border: none;
+    font-weight: normal;
+    width: 880px;
+}
+
+.upperCase {
+    text-transform: uppercase;
+}
+
+#userBar {
+    padding-bottom: 10px;
+}
+
+.userBar {
+    width: 880px;
+    padding: 0;
+}
+
+.lblAboveUserBar {
+    display: block;
+    margin: 5px;
+    width: 100%;
+}
+
+.QuickLinks {
+    text-align: center;
+    width: 230px;
+}
+
+    .QuickLinks li {
+        padding-bottom: 10px;
+    }
+
+        .QuickLinks li a {
+            font-size: 1.0em;
+        }
+
+.mainContent {
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+}
+
+
+
+.wizProcess {
+    padding: 5px;
+    width: 95%;
+    text-align: left;
+}
+
+.wizSideBar {
+    width: 150px;
+    background-color: #f3f3f3;
+    vertical-align: top;
+}
+
+.wizStep {
+    height: 100px;
+    padding-left: 5px;
+    vertical-align: top;
+    width: 100%;
+}
+
+/**************************
+    Registration Wizards CSS
+**************************/
+#header {
+    background-color: white; /*NE was #036;*/
+    color: #fff;
+}
+
+#logo {
+    font-size: 1.0em;
+    color: #fff;
+    text-align: center;
+}
+
+.pageHeader {
+    color: #545487;
+    font-size: 23px;
+    font-weight: bold;
+  /*  padding-bottom: 5px;*/
+}
+
+.pageHeader2 {
+    font-size: 23px;
+    font-weight: bold;
+    color: #545487;
+    padding-bottom: 5px;
+}
+
+.pageHeader3 {
+    color: #545487;
+}
+
+.pdsSectionHeader {
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+table.header {
+    width: 100%;
+}
+
+    table.header td {
+        background-color: #036;
+        color: #fff;
+    }
+
+#loginHeader {
+    color: #000000;
+    text-align: center;
+    vertical-align: top;
+    padding: 10px;
+    width: 980px;
+}
+
+    #loginHeader a {
+        color: #000000;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+        #loginHeader a:hover {
+            text-decoration: underline;
+        }
+
+table.LoginControl {
+    border-color: #000000;
+    border-style: solid;
+    border-width: 1px;
+}
+
+    table.LoginControl tr.Header {
+        background-color: #1D587F;
+        color: #FFFFFF;
+        height: 15px;
+    }
+
+    table.LoginControl td.Button {
+        text-align: right;
+    }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+	GridView
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+table.noBorderGrid {
+    margin: auto;
+    color: #000000;
+    width: 100%;
+    vertical-align: top;
+    border-style: hidden;
+}
+
+.noBorderGridRow {
+    text-align: left;
+    vertical-align: top;
+    border-style: hidden;
+}
+
+.noBorderGridAltRow {
+    vertical-align: top;
+    text-align: left;
+    border-style: hidden;
+}
+
+table.noBorderGrid th {
+    background-color: #ffffff;
+    text-align: left;
+    color: #00435e;
+    border: 0px;
+    padding: 10px;
+}
+
+table.noBorderGrid td, .rgRow td, .rgAltRow td {
+    font-weight: normal;
+    color: Black;
+    text-align: left;
+    vertical-align: top;
+    /*border: 1px solid #a3d0e4;*/
+    padding: 10px;
+}
+
+.noBorderGrid, .noBorderGridSmall a, .noBorderGrid-disabled, .noBorderGridSmallFont {
+    padding-left: 1px;
+    padding-right: 1px;
+    text-align: center;
+    border-bottom-color: #ffffff;
+    font-size: 20pt;
+    font-weight: bold;
+    font-family: "Arial Narrow";
+    line-height: 25px;
+}
+
+
+/* GridView */
+table.gridview, table.gridViewSmallFont {
+    color: #000000;
+    width: 95%;
+    vertical-align: top;
+    border: 1px solid #fff !important;
+}
+
+    table.gridview th, table.gridViewSmallFont th {
+        background-color: #545487;
+        text-align: left;
+        color: #00435e;
+        border: 1px solid #fff !important;
+        padding: 10px;
+    }
+
+    table.gridview td, .rgRow td, .rgAltRow td, table.gridViewSmallFont td {
+        font-weight: normal;
+        color: Black;
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid #fff;
+        border-color: #fff;
+        padding: 10px;
+        font-size: 20px;
+        /* background-color: #EAEFF7;  dark blue*/
+    }
+
+.table.gridview .rgAltRow {
+    background: #D2DEEF; /* light blue*/
+    border-right: 1px solid #fff;
+}
+
+.divGrid {
+    width: 100%;
+    float: right;
+}
+
+.gridview, .gridViewSmall a, .gridview-disabled, .gridViewSmallFont {
+    padding-left: 1px;
+    padding-right: 1px;
+    text-align: center;
+    border-bottom-color: #fff;
+    font-size: 15pt;
+    line-height: 25px;
+}
+
+/*.gridViewSmallFont
+{
+    font-size: 8pt;
+}*/
+
+.gridView, .gridViewEvents, .gridViewSmallFont {
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.gridViewEvents {
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.gridViewSmall {
+    width: 400px;
+    margin-left: 200px;
+}
+
+
+.gridViewHeader, .gridViewHeader2, .rgHeader, .gridViewRow th {
+    /*color: #545487;*/
+    color: white;
+    border-color: #fff;
+    font-size: large;
+    font-weight: bold !important;
+}
+
+    .gridViewHeader th, .rgHeader th {
+        color: #fff !important;
+        text-align: left;
+    }
+
+
+        .gridViewHeader a, .gridViewHeader a:link, .gridViewHeader a:active, .gridViewHeader a:hover, .gridViewHeader a:visited,
+        .gridViewHeader th a, .gridViewHeader th a:link, .gridViewHeader th a:active, .gridViewHeader th a:hover, .gridViewHeader th a:visited,
+        .rgHeader a, .rgHeader a:link, .rgHeader a:active, .rgHeader a:hover, .rgHeader a:visited,
+        .rgHeader th a, .rgHeader th a:link, .rgHeader th a:active, .rgHeader th a:hover, .rgHeader th a:visited {
+            color: #fff !important;
+            text-align: left;
+            /*text-decoration: underline;*/
+        }
+
+    .gridViewHeader:disabled a:link, .rgHeader:disabled a:link {
+        color: #CCCCCC !important;
+    }
+
+.gridViewHeader2 {
+    font-weight: bold;
+}
+
+.gridViewRow {
+    text-align: left;
+    vertical-align: top;
+    background-color: #EAEFF7; /*dark blue*/
+}
+
+.gridViewAltRow {
+    background-color: #D2DEEF; /*light blue*/
+}
+
+.dashboard .gridViewRow th {
+    color: inherit;
+    background-color: #EAEFF7; /* something is overriding the inherit for TH, ignoring the TR distinction, must be explicit */
+    font-weight: inherit !important;
+    font-size: 20px;
+}
+
+.dashboard .gridViewAltRow th {
+    color: inherit;
+    background-color: #D2DEEF; /* something is overriding the inherit for TH, ignoring the TR distinction, must be explicit */
+    font-weight: inherit !important;
+    font-size: 20px;
+}
+
+.gridViewSelected, .gridViewSelected td, .gridViewSelected tr {
+    text-align: left;
+    background-color: #FFFF66;
+}
+
+    .gridViewSelected A, .gridViewSelected td A {
+        color: #036;
+    }
+
+.gridViewFooter {
+    background-color: #696969;
+    text-align: left;
+}
+
+.gridViewPager table {
+    float: right;
+    width: auto;
+}
+
+
+.gridViewPager td {
+    background-color: #999999;
+    font-weight: bold;
+    padding-right: 6px;
+}
+
+.gridViewPager a:link {
+    color: blue;
+    font-weight: normal;
+    padding-right: 3px;
+}
+
+
+.gridViewFooter a:link {
+    padding-right: 5px;
+}
+
+.gridViewEmptyRow {
+    font-weight: bold;
+    font-style: italic;
+    color: #000;
+}
+
+/*Disabled settings*/
+.gridview-disabled {
+    color: #666666;
+    border: 1px solid #888888;
+    background-color: #F0F0F0;
+    cursor: not-allowed;
+}
+
+    .gridview-disabled th {
+        background-color: #999999;
+        text-align: left;
+        color: #666666;
+    }
+
+    .gridview-disabled a, .gridview-disabled .gridHeader a, gridview-disabled th a {
+        color: #666666;
+        cursor: not-allowed;
+        padding-left: 1px;
+        padding-right: 1px;
+        text-align: left;
+        text-decoration: none;
+    }
+
+.gridview caption {
+    text-align: left;
+    font-weight: bold;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.gridAddLink {
+    text-align: left;
+    padding-top: 10px;
+}
+
+.gridAddLinkSmall {
+    padding-left: 200px;
+    padding-bottom: 10px;
+}
+
+.gridHeader th {
+    /*border-style: solid; 
+    border-color: #a3d0e4;
+	border-width: 0.03em;*/
+    border: solid 2px #fff;
+}
+
+.gridLink {
+    padding: 3px;
+}
+
+.gridPagerLabel span {
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 2px;
+    background-color: Red;
+}
+
+.gridRow {
+    text-align: left;
+    vertical-align: top;
+}
+
+.gridCaption {
+    font-weight: bold;
+    padding-bottom: 0px;
+}
+
+.gridviewFilter {
+    background-color: #D2DEEF !important;
+}
+
+.hiddencol {
+    display: none;
+}
+
+.repeatHeader {
+    color: #FFFFFF;
+    background-color: #036;
+}
+
+    .repeatHeader a {
+        color: #FFFFFF;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+.EnrollForm {
+    padding: 0;
+    vertical-align: top;
+    width: 85%;
+}
+
+.EnrollInstructions {
+    padding: 5px;
+    text-align: left;
+    vertical-align: top;
+    width: 15%;
+}
+
+.PanelReturn {
+    float: right;
+    padding-right: 20px;
+}
+
+.testing {
+    text-decoration: none;
+}
+
+.ServiceLocationInstances {
+    clear: both;
+    text-decoration: none;
+}
+
+/**********************************
+    Footer Styles
+**********************************/
+
+#sitefooter {
+    text-align: center;
+    margin: 10px 0;
+    border-top: 1px solid #969696;
+    padding: 10px;
+    color: #696969;
+    background-color: White; /* #e3e3e3; */
+    height: 90px;
+}
+
+    #sitefooter a:link, #sitefooter a:visited {
+        color: #696969;
+        text-decoration: none;
+    }
+
+    #sitefooter a:hover {
+        color: #969696;
+        text-decoration: underline;
+    }
+
+/**********************************
+    Edit and Dashboard
+**********************************/
+
+.ValEditSummary {
+    padding-bottom: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+.Dashboard {
+    padding: 10px;
+    text-align: center;
+    /*width: 90%;*/ /* BEN: Not needed*/
+}
+
+/**********************************
+    Tabs
+**********************************/
+
+/*Header*/
+.Tab .ajax__tab_header {
+    color: #4682b4;
+    /*font-family: Calibri;
+    font-size: 11pt;*/
+    font-family: "Arial Narrow";
+    font-size: 14pt;
+    font-weight: bold;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+/*Body*/
+.Tab .ajax__tab_body {
+    border-top: 1px solid #e3e3e3;
+    padding-top: 0px;
+}
+
+/*Tab Active*/
+.Tab .ajax__tab_active .ajax__tab_tab {
+    color: #000000;
+    background: url("images/tab_active.gif") repeat-x;
+}
+
+.Tab .ajax__tab_active .ajax__tab_inner {
+    color: #000000;
+    background: url("images/tab_left_active.gif") no-repeat left;
+    padding-left: 10px;
+}
+
+.Tab .ajax__tab_active .ajax__tab_outer {
+    color: #000000;
+    background: url("images/tab_right_active.gif") no-repeat right;
+    padding-right: 10px;
+}
+
+/*Tab Hover*/
+.Tab .ajax__tab_hover .ajax__tab_tab {
+    color: #000000;
+    cursor: pointer;
+    background: url("images/tab_hover.gif") repeat-x;
+}
+
+.Tab .ajax__tab_hover .ajax__tab_inner {
+    color: #000000;
+    background: url("images/tab_left_hover.gif") no-repeat left;
+    padding-left: 10px;
+}
+
+.Tab .ajax__tab_hover .ajax__tab_outer {
+    color: #000000;
+    background: url("images/tab_right_hover.gif") no-repeat right;
+    padding-right: 10px;
+}
+
+/*Tab Inactive*/
+.Tab .ajax__tab_tab {
+    color: #666666;
+    background: url("images/tab_Inactive.gif") repeat-x;
+    height: 22px;
+}
+
+.Tab .ajax__tab_inner {
+    color: #666666;
+    background: url("images/tab_left_inactive.gif") no-repeat left;
+    padding-left: 10px;
+    height: 22px;
+}
+
+.Tab .ajax__tab_outer {
+    color: #666666;
+    background: url("images/tab_right_inactive.gif") no-repeat right;
+    padding-right: 10px;
+    margin-right: 2px;
+    height: 22px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+	Accordion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.accordion h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 16pt
+}
+
+.accordion h2 button {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: transparent; /* for some browsers, this is defaulting to tag default (slate gray) */
+    border: none;
+    text-align: left;
+}
+
+.headingButton {
+    background-color: transparent;
+}
+
+/*.headingButton .expandSymbol:after {
+    content: '- ';
+}
+
+.headingButton .expandSymbol:after {
+    content: '+ ';
+}*/
+
+.accordionHeader, .accordionHeaderSelected {
+    border: none;
+    color: #FFFFFF;
+    background-color: #4B75A0; /*commented for NE 923931*/
+    /*font-family: Arial, Sans-Serif;*/
+    font-family: "Arial Narrow";
+    font-weight: bolder;
+    padding: 2px;
+    margin-top: 2px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.accordionContent {
+    background-color: #FFFFFF;
+    border: 1px solid #2F4F4F;
+    border-top: none;
+    padding: 0;
+}
+
+.QstLink {
+    text-decoration: underline;
+    /*color:White!important;*/
+}
+
+a.QstLink:hover {
+    color: blue;
+}
+
+.QstLinkDisabled {
+    text-decoration: none;
+    cursor: default;
+}
+
+a.QstLinkDisabled:hover {
+    text-decoration: none;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+	Miscellaneous
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.ResultHeader {
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.modalBackground {
+    background-color: Gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.modalPopup {
+    background-color: #FFFFFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    padding: 0px;
+    width: auto;
+    height: auto;
+}
+
+.ownerModalBackground {
+    background-color: Gray;
+    filter: alpha(opacity=70);
+    opacity: 0.2;
+    height: auto;
+}
+
+.ownerModalPopup {
+    background-color: #FFFFFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    padding: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: auto;
+    width: 40%;
+    position: absolute;
+}
+
+.adminModalPopup {
+    background-color: #FFFFFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    padding: 0px;
+}
+
+.popHeader {
+    cursor: move;
+    padding: 5px;
+    background-color: #205794; /*changed for branding*/
+}
+
+.popTitle {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: left;
+}
+
+.pageIcon {
+    height: 100px;
+    width: 100px;
+}
+
+.pageIconLarge {
+    height: 180px;
+    width: 180px;
+}
+/************************************************************************************
+ * Boxes that hold menu and main content
+ ************************************************************************************/
+.FullBox {
+    padding: 10px;
+    /* Rounded Corners */ /*commented for NE
+    	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;*/
+    /* Background color and gradients */
+    /*background-color: #ebecee;*/
+    /*border:solid 1px white;
+	/* Borders */ /*commented for NE
+    border-top: 5px solid #607078;
+	border-left: 1px solid #002232;
+	border-right: 1px solid #002232;
+	border-bottom: 1px solid #002232;
+	
+	-moz-box-shadow: 3px 3px 4px #607078;
+	-webkit-box-shadow: 3px 3px 4px #607078;
+	box-shadow: 3px 3px 4px #607078; */
+}
+
+.LeftBox, .RightBox, .WhiteBox, .WhiteBoxFloat, .UserHeaderAdmin, .workflowPanelBox, .WhiteBoxNoTopBorder, .UploadBox {
+    padding: 10px;
+    /* Rounded Corners */ /*commented for NE*/
+    /* Background color and gradients */
+    background-color: rgba(247, 247, 247, 1);
+    border: solid 1px rgba(247, 247, 247, 1);
+    /* Borders */ /*commented for NE*/
+    /*border-top: 5px solid #607078;
+	border-left: 1px solid #002232;
+	border-right: 1px solid #002232;
+	border-bottom: 1px solid #002232;*/
+    /*no longer using whitebox instead using purple box
+        -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-top: 1px solid #e3e3e3;
+    border-left: 1px solid #e3e3e3;
+    -moz-box-shadow: 1px 1px 1px #607078;
+    -webkit-box-shadow: 1px 1px 1px #607078;
+    box-shadow: 1px 1px 1px #607078;*/
+    width: 100%;
+}
+
+.UploadBox {
+    background-color: rgb(247,247,247) !important;
+    border: solid 0px #F7F7F7;
+}
+
+.pnlRightbox {
+    padding: 10px;
+    /* Rounded Corners */ /*commented for NE*/
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    /* Background color and gradients */
+    /*background-color: White;*/
+    border: solid 1px white;
+    /* Borders */ /*commented for NE*/
+    /*border-top: 5px solid #607078;
+	border-left: 1px solid #002232;
+	border-right: 1px solid #002232;
+	border-bottom: 1px solid #002232;*/
+    border-top: 1px solid #e3e3e3;
+    border-left: 1px solid #e3e3e3;
+    -moz-box-shadow: 1px 1px 1px #607078;
+    -webkit-box-shadow: 1px 1px 1px #607078;
+    box-shadow: 1px 1px 1px #607078;
+    width: 100%;
+}
+
+.UserHeader {
+    /*background-color: rgb(84,84,135) !important;*/
+    background-color: #4A90C2 !important;
+    color: #000000 !important;
+    width: 100%;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    /* Background color and gradients */
+    border: solid 1px rgba(247, 247, 247, 1);
+    /* Borders */ /*commented for NE*/
+    border-top: 5px solid #607078;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -moz-box-shadow: 3px 3px 4px #607078;
+    -webkit-box-shadow: 3px 3px 4px #607078;
+    box-shadow: 3px 3px 4px #607078;
+}
+
+.LeftBox, .LeftBox a {
+    width: 220px;
+    /*background-color:#ffffff;
+    color: white;*/
+}
+
+#createAccount {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    color: #545487;
+}
+
+    #createAccount p {
+        color: #545487;
+    }
+
+
+.LoginBox {
+    background-color: transparent;
+    border-radius: 10px;
+    width: 80%;
+}
+
+    .LoginBox .buttonBox {
+        width: 200px;
+    }
+
+.NewsBox {
+    width: 80%;
+    margin: 0 auto;
+    padding:0;
+}
+
+    .NewsBox > div {
+        color: #111;
+        margin: 15px;
+        padding:0;
+        margin:0;
+    }
+
+.login {
+    margin: auto;
+}
+
+    .login > div {
+        margin-bottom: 10px;
+        color: #545487;
+        font-size: 24px;
+    }
+
+.loginlink {
+    color: #C00000 !important;
+    font-size: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.createAccountSteps {
+    padding: 0px;
+    margin: 0px;
+    border-spacing: 0px;
+    width: 100%;
+}
+
+    .createAccountSteps td {
+        padding: 0px;
+    }
+
+.RightBox {
+    width: 970px;
+}
+
+.FullBox {
+    /*width: 99%;*/
+    color: black;
+}
+
+.WhiteBox, .OwnerBackground {
+    width: 100%;
+    padding: 40px;
+    padding: 0 40px;
+}
+
+.WhiteBoxFloat {
+    width: 480px;
+    height: 200px;
+}
+/* Duplicate UserHeader
+.UserHeader {
+    margin-bottom: 10px;
+    padding: 3px;
+    width: 99%;
+    background-color: #ffffff; height:222px; Bug CSS CleanUp
+}*/
+
+.workflowPanelBox {
+    padding: 3px;
+    width: 100%;
+    background-color: #ffffff; /*height:222px; Bug CSS CleanUp*/
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+
+.WhiteBoxNoTopBorder {
+    border-top: hidden;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.UserHeaderAdmin {
+    margin-left: 0;
+    margin-bottom: 10px;
+    width: 400px;
+}
+/*moved from masterworkflow.master - begins for Changes for - Bug CSS CleanUp*/
+div #UserHeader_ProvInfo {
+    width: 40%;
+    text-align: center;
+    margin: 0;
+}
+
+.trAssignedTo {
+    vertical-align: bottom;
+}
+
+#UserHeader_MessagePanels {
+    width: 58%;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+/*moved from masterworkflow.master - ends*/
+.ProviderHeader {
+    background-color: White;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.EditControl {
+    float: right;
+}
+
+.TakeActionControl {
+    float: right;
+}
+
+/************************************************************************************
+ * CSS from Demo Site
+ ************************************************************************************/
+ul.niceList {
+    margin-left: 0em;
+    padding-left: 0em;
+    margin: 0.5em;
+    color: Black;
+    font-size: 8pt;
+}
+
+    /*
+ul.niceList A:link, A:visited, A:active, A:hover 
+{
+    changes for NEcolor: Blue !important;
+    color: blue;
+}
+*/
+
+    ul.niceList li {
+        /*background:url(images/bullet.gif) 0em 0.5em no-repeat;*/ /* change background em accordingly */
+        padding-left: 0.8em;
+        list-style: none;
+        color: Black;
+    }
+
+.niceList ul li {
+    /*background-image:url(images/bullet_child.gif);*/ /*BEN: this was making the li text unreadable*/
+    color: Black;
+}
+
+ol.niceList li, ul.niceList li {
+    margin-bottom: 0.5em;
+}
+
+ol.niceList {
+    margin-left: 0em;
+    padding-left: 0px;
+    color: Black;
+}
+
+.niceList ol li {
+    list-style: decimal;
+    background-image: none;
+    padding-left: 0em;
+    color: Black;
+}
+
+.niceList ul li /*a:link */ /*BEN: removed a:link*/ {
+    color: Black;
+}
+
+.niceListSubMenuItem {
+    color: #FFFFFF;
+    border: 0.02em solid Gray;
+    width: 180px;
+}
+
+    .niceListSubMenuItem a:link {
+        background-color: #FFFFFF;
+        color: #000000;
+        display: block;
+        line-height: 23px;
+        padding-left: 5px;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .niceListSubMenuItem a:hover {
+        background-color: #06447E;
+        color: #FFFFFF;
+        font-weight: bold;
+    }
+
+div#Sidebar2 div#GovernorBox2 {
+    background: url("images/header_gov.png") no-repeat scroll left top transparent;
+    border: medium none;
+    height: 57px;
+    margin: 0px 0 0;
+    position: absolute;
+    right: 0;
+    text-shadow: 1px 1px 1px #000000;
+    text-align: right;
+    top: 0;
+    width: 285px;
+}
+
+div#Sidebar2 #GovernorBox2 {
+    font-size: 86.2%;
+    line-height: 1.5;
+}
+
+div#Sidebar2 #GovernorBox2 {
+    margin: 10px 2px;
+    padding: 0;
+    width: 140px;
+}
+
+div#Sidebar2 #GovernorBox2 {
+    margin: 20px 0;
+}
+
+#GovernorBox2 {
+    background-color: #F4F1D0;
+    border: 2px solid #999999;
+}
+
+div#Sidebar2 #GovernorBox2 a {
+    color: White;
+}
+
+/***************************************************** PDMS2 **********************************************************************/
+/***************************************************** PDMS2 **********************************************************************/
+/***************************************************** PDMS2 **********************************************************************/
+
+.buttonUpdate {
+    color: #fff;
+    border-color: #46b8da;
+    background: none rgb(84,84,135) !important;
+    font-size: 18px !important;
+    font-family: "Arial Narrow";
+    font-weight: bold;
+    line-height: 1.5 !important;
+    border-radius: 5px !important;
+    text-shadow: none !important;
+    width: auto;
+    min-width: 100px;
+}
+
+.buttonBox {
+    color: #fff;
+    background-color: #707070;
+    border-color: #707070;
+    background-image: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    line-height: 1.5 !important;
+    border-radius: 3px !important;
+    text-shadow: none !important;
+    width: auto;
+    min-width: 100px;
+    height: 40px;
+}
+
+    .buttonBox:hover, .buttonUpdate:hover {
+        opacity: 0.5;
+        background-image: none;
+        background-color: #707070;
+    }
+
+    .buttonBox:disabled, .buttonBox input[type=submit]:disabled, .buttonBox input[type=submit][disabled=disabled], .buttonBox button[disabled=disabled] {
+        opacity: 0.2;
+    }
+
+    .buttonBox:active {
+        color: #fff;
+        background-color: #707070;
+        border-color: #707070;
+        line-height: 1.5 !important;
+        padding: 5px 10px;
+        background: none #31b0d5 !important;
+    }
+
+        .buttonBox:active:focus, .buttonBox.active:focus, .buttonBox.active:hover, .buttonBox:active.focus, .buttonBox:active:focus, .buttonBox:active:hover {
+            color: #fff;
+            background-color: #707070;
+            border-color: #707070;
+            line-height: 1.5 !important;
+            padding: 5px 10px;
+            background: none #269abc !important;
+        }
+
+
+.buttonBoxFocus {
+    color: #fff;
+    background-color: #005ea2 !important;
+    font-weight: bold;
+    padding: 5px 10px;
+    line-height: 1.5 !important;
+    border-radius: 3px !important;
+    text-shadow: none !important;
+    border: 1px solid transparent !important;
+    width: auto;
+    min-width: 100px;
+    height: 40px;
+}
+
+.buttonBoxFocusred {
+    color: #fff;
+    background-color: #b50909;  
+    font-weight: bold;
+    padding: 5px 10px;
+    line-height: 1.5 !important;
+    border-radius: 3px !important;
+    text-shadow: none !important;
+    border: 1px solid transparent !important;
+    width: auto;
+    min-width: 100px;
+    height: 40px;
+}
+
+.buttonBoxFocusBlue {
+    color: #fff;
+    background-color: #005ea2 !important;
+    font-weight: bold;
+    padding: 5px 10px;
+    line-height: 1.5 !important;
+    border-radius: 3px !important;
+    text-shadow: none !important;
+    border: 1px solid transparent !important;
+    width: auto;
+    min-width: 100px;
+    height: 40px;
+}
+
+
+.buttonBoxFocus:hover {
+    opacity: 0.8;
+}
+
+.buttonBoxFocus:disabled, .buttonBoxFocus input[type=submit]:disabled, .buttonBoxFocus input[type=submit][disabled=disabled], .buttonBoxFocus button[disabled=disabled] {
+    opacity: 0.2;
+}
+
+.buttonBoxFocus:active {
+    color: #fff;
+    background-color: #545487;
+    border-color: #545487;
+}
+
+    .buttonBoxFocus:active:focus, .buttonBoxFocus.active:focus, .buttonBoxFocus.active:hover, .buttonBoxFocus:active.focus, .buttonBoxFocus:active:focus, .buttonBoxFocus:active:hover {
+        color: #fff;
+        background-color: #545487;
+        border-color: #545487;
+    }
+
+
+.buttonBoxPrevious {
+    color: #fff;
+    background-color: #707070 !important;
+    /*border-color: #eea236 !important;*/
+    /*background:none !important;*/
+    font-weight: bold;
+    padding: 5px 10px;
+    line-height: 1.5 !important;
+    border-radius: 3px !important;
+    text-shadow: none !important;
+    border: 1px solid transparent !important;
+    width: auto;
+    min-width: 100px;
+    height: 40px;
+}
+
+    .buttonBoxPrevious:hover {
+        opacity: 0.8;
+    }
+
+    .buttonBoxPrevious:disabled, .buttonBoxPrevious input[type=submit]:disabled, .buttonBoxPrevious input[type=submit][disabled=disabled], .buttonBoxPrevious button[disabled=disabled] {
+        opacity: 0.2;
+    }
+
+    .buttonBoxPrevious:active {
+        color: #fff;
+        background-color: #707070;
+        border-color: #707070;
+    }
+
+        .buttonBoxPrevious:active:focus, .buttonBoxPrevious.active:focus, .buttonBoxPrevious.active:hover, .buttonBoxPrevious:active.focus, .buttonBoxPrevious:active:focus, .buttonBoxPrevious:active:hover {
+            color: #fff;
+            background-color: #707070;
+            border-color: #707070;
+        }
+
+
+
+.buttonBoxNext {
+    color: #fff;
+    background-color: #545487 !important;
+    /*border-color: #eea236 !important;*/
+    /*background:none !important;*/
+    font-weight: bold;
+    padding: 5px 10px;
+    line-height: 1.5 !important;
+    border-radius: 3px !important;
+    text-shadow: none !important;
+    border: 1px solid transparent !important;
+    width: auto;
+    min-width: 100px;
+    height: 40px;
+}
+
+    .buttonBoxNext:hover {
+        opacity: 0.8;
+    }
+
+    .buttonBoxNext:disabled, .buttonBoxNext input[type=submit]:disabled, .buttonBoxNext input[type=submit][disabled=disabled], .buttonBoxNext button[disabled=disabled] {
+        opacity: 0.2;
+    }
+
+    .buttonBoxNext:active {
+        color: #fff;
+        background-color: #545487;
+        border-color: #545487;
+    }
+
+        .buttonBoxNext:active:focus, .buttonBoxNext.active:focus, .buttonBoxNext.active:hover, .buttonBoxNext:active.focus, .buttonBoxNext:active:focus, .buttonBoxNext:active:hover {
+            color: #fff;
+            background-color: #545487;
+            border-color: #545487;
+        }
+
+.buttonCategory {
+    color: indigo;
+    background-color: rgb(221,221,235) !important;
+    font-weight: bold;
+    padding: 5px 10px;
+    line-height: 1.5 !important;
+    border-radius: 10px !important;
+    text-shadow: none !important;
+    border: 1px solid transparent !important;
+    width: 300px;
+    height: 80px;
+}
+
+    .buttonCategory:hover {
+        color: black;
+        background-color: rgb(84,84,235) !important;
+        border-color: #d58512;
+    }
+
+    .buttonCategory:disabled, .buttonCategory input[type=submit]:disabled, .buttonCategory input[type=submit][disabled=disabled], .buttonCategory button[disabled=disabled] {
+        opacity: 0.2;
+    }
+
+    .buttonCategory:active {
+        color: black;
+        background-color: rgb(84,84,235) !important;
+        border-color: #d58512;
+    }
+
+        .buttonCategory:active:focus, .buttonCategory.active:focus, .buttonCategory.active:hover, .buttonCategory:active.focus, .buttonCategory:active:focus, .buttonCategory:active:hover {
+            color: #fff;
+            background-color: rgb(84,84,235) !important;
+            border-color: #1b6d85;
+        }
+
+
+
+.formFieldSmallFont {
+    font-size: 8pt;
+}
+
+.formLabel, .formLabelSmall, .formLabel300, .formLabelAuto, .formLabel150, .formLabel170, .formLabel200, .formLabelleft300, .formLabelleft80 {
+    display: inline-block;
+    padding-right: 0px !important;
+    text-align: right;
+    padding-top: 4px !important;
+    width: 200px;
+    /*font-size:15px;*/
+    font-stretch: extra-condensed;
+    height: 34px;
+    white-space: nowrap;
+}
+
+.formLabelLeft {
+    display: inline-block;
+    font-weight: 600;
+    padding-right: 0px !important;
+    text-align: left;
+    vertical-align: top;
+    width: 200px;
+    /*font-size:15px;*/
+    font-stretch: extra-condensed;
+}
+
+.formLabelData {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    width: 200px;
+}
+
+.formLabelPublicSearch {
+    display: inline-block;
+    text-align: left;
+    width: auto;
+    vertical-align: central;
+    padding-right: 0px !important;
+    padding-top: 4px !important;
+    margin-left: 10px;
+    font-stretch: extra-condensed;
+    height: 34px;
+    word-break: normal;
+}
+
+.formLabelAuto {
+    text-align: left;
+    width: auto;
+    vertical-align: central;
+}
+
+.formLabel150 {
+    width: 150px;
+}
+
+.formLabel170 {
+    width: 170px;
+}
+
+.formLabel200 {
+    width: 215px;
+}
+
+.formLabel300 {
+    width: 300px;
+}
+
+.formLabelleft300 {
+    padding-left: 130px !important;
+    width: 500px;
+    text-align: left;
+}
+
+.formLabelleft80 {
+    width: 80px;
+    height: auto;
+    text-align: left;
+}
+
+.boundFieldCss {
+    width: 70%;
+    font-size: 20px;
+    font-weight: bold !important;
+    font-family: "Arial Narrow";
+}
+
+
+.formLabelSmall {
+    width: 80px;
+}
+
+.formLabelPopUp {
+    display: inline-block;
+    text-align: right;
+    font-weight: 600;
+    width: auto;
+    vertical-align: central;
+    padding-right: 0px !important;
+    padding-top: 4px !important;
+    margin-left: 10px;
+    font-stretch: extra-condensed;
+    height: 34px;
+    word-break: normal;
+}
+
+h4 {
+    color: #036;
+    font-size: 14pt !important;
+}
+
+.boxPanel, .boxPanelFull, .boxPanelFull2, .boxPanelFloat, .boxPanelAlerts, .boxPanelNew {
+    background-color: transparent;
+    border: none;
+    /*height: 165px;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 500px;*/
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.boxPanel {
+    height: 165px;
+}
+
+.boxPanelFull, .boxPanelFull2 {
+    min-height: 100px;
+    height: auto;
+    padding: 5px;
+    width: 98%;
+    box-shadow: none;
+}
+
+.boxPanelFull2 {
+    padding: 0;
+}
+
+.boxPanelFloat {
+    height: 200px;
+}
+
+.boxPanelAlerts {
+    width: 98%;
+    height: 262px;
+}
+
+.boxPanelNew {
+    width: 98%;
+    height: 100%;
+    padding-bottom: 10px;
+}
+
+.boxPanelHeader {
+    color: #545487;
+    background-color: transparent;
+    font-weight: bold;
+    /*height: 20px;*/
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+    /*vertical-align: bottom;*/
+    font-size: 20px !important;
+    /*background-color: #7D9FC2; 
+	font-weight: bold;
+    height: 20px;
+    padding-top: 3px;
+    text-align: center;
+    width: 100%;
+    vertical-align: bottom;*/
+}
+
+.boxPanelData {
+    padding: 5px;
+}
+
+    .boxPanelData a {
+        color: Blue !important;
+    }
+
+.boxPanelDataLeft {
+    margin: auto !important;
+}
+
+    .boxPanelDataLeft .formLabel {
+        margin-right: 5px;
+    }
+
+.boxPanelDataRight {
+    text-align: center;
+}
+
+
+
+/*.QstRadioList input {
+   float: left;
+}
+
+.QstRadioList label {
+    margin-right: 10px;
+      display: inline-block;
+      text-align: left;
+}*/
+
+
+.radioButtonList input {
+    float: left;
+}
+
+.radioButtonList label {
+    margin-right: 10px;
+    display: inline-block;
+    text-align: left;
+}
+
+.divHistoryAndAdd {
+    width: 100%;
+    text-align: right;
+}
+
+.linkNormal {
+    color: Blue;
+    font-weight: normal;
+}
+
+
+
+.btnBox {
+    float: right;
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
+}
+
+.btnBoxCenter {
+    text-align: center;
+}
+
+.btnBox a, .btnBox input[type=submit] {
+    padding-right: 10px;
+}
+
+
+
+.btnBox a {
+    background-color: transparent;
+}
+
+input.button {
+    cursor: pointer;
+}
+
+input.button-disabled, input[type=submit]:disabled,
+input[type=submit][disabled=disabled], button[disabled=disabled] {
+    background-color: #666666;
+    border: 1px solid #666666;
+    cursor: not-allowed;
+}
+
+.fieldLabel {
+    font-weight: bold;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    text-align: right;
+}
+
+.verticalAlignTop {
+    vertical-align: top;
+}
+
+.fieldValue {
+    padding-bottom: 3px;
+    text-align: left;
+}
+
+
+.loading {
+    font-weight: bold;
+    font-size: 12pt;
+    padding: 10px;
+}
+    
+.loading img {
+    padding-right: 10px;
+}
+
+.wd50 {
+    width: 50px;
+}
+
+.wd80 {
+    width: 80px;
+}
+
+.wd100 {
+    width: 100px;
+}
+
+.wd120 {
+    width: 120px;
+}
+
+.wd130 {
+    width: 130px;
+}
+
+.wd150 {
+    width: 200px;
+}
+
+.wd170 {
+    width: 170px;
+}
+
+.wd200 {
+    width: 200px;
+}
+
+.wd225 {
+    width: 225px;
+}
+
+
+.wd250 {
+    width: 250px;
+}
+
+.wd275 {
+    width: 275px;
+}
+
+.wd300 {
+    width: 300px;
+}
+
+.wd350 {
+    width: 350px;
+}
+
+
+.wd400 {
+    width: 400px;
+}
+
+.wd450 {
+    width: 450px;
+}
+
+.wd500 {
+    width: 500px;
+}
+
+.wd550 {
+    width: 550px;
+}
+
+
+.wd650 {
+    width: 550px;
+}
+
+.wdAuto {
+    width: auto;
+    table-layout: fixed;
+    margin: 0 auto;
+    border-spacing: 0 5px;
+    border-collapse: separate;
+}
+
+.wdAll {
+    width: 90%;
+}
+
+.Wd100Percent {
+    width: 100%;
+}
+
+.information-message {
+    color: #000;
+}
+
+.pg-hint {
+    color: #000;
+    font-size: 12pt;
+    font-weight: normal;
+    float: right;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.pg-hint2 {
+    color: #000;
+    font-size: 12pt;
+    font-weight: normal;
+    text-align: left;
+    text-align: center;
+}
+
+.pg-hint4 {
+    color: #000;
+    font-size: 14pt;
+    font-weight: normal;
+    text-align: left;
+    padding-left: 4px;
+}
+
+.pg-hint6 {
+    color: #000;
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 4px;
+}
+
+.pg-hint3Inherit {
+    color: #000;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: inherit;
+}
+
+.pg-hint3 {
+    color: #000;
+    font-size: 12pt;
+    font-weight: normal;
+    text-align: right;
+}
+
+.pg-hint3Center {
+    text-align: center;
+}
+
+.field-hint {
+    color: #000;
+    font-size: 8pt;
+    font-weight: normal;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.grid-hint {
+    color: #000;
+    font-size: 8pt;
+    font-weight: bold;
+    padding: 0px;
+    text-align: right;
+}
+
+.group-hdg {
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 4px;
+}
+
+.error-message {
+    color: #e50000;
+}
+/*moved from masterworkflow.master begins Changes for - Bug CSS CleanUp*/
+#tblProviderInfo tr {
+    display: inline;
+}
+
+
+#tblProviderInfo .formLabel300 {
+    width: 140px;
+}
+
+#tblProviderInfo .formData {
+    width: 300px;
+}
+
+/*.tableInline {
+    width: 100%;
+    /*text-align: center;*
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 5px;
+    align-content: center;
+}
+
+    .tableInline tr {
+        display: block;
+    }*/
+
+/*.tableInline td {
+        width: 50%;
+    }*/
+
+.tableSection {
+    border: 0px solid black;
+    width: 75%;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 10px;
+}
+
+    .tableSection tr {
+        display: block;
+    }
+
+.pnlSummary {
+    border: 0px !important;
+    height: 72px !important;
+    margin-top: 0px !important;
+    width: 100%;
+}
+
+.val-summary {
+    padding-top: 4px;
+    padding-bottom: 10px;
+}
+
+.pwd-val-error {
+    display: inline;
+    padding-bottom: 0px;
+}
+
+    .pwd-val-error ul {
+        margin: 0px;
+    }
+
+    .pwd-val-error li {
+        padding: 0px;
+    }
+
+.vert-links a {
+    display: block;
+}
+
+
+.successNotification {
+    color: #013220 !important;
+}
+
+.failureNotification {
+    color: #D10000 !important;
+}
+
+#divAdmin {
+    padding-left: 54px;
+}
+
+#tdBtnAction {
+    padding-right: 5px;
+}
+/*moved from masterworkflow.master ends*/
+/*moved from masterpage.master Changes for - Bug CSS CleanUp begins*/
+.governorMaster1 {
+    text-align: left;
+    padding-left: 160px;
+    padding-top: 4px;
+}
+
+.governorMaster2 {
+    font-size: 9px;
+    text-transform: uppercase;
+}
+
+.governorMaster3 {
+    font-size: 11pt !important;
+    font-weight: bold !important;
+}
+/*moved from masterpage.master ends*/
+/*Changes for - Bug CSS CleanUp - begins moved lnkTNFiles*/
+div#PageHeader {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-origin: padding-box;
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: auto;
+    color: #fff;
+    /*font-family: "latoregular", sans-serif;*/
+    font-family: "Arial Narrow";
+    font-size: 16pt;
+    height: auto;
+    line-height: 1.231;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    position: relative;
+    text-align: left;
+    text-shadow: 1px 1px 1px #000000;
+    /*width: 1140px;*/
+}
+
+    /*#StateLogo a {
+width: 100px;
+height: 80px;
+
+display:block;
+margin-bottom:auto;
+margin-left:18px;
+margin-right:auto;
+margin-top:auto;
+background-repeat:no-repeat;
+background-attachment:scroll;
+background-position-x:left;
+background-position-y:top;
+background-size: auto;
+background-origin:padding-box;
+background-clip:border-box;
+background-color:transparent;
+
+
+}
+*/
+
+    div#PageHeader h1 a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    div#PageHeader h1 {
+        color: #fff;
+        float: left;
+        /*font-family: verdana, arial, helvetica, sans-serif;*/
+        font-family: "Arial Narrow";
+        font-size: 120%;
+        font-weight: normal;
+        line-height: 1.231;
+        margin: 0px 0px 0px 0px;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        padding-left: 0px;
+        padding-right: 0px;
+        text-align: center;
+        text-shadow: 1px 1px 1px #000000;
+        vertical-align: middle;
+        width: 610px;
+        display: block;
+    }
+   /* suggested byPhill*/
+th h2 {
+    font-size: 16pt;
+    margin: 0;
+}
+
+html {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    /*background-image: url("images/body-bg.png");*/
+    background-origin: padding-box;
+    background-size: auto;
+    background-repeat: repeat;
+    background-position-x: 0%;
+    background-position-y: 0%;
+}
+
+div.NoPhoto#PageHeader {
+    color: #fff;
+}
+
+div#SkipToContent {
+    margin-left: -1600px;
+    float: left;
+}
+
+#TNLogo img {
+    border-color: currentColor;
+    display: none;
+    border-style: none;
+    border-width: 0;
+}
+
+#PageHeader {
+    position: relative;
+    /*height:110px;*/
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+    #PageHeader div#TNLogo {
+        width: 126px;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        float: left;
+    }
+
+div#Footer ul {
+    padding: 0;
+    margin: 0;
+}
+
+div#Footer {
+    padding: 10px;
+    color: #ffffff;
+}
+
+    div#Footer a {
+        color: #ffffff;
+    }
+
+    div#Footer ul li, div#Footer div#ContactInfo ul li {
+        border-right: 1px solid #435363;
+    }
+
+    div#Footer div#ContactInfo ul li {
+        padding: 0 10px;
+    }
+
+    div#Footer ul li {
+        padding: 0 10px;
+        display: inline;
+        list-style-type: none;
+    }
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+#PageHeader #CommissionerName, #PageHeader a #CommissionerName {
+    font-style: italic;
+    font-size: 69.2%;
+}
+
+#PageHeader #CommissionerName {
+    padding: 0;
+    margin: 0;
+    color: #dedede;
+}
+
+div#Footer ul li.LastListItem, div#Footer div#ContactInfo ul li.LastListItem {
+    border: 0;
+}
+
+div#Footer div#ContactInfo {
+    padding: 5px 0;
+}
+/*Changes for - Bug CSS CleanUp - ends*/
+/*Changes for - Bug CSS CleanUp - begins login.aspx*/
+.failureNotification {
+    color: #D10000 !important;
+}
+/*Changes for - Bug CSS CleanUp - ends login.aspx*/
+/*bug NE branding begins*/
+/*header styles*/
+#header {
+    height: auto;
+    float: left;
+    width: 100%;
+    /*position:fixed;*/
+    /*z-index:1000;*/
+}
+
+.headerBg {
+    /*background-color: #E8F0F9; ;*/
+    /*background-color: #607078;*/
+    height: 80px;
+    border-top: 15px solid #2B4888;
+}
+
+/*#StateLogo {
+    background-image: url("images/District of ColumbiaGovLogo.GIF");
+    background-repeat:no-repeat;
+    background-color: #607078;
+    height: 17px;
+    margin-right: 0px;
+    padding-left: 4px;
+    text-align: left;
+    position:relative;
+}*/
+#NELogo {
+    background-color: #4B75A0;
+    text-align: left;
+    margin: 0px;
+    /*background-image:url("images/District of ColumbiaDHHSLogo.jpg");*/
+    background-repeat: no-repeat;
+}
+
+    #NELogo a {
+        background-color: transparent;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    #NELogo img {
+        height: 80px;
+        width: 878px;
+    }
+
+#programName {
+    background-color: #2B4888; /*NE was #607078;*/
+    /*border-bottom: 1px solid #fff;*/
+    /*font-family: Arial, Verdana, sans-serif;*/
+    font-family: "Arial Narrow";
+    font-weight: bold;
+    font-size: 13pt;
+    color: #ffffff;
+    height: 20px;
+    text-align: center;
+}
+
+
+
+/*#envVer {
+    color: #ffffff;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 0px;
+}*/
+
+
+/*reference colors for District of Columbia's 3 blue colors found in logo*/
+.darkblue {
+    background-color: #095899;
+}
+
+.medblue {
+    background-color: #4B75A0;
+}
+
+.lightblue {
+    background-color: #E8F0F9;
+}
+
+#footerContent {
+    padding-top: 0px;
+    padding-bottom: 5px;
+    font-size: 80%;
+    margin-right: 19px;
+    margin-left: 17px;
+    line-height: 1;
+}
+
+#Footer {
+    /*changed from absolute to relative to get the footer aligned at bottom*/
+    position: relative;
+    margin-top: -150px; /*negative value of footer height */
+    height: 150px;
+    padding-top: 20px;
+    background-color: #435363;
+    width: 100%;
+    /*changed  to get the footer aligned at bottom*/
+    clear: both;
+}
+
+#wrapper {
+    min-height: 100vh;
+    overflow: auto;
+    padding-bottom: 160px; /*this needs to be bigger than footer height*/
+}
+/*Messagebox.ascx styles*/
+.pnlHeader {
+    cursor: move;
+    padding: 5px;
+    background-color: #205794;
+}
+/*bug NE branding ends*/
+/* Clearable Text Box */
+
+.clearable {
+    background: url(http://i.imgur.com/z7ZSYjt.png) no-repeat right -10px center;
+    border: 1px solid #999;
+    padding: 3px 18px 3px 4px; /* USE the same right padding in jQ! */
+    border-radius: 3px;
+    transition: background 0.4s; /*REMOVE THIS LINE IF YOU ENCOUNTER ISSUES IN Chrome (Bug 02.2014)*/
+    background-color: White;
+}
+
+    .clearable.x {
+        background-position: right 5px center;
+    }
+
+    .clearable.onX {
+        cursor: pointer;
+    }
+
+/* Clearable text box end */
+
+.legend {
+    width: 98%;
+}
+
+    .legend td {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+
+.detailSection {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.infoBox {
+    background-color: lemonchiffon;
+    border: solid 1px #808080;
+    display: none;
+    font-size: 9pt;
+    height: auto;
+    width: auto;
+    position: absolute;
+    z-index: 9;
+}
+
+.infoContent {
+    padding: 5px;
+    text-align: left;
+}
+
+.infoTitle {
+    font-size: 9pt;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    text-align: left;
+}
+
+.panelContent {
+    padding: 10px;
+}
+
+/**********************************************************************************************************************************/
+/* Css for section header in lieu of user control Separator */
+/**********************************************************************************************************************************/
+
+.boxContainer {
+    /* /*Background color and gradients  
+    color: #FFFFFF !important; /* #191970; 
+    background-color: #FFFFFF !important; /*changed for NE 923931*/ /* #b0c4de;  
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    
+    /* Background color and gradients  
+    background-color: White;
+    border: solid 1px white;
+    /* Borders */ /*commented for NE*/
+    /*border-top: 5px solid #607078;
+	border-left: 1px solid #002232;
+	border-right: 1px solid #002232;
+	border-bottom: 1px solid #002232 
+    border-top: 1px solid #e3e3e3;
+    border-left: 1px solid #e3e3e3;*/
+}
+
+.boxLabel {
+    /*font-size: large !important;
+    font-weight: bold;
+    color:#036;
+    padding-bottom: 10px !important;*/
+    color: #545487;
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.sort-asc A, .sort-asc a:link {
+    background: url('images/icon-arrowup.png') right center no-repeat;
+}
+
+.sort-desc A, .sort-desc a:link {
+    background: url('images/icon-arrowdown.png') right center no-repeat;
+}
+
+#resource-link-box {
+    height: 500px;
+    display: inline-block;
+    padding-left: 20px;
+    width: 100%;
+}
+
+.resource-link-leftbox-style {
+    padding-top: inherit;
+    padding-left: 10%;
+}
+
+.resource-link-righttbox-style {
+    padding-left: 5%;
+}
+
+.resource-header {
+    color: #036;
+    font-size: 10pt;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 4px;
+    text-align: left;
+    width: 350px;
+    text-wrap: normal;
+}
+
+.resource-sub-header {
+    color: #036;
+    font-size: 10pt;
+    font-weight: bold;
+    padding-bottom: 4px;
+    padding-left: 20px;
+    text-align: left;
+    width: auto;
+}
+
+ul.resource-link, ul.resource-sub-link {
+    margin: 0px;
+    padding-top: 0px;
+    padding-left: 40px;
+    width: 360px;
+}
+
+.resource-link li, .resource-sub-link li {
+    list-style: square;
+    list-style-position: outside;
+}
+
+.resource-sub-link li {
+}
+
+.resource-link A, .resource-link a:link, .resource-sub-link A, .resource-sub-link a:link {
+    padding: 0px;
+    text-decoration: none;
+    text-wrap: normal;
+}
+
+.help-img {
+    border: none;
+    height: 15px;
+    width: 15px;
+    padding-bottom: 3px;
+}
+
+.btn-round-lg {
+    border-radius: 22.5px;
+}
+
+.btn-round {
+    border-radius: 17px;
+}
+
+.btn-round-sm {
+    border-radius: 15px;
+}
+
+.btn-round-xs {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 11px;
+}
+
+.SectionHeading {
+    text-align: center;
+    /*min-height: calc(100vh - 140px);*/
+}
+
+.SectionHeader {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.SectionHeaderSub {
+    font-size: 14px;
+}
+
+.SectionBody {
+}
+
+.popover-content {
+    font-size: 12px !important;
+}
+
+
+.RadTreeView .rtImg {
+    vertical-align: top !important;
+    padding-top: 5px !important;
+}
+
+.RadTreeView .rtLI {
+    padding-left: 2px !important;
+}
+
+.display-table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.display-cell {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+}
+
+
+.display-cell-left {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+    text-align: left;
+}
+
+.treenode {
+    font-size: 15px;
+    font-weight: bold;
+    color: #036;
+    padding-bottom: 5px;
+}
+
+select {
+    min-width: 450px;
+    height: 34px;
+    border: 1px solid #ccc;
+}
+
+.h4, h4 {
+    font-weight: bold;
+    color: #036;
+}
+
+.alignCenterBottom {
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.alignCenter {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#AffiliationInfo {
+    padding-top: 10px;
+}
+
+.userRoles {
+    width: 100%;
+    padding-left: 15%;
+}
+
+.userCreateAccount {
+    width: 80%;
+    padding-left: 10%;
+}
+
+
+
+.divNoPadding {
+    padding-left: 0px;
+}
+
+.IncreaseTo250 {
+    width: 250px;
+}
+
+.IncreaseTo200 {
+    width: 150px;
+}
+
+.TablePadding5 td, th {
+    padding: 5px !important;
+}
+
+
+.ajax__calendar .ajax__calendar_container table {
+    padding: 2px !important;
+    margin: auto;
+    width: 100%;
+    text-align: center !important;
+    height: 100% !important;
+}
+
+.ajax__calendar .ajax__calendar_container TD {
+    padding: 2px !important;
+    color: #004080 !important;
+    font-size: 13px !important;
+    text-align: center !important;
+}
+
+.ajax__calendar_container table {
+    padding: 2px !important;
+    margin: auto;
+    width: 100%;
+    text-align: center !important;
+    height: 100% !important;
+}
+
+
+/*AJAX CALENDAR*/
+.QstCalendarCSS .ajax__calendar_container {
+    background-color: #DEF1F4;
+    border: solid 1px #77D5F7;
+    width: 200px !important;
+    z-index: 1000 !important;
+}
+
+.QstCalendarCSS .ajax__calendar_header {
+    background-color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.QstCalendarCSS .ajax__calendar_title,
+.QstCalendarCSS .ajax__calendar_next,
+.QstCalendarCSS .ajax__calendar_prev {
+    color: #004080;
+    padding-top: 3px;
+}
+
+/*.QstCalendarCSS .ajax__calendar_body {
+    background-color: #ffffff;
+    border: solid 1px #77D5F7;
+   width: 100%;
+}
+
+ 
+
+.QstCalendarCSS .ajax__calendar_dayname {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-top: 2px;
+    color: #004080;
+}
+
+.QstCalendarCSS .ajax__calendar_day {
+    color: #004080;
+    text-align: center;
+}
+
+ 
+
+.QstCalendarCSS .ajax__calendar_today {
+    font-weight: bold;
+    color: #000 !important;
+}
+
+.QstCalendarCSS .ajax__calendar_other,
+.QstCalendarCSS .ajax__calendar_hover .ajax__calendar_today,
+.QstCalendarCSS .ajax__calendar_hover .ajax__calendar_title {
+    color: #000 !important;
+}
+  */
+
+.ajax__calendar_hover .ajax__calendar_day,
+.ajax__calendar_hover .ajax__calendar_month,
+.ajax__calendar_hover .ajax__calendar_year {
+    color: #004080;
+    font-weight: bold;
+    background-color: #DEF1F4;
+}
+
+.ajax__calendar_other .ajax__calendar_day,
+.ajax__calendar_other .ajax__calendar_month,
+.ajax__calendar_other .ajax__calendar_year {
+    font-weight: normal;
+}
+
+
+.ajax__calendar_active {
+    background-color: #edf9ff !important;
+    border: none !important;
+    color: #0066cc !important;
+}
+
+.infoPanel {
+    height: 200px;
+}
+
+
+fieldset legend {
+    font-weight: bold !important;
+    text-align: left;
+    color: #545487;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px !important;*/
+    font-family: "Arial Narrow";
+    font-size: 14pt;
+    line-height: 1.231;
+}
+
+.tablepad fieldset {
+    display: block !important;
+    padding: 1px !important;
+    width: 300px;
+    border: 1px solid silver !important;
+}
+
+    .tablepad fieldset label {
+        padding-left: 3px !important;
+    }
+
+
+    .tablepad fieldset input[type=checkbox], input[type=radio] {
+        margin-left: 10px !important;
+        margin-right: 5px !important;
+    }
+
+
+
+.tablepad td {
+    padding: 5px !important;
+}
+
+.margintoFive {
+    margin: 5px !important;
+}
+
+.identModalPopup {
+    background-color: #ccc !important;
+    width: 300px !important;
+}
+
+.tableMarginAuto {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.auto-style1 {
+    height: 30px;
+}
+
+.AlignWithAddressTable, .AlignWithAddressTableLeft, .AlignContactInfoWithAddressTable, .AlignCarrierAddressInfo, .AlignContactInfoWithAddressTable3,
+.AlignOwnerInfoWithAddressTable, .AlignContactInfoWithAddressTable1, .AlignAddressTypeWithAddressTable, .AlignOwnerInfoWithAddressTable1, .AlignContactInfoWithAddressTable4 .AlignContactInfoWithAddressTable2, AlignAddressTable {
+    text-align: right !important;
+    table-layout: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+    .AlignAddressTypeWithAddressTable td:nth-child(1) { /*column 1*/
+        width: 37.6%;
+    }
+
+    .AlignAddressTypeWithAddressTable td:nth-child(2) { /*column 2*/
+        width: 40%;
+        text-align: left !important;
+    }
+
+    .AlignAddressTypeWithAddressTable td:nth-child(3) { /*column 3*/
+        width: 19%;
+        text-align: left !important;
+    }
+
+    .AlignWithAddressTable td:nth-child(1) { /*column 1*/
+        width: 37.6%;
+        text-align: right !important;
+    }
+
+    .AlignWithAddressTable td:nth-child(2) { /*column 2*/
+        width: 40%;
+        text-align: left !important;
+    }
+
+    .AlignWithAddressTable td:nth-child(3) { /*column 3*/
+        width: 19%;
+        text-align: left !important;
+    }
+
+.AlignWithAddressTableLeft {
+    margin-left: 115px !important;
+}
+
+.AlignCarrierAddressInfo {
+    margin-left: 61.5px;
+}
+
+.AlignContactInfoWithAddressTable {
+    margin-left: 100px !important;
+}
+
+.AlignContactInfoWithAddressTable1 {
+    margin-left: 89px !important;
+}
+
+.AlignContactInfoWithAddressTable3 {
+    margin-left: 69px !important;
+}
+
+.AlignContactInfoWithAddressTable4 {
+    margin-left: 79px !important;
+}
+
+.AlignContactInfoWithAddressTable2 {
+    margin-left: 80px !important;
+}
+
+.AlignOwnerInfoWithAddressTable {
+    margin-left: 110px !important;
+}
+
+.AlignOwnerInfoWithAddressTable1 {
+    margin-left: 70px !important;
+}
+
+.AlignOwnerInfoWithAddressTable2 {
+    margin-left: 94px !important;
+}
+
+.AddrTable {
+    text-align: right !important;
+    table-layout: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+    .AddrTable td:nth-child(2) { /*column 2*/
+        text-align: left !important;
+    }
+
+
+.QstRadioList {
+    padding: 0 5px 0 0;
+    vertical-align: middle;
+    text-align: left !important;
+    float: left;
+    margin: 3px;
+    display: inline-block;
+}
+
+table .QstRadioList td {
+    width: auto !important;
+    display: inline-block;
+    text-align: left !important;
+}
+
+
+.QstRadioList3 {
+    padding: 0 5px 0 0;
+    vertical-align: middle;
+    /*text-align: left !important;*/
+    float: left;
+    margin: 3px;
+    display: inline-block;
+}
+
+table .QstRadioList3 td {
+    width: auto !important;
+    display: inline-block;
+    /*text-align: left !important;*/
+}
+
+
+
+.QstRadioList1 td {
+    padding: 0 5px 0 0;
+    vertical-align: middle;
+    text-align: left;
+    float: left;
+    display: inline-block;
+    margin: 3px;
+    width: 100% !important;
+}
+
+table .QstRadioList input {
+    float: left;
+    /*margin-top: 0px !important;*/
+    margin-right: 5px !important;
+}
+
+table .QstRadioList label {
+    display: inline-block;
+    margin-left: 0px;
+    margin-right: 5px !important;
+    /*float: left;*/
+}
+
+.AlignOfficeHoursTable {
+    table-layout: fixed;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*.AlignOfficeHoursTable td:nth-child(1) { /*column 1*
+    text-align: right !important;
+}
+
+.AlignOfficeHoursTable td:nth-child(2) { /*column 2*
+    text-align: left !important;
+}*/
+
+.gridEditTable {
+    border-collapse: collapse;
+}
+
+    .gridEditTable td {
+        padding-top: .5em;
+        padding-left: .5em;
+    }
+
+.labelRequiredStyle {
+    color: #e00;
+}
+
+
+table.tblButtons td {
+    padding: 1px;
+}
+
+
+.wdAuto td:nth-child(1) { /*column 1*/
+    width: 30%;
+    text-align: right;
+}
+
+.wdAuto td:nth-child(2) { /*column 2*/
+    width: 40%;
+    text-align: left;
+}
+
+.wdAuto td:nth-child(3) { /*column 3*/
+    width: 10%;
+    text-align: left;
+}
+
+.horizontal-divider {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 1px;
+    width: 85%;
+    border-top: 5px solid black;
+}
+
+.MoveBulk {
+    border-color: #e0e0e0;
+    color: #000000;
+    background-color: #f9f9f9;
+    height: auto;
+    border-width: 1px;
+    border-style: solid;
+    opacity: 0.5;
+}
+
+.MoveBulkHigh {
+    color: #000000;
+    background-color: #f9f9f9;
+    height: auto;
+    border-width: 1px;
+    border-style: solid;
+    opacity: 0.0;
+}
+
+
+.ohio-select, .ohio-choose-time, .ohio-custom-dropdown {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+}
+
+.ohio-select-select, .ohio-choose-time-select, .ohio-select2 .select2-container--default .select2-selection--single {
+    background-color: #f2f2f2;
+    border: 1px solid #A1A1A1;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+    .ohio-select-select::before, .ohio-choose-time-select::before, .ohio-select2 .select2-container--default .select2-selection--single::before {
+        content: "\0023f7";
+        display: inline-block;
+        font-size: 2.2rem;
+        margin-top: -12px;
+        margin-right: -4px;
+        pointer-events: none;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        z-index: 3;
+    }
+
+    .ohio-select-select::after, .ohio-choose-time-select::after, .ohio-select2 .select2-container--default .select2-selection--single::after {
+        background-color: #f2f2f2;
+        border-left: 1px solid #A1A1A1;
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        bottom: 0;
+        right: 1px;
+        top: 0;
+        width: 35px;
+        z-index: 2;
+    }
+
+    .ohio-select-select-el, .ohio-choose-time-select-el, .ohio-select2 .select2-container--default .select2-selection--single .select2-selection__rendered {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: transparent;
+        border: 0;
+        box-sizing: border-box;
+        color: #000000;
+        cursor: pointer;
+        margin: 0;
+        padding: 0px 14px;
+        font-size: 1.6rem;
+        font-weight: normal;
+        width: 100%;
+        background-color: #ffffff;
+    }
+
+.fa-info-circle:before, #toast-container .toast.toast-info::before {
+    content: "\01f6c8";
+}
+
+.ohio-field-label, .ohio-main-nav-dropdown-title, .ohio-drawer-nav-title, .ohio-multi-select-label, .ohio-select-label, .ohio-custom-dropdown-label, .ohio-textarea-label {
+    color: #525051;
+    display: inline-block;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    margin-left: 15px;
+    width: 100%;
+}
+
+.has-checkbox .ohio-field-label, .has-checkbox .ohio-main-nav-dropdown-title, .has-checkbox .ohio-drawer-nav-title, .has-checkbox .ohio-multi-select-label, .has-checkbox .ohio-select-label, .has-checkbox .ohio-custom-dropdown-label, .has-checkbox .ohio-textarea-label {
+    border-color: #eb1316;
+}
+
+.ohio-login-dialogue-existing .ohio-field-label, .ohio-login-dialogue-existing .ohio-main-nav-dropdown-title, .ohio-login-dialogue-existing .ohio-drawer-nav-title, .ohio-login-dialogue-existing .ohio-multi-select-label, .ohio-login-dialogue-existing .ohio-select-label, .ohio-login-dialogue-existing .ohio-custom-dropdown-label, .ohio-login-dialogue-existing .ohio-textarea-label {
+    color: #ffffff;
+}
+
+.ohio-field, .ohio-field-addon, .ohio-field-status, .ohio-textarea {
+    display: inline-block;
+    /*margin-bottom: 23px;*/
+    width: 100%;
+    text-align: left;
+}
+
+.ohio-field, .ohio-field-addon, .ohio-field-status, .ohio-textarea, .ohio-field-input, .ohio-checkbox-field {
+    font-weight: 700;
+    width: 100%;
+}
+
+    .ohio-field:disabled, .ohio-field-addon:disabled, .ohio-field-status:disabled, .ohio-textarea:disabled, .ohio-field-input:disabled, .ohio-checkbox-field:disabled {
+        opacity: 0.5;
+    }
+
+.ohio-field-input, .ohio-checkbox-field {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #ffffff;
+    border: 1px solid #757575;
+    border-radius: 4px;
+    display: block;
+    font-size: 1.6rem;
+    padding: 8px 15px;
+}
+
+.has-error .ohio-field-input, .has-error .ohio-checkbox-field {
+    border-color: #eb1316;
+}
+
+.ohio-field--validation {
+    margin-bottom: 0;
+}
+
+    .ohio-field--validation .form-control-feedback {
+        top: -5px;
+    }
+
+.ohio-field-error {
+    color: #eb1316;
+    display: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-left: 9px;
+    margin-top: 6px;
+}
+
+.has-error .ohio-field-error {
+    display: block;
+}
+
+.warning .ohio-field-error {
+    color: #525051;
+}
+
+.ohio-field .input-group .ohio-field-input:first-child, .ohio-field-addon .input-group .ohio-field-input:first-child, .ohio-field-status .input-group .ohio-field-input:first-child, .ohio-textarea .input-group .ohio-field-input:first-child, .ohio-field .input-group .ohio-checkbox-field:first-child, .ohio-field-addon .input-group .ohio-checkbox-field:first-child, .ohio-field-status .input-group .ohio-checkbox-field:first-child, .ohio-textarea .input-group .ohio-checkbox-field:first-child {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    padding-right: 0;
+}
+
+.ohio-field .input-group .ohio-field-input:not(:first-child), .ohio-field-addon .input-group .ohio-field-input:not(:first-child), .ohio-field-status .input-group .ohio-field-input:not(:first-child), .ohio-textarea .input-group .ohio-field-input:not(:first-child), .ohio-field .input-group .ohio-checkbox-field:not(:first-child), .ohio-field-addon .input-group .ohio-checkbox-field:not(:first-child), .ohio-field-status .input-group .ohio-checkbox-field:not(:first-child), .ohio-textarea .input-group .ohio-checkbox-field:not(:first-child) {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.ohio-field .input-group .input-group-addon:first-child, .ohio-field-addon .input-group .input-group-addon:first-child, .ohio-field-status .input-group .input-group-addon:first-child, .ohio-textarea .input-group .input-group-addon:first-child,
+.ohio-field .input-group .input-group-addon:last-child, .ohio-field-addon .input-group .input-group-addon:last-child, .ohio-field-status .input-group .input-group-addon:last-child, .ohio-textarea .input-group .input-group-addon:last-child {
+    background: #f2f2f2;
+}
+
+.ohio-field .input-group .input-group-addon, .ohio-field-addon .input-group .input-group-addon, .ohio-field-status .input-group .input-group-addon, .ohio-textarea .input-group .input-group-addon {
+    background-color: #ffffff;
+    border: 1px solid #A1A1A1;
+    font-size: 1.6rem;
+}
+
+    .ohio-field .input-group .input-group-addon:last-child, .ohio-field-addon .input-group .input-group-addon:last-child, .ohio-field-status .input-group .input-group-addon:last-child, .ohio-textarea .input-group .input-group-addon:last-child {
+        border-left-width: 0;
+        border-right-width: 1px;
+    }
+
+.ohio-field.has-addon .input-group .input-group-addon:last-child, .has-addon.ohio-field-addon .input-group .input-group-addon:last-child, .has-addon.ohio-field-status .input-group .input-group-addon:last-child, .has-addon.ohio-textarea .input-group .input-group-addon:last-child {
+    border-left-width: 1px;
+    padding-left: 15px;
+}
+
+.ohio-field.has-error .input-group-addon, .has-error.ohio-field-addon .input-group-addon, .has-error.ohio-field-status .input-group-addon, .has-error.ohio-textarea .input-group-addon {
+    border-color: #eb1316;
+    color: #eb1316;
+}
+
+
+.ohio-field-addon .input-group .input-group-addon {
+    background-color: #ffffff !important;
+    border-color: #A1A1A1 !important;
+}
+
+    .ohio-field-addon .input-group .input-group-addon:last-child {
+        border-left-width: 1px !important;
+        padding-left: 15px !important;
+    }
+
+.ohio-field-icon {
+    width: 100%;
+}
+
+    .ohio-field-icon .ohio-field-input, .ohio-field-icon .ohio-checkbox-field {
+        border-left-width: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    .ohio-field-icon .input-group-addon {
+        border-color: #A1A1A1;
+        padding-right: 0;
+    }
+
+.ohio-field-password .input-group-addon {
+    cursor: pointer;
+}
+
+    .ohio-field-password .input-group-addon .fa, .ohio-field-password .input-group-addon .ohio-external-nav-open-icon, .ohio-field-password .input-group-addon .ohio-external-takeover-close, .ohio-field-password .input-group-addon .ohio-external-takeover-close-icon, .ohio-field-password .input-group-addon .ohio-select2 .select2-container--default .select2-selection--single, .ohio-select2 .select2-container--default .ohio-field-password .input-group-addon .select2-selection--single, .ohio-field-password .input-group-addon .select2-search--dropdown, .ohio-field-password .input-group-addon #toast-container .toast.toast-error::before, #toast-container .ohio-field-password .input-group-addon .toast.toast-error::before, .ohio-field-password .input-group-addon #toast-container .toast.toast-info::before, #toast-container .ohio-field-password .input-group-addon .toast.toast-info::before, .ohio-field-password .input-group-addon #toast-container .toast.toast-success::before, #toast-container .ohio-field-password .input-group-addon .toast.toast-success::before {
+        color: #700017;
+    }
+
+.theme-green .ohio-field-password .input-group-addon .fa, .theme-green .ohio-field-password .input-group-addon .ohio-external-nav-open-icon, .theme-green .ohio-field-password .input-group-addon .ohio-external-takeover-close, .theme-green .ohio-field-password .input-group-addon .ohio-external-takeover-close-icon, .theme-green .ohio-field-password .input-group-addon .ohio-select2 .select2-container--default .select2-selection--single, .ohio-select2 .select2-container--default .theme-green .ohio-field-password .input-group-addon .select2-selection--single, .theme-green .ohio-field-password .input-group-addon .select2-search--dropdown, .theme-green .ohio-field-password .input-group-addon #toast-container .toast.toast-error::before, #toast-container .theme-green .ohio-field-password .input-group-addon .toast.toast-error::before, .theme-green .ohio-field-password .input-group-addon #toast-container .toast.toast-info::before, #toast-container .theme-green .ohio-field-password .input-group-addon .toast.toast-info::before, .theme-green .ohio-field-password .input-group-addon #toast-container .toast.toast-success::before, #toast-container .theme-green .ohio-field-password .input-group-addon .toast.toast-success::before {
+    color: #5e8000;
+}
+
+.theme-blue .ohio-field-password .input-group-addon .fa, .theme-blue .ohio-field-password .input-group-addon .ohio-external-nav-open-icon, .theme-blue .ohio-field-password .input-group-addon .ohio-external-takeover-close, .theme-blue .ohio-field-password .input-group-addon .ohio-external-takeover-close-icon, .theme-blue .ohio-field-password .input-group-addon .ohio-select2 .select2-container--default .select2-selection--single, .ohio-select2 .select2-container--default .theme-blue .ohio-field-password .input-group-addon .select2-selection--single, .theme-blue .ohio-field-password .input-group-addon .select2-search--dropdown, .theme-blue .ohio-field-password .input-group-addon #toast-container .toast.toast-error::before, #toast-container .theme-blue .ohio-field-password .input-group-addon .toast.toast-error::before, .theme-blue .ohio-field-password .input-group-addon #toast-container .toast.toast-info::before, #toast-container .theme-blue .ohio-field-password .input-group-addon .toast.toast-info::before, .theme-blue .ohio-field-password .input-group-addon #toast-container .toast.toast-success::before, #toast-container .theme-blue .ohio-field-password .input-group-addon .toast.toast-success::before {
+    color: #3D7AA9;
+}
+
+.fa-date:before {
+    content: "\01f4c5";
+}
+
+.fa, .ohio-external-nav-open-icon, .ohio-external-takeover-close, .ohio-external-takeover-close-icon, .ohio-select2 .select2-container--default .select2-selection--single, .select2-search--dropdown, #toast-container .toast.toast-error::before, #toast-container .toast.toast-info::before, #toast-container .toast.toast-success::before,
+.fas,
+.far,
+.fal,
+.fab {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+.outerName {
+    height: 100px;
+}
+
+.popover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1060;
+    display: none;
+    max-width: 276px;
+    padding: 1px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.42857;
+    line-break: auto;
+    text-align: left;
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    white-space: normal;
+    font-size: 14px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+    .popover.top {
+        margin-top: -10px;
+    }
+
+    .popover.right {
+        margin-left: 10px;
+    }
+
+    .popover.bottom {
+        margin-top: 10px;
+    }
+
+    .popover.left {
+        margin-left: -10px;
+    }
+
+    .popover > .arrow {
+        border-width: 11px;
+    }
+
+        .popover > .arrow, .popover > .arrow:after {
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+        }
+
+            .popover > .arrow:after {
+                content: "";
+                border-width: 10px;
+            }
+
+    .popover.top > .arrow {
+        bottom: -11px;
+        left: 50%;
+        margin-left: -11px;
+        border-top-color: #999999;
+        border-top-color: rgba(0, 0, 0, 0.25);
+        border-bottom-width: 0;
+    }
+
+        .popover.top > .arrow:after {
+            bottom: 1px;
+            margin-left: -10px;
+            content: " ";
+            border-top-color: #fff;
+            border-bottom-width: 0;
+        }
+
+    .popover.right > .arrow {
+        top: 50%;
+        left: -11px;
+        margin-top: -11px;
+        border-right-color: #999999;
+        border-right-color: rgba(0, 0, 0, 0.25);
+        border-left-width: 0;
+    }
+
+        .popover.right > .arrow:after {
+            bottom: -10px;
+            left: 1px;
+            content: " ";
+            border-right-color: #fff;
+            border-left-width: 0;
+        }
+
+    .popover.bottom > .arrow {
+        top: -11px;
+        left: 50%;
+        margin-left: -11px;
+        border-top-width: 0;
+        border-bottom-color: #999999;
+        border-bottom-color: rgba(0, 0, 0, 0.25);
+    }
+
+        .popover.bottom > .arrow:after {
+            top: 1px;
+            margin-left: -10px;
+            content: " ";
+            border-top-width: 0;
+            border-bottom-color: #fff;
+        }
+
+    .popover.left > .arrow {
+        top: 50%;
+        right: -11px;
+        margin-top: -11px;
+        border-right-width: 0;
+        border-left-color: #999999;
+        border-left-color: rgba(0, 0, 0, 0.25);
+    }
+
+        .popover.left > .arrow:after {
+            right: 1px;
+            bottom: -10px;
+            content: " ";
+            border-right-width: 0;
+            border-left-color: #fff;
+        }
+
+    .ohio-gray-dark-bg, .ohio-arrow-box.popover.ohio-arrow-box--dark, .popover.ohio-arrow-box--dark, .ohio-tooltip ~ .popover.ohio-arrow-box--dark, .ohio-popover ~ .popover.ohio-arrow-box--dark {
+        background-color: #525051;
+    }
+
+.ohio-tooltip, .ohio-popover {
+    color: #3D7AA9;
+}
+
+    .ohio-tooltip ~ .popover, .ohio-popover ~ .popover {
+        position: absolute;
+    }
+
+.popover {
+    position: absolute;
+}
+
+.ohio-arrow-box, .popover, .ohio-tooltip ~ .popover, .ohio-popover ~ .popover {
+    box-shadow: none;
+    color: #525051;
+    display: inline-block;
+}
+
+    .ohio-arrow-box .popover-content, .popover .popover-content {
+        padding: 5px 9px;
+        word-break: break-word;
+    }
+
+    .ohio-arrow-box.popover, .popover, .ohio-tooltip ~ .popover, .ohio-popover ~ .popover {
+        background-color: #f2f2f2;
+        border-color: #525051;
+        visibility: visible;
+    }
+
+        .ohio-arrow-box.popover.left > .arrow, .popover.left > .arrow, .ohio-tooltip ~ .popover.left > .arrow, .ohio-popover ~ .popover.left > .arrow {
+            border-left-color: #525051;
+        }
+
+            .ohio-arrow-box.popover.left > .arrow::after, .popover.left > .arrow::after, .ohio-tooltip ~ .popover.left > .arrow::after, .ohio-popover ~ .popover.left > .arrow::after {
+                border-left-color: #f2f2f2;
+            }
+
+        .ohio-arrow-box.popover.top > .arrow, .popover.top > .arrow, .ohio-tooltip ~ .popover.top > .arrow, .ohio-popover ~ .popover.top > .arrow {
+            border-top-color: #525051;
+        }
+
+            .ohio-arrow-box.popover.top > .arrow::after, .popover.top > .arrow::after, .ohio-tooltip ~ .popover.top > .arrow::after, .ohio-popover ~ .popover.top > .arrow::after {
+                border-top-color: #f2f2f2;
+            }
+
+        .ohio-arrow-box.popover.right > .arrow, .popover.right > .arrow, .ohio-tooltip ~ .popover.right > .arrow, .ohio-popover ~ .popover.right > .arrow {
+            border-right-color: #525051;
+            visibility: visible;
+        }
+
+            .ohio-arrow-box.popover.right > .arrow::after, .popover.right > .arrow::after, .ohio-tooltip ~ .popover.right > .arrow::after, .ohio-popover ~ .popover.right > .arrow::after {
+                border-right-color: #f2f2f2;
+            }
+
+        .ohio-arrow-box.popover.bottom > .arrow, .popover.bottom > .arrow, .ohio-tooltip ~ .popover.bottom > .arrow, .ohio-popover ~ .popover.bottom > .arrow {
+            border-bottom-color: #525051;
+        }
+
+            .ohio-arrow-box.popover.bottom > .arrow::after, .popover.bottom > .arrow::after, .ohio-tooltip ~ .popover.bottom > .arrow::after, .ohio-popover ~ .popover.bottom > .arrow::after {
+                border-bottom-color: #f2f2f2;
+            }
+
+        .ohio-arrow-box.popover.ohio-arrow-box--dark, .popover.ohio-arrow-box--dark {
+            border-color: #525051;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+            .ohio-arrow-box.popover.ohio-arrow-box--dark.left > .arrow, .popover.ohio-arrow-box--dark.left > .arrow, .ohio-tooltip ~ .popover.ohio-arrow-box--dark.left > .arrow, .ohio-popover ~ .popover.ohio-arrow-box--dark.left > .arrow {
+                border-left-color: #525051;
+            }
+
+                .ohio-arrow-box.popover.ohio-arrow-box--dark.left > .arrow::after, .popover.ohio-arrow-box--dark.left > .arrow::after, .ohio-tooltip ~ .popover.ohio-arrow-box--dark.left > .arrow::after, .ohio-popover ~ .popover.ohio-arrow-box--dark.left > .arrow::after {
+                    border-left-color: #525051;
+                }
+
+            .ohio-arrow-box.popover.ohio-arrow-box--dark.top > .arrow, .popover.ohio-arrow-box--dark.top > .arrow, .ohio-tooltip ~ .popover.ohio-arrow-box--dark.top > .arrow, .ohio-popover ~ .popover.ohio-arrow-box--dark.top > .arrow {
+                border-top-color: #525051;
+            }
+
+                .ohio-arrow-box.popover.ohio-arrow-box--dark.top > .arrow::after, .popover.ohio-arrow-box--dark.top > .arrow::after, .ohio-tooltip ~ .popover.ohio-arrow-box--dark.top > .arrow::after, .ohio-popover ~ .popover.ohio-arrow-box--dark.top > .arrow::after {
+                    border-top-color: #525051;
+                }
+
+            .ohio-arrow-box.popover.ohio-arrow-box--dark.right > .arrow, .popover.ohio-arrow-box--dark.right > .arrow, .ohio-tooltip ~ .popover.ohio-arrow-box--dark.right > .arrow, .ohio-popover ~ .popover.ohio-arrow-box--dark.right > .arrow {
+                border-right-color: #525051;
+            }
+
+                .ohio-arrow-box.popover.ohio-arrow-box--dark.right > .arrow::after, .popover.ohio-arrow-box--dark.right > .arrow::after, .ohio-tooltip ~ .popover.ohio-arrow-box--dark.right > .arrow::after, .ohio-popover ~ .popover.ohio-arrow-box--dark.right > .arrow::after {
+                    border-right-color: #525051;
+                }
+
+            .ohio-arrow-box.popover.ohio-arrow-box--dark.bottom > .arrow, .popover.ohio-arrow-box--dark.bottom > .arrow, .ohio-tooltip ~ .popover.ohio-arrow-box--dark.bottom > .arrow, .ohio-popover ~ .popover.ohio-arrow-box--dark.bottom > .arrow {
+                border-bottom-color: #525051;
+            }
+
+                .ohio-arrow-box.popover.ohio-arrow-box--dark.bottom > .arrow::after, .popover.ohio-arrow-box--dark.bottom > .arrow::after, .ohio-tooltip ~ .popover.ohio-arrow-box--dark.bottom > .arrow::after, .ohio-popover ~ .popover.ohio-arrow-box--dark.bottom > .arrow::after {
+                    border-bottom-color: #525051;
+                }
+
+        .ohio-gray-dark-bg, .ohio-arrow-box.popover.ohio-arrow-box--dark, .popover.ohio-arrow-box--dark, .ohio-tooltip ~ .popover.ohio-arrow-box--dark, .ohio-popover ~ .popover.ohio-arrow-box--dark {
+            background-color: #525051;
+        }
+
+.popover-title {
+    padding: 8px 14px;
+    margin: 0;
+    font-size: 14px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ebebeb;
+    border-radius: 5px 5px 0 0;
+}
+
+.popover-content {
+    padding: 9px 14px;
+}
+
+.hearingCheckbox input[type="checkbox"] {
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.unsetPublicSearchDDLLength {
+    min-width: 0;
+    border: 1px solid #757575;
+}
+
+.publicSearchLabels {
+    height: 34px;
+}
+
+.hospitalAffiliationsTitle {
+    color: rgba(247, 247, 247, 1);
+    font-weight: bold;
+}
+
+.groupMemberTitle {
+    color: rgba(247, 247, 247, 1);
+    font-weight: bold;
+}
+
+.unsetPublicSearchRCBLength {
+}
+
+.setrcbBackgroundColor {
+    background-color: #FFFFFF;
+}
+
+.grid-hint-md {
+    color: #000;
+    font-size: 10pt;
+    font-weight: bold;
+    padding: 0px;
+    text-align: right;
+}
+
+table.gridViewSmallWidth {
+    width: 40%;
+    color: #000000;
+    vertical-align: top;
+    border: 1px solid #fff !important;
+    margin-left: 0;
+}
+
+    table.gridViewSmallWidth th {
+        background-color: #545487;
+        text-align: left;
+        color: #00435e;
+        border: 1px solid #fff !important;
+        padding: 10px;
+    }
+
+    table.gridViewSmallWidth td {
+        font-weight: normal;
+        color: Black;
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid #fff;
+        border-color: #fff;
+        padding: 10px;
+        font-size: 20px;
+        /* background-color: #EAEFF7;  dark blue*/
+    }
+
+.buttonBoxAppFee {
+    color: #fff;
+    background-color: #707070;
+    border-color: #707070;
+    background-image: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    line-height: 1.5 !important;
+    border-radius: 3px !important;
+    text-shadow: none !important;
+    width: auto;
+    min-width: 100px;
+    height: 40px;
+}
+
+    .buttonBoxAppFee:hover {
+        opacity: 0.5;
+        background-image: none;
+        background-color: #707070;
+    }
+
+    .buttonBoxAppFee:disabled, .buttonBoxAppFee input[type=submit]:disabled, .buttonBoxAppFee input[type=submit][disabled=disabled], .buttonBoxAppFee button[disabled=disabled] {
+        opacity: 0.2;
+    }
+
+    .buttonBoxAppFee:enabled, .buttonBoxAppFee input[type=submit]:enabled, .buttonBoxAppFee input[type=submit][enabled=enabled], .buttonBoxAppFee button[enabled=enabled] {
+        background-color: #545487 !important;
+    }
+
+    .buttonBoxAppFee:active {
+        color: #fff;
+        background-color: #707070;
+        border-color: #707070;
+        line-height: 1.5 !important;
+        padding: 5px 10px;
+        background: none #31b0d5 !important;
+    }
+
+        .buttonBoxAppFee:active:focus, .buttonBoxAppFee.active:focus, .buttonBoxAppFee.active:hover, .buttonBoxAppFee:active.focus, .buttonBoxAppFee:active:focus, .buttonBox:active:hover {
+            color: #fff;
+            background-color: #545487 !important;
+            border-color: #707070;
+            line-height: 1.5 !important;
+            padding: 5px 10px;
+            background: none #269abc !important;
+        }
+
+.compareErrorCss {
+    position: absolute;
+}
+
+.article-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article {
+    flex: 0 0 50%;
+    padding: 10px;
+}
+
+.RetrieveReportsSearchHeader {
+    text-align: justify;
+    color: #000000;
+    font-weight: bold;
+}
+
+.gridPrintCommunicationCell {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+.boxPanelDataFinancialLeft {
+    text-align: left;
+}
+
+.navbar-collapse.collapse {
+    text-align: left;
+    display: flex !important;
+    vertical-align: top;
+}
+
+.navbar-nav {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    vertical-align: top;
+    display: inline-block;
+    flex-wrap: wrap;
+    min-width: auto;
+    float: none;
+    flex: 0 0 1;
+}
+
+.navbar-right {
+    text-align: right;
+    float: right;
+    flex: 1 0 auto;
+    min-width: 212px;
+}
+
+.navbar-nav > li {
+    display: inline-block;
+    vertical-align: top;
+    float: none;
+}
+
+.hamburger.is-closed span.hamb-top,
+.hamburger.is-closed span.hamb-middle,
+.hamburger.is-closed span.hamb-bottom,
+.hamburger.is-open span.hamb-top,
+.hamburger.is-open span.hamb-middle,
+.hamburger.is-open span.hamb-bottom {
+    width: 100%;
+    max-width: 40px;
+}
+
+#ctl00_LeftMenu {
+    display: inline-block;
+    width: auto;
+    margin-left: 0;
+    margin-right: 5%;
+    min-width: 250px;
+}
+
+    #ctl00_LeftMenu ul.navbar-left,
+    #ctl00_LeftMenu ul.navbar-nav {
+        float: none;
+        margin: 0;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+        #ctl00_LeftMenu ul.navbar-left li.hamburger-width-inmenu {
+            float: none;
+            padding: 0;
+            margin: 0;
+            border-right: 3px solid #fff;
+        }
+
+    #ctl00_LeftMenu li.hamburger-width-inmenu button.hamburger {
+        margin: 0;
+        padding: 0;
+        margin-top: 10px;
+        position: static;
+        width: 42px;
+        margin-bottom: 2px;
+    }
+
+    #ctl00_LeftMenu li button.hamburger span.hamb-top {
+        margin-top: -2px;
+    }
+
+    #ctl00_LeftMenu li button.hamburger span.hamb-middle {
+        margin-top: -2px;
+    }
+    #ctl00_LeftMenu li button.hamburger span.hamb-top,
+    #ctl00_LeftMenu li button.hamburger.is-open span.hamb-middle,
+    #ctl00_LeftMenu li button.hamburger span.hamb-bottom {
+        display: block;
+    }
+
+    #ctl00_LeftMenu hamburger.is-closed:hover span.hamb-bottom {
+        top: 60%;
+    }
+    #ctl00_LeftMenu li button.hamburger.is-open span.hamb-middle {
+        display: none;
+    }
+
+.navbar-right {
+    margin-right: 0;
+}
+
+.navbar-collapse.collapse.in {
+    display: flex !important;
+}
+
+main h1 {
+    font-size: 25px;
+    color: #545488;
+    font-family: Arial Narrow
+}
+
+.error-wrapper{visibility:hidden; display:inline-block;}
+.error-wrapper.field-error {visibility:visible;}
+
+.popTitle h1 {
+    font-size:14pt;
+    margin:0;
+    padding:0;
+    color:#FFF;
+}
+
+@media (max-width: 1160px) {
+    .navbar-right {
+        min-width: 0;
+        flex:0 1 auto;
+    }
+}
+
+@media (max-width: 1020px) {
+    .navbar-toggle {
+        display: inline-block;
+    }
+
+    .navbar-collapse.collapse {
+        display: none !important;
+        flex-direction: column;
+    }
+
+    #ctl00_LeftMenu ul {
+        padding-left: 15px;
+    }
+
+        #ctl00_LeftMenu ul li {
+            border: none !important;
+            margin: 0;
+            padding: 0;
+        }
+
+            #ctl00_LeftMenu ul li:nth-child(2) {
+                display: none;
+            }
+
+    .navbar-header {
+        float: none;
+    }
+
+    .navbar-nav {
+        float: none;
+    }
+
+        .navbar-nav > li {
+            display: inline-block;
+            float: none;
+        }
+
+    .navbar-collapse.collapse ul {
+        display: block;
+    }
+
+        .navbar-collapse.collapse ul > li {
+            display: block;
+        }
+
+    ul.navbar-right {
+        text-align: left;
+        float: none !important;
+    }
+}
+
+@media (min-width: 1138px) {
+    .navbar-toggle {
+        display: none;
+    }
+}
+
+.hSetminwidth {
+    min-width: 200px;
+}
+
+.hcloseBtn {
+    position: absolute;
+    top: 19px;
+    right: 36px;
+    font-size: 23px;
+    background: transparent;
+    border-width: 0px;
+    width: 18px;
+}
+
+div[data-act-control-type="modalPopupBackground"] {
+    z-index: 1 !important;
+}
+
+.RadGrid {
+    max-height: calc(100vh - 200px) !important;
+    overflow: auto
+}
+
+.modalPopup.historyPopup {
+    max-height: calc(100vh - 24px) !important;
+    overflow: hidden;
+    z-index: 9 !important
+}
+
+.loading {
+    z-index: 999 !important;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto !important;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.1);
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Work history New class*/
+.w-100 {
+    width: 100%;
+}
+
+.f-none {
+    float: none !important;
+}
+
+.f-right {
+    float: right !important;
+}
+
+.hbtn-focus {
+    color: white !important;
+    text-decoration: none !important;
+    font-size: medium !important;
+    padding: 7px 10px !important;
+}
+
+.history-icon {
+    width: 18px;
+    padding-bottom: 5px !important;
+}
+
+.hclose-btn {
+    width: 18px !important;
+    padding-bottom: 5px !important;
+}
+
+.htbn-box {
+    margin-right: 35px !important;
+    background-color: #65659f !important;
+}
+
+.hvm-history {
+    text-align: left;
+    padding: 15px;
+}
+
+.hp-10 {
+    padding: 10px !important
+}
+
+.historyButtonBox {
+    color: #fff;
+    background-color: #707070;
+    border-color: #707070;
+    background-image: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    line-height: 1.5 !important;
+    border-radius: 3px !important;
+    text-shadow: none !important;
+    width: auto;
+    min-width: 100px;
+    height: 40px;
+    text-align: center !important;
+}
+
+.collaps-table td, th {
+    padding: 0 !important
+}
+.label-bold-700{
+    font-weight: 700 !important;
+}

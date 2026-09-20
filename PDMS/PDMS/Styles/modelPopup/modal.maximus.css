@@ -1,0 +1,122 @@
+﻿/* ==========================================================================
+   Maximus Modal Plugin theme
+   All rules are scoped under ".modal.maximus-modal" (the plugin adds this
+   class to every modal it manages) so this stylesheet only ever affects
+   modals created/initialized by maximus.modal.plugin.js, never any other
+   Bootstrap modal, button, or form-control that already exists in the
+   host application.
+   ========================================================================== */
+
+.modal.maximus-modal .modal-dialog {
+    max-width: 600px; /* Default modal width, can be overridden */
+    margin: 30px auto; /* Center modal */
+    border-radius: 12px; /* Rounded corners */
+    overflow: hidden; /* Ensure no content overflows */
+}
+
+.modal.maximus-modal .modal-content {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #fff; /* White background */
+}
+
+/* Modal Header */
+.modal.maximus-modal .modal-header {
+    padding: 16px 24px;
+    background-color: #F7F4FA; /* Light background for header */
+    border-bottom: 1px solid #e6e4f2; /* Border for header */
+    font-size: 18px; /* Title font size */
+    font-weight: 600; /* Bold title */
+    color: #4a4a90;
+}
+
+/* Modal Body */
+.modal.maximus-modal .modal-body {
+    padding: 20px 24px; /* Body padding */
+    font-size: 14px; /* Font size for body */
+    color: #555; /* Text color */
+    max-height: calc(80vh - 160px); /* Set a max-height for the body */
+    overflow-y: auto; /* Enable scrolling for long content */
+}
+
+.modal.maximus-modal .modal-footer {
+    padding: 16px 24px; /* Footer padding */
+    text-align: right; /* Align buttons to the right */
+    border-top: 1px solid #ddd; /* Border for footer */
+}
+
+    .modal.maximus-modal .modal-footer .btn {
+        font-size: 14px; /* Button font size */
+        padding: 8px 16px; /* Button padding */
+        border-radius: 8px; /* Rounded button corners */
+        margin-left: 10px; /* Add space between buttons */
+    }
+
+/* Button Styles (scoped to this plugin's own modal only) */
+.modal.maximus-modal .btn-primary {
+    background-color: #1b4c79; /* Primary button color (theme navy) */
+    border-color: #1b4c79;
+    color: white;
+}
+
+    .modal.maximus-modal .btn-primary:hover {
+        background-color: #123a5e; /* Darken on hover */
+        border-color: #123a5e;
+    }
+
+.modal.maximus-modal .btn-secondary {
+    background-color: #f0f0f0; /* Secondary button background */
+    border-color: #ccc;
+    color: #333;
+}
+
+    .modal.maximus-modal .btn-secondary:hover {
+        background-color: #e2e2e2; /* Lighter on hover */
+    }
+
+.modal.maximus-modal .btn:disabled {
+    background-color: #d6d6d6;
+    color: #a0a0a0;
+    border-color: #d6d6d6;
+}
+
+.modal.maximus-modal .close {
+    font-size: 1.5rem; /* Close icon size */
+    color: #5a5a5a;
+}
+
+/* Material Icons in Buttons */
+.modal.maximus-modal .modal-dialog .material-icons-outlined {
+    font-size: 18px; /* Icon size */
+    color: inherit; /* Inherit the button's text color */
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.modal.maximus-modal .control-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.modal.maximus-modal .modal-body .form-control {
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .modal.maximus-modal .modal-dialog {
+        max-width: 100%; /* Allow full width for smaller screens */
+    }
+
+    .modal.maximus-modal .modal-header,
+    .modal.maximus-modal .modal-footer {
+        padding: 12px 16px; /* Adjust padding for small screens */
+    }
+
+    .modal.maximus-modal .modal-body {
+        padding: 16px 20px;
+    }
+}

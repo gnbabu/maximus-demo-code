@@ -1,0 +1,117 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="SiteMaster, App_Web_fgtcmsub" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Src="~/UserControls/MenuTop.ascx" TagName="MenuTop" TagPrefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>PDMS System</title>
+    <script type="text/javascript">
+        function checkShortcut(opt) {
+            //event.keyCode == 8 this is Backspace. For now this is the only thing disabled.
+            //event.keyCode == 13 this is Enter.
+            if (event.keyCode == 8) {
+                if (opt == 1) return false;
+                else return true;
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // focus on the first visible and enabled input field or textarea
+            $(":input:visible:enabled").each(function () {
+                if (($(this).attr('type') == 'text') && ($(this).is('input')) || $(this).is('select')) {
+                    $(this).focus();
+                    return false;
+                }
+                if ($(this).is('textarea')) {
+                    $(this).focus();
+                    return false;
+                }
+            });
+        });
+</script>
+</head>
+<body class="template">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <%--<cc1:ToolkitScriptManager ID="ToolkitScriptManager1"  runat="server" ScriptMode="Release" />--%>
+   
+    <div id="mainForm">
+        <div id="loginHeader">
+            <div style="text-align: right">
+                <b><asp:Label ID="lblUsername" runat="server" /></b>
+                <asp:LoginView ID="LoginView1" runat="server">
+                    <AnonymousTemplate>
+                        <asp:HyperLink ID="hypLogin" runat="server" Text="Login" NavigateUrl="~/Account/Login.aspx" />
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <asp:LinkButton ID="lnkLogout" runat="server" Text="Logout" OnClick="lnkLogout_Click"
+                            CausesValidation="False" />
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+        </div>
+        <div id="header">
+            <table class="header">
+                <tr>
+                    <td style="text-align:left">
+                        <div id="logo">
+                            <h1>TennCare PDMS Services</h1>
+                            <asp:Panel ID="pnlEnvironment" runat="server">
+                                <h3><asp:Label ID="lblEnvironment" runat="server" Text="Testing" /></h3>
+                            </asp:Panel>
+                        </div>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="menu_bg">
+            <div id="menuBar">
+<%--                <uc1:MenuTop ID="ctlMenuBar" runat="server" />--%>
+            </div>
+        </div>
+        <div class="mainContent">
+		    <div class="pageHeader">
+			    <br /><center><asp:contentplaceholder id="PageLabelContent" runat="server">
+                    </asp:contentplaceholder></center>
+                <br />
+		    </div>
+		    <div>
+   	            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+		    </div>
+            <div id="sitefooter">
+                <center>
+                    <asp:MultiView ID="mltEntrust" runat="server">
+                        <asp:View ID="vwInt" runat="server">
+                            <script  type="text/javascript" 
+                                src="https://seal.entrust.net/seal.js?domain=pdmsint.tenncare.nash.tenn&img=9">
+                            </script>
+                            <a href="http://www.entrust.net">SSL</a>
+                            <script  type="text/javascript">                            goEntrust();</script>
+                        </asp:View>
+                        <asp:View ID="vwUAT" runat="server">
+                            <script  type="text/javascript" 
+                                src="https://seal.entrust.net/seal.js?domain=pdmsuat.tenncare.nash.tenn&img=9">
+                            </script>
+                            <a href="http://www.entrust.net">SSL</a>
+                            <script  type="text/javascript">                            goEntrust();</script>
+                        </asp:View>
+                        <asp:View ID="vwProd" runat="server">
+                            <script type="text/javascript"  
+                                src="https://seal.entrust.net/seal.js?domain=pdms.tenncare.nash.tenn&img=9">
+                            </script>
+                            <a href="http://www.entrust.net">SSL</a>
+                            <script  type="text/javascript">                            goEntrust();</script>
+                        </asp:View>
+                    </asp:MultiView>           
+                </center>
+             </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,121 @@
+﻿    <style type="text/css">
+        .auto-style1 {
+            width: 151px;
+        }
+
+        .auto-style3 {
+            width: 100%;
+        }
+
+        .auto-style4 {
+            width: 263px;
+        }
+
+        .auto-style5 {
+            width: 350px;
+        }
+
+        .auto-style6 {
+            width: 302px;
+        }
+    </style>
+    <table style="width: 100%; border: 2px solid #45a8c6">
+        <tr>
+            <td>
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="auto-style4">
+                            <img id="imgSeal" src="https://dev-documents-test.s3.us-west-2.amazonaws.com/Images/Ohio_Header.png" /></td>
+                        <td style="font-size: x-large">PRIOR AUTHORIZATION STATUS REPORT</td>
+                    </tr>
+                </table>
+                <table class="auto-style3">
+                    <tr>
+                        <td>Requesting Provider Medicaid ID: [[ReqProvMedID]]</td>
+                        <td class="auto-style1" colspan="3">Requesting Provider NPI: [[ReqProvNPI]]</td>
+                        <td>Requesting Provider Name: [[ReqProvName]]</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Response Date and Time: [[RespDT]]</td>
+                        <td colspan="3">Prior Auth No: [[PriorICN]]</td>
+                    </tr>
+                </table>
+                <table style="width: 100%;">
+                    <tr>
+                        <td colspan="2" style="background-color: #45a8c6; color: white; font-weight: bold;">DESTINATION PAYER INFORMATION</td>
+                    </tr>
+                    <tr>
+                        <td>Payer Name: [[PayerContactName]]</td>
+                        <td>Payer Contact No: [[PayerContactNo]]</td>
+                    </tr>
+                    <tr>
+                        <td>Payer ID: [[PayerID]]</td>
+                        <td>Payer Email ID: [[PayerEmail]]</td>
+                    </tr>
+                </table>
+                <table style="width: 100%;">
+                    <tr>
+                        <td colspan="4" style="background-color: #45a8c6; color: white; font-weight: bold;">RECIPIENT INFORMATION</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style6">Recepient Name: [[RecpName]]</td>
+                        <td colspan="2">Medicaid Billing No: [[MedBillNo]]</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style5" colspan="2">Patient Tracking No: [[PtTNum]]</td>
+                        <td colspan="2">Recipient's DOB: [[PriorAuthRDOB]]</td>
+                    </tr>
+                </table>
+                <table style="width: 100%;">
+                    <tr>
+                        <td colspan="6" style="background-color: #45a8c6; color: white; font-weight: bold;">PRIOR AUTH STATUS HEADER INFORMATION</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Prior Auth No: [[PriorAuthNo]]</td>
+                        <td colspan="2">Prior Auth Status: [[PriorAuthStatus]]</td>
+                        <td colspan="2">Prior Auth Issue Date: [[PriorAuthDate]]</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Decision Reason: [[PriorAuthDecisionReason]]</td>
+                        <td colspan="3">Effective Date: [[PriorAuthEffectiveDate]]</td>                        
+                    </tr>
+                    <tr>
+                        <td colspan="3">Reviewer Note: [[ReviewerNote]]</td>
+                        <td colspan="3">Expiration Date: [[PriorAuthExpirationDate]]</td>                        
+                    </tr>
+                </table>
+                <table style="width: 100%;">
+                    <tr>
+                        <td colspan="6" style="background-color: #45a8c6; color: white; font-weight: bold;">PRIOR AUTH STATUS SERVICE INFORMATION</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" style="background-color: #aef3fc; color: black; font-weight: bold;">SERVICE LINE 1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Prior Auth No: [[PriorAuthNo]]</td>
+                        <td colspan="2">Prior Auth Status: [[PriorAuthStatus]]</td>
+                        <td colspan="2">Procedure Code: [[ProcedureCode]]</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Requested Units: [[RequestedUnits]]</td>
+                        <td colspan="2">Requested FDOS: [[RequestedFDOS]]</td>
+                        <td colspan="2">Requested TDOS: [[RequestedTDOS]]</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">Decision Reason: [[PriorAuthDecisionReason]]</td>                                         
+                    </tr>
+                    <tr>
+                        <td colspan="3">Reviewer Note: [[ReviewerNote]]</td>                                 
+                    </tr>
+                </table>
+                <table style="width: 100%;">
+                    <tr>
+                        <td colspan="5" style="background-color: #45a8c6; color: white; font-weight: bold;">PRIOR AUTH REJECTION INFORMATION</td>
+                    </tr>
+                    <tr>
+                        <td>[[ServiceDetails]]</td>
+                    </tr>                    
+                </table>
+        </tr>
+        </td>
+    </table>

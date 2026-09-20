@@ -1,0 +1,62 @@
+﻿CREATE PROCEDURE [dbo].[Insert_<table_name>]
+(
+   @dataInputTVP TVP_<table_name> READONLY
+)
+AS
+BEGIN
+     SET NOCOUNT ON;
+
+	 CREATE TABLE #errorList
+	 (
+		ErrorLine varchar(max),
+		SequenceNumber int
+	 )
+
+	 DECLARE @total_count bigint;
+	 DECLARE @total_success bigint;
+	 DECLARE @total_failed bigint;
+
+ 	<variable_declarations>
+
+	DECLARE listCursor CURSOR LOCAL FAST_FORWARD 
+	FOR
+	SELECT <data_element_select_list>
+    FROM @dataInputTVP
+
+	OPEN listCursor
+                
+	FETCH NEXT FROM listCursor INTO <variable_list>;
+
+	SET @total_count = 0;
+	SET @total_success = 0;
+	SET @total_failed = 0;
+
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		BEGIN TRY
+			<insert_data_script>
+			SET @total_success = @total_success + 1;
+		END TRY
+		BEGIN CATCH
+			INSERT INTO #errorList
+			SELECT '<table_name>|' + ERROR_MESSAGE() + '|' + <variable_error_list> AS ErrorLine, 10 AS SequenceNumber;
+
+			SET @total_failed = @total_failed + 1;
+		END CATCH
+		SET @total_count = @total_count + 1;
+	    FETCH NEXT FROM listCursor INTO <variable_list>;
+	END
+
+	CLOSE listCursor;
+	DEALLOCATE listCursor;
+
+	INSERT INTO #errorList (ErrorLine, SequenceNumber) VALUES ('Number of records succeeded:|' + CAST(@total_success AS varchar(max)), 1);
+	INSERT INTO #errorList (ErrorLine, SequenceNumber) VALUES ('Number of records failed:|' + CAST(@total_failed AS varchar(max)), 2);
+	INSERT INTO #errorList (ErrorLine, SequenceNumber) VALUES ('Total records in import file:|' + CAST(@total_count AS varchar(max)), 0);
+	INSERT INTO #errorList (ErrorLine, SequenceNumber) VALUES ('Table Name|Error Message|<error_list_header>', 5);
+
+	SELECT * FROM #errorList ORDER BY SequenceNumber;
+
+	DROP TABLE #errorList;
+
+END

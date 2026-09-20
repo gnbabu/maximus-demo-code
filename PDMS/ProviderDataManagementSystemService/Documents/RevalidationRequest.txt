@@ -1,0 +1,10 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+Legal Name: [[LEGALNAME]]<br>
+Provider NPI: [[NPI]]<br>
+Issue Date: [[CURRENTDATE]] <br>
+<p>District of Columbia Medicaid needs you to revalidate your Registration.</p>
+<p>Please log into the District of Columbia Medicaid Provider Screening and Enrollment portal to complete and resubmit your request.</p>
+<p>[[PDMSURL]]</p>
+<p> Regards,</p>
+District of Columbia Medicaid
+<div>

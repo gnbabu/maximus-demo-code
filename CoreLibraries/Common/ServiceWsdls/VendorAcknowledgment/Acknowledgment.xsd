@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" targetNamespace="http://mes.gov/acknowledgment"
+	xmlns:ack="http://mes.gov/acknowledgment">
+	<xsd:element name="VendorAcknowledgmentRequest" type="ack:VendorAcknowledgmentRequest" />
+			<xsd:complexType name="Response">
+			<xsd:sequence>
+			<xsd:element minOccurs="0" name="SequenceNumber">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0" />
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="ResponseCode">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1" />
+						<xsd:maxLength value="50" />
+						<xsd:pattern value="([\S+\s])*\S+\s*" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="ResponseType">
+            <xsd:simpleType>
+               <xsd:union>
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="failure" />
+                        <xsd:enumeration value="success" />
+                     </xsd:restriction>
+                  </xsd:simpleType>
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="[Ff][Aa][Ii][Ll][Uu][Rr][Ee]" />
+                        <xsd:pattern value="[Ss][Uu][Cc][Cc][Ee][Ss][Ss]" />
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:union>
+            </xsd:simpleType>
+         </xsd:element>
+			<xsd:element minOccurs="1" name="ResponseMessage">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1" />
+						<xsd:maxLength value="500" />
+						<xsd:pattern value="([\S+\s])*\S+\s*" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>				
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="MessageHeader">
+			<xsd:sequence>
+			<xsd:element name="BusinessFlow" minOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:minLength value="1"/>
+							<xsd:maxLength value="50"/>							
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+					<xsd:element name="RequestorSystem">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1" />
+						<xsd:maxLength value="50" />
+						<xsd:pattern value="([\S+\s])*\S+\s*" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="RequestorSystemId">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="RequestorTransactionId">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="TargetSystem">
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="50" />
+                  <xsd:pattern value="([\S+\s])*\S+\s*" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+		 <xsd:element minOccurs="0" name="TargetTransactionId">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="ModuleTransactionId" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+		</xsd:element>
+		
+         <xsd:element name="AdditionalModuleTransactionId" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+		</xsd:element>
+			<xsd:element name="SITransactionKey">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1" />
+						<xsd:maxLength value="32" />
+						<xsd:pattern value="([\S+\s])*\S+\s*" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="TimeStamp">
+			  <xsd:simpleType>
+					<xsd:union>
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:date">
+								<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}" />
+							</xsd:restriction>
+						</xsd:simpleType>
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:dateTime">
+								<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}" />
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:union>
+				</xsd:simpleType>
+			</xsd:element>	
+			</xsd:sequence>
+		</xsd:complexType>
+	
+	<xsd:element name="VendorAcknowledgmentResponse" type="ack:VendorAcknowledgmentResponse" />
+	
+	<xsd:complexType name="VendorAcknowledgmentRequest">
+		<xsd:sequence>
+			<xsd:element name="MessageHeader" type="ack:MessageHeader" minOccurs="1" />
+			<xsd:element name="Response" type="ack:Response" minOccurs="1" maxOccurs="100" />			
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="VendorAcknowledgmentResponse">
+	<xsd:sequence>
+			<xsd:element name="BusinessFlow" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:minLength value="0"/>
+							<xsd:maxLength value="50"/>							
+						</xsd:restriction>
+					</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="RequestorSystem" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0" />
+						<xsd:maxLength value="50" />
+						<xsd:pattern value="([\S+\s])*\S+\s*" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="RequestorSystemId">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="RequestorTransactionId">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="TargetSystem" minOccurs="0">
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="0" />
+                  <xsd:maxLength value="50" />
+                  <xsd:pattern value="([\S+\s])*\S+\s*" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+		 <xsd:element minOccurs="0" name="TargetTransactionId">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="ModuleTransactionId" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+		</xsd:element>
+		
+         <xsd:element name="AdditionalModuleTransactionId" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+		</xsd:element>
+			<xsd:element name="SITransactionKey" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0" />
+						<xsd:maxLength value="32" />
+						<xsd:pattern value="([\S+\s])*\S+\s*" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="TimeStamp" minOccurs="0">
+			  <xsd:simpleType>
+					<xsd:union>
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:date">
+								<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}" />
+							</xsd:restriction>
+						</xsd:simpleType>
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:dateTime">
+								<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}" />
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:union>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Response" minOccurs="0" maxOccurs="100">
+			<xsd:complexType>
+			<xsd:sequence>
+			<xsd:element minOccurs="0" name="SequenceNumber">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0" />
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+				<xsd:element name="ResponseCode" minOccurs="0"/>
+					<!--<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+							<xsd:enumeration value="1000" />
+							<xsd:enumeration value="1001" />
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>-->
+				<xsd:element name="ResponseType" minOccurs="0"/>
+					<!--<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="Success" />
+							<xsd:enumeration value="Failure"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>-->
+				<xsd:element name="ResponseMessage" type="xsd:string" minOccurs="0" />
+				<xsd:element name="ResponseDetails" type="xsd:string" minOccurs="0"/>
+				</xsd:sequence>
+				</xsd:complexType>
+				</xsd:element>						
+		</xsd:sequence>
+	</xsd:complexType>		
+</xsd:schema>
+
+<!--
+	Change Description: 
+	BusinessFlow added to the response.	
+	Updated Date: 01/05/2022
+-->

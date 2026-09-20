@@ -1,0 +1,81 @@
+
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<b>Subject: </b>Final Notice of Termination
+</p>
+
+<p>
+Dear Provider:
+</p>
+
+<p>
+Our records indicate that your medical/business license will expire on [[LICENSEREVALIDATIONDUE]]. Please create an account and upload a copy of your medical/business license to the Provider Data Management System  [[PDMSURL]] prior to your license expiration date to prevent your Medicaid Provider Agreement from being terminated. 
+</p>
+<p>
+The (Department/agency) recently notified you of its intent to terminate your Provider Agreement if you do not upload a copy of your medical/business license to the Provider Data Management System. To date, (department/agency) has not received a response from you. If we do not receive a copy of your medical/business license prior to your license expiration date, in accordance with (legal reference), effective [[LICENSEENDDATE]], (department/agency) will terminate your Medicaid Provider Agreement and cease reimbursement for services provided to Medicaid beneficiaries because you are not licensed as required by the law of the jurisdiction in which you practice. 
+</p>
+<p>REINSTATEMENT INTO THE MEDICAID PROGRAM</p>
+<p>The earliest date (State) will accept a request for reinstatement into the Medicaid program is one business day after termination. Your request for reinstatement must be in writing and submitted to:</p>
+MAXIMUS Provider Screening and Enrollment Customer Service Center<br/>
+PO BOX xxxx<br/>
+(city,state,zip)<br/>
+Phone: (999-999-9999)<br/>
+TTY #: (999-999-9999)<br />
+Email:  [[PDMSEMAIL]] <br />
+
+<p>In your request for reinstatement, you should set forth the reasons why you should be reinstated. (The Director) will make a determination on whether to grant reinstatement in accordance with (legal reference).</p>
+
+APPEAL RIGHTS
+
+<p>If you disagree with (department/agency)'s intention to terminate your Provider Agreement, you have the right to appeal this decision by requesting a hearing with the (appeals agency). Your notice of appeal should be submitted to (appeal agency) within fifteen (15) calendar days of the date of this termination notice. Contact information for (appeal agency) is as follows:</p>
+
+(title)<br />
+(address line 1)<br />
+(address line 2)<br />
+(city,state,zip)<br />
+
+<p>If you have any questions, please contact the MAXIMUS Provider Screening and Enrollment Customer Service at 999-999-9999 or email at <a href ="mailto:[[PDMSEMAIL]]">[[PDMSEMAIL]]</a>.</p>
+
+Regards,<br />
+    <br />
+MAXIMUS Provider Screening and Enrollment Customer Service
+</td>
+</tr>
+</table>

@@ -1,0 +1,62 @@
+
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<b>Subject: </b>Nursing Facility CHOP Enrollment Welcome Letter
+</p>
+<p>
+Dear [[ProviderName]]:
+</p>
+<p>Welcome to Ohio Medicaid! As a result of the recent change of operator for [[EXITINGFACILITYNAME]] a new Medicaid ID has been assigned to [[ENTERINGFACILITYNAME]], the legal entity which took over operations effective [[CHOPEFFECTIVEDATE]].</P>
+<P>Effective [[CHOPEFFECTIVEDATE]], the Ohio Medicaid legacy number assigned to [[ENTERINGFACILITYNAME]] to operate [[ENTERINGDBANAME]] is: [[ENTERINMEDICAIDID]].  This number must be used for all billings for dates of service on and after [[CHOPEFFECTIVEDATE]].  The previous number [[EXITINGMEDICAIDID]] may only be used to process claims for dates of service on or before [[CHOPEFFECTIVEDATE]] delivered by [[EXITINGFACILITYNAME]] [[EXITINGMEDICAIDID]].  Please keep in mind that the deadline for claims submission is one year from the date of service.</p>
+<p>Please allow 10 business days before submitting claims under the new provider number.</p>
+<p>Federal law requires providers of health care and health plans to be in compliance with the National Provider Identifier (NPI) regulations.  Nursing Facility claims submitted to ODM (Ohio Department of Medicaid)  will be denied if the facility's NPI number is not in the required field(s) on the claim.  Additional information regarding NPIs can be obtained by accessing the ODM website: <a Href="http://medicaid.ohio.gov/">http://medicaid.ohio.gov/</a> .</p>
+<p>Thank you for your participation and your efforts to maintain and improve the health of Ohio residents. We welcome your feedback regarding your experience with the provider enrollment process.<font color="red"> Please complete a brief survey to provide feedback on your provider web portal experience by clicking <a style="color:#FF0000;" href="https://maximus.surveymonkey.com/r/ZR2LK9W">here</a>.</font></p>
+<p>If you have any questions, please e-mail <a href="LTCProviderManagement@medicaid.ohio.gov">LTCProviderManagement@medicaid.ohio.gov</a> .</p>
+
+Sincerely,<br />
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Director_Signature.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<br/>
+The Ohio Department of Medicaid<br />
+</br>
+
+</td>
+</tr>
+</table>
+

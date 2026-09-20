@@ -1,0 +1,2493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PDMSService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:2641/PDMSService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2641/PDMSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost:2641/PDMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2641/PDMSService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:2641/PDMSService.svc?xsd=xsd4" />
+      <xsd:import schemaLocation="http://localhost:2641/PDMSService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/MAXIMUS.Services.PDMS" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPDMSService_InsertRetrieveProviders_Response_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRetrieveProviders_Response" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertRetrieveProviders_Response_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRetrieveProviders_ResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertRetrieveProviders_Response_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/System" name="detail" element="q1:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectAddressType_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAddressType" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectAddressType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAddressTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectAddressType_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/System" name="detail" element="q2:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectPhoneType_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectPhoneType" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectPhoneType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectPhoneTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectPhoneType_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/System" name="detail" element="q3:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectTransmissionType_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectTransmissionType" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectTransmissionType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectTransmissionTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectTransmissionType_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/System" name="detail" element="q4:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetAppSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppSetting" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetAppSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetAppSetting_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/System" name="detail" element="q5:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetAddressStagingTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressStagingTypes" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetAddressStagingTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressStagingTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetAddressStagingTypes_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/System" name="detail" element="q6:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptyStagingProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmptyStagingProvider" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptyStagingProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmptyStagingProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptyStagingProvider_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/System" name="detail" element="q7:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetStagingProviderById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStagingProviderById" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetStagingProviderById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStagingProviderByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetStagingProviderById_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/System" name="detail" element="q8:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SubmitStagingProviders_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitStagingProviders" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SubmitStagingProviders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitStagingProvidersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SubmitStagingProviders_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/System" name="detail" element="q9:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetRosterExceptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRosterExceptions" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetRosterExceptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRosterExceptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetRosterExceptions_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/System" name="detail" element="q10:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_TestException_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestException" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_TestException_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestExceptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_TestException_ServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/MAXIMUS.Services.PDMS" name="detail" element="q11:ServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetDashboardStats_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboardStats" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetDashboardStats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboardStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetDashboardStats_ServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/MAXIMUS.Services.PDMS" name="detail" element="q12:ServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetDashboardStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboardStatistics" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetDashboardStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboardStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetDashboardStatistics_ServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/MAXIMUS.Services.PDMS" name="detail" element="q13:ServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEnvironment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnvironment" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEnvironment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnvironmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEnvironment_ServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/MAXIMUS.Services.PDMS" name="detail" element="q14:ServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetUIHeader_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUIHeader" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetUIHeader_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUIHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetUIHeader_ServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/MAXIMUS.Services.PDMS" name="detail" element="q15:ServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptyPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmptyPerson" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptyPerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmptyPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptyPerson_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/System" name="detail" element="q16:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPersonsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonsString" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPersonsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonsStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPersonsString_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/System" name="detail" element="q17:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPersonById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonById" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPersonById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPersonById_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/System" name="detail" element="q18:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPersons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersons" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPersons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPersons_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/System" name="detail" element="q19:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchProviderWithIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProviderWithIds" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchProviderWithIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProviderWithIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchProviderWithIds_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/System" name="detail" element="q20:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchProviders_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProviders" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchProviders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProvidersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchProviders_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/System" name="detail" element="q21:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchServiceLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchServiceLocations" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchServiceLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchServiceLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchServiceLocations_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/System" name="detail" element="q22:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchErrorWithIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchErrorWithIds" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchErrorWithIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchErrorWithIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchErrorWithIds_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/System" name="detail" element="q23:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchErrors_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchErrors" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchErrors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchErrorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SearchErrors_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/System" name="detail" element="q24:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectDEAByPartyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectDEAByPartyId" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectDEAByPartyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectDEAByPartyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectDEAByPartyId_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/System" name="detail" element="q25:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectLicenseByPartyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectLicenseByPartyId" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectLicenseByPartyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectLicenseByPartyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectLicenseByPartyId_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/System" name="detail" element="q26:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectSpecialtyByPartyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectSpecialtyByPartyId" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectSpecialtyByPartyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectSpecialtyByPartyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectSpecialtyByPartyId_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/System" name="detail" element="q27:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProvider" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectProvider_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/System" name="detail" element="q28:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectProviderNotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProviderNotes" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectProviderNotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProviderNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectProviderNotes_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/System" name="detail" element="q29:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectProviderNotesByNoteID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProviderNotesByNoteID" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectProviderNotesByNoteID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProviderNotesByNoteIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SelectProviderNotesByNoteID_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/System" name="detail" element="q30:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPartyErrorHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartyErrorHistory" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPartyErrorHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartyErrorHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPartyErrorHistory_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/System" name="detail" element="q31:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_ValidNPI_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidNPI" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_ValidNPI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidNPIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_ValidNPI_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/System" name="detail" element="q32:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_EmailNotify_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmailNotify" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_EmailNotify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmailNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_EmailNotify_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/System" name="detail" element="q33:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_OverrideErrorSubmitRoster_InputMessage">
+    <wsdl:part name="parameters" element="tns:OverrideErrorSubmitRoster" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_OverrideErrorSubmitRoster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OverrideErrorSubmitRosterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_OverrideErrorSubmitRoster_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/System" name="detail" element="q34:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_OverrideError_InputMessage">
+    <wsdl:part name="parameters" element="tns:OverrideError" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_OverrideError_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OverrideErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_OverrideError_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/System" name="detail" element="q35:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetUpdateRecordOption_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUpdateRecordOption" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetUpdateRecordOption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUpdateRecordOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetUpdateRecordOption_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/System" name="detail" element="q36:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecord" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateRecord_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/System" name="detail" element="q37:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateProviderID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProviderID" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateProviderID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProviderIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateProviderID_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/System" name="detail" element="q38:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateMMISStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMMISStatus" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateMMISStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMMISStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateMMISStatus_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/System" name="detail" element="q39:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateMMISServiceLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMMISServiceLocation" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateMMISServiceLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMMISServiceLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateMMISServiceLocation_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/System" name="detail" element="q40:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateError_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateError" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateError_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdateError_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/System" name="detail" element="q41:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdatePDMSStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePDMSStatus" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdatePDMSStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePDMSStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_UpdatePDMSStatus_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/System" name="detail" element="q42:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_TerminateProviderRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:TerminateProviderRecord" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_TerminateProviderRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TerminateProviderRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_TerminateProviderRecord_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/System" name="detail" element="q43:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertPartyError_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPartyError" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertPartyError_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPartyErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertPartyError_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.datacontract.org/2004/07/System" name="detail" element="q44:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertProviderNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProviderNote" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertProviderNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProviderNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertProviderNote_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.datacontract.org/2004/07/System" name="detail" element="q45:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptyReturnRoster_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmptyReturnRoster" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptyReturnRoster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmptyReturnRosterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptyReturnRoster_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.datacontract.org/2004/07/System" name="detail" element="q46:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetReturnRosterById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReturnRosterById" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetReturnRosterById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReturnRosterByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetReturnRosterById_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.datacontract.org/2004/07/System" name="detail" element="q47:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetSubmitRosterByNPI_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubmitRosterByNPI" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetSubmitRosterByNPI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubmitRosterByNPIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetSubmitRosterByNPI_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.datacontract.org/2004/07/System" name="detail" element="q48:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMMISMatch" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMMISMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISMatch_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.datacontract.org/2004/07/System" name="detail" element="q49:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISServiceAddressByNPI_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMMISServiceAddressByNPI" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISServiceAddressByNPI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMMISServiceAddressByNPIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISServiceAddressByNPI_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.datacontract.org/2004/07/System" name="detail" element="q50:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISServiceAddressByValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMMISServiceAddressByValues" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISServiceAddressByValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMMISServiceAddressByValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISServiceAddressByValues_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://schemas.datacontract.org/2004/07/System" name="detail" element="q51:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetServiceAddresses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceAddresses" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetServiceAddresses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetServiceAddresses_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://schemas.datacontract.org/2004/07/System" name="detail" element="q52:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetReturnRosterProviderStatuses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReturnRosterProviderStatuses" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetReturnRosterProviderStatuses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReturnRosterProviderStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetReturnRosterProviderStatuses_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://schemas.datacontract.org/2004/07/System" name="detail" element="q53:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetReturnRosterStatuses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReturnRosterStatuses" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetReturnRosterStatuses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReturnRosterStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetReturnRosterStatuses_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://schemas.datacontract.org/2004/07/System" name="detail" element="q54:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SaveMMISData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMMISData" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SaveMMISData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMMISDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SaveMMISData_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://schemas.datacontract.org/2004/07/System" name="detail" element="q55:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SaveMMISDataOptional_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMMISDataOptional" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SaveMMISDataOptional_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMMISDataOptionalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SaveMMISDataOptional_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://schemas.datacontract.org/2004/07/System" name="detail" element="q56:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SavePartyStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePartyStatus" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SavePartyStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePartyStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SavePartyStatus_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q57="http://schemas.datacontract.org/2004/07/System" name="detail" element="q57:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SubmitReturnRosters_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitReturnRosters" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SubmitReturnRosters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitReturnRostersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SubmitReturnRosters_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://schemas.datacontract.org/2004/07/System" name="detail" element="q58:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetStates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStates" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetStates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetStates_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q59="http://schemas.datacontract.org/2004/07/System" name="detail" element="q59:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetCAQHErrors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCAQHErrors" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetCAQHErrors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCAQHErrorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetCAQHErrors_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://schemas.datacontract.org/2004/07/System" name="detail" element="q60:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetCAQHStatuses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCAQHStatuses" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetCAQHStatuses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCAQHStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetCAQHStatuses_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q61="http://schemas.datacontract.org/2004/07/System" name="detail" element="q61:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISErrors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMMISErrors" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISErrors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMMISErrorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISErrors_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q62="http://schemas.datacontract.org/2004/07/System" name="detail" element="q62:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISStatuses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMMISStatuses" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISStatuses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMMISStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISStatuses_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q63="http://schemas.datacontract.org/2004/07/System" name="detail" element="q63:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetProviderTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderTypes" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetProviderTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetProviderTypes_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q64="http://schemas.datacontract.org/2004/07/System" name="detail" element="q64:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPDMSStatuses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPDMSStatuses" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPDMSStatuses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPDMSStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPDMSStatuses_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q65="http://schemas.datacontract.org/2004/07/System" name="detail" element="q65:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPDMSErrors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPDMSErrors" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPDMSErrors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPDMSErrorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetPDMSErrors_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q66="http://schemas.datacontract.org/2004/07/System" name="detail" element="q66:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEnrollmentRejectReasons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentRejectReasons" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEnrollmentRejectReasons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentRejectReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEnrollmentRejectReasons_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q67="http://schemas.datacontract.org/2004/07/System" name="detail" element="q67:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetResolvingActionTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResolvingActionTypes" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetResolvingActionTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResolvingActionTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetResolvingActionTypes_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q68="http://schemas.datacontract.org/2004/07/System" name="detail" element="q68:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetResolvingReasonTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResolvingReasonTypes" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetResolvingReasonTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResolvingReasonTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetResolvingReasonTypes_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q69="http://schemas.datacontract.org/2004/07/System" name="detail" element="q69:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISEnrollmentStatuses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMMISEnrollmentStatuses" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISEnrollmentStatuses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMMISEnrollmentStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetMMISEnrollmentStatuses_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q70="http://schemas.datacontract.org/2004/07/System" name="detail" element="q70:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetDocumentTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypes" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetDocumentTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetDocumentTypes_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q71="http://schemas.datacontract.org/2004/07/System" name="detail" element="q71:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorTypes" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorTypes_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q72="http://schemas.datacontract.org/2004/07/System" name="detail" element="q72:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorResolvingActions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorResolvingActions" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorResolvingActions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorResolvingActionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorResolvingActions_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q73="http://schemas.datacontract.org/2004/07/System" name="detail" element="q73:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorStatusTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorStatusTypes" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorStatusTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorStatusTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorStatusTypes_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q74="http://schemas.datacontract.org/2004/07/System" name="detail" element="q74:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorCategoryTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorCategoryTypes" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorCategoryTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorCategoryTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorCategoryTypes_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q75="http://schemas.datacontract.org/2004/07/System" name="detail" element="q75:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorDispositions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorDispositions" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorDispositions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorDispositionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetErrorDispositions_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q76="http://schemas.datacontract.org/2004/07/System" name="detail" element="q76:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetProviderNoteTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderNoteTypes" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetProviderNoteTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderNoteTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetProviderNoteTypes_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q77="http://schemas.datacontract.org/2004/07/System" name="detail" element="q77:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_CheckSubmitRoster_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSubmitRoster" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_CheckSubmitRoster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSubmitRosterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_CheckSubmitRoster_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q78="http://schemas.datacontract.org/2004/07/System" name="detail" element="q78:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptySubmitRoster_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmptySubmitRoster" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptySubmitRoster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmptySubmitRosterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptySubmitRoster_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q79="http://schemas.datacontract.org/2004/07/System" name="detail" element="q79:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptyServiceAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmptyServiceAddress" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptyServiceAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmptyServiceAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetEmptyServiceAddress_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q80="http://schemas.datacontract.org/2004/07/System" name="detail" element="q80:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetSubmitRosterById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubmitRosterById" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetSubmitRosterById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubmitRosterByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetSubmitRosterById_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q81="http://schemas.datacontract.org/2004/07/System" name="detail" element="q81:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_AddSubmitRosterExisting_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSubmitRosterExisting" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_AddSubmitRosterExisting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSubmitRosterExistingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_AddSubmitRosterExisting_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q82="http://schemas.datacontract.org/2004/07/System" name="detail" element="q82:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SubmitSubmitRosters_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitSubmitRosters" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SubmitSubmitRosters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitSubmitRostersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SubmitSubmitRosters_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q83="http://schemas.datacontract.org/2004/07/System" name="detail" element="q83:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SubmitServiceAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitServiceAddress" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SubmitServiceAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitServiceAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_SubmitServiceAddress_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q84="http://schemas.datacontract.org/2004/07/System" name="detail" element="q84:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAddress" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertAddress_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q85="http://schemas.datacontract.org/2004/07/System" name="detail" element="q85:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertProviderGroupAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProviderGroupAddress" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertProviderGroupAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProviderGroupAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertProviderGroupAddress_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q86="http://schemas.datacontract.org/2004/07/System" name="detail" element="q86:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertDEA_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDEA" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertDEA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDEAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertDEA_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q87="http://schemas.datacontract.org/2004/07/System" name="detail" element="q87:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertLicense_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertLicense" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertLicense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertLicense_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q88="http://schemas.datacontract.org/2004/07/System" name="detail" element="q88:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertPhone_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPhone" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertPhone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertPhone_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q89="http://schemas.datacontract.org/2004/07/System" name="detail" element="q89:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertImportedFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertImportedFolder" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertImportedFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertImportedFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertImportedFolder_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q90="http://schemas.datacontract.org/2004/07/System" name="detail" element="q90:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetImportedFolderNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImportedFolderNames" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetImportedFolderNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImportedFolderNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_GetImportedFolderNames_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q91="http://schemas.datacontract.org/2004/07/System" name="detail" element="q91:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertProviderGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProviderGroup" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertProviderGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProviderGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertProviderGroup_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q92="http://schemas.datacontract.org/2004/07/System" name="detail" element="q92:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertSubmitProviders_Request_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSubmitProviders_Request" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertSubmitProviders_Request_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSubmitProviders_RequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertSubmitProviders_Request_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q93="http://schemas.datacontract.org/2004/07/System" name="detail" element="q93:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertSubmitProviders_Response_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSubmitProviders_Response" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertSubmitProviders_Response_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSubmitProviders_ResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertSubmitProviders_Response_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q94="http://schemas.datacontract.org/2004/07/System" name="detail" element="q94:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertRetrieveProviders_Request_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRetrieveProviders_Request" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertRetrieveProviders_Request_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRetrieveProviders_RequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPDMSService_InsertRetrieveProviders_Request_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q95="http://schemas.datacontract.org/2004/07/System" name="detail" element="q95:Exception" />
+  </wsdl:message>
+  <wsdl:portType name="IPDMSService">
+    <wsdl:operation name="InsertRetrieveProviders_Response">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/InsertRetrieveProviders_Response" message="tns:IPDMSService_InsertRetrieveProviders_Response_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/InsertRetrieveProviders_ResponseResponse" message="tns:IPDMSService_InsertRetrieveProviders_Response_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/InsertRetrieveProviders_ResponseExceptionFault" name="ExceptionFault" message="tns:IPDMSService_InsertRetrieveProviders_Response_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAddressType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SelectAddressType" message="tns:IPDMSService_SelectAddressType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SelectAddressTypeResponse" message="tns:IPDMSService_SelectAddressType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SelectAddressTypeExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SelectAddressType_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectPhoneType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SelectPhoneType" message="tns:IPDMSService_SelectPhoneType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SelectPhoneTypeResponse" message="tns:IPDMSService_SelectPhoneType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SelectPhoneTypeExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SelectPhoneType_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectTransmissionType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SelectTransmissionType" message="tns:IPDMSService_SelectTransmissionType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SelectTransmissionTypeResponse" message="tns:IPDMSService_SelectTransmissionType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SelectTransmissionTypeExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SelectTransmissionType_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetAppSetting" message="tns:IPDMSService_GetAppSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetAppSettingResponse" message="tns:IPDMSService_GetAppSetting_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetAppSettingExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetAppSetting_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressStagingTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetAddressStagingTypes" message="tns:IPDMSService_GetAddressStagingTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetAddressStagingTypesResponse" message="tns:IPDMSService_GetAddressStagingTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetAddressStagingTypesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetAddressStagingTypes_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmptyStagingProvider">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetEmptyStagingProvider" message="tns:IPDMSService_GetEmptyStagingProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetEmptyStagingProviderResponse" message="tns:IPDMSService_GetEmptyStagingProvider_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetEmptyStagingProviderExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetEmptyStagingProvider_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStagingProviderById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetStagingProviderById" message="tns:IPDMSService_GetStagingProviderById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetStagingProviderByIdResponse" message="tns:IPDMSService_GetStagingProviderById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetStagingProviderByIdExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetStagingProviderById_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitStagingProviders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SubmitStagingProviders" message="tns:IPDMSService_SubmitStagingProviders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SubmitStagingProvidersResponse" message="tns:IPDMSService_SubmitStagingProviders_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SubmitStagingProvidersExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SubmitStagingProviders_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRosterExceptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetRosterExceptions" message="tns:IPDMSService_GetRosterExceptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetRosterExceptionsResponse" message="tns:IPDMSService_GetRosterExceptions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetRosterExceptionsExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetRosterExceptions_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/TestException" message="tns:IPDMSService_TestException_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/TestExceptionResponse" message="tns:IPDMSService_TestException_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/TestExceptionServiceExceptionFault" name="ServiceExceptionFault" message="tns:IPDMSService_TestException_ServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboardStats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetDashboardStats" message="tns:IPDMSService_GetDashboardStats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetDashboardStatsResponse" message="tns:IPDMSService_GetDashboardStats_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetDashboardStatsServiceExceptionFault" name="ServiceExceptionFault" message="tns:IPDMSService_GetDashboardStats_ServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboardStatistics">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetDashboardStatistics" message="tns:IPDMSService_GetDashboardStatistics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetDashboardStatisticsResponse" message="tns:IPDMSService_GetDashboardStatistics_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetDashboardStatisticsServiceExceptionFault" name="ServiceExceptionFault" message="tns:IPDMSService_GetDashboardStatistics_ServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnvironment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetEnvironment" message="tns:IPDMSService_GetEnvironment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetEnvironmentResponse" message="tns:IPDMSService_GetEnvironment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetEnvironmentServiceExceptionFault" name="ServiceExceptionFault" message="tns:IPDMSService_GetEnvironment_ServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUIHeader">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetUIHeader" message="tns:IPDMSService_GetUIHeader_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetUIHeaderResponse" message="tns:IPDMSService_GetUIHeader_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetUIHeaderServiceExceptionFault" name="ServiceExceptionFault" message="tns:IPDMSService_GetUIHeader_ServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmptyPerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetEmptyPerson" message="tns:IPDMSService_GetEmptyPerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetEmptyPersonResponse" message="tns:IPDMSService_GetEmptyPerson_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetEmptyPersonExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetEmptyPerson_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonsString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetPersonsString" message="tns:IPDMSService_GetPersonsString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetPersonsStringResponse" message="tns:IPDMSService_GetPersonsString_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetPersonsStringExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetPersonsString_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetPersonById" message="tns:IPDMSService_GetPersonById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetPersonByIdResponse" message="tns:IPDMSService_GetPersonById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetPersonByIdExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetPersonById_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetPersons" message="tns:IPDMSService_GetPersons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetPersonsResponse" message="tns:IPDMSService_GetPersons_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetPersonsExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetPersons_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProviderWithIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SearchProviderWithIds" message="tns:IPDMSService_SearchProviderWithIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SearchProviderWithIdsResponse" message="tns:IPDMSService_SearchProviderWithIds_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SearchProviderWithIdsExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SearchProviderWithIds_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProviders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SearchProviders" message="tns:IPDMSService_SearchProviders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SearchProvidersResponse" message="tns:IPDMSService_SearchProviders_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SearchProvidersExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SearchProviders_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchServiceLocations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SearchServiceLocations" message="tns:IPDMSService_SearchServiceLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SearchServiceLocationsResponse" message="tns:IPDMSService_SearchServiceLocations_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SearchServiceLocationsExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SearchServiceLocations_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchErrorWithIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SearchErrorWithIds" message="tns:IPDMSService_SearchErrorWithIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SearchErrorWithIdsResponse" message="tns:IPDMSService_SearchErrorWithIds_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SearchErrorWithIdsExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SearchErrorWithIds_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchErrors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SearchErrors" message="tns:IPDMSService_SearchErrors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SearchErrorsResponse" message="tns:IPDMSService_SearchErrors_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SearchErrorsExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SearchErrors_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectDEAByPartyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SelectDEAByPartyId" message="tns:IPDMSService_SelectDEAByPartyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SelectDEAByPartyIdResponse" message="tns:IPDMSService_SelectDEAByPartyId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SelectDEAByPartyIdExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SelectDEAByPartyId_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectLicenseByPartyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SelectLicenseByPartyId" message="tns:IPDMSService_SelectLicenseByPartyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SelectLicenseByPartyIdResponse" message="tns:IPDMSService_SelectLicenseByPartyId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SelectLicenseByPartyIdExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SelectLicenseByPartyId_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectSpecialtyByPartyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SelectSpecialtyByPartyId" message="tns:IPDMSService_SelectSpecialtyByPartyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SelectSpecialtyByPartyIdResponse" message="tns:IPDMSService_SelectSpecialtyByPartyId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SelectSpecialtyByPartyIdExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SelectSpecialtyByPartyId_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectProvider">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SelectProvider" message="tns:IPDMSService_SelectProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SelectProviderResponse" message="tns:IPDMSService_SelectProvider_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SelectProviderExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SelectProvider_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectProviderNotes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SelectProviderNotes" message="tns:IPDMSService_SelectProviderNotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SelectProviderNotesResponse" message="tns:IPDMSService_SelectProviderNotes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SelectProviderNotesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SelectProviderNotes_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectProviderNotesByNoteID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SelectProviderNotesByNoteID" message="tns:IPDMSService_SelectProviderNotesByNoteID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SelectProviderNotesByNoteIDResponse" message="tns:IPDMSService_SelectProviderNotesByNoteID_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SelectProviderNotesByNoteIDExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SelectProviderNotesByNoteID_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyErrorHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetPartyErrorHistory" message="tns:IPDMSService_GetPartyErrorHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetPartyErrorHistoryResponse" message="tns:IPDMSService_GetPartyErrorHistory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetPartyErrorHistoryExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetPartyErrorHistory_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidNPI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/ValidNPI" message="tns:IPDMSService_ValidNPI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/ValidNPIResponse" message="tns:IPDMSService_ValidNPI_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/ValidNPIExceptionFault" name="ExceptionFault" message="tns:IPDMSService_ValidNPI_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmailNotify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/EmailNotify" message="tns:IPDMSService_EmailNotify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/EmailNotifyResponse" message="tns:IPDMSService_EmailNotify_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/EmailNotifyExceptionFault" name="ExceptionFault" message="tns:IPDMSService_EmailNotify_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OverrideErrorSubmitRoster">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/OverrideErrorSubmitRoster" message="tns:IPDMSService_OverrideErrorSubmitRoster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/OverrideErrorSubmitRosterResponse" message="tns:IPDMSService_OverrideErrorSubmitRoster_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/OverrideErrorSubmitRosterExceptionFault" name="ExceptionFault" message="tns:IPDMSService_OverrideErrorSubmitRoster_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OverrideError">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/OverrideError" message="tns:IPDMSService_OverrideError_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/OverrideErrorResponse" message="tns:IPDMSService_OverrideError_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/OverrideErrorExceptionFault" name="ExceptionFault" message="tns:IPDMSService_OverrideError_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdateRecordOption">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetUpdateRecordOption" message="tns:IPDMSService_GetUpdateRecordOption_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetUpdateRecordOptionResponse" message="tns:IPDMSService_GetUpdateRecordOption_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetUpdateRecordOptionExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetUpdateRecordOption_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/UpdateRecord" message="tns:IPDMSService_UpdateRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/UpdateRecordResponse" message="tns:IPDMSService_UpdateRecord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/UpdateRecordExceptionFault" name="ExceptionFault" message="tns:IPDMSService_UpdateRecord_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProviderID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/UpdateProviderID" message="tns:IPDMSService_UpdateProviderID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/UpdateProviderIDResponse" message="tns:IPDMSService_UpdateProviderID_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/UpdateProviderIDExceptionFault" name="ExceptionFault" message="tns:IPDMSService_UpdateProviderID_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMMISStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/UpdateMMISStatus" message="tns:IPDMSService_UpdateMMISStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/UpdateMMISStatusResponse" message="tns:IPDMSService_UpdateMMISStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/UpdateMMISStatusExceptionFault" name="ExceptionFault" message="tns:IPDMSService_UpdateMMISStatus_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMMISServiceLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/UpdateMMISServiceLocation" message="tns:IPDMSService_UpdateMMISServiceLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/UpdateMMISServiceLocationResponse" message="tns:IPDMSService_UpdateMMISServiceLocation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/UpdateMMISServiceLocationExceptionFault" name="ExceptionFault" message="tns:IPDMSService_UpdateMMISServiceLocation_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateError">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/UpdateError" message="tns:IPDMSService_UpdateError_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/UpdateErrorResponse" message="tns:IPDMSService_UpdateError_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/UpdateErrorExceptionFault" name="ExceptionFault" message="tns:IPDMSService_UpdateError_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePDMSStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/UpdatePDMSStatus" message="tns:IPDMSService_UpdatePDMSStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/UpdatePDMSStatusResponse" message="tns:IPDMSService_UpdatePDMSStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/UpdatePDMSStatusExceptionFault" name="ExceptionFault" message="tns:IPDMSService_UpdatePDMSStatus_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TerminateProviderRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/TerminateProviderRecord" message="tns:IPDMSService_TerminateProviderRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/TerminateProviderRecordResponse" message="tns:IPDMSService_TerminateProviderRecord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/TerminateProviderRecordExceptionFault" name="ExceptionFault" message="tns:IPDMSService_TerminateProviderRecord_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPartyError">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/InsertPartyError" message="tns:IPDMSService_InsertPartyError_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/InsertPartyErrorResponse" message="tns:IPDMSService_InsertPartyError_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/InsertPartyErrorExceptionFault" name="ExceptionFault" message="tns:IPDMSService_InsertPartyError_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProviderNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/InsertProviderNote" message="tns:IPDMSService_InsertProviderNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/InsertProviderNoteResponse" message="tns:IPDMSService_InsertProviderNote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/InsertProviderNoteExceptionFault" name="ExceptionFault" message="tns:IPDMSService_InsertProviderNote_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmptyReturnRoster">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetEmptyReturnRoster" message="tns:IPDMSService_GetEmptyReturnRoster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetEmptyReturnRosterResponse" message="tns:IPDMSService_GetEmptyReturnRoster_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetEmptyReturnRosterExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetEmptyReturnRoster_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReturnRosterById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetReturnRosterById" message="tns:IPDMSService_GetReturnRosterById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetReturnRosterByIdResponse" message="tns:IPDMSService_GetReturnRosterById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetReturnRosterByIdExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetReturnRosterById_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubmitRosterByNPI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetSubmitRosterByNPI" message="tns:IPDMSService_GetSubmitRosterByNPI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetSubmitRosterByNPIResponse" message="tns:IPDMSService_GetSubmitRosterByNPI_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetSubmitRosterByNPIExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetSubmitRosterByNPI_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMMISMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetMMISMatch" message="tns:IPDMSService_GetMMISMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetMMISMatchResponse" message="tns:IPDMSService_GetMMISMatch_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetMMISMatchExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetMMISMatch_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMMISServiceAddressByNPI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetMMISServiceAddressByNPI" message="tns:IPDMSService_GetMMISServiceAddressByNPI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetMMISServiceAddressByNPIResponse" message="tns:IPDMSService_GetMMISServiceAddressByNPI_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetMMISServiceAddressByNPIExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetMMISServiceAddressByNPI_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMMISServiceAddressByValues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetMMISServiceAddressByValues" message="tns:IPDMSService_GetMMISServiceAddressByValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetMMISServiceAddressByValuesResponse" message="tns:IPDMSService_GetMMISServiceAddressByValues_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetMMISServiceAddressByValuesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetMMISServiceAddressByValues_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceAddresses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetServiceAddresses" message="tns:IPDMSService_GetServiceAddresses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetServiceAddressesResponse" message="tns:IPDMSService_GetServiceAddresses_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetServiceAddressesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetServiceAddresses_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReturnRosterProviderStatuses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetReturnRosterProviderStatuses" message="tns:IPDMSService_GetReturnRosterProviderStatuses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetReturnRosterProviderStatusesResponse" message="tns:IPDMSService_GetReturnRosterProviderStatuses_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetReturnRosterProviderStatusesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetReturnRosterProviderStatuses_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReturnRosterStatuses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetReturnRosterStatuses" message="tns:IPDMSService_GetReturnRosterStatuses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetReturnRosterStatusesResponse" message="tns:IPDMSService_GetReturnRosterStatuses_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetReturnRosterStatusesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetReturnRosterStatuses_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMMISData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SaveMMISData" message="tns:IPDMSService_SaveMMISData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SaveMMISDataResponse" message="tns:IPDMSService_SaveMMISData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SaveMMISDataExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SaveMMISData_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMMISDataOptional">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SaveMMISDataOptional" message="tns:IPDMSService_SaveMMISDataOptional_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SaveMMISDataOptionalResponse" message="tns:IPDMSService_SaveMMISDataOptional_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SaveMMISDataOptionalExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SaveMMISDataOptional_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePartyStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SavePartyStatus" message="tns:IPDMSService_SavePartyStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SavePartyStatusResponse" message="tns:IPDMSService_SavePartyStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SavePartyStatusExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SavePartyStatus_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitReturnRosters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SubmitReturnRosters" message="tns:IPDMSService_SubmitReturnRosters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SubmitReturnRostersResponse" message="tns:IPDMSService_SubmitReturnRosters_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SubmitReturnRostersExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SubmitReturnRosters_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetStates" message="tns:IPDMSService_GetStates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetStatesResponse" message="tns:IPDMSService_GetStates_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetStatesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetStates_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCAQHErrors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetCAQHErrors" message="tns:IPDMSService_GetCAQHErrors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetCAQHErrorsResponse" message="tns:IPDMSService_GetCAQHErrors_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetCAQHErrorsExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetCAQHErrors_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCAQHStatuses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetCAQHStatuses" message="tns:IPDMSService_GetCAQHStatuses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetCAQHStatusesResponse" message="tns:IPDMSService_GetCAQHStatuses_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetCAQHStatusesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetCAQHStatuses_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMMISErrors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetMMISErrors" message="tns:IPDMSService_GetMMISErrors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetMMISErrorsResponse" message="tns:IPDMSService_GetMMISErrors_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetMMISErrorsExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetMMISErrors_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMMISStatuses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetMMISStatuses" message="tns:IPDMSService_GetMMISStatuses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetMMISStatusesResponse" message="tns:IPDMSService_GetMMISStatuses_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetMMISStatusesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetMMISStatuses_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetProviderTypes" message="tns:IPDMSService_GetProviderTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetProviderTypesResponse" message="tns:IPDMSService_GetProviderTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetProviderTypesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetProviderTypes_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPDMSStatuses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetPDMSStatuses" message="tns:IPDMSService_GetPDMSStatuses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetPDMSStatusesResponse" message="tns:IPDMSService_GetPDMSStatuses_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetPDMSStatusesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetPDMSStatuses_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPDMSErrors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetPDMSErrors" message="tns:IPDMSService_GetPDMSErrors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetPDMSErrorsResponse" message="tns:IPDMSService_GetPDMSErrors_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetPDMSErrorsExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetPDMSErrors_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentRejectReasons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetEnrollmentRejectReasons" message="tns:IPDMSService_GetEnrollmentRejectReasons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetEnrollmentRejectReasonsResponse" message="tns:IPDMSService_GetEnrollmentRejectReasons_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetEnrollmentRejectReasonsExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetEnrollmentRejectReasons_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResolvingActionTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetResolvingActionTypes" message="tns:IPDMSService_GetResolvingActionTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetResolvingActionTypesResponse" message="tns:IPDMSService_GetResolvingActionTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetResolvingActionTypesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetResolvingActionTypes_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResolvingReasonTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetResolvingReasonTypes" message="tns:IPDMSService_GetResolvingReasonTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetResolvingReasonTypesResponse" message="tns:IPDMSService_GetResolvingReasonTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetResolvingReasonTypesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetResolvingReasonTypes_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMMISEnrollmentStatuses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetMMISEnrollmentStatuses" message="tns:IPDMSService_GetMMISEnrollmentStatuses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetMMISEnrollmentStatusesResponse" message="tns:IPDMSService_GetMMISEnrollmentStatuses_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetMMISEnrollmentStatusesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetMMISEnrollmentStatuses_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetDocumentTypes" message="tns:IPDMSService_GetDocumentTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetDocumentTypesResponse" message="tns:IPDMSService_GetDocumentTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetDocumentTypesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetDocumentTypes_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetErrorTypes" message="tns:IPDMSService_GetErrorTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetErrorTypesResponse" message="tns:IPDMSService_GetErrorTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetErrorTypesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetErrorTypes_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorResolvingActions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetErrorResolvingActions" message="tns:IPDMSService_GetErrorResolvingActions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetErrorResolvingActionsResponse" message="tns:IPDMSService_GetErrorResolvingActions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetErrorResolvingActionsExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetErrorResolvingActions_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorStatusTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetErrorStatusTypes" message="tns:IPDMSService_GetErrorStatusTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetErrorStatusTypesResponse" message="tns:IPDMSService_GetErrorStatusTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetErrorStatusTypesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetErrorStatusTypes_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorCategoryTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetErrorCategoryTypes" message="tns:IPDMSService_GetErrorCategoryTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetErrorCategoryTypesResponse" message="tns:IPDMSService_GetErrorCategoryTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetErrorCategoryTypesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetErrorCategoryTypes_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorDispositions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetErrorDispositions" message="tns:IPDMSService_GetErrorDispositions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetErrorDispositionsResponse" message="tns:IPDMSService_GetErrorDispositions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetErrorDispositionsExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetErrorDispositions_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderNoteTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetProviderNoteTypes" message="tns:IPDMSService_GetProviderNoteTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetProviderNoteTypesResponse" message="tns:IPDMSService_GetProviderNoteTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetProviderNoteTypesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetProviderNoteTypes_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSubmitRoster">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/CheckSubmitRoster" message="tns:IPDMSService_CheckSubmitRoster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/CheckSubmitRosterResponse" message="tns:IPDMSService_CheckSubmitRoster_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/CheckSubmitRosterExceptionFault" name="ExceptionFault" message="tns:IPDMSService_CheckSubmitRoster_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmptySubmitRoster">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetEmptySubmitRoster" message="tns:IPDMSService_GetEmptySubmitRoster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetEmptySubmitRosterResponse" message="tns:IPDMSService_GetEmptySubmitRoster_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetEmptySubmitRosterExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetEmptySubmitRoster_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmptyServiceAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetEmptyServiceAddress" message="tns:IPDMSService_GetEmptyServiceAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetEmptyServiceAddressResponse" message="tns:IPDMSService_GetEmptyServiceAddress_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetEmptyServiceAddressExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetEmptyServiceAddress_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubmitRosterById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetSubmitRosterById" message="tns:IPDMSService_GetSubmitRosterById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetSubmitRosterByIdResponse" message="tns:IPDMSService_GetSubmitRosterById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetSubmitRosterByIdExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetSubmitRosterById_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSubmitRosterExisting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/AddSubmitRosterExisting" message="tns:IPDMSService_AddSubmitRosterExisting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/AddSubmitRosterExistingResponse" message="tns:IPDMSService_AddSubmitRosterExisting_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/AddSubmitRosterExistingExceptionFault" name="ExceptionFault" message="tns:IPDMSService_AddSubmitRosterExisting_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitSubmitRosters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SubmitSubmitRosters" message="tns:IPDMSService_SubmitSubmitRosters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SubmitSubmitRostersResponse" message="tns:IPDMSService_SubmitSubmitRosters_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SubmitSubmitRostersExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SubmitSubmitRosters_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitServiceAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/SubmitServiceAddress" message="tns:IPDMSService_SubmitServiceAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/SubmitServiceAddressResponse" message="tns:IPDMSService_SubmitServiceAddress_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/SubmitServiceAddressExceptionFault" name="ExceptionFault" message="tns:IPDMSService_SubmitServiceAddress_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/InsertAddress" message="tns:IPDMSService_InsertAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/InsertAddressResponse" message="tns:IPDMSService_InsertAddress_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/InsertAddressExceptionFault" name="ExceptionFault" message="tns:IPDMSService_InsertAddress_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProviderGroupAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/InsertProviderGroupAddress" message="tns:IPDMSService_InsertProviderGroupAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/InsertProviderGroupAddressResponse" message="tns:IPDMSService_InsertProviderGroupAddress_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/InsertProviderGroupAddressExceptionFault" name="ExceptionFault" message="tns:IPDMSService_InsertProviderGroupAddress_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDEA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/InsertDEA" message="tns:IPDMSService_InsertDEA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/InsertDEAResponse" message="tns:IPDMSService_InsertDEA_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/InsertDEAExceptionFault" name="ExceptionFault" message="tns:IPDMSService_InsertDEA_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLicense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/InsertLicense" message="tns:IPDMSService_InsertLicense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/InsertLicenseResponse" message="tns:IPDMSService_InsertLicense_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/InsertLicenseExceptionFault" name="ExceptionFault" message="tns:IPDMSService_InsertLicense_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPhone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/InsertPhone" message="tns:IPDMSService_InsertPhone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/InsertPhoneResponse" message="tns:IPDMSService_InsertPhone_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/InsertPhoneExceptionFault" name="ExceptionFault" message="tns:IPDMSService_InsertPhone_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertImportedFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/InsertImportedFolder" message="tns:IPDMSService_InsertImportedFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/InsertImportedFolderResponse" message="tns:IPDMSService_InsertImportedFolder_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/InsertImportedFolderExceptionFault" name="ExceptionFault" message="tns:IPDMSService_InsertImportedFolder_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImportedFolderNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/GetImportedFolderNames" message="tns:IPDMSService_GetImportedFolderNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/GetImportedFolderNamesResponse" message="tns:IPDMSService_GetImportedFolderNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/GetImportedFolderNamesExceptionFault" name="ExceptionFault" message="tns:IPDMSService_GetImportedFolderNames_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProviderGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/InsertProviderGroup" message="tns:IPDMSService_InsertProviderGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/InsertProviderGroupResponse" message="tns:IPDMSService_InsertProviderGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/InsertProviderGroupExceptionFault" name="ExceptionFault" message="tns:IPDMSService_InsertProviderGroup_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubmitProviders_Request">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/InsertSubmitProviders_Request" message="tns:IPDMSService_InsertSubmitProviders_Request_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/InsertSubmitProviders_RequestResponse" message="tns:IPDMSService_InsertSubmitProviders_Request_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/InsertSubmitProviders_RequestExceptionFault" name="ExceptionFault" message="tns:IPDMSService_InsertSubmitProviders_Request_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubmitProviders_Response">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/InsertSubmitProviders_Response" message="tns:IPDMSService_InsertSubmitProviders_Response_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/InsertSubmitProviders_ResponseResponse" message="tns:IPDMSService_InsertSubmitProviders_Response_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/InsertSubmitProviders_ResponseExceptionFault" name="ExceptionFault" message="tns:IPDMSService_InsertSubmitProviders_Response_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRetrieveProviders_Request">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPDMSService/InsertRetrieveProviders_Request" message="tns:IPDMSService_InsertRetrieveProviders_Request_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPDMSService/InsertRetrieveProviders_RequestResponse" message="tns:IPDMSService_InsertRetrieveProviders_Request_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPDMSService/InsertRetrieveProviders_RequestExceptionFault" name="ExceptionFault" message="tns:IPDMSService_InsertRetrieveProviders_Request_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPDMSService" type="tns:IPDMSService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertRetrieveProviders_Response">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/InsertRetrieveProviders_Response" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAddressType">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SelectAddressType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SelectPhoneType">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SelectPhoneType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SelectTransmissionType">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SelectTransmissionType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppSetting">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetAppSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressStagingTypes">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetAddressStagingTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmptyStagingProvider">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetEmptyStagingProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStagingProviderById">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetStagingProviderById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitStagingProviders">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SubmitStagingProviders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRosterExceptions">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetRosterExceptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/TestException" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceExceptionFault">
+        <soap:fault use="literal" name="ServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboardStats">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetDashboardStats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceExceptionFault">
+        <soap:fault use="literal" name="ServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboardStatistics">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetDashboardStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceExceptionFault">
+        <soap:fault use="literal" name="ServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnvironment">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetEnvironment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceExceptionFault">
+        <soap:fault use="literal" name="ServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUIHeader">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetUIHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceExceptionFault">
+        <soap:fault use="literal" name="ServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmptyPerson">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetEmptyPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonsString">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetPersonsString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonById">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetPersonById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersons">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetPersons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProviderWithIds">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SearchProviderWithIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProviders">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SearchProviders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchServiceLocations">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SearchServiceLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchErrorWithIds">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SearchErrorWithIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchErrors">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SearchErrors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SelectDEAByPartyId">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SelectDEAByPartyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SelectLicenseByPartyId">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SelectLicenseByPartyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SelectSpecialtyByPartyId">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SelectSpecialtyByPartyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SelectProvider">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SelectProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SelectProviderNotes">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SelectProviderNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SelectProviderNotesByNoteID">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SelectProviderNotesByNoteID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyErrorHistory">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetPartyErrorHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidNPI">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/ValidNPI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EmailNotify">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/EmailNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OverrideErrorSubmitRoster">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/OverrideErrorSubmitRoster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OverrideError">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/OverrideError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdateRecordOption">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetUpdateRecordOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecord">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/UpdateRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProviderID">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/UpdateProviderID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMMISStatus">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/UpdateMMISStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMMISServiceLocation">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/UpdateMMISServiceLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateError">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/UpdateError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePDMSStatus">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/UpdatePDMSStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="TerminateProviderRecord">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/TerminateProviderRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPartyError">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/InsertPartyError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProviderNote">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/InsertProviderNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmptyReturnRoster">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetEmptyReturnRoster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetReturnRosterById">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetReturnRosterById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubmitRosterByNPI">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetSubmitRosterByNPI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMMISMatch">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetMMISMatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMMISServiceAddressByNPI">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetMMISServiceAddressByNPI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMMISServiceAddressByValues">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetMMISServiceAddressByValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceAddresses">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetServiceAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetReturnRosterProviderStatuses">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetReturnRosterProviderStatuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetReturnRosterStatuses">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetReturnRosterStatuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMMISData">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SaveMMISData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMMISDataOptional">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SaveMMISDataOptional" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SavePartyStatus">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SavePartyStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitReturnRosters">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SubmitReturnRosters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCAQHErrors">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetCAQHErrors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCAQHStatuses">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetCAQHStatuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMMISErrors">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetMMISErrors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMMISStatuses">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetMMISStatuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderTypes">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetProviderTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPDMSStatuses">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetPDMSStatuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPDMSErrors">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetPDMSErrors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentRejectReasons">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetEnrollmentRejectReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetResolvingActionTypes">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetResolvingActionTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetResolvingReasonTypes">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetResolvingReasonTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMMISEnrollmentStatuses">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetMMISEnrollmentStatuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypes">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetDocumentTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorTypes">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetErrorTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorResolvingActions">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetErrorResolvingActions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorStatusTypes">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetErrorStatusTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorCategoryTypes">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetErrorCategoryTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorDispositions">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetErrorDispositions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderNoteTypes">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetProviderNoteTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSubmitRoster">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/CheckSubmitRoster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmptySubmitRoster">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetEmptySubmitRoster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmptyServiceAddress">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetEmptyServiceAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubmitRosterById">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetSubmitRosterById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddSubmitRosterExisting">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/AddSubmitRosterExisting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitSubmitRosters">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SubmitSubmitRosters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitServiceAddress">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/SubmitServiceAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAddress">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/InsertAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProviderGroupAddress">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/InsertProviderGroupAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDEA">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/InsertDEA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLicense">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/InsertLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPhone">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/InsertPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertImportedFolder">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/InsertImportedFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetImportedFolderNames">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/GetImportedFolderNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProviderGroup">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/InsertProviderGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubmitProviders_Request">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/InsertSubmitProviders_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubmitProviders_Response">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/InsertSubmitProviders_Response" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRetrieveProviders_Request">
+      <soap:operation soapAction="http://tempuri.org/IPDMSService/InsertRetrieveProviders_Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PDMSService">
+    <wsdl:port name="BasicHttpBinding_IPDMSService" binding="tns:BasicHttpBinding_IPDMSService">
+      <soap:address location="http://localhost:2641/PDMSService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

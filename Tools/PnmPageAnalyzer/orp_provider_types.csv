@@ -1,0 +1,61 @@
+Provider or Internal View,Page Name,Physician/Osteopath Individual,Physician/Osteopath Individual,Physician/Osteopath Individual,Physician/Osteopath Individual,Physician Assistant,Chiropractor Individual,Dentist Individual,Dentist Individual,Optometrist Individual,Podiatrist Individual ,Podiatrist Individual ,Podiatrist Individual ,Psychologist,Psychologist,Psychologist,Psychologist,Clinical Nurse Specialist Individual,Clinical Nurse Specialist Individual,Clinical Nurse Specialist Individual,Clinical Nurse Specialist Individual,Nurse Midwife Individual,Nurse Midwife Individual,Nurse Practitioner Individual,Nurse Practitioner Individual,Nurse Practitioner Individual,Nurse Practitioner Individual
+,PROVIDER TYPE,20,20,20,20,24,27,30,30,35,36,36,36,42,42,42,42,65,65,65,65,71,71,72,72,72,72
+,Yes,,760,761,762,,,,303,,,760,762,,422,423,424,,760,761,762,,760,,760,761,762
+Provider Entry/Provider Access Pages,Provider Information,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R
+Provider Entry/Provider Access Pages,Primary Contact Information,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R
+Provider Entry/Provider Access Pages,Credentialing Contact ,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,N,N,O,O,O,O,O,O
+Provider Entry/Provider Access Pages,CPC Contact ,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,Office Information,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O
+Provider Entry/Provider Access Pages,Primary Service Address,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R
+Provider Entry/Provider Access Pages,Billing Payment Address,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R
+Provider Entry/Provider Access Pages,Correspondence Address,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R
+Provider Entry/Provider Access Pages,Other Service Locations,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O
+Provider Entry/Provider Access Pages,1099 Address,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,Home Office Address,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R
+Provider Entry/Provider Access Pages,Long Term Care Addresses,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,Hospital Addresses,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,Provider Specialties Page,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R
+Provider Entry/Provider Access Pages,Provider Taxonomies Page,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R
+Provider Entry/Provider Access Pages,Professional License Page,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R
+Provider Entry/Provider Access Pages,Board Certifications,Conditional,Conditional,Conditional,Conditional,R,O,Conditional,Conditional,O,O,O,O,O,O,O,O,R,R,R,R,R,R,R,R,R,R
+Provider Entry/Provider Access Pages,CLIA Certifications,O,O,O,O,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,Medicare Page,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O
+Provider Entry/Provider Access Pages,Provider Type Behavioral Health,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,Pharmacy Provider,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,CPR and First Aid,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,DME Providers Page,N,R,R,R,N,N,N,N,N,N,R,R,N,N,N,N,N,R,R,R,N,R,N,R,R,R
+Provider Entry/Provider Access Pages,Provider Group Facility Hospital for Group Affiliations,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,Provider Group Facility Hospital for Individual Affiliations,Conditional,O,O,O,O,O,O,R,O,O,O,O,O,R,R,R,O,O,O,O,R,R,O,O,O,O
+Provider Entry/Provider Access Pages,MCP Affiliation Page,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O
+Provider Entry/Provider Access Pages,Nursing Facility Ventilator,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,Controlled Dangerous Substance (CDS),Conditional,Conditional,Conditional,Conditional,Conditional,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,Conditional,Conditional,Conditional,Conditional
+Provider Entry/Provider Access Pages,Federal Drug Enforcement Agency (DEA) Registration,R,R,R,R,O,N,R,R,N,O,O,O,N,N,N,N,O,O,O,O,O,O,N,N,O,O
+Provider Entry/Provider Access Pages,Professional Liability Insurance,R,R,R,R,R,R,R,R,R,R,R,N,R,R,R,R,R,R,N,N,R,R,R,R,N,N
+Provider Entry/Provider Access Pages,Education and Training,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R
+Provider Entry/Provider Access Pages,Malpractice Claims History,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R
+Provider Entry/Provider Access Pages,Work History,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R
+Provider Entry/Provider Access Pages,W9 Form,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,ACH Authorization Page,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,Application Fee,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,Ownership Disclosure,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,Document Upload,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O
+Provider Entry/Provider Access Pages,Provider Agreements,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R
+Provider Entry/Provider Access Pages,PDF,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O
+Provider Entry/Provider Access Pages,Provider User Account Maintenance,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O
+Provider Entry/Provider Access Pages,Provider Account Administration ,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O
+Provider Entry/Provider Access Pages,Provider Management Home,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O
+Provider Entry/Provider Access Pages,Provider Management Home - Provider Financials,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O
+Self Service,Hospice,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,Provider Management Home - Provider Payment Innovation Reports ,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O
+Provider Entry/Provider Access Pages,CPC Specialites,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,CPC Attestation,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Provider Entry/Provider Access Pages,CPC Practice Partnership,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Self Service,Remittance Advice,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Self Service,Provider Financials,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Self Service,Prior Auth,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Self Service,Claims,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Self Service,Recipient Eligiblity,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Self Service,Cost Reports and Rate settings,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Self Service,Provider Reports,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+Self Service,Provider Correspondance ,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O,O
+Self Service,Attachments,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N

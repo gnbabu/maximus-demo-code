@@ -1,0 +1,1195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8C8433D2-2E2C-4A6E-9F3F-82AD7665729F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Corp.Core.Libraries</RootNamespace>
+    <AssemblyName>Common</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Services3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\Microsoft.Web.Services3.3.0.0.0\lib\net20\Microsoft.Web.Services3.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcknowledgmentReqRes.cs" />
+    <Compile Include="CertUtil.cs" />
+    <Compile Include="ClaimsManagement\ClaimReqRes.cs" />
+    <Compile Include="ClaimsManagement\DentalEnvRes.cs" />
+    <Compile Include="ClaimsManagement\DentalReqRes.cs" />
+    <Compile Include="ClaimsManagement\InstitutionalEnvRes.cs" />
+    <Compile Include="ClaimsManagement\InstitutionalReqRes.cs" />
+    <Compile Include="ClaimsManagement\ProfessionalEnvRes.cs" />
+    <Compile Include="ClaimsManagement\ProfessionalReqRes.cs" />
+    <Compile Include="Connected Services\AcknowledgmentService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\AttachmentServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\CareManagement\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ClaimsReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\CostReportReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\EligInquiryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\FI.ClaimsDentalService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\FI.ClaimsInstitutionalService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\FI.ClaimsProfessionalService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\FI.ClaimsSearchReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\FinancialServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\HospiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\IncidentManagementService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\IntelligentAddressVerification\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PartialProviderManagementReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PriorAuthServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProviderManagementReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SI.AttachmentServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Constants.cs" />
+    <Compile Include="DODDVerificationRequest.cs" />
+    <Compile Include="DODDVerificationResponse.cs" />
+    <Compile Include="ELicenseVerificationRequest.cs" />
+    <Compile Include="ELicenseVerificationResponse.cs" />
+    <Compile Include="EmailBatch.cs" />
+    <Compile Include="EmailHistoryItem.cs" />
+    <Compile Include="EmailQueueItem.cs" />
+    <Compile Include="EmailTemplate.cs" />
+    <Compile Include="EncryptorRIJ.cs" />
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="FinancialServiceReqRes.cs" />
+    <Compile Include="Helper\DatatableHelper.cs" />
+    <Compile Include="HospiceCustomModel\HospiceCustomRequestResponse.cs" />
+    <Compile Include="HospiceCustomModel\HospiceRequestResponsePayloadAttachments.cs" />
+    <Compile Include="HospiceCustomModel\HospiceRequestResponsePayloadBenefitPeriods.cs" />
+    <Compile Include="HospiceCustomModel\HospiceRequestResponsePayloadDiagnosisCodes.cs" />
+    <Compile Include="HospiceCustomModel\HospiceRequestResponsePayloadLongTermCareFacility.cs" />
+    <Compile Include="HospiceCustomModel\HospiceRequestResponsePayloadOtherPayerInfo.cs" />
+    <Compile Include="HospiceCustomModel\HospiceRequestResponsePayloadProvService.cs" />
+    <Compile Include="HospiceCustomModel\HospiceRequestResponsePayloadServiceCountyState.cs" />
+    <Compile Include="IncidentManagementReqRes.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="OnBaseComponents.cs" />
+    <Compile Include="PassthroughController.cs" />
+    <Compile Include="PriorAuthSearchReqRes.cs" />
+    <Compile Include="PriorAuthServiceReqRes.cs" />
+    <Compile Include="RecipientEligibilityDA.cs" />
+    <Compile Include="RecipientEligibilitySearchHelper.cs" />
+    <Compile Include="RecipientEligibilitySearchResponse.cs" />
+    <Compile Include="SendTerminationTransactionPayload.cs" />
+    <Compile Include="ServiceAgent\AddressVerificationRequest.cs" />
+    <Compile Include="ServiceAgent\AddressVerificatonDetail.cs" />
+    <Compile Include="ServiceAgent\ClaimsSearchServiceAgent.cs" />
+    <Compile Include="ServiceAgent\ClaimsServiceAgent.cs" />
+    <Compile Include="ServiceAgent\ClaimsServiceAgent.Professional.cs" />
+    <Compile Include="ServiceAgent\ClaimsServiceAgent.Dental.cs" />
+    <Compile Include="ServiceAgent\ClaimsServiceAgent.Model.Common.cs" />
+    <Compile Include="ServiceAgent\ClaimsServiceAgent.Model.Dental.cs" />
+    <Compile Include="ServiceAgent\ClaimsServiceAgent.Model.Professional.cs" />
+    <Compile Include="ServiceAgent\DocumentServiceAgent.cs" />
+    <Compile Include="ServiceAgent\HospiceServiceAgent.cs" />
+    <Compile Include="InfoAccess.cs" />
+    <Compile Include="InfoAccessController.cs" />
+    <Compile Include="Interface\IFileTransferService.cs" />
+    <Compile Include="Interface\IPDMSService.cs" />
+    <Compile Include="MatchParentAttribute.cs" />
+    <Compile Include="Methods.cs" />
+    <Compile Include="NPPESAPIResult.cs" />
+    <Compile Include="PartialProviderManagementController.cs" />
+    <Compile Include="PartialProviderRequestResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderManagementController.cs" />
+    <Compile Include="ProviderManagementHelper.cs" />
+    <Compile Include="ProviderManagementReqRes.cs" />
+    <Compile Include="RecipientEligibilitySearchReqRes.cs" />
+    <Compile Include="Proxy\FileTransferServiceClient.cs" />
+    <Compile Include="Proxy\PDMSServiceClient.cs" />
+    <Compile Include="ServiceAgentModels\ServiceResponse.cs" />
+    <Compile Include="ServiceAgent\IntelligentSearchAgent.cs" />
+    <Compile Include="ServiceAgent\ServiceAgentHelper.cs" />
+    <Compile Include="ServiceException.cs" />
+    <Compile Include="SmsApi.cs" />
+    <Compile Include="SMSSubscription.cs" />
+    <Compile Include="SoapResponse.cs" />
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="Web References\FinancialServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AcknowledgmentService\Acknowledgment.wsdl" />
+    <None Include="Connected Services\AcknowledgmentService\Acknowledgment.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AcknowledgmentService\Corp.Core.Libraries.AcknowledgmentService.vendorAcknowledgmentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AcknowledgmentService\Corp.Core.Libraries.AcknowledgmentService.VendorAcknowledgmentResponseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AttachmentServiceReference\Attachment.wsdl" />
+    <None Include="Connected Services\AttachmentServiceReference\Attachment.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AttachmentServiceReference\Attachment_Datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AttachmentServiceReference\Attachment_InlineSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AttachmentServiceReference\Attachment_MessageHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AttachmentServiceReference\Corp.Core.Libraries.AttachmentServiceReference.AttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AttachmentServiceReference\Corp.Core.Libraries.AttachmentServiceReference.sendAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CareManagement\CareManagement.wsdl" />
+    <None Include="Connected Services\CareManagement\CareManagement.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CareManagement\CareManagement_Datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CareManagement\CareManagement_InlineSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CareManagement\CareManagement_MessageHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CareManagement\Corp.Core.Libraries.CareManagement.createAuthorizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CareManagement\Corp.Core.Libraries.CareManagement.InquireAuthorizationInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CareManagement\Corp.Core.Libraries.CareManagement.inquireAuthorizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CareManagement\Corp.Core.Libraries.CareManagement.ResponsePayload.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CareManagement\Corp.Core.Libraries.CareManagement.searchAuthorizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CareManagement\Corp.Core.Libraries.CareManagement.updateAuthorizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClaimsReference\AddUpdateClaimsRequest.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClaimsReference\AddUpdateClaimsResponse.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClaimsReference\ClaimResponse.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClaimsReference\Claims.wsdl" />
+    <None Include="Connected Services\ClaimsReference\Claims_Datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClaimsReference\Claims_MessageHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClaimsReference\Corp.Core.Libraries.ClaimsReference.AddUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClaimsReference\Corp.Core.Libraries.ClaimsReference.ClaimResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClaimsReference\Corp.Core.Libraries.ClaimsReference.DentalClaims.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClaimsReference\Corp.Core.Libraries.ClaimsReference.InquireResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClaimsReference\Corp.Core.Libraries.ClaimsReference.InstitutionalClaims.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClaimsReference\Corp.Core.Libraries.ClaimsReference.PharmClaims.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClaimsReference\Corp.Core.Libraries.ClaimsReference.PhysicianClaims.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClaimsReference\Corp.Core.Libraries.ClaimsReference.SearchClaimsResponsesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClaimsReference\Corp.Core.Libraries.ClaimsReference.SearchResponses.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClaimsReference\DentalClaims.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClaimsReference\InquireClaimsRequest.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClaimsReference\InquireClaimsResponse.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClaimsReference\InstitutionalClaims.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClaimsReference\PharmClaims.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClaimsReference\PhysicianClaims.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClaimsReference\SearchClaimsRequest.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClaimsReference\SearchClaimsResponses.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CostReportReference\Corp.Core.Libraries.CostReportReference.cCostReportDueDateSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CostReportReference\Corp.Core.Libraries.CostReportReference.cCostReportSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CostReportReference\Corp.Core.Libraries.CostReportReference.costReportDueDateSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CostReportReference\Corp.Core.Libraries.CostReportReference.costReportSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CostReportReference\Corp.Core.Libraries.CostReportReference.cSubmitCostReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CostReportReference\Corp.Core.Libraries.CostReportReference.cSubmitCostSettlementReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CostReportReference\Corp.Core.Libraries.CostReportReference.submitCostReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CostReportReference\Corp.Core.Libraries.CostReportReference.submitCostSettlementReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CostReportReference\CostReports.wsdl" />
+    <None Include="Connected Services\CostReportReference\CostReports.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CostReportReference\CostReports_Datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CostReportReference\CostReports_InlineSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CostReportReference\CostReports_MessageHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EligInquiryService\CommonHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EligInquiryService\Corp.Core.Libraries.EligInquiryService.ErrorsType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EligInquiryService\Corp.Core.Libraries.EligInquiryService.InquireMemberEligibilityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EligInquiryService\Corp.Core.Libraries.EligInquiryService.MemberEligibilityInfoType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EligInquiryService\Corp.Core.Libraries.EligInquiryService.ResponseHeaderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EligInquiryService\MemberEligibilityInquiryService.wsdl" />
+    <None Include="Connected Services\EligInquiryService\MemberEligInquiryReqResp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsDentalService\ClaimReqRespCommon.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsDentalService\ClaimReqRespDental.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsDentalService\ClaimsService.wsdl" />
+    <None Include="Connected Services\FI.ClaimsDentalService\CommonHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsDentalService\Corp.Core.Libraries.FI.ClaimsDentalService.AddUpdateClaimsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsDentalService\Corp.Core.Libraries.FI.ClaimsDentalService.ClaimHeaderResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsDentalService\Corp.Core.Libraries.FI.ClaimsDentalService.ClaimLineDetailsType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsDentalService\Corp.Core.Libraries.FI.ClaimsDentalService.DentalClaim837Type.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsDentalService\Corp.Core.Libraries.FI.ClaimsDentalService.ErrorDetailsType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsDentalService\Corp.Core.Libraries.FI.ClaimsDentalService.InquireClaimResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsDentalService\Corp.Core.Libraries.FI.ClaimsDentalService.ResponseHeaderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsDentalService\HeaderX12Schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsDentalService\X12Dental.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\ClaimReqRespCommon.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\ClaimReqRespInstitutional.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\ClaimsService.wsdl" />
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\CommonHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\Corp.Core.Libraries.FI.ClaimsInstitutionalService.AddUpdateClaimsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\Corp.Core.Libraries.FI.ClaimsInstitutionalService.ClaimHeaderResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\Corp.Core.Libraries.FI.ClaimsInstitutionalService.ClaimLineDetailsType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\Corp.Core.Libraries.FI.ClaimsInstitutionalService.ErrorDetailsType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\Corp.Core.Libraries.FI.ClaimsInstitutionalService.InquireClaimResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\Corp.Core.Libraries.FI.ClaimsInstitutionalService.InstitutionalClaim837Type.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\Corp.Core.Libraries.FI.ClaimsInstitutionalService.ResponseHeaderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\HeaderX12Schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\X12Institutional.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\ClaimReqRespCommon.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\ClaimReqRespProfessional.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\ClaimsService.wsdl" />
+    <None Include="Connected Services\FI.ClaimsProfessionalService\CommonHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\Corp.Core.Libraries.FI.ClaimsProfessionalService.AddUpdateClaimsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\Corp.Core.Libraries.FI.ClaimsProfessionalService.ClaimHeaderResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\Corp.Core.Libraries.FI.ClaimsProfessionalService.ClaimLineDetailsType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\Corp.Core.Libraries.FI.ClaimsProfessionalService.ErrorDetailsType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\Corp.Core.Libraries.FI.ClaimsProfessionalService.InquireClaimResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\Corp.Core.Libraries.FI.ClaimsProfessionalService.ProfessionalClaim837Type.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\Corp.Core.Libraries.FI.ClaimsProfessionalService.ResponseHeaderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\HeaderX12Schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\X12Professional.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EligibilityVerification\MITSEligVerifService_Generated.wsdl" />
+    <None Include="Connected Services\FI.ClaimsSearchReference\ClaimReqRespCommon.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsSearchReference\ClaimsService.wsdl" />
+    <None Include="Connected Services\FI.ClaimsSearchReference\CommonHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FI.ClaimsSearchReference\Corp.Core.Libraries.FI.ClaimsSearchReference.ClaimHeaderResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsSearchReference\Corp.Core.Libraries.FI.ClaimsSearchReference.ErrorDetailsType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsSearchReference\Corp.Core.Libraries.FI.ClaimsSearchReference.ResponseHeaderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FI.ClaimsSearchReference\Corp.Core.Libraries.FI.ClaimsSearchReference.SearchClaimsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FinancialServices\Corp.Core.Libraries.FinancialServices.Inquire1099Information.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FinancialServices\Corp.Core.Libraries.FinancialServices.inquire1099Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FinancialServices\Corp.Core.Libraries.FinancialServices.Inquire1099ResponseResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FinancialServices\Corp.Core.Libraries.FinancialServices.inquireTransactionHistoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FinancialServices\Corp.Core.Libraries.FinancialServices.InquireTransactionHistoryResponseResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FinancialServices\Corp.Core.Libraries.FinancialServices.TransactionHistory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FinancialServices\FinancialService.wsdl" />
+    <None Include="Connected Services\FinancialServices\FinancialService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FinancialServices\FinancialService_Datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FinancialServices\FinancialService_InlineSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FinancialServices\FinancialService_MessageHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\HospiceReference\Corp.Core.Libraries.HospiceReference.AddUpdateHospiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\HospiceReference\Corp.Core.Libraries.HospiceReference.AddUpdateResponseErrors.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\HospiceReference\Corp.Core.Libraries.HospiceReference.AddUpdateResponseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\HospiceReference\Corp.Core.Libraries.HospiceReference.AddUpdateResponseResponseHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\HospiceReference\Corp.Core.Libraries.HospiceReference.InquireHospiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\HospiceReference\Corp.Core.Libraries.HospiceReference.InquireResponseEpisodeOfCare.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\HospiceReference\Corp.Core.Libraries.HospiceReference.InquireResponseErrors.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\HospiceReference\Corp.Core.Libraries.HospiceReference.InquireResponseHospiceRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\HospiceReference\Corp.Core.Libraries.HospiceReference.InquireResponseResponseHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\HospiceReference\Corp.Core.Libraries.HospiceReference.SearchHospiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\HospiceReference\Corp.Core.Libraries.HospiceReference.SearchResponsesErrors.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\HospiceReference\Corp.Core.Libraries.HospiceReference.SearchResponsesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\HospiceReference\Corp.Core.Libraries.HospiceReference.SearchResponsesResponseHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\HospiceReference\Untitled.wsdl" />
+    <None Include="Connected Services\IncidentManagementService\Corp.Core.Libraries.IncidentManagementService.sendProviderIncidentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\IncidentManagementService\Corp.Core.Libraries.IncidentManagementService.SendProviderIncidentResponseResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\IncidentManagementService\Corp.Core.Libraries.IncidentManagementService.updateProviderIncidentStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\IncidentManagementService\IncidentManagement.wsdl" />
+    <None Include="Connected Services\IncidentManagementService\IncidentManagement.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\IncidentManagementService\IncidentManagement_Datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\IncidentManagementService\IncidentManagement_InlineSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\IncidentManagementService\IncidentManagement_MessageHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\IntelligentAddressVerification\Corp.Core.Libraries.IntelligentAddressVerification.WsAccountAccess.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\IntelligentAddressVerification\Corp.Core.Libraries.IntelligentAddressVerification.WsAccountInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\IntelligentAddressVerification\Corp.Core.Libraries.IntelligentAddressVerification.WsCityCounty.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\IntelligentAddressVerification\Corp.Core.Libraries.IntelligentAddressVerification.WsCityState.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\IntelligentAddressVerification\Corp.Core.Libraries.IntelligentAddressVerification.WsCorrectAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\IntelligentAddressVerification\Corp.Core.Libraries.IntelligentAddressVerification.WsMuniProv.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\IntelligentAddressVerification\Corp.Core.Libraries.IntelligentAddressVerification.WsPS3553.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\IntelligentAddressVerification\Corp.Core.Libraries.IntelligentAddressVerification.WsStreetSearch.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\IntelligentAddressVerification\Corp.Core.Libraries.IntelligentAddressVerification.WsZipCity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\IntelligentAddressVerification\CorrectAddressWebService.wsdl" />
+    <None Include="Connected Services\PartialProviderManagementReference\Corp.Core.Libraries.PartialProviderManagementReference.submitPartialProviderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartialProviderManagementReference\PartialProviderManagement.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PartialProviderManagementReference\PartialProviderManagementReqRes.wsdl" />
+    <None Include="Connected Services\PartialProviderManagementReference\PartialProviderManagement_Datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PartialProviderManagementReference\PartialProviderManagement_InlineSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PartialProviderManagementReference\PartialProviderManagement_MessageHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PriorAuthServiceReference\CommonHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PriorAuthServiceReference\Corp.Core.Libraries.PriorAuthServiceReference.AddUpdatePriorAuthResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PriorAuthServiceReference\Corp.Core.Libraries.PriorAuthServiceReference.AddUpdatePriorAuthResponsePayloadType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PriorAuthServiceReference\Corp.Core.Libraries.PriorAuthServiceReference.ErrorDetailsType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PriorAuthServiceReference\Corp.Core.Libraries.PriorAuthServiceReference.InquirePriorAuthResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PriorAuthServiceReference\Corp.Core.Libraries.PriorAuthServiceReference.InquirePriorAuthResponseResponsePayload.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PriorAuthServiceReference\Corp.Core.Libraries.PriorAuthServiceReference.PriorAuthSearchResponsePayloadType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PriorAuthServiceReference\Corp.Core.Libraries.PriorAuthServiceReference.ResponseHeaderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PriorAuthServiceReference\Corp.Core.Libraries.PriorAuthServiceReference.SearchPriorAuthResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PriorAuthServiceReference\HeaderX12Schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PriorAuthServiceReference\PriorAuthRequestResponse.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PriorAuthServiceReference\PriorAuthService.wsdl" />
+    <None Include="Connected Services\PriorAuthServiceReference\X12PARequest.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PriorAuthServiceReference\X12PAResponse.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProviderManagementReference\Corp.Core.Libraries.ProviderManagementReference.enrollProviderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProviderManagementReference\Corp.Core.Libraries.ProviderManagementReference.InqMessageHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProviderManagementReference\Corp.Core.Libraries.ProviderManagementReference.inquireProviderHistoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProviderManagementReference\Corp.Core.Libraries.ProviderManagementReference.InquireProviderHistoryResponseResponsePayload.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProviderManagementReference\Corp.Core.Libraries.ProviderManagementReference.InquireProviderInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProviderManagementReference\Corp.Core.Libraries.ProviderManagementReference.inquireProviderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProviderManagementReference\Corp.Core.Libraries.ProviderManagementReference.updateProviderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProviderManagementReference\ProviderManagement.wsdl" />
+    <None Include="Connected Services\ProviderManagementReference\ProviderManagement.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProviderManagementReference\ProviderManagement_Datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProviderManagementReference\ProviderManagement_InlineSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProviderManagementReference\ProviderManagement_MessageHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SI.AttachmentServiceReference\Attachment.wsdl" />
+    <None Include="Connected Services\SI.AttachmentServiceReference\Attachment.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SI.AttachmentServiceReference\Attachment_Datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SI.AttachmentServiceReference\Attachment_InlineSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SI.AttachmentServiceReference\Attachment_MessageHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SI.AttachmentServiceReference\Corp.Core.Libraries.SI.AttachmentServiceReference.AttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SI.AttachmentServiceReference\Corp.Core.Libraries.SI.AttachmentServiceReference.sendAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\FinancialServiceReference\FinancialService.wsdl" />
+    <None Include="Web References\FinancialServiceReference\FinancialService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FinancialServiceReference\FinancialService_Datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FinancialServiceReference\FinancialService_InlineSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FinancialServiceReference\FinancialService_MessageHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FinancialServiceReference\InqMessageHeader.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FinancialServiceReference\Inquire1099Information.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FinancialServiceReference\Inquire1099ResponseResponseCode.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FinancialServiceReference\Inquire1099ResponseResponseMessage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FinancialServiceReference\Inquire1099ResponseResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FinancialServiceReference\InquireTransactionHistoryResponseResponseCode.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FinancialServiceReference\InquireTransactionHistoryResponseResponseMessage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FinancialServiceReference\InquireTransactionHistoryResponseResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FinancialServiceReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\FinancialServiceReference\TransactionHistory.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\CareManagement.wsdl" />
+    <None Include="Web References\WebReference\CareManagement.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference\CareManagement_Datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference\CareManagement_InlineSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference\CareManagement_MessageHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference\InquireAuthorizationInformation.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebReference\ResponsePayload.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AcknowledgmentService\" />
+    <WCFMetadataStorage Include="Connected Services\AttachmentServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\CareManagement\" />
+    <WCFMetadataStorage Include="Connected Services\ClaimsReference\" />
+    <WCFMetadataStorage Include="Connected Services\CostReportReference\" />
+    <WCFMetadataStorage Include="Connected Services\EligibilityVerification\" />
+    <WCFMetadataStorage Include="Connected Services\FI.ClaimsSearchReference\" />
+    <WCFMetadataStorage Include="Connected Services\EligInquiryService\" />
+    <WCFMetadataStorage Include="Connected Services\FI.ClaimsDentalService\" />
+    <WCFMetadataStorage Include="Connected Services\FI.ClaimsInstitutionalService\" />
+    <WCFMetadataStorage Include="Connected Services\FI.ClaimsProfessionalService\" />
+    <WCFMetadataStorage Include="Connected Services\FinancialServices\" />
+    <WCFMetadataStorage Include="Connected Services\HospiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\IncidentManagementService\" />
+    <WCFMetadataStorage Include="Connected Services\IntelligentAddressVerification\" />
+    <WCFMetadataStorage Include="Connected Services\PartialProviderManagementReference\" />
+    <WCFMetadataStorage Include="Connected Services\PriorAuthServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\ProviderManagementReference\" />
+    <WCFMetadataStorage Include="Connected Services\SI.AttachmentServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="C:\Projects\PA WSDL FILE\REV2\REV3\CareManagement.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference\</RelPath>
+      <UpdateFromURL>C:\Projects\PA WSDL FILE\REV2\REV3\CareManagement.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Common_WebReference_CareManagementService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\308589\Desktop\Working Folder\FinancialService\FinancialService\FinancialService.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\FinancialServiceReference\</RelPath>
+      <UpdateFromURL>C:\Users\308589\Desktop\Working Folder\FinancialService\FinancialService\FinancialService.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Common_FinancialServiceReference_FinancialServiceService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppSettings\AppSettings.csproj">
+      <Project>{99469857-55b2-4105-96f4-85c1b44e74d6}</Project>
+      <Name>AppSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{e640b94b-2908-4aad-9f47-00dafe871902}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MMSWebControls\MMSWebControls.csproj">
+      <Project>{b5f25088-3160-4509-a926-461b02631a5b}</Project>
+      <Name>MMSWebControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AttachmentServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AttachmentServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AttachmentServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PartialProviderManagementReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PartialProviderManagementReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PartialProviderManagementReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CostReportReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CostReportReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CostReportReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ClaimsReference\configuration91.svcinfo" />
+    <None Include="Connected Services\ClaimsReference\configuration.svcinfo" />
+    <None Include="Connected Services\ClaimsReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\HospiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\HospiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\HospiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\EligibilityVerification\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\EligibilityVerification\configuration.svcinfo" />
+    <None Include="Connected Services\EligibilityVerification\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CareManagement\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CareManagement\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CareManagement\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\IntelligentAddressVerification\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\IntelligentAddressVerification\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\IntelligentAddressVerification\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProviderManagementReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProviderManagementReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProviderManagementReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\EligInquiryService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\EligInquiryService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\EligInquiryService\Reference.svcmap" />
+    <None Include="Connected Services\HospiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\HospiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\HospiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FI.ClaimsSearchReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FI.ClaimsSearchReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FI.ClaimsSearchReference\Reference.svcmap" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FinancialServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FinancialServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FinancialServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\IncidentManagementService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\IncidentManagementService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\IncidentManagementService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AcknowledgmentService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AcknowledgmentService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AcknowledgmentService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FI.ClaimsDentalService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FI.ClaimsDentalService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FI.ClaimsDentalService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FI.ClaimsProfessionalService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FI.ClaimsInstitutionalService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PriorAuthServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PriorAuthServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PriorAuthServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SI.AttachmentServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SI.AttachmentServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SI.AttachmentServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

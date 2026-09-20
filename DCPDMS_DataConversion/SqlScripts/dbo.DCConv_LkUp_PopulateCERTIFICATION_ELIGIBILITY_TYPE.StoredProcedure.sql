@@ -1,0 +1,33 @@
+/****** Object:  StoredProcedure [dbo].[DCConv_LkUp_PopulateCERTIFICATION_ELIGIBILITY_TYPE]    Script Date: 8/1/2016 3:13:13 PM ******/
+IF object_id('[dbo].[DCConv_LkUp_PopulateCERTIFICATION_ELIGIBILITY_TYPE]','P') is not null
+DROP PROCEDURE [dbo].DCConv_LkUp_PopulateCERTIFICATION_ELIGIBILITY_TYPE
+GO
+/****** Object:  StoredProcedure [dbo].[DCConv_LkUp_PopulateCERTIFICATION_ELIGIBILITY_TYPE]    Script Date: 8/1/2016 3:13:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Richard Mays
+-- Create date: 7/21/2016
+-- Description:	Fills the CERTIFICATION_ELIGIBILITY_TYPE
+-- =============================================
+CREATE PROCEDURE [dbo].[DCConv_LkUp_PopulateCERTIFICATION_ELIGIBILITY_TYPE] 
+	@pin_run_reference_time datetime
+AS
+BEGIN
+ -- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	DELETE FROM [dbo].[CERTIFICATION_ELIGIBILITY_TYPE];
+
+	SET IDENTITY_INSERT [dbo].[CERTIFICATION_ELIGIBILITY_TYPE] ON 
+
+INSERT [dbo].[CERTIFICATION_ELIGIBILITY_TYPE] ([CERTIFICATION_ELIGIBILITY_TYPE_ID], [NAME], [IS_ACTIVE]) VALUES (1, N'Facility is Eligible', 1)
+INSERT [dbo].[CERTIFICATION_ELIGIBILITY_TYPE] ([CERTIFICATION_ELIGIBILITY_TYPE_ID], [NAME], [IS_ACTIVE]) VALUES (2, N'Facility is Not Eligible', 1)
+SET IDENTITY_INSERT [dbo].[CERTIFICATION_ELIGIBILITY_TYPE] OFF
+
+END
+
+GO

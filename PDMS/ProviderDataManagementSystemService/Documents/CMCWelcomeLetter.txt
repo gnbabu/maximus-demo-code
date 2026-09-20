@@ -1,0 +1,61 @@
+﻿<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+
+<p>
+<b>Subject:</b> Comprehensive Maternal Care Welcome Letter
+</p>
+
+<p>Dear [[Practice_Name]]:</p>
+
+<p>The Ohio Department of Medicaid (ODM) is pleased to welcome you to the Ohio Comprehensive Maternal Care (CMC) Program Year [[Upcoming_Prog_Year]].  Your organization will be participating in an alternative payment model designed to promote and support practices in achieving improved maternal health outcomes. This letter serves as notification of approval for participation in the Ohio CMC Program for program year [[Start_Full_Date]] to [[Last_Full_Date]]. Your Ohio Medicaid provider number [[MedicaidID]] will be participating.</p>
+
+<p>Your enrollment in Ohio CMC is based on eligibility criteria specified in the Ohio Administrative Code 5160-19-03 and your organization’s commitment to the following: sharing necessary data with the State and payers, participating in learning activities, and meeting standard activity requirements. Additional information and more specific program requirements can be found on the Ohio Department of Medicaid (ODM) CMC webpage <a Href="[[CMC_ODM_WebSite]]">here</a>.</p>
+
+<p>We look forward to working with your organization in achieving our shared goal for improving maternal health outcomes. In the coming weeks, you will receive additional information to support your participation in Ohio CMC. Feel free to contact us at (800) 686-1516 or <a Href="IHD@medicaid.ohio.gov">IHD@medicaid.ohio.gov</a> if you have any questions</p>
+
+<p>Stay in touch with all things CMC by subscribing to our CMC communications by completing the ODM Subscribe Form <a Href="[[CMC_ODM_Subscribe_Form_Link]]">here</a>.</p>
+<br />
+Sincerely,<br/>
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Director_Signature.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<br />
+Bureau of Network Management<br/>
+</td>
+</tr>
+</table>

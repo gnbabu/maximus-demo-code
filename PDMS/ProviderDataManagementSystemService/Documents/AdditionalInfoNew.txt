@@ -1,0 +1,17 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+[[PROVIDERNAME]]<br />
+[[NPI]]<br />
+[[CURRENTDATE]]<br /><br />
+
+Thank you for your interest in obtaining a District of Columbia Medicaid ID.  <br /><br />
+    We have received your information from CAQH, however, there are data elements which contain either discrepant, incorrect or missing data. <br /><br />
+    All data elements must be entered correctly before we can process your application further. Your CAQH profile needs correction of the following item(s): <br />
+[[REASON]]<br /><br />
+
+Please log in to your CAQH account to complete profile data correction as soon as possible.  <br /><br />
+    Your application will be processed once the data is correctly entered. <br /><br />
+    Failure to correct the above described CAQH data element(s) within 30 days may result in rejection of your application for a District of Columbia Medicaid ID.
+<p>If you have questions, please contact District of Columbia Medicaid at 1-888-111-2222 or email at <a href ="mailto:dcmedicaidPSE@maximus.com">dcmedicaidPSE@maximus.com</a>.</p>          
+Regards, <br>
+MAXIMUS Provider Screening and Enrollment Customer Service <br>
+</div>

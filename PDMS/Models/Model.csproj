@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E52102F-0F6F-4809-A522-85585A6409F5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomNamespaceBehavior.cs" />
+    <Compile Include="Data\AchFeeInformation.cs" />
+    <Compile Include="Data\AchFeeSearch.cs" />
+    <Compile Include="Data\Claims.cs" />
+    <Compile Include="Data\CorrespondeceData.cs" />
+    <Compile Include="Data\CPCAcknowledgement.cs" />
+    <Compile Include="Data\PriorAuthDentalAttachment.cs" />
+    <Compile Include="Data\DestinationPayerIDs.cs" />
+    <Compile Include="Data\Diagnosis.cs" />
+    <Compile Include="Data\DiagnosisCodeTypes.cs" />
+    <Compile Include="Data\DODDResponse.cs" />
+    <Compile Include="Data\FacilityType.cs" />
+    <Compile Include="Data\Interfaces\IOwner.cs" />
+    <Compile Include="Data\Interfaces\ITaxInfo.cs" />
+    <Compile Include="Data\OwnerInfo.cs" />
+    <Compile Include="Data\PriorAuthDiagnosis.cs" />
+    <Compile Include="Data\ProcedureCodes.cs" />
+    <Compile Include="Data\ProfessionalLicense.cs" />
+    <Compile Include="Data\Address.cs" />
+    <Compile Include="Data\CommunicationEventData.cs" />
+    <Compile Include="Data\CallTrackingData.cs" />
+    <Compile Include="Data\CategoryOfService.cs" />
+    <Compile Include="Data\BoardCertification.cs" />
+    <Compile Include="Data\CPRCertification.cs" />
+    <Compile Include="Data\Form1099.cs" />
+    <Compile Include="Data\Interfaces\IAddress.cs" />
+    <Compile Include="Data\Interfaces\IForm1099.cs" />
+    <Compile Include="Data\NursingProfessionalCertification.cs" />
+    <Compile Include="Data\MalpracticeClaimInfo.cs" />
+    <Compile Include="Data\OwnerConvictionOnBehalf.cs" />
+    <Compile Include="Data\OwnerIdentifyingInfo.cs" />
+    <Compile Include="Data\HealthCareAffiliations.cs" />
+    <Compile Include="Data\PendingGroupAffiliations.cs" />
+    <Compile Include="Data\GroupAndFacilityAffiliations.cs" />
+    <Compile Include="Data\PaperRequestDocumentData.cs" />
+    <Compile Include="Data\PaperRequestQueueData.cs" />
+    <Compile Include="Data\ProviderNotes.cs" />
+    <Compile Include="Data\ReferralData.cs" />
+    <Compile Include="Data\ProviderManagementData.cs" />
+    <Compile Include="Data\DCSProvider.cs" />
+    <Compile Include="Data\DCSProviderSearch.cs" />
+    <Compile Include="Data\Interfaces\IProvider.cs" />
+    <Compile Include="Data\Interfaces\ISearchCriteria.cs" />
+    <Compile Include="Data\ProviderManagerData.cs" />
+    <Compile Include="Data\PartyEligibiity.cs" />
+    <Compile Include="Data\Provider.cs" />
+    <Compile Include="Data\RegProvider.cs" />
+    <Compile Include="Data\Result.cs" />
+    <Compile Include="Data\RevenueCodes.cs" />
+    <Compile Include="Data\ServiceDetailsInstitutional.cs" />
+    <Compile Include="Data\SpecialtyListData.cs" />
+    <Compile Include="Data\TaxInfo.cs" />
+    <Compile Include="Hospice\Attachments.cs" />
+    <Compile Include="Hospice\AttendingPhysician.cs" />
+    <Compile Include="Hospice\BenefitPeriod.cs" />
+    <Compile Include="Hospice\BenefitPeriods.cs" />
+    <Compile Include="Hospice\DiagnosisCodes.cs" />
+    <Compile Include="Hospice\ElectionDisenrollDates.cs" />
+    <Compile Include="Hospice\EpisodeOfCare.cs" />
+    <Compile Include="Hospice\HospiceResponse.cs" />
+    <Compile Include="Hospice\IDGPhysician.cs" />
+    <Compile Include="Hospice\LongTermCareFacility.cs" />
+    <Compile Include="Hospice\OtherPayerInfo.cs" />
+    <Compile Include="Hospice\ProvService.cs" />
+    <Compile Include="Hospice\ServiceCountyState.cs" />
+    <Compile Include="PowerAgentEventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\UserAccountInformation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CoreLibraries\Common\Common.csproj">
+      <Project>{8c8433d2-2e2c-4a6e-9f3f-82ad7665729f}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Workflow\Workflow.csproj">
+      <Project>{5bc86e5f-8852-42e0-a11d-e0c9bcff0fc8}</Project>
+      <Name>Workflow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,27 @@
+﻿<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<table id="Table1" style="width: 8.4in;">
+    
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+    Re: DODD Services Terminated 
+</p>
+
+<p>This is to notify you that DODD has cancelled services for the following provider.</p>  
+
+<p>Provider Name:  [[ProvName]] </p>
+
+<p>Registration ID: [[RegID]]  </p>
+
+</td>
+</tr>
+</table>

@@ -1,0 +1,200 @@
+
+/*    Service Details
+*/
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box
+}
+
+.popUpHeader {
+    background-color: #4BA5B3 !important;
+    padding: 8px;    
+}
+.modalPopup{
+    border-width: 4px !important
+}
+.popUpHeader .popTitle span {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+
+input.buttonBoxFocus{
+    background:linear-gradient(180deg,#ACCEFF 0%,#2E80FD 47.91%,#6BA5FF 97.92%,#3974CF 100% )
+}
+
+.popUpClose {
+    float: right;
+    background-color: transparent;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 19px;
+    border-width: 0px;
+
+}
+.popUpSearch-Context {
+    background-color: #E8FFF4;
+    padding: 12px 0;
+}
+.m-0 {
+    margin: 0px !important
+}
+.mt-0 {
+    margin-top: 0px !important
+}
+.mb-0 {
+    margin-bottom: 0px !important
+}
+.ml-0 {
+    margin-left: 0px !important
+}
+.mr-0 {
+    margin-right: 0px !important
+}
+.p-0 {
+    padding: 0px !important
+}
+.pt-0 {
+    padding-top: 0px !important
+}
+
+.pb-0 {
+    padding-bottom: 0px !important
+}
+
+.pl-0 {
+    padding-left: 0px !important
+}
+
+.pr-0 {
+    padding-right: 0px !important
+}
+
+
+.d-FlexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-Results {
+    padding: 8px;
+    background-color: #4BA5B3;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.result-Container {
+    background-color: #E8FFF4;
+    margin-top: -10px
+}
+.gridViewHeader, .gridViewHeader2, .rgHeade {
+    border: 0px solid transparent !important;
+    background-color: #86D6EA
+}
+table.gridview th, table.gridViewSmallFont th {
+    border:0px solid transparent !important;
+    background-color: #86D6EA;
+    color: #222222 !important;
+    padding: 6px;
+}
+.gridViewRow, .gridViewAltRow {
+    background-color: transparent !important
+}
+table.gridViewSmallFont th, table.gridViewSmallFont td {
+    padding: 8px !important;
+}
+table.gridview th{
+    width:1px;
+    line-height:1
+}
+
+
+
+table.gridview input, table.gridview select {
+    max-width: 120px !important;
+    min-width: auto !important;
+    padding: 2px 8px
+}
+table.gridview input[type=submit] {
+    padding:6px 8px !important
+}
+
+.tNumber {
+    display: inline-block;
+    background-color: #f9f9f9;
+    padding:2px 6px;
+}
+table.gridview td, .rgRow td, .rgAltRow td, table.gridViewSmallFont td {
+    border: 0px solid transparent;
+    padding: 8px !important;
+    position: relative !important;
+}
+
+.input-disable {
+    background-color: #ccc
+}
+
+.link-form input, .link-form select {
+    width: 100% !important;
+    min-width:initial !important
+}
+
+div.calsm-5 {
+    width: 20% !important;
+    float:left;
+    padding:4px 15px;
+}
+div.calsm-5 div {
+    padding:0 4px !important
+}
+.w-100 {
+        width: 100% !important
+    }
+input.custom-btn {
+    padding: 9px 31px !important;
+    display: block;
+    margin: auto;
+    min-width: 100px !important
+}
+input[type="submit"].custom-btn {
+    display: inline-block !important;
+}
+input.btn-success{
+    background: linear-gradient( 180deg,#16ad28 0%,#18d51d 47.91%,#3e9d57 97.92%,#0fd378 100% ) !important;
+}
+
+@media (max-width:980px) {
+    div .calsm-5 {
+        width: 50% !important;
+    }
+}
+@media (max-width:768px) {
+    div.calsm-5 {
+        width: 100% !important;
+    }
+}
+.px15 {
+    padding:0 15px !important
+}
+.py15 {
+    padding:15px 0 !important
+}
+.provider-action input{
+    margin-bottom:6px !important
+}
+.w-60px, .revieser-notes span {
+    width: 60px !important
+}
+.revieser-notes span{
+    display:inline-block;
+    padding:6px;
+    border:1px solid #888;
+    border-radius:2px;
+    width:100% !important;
+}
+.d-flex{
+    display: flex;
+    width:100%
+
+}

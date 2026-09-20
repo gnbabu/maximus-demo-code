@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost:44337/IncidentReport.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ProviderIncidentReportModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageHeader" nillable="true" type="tns:ProviderIncidentReportHeaderModel" />
+      <xs:element minOccurs="0" name="Payload" nillable="true" type="tns:ArrayOfProviderIncidentReportPayloadModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProviderIncidentReportModel" nillable="true" type="tns:ProviderIncidentReportModel" />
+  <xs:complexType name="ProviderIncidentReportHeaderModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalModuleTransactionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessFlow" type="tns:BusinessFlow" />
+      <xs:element minOccurs="0" name="ModuleTransactionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestTimestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RequestorSystem" type="tns:RequestorSystem" />
+      <xs:element minOccurs="0" name="SITransactionKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubscriberSystem" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProviderIncidentReportHeaderModel" nillable="true" type="tns:ProviderIncidentReportHeaderModel" />
+  <xs:simpleType name="BusinessFlow">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SendProviderIncident">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UpdateProviderIncidentStatus">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BusinessFlow" nillable="true" type="tns:BusinessFlow" />
+  <xs:simpleType name="RequestorSystem">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PNM">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RequestorSystem" nillable="true" type="tns:RequestorSystem" />
+  <xs:complexType name="ArrayOfProviderIncidentReportPayloadModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProviderIncidentReportPayloadModel" nillable="true" type="tns:ProviderIncidentReportPayloadModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProviderIncidentReportPayloadModel" nillable="true" type="tns:ArrayOfProviderIncidentReportPayloadModel" />
+  <xs:complexType name="ProviderIncidentReportPayloadModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CaseSubmissionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IMSCaseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncidentDetails" nillable="true" type="tns:ArrayOfProviderIncidentNodeModel" />
+      <xs:element minOccurs="0" name="MedicaidProviderID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NODReferralDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProviderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReasonForNOD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferralSentBy" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProviderIncidentReportPayloadModel" nillable="true" type="tns:ProviderIncidentReportPayloadModel" />
+  <xs:complexType name="ArrayOfProviderIncidentNodeModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProviderIncidentNodeModel" nillable="true" type="tns:ProviderIncidentNodeModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProviderIncidentNodeModel" nillable="true" type="tns:ArrayOfProviderIncidentNodeModel" />
+  <xs:complexType name="ProviderIncidentNodeModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IMSAssociateID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncidentCategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncidentId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncidentSubcategory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncidentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Substantiated" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProviderIncidentNodeModel" nillable="true" type="tns:ProviderIncidentNodeModel" />
+  <xs:complexType name="SendProviderIncidentResponseModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SITransactionKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendProviderIncidentResponseModel" nillable="true" type="tns:SendProviderIncidentResponseModel" />
+</xs:schema>

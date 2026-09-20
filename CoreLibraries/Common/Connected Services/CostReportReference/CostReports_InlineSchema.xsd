@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/costreports" xmlns:tns="http://mes.gov/costreports" xmlns:web="http://bpm.eds.com/Schemas/Web" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="CostReports_Datatypes.xsd"/>
+  <xsd:complexType name="cSubmitCostReport">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="IdProvider" type="tns:string20"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="CostReportType" type="tns:string50"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CRFromDate" type="tns:DateType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CRToDate" type="tns:DateType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CRFiscalYear" type="tns:String4"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SettlementAmt" type="tns:Decimal13-2"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SettleTypeCode" type="tns:String50"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmissionStatus" type="tns:String10"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmissionDate" type="tns:DateType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreparerFN" type="tns:String60"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreparerLN" type="tns:String60"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreparerID" type="tns:String20"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreparerPhone" type="tns:String10"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreparerEmailID" type="tns:String50"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmitterFN" type="tns:String60"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmitterLN" type="tns:String60"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmitterID" type="tns:String20"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmitterPhone" type="tns:String10"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmitterEmailID" type="tns:String50"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MITSTrackingNumber" type="tns:String20"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="AttachmentInfo">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DocumentID" type="tns:String20"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DocumentType" type="tns:String30"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DocumentName" type="tns:String255"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="cSubmitCostReportResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="MITSTrackingNumber" type="tns:String20"/>
+      <xsd:element minOccurs="0" name="Response" type="tns:cSIResponse"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="AttachmentData" type="tns:cAttachmentData"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="cSubmitCostSettlementReport">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="IdProvider" type="tns:string20"/>
+      <xsd:element minOccurs="1" name="CostReportType" type="tns:string50"/>
+      <xsd:element minOccurs="0" name="CostReportFromDate" type="tns:DateType"/>
+      <xsd:element minOccurs="0" name="CostReportToDate" type="tns:DateType"/>
+      <xsd:element minOccurs="0" name="CostReportFiscalYear" type="tns:String4"/>
+      <xsd:element minOccurs="0" name="SubmissionDate" type="tns:DateType"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="AttachmentInfo">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="DocumentID" type="tns:String20"/>
+            <xsd:element minOccurs="0" name="DocumentType" type="tns:String30"/>
+            <xsd:element minOccurs="0" name="DocumentName" type="tns:String255"/>
+            <xsd:element minOccurs="0" name="FirstAccessDate" type="tns:DateType"/>
+            <xsd:element minOccurs="0" name="ReadIndicator" type="tns:String1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="cSubmitCostSettlementReportResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="Response" type="tns:cSIResponse"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="AttachmentData" type="tns:cAttachmentData"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="cCostReportSearch">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="1" name="IdProvider">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" name="IdProvider" type="tns:string20"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Costreportdetail">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ProviderType" type="tns:String50"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PreparerID" type="tns:String20"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SubmitterID" type="tns:String20"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SubmissionDate" type="tns:DateType"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SubmissionStatus" type="tns:String10"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CRFiscalYear" type="tns:String4"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="MITSTrackingNumber" type="tns:String20"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="RecordsToReturn" type="tns:String20"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CostReportType" type="tns:String50"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CRFromDate" type="tns:DateType"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CRtoDate" type="tns:DateType"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SettlementType" type="tns:String75"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SettlementAmt" type="tns:Decimal13-2"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CrDocumentNumber" type="tns:String20"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="cCostReportSearchResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IdProvider" type="tns:String20"/>
+      <!--<xsd:element name="SITransactionKey" type="tns:String32" minOccurs="0" maxOccurs="1"/>-->
+      <xsd:element maxOccurs="1" minOccurs="0" name="ProviderType" type="tns:String50"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmissionDate" type="tns:DateType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmissionStatus" type="tns:String10"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="MITSTrackingNumber" type="tns:String20"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CostReportType" type="tns:String50"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CrDocumentNumber" type="tns:String20"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CRFromDate" type="tns:DateType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CRToDate" type="tns:DateType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="CRFiscalYear" type="tns:String4"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SettleType" type="tns:String75"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SettlementAmt" type="tns:Decimal13-2"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreparerFN" type="tns:String60"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreparerLN" type="tns:String60"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreparerID" type="tns:String20"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreparerPhone" type="tns:String10"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="PreparerEmailID" type="tns:String50"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmitterID" type="tns:String20"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmitterPhone" type="tns:String10"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmitterEmailID" type="tns:String50"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmitterFN" type="tns:String60"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="SubmitterLN" type="tns:String60"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ReviewerName" type="tns:String150"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="DisapprovalReason" type="tns:String250"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="Responses">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ResponseType" type="tns:String3"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ResponseMessage" type="tns:String256"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="AttachmentData" type="tns:cAttachmentData"/>
+      <!-- Need to add remaining elements from ICD -->
+      <xsd:element minOccurs="0" name="Response" type="tns:cSIResponse"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="cCostReportDueDateSearch">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="IdProvider" type="tns:string20"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="cCostReportDueDateSearchResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="IdProvider" type="tns:String20"/>
+      <xsd:element minOccurs="0" name="CurrentCostReportEffectiveDate" type="tns:String10"/>
+      <xsd:element minOccurs="0" name="CurrentCostReportEndDate" type="tns:String10"/>
+      <xsd:element minOccurs="0" name="CurrentCostReportDueDate" type="tns:String10"/>
+      <xsd:element minOccurs="0" name="PreviousCostReportEffectiveDate" type="tns:String10"/>
+      <xsd:element minOccurs="0" name="PreviousCostReportEndDate" type="tns:String10"/>
+      <xsd:element minOccurs="0" name="PreviousCostReportDueDate" type="tns:String10"/>
+      <xsd:element minOccurs="0" name="Response" type="tns:cSIResponse"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="cSIResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="SITransactionKey" type="tns:String32"/>
+      <xsd:element minOccurs="0" name="ResponseType" type="tns:String3"/>
+      <xsd:element minOccurs="0" name="ResponseMessage" type="tns:String256"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="cAttachmentData">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="AttachmentID" type="tns:String20"/>
+      <xsd:element minOccurs="0" name="AttachmentType" type="tns:String30"/>
+      <xsd:element minOccurs="0" name="DocumentName" type="tns:String256"/>
+      <xsd:element minOccurs="0" name="EDMSDocumentType" type="tns:String3"/>
+      <xsd:element minOccurs="0" name="DocumentType" type="tns:String30"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<ADDRESS_STAGINGs>
+  <xs:schema id="ADDRESS_STAGINGs" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="ADDRESS_STAGINGs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ADDRESS_STAGING">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ADDRESS_STAGING_TYPE_ID" type="xs:int" minOccurs="0" />
+                <xs:element name="ADDRESS_STAGING_TYPE" type="xs:string" minOccurs="0" />
+                <xs:element name="LAST_MODIFIED_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LAST_MODIFIED_USER" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <ADDRESS_STAGING>
+    <ADDRESS_STAGING_TYPE_ID>2</ADDRESS_STAGING_TYPE_ID>
+    <ADDRESS_STAGING_TYPE>Mail To</ADDRESS_STAGING_TYPE>
+    <LAST_MODIFIED_DATE_TIME>2012-06-06T11:38:18.587-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+  </ADDRESS_STAGING>
+  <ADDRESS_STAGING>
+    <ADDRESS_STAGING_TYPE_ID>3</ADDRESS_STAGING_TYPE_ID>
+    <ADDRESS_STAGING_TYPE>Pay To</ADDRESS_STAGING_TYPE>
+    <LAST_MODIFIED_DATE_TIME>2012-06-06T11:38:32.33-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+  </ADDRESS_STAGING>
+  <ADDRESS_STAGING>
+    <ADDRESS_STAGING_TYPE_ID>4</ADDRESS_STAGING_TYPE_ID>
+    <ADDRESS_STAGING_TYPE>Servicing</ADDRESS_STAGING_TYPE>
+    <LAST_MODIFIED_DATE_TIME>2012-06-06T11:38:46.903-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+  </ADDRESS_STAGING>
+  <ADDRESS_STAGING>
+    <ADDRESS_STAGING_TYPE_ID>5</ADDRESS_STAGING_TYPE_ID>
+    <ADDRESS_STAGING_TYPE>Credentialing</ADDRESS_STAGING_TYPE>
+    <LAST_MODIFIED_DATE_TIME>2012-06-06T11:38:59.337-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+  </ADDRESS_STAGING>
+</ADDRESS_STAGINGs>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:tns="http://mes.gov/costreports" elementFormDefault="qualified" targetNamespace="http://mes.gov/costreports" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="CostReports_InlineSchema.xsd" />
+  <xsd:include schemaLocation="CostReports_MessageHeader.xsd" />
+  <xsd:element ibmSchExtn:docRoot="true" name="SubmitCostReportRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" ref="tns:MessageHeader" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="Payload" type="tns:cSubmitCostReportRequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="SubmitCostReportResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="ResponsePayload" type="tns:cSubmitCostReportResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="SubmitCostSettlementReportRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" ref="tns:MessageHeader" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="Payload" type="tns:cSubmitCostSettlementReportRequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="SubmitCostSettlementReportResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="1" name="ResponsePayload" type="tns:cSubmitCostSettlementReportResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="CostReportSearchRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" ref="tns:MessageHeader" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="Payload" type="tns:cCostReportSearchRequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="CostReportSearchResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="ResponsePayload" type="tns:cCostReportSearchResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="CostReportDueDateSearchRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" ref="tns:MessageHeader" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="Payload" type="tns:cCostReportDueDateSearchRequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="CostReportDueDateSearchResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="1" name="ResponsePayload" type="tns:cCostReportDueDateSearchResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

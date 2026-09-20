@@ -1,0 +1,44 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<style>
+#Mytable{font-family:Arial; font-size:10pt; margin:auto;width:85%;}
+#Mytable .left{text-align:left;}
+#Mytable .right{text-align:right;}
+</style>
+Legal Name: [[LEGALNAME]]<br>
+Provider NPI: [[NPI]]<br>
+Issue Date: [[CURRENTDATE]] <br>
+Re-Enrollment Due Date: [[REVALIDATIONDUE]]<br /><br />
+<table id="Mytable">
+<tr>
+<td class="left">Primary Contact: [[PRIMARYCONTACTNAME]]</td>
+</tr>
+<tr>
+<td class="left">[[PRIMARYCONTACTADDRESS1]]</td>
+</tr>
+<tr>
+<td class="left">[[PRIMARYCONTACTADDRESS2]]</td>
+</tr>
+<tr>
+<td class="left">[[GROUPCITYSTATEZIP]]</td>
+</tr>
+</table>
+<p>District of Columbia Medicaid needs you to revalidate your Registration.  This is your FINAL reminder notice to begin your Revalidation process.  
+    You have 30 days to complete your revalidation. <br /> 
+    If you do not take the action to revalidate your enrollment, your current service provider agreement will be terminated effective on [[ELIGIBILITYENDDATE> for non-compliance with revalidation.<br /><br />
+If you are a Personal Assistance Service or Developmental Disabilities services provider, contact your local DHHS office to begin the enrollment process. <br /><br />
+If you are a Medicaid Waiver services provider (Adult Day Health Care, Assisted Living Services, Childcare for Children with Disabilities, Home Care/Chore, Home-Delivered Meals, 
+    Independence Skills Management, Nutrition Services, Personal Emergency Response System, or Respite Care) contact the local Waiver office www.dhhs.dc.gov/hcs/services/Service-Coordination.htm to enroll.<br /><br />
+If you are a non-emergency transportation services provider, contact IntelliRide, a non-emergency transportation services brokerage, at (844) 531-3783 to enroll.<br /><br />
+If you wish to revalidate electronically, please log into the District of Columbia Medicaid Provider Data Management System web portal to complete and submit your revalidation.<br />
+[[PDMSURL]]</p>
+If you wish to submit your revalidation using the Medicaid Paper application, please visit the site below to obtain the required paper enrollment forms to complete your revalidation.<br />
+<a href="http://dhhs.dc.gov/medicaid/Pages/med_providerenrollment.aspx" target="_blank">http://dhhs.dc.gov/medicaid/Pages/med_providerenrollment.aspx</a><br /><br />
+Please mail your enrollment forms to:<br />
+MAXIMUS District of Columbia Medicaid Provider Screening and Enrollment<br />
+PO Box 81890<br />
+Lincoln, <br />
+NE 68501 <br /><br />
+Customer Service Center Phone Number: 1-888-111-2222<br /><br />
+Regards,<br />
+District of Columbia Medicaid
+</div>

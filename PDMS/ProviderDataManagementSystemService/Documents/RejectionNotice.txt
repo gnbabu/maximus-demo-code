@@ -1,0 +1,34 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<table id="Table1" width="100%">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+<tr><td>[[TOADDRESS]]</td></tr>
+</table>
+
+<br />
+<p>
+<b>Subject: Cost report with Tracking#[[Tracking Number]] is rejected.
+<p>
+[[Comments from agent]]
+</div>

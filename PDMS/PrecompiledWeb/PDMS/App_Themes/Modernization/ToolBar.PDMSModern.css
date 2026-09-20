@@ -1,0 +1,216 @@
+﻿.RadToolBar_PDMSModern {
+  color: #545487;
+  background-color: transparent;
+   text-align: center;
+  line-height: 20px;
+ 
+  /*font-family: "Segoe UI", Arial, Helvetica, sans-serif;*/ 
+
+}
+  .RadToolBar_PDMSModern .rtbOuter {
+    border-color: transparent; /*#b3b3b3;*/
+    border:none;
+        background-image: none;
+  }
+  .RadToolBar_PDMSModern .rtbWrap {
+    color: /*white;*/#333333; }
+  .RadToolBar_PDMSModern .rtbChoiceArrow {
+    background-image: url("images/ToolBar/rtbDropArrows.png"); }
+  .RadToolBar_PDMSModern .rtbItemClicked .rtbChoiceArrow,
+  .RadToolBar_PDMSModern .rtbSplBtnExpanded .rtbChoiceArrow,
+  .RadToolBar_PDMSModern .rtbDropDownExpanded .rtbChoiceArrow 
+  {
+    border: none;
+    background-image: url("images/ToolBar/rtbClickedDropArrows.png"); 
+
+  }
+  .RadToolBar_PDMSModern .rtbItemHovered .rtbWrap,
+  .RadToolBar_PDMSModern .rtbItemHovered .rtbOut,
+  .RadToolBar_PDMSModern .rtbItemHovered .rtbMid,
+  .RadToolBar_PDMSModern .rtbItemHovered .rtbIn {
+    color: blue;
+    background-color:#f2e5b6;
+  }
+  .RadToolBar_PDMSModern .rtbItemFocused .rtbWrap,
+  .RadToolBar_PDMSModern .rtbItemFocused .rtbOut,
+  .RadToolBar_PDMSModern .rtbItemFocused .rtbMid,
+  .RadToolBar_PDMSModern .rtbItemFocused .rtbIn {
+    color: blue;
+    background-color:#f2e5b6;
+  }
+  .RadToolBar_PDMSModern .rtbItemClicked .rtbWrap,
+  .RadToolBar_PDMSModern .rtbItemClicked .rtbOut,
+  .RadToolBar_PDMSModern .rtbItemClicked .rtbMid,
+  .RadToolBar_PDMSModern .rtbItemClicked .rtbIn {
+    color: #ffffff;
+    background-color:#f2e5b6;
+    border-color: transparent;
+    box-shadow:inset;
+  }
+  .RadToolBar_PDMSModern .rtbSplBtnExpanded .rtbWrap,
+  .RadToolBar_PDMSModern .rtbSplBtnExpanded .rtbOut,
+  .RadToolBar_PDMSModern .rtbSplBtnExpanded .rtbMid,
+  .RadToolBar_PDMSModern .rtbSplBtnExpanded .rtbIn,
+  .RadToolBar_PDMSModern .rtbDropDownExpanded .rtbWrap,
+  .RadToolBar_PDMSModern .rtbDropDownExpanded .rtbOut,
+  .RadToolBar_PDMSModern .rtbDropDownExpanded .rtbMid,
+  .RadToolBar_PDMSModern .rtbDropDownExpanded .rtbIn,
+  .RadToolBar_PDMSModern .rtbChecked .rtbWrap,
+  .RadToolBar_PDMSModern .rtbChecked .rtbOut,
+  .RadToolBar_PDMSModern .rtbChecked .rtbMid,
+  .RadToolBar_PDMSModern .rtbChecked .rtbIn {
+      border: none;
+     background-color:#f2e5b6;
+  }
+  .RadToolBar_PDMSModern .rtbSeparator {
+    border-color: transparent;
+    background-color: /*white;*/#f7f7f7; }
+
+.RadToolBar_PDMSModern_Horizontal .rtbOuter {
+  /*background-image: url("images/ToolBar/rtbControlBg.png");*/
+  background-position: 0 100%; }
+
+.RadToolBar_PDMSModern_Vertical .rtbOuter {
+  /*background-image: url("images/ToolBar/rtbVerticalControlBg.png");*/
+  background-position: 100% 0; }
+
+.RadToolBarDropDown_Default {
+  font-size: 12px;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  color: #333333;
+  border-color: #cccccc;
+  background-color: #ffffff;
+  background-image: url("images/ToolBar/rtbDropDownBg.png"); }
+  .RadToolBarDropDown_Default .rtbTopFix,
+  .RadToolBarDropDown_Default .rtbBottomFix,
+  .RadToolBarDropDown_Default .rtbGroup {
+    background-image: url("images/ToolBar/rtbDropDownBg.png");
+    background-color: #ffffff; }
+  .RadToolBarDropDown_Default .rtbBottomLeft,
+  .RadToolBarDropDown_Default .rtbRoundedCorners {
+    background-image: url("images/ToolBar/rtbRoundedLeft.png"); }
+  .RadToolBarDropDown_Default .rtbTopRight,
+  .RadToolBarDropDown_Default .rtbBottomRight {
+    background-image: url("images/ToolBar/rtbRoundedRight.png"); }
+  .RadToolBarDropDown_Default .rtbTopFix,
+  .RadToolBarDropDown_Default .rtbBottomFix,
+  .RadToolBarDropDown_Default .rtbRoundedCorners .rtbFirst {
+    border-color: #cccccc; }
+  .RadToolBarDropDown_Default .rtbWrap {
+    border-radius: 3px;
+    *color: #333333;
+    background-image: url("Common/radGradientListSprite.png"); }
+  .RadToolBarDropDown_Default .rtbItemHovered .rtbWrap,
+  .RadToolBarDropDown_Default .rtbItemFocused .rtbWrap {
+    border-color: darkgray;
+    color: #000000;
+    background-color: blue;
+    background-image: linear-gradient(gainsboro, #c2c2c2); }
+  .RadToolBarDropDown_Default .rtbItemClicked .rtbWrap {
+    /*border: 1px solid blue !important;*/
+    /*border-color: #676767;*/
+    color: #ffffff;
+    background-color: #808080;
+    background-image: linear-gradient(#9a9a9a, #808080); }
+  .RadToolBarDropDown_Default .rtbSeparator {
+    border-color: #939393;
+    background-color: #f7f7f7; }
+
+.RadToolBarDropDown_Default_rtl .rtbBottomLeft,
+.RadToolBarDropDown_Default_rtl .rtbRoundedCorners {
+  background-image: url("images/ToolBar/rtbRoundedLeft_rtl.png"); }
+
+.RadToolBarDropDown_Default_rtl .rtbTopRight,
+.RadToolBarDropDown_Default_rtl .rtbBottomRight {
+  background-image: url("images/ToolBar/rtbRoundedRight_rtl.png"); }
+
+.RadToolBarDropDown_Default_rtl .rtbTopFix,
+.RadToolBarDropDown_Default_rtl .rtbBottomFix,
+.RadToolBarDropDown_Default_rtl .rtbGroup,
+.RadToolBarDropDown_Default_rtl .rtbShadows .rtbGroup {
+  background-position: 100% 0; }
+
+.RadToolBar_PDMSModern .rtbText
+{
+    font-size:14pt;
+     font-family : "Arial Narrow";
+  font-weight:bold;
+    /*color:red !important;*/
+}
+
+
+.RadToolBar_PDMSModern .rrButton.rrButtonDisabled {
+    opacity:0.4;
+        filter:alpha(opacity=40);
+}
+ .progressbar {
+        background-color:#ddddeb;
+        border-radius: 12px;
+        vertical-align: middle;
+    }
+    #pnlProgressTracker {
+        width: 100%;
+        background-repeat: no-repeat;
+        padding-top: 5px;
+    }
+
+    .rightArrow {
+        cursor: pointer;
+        float: right;
+        display: inline-block;
+        vertical-align: middle;
+        line-height:100px;
+    }
+
+    .leftArrow {
+        cursor: pointer;
+        float: left;
+        display: inline-block;
+        vertical-align: middle;
+        line-height:100px;
+    }
+
+    .rrButtonDisabled {
+        opacity: 0.1;
+        filter: alpha(opacity=20); /* For IE8 and earlier */
+    }
+
+    div.RadToolBar {
+        /*text-align: center;*/
+    }
+
+    .rtbItemFocused {
+        color:aqua;
+    }
+
+    div.RadToolBar .AlignCenter {
+        text-align: center;
+        font-size:medium;
+        margin-left:10px;
+        margin-right:10px;
+    }
+
+   /*div.RadToolBar .rtbItem {
+            /*min-width:200px; 
+        }
+*/
+     div.RadToolBar .rtbOuter {
+        border: none;
+        /*background-color: #ddddeb; */
+        background-color:transparent;
+        background-image: none;
+    }
+    /*RadToolBar_Office2010Blue {
+         background-color:transparent;
+    }*/
+
+    .noHover .rtbWrap, .noHover .rtbOut, .noHover .rtbIn, .noHover .rtbMid
+        {
+            background-image: none !important;  
+            cursor:default;   
+            background-color:transparent !important;
+        }
+
+    /*.AlignCentered {
+    text-align: center;
+    }*/

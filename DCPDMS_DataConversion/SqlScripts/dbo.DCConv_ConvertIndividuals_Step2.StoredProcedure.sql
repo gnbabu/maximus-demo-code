@@ -1,0 +1,513 @@
+/****** Object:  StoredProcedure [dbo].[DCConv_ConvertIndividuals_Step2]    Script Date: 8/1/2016 3:13:13 PM ******/
+IF object_id('[dbo].[DCConv_ConvertIndividuals_Step2]','P') is not null
+DROP PROCEDURE [dbo].[DCConv_ConvertIndividuals_Step2]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		Richard Mays
+-- Create date: 5/10/2016
+-- Description:	
+-- =============================================
+CREATE PROCEDURE [dbo].[DCConv_ConvertIndividuals_Step2] 
+(
+	@pin_conv_run_id varchar(20),
+	@pin_conv_run_time datetime,
+	@pin_conv_data_export_date datetime
+)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	DECLARE @currentTable varchar(50);
+	DECLARE @MaxRegistrationID int;
+
+	BEGIN TRY
+--		BEGIN TRANSACTION
+
+		PRINT 'REG_TAXONOMY';
+		SET @currentTable = 'REG_TAXONOMY';
+		INSERT INTO [dbo].[REG_TAXONOMY]
+				   ([REG_ID]
+				   ,[PRIMARY_FLAG]
+				   ,[TAXONOMY_TYPE_ID]
+				   ,[MODIFIED_STATUS_TYPE_ID]
+				   ,[START_DATE]
+				   ,[END_DATE]
+				   ,[LAST_MODIFIED_DATE_TIME]
+				   ,[LAST_MODIFIED_USER])
+		SELECT map.RegistrationId AS [REG_ID],
+				0 AS [PRIMARY_FLAG],
+				--(SELECT TAXONOMY_TYPE_ID FROM dbo.TAXONOMY_TYPE WHERE RTRIM(LTRIM(UPPER(TAXONOMY_CODE))) = RTRIM(LTRIM(UPPER(tax.[P-TAXONOMY-CD]))) AND PROVIDER_TYPE_ID = prov.[PROVIDER_TYPE_ID]) AS [TAXONOMY_TYPE_ID],
+				tt.TAXONOMY_TYPE_ID,
+				1 AS [MODIFIED_STATUS_TYPE_ID],
+				dbo.fn_ConvertDCDateToPDMS(tax.[P-TAXON-BEG-DT]) AS [START_DATE],
+				dbo.fn_ConvertDCDateToPDMS(tax.[P-TAXON-END-DT]) AS [END_DATE],
+				@pin_conv_run_time AS [LAST_MODIFIED_DATE_TIME],
+				dbo.fn_GetUniqueGUID(2) AS [LAST_MODIFIED_USER]
+		FROM DCConv_KeyCrossReferences map
+		INNER JOIN SRC_ProviderTaxonomy tax ON tax.[P-SYS-ID] = map.[SysID]
+		INNER JOIN REG_PROVIDER prov ON prov.[REG_ID] = map.[RegistrationID]
+		JOIN dbo.TAXONOMY_TYPE tt ON RTRIM(LTRIM(UPPER(tt.TAXONOMY_CODE))) = RTRIM(LTRIM(UPPER(tax.[P-TAXONOMY-CD]))) AND tt.PROVIDER_TYPE_ID = prov.[PROVIDER_TYPE_ID]
+		WHERE map.IsGroup = 0 AND
+		EXISTS(SELECT REG_ID FROM dbo.REGISTRATION WHERE REG_ID =  map.RegistrationID) AND
+		(SELECT TAXONOMY_TYPE_ID FROM dbo.TAXONOMY_TYPE WHERE RTRIM(LTRIM(UPPER(TAXONOMY_CODE))) = RTRIM(LTRIM(UPPER(tax.[P-TAXONOMY-CD]))) AND PROVIDER_TYPE_ID = prov.[PROVIDER_TYPE_ID]) IS NOT NULL AND
+		tax.[EnableConversion] = 1;
+
+		-- Set PRIMARY_FLAG
+		WITH lastEnd as (
+		 SELECT REG_ID, MAX(ISNULL(END_DATE,'9999-12-31')) as END_DATE	
+		 FROM REG_TAXONOMY 
+		 GROUP BY REG_ID
+		 )
+		UPDATE REG_TAXONOMY
+		SET PRIMARY_FLAG = 1
+		FROM REG_TAXONOMY rs 
+		JOIN (	SELECT minID.REG_ID, min(minID.REG_TAXONOMY_ID) as REG_TAXONOMY_ID
+				FROM REG_TAXONOMY minID
+				JOIN lastEnd ON minID.REG_ID = lastEnd.REG_ID AND ISNULL(minID.END_DATE,'9999-12-31') = lastEnd.END_DATE
+				GROUP BY minID.REG_ID) sub
+		ON rs.REG_TAXONOMY_ID = sub.REG_TAXONOMY_ID;
+
+
+		PRINT 'REG_SPECIALTY';
+		SET @currentTable = 'REG_SPECIALTY';
+		INSERT INTO [dbo].[REG_SPECIALTY]
+           ([REG_ID]
+           ,[PRIMARY_FLAG]
+           ,[SPECIALTY_TYPE_ID]
+           ,[SPECIALTY_BOARD_CERTIFIED]
+           ,[MODIFIED_STATUS_TYPE_ID]
+           ,[START_DATE]
+           ,[END_DATE]
+           ,[LAST_MODIFIED_DATE_TIME]
+           ,[LAST_MODIFIED_USER]
+           ,[REG_TAXONOMY_ID]
+		   ,[SPECIALTY_BOARD_STATE]
+		   ,[SPECIALTY_BOARD_NAME])
+		SELECT DISTINCT map.RegistrationId AS [REG_ID],
+			0 AS [PRIMARY_FLAG],
+			--(SELECT SPECIALTY_TYPE_ID FROM dbo.TAXONOMY_TYPE WHERE RTRIM(LTRIM(UPPER(MMIS_SPECIALTY_TYPE_ID))) = RTRIM(LTRIM(UPPER(specl.[P-SPECL-CD]))) AND PROVIDER_TYPE_ID = prov.PROVIDER_TYPE_ID) AS [SPECIALTY_TYPE_ID],
+			tt.SPECIALTY_TYPE_ID, 
+			'N' AS [SPECIALTY_BOARD_CERTIFIED],
+			1 AS [MODIFIED_STATUS_TYPE_ID],
+			dbo.fn_ConvertDCDateToPDMS(specl.[P-SPECL-BEG-DT]) AS [START_DATE],
+			dbo.fn_ConvertDCDateToPDMS(specl.[P-SPECL-END-DT]) AS  [END_DATE],
+			@pin_conv_run_time AS [LAST_MODIFIED_DATE_TIME],
+			dbo.fn_GetUniqueGUID(2) AS [LAST_MODIFIED_USER],
+			NULL AS [REG_TAXONOMY_ID] -- Must talk to Diwakar about this!!
+			,specl.[P-ST-CD]
+			,specl.[P-LIC-BRD-NUM]
+		FROM DCConv_KeyCrossReferences map
+		INNER JOIN SRC_ProviderSpecialty specl ON specl.[P-SYS-ID] = map.[SysId]
+		INNER JOIN REG_PROVIDER prov ON prov.[REG_ID] = map.[RegistrationID]
+		JOIN dbo.TAXONOMY_TYPE tt ON RTRIM(LTRIM(UPPER(tt.MMIS_SPECIALTY_TYPE_ID))) = RTRIM(LTRIM(UPPER(specl.[P-SPECL-CD]))) AND tt.PROVIDER_TYPE_ID = prov.PROVIDER_TYPE_ID
+		WHERE map.IsGroup = 0 AND
+		EXISTS(SELECT REG_ID FROM dbo.REGISTRATION WHERE REG_ID =  map.RegistrationID) AND
+		--(SELECT SPECIALTY_TYPE_ID FROM dbo.TAXONOMY_TYPE WHERE RTRIM(LTRIM(UPPER(MMIS_SPECIALTY_TYPE_ID))) = RTRIM(LTRIM(UPPER(specl.[P-SPECL-CD]))) AND PROVIDER_TYPE_ID = prov.PROVIDER_TYPE_ID) IS NOT NULL AND
+		tt.SPECIALTY_TYPE_ID IS NOT NULL
+		AND specl.[EnableConversion] = 1;
+
+		-- Specialty Board and State
+		WITH lastLicense as (
+			SELECT [P-SYS-ID], max([P-LIC-EXPIR-DT]) as [P-LIC-EXPIR-DT]
+			FROM SRC_ProviderLicense 
+			WHERE EnableConversion = 1
+			GROUP BY [P-SYS-ID])
+		UPDATE REG_SPECIALTY
+		SET SPECIALTY_BOARD_NAME = src.[P-LIC-BRD-NUM],
+		    SPECIALTY_BOARD_STATE = src.[P-ST-CD]
+		FROM REG_SPECIALTY spcl
+		JOIN DCConv_KeyCrossReferences map on spcl.REG_ID = map.RegistrationID
+		JOIN SRC_ProviderLicense src on map.SysID = src.[P-SYS-ID]
+		JOIN lastLicense b on src.[P-SYS-ID] = b.[P-SYS-ID] and src.[P-LIC-EXPIR-DT] = b.[P-LIC-EXPIR-DT];
+
+
+		-- Custom fixes
+		-- retired 12/15/16
+
+		-- Load missing specialties		
+		--CREATE TABLE #baselineProviders (PROVIDER_TYPE_ID int);
+		--CREATE TABLE #baselineSpecialties (SPECIALTY_TYPE_ID int, TAXONOMY_CODE varchar(80), TAXONOMY_NAME varchar(256),
+		--  EXPIRATION_DATE date, MMIS_SPECIALTY_TYPE_ID varchar(5), NPI_REQUIRED bit);
+
+		-- A02 Doctor of Osteopathy
+		-- baseline list of provider type IDs for A02
+		--INSERT INTO #baselineProviders (PROVIDER_TYPE_ID) 
+		--SELECT DISTINCT PROVIDER_TYPE_ID
+		--FROM PROVIDER_TYPE 
+		--WHERE MMIS_Provider_Type_ID = 'A02' 
+
+		-- baseline list of specialties for A02
+		--INSERT INTO #baselineSpecialties (SPECIALTY_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT DISTINCT b.SPECIALTY_TYPE_ID, b.TAXONOMY_CODE, b.TAXONOMY_NAME, b.EXPIRATION_DATE,
+		--  b.MMIS_SPECIALTY_TYPE_ID, b.NPI_REQUIRED
+		--FROM PROVIDER_TYPE a
+		--JOIN TAXONOMY_TYPE b on a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID
+		--WHERE a.MMIS_Provider_Type_ID = 'A02' 
+		--AND b.specialty_type_id <> 0 ORDER BY b.Specialty_Type_ID;
+
+		--WITH targetList AS (
+		-- SELECT b.PROVIDER_TYPE_ID, a.*
+		-- FROM #baselineSpecialties a,  #baselineProviders b
+		--)
+		--INSERT INTO TAXONOMY_TYPE (SPECIALTY_TYPE_ID, PROVIDER_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  LAST_MODIFIED_DATE_TIME, LAST_MODIFIED_USER, MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT a.SPECIALTY_TYPE_ID, a.PROVIDER_TYPE_ID, a.TAXONOMY_CODE, a.TAXONOMY_NAME, a.EXPIRATION_DATE, 
+		-- @pin_conv_run_time AS [LAST_MODIFIED_DATE_TIME], dbo.fn_GetUniqueGUID(2) AS [LAST_MODIFIED_USER],
+		-- a.MMIS_SPECIALTY_TYPE_ID, a.NPI_REQUIRED
+		--FROM targetList a
+		--LEFT JOIN TAXONOMY_TYPE b
+		--ON a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID  and a.SPECIALTY_TYPE_ID = b.SPECIALTY_TYPE_ID 
+		--WHERE b.PROVIDER_TYPE_ID is null
+		--ORDER BY a.PROVIDER_TYPE_ID, a.SPECIALTY_TYPE_ID;
+
+		--TRUNCATE TABLE #baselineSpecialties;
+		--TRUNCATE TABLE #baselineProviders;
+
+
+		-- A04 Podiatrist
+		-- baseline list of provider type IDs for A04
+		--INSERT INTO #baselineProviders (PROVIDER_TYPE_ID) 
+		--SELECT DISTINCT PROVIDER_TYPE_ID
+		--FROM PROVIDER_TYPE 
+		--WHERE MMIS_Provider_Type_ID = 'A04' 
+
+		-- baseline list of specialties for A04
+		--INSERT INTO #baselineSpecialties (SPECIALTY_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT DISTINCT b.SPECIALTY_TYPE_ID, b.TAXONOMY_CODE, b.TAXONOMY_NAME, b.EXPIRATION_DATE,
+		--  b.MMIS_SPECIALTY_TYPE_ID, b.NPI_REQUIRED
+		--FROM PROVIDER_TYPE a
+		--JOIN TAXONOMY_TYPE b on a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID
+		--WHERE a.MMIS_Provider_Type_ID = 'A04' 
+		--AND b.specialty_type_id <> 0 ORDER BY b.Specialty_Type_ID;
+
+		--WITH targetList AS (
+		-- SELECT b.PROVIDER_TYPE_ID, a.*
+		-- FROM #baselineSpecialties a,  #baselineProviders b
+		--)
+		--INSERT INTO TAXONOMY_TYPE (SPECIALTY_TYPE_ID, PROVIDER_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  LAST_MODIFIED_DATE_TIME, LAST_MODIFIED_USER, MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT a.SPECIALTY_TYPE_ID, a.PROVIDER_TYPE_ID, a.TAXONOMY_CODE, a.TAXONOMY_NAME, a.EXPIRATION_DATE, 
+		-- @pin_conv_run_time AS [LAST_MODIFIED_DATE_TIME], dbo.fn_GetUniqueGUID(2) AS [LAST_MODIFIED_USER],
+		-- a.MMIS_SPECIALTY_TYPE_ID, a.NPI_REQUIRED
+		--FROM targetList a
+		--LEFT JOIN TAXONOMY_TYPE b
+		--ON a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID  and a.SPECIALTY_TYPE_ID = b.SPECIALTY_TYPE_ID 
+		--WHERE b.PROVIDER_TYPE_ID is null
+		--ORDER BY a.PROVIDER_TYPE_ID, a.SPECIALTY_TYPE_ID;
+
+		--TRUNCATE TABLE #baselineSpecialties;
+		--TRUNCATE TABLE #baselineProviders;
+
+
+		-- B01 Ind Xray And Lab
+		-- baseline list of provider type IDs for B01
+		--INSERT INTO #baselineProviders (PROVIDER_TYPE_ID) 
+		--SELECT DISTINCT PROVIDER_TYPE_ID
+		--FROM PROVIDER_TYPE 
+		--WHERE MMIS_Provider_Type_ID = 'B01' 
+
+		-- baseline list of specialties for B01
+		--INSERT INTO #baselineSpecialties (SPECIALTY_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT DISTINCT b.SPECIALTY_TYPE_ID, b.TAXONOMY_CODE, b.TAXONOMY_NAME, b.EXPIRATION_DATE,
+		--  b.MMIS_SPECIALTY_TYPE_ID, b.NPI_REQUIRED
+		--FROM PROVIDER_TYPE a
+		--JOIN TAXONOMY_TYPE b on a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID
+		--WHERE a.MMIS_Provider_Type_ID = 'B01' 
+		--AND b.specialty_type_id <> 0 ORDER BY b.Specialty_Type_ID;
+
+		--WITH targetList AS (
+		-- SELECT b.PROVIDER_TYPE_ID, a.*
+		-- FROM #baselineSpecialties a,  #baselineProviders b
+		--)
+		--INSERT INTO TAXONOMY_TYPE (SPECIALTY_TYPE_ID, PROVIDER_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  LAST_MODIFIED_DATE_TIME, LAST_MODIFIED_USER, MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT a.SPECIALTY_TYPE_ID, a.PROVIDER_TYPE_ID, a.TAXONOMY_CODE, a.TAXONOMY_NAME, a.EXPIRATION_DATE, 
+		-- @pin_conv_run_time AS [LAST_MODIFIED_DATE_TIME], dbo.fn_GetUniqueGUID(2) AS [LAST_MODIFIED_USER],
+		-- a.MMIS_SPECIALTY_TYPE_ID, a.NPI_REQUIRED
+		--FROM targetList a
+		--LEFT JOIN TAXONOMY_TYPE b
+		--ON a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID  and a.SPECIALTY_TYPE_ID = b.SPECIALTY_TYPE_ID 
+		--WHERE b.PROVIDER_TYPE_ID is null
+		--ORDER BY a.PROVIDER_TYPE_ID, a.SPECIALTY_TYPE_ID;
+
+		--TRUNCATE TABLE #baselineSpecialties;
+		--TRUNCATE TABLE #baselineProviders;
+
+
+		-- U00 General Non-Billing
+		-- baseline list of provider type IDs for U00
+		--INSERT INTO #baselineProviders (PROVIDER_TYPE_ID) 
+		--SELECT DISTINCT PROVIDER_TYPE_ID
+		--FROM PROVIDER_TYPE 
+		--WHERE MMIS_Provider_Type_ID = 'U00' 
+
+		-- baseline list of specialties for U00
+		--INSERT INTO #baselineSpecialties (SPECIALTY_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT DISTINCT b.SPECIALTY_TYPE_ID, b.TAXONOMY_CODE, b.TAXONOMY_NAME, b.EXPIRATION_DATE,
+		--  b.MMIS_SPECIALTY_TYPE_ID, b.NPI_REQUIRED
+		--FROM PROVIDER_TYPE a
+		--JOIN TAXONOMY_TYPE b on a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID
+		--WHERE a.MMIS_Provider_Type_ID = 'U00' 
+		--AND b.specialty_type_id <> 0 ORDER BY b.Specialty_Type_ID;
+
+		--WITH targetList AS (
+		-- SELECT b.PROVIDER_TYPE_ID, a.*
+		-- FROM #baselineSpecialties a,  #baselineProviders b
+		--)
+		--INSERT INTO TAXONOMY_TYPE (SPECIALTY_TYPE_ID, PROVIDER_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  LAST_MODIFIED_DATE_TIME, LAST_MODIFIED_USER, MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT a.SPECIALTY_TYPE_ID, a.PROVIDER_TYPE_ID, a.TAXONOMY_CODE, a.TAXONOMY_NAME, a.EXPIRATION_DATE, 
+		-- @pin_conv_run_time AS [LAST_MODIFIED_DATE_TIME], dbo.fn_GetUniqueGUID(2) AS [LAST_MODIFIED_USER],
+		-- a.MMIS_SPECIALTY_TYPE_ID, a.NPI_REQUIRED
+		--FROM targetList a
+		--LEFT JOIN TAXONOMY_TYPE b
+		--ON a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID  and a.SPECIALTY_TYPE_ID = b.SPECIALTY_TYPE_ID 
+		--WHERE b.PROVIDER_TYPE_ID is null
+		--ORDER BY a.PROVIDER_TYPE_ID, a.SPECIALTY_TYPE_ID;
+
+		--TRUNCATE TABLE #baselineSpecialties;
+		--TRUNCATE TABLE #baselineProviders;
+
+
+		-- U09 Direct Incentive Financial
+		-- baseline list of provider type IDs for U09
+		--INSERT INTO #baselineProviders (PROVIDER_TYPE_ID) 
+		--SELECT DISTINCT PROVIDER_TYPE_ID
+		--FROM PROVIDER_TYPE 
+		--WHERE MMIS_Provider_Type_ID = 'U09' 
+
+		-- baseline list of specialties for U09
+		--INSERT INTO #baselineSpecialties (SPECIALTY_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT DISTINCT b.SPECIALTY_TYPE_ID, b.TAXONOMY_CODE, b.TAXONOMY_NAME, b.EXPIRATION_DATE,
+		--  b.MMIS_SPECIALTY_TYPE_ID, b.NPI_REQUIRED
+		--FROM PROVIDER_TYPE a
+		--JOIN TAXONOMY_TYPE b on a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID
+		--WHERE a.MMIS_Provider_Type_ID = 'U09' 
+		--AND b.specialty_type_id <> 0 ORDER BY b.Specialty_Type_ID;
+
+		--WITH targetList AS (
+		-- SELECT b.PROVIDER_TYPE_ID, a.*
+		-- FROM #baselineSpecialties a,  #baselineProviders b
+		--)
+		--INSERT INTO TAXONOMY_TYPE (SPECIALTY_TYPE_ID, PROVIDER_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  LAST_MODIFIED_DATE_TIME, LAST_MODIFIED_USER, MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT a.SPECIALTY_TYPE_ID, a.PROVIDER_TYPE_ID, a.TAXONOMY_CODE, a.TAXONOMY_NAME, a.EXPIRATION_DATE, 
+		-- @pin_conv_run_time AS [LAST_MODIFIED_DATE_TIME], dbo.fn_GetUniqueGUID(2) AS [LAST_MODIFIED_USER],
+		-- a.MMIS_SPECIALTY_TYPE_ID, a.NPI_REQUIRED
+		--FROM targetList a
+		--LEFT JOIN TAXONOMY_TYPE b
+		--ON a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID  and a.SPECIALTY_TYPE_ID = b.SPECIALTY_TYPE_ID 
+		--WHERE b.PROVIDER_TYPE_ID is null
+		--ORDER BY a.PROVIDER_TYPE_ID, a.SPECIALTY_TYPE_ID;
+
+		--TRUNCATE TABLE #baselineSpecialties;
+		--TRUNCATE TABLE #baselineProviders;
+
+
+		-- U10 Participant Directed
+		-- baseline list of provider type IDs for U10
+		--INSERT INTO #baselineProviders (PROVIDER_TYPE_ID) 
+		--SELECT DISTINCT PROVIDER_TYPE_ID
+		--FROM PROVIDER_TYPE 
+		--WHERE MMIS_Provider_Type_ID = 'U10' 
+
+		-- baseline list of specialties for U10
+		--INSERT INTO #baselineSpecialties (SPECIALTY_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT DISTINCT b.SPECIALTY_TYPE_ID, b.TAXONOMY_CODE, b.TAXONOMY_NAME, b.EXPIRATION_DATE,
+		--  b.MMIS_SPECIALTY_TYPE_ID, b.NPI_REQUIRED
+		--FROM PROVIDER_TYPE a
+		--JOIN TAXONOMY_TYPE b on a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID
+		--WHERE a.MMIS_Provider_Type_ID = 'U10' 
+		--AND b.specialty_type_id <> 0 ORDER BY b.Specialty_Type_ID;
+
+		--WITH targetList AS (
+		-- SELECT b.PROVIDER_TYPE_ID, a.*
+		-- FROM #baselineSpecialties a,  #baselineProviders b
+		--)
+		--INSERT INTO TAXONOMY_TYPE (SPECIALTY_TYPE_ID, PROVIDER_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  LAST_MODIFIED_DATE_TIME, LAST_MODIFIED_USER, MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT a.SPECIALTY_TYPE_ID, a.PROVIDER_TYPE_ID, a.TAXONOMY_CODE, a.TAXONOMY_NAME, a.EXPIRATION_DATE, 
+		-- @pin_conv_run_time AS [LAST_MODIFIED_DATE_TIME], dbo.fn_GetUniqueGUID(2) AS [LAST_MODIFIED_USER],
+		-- a.MMIS_SPECIALTY_TYPE_ID, a.NPI_REQUIRED
+		--FROM targetList a
+		--LEFT JOIN TAXONOMY_TYPE b
+		--ON a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID  and a.SPECIALTY_TYPE_ID = b.SPECIALTY_TYPE_ID 
+		--WHERE b.PROVIDER_TYPE_ID is null
+		--ORDER BY a.PROVIDER_TYPE_ID, a.SPECIALTY_TYPE_ID;
+
+		--TRUNCATE TABLE #baselineSpecialties;
+		--TRUNCATE TABLE #baselineProviders;
+
+
+		-- Z01 MCO, Special Needs
+		-- baseline list of provider type IDs for Z01
+		--INSERT INTO #baselineProviders (PROVIDER_TYPE_ID) 
+		--SELECT DISTINCT PROVIDER_TYPE_ID
+		--FROM PROVIDER_TYPE 
+		--WHERE MMIS_Provider_Type_ID = 'Z01' 
+
+		-- baseline list of specialties for Z01
+		--INSERT INTO #baselineSpecialties (SPECIALTY_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT DISTINCT b.SPECIALTY_TYPE_ID, b.TAXONOMY_CODE, b.TAXONOMY_NAME, b.EXPIRATION_DATE,
+		--  b.MMIS_SPECIALTY_TYPE_ID, b.NPI_REQUIRED
+		--FROM PROVIDER_TYPE a
+		--JOIN TAXONOMY_TYPE b on a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID
+		--WHERE a.MMIS_Provider_Type_ID = 'Z01' 
+		--AND b.specialty_type_id <> 0 ORDER BY b.Specialty_Type_ID;
+
+		--WITH targetList AS (
+		-- SELECT b.PROVIDER_TYPE_ID, a.*
+		-- FROM #baselineSpecialties a,  #baselineProviders b
+		--)
+		--INSERT INTO TAXONOMY_TYPE (SPECIALTY_TYPE_ID, PROVIDER_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  LAST_MODIFIED_DATE_TIME, LAST_MODIFIED_USER, MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT a.SPECIALTY_TYPE_ID, a.PROVIDER_TYPE_ID, a.TAXONOMY_CODE, a.TAXONOMY_NAME, a.EXPIRATION_DATE, 
+		-- @pin_conv_run_time AS [LAST_MODIFIED_DATE_TIME], dbo.fn_GetUniqueGUID(2) AS [LAST_MODIFIED_USER],
+		-- a.MMIS_SPECIALTY_TYPE_ID, a.NPI_REQUIRED
+		--FROM targetList a
+		--LEFT JOIN TAXONOMY_TYPE b
+		--ON a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID  and a.SPECIALTY_TYPE_ID = b.SPECIALTY_TYPE_ID 
+		--WHERE b.PROVIDER_TYPE_ID is null
+		--ORDER BY a.PROVIDER_TYPE_ID, a.SPECIALTY_TYPE_ID;
+
+		--TRUNCATE TABLE #baselineSpecialties;
+		--TRUNCATE TABLE #baselineProviders;
+
+
+		-- Z02 Medical Transportation Broker
+		-- baseline list of provider type IDs for Z02
+		--INSERT INTO #baselineProviders (PROVIDER_TYPE_ID)
+		--SELECT DISTINCT PROVIDER_TYPE_ID
+		--FROM PROVIDER_TYPE 
+		--WHERE MMIS_Provider_Type_ID = 'Z02' 
+
+		-- baseline list of specialties for Z02
+		--INSERT INTO #baselineSpecialties (SPECIALTY_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT DISTINCT b.SPECIALTY_TYPE_ID, b.TAXONOMY_CODE, b.TAXONOMY_NAME, b.EXPIRATION_DATE,
+		--  b.MMIS_SPECIALTY_TYPE_ID, b.NPI_REQUIRED
+		--FROM PROVIDER_TYPE a
+		--JOIN TAXONOMY_TYPE b on a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID
+		--WHERE a.MMIS_Provider_Type_ID = 'Z02' 
+		--AND b.specialty_type_id <> 0 ORDER BY b.Specialty_Type_ID;
+
+		--WITH targetList AS (
+		-- SELECT b.PROVIDER_TYPE_ID, a.*
+		-- FROM #baselineSpecialties a,  #baselineProviders b
+		--)
+		--INSERT INTO TAXONOMY_TYPE (SPECIALTY_TYPE_ID, PROVIDER_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  LAST_MODIFIED_DATE_TIME, LAST_MODIFIED_USER, MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT a.SPECIALTY_TYPE_ID, a.PROVIDER_TYPE_ID, a.TAXONOMY_CODE, a.TAXONOMY_NAME, a.EXPIRATION_DATE, 
+		-- @pin_conv_run_time AS [LAST_MODIFIED_DATE_TIME], dbo.fn_GetUniqueGUID(2) AS [LAST_MODIFIED_USER],
+		-- a.MMIS_SPECIALTY_TYPE_ID, a.NPI_REQUIRED
+		--FROM targetList a
+		--LEFT JOIN TAXONOMY_TYPE b
+		--ON a.PROVIDER_TYPE_ID = b.PROVIDER_TYPE_ID  and a.SPECIALTY_TYPE_ID = b.SPECIALTY_TYPE_ID 
+		--WHERE b.PROVIDER_TYPE_ID is null
+		--ORDER BY a.PROVIDER_TYPE_ID, a.SPECIALTY_TYPE_ID;
+
+		--TRUNCATE TABLE #baselineSpecialties;
+		--TRUNCATE TABLE #baselineProviders;
+
+		-- Add MMIS Specialty Types 709 and 739
+		--IF NOT EXISTS (
+		-- SELECT TAXONOMY_TYPE_ID
+		-- FROM taxonomy_type t
+		-- JOIN provider_type p on p.provider_type_id = t.provider_type_id
+		-- WHERE p.mmis_provider_type_id = 'W02' 
+		-- AND t.specialty_type_id <> 0
+		-- AND t.MMIS_SPECIALTY_TYPE_ID in (709,739)
+		--)
+		--INSERT INTO TAXONOMY_TYPE (SPECIALTY_TYPE_ID, PROVIDER_TYPE_ID, TAXONOMY_CODE, TAXONOMY_NAME, EXPIRATION_DATE,
+		--  LAST_MODIFIED_DATE_TIME, LAST_MODIFIED_USER, MMIS_SPECIALTY_TYPE_ID, NPI_REQUIRED)
+		--SELECT DISTINCT a.SPECIALTY_TYPE_ID, b.PROVIDER_TYPE_ID, a.TAXONOMY_CODE, a.TAXONOMY_NAME, a.EXPIRATION_DATE, 
+		-- @pin_conv_run_time AS [LAST_MODIFIED_DATE_TIME], dbo.fn_GetUniqueGUID(2) AS [LAST_MODIFIED_USER],
+		-- a.MMIS_SPECIALTY_TYPE_ID, a.NPI_REQUIRED
+		--FROM taxonomy_type a, provider_type b
+		--WHERE a.MMIS_SPECIALTY_TYPE_ID in (709,739)
+		--AND b.mmis_provider_type_id = 'W02';
+
+
+		-- Set PRIMARY_FLAG
+		
+		WITH lastEnd as (
+		 SELECT REG_ID, MAX(ISNULL(END_DATE,'9999-12-31')) as END_DATE
+		 FROM REG_SPECIALTY 
+		 GROUP BY REG_ID
+		)
+		UPDATE REG_SPECIALTY
+		SET PRIMARY_FLAG = 1
+		FROM REG_SPECIALTY rs 
+		JOIN (	SELECT minID.REG_ID, min(minID.REG_SPECIALTY_ID) as REG_SPECIALTY_ID
+				FROM REG_SPECIALTY minID
+				JOIN lastEnd ON minID.REG_ID = lastEnd.REG_ID AND ISNULL(minID.END_DATE,'9999-12-31') = lastEnd.END_DATE
+				GROUP BY minID.REG_ID) sub
+		ON rs.REG_SPECIALTY_ID = sub.REG_SPECIALTY_ID; 
+		
+		-- Reset START_DATE if invalid
+		UPDATE REG_TAXONOMY 
+		SET [START_DATE] = reg.[CHANGE_EFFECTIVE_DATE]
+		FROM REG_TAXONOMY rt
+		JOIN DCConv_KeyCrossReferences map on rt.REG_ID = map.RegistrationID
+		JOIN REGISTRATION reg on map.RegistrationID = reg.REG_ID
+		WHERE rt.START_DATE = '1753-01-01'
+
+		UPDATE REG_SPECIALTY
+		SET [START_DATE] = reg.CHANGE_EFFECTIVE_DATE
+		FROM REG_SPECIALTY rs
+		JOIN DCConv_KeyCrossReferences map on rs.REG_ID = map.RegistrationID
+		JOIN REGISTRATION reg on map.RegistrationID = reg.REG_ID
+		WHERE rs.START_DATE = '1753-01-01'
+
+		
+		--COMMIT TRANSACTION;
+	END TRY
+	BEGIN CATCH
+
+	--	ROLLBACK TRANSACTION;
+
+		DECLARE @ErrorMessage NVARCHAR(4000);
+		DECLARE @ErrorLine int;
+		DECLARE @ErrorSeverity INT;
+		DECLARE @ErrorState INT;
+		DECLARE @ErrorNumber int;
+		DECLARE @ErrorProcedure varchar(128);
+
+		SELECT 
+			@ErrorMessage = ERROR_MESSAGE(),
+			@ErrorLine = ERROR_LINE(),
+			@ErrorSeverity = ERROR_SEVERITY(),
+			@ErrorState = ERROR_STATE(),
+			@ErrorNumber = ERROR_NUMBER(),
+			@ErrorProcedure = ERROR_PROCEDURE();
+
+		-- add the error to the log
+		INSERT INTO [dbo].[DCConv_Errors]([RunID],[TableContext],[ColumnContext],[ErrorLine],[ErrorNumber],[ErrorMessage],[ErrorProcedure])
+		VALUES
+        (@pin_conv_run_id,@currentTable,'', @ErrorLine, @ErrorNumber, @ErrorMessage, @ErrorProcedure);
+
+		IF OBJECT_ID('tempdb..DCConv_KeyCrossReferences') IS NOT NULL
+			DROP TABLE DCConv_KeyCrossReferences;
+		
+		-- this will be a fatal error
+		RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState);
+	END CATCH
+END
+
+
+GO

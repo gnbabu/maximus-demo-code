@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://mes.gov/costreports" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://mes.gov/costreports" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <documentation>
+    <appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="claimsSoap" originalBindingStyle="document" />
+      </MRWSDLAppInfo>
+    </appinfo>
+  </documentation>
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/costreports" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="CostReports.xsd" />
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/costreports" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="CostReports_MessageHeader.xsd" />
+    </xsd:schema>
+  </types>
+  <message name="submitCostReportRequestMsg">
+    <part name="parameters" element="tns:SubmitCostReportRequest" />
+  </message>
+  <message name="submitCostReportResponseMsg">
+    <part name="parameters" element="tns:SubmitCostReportResponse" />
+  </message>
+  <message name="submitCostSettlementReportRequestMsg">
+    <part name="parameters" element="tns:SubmitCostSettlementReportRequest" />
+  </message>
+  <message name="submitCostSettlementReportResponseMsg">
+    <part name="parameters" element="tns:SubmitCostSettlementReportResponse" />
+  </message>
+  <message name="costReportSearchRequestMsg">
+    <part name="parameters" element="tns:CostReportSearchRequest" />
+  </message>
+  <message name="costReportSearchResponseMsg">
+    <part name="parameters" element="tns:CostReportSearchResponse" />
+  </message>
+  <message name="costReportDueDateSearchRequestMsg">
+    <part name="parameters" element="tns:CostReportDueDateSearchRequest" />
+  </message>
+  <message name="costReportDueDateSearchResponseMsg">
+    <part name="parameters" element="tns:CostReportDueDateSearchResponse" />
+  </message>
+  <message name="submitCostReportFault">
+    <part name="parameters" element="tns:Fault" />
+  </message>
+  <message name="submitCostSettlementReportFault">
+    <part name="parameters" element="tns:Fault" />
+  </message>
+  <message name="costReportSearchFault">
+    <part name="parameters" element="tns:Fault" />
+  </message>
+  <message name="costReportDueDateSearchFault">
+    <part name="parameters" element="tns:Fault" />
+  </message>
+  <portType name="costReportSoapPortType">
+    <operation name="submitCostReport">
+      <input message="tns:submitCostReportRequestMsg" />
+      <output message="tns:submitCostReportResponseMsg" />
+      <fault name="fault" message="tns:submitCostReportFault" />
+    </operation>
+    <operation name="submitCostSettlementReport">
+      <input message="tns:submitCostSettlementReportRequestMsg" />
+      <output message="tns:submitCostSettlementReportResponseMsg" />
+      <fault name="fault" message="tns:submitCostSettlementReportFault" />
+    </operation>
+    <operation name="costReportSearch">
+      <input message="tns:costReportSearchRequestMsg" />
+      <output message="tns:costReportSearchResponseMsg" />
+      <fault name="fault" message="tns:costReportSearchFault" />
+    </operation>
+    <operation name="costReportDueDateSearch">
+      <input message="tns:costReportDueDateSearchRequestMsg" />
+      <output message="tns:costReportDueDateSearchResponseMsg" />
+      <fault name="fault" message="tns:costReportDueDateSearchFault" />
+    </operation>
+  </portType>
+  <binding name="costReportSoap" type="tns:costReportSoapPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="submitCostReport">
+      <soap:operation soapAction="http://mes.gov/submitCostReport" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="submitCostSettlementReport">
+      <soap:operation soapAction="http://mes.gov/submitCostSettlementReport" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="costReportSearch">
+      <soap:operation soapAction="http://mes.gov/costReportSearch" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="costReportDueDateSearch">
+      <soap:operation soapAction="http://mes.gov/CostReportDueDateSearch" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="costReportsService">
+    <port name="claimsSoap" binding="tns:costReportSoap">
+      <soap:address location="http://localhost:7800/costReports/serviceentrypoint" />
+    </port>
+  </service>
+</definitions>

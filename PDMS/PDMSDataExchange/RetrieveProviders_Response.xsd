@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="New_RRp_DataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ProviderCaqhGetResponse" msprop:Generator_TableClassName="ProviderCaqhGetResponseDataTable" msprop:Generator_TableVarName="tableProviderCaqhGetResponse" msprop:Generator_TablePropName="ProviderCaqhGetResponse" msprop:Generator_RowDeletingName="ProviderCaqhGetResponseRowDeleting" msprop:Generator_RowChangingName="ProviderCaqhGetResponseRowChanging" msprop:Generator_RowEvHandlerName="ProviderCaqhGetResponseRowChangeEventHandler" msprop:Generator_RowDeletedName="ProviderCaqhGetResponseRowDeleted" msprop:Generator_UserTableName="ProviderCaqhGetResponse" msprop:Generator_RowChangedName="ProviderCaqhGetResponseRowChanged" msprop:Generator_RowEvArgName="ProviderCaqhGetResponseRowChangeEvent" msprop:Generator_RowClassName="ProviderCaqhGetResponseRow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ExtensionData" msprop:Generator_ColumnVarNameInTable="columnExtensionData" msprop:Generator_ColumnPropNameInRow="ExtensionData" msprop:Generator_ColumnPropNameInTable="ExtensionDataColumn" msprop:Generator_UserColumnName="ExtensionData" type="xs:string" minOccurs="0" />
+        <xs:element name="correlationId" msprop:Generator_ColumnVarNameInTable="columncorrelationId" msprop:Generator_ColumnPropNameInRow="correlationId" msprop:Generator_ColumnPropNameInTable="correlationIdColumn" msprop:Generator_UserColumnName="correlationId" type="xs:string" minOccurs="0" />
+        <xs:element name="errors" msprop:Generator_ColumnVarNameInTable="columnerrors" msprop:Generator_ColumnPropNameInRow="errors" msprop:Generator_ColumnPropNameInTable="errorsColumn" msprop:Generator_UserColumnName="errors" type="xs:string" minOccurs="0" />
+        <xs:element name="providerId" msprop:Generator_ColumnVarNameInTable="columnproviderId" msprop:Generator_ColumnPropNameInRow="providerId" msprop:Generator_ColumnPropNameInTable="providerIdColumn" msprop:Generator_UserColumnName="providerId" type="xs:string" minOccurs="0" />
+        <xs:element name="countyCode" msprop:Generator_ColumnVarNameInTable="columncountyCode" msprop:Generator_ColumnPropNameInRow="countyCode" msprop:Generator_ColumnPropNameInTable="countyCodeColumn" msprop:Generator_UserColumnName="countyCode" type="xs:string" minOccurs="0" />
+        <xs:element name="medicareId" msprop:Generator_ColumnVarNameInTable="columnmedicareId" msprop:Generator_ColumnPropNameInRow="medicareId" msprop:Generator_ColumnPropNameInTable="medicareIdColumn" msprop:Generator_UserColumnName="medicareId" type="xs:string" minOccurs="0" />
+        <xs:element name="errorCode" msprop:Generator_ColumnVarNameInTable="columnerrorCode" msprop:Generator_ColumnPropNameInRow="errorCode" msprop:Generator_ColumnPropNameInTable="errorCodeColumn" msprop:Generator_UserColumnName="errorCode" type="xs:string" minOccurs="0" />
+        <xs:element name="statusCode" msprop:Generator_ColumnVarNameInTable="columnstatusCode" msprop:Generator_ColumnPropNameInRow="statusCode" msprop:Generator_ColumnPropNameInTable="statusCodeColumn" msprop:Generator_UserColumnName="statusCode" type="xs:string" minOccurs="0" />
+        <xs:element name="groups" msprop:Generator_TableClassName="groupsDataTable" msprop:Generator_TableVarName="tablegroups" msprop:Generator_TablePropName="groups" msprop:Generator_RowDeletingName="groupsRowDeleting" msprop:Generator_RowChangingName="groupsRowChanging" msprop:Generator_RowEvHandlerName="groupsRowChangeEventHandler" msprop:Generator_RowDeletedName="groupsRowDeleted" msprop:Generator_UserTableName="groups" msprop:Generator_RowChangedName="groupsRowChanged" msprop:Generator_RowEvArgName="groupsRowChangeEvent" msprop:Generator_RowClassName="groupsRow" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProviderGroup" msprop:Generator_TableClassName="ProviderGroupDataTable" msprop:Generator_TableVarName="tableProviderGroup" msprop:Generator_TablePropName="ProviderGroup" msprop:Generator_RowDeletingName="ProviderGroupRowDeleting" msprop:Generator_RowChangingName="ProviderGroupRowChanging" msprop:Generator_RowEvHandlerName="ProviderGroupRowChangeEventHandler" msprop:Generator_RowDeletedName="ProviderGroupRowDeleted" msprop:Generator_UserTableName="ProviderGroup" msprop:Generator_RowChangedName="ProviderGroupRowChanged" msprop:Generator_RowEvArgName="ProviderGroupRowChangeEvent" msprop:Generator_RowClassName="ProviderGroupRow" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ExtensionData" msprop:Generator_ColumnVarNameInTable="columnExtensionData" msprop:Generator_ColumnPropNameInRow="ExtensionData" msprop:Generator_ColumnPropNameInTable="ExtensionDataColumn" msprop:Generator_UserColumnName="ExtensionData" type="xs:string" minOccurs="0" />
+                    <xs:element name="serviceName" msprop:Generator_ColumnVarNameInTable="columnserviceName" msprop:Generator_ColumnPropNameInRow="serviceName" msprop:Generator_ColumnPropNameInTable="serviceNameColumn" msprop:Generator_UserColumnName="serviceName" type="xs:string" minOccurs="0" />
+                    <xs:element name="medicareId" msprop:Generator_ColumnVarNameInTable="columnmedicareId" msprop:Generator_ColumnPropNameInRow="medicareId" msprop:Generator_ColumnPropNameInTable="medicareIdColumn" msprop:Generator_UserColumnName="medicareId" type="xs:string" minOccurs="0" />
+                    <xs:element name="npiId" msprop:Generator_ColumnVarNameInTable="columnnpiId" msprop:Generator_ColumnPropNameInRow="npiId" msprop:Generator_ColumnPropNameInTable="npiIdColumn" msprop:Generator_UserColumnName="npiId" type="xs:string" minOccurs="0" />
+                    <xs:element name="taxId" msprop:Generator_ColumnVarNameInTable="columntaxId" msprop:Generator_ColumnPropNameInRow="taxId" msprop:Generator_ColumnPropNameInTable="taxIdColumn" msprop:Generator_UserColumnName="taxId" type="xs:string" minOccurs="0" />
+                    <xs:element name="groupEndDateTime" msprop:Generator_ColumnVarNameInTable="columngroupEndDateTime" msprop:Generator_ColumnPropNameInRow="groupEndDateTime" msprop:Generator_ColumnPropNameInTable="groupEndDateTimeColumn" msprop:Generator_UserColumnName="groupEndDateTime" type="xs:string" minOccurs="0" />
+                    <xs:element name="serviceAddress" msprop:Generator_TableClassName="serviceAddressDataTable" msprop:Generator_TableVarName="tableserviceAddress" msprop:Generator_TablePropName="serviceAddress" msprop:Generator_RowDeletingName="serviceAddressRowDeleting" msprop:Generator_RowChangingName="serviceAddressRowChanging" msprop:Generator_RowEvHandlerName="serviceAddressRowChangeEventHandler" msprop:Generator_RowDeletedName="serviceAddressRowDeleted" msprop:Generator_UserTableName="serviceAddress" msprop:Generator_RowChangedName="serviceAddressRowChanged" msprop:Generator_RowEvArgName="serviceAddressRowChangeEvent" msprop:Generator_RowClassName="serviceAddressRow" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ExtensionData" msprop:Generator_ColumnVarNameInTable="columnExtensionData" msprop:Generator_ColumnPropNameInRow="ExtensionData" msprop:Generator_ColumnPropNameInTable="ExtensionDataColumn" msprop:Generator_UserColumnName="ExtensionData" type="xs:string" minOccurs="0" />
+                          <xs:element name="street1" msprop:Generator_ColumnVarNameInTable="columnstreet1" msprop:Generator_ColumnPropNameInRow="street1" msprop:Generator_ColumnPropNameInTable="street1Column" msprop:Generator_UserColumnName="street1" type="xs:string" minOccurs="0" />
+                          <xs:element name="street2" msprop:Generator_ColumnVarNameInTable="columnstreet2" msprop:Generator_ColumnPropNameInRow="street2" msprop:Generator_ColumnPropNameInTable="street2Column" msprop:Generator_UserColumnName="street2" type="xs:string" minOccurs="0" />
+                          <xs:element name="city" msprop:Generator_ColumnVarNameInTable="columncity" msprop:Generator_ColumnPropNameInRow="city" msprop:Generator_ColumnPropNameInTable="cityColumn" msprop:Generator_UserColumnName="city" type="xs:string" minOccurs="0" />
+                          <xs:element name="state" msprop:Generator_ColumnVarNameInTable="columnstate" msprop:Generator_ColumnPropNameInRow="state" msprop:Generator_ColumnPropNameInTable="stateColumn" msprop:Generator_UserColumnName="state" type="xs:string" minOccurs="0" />
+                          <xs:element name="zip" msprop:Generator_ColumnVarNameInTable="columnzip" msprop:Generator_ColumnPropNameInRow="zip" msprop:Generator_ColumnPropNameInTable="zipColumn" msprop:Generator_UserColumnName="zip" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                        <xs:attribute name="ProviderGroup_Id" msprop:Generator_ColumnVarNameInTable="columnProviderGroup_Id" msprop:Generator_ColumnPropNameInRow="ProviderGroup_Id" msprop:Generator_ColumnPropNameInTable="ProviderGroup_IdColumn" msprop:Generator_UserColumnName="ProviderGroup_Id" type="xs:int" use="prohibited" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="ProviderGroup_Id" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnProviderGroup_Id" msprop:Generator_ColumnPropNameInRow="ProviderGroup_Id" msprop:Generator_ColumnPropNameInTable="ProviderGroup_IdColumn" msprop:Generator_UserColumnName="ProviderGroup_Id" type="xs:int" msdata:AllowDBNull="false" use="prohibited" />
+                  <xs:attribute name="groups_Id" msprop:Generator_ColumnVarNameInTable="columngroups_Id" msprop:Generator_ColumnPropNameInRow="groups_Id" msprop:Generator_ColumnPropNameInTable="groups_IdColumn" msprop:Generator_UserColumnName="groups_Id" type="xs:int" use="prohibited" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="groups_Id" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columngroups_Id" msprop:Generator_ColumnPropNameInRow="groups_Id" msprop:Generator_ColumnPropNameInTable="groups_IdColumn" msprop:Generator_UserColumnName="groups_Id" type="xs:int" msdata:AllowDBNull="false" use="prohibited" />
+            <xs:attribute name="ProviderCaqhGetResponse_Id" msprop:Generator_ColumnVarNameInTable="columnProviderCaqhGetResponse_Id" msprop:Generator_ColumnPropNameInRow="ProviderCaqhGetResponse_Id" msprop:Generator_ColumnPropNameInTable="ProviderCaqhGetResponse_IdColumn" msprop:Generator_UserColumnName="ProviderCaqhGetResponse_Id" type="xs:int" use="prohibited" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="ProviderCaqhGetResponse_Id" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnProviderCaqhGetResponse_Id" msprop:Generator_ColumnPropNameInRow="ProviderCaqhGetResponse_Id" msprop:Generator_ColumnPropNameInTable="ProviderCaqhGetResponse_IdColumn" msprop:Generator_UserColumnName="ProviderCaqhGetResponse_Id" type="xs:int" msdata:AllowDBNull="false" use="prohibited" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="New_RRp_DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="New_RRp_DataSet" msprop:Generator_UserDSName="New_RRp_DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ProviderCaqhGetResponse" />
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="ProviderGroup_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//ProviderGroup" />
+      <xs:field xpath="@ProviderGroup_Id" />
+    </xs:unique>
+    <xs:unique name="groups_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//groups" />
+      <xs:field xpath="@groups_Id" />
+    </xs:unique>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//ProviderCaqhGetResponse" />
+      <xs:field xpath="@ProviderCaqhGetResponse_Id" />
+    </xs:unique>
+    <xs:keyref name="ProviderCaqhGetResponse_groups" refer="Constraint1" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="groups" msprop:rel_Generator_ChildPropName="GetgroupsRows" msprop:rel_Generator_UserRelationName="ProviderCaqhGetResponse_groups" msprop:rel_Generator_ParentPropName="ProviderCaqhGetResponseRow" msprop:rel_Generator_RelationVarName="relationProviderCaqhGetResponse_groups" msprop:rel_Generator_UserParentTable="ProviderCaqhGetResponse">
+      <xs:selector xpath=".//groups" />
+      <xs:field xpath="@ProviderCaqhGetResponse_Id" />
+    </xs:keyref>
+    <xs:keyref name="groups_ProviderGroup" refer="groups_Constraint1" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="ProviderGroup" msprop:rel_Generator_ChildPropName="GetProviderGroupRows" msprop:rel_Generator_UserRelationName="groups_ProviderGroup" msprop:rel_Generator_ParentPropName="groupsRow" msprop:rel_Generator_RelationVarName="relationgroups_ProviderGroup" msprop:rel_Generator_UserParentTable="groups">
+      <xs:selector xpath=".//ProviderGroup" />
+      <xs:field xpath="@groups_Id" />
+    </xs:keyref>
+    <xs:keyref name="ProviderGroup_serviceAddress" refer="ProviderGroup_Constraint1" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="serviceAddress" msprop:rel_Generator_ChildPropName="GetserviceAddressRows" msprop:rel_Generator_UserRelationName="ProviderGroup_serviceAddress" msprop:rel_Generator_ParentPropName="ProviderGroupRow" msprop:rel_Generator_RelationVarName="relationProviderGroup_serviceAddress" msprop:rel_Generator_UserParentTable="ProviderGroup">
+      <xs:selector xpath=".//serviceAddress" />
+      <xs:field xpath="@ProviderGroup_Id" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

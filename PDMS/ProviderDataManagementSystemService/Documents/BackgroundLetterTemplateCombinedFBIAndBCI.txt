@@ -1,0 +1,75 @@
+﻿<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+    <td class="left">DATE: [[CURRENTDATE]]</td>
+</tr>
+<br/>
+<tr>
+    <td class="left">Provider Name: [[PROVIDERNAME]]</td>
+</tr>
+<tr>
+    <td class="left">NPI: [[NPI]]</td>
+</tr>
+<tr>
+    <td class="left">Registration ID: [[REGID]]</td>
+</tr>
+    <br /> 
+    <br/>  
+    </td>
+</tr>	 
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<p>
+<br />
+<b>Subject:</b> Fingerprint-Based Criminal Background Check Notice
+</p>								
+
+<p>In order to enroll or maintain as an Ohio Medicaid provider, certain individual(s) of an organization must complete a criminal background check. As mandated in the 42 CFR 455.434, the Fingerprint-Based Criminal Background Checks are part of the enhanced screening and enrollment provisions included in the Provider Screening and Enrollment State Plan Amendment. </p>
+
+<p>Any individual listed with five percent (5%) or greater direct or indirect ownership interest must provide a background check. Please note the submission of fingerprints is at the cost of the provider. If we do not receive your background check(s) by [[EXPIREDATE]], your application will be denied. </p>
+
+<P> The people who must provide fingerprints within (30) calendar days are: </P>
+<ul> [[PROVIDER_LIST]] </ul>
+
+<p><b>If you are a resident of Ohio and have been for over 5 years: </b> 
+You will need to complete <b>only </b> a BCI background check. To complete the background check you will need to visit a WebCheck location. A complete list of BCI WebCheck vendors is available at the Ohio Attorney General website <a href="https://www.ohioattorneygeneral.gov/">https://www.ohioattorneygeneral.gov/</a>. Under the “Business” Heading at the bottom of the page select “Background Check”. ** Please instruct the WebCheck vendor that you need an Ohio background check (BCI), and the reason fingerprinted is Application for Medicaid Provider/Owner and Employee and use the reason code 5164.34. Additionally, instruct the WebCheck vendor that the BCI checks must be mailed directly to the Ohio Department of Medicaid address listed below. </p>
+
+<p><b>If you are a resident of Ohio but for less than 5 years:</b> 
+You will need to complete <b>both </b> an Ohio BCI and an FBI background check. To complete the background checks you will need to visit a WebCheck location. A complete list of BCI WebCheck vendors is available at the Ohio Attorney General website <a href="https://www.ohioattorneygeneral.gov/">https://www.ohioattorneygeneral.gov/</a>. Under the “Business” Heading at the bottom of the page select “Background Check”. Please instruct the WebCheck vendor that you need an Ohio background check (BCI) and an FBI background check. The reason fingerprinted is Application for Medicaid Provider/Owner and Employee and use the reason code 5164.34. The reason code to be used for the FBI background check is 3701.88. Additionally, instruct the WebCheck vendor that the background checks must be mailed directly to the Ohio Department of Medicaid address listed below. </p>
+
+<p>
+<b>If you are not a resident of Ohio: </b>
+You will <b>only </b> need to complete an FBI background check. The link for the FBI instructions and card are at <a href="https://www.ohioattorneygeneral.gov/Files/Forms/Forms-for-BCI-Criminal-Records-and-Background-Chec/Background-Check-Forms/FBI-fingerprint-card">https://www.ohioattorneygeneral.gov/Files/Forms/Forms-for-BCI-Criminal-Records-and-Background-Chec/Background-Check-Forms/FBI-fingerprint-card</a>  and please make sure the card is filled out completely.  Please put the Ohio Medicaid address listed below in the Employer and Address field on the FBI fingerprint card so that it gets mailed directly to ODM. Also, reason code 3701.881 should be in the reason fingerprinted field on the card. Once the FBI card is inked, it should be mailed to BCI at BCII, PO Box 365, London OH 43140 along with payment. You may also be able to complete the FBI background check electronically by going to <a href="https://register.fastfingerprints.com/oagbci08262024/Ohio/pick-a-transaction-type">https://register.fastfingerprints.com/oagbci08262024/Ohio/pick-a-transaction-type</a> if a participating location is close to you. 
+</p>
+
+<p>
+The Ohio Department of Medicaid</p>
+<p>
+Attention: BCII Coordinator</p>
+<p>P.O. Box 183017</p>
+<p>
+Columbus, Ohio 43218-3017</p>
+
+<p>If you have any questions, please email <a href="mailto:bureaunetworkmanagement@medicaid.ohio.gov">bureaunetworkmanagement@medicaid.ohio.gov</a></p>
+
+<p>Sincerely, </p>
+<p>Ohio Medicaid Provider Compliance|</p>
+</td>
+</tr>
+</table>

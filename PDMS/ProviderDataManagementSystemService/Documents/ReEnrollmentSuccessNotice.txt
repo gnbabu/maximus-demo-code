@@ -1,0 +1,62 @@
+
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<b>Subject: </b>Successful Re-enrollment in (State) Medicaid 
+</p>
+
+<p>
+Dear Provider:
+</p>
+<p>Thank you for your continued interest in the (State) Medicaid Program. The (Department/agency) agency that oversees the Medicaid programs, (agency name) is pleased that you have chosen to remain with those providers who serve the healthcare needs of our residents enrolled in the (state) Medicaid Program. This is to notify you that your re-enrollment application has been processed and you are re-approved to provide services to (state) Medicaid members. </p>
+
+<p>Your commitment to provide high quality Medicaid services to recipients is important and (department/agency) is dedicated to making your participation in the program as straightforward and productive as possible. A billing handbook is available to be downloaded from <a href ="[[PDMSURL]]">[[PDMSURL]]</a>. This handbook provides detailed explanations and guidelines on how to submit claims. If you prefer to have the billing manual sent to you on a CD, please email a request to <a href ="mailto:providerregistration@conduent.com">providerregistration@conduent.com</a></p>
+
+<p>Thank you for your participation and your efforts to maintain and improve the health of (State) residents.</p>
+
+<p>Please log in to the Provider Data Management System to maintain your provider file when appropriate. [[PDMSURL]] </p>
+
+<p>If you have any questions, please contact the MAXIMUS Provider Screening and Enrollment Customer Service at 999-999-999 or email at <a href ="mailto:[[PDMSEMAIL]]">[[PDMSEMAIL]]</a>.</p>
+
+Regards,<br />
+    <br />
+MAXIMUS Provider Screening and Enrollment Customer Service
+</td>
+</tr>
+</table>					

@@ -1,0 +1,1427 @@
+﻿/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+	MAIN FORM - Provider Services
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+body
+{
+	color: #000000;                         /* Main font color */
+	font-family:tahoma,verdana,helvetica;   /* Main font-family */
+	font-size: 9.5pt !important;            /* Main font size */
+    height: 95%;
+	margin:0;
+	padding:0;
+	text-align: center;
+    width: 100%;
+}
+
+#mainForm
+{
+    margin: 0 auto;         /* Firefox needs this */
+    text-align:left;
+    width: 1024px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+	CSS - Alphabetic order
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/************************************************************************************
+ * AjaxControlToolkit Popup Calendar
+ ************************************************************************************/
+.ajax__calendar_container 
+{
+    padding:4px;
+    position:absolute;
+    cursor:default;
+    width:240px;
+    font-size:11px;
+    text-align:center;
+    background-color: #4169e1;
+    color: White;
+}
+.ajax__calendar_body {height:139px;width:240px;position:relative;overflow:hidden;margin:auto; background-color: Silver;}
+.ajax__calendar_days, .ajax__calendar_months, .ajax__calendar_years {top:0px;left:0px;height:139px;width:170px;position:absolute;text-align:center;margin:auto;}
+.ajax__calendar_container TD  
+{
+    padding:0; 
+    color: White;
+}
+.ajax__calendar_header {height:20px;width:100%;}
+.ajax__calendar_prev {cursor:pointer;width:15px;height:15px;float:left;background-repeat:no-repeat;background-position:50% 50%;background-image:url(Images/arrow-left.gif);}
+.ajax__calendar_next {cursor:pointer;width:15px;height:15px;float:right;background-repeat:no-repeat;background-position:50% 50%;background-image:url(Images/arrow-right.gif);}
+.ajax__calendar_title {cursor:pointer;font-weight:bold;}
+.ajax__calendar_footer {height:15px;}
+.ajax__calendar_today {cursor:pointer;padding-top:3px;}
+.ajax__calendar_dayname {height:17px;width:17px;text-align:right;padding:0 2px;}
+.ajax__calendar_day {height:17px;width:18px;text-align:right;padding:0 2px;cursor:pointer;}
+.ajax__calendar_month {height:44px;width:40px;text-align:center;cursor:pointer;overflow:hidden;}
+.ajax__calendar_year {height:44px;width:40px;text-align:center;cursor:pointer;overflow:hidden;}
+
+.ajax__calendar .ajax__calendar_container {border:1px solid #646464;background-color:#ffffff;color:#000000;}
+.ajax__calendar .ajax__calendar_footer {border-top:1px solid #f5f5f5;}
+.ajax__calendar .ajax__calendar_dayname {border-bottom:1px solid #f5f5f5;}
+.ajax__calendar .ajax__calendar_day {border:1px solid #ffffff;}
+.ajax__calendar .ajax__calendar_month {border:1px solid #ffffff;}
+.ajax__calendar .ajax__calendar_year {border:1px solid #ffffff;}
+
+.ajax__calendar .ajax__calendar_active .ajax__calendar_day {background-color:#edf9ff;border-color:#0066cc;color:#0066cc;}
+.ajax__calendar .ajax__calendar_active .ajax__calendar_month {background-color:#edf9ff;border-color:#0066cc;color:#0066cc;}
+.ajax__calendar .ajax__calendar_active .ajax__calendar_year {background-color:#edf9ff;border-color:#0066cc;color:#0066cc;}
+
+.ajax__calendar .ajax__calendar_other .ajax__calendar_day {background-color:#ffffff;border-color:#ffffff;color:#646464;}
+.ajax__calendar .ajax__calendar_other .ajax__calendar_year {background-color:#ffffff;border-color:#ffffff;color:#646464;}
+
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_day {background-color:#edf9ff;border-color:#daf2fc;color:#0066cc;}
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_month {background-color:#edf9ff;border-color:#daf2fc;color:#0066cc;}
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_year {background-color:#edf9ff;border-color:#daf2fc;color:#0066cc;}
+
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_title {color:#0066cc;}
+.ajax__calendar .ajax__calendar_hover .ajax__calendar_today {color:#0066cc;}
+
+A:link, A:visited, A:active, A:hover 
+{ 
+    color: Blue;
+    text-decoration: underline;
+}
+
+A:hover 
+{
+    cursor: pointer;
+}
+
+/* BodyText and others - START */
+.redAsterisk
+{
+	color: #ff0000;
+	font-weight: bold;
+	font-size: 11pt;
+	vertical-align: middle;
+}
+
+.bodyText
+{
+	text-align:justify;
+	color: #000000;
+}
+
+.bodyTextRed                /* Use this class to display error messages next to form fields */
+{
+	color: #ff0000;
+	font-weight: normal;
+}
+
+.bodyTextBold
+{
+    text-align: justify;
+    color: #000000;
+    font-weight: bold;
+}
+
+.bodyTextBoldGreyed
+{
+    text-align: justify;
+    color: #000000;
+    font-weight: bold;
+    background-color: #C7C7C7;
+}
+
+.bodyTextSmall
+{
+    color: #000000;
+    text-align:justify;
+    font-weight:normal;
+    font-size:8pt
+}
+
+.bodyTextSmallRed
+{
+    color: #FF0000;
+    text-align:justify;
+    font-weight:normal;
+    font-size:8pt
+}
+
+.bodyTextSmallBold
+{
+    color: #000000;
+    text-align:justify;
+    font-weight:bold;
+    font-size:8pt
+}
+
+A.bodyText
+{
+	
+	padding-left: 10px;
+	color: #000000;
+	font-weight: bold;
+}
+
+.popControl
+{
+    background-color: White;
+    border-style: ridge;
+}
+
+.popControlHeader
+{
+    background-color: #0066FF;
+    cursor: move;
+    padding: 5px;
+}
+
+/* BodyText and others - END */
+
+.button1, .button2, .button3
+{
+	background: url('images/button1.jpg');
+	background-position:left;
+    border-style: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+	height: 25px;
+    text-decoration: none;
+	width: 80px;
+	text-align:center;
+}
+
+.button2
+{
+	background: url('images/button2.jpg');
+	width: 100px;
+	text-align:center;
+}
+
+.button3
+{
+	background: url('images/button3.jpg');
+	width: 200px;
+	height: 30px;
+	text-align:center;
+}
+
+.buttonAlign
+{
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 10px;    
+}
+
+.center
+{
+    text-align: center;
+}
+
+.center_bg
+{
+	/* text-align: center; */
+}
+
+.ContentPane
+{
+    vertical-align:top;
+    width: 880px;
+    text-align: left;
+    border-color: #87cefa;
+    border-left: solid 1px;
+    border-right: solid 1px;
+    padding: 0px 10px 20px 10px;
+    margin: 0 auto;
+}
+
+#contentPanel
+{
+    vertical-align:top;
+}
+
+.formCheckBox
+{
+}
+
+.formDate
+{
+	width: 80px;
+}
+
+.formField, .formFieldSmall, .formFieldMedium, .formField220, .formField300, .formFieldReadOnly, .formFieldReadOnly300, .formFieldAuto, 
+    .formField130, .formFieldDisplay, .formFieldDisplayAuto, .formDropDown, .formDropDownAuto, .formDropDownMedium, .formDropDownLarge, 
+    .formFieldLarge, .formFieldDisplayLarge, .textEntry
+{
+	border-color: #000000;
+	border-style: solid;
+	border-width: 1px;
+	background-color: #FFFFFF;
+	width: 150px;
+	padding: 0;
+	margin-bottom: 3px;
+}
+
+.textEntry
+{
+    border: 1px solid #d3d3d3;        
+}
+
+.formFieldAuto
+{
+    width: auto;
+}
+
+.formFieldMedium
+{
+	width:70px;
+}
+
+.formFieldSmall
+{
+	width:50px;
+}
+
+.formField130
+{
+	width:130px;
+}
+
+.formField220
+{
+	width:220px;
+}
+
+.formField300
+{
+	width:300px;
+}
+
+.formFieldLarge
+{
+	width:405px;
+}
+
+.formDropDownAuto
+{
+    width: auto;
+}
+
+.formDropDownMedium
+{
+    width: 250px;
+}
+
+.formDropDownLarge
+{
+    width: 450px;
+}
+
+.formFieldDisplay, .formFieldDisplayAuto, .formFieldDisplayAuto2, .formFieldDisplayLarge
+{
+    background-color: #f3f3f3;       /* #e3e3e3; */
+    border: none;
+    display: inline-block;
+    text-align: left;
+    width: 160px;
+}
+
+.formFieldDisplayAuto, .formFieldDisplayAuto2
+{
+    width: auto;
+}
+
+.formFieldDisplayAuto2
+{
+    background-color: transparent;
+}
+
+.formFieldDisplayLarge
+{
+    width: 425px;
+}
+
+.formFieldReadOnly, .formFieldReadOnlyBlock, .formFieldReadOnly100, .formFieldReadOnly300
+{
+    background-color: #CCCCCC;
+    border: none;
+    display: inline-block;
+    text-align: left;
+    padding: 0 0 0 0; /* 1px;       Allows for the border around the formField */
+}
+
+.formFieldReadOnlyBlock
+{
+    display: inline-block;
+}
+
+.formFieldReadOnly100
+{
+    display: inline-block;
+    width: 100px;
+}
+
+.formFieldReadOnly300
+{
+    display: inline-block;
+    width: 300px;
+}
+
+.formEntry
+{
+    text-align: left;
+}
+
+A.formLink
+{ 
+    color: Blue;
+    text-decoration: underline;
+}
+
+.MatchTerm
+{
+    font-weight: bold;
+}
+
+.RadioList td 
+{     
+    margin: 0px;
+    padding: 0 5px 0 0; 
+    vertical-align: middle;
+}
+
+.DropDownList, .DropDownListMedium, .DropDownListLarge
+{     
+}
+
+.DropDownListMedium
+{
+    width: 250px;
+}
+
+.DropDownListLarge
+{
+    width: 500px;
+}
+
+A.formLink:hover 
+{
+    cursor: pointer;
+}
+
+.formPanel, .formPanelSmall
+{
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    width: 880px;
+}
+
+.formPanelSmall
+{
+    width: 400px;
+    margin-left: 200px;
+}
+
+.formPanelHeader
+{
+    font-size: 10pt;
+    font-weight: bold;
+    line-height: 25px;
+    padding-left: 2px;
+}
+
+.gridAddLink
+{
+    text-align: left;
+    padding-top: 10px;    
+}
+
+.gridAddLinkSmall
+{
+    padding-left: 200px;
+    padding-bottom: 10px;    
+}
+
+.gridViewAltRow
+{
+    background-color: #c6cbd1;
+    text-align: left;
+    vertical-align: top;
+}
+
+.gridViewHeader, .gridViewHeader2
+{
+    background-color: #036;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.gridViewFooter
+{
+    background-color: #696969;
+}
+
+.gridViewFooter a:link
+{
+    padding-right: 5px;
+}
+
+.gridHeader th 
+{ 
+    border-style: solid; 
+    border-color: #000000;
+	border-width: 0.03em;
+}
+
+.gridViewHeader a
+{
+    color: #FFFFFF;
+}
+
+.gridViewHeader2
+{
+    font-weight: bold;
+}
+
+.gridLink
+{
+    padding: 3px;
+}
+
+.gridPagerLabel span
+{    
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 2px;
+    background-color: Red;
+}
+
+.gridRow
+{
+    text-align: left;
+    vertical-align: top;
+}
+
+.gridView, .gridViewEvents, .gridViewSmall, .gridViewSmallFont
+{
+    color: #000000;
+	border-style: solid;
+	border-color: #000000;
+	border-width: 0.03em;
+    background-color: #FFFFFF;
+    width:95%;
+}
+
+.gridViewEvents
+{
+    margin-left:0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:300px;
+}
+
+.gridViewSmall
+{
+    width:400px;
+    margin-left:200px;
+}
+
+.gridViewSmallFont
+{
+    font-size: 8pt;
+}
+
+.gridView, .gridViewSmall a
+{
+    padding-left: 1px;
+    padding-right: 1px;
+    text-align: center;
+}
+
+.GroupBoxNewHire    
+{        
+    border: 1px solid #ddd;        
+    display: block;
+    padding: 10px;
+    text-align: left;    
+    width: 115px;
+}
+
+#login
+{
+    padding-left:10px;
+}
+
+.mainMenu a
+{
+	color: #FFFFFF;
+	display:block;
+	font-weight: bold;
+	line-height: 50px;
+	padding: 0px 10px 0px 10px;	
+	text-align:center;
+	text-decoration: none;
+}
+
+.mainMenu a:hover
+{
+    color: #FFFFFF;
+}
+
+.menu_bg
+{
+	width: 100%;
+	background-image: url('images/nav_bg.png');
+	background-repeat:repeat-x;
+	height: 55px;
+}
+
+#menuBar
+{
+	background-color: #FFFFFF;
+	background-image: url('images/nav_bg.png');
+	background-repeat:repeat-x;
+	background-position:left;
+	height: 60px;
+	text-align:left;
+	margin: 0 auto;
+	padding-left: 20px;
+}
+
+.noticeLink a
+{
+    font-size: 12pt;
+}
+
+a.panelLink:active, a.panelLink:link, a.panelLink:visited, a.panelLink:hover 
+{
+    font-weight: bold; 
+}
+
+.panel
+{
+    text-align: center;
+    width: 880px;
+}
+
+.panelRO
+{
+    border: 1px solid #000000;
+    margin-bottom: 10px;
+    width: 880px;
+}
+
+.subMenuItem
+{
+    border-bottom: thin solid #aaa;
+}
+
+.subMenuItem a
+{
+    background-color: #2880A5;
+	color: #FFFFFF;
+	display:block;
+	font-weight: bold;
+	line-height: 25px;
+	padding-left: 10px;
+	padding-right: 15px;
+	text-align:left;
+	text-decoration: none;
+}
+
+.subMenuItem a:hover
+{
+    background-color: #1F60A9;
+}
+
+.tablePanelRO, .tablePanelROBorder, .tablePanelROBox
+{
+    border: none;
+    font-weight: normal;
+    width: 880px;
+}
+
+.tablePanelROBorder
+{
+    border: 1px solid #000000;
+}
+
+.tablePanelROBox td
+{
+    border: 1px solid #000000;
+    padding: 3px;
+}
+
+.tablePanelUI
+{
+    border: none;
+    font-weight: normal;
+    width: 880px;
+}
+
+.upperCase
+{
+    text-transform:uppercase;
+}
+
+#userBar
+{
+    padding-bottom: 10px;
+}
+
+.userBar
+{
+	width: 880px;
+	padding: 0;
+}
+
+.lblAboveUserBar
+{
+    display: block;
+    margin: 5px;
+    width: 100%;
+}
+
+.QuickLinks
+{
+    text-align: center;
+    width: 230px;
+}
+
+.QuickLinks li
+{
+    padding-bottom: 10px;
+}
+
+.QuickLinks li a
+{
+    font-size: 1.0em;
+}
+
+.mainContent
+{
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+}
+
+.gridpager, .gridpager td
+{    
+    text-align: right;
+    background-color: #999999;
+    font-weight: bold;
+    padding-left: 3px;
+}
+
+.gridpager a
+{
+    color: Blue;
+    font-weight: normal;
+    padding-left: 3px;
+}
+
+.wizProcess
+{
+    padding: 5px;
+    width: 95%;
+    text-align: left;
+}
+
+.wizSideBar
+{
+    width: 150px;
+    background-color: #f3f3f3;
+    vertical-align: top;
+}
+
+.wizStep
+{
+    height: 100px;
+    padding-left: 5px;
+    vertical-align: top;
+    width: 100%;
+}
+
+/**************************
+    Registration Wizards CSS
+**************************/
+#header
+{
+	background-color: #036;
+	color: #fff;
+}
+
+#logo
+{
+	font-size: 1.0em;
+	color: #fff;
+	text-align: center;
+}
+
+.pageHeader
+{
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #036;
+	padding-bottom: 5px;
+}
+
+table.header
+{
+    width: 100%;
+}
+
+table.header td
+{
+    background-color: #036;
+	color: #fff;
+}
+
+#loginHeader
+{
+	color: #000000;
+    text-align: center;
+    vertical-align: top;
+    padding: 10px;
+    width: 980px;
+}
+
+#loginHeader a
+{
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#loginHeader a:hover
+{
+    text-decoration: underline;
+}
+
+table.LoginControl
+{
+    border-color:#000000;
+    border-style:solid;
+    border-width:1px;
+}
+
+table.LoginControl tr.Header
+{
+	background-color: #1D587F;
+	color: #FFFFFF;
+	height: 15px;
+}
+
+table.LoginControl td.Button
+{
+	text-align: right;
+}
+
+/* GridView */
+table.gridview
+{
+    color: #000000;
+    width:95%;
+    vertical-align: top;
+}
+
+table.gridview th
+{
+    background-color: #036;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+table.gridview td
+{
+    border-left: 0px;
+	border-right: 0px;
+	font-weight: normal;
+	color: Black;
+	text-align: left;
+	vertical-align: top;
+}
+
+.repeatHeader
+{
+    color: #FFFFFF;
+    background-color: #036;
+}
+
+.repeatHeader a
+{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.EnrollForm
+{
+    padding: 0;
+    vertical-align: top;
+    width: 85%;
+}
+
+.EnrollInstructions
+{
+    padding: 5px;
+    text-align: left;
+    vertical-align: top;
+    width: 15%;
+}
+
+.PanelReturn
+{
+    float: right;
+    padding-right: 20px;
+}
+
+.testing
+{
+    text-decoration: none;
+}
+
+.ServiceLocationInstances
+{
+    clear: both;
+    text-decoration: none;
+}
+
+/**********************************
+    Footer Styles
+**********************************/
+
+#sitefooter
+{
+	text-align: center;
+	margin: 50px 0;
+	border-top: 1px solid #969696;
+	padding: 10px;
+	color: #696969;
+	background-color: #e3e3e3;
+	height: 90px;
+}
+
+#sitefooter a:link, #sitefooter a:visited
+{
+	color: #696969;
+	text-decoration: none;
+}
+
+#sitefooter a:hover
+{
+	color: #969696;
+	text-decoration: underline;
+}
+
+/**********************************
+    Edit and Dashboard
+**********************************/
+
+.ValEditSummary
+{
+    padding-bottom: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+.Dashboard
+{
+    padding: 10px;
+    text-align: center;
+    width: 90%;
+}
+
+/**********************************
+    Tabs
+**********************************/
+
+/*Header*/
+.Tab .ajax__tab_header
+{
+    color: #4682b4;
+    font-family:Calibri;
+    font-size: 11pt;
+    font-weight: bold;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+/*Body*/
+.Tab .ajax__tab_body
+{
+    border-top: 1px solid #e3e3e3;
+    padding-top:0px;
+}
+
+/*Tab Active*/
+.Tab .ajax__tab_active .ajax__tab_tab
+{
+    color: #ffffff;
+    background:url("images/tab_active.gif") repeat-x;
+}
+
+.Tab .ajax__tab_active .ajax__tab_inner
+{
+    color: #ffffff;
+    background:url("images/tab_left_active.gif") no-repeat left;
+    padding-left:10px;
+}
+
+.Tab .ajax__tab_active .ajax__tab_outer
+{
+    color: #ffffff;
+    background:url("images/tab_right_active.gif") no-repeat right;
+    padding-right:10px;
+}
+
+/*Tab Hover*/
+.Tab .ajax__tab_hover .ajax__tab_tab
+{
+    color: #000000;
+    cursor: pointer;
+    background:url("images/tab_hover.gif") repeat-x;
+}
+
+.Tab .ajax__tab_hover .ajax__tab_inner
+{
+    color: #000000;
+    background:url("images/tab_left_hover.gif") no-repeat left;
+    padding-left:10px;
+}
+
+.Tab .ajax__tab_hover .ajax__tab_outer
+{
+    color: #000000;
+    background:url("images/tab_right_hover.gif") no-repeat right;
+    padding-right:10px;
+}
+
+/*Tab Inactive*/
+.Tab .ajax__tab_tab
+{
+    color: #666666;
+    background:url("images/tab_Inactive.gif") repeat-x;
+    height: 22px;
+}
+
+.Tab .ajax__tab_inner
+{
+    color: #666666;
+    background:url("images/tab_left_inactive.gif") no-repeat left;
+    padding-left:10px;
+    height: 22px;
+}
+
+.Tab .ajax__tab_outer
+{
+    color: #666666;
+    background:url("images/tab_right_inactive.gif") no-repeat right;
+    padding-right:10px;
+    margin-right: 2px;
+    height: 22px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+	Accordion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.accordionHeader, .accordionHeaderSelected
+{
+    border: none;
+    color: #FFFFFF; 
+	background-color: #923931; 
+    font-family: Arial, Sans-Serif;
+    font-weight: bolder;
+    padding: 2px;
+    margin-top: 2px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.accordionContent
+{
+    background-color: #FFFFFF;
+    border: 1px solid #2F4F4F;
+    border-top: none;
+    padding: 3px;
+}
+
+.QstLink
+{
+    text-decoration: underline;
+}
+
+a.QstLink:hover
+{
+    color: blue;
+}
+
+.QstLinkDisabled
+{
+    text-decoration: none;
+    cursor:default; 
+}
+
+a.QstLinkDisabled:hover
+{
+    text-decoration: none;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+	Miscellaneous
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.ResultHeader
+{
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.modalBackground
+{
+    background-color: Gray;
+    filter: alpha(opacity=70);
+    opacity: 0.2;
+}
+.modalPopup
+{
+    background-color: #FFFFFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    padding: 0px;
+    width: 50%;
+    height: 140px;
+}
+
+/************************************************************************************
+ * Boxes that hold menu and main content
+ ************************************************************************************/
+.LeftBox, .RightBox, .UserHeader, .UserHeaderAdmin, .RightBoxFull
+{
+	padding:10px;
+
+	/* Rounded Corners */	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+
+	/* Background color and gradients */
+	background-color: White;
+	
+	/* Borders */
+    border-top: 5px solid #306498;
+	border-left: 1px solid #002232;
+	border-right: 1px solid #002232;
+	border-bottom: 1px solid #002232;
+	
+	-moz-box-shadow: 3px 3px 4px #8b8989;
+	-webkit-box-shadow: 3px 3px 4px #8b8989;
+	box-shadow: 3px 3px 4px #8b8989;
+}
+
+.LeftBox
+{
+    width: 220px;
+}
+
+.RightBox
+{
+    width: 760px;
+}
+
+.RightBoxFull
+{
+    width: 97%;
+}
+
+.UserHeader
+{
+    margin-bottom: 10px;
+    padding: 3px;
+    width: 99%;
+}
+
+.UserHeaderAdmin
+{
+    margin-left: 0;
+    margin-bottom: 10px;
+    width: 400px;
+}
+
+.ProviderHeader
+{
+    background-color: White;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.EditControl
+{
+    float: right;
+}
+
+.TakeActionControl
+{
+    float: right;
+}
+
+/************************************************************************************
+ * CSS from Demo Site
+ ************************************************************************************/
+ul.niceList { 
+  margin-left:0em; 
+  padding-left:0em; 
+  margin:0.5em; 
+  color: Black;
+}
+
+ul.niceList A:link, A:visited, A:active, A:hover 
+{
+    color: Blue !important;
+}
+
+ul.niceList li { 
+  background:url(images/bullet.gif) 0em 0.5em no-repeat; /* change background em accordingly */
+  padding-left: 0.8em;
+  list-style: none; 
+  color: Black;
+}
+
+.niceList ul li 
+{ 
+    background-image:url(images/bullet_child.gif);     
+    color: Black; 
+}
+ 
+ol.niceList li, ul.niceList li { margin-bottom:0.5em; }
+ 
+ol.niceList { 
+    margin-left:0em; 
+    padding-left:0px; 
+    color: Black;
+}
+.niceList ol li { 
+    list-style: decimal; 
+    background-image:none; 
+    padding-left:0em; 
+    color: Black;
+}
+
+.niceList ul li a:link 
+{
+    color: Black;
+} 
+
+.niceListSubMenuItem
+{
+	color: #FFFFFF;
+	border: 0.02em solid Gray;
+	width: 180px;
+}
+
+.niceListSubMenuItem a:link
+{
+    background-color: #FFFFFF;
+	color: #000000;
+	display:block;
+	line-height: 23px;
+	padding-left: 5px;
+	text-align:left;
+	font-weight: bold;
+}
+
+.niceListSubMenuItem a:hover
+{
+    background-color: #06447E;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+div#Sidebar2 div#GovernorBox2 {
+    background: url("images/header_gov.png") no-repeat scroll left top transparent;
+    border: medium none;
+    height: 57px;
+    margin: 0px 0 0;
+    position: absolute;
+    right: 0;
+    text-shadow: 1px 1px 1px #000000;
+    text-align: right;
+    top: 0;
+    width: 285px;
+}
+div#Sidebar2 #GovernorBox2 {
+    font-size: 86.2%;
+    line-height: 1.5;
+}
+div#Sidebar2 #GovernorBox2 {
+    margin: 10px 2px;
+    padding: 0;
+    width: 140px;
+}
+div#Sidebar2 #GovernorBox2  {
+    margin: 20px 0;
+}
+#GovernorBox2 {
+    background-color: #F4F1D0;
+    border: 2px solid #999999;
+}
+
+div#Sidebar2 #GovernorBox2 a {
+    color: White;
+}
+
+/***************************************************** PDMS2 **********************************************************************/
+/***************************************************** PDMS2 **********************************************************************/
+/***************************************************** PDMS2 **********************************************************************/
+
+.buttonBox 
+{
+    /* Old button background-color was #3d94f6 replaced with #07457E */
+	-moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #07457E), color-stop(1, #1e62d0) );
+	background:-moz-linear-gradient( center top, #07457E 5%, #1e62d0 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#07457E', endColorstr='#1e62d0');
+	background-color: #07457E;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #337fed;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:1px 6px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #1570cd;
+}
+
+.buttonBox:hover 
+{
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #07457E) );
+	background:-moz-linear-gradient( center top, #1e62d0 5%, #07457E 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#07457E');
+	background-color:#1e62d0;
+}
+
+.buttonBox:active 
+{
+	position:relative;
+	top:1px;
+}
+
+.formFieldSmallFont
+{
+    font-size: 8pt;
+}
+
+.formLabel, .formLabelSmall, .formLabel300, .formLabelAuto, .formLabel150, .formLabel170, .formLabel200
+{
+    display: inline-block;
+    font-weight: bold;
+    padding-right: 3px;
+    text-align: right;
+    vertical-align: top;
+    width: 130px;
+}
+
+.formLabelAuto
+{
+    text-align: left;
+    width: auto;
+}
+
+.formLabel150
+{
+    width: 150px;
+}
+
+.formLabel170
+{
+    width: 170px;
+}
+
+.formLabel200
+{
+    width: 200px;
+}
+
+.formLabel300
+{
+    width: 300px;
+}
+
+.formLabelSmall
+{
+    width: 80px;
+}
+
+h4
+{
+  	color: #036;
+    font-size: 14pt !important;
+}
+
+.boxPanel, .boxPanelFull, .boxPanelFull2
+{
+	background-color: White;
+	border: 1px solid #002232;
+	height: 165px;
+	text-align: left;
+	width: 355px;
+
+	-moz-box-shadow: 3px 3px 4px #8b8989;
+	-webkit-box-shadow: 3px 3px 4px #8b8989;
+	box-shadow: 3px 3px 4px #8b8989;
+}
+
+.boxPanelFull, .boxPanelFull2
+{
+    height: auto;
+    padding: 5px;
+    width: 98%;
+}
+
+.boxPanelFull2
+{
+    padding: 0;
+}
+
+.boxPanelHeader
+{
+    color: #FFFFFF;
+	background-color: #923931;
+	font-weight: bold;
+    height: 20px;
+    padding-top: 3px;
+    text-align: center;
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.boxPanelData
+{
+    padding: 5px;
+}
+
+.boxPanelData a
+{
+    color: Blue !important;
+}
+
+.QstRadioList td 
+{     
+    margin: 0px;
+    padding: 0 5px 0 0; 
+    vertical-align: middle;
+}
+
+.divHistoryAndAdd
+{
+    width: 100%;
+    text-align: right;
+}   
+
+.linkNormal
+{
+    color: Blue;
+    font-weight: normal;
+}

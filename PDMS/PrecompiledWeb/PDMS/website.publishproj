@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+***********************************************************************************************
+website.publishproj
+
+WARNING: DO NOT MODIFY this file, it is used for the web publish process.
+
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+***********************************************************************************************
+-->
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15f3443d-1b91-4542-b27e-7463e15b160d}</ProjectGuid>
+    <SourceWebPhysicalPath>$(MSBuildThisFileDirectory)</SourceWebPhysicalPath>
+    <SourceWebVirtualPath>/PDMS</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SourceWebProject>
+    </SourceWebProject>
+    <SourceWebMetabasePath>
+    </SourceWebMetabasePath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DeployOnBuild>True</DeployOnBuild>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <!-- for VS2010 we need to use 10.5 but for VS2012+ we should use VisualStudioVersion -->
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)' =='' and '$(VisualStudioVersion)' == 10.0 ">10.5</WebPublishTargetsVersion>
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)'=='' ">$(VisualStudioVersion)</WebPublishTargetsVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(WebPublishTargetsVersion)</VSToolsPath>
+    <_WebPublishTargetsPath Condition=" '$(_WebPublishTargetsPath)'=='' ">$(VSToolsPath)</_WebPublishTargetsPath>
+    <AssemblyFileVersion Condition="'$(AssemblyFileVersion)' == ''">1.0.0.0</AssemblyFileVersion>
+    <AssemblyVersion Condition="'$(AssemblyVersion)' == ''">1.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="StructureMap, Version=4.7.1, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CoreLibraries\ThirdParty\StructureMap4.7.1\deploy\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="FileHelpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3e0c08d59cc3d657, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CoreLibraries\ThirdParty\FileHelpers\FileHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Core, Version=1.8.6, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\Glimpse.1.8.6\lib\net40\Glimpse.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.AspNet, Version=1.9.1, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\Glimpse.AspNet.1.9.1\lib\net40\Glimpse.AspNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.WebForms, Version=1.1.1, processorArchitecture=MSIL">
+      <HintPath>..\..\PDMS\packages\Glimpse.WebForms.1.1.1\lib\net40\Glimpse.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+      <Reference Include="Newtonsoft.Json, Version=13.0.1, processorArchitecture=MSIL">
+          <HintPath>..\..\PDMS\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+      </Reference> 
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CoreLibraries\AppSettings\AppSettings.csproj">
+      <Project>{99469857-55B2-4105-96F4-85C1B44E74D6}</Project>
+      <Name>AppSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Common\Common.csproj">
+      <Project>{8C8433D2-2E2C-4A6E-9F3F-82AD7665729F}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\DataAccess\DataAccess.csproj">
+      <Project>{B18C00DF-61BA-4650-ADC7-D8736741B5B8}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Exceptions\Exceptions.csproj">
+      <Project>{D9D2F83F-7A01-4FF1-92CC-6B6241195959}</Project>
+      <Name>Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\FileHelper\FileHelper.csproj">
+      <Project>{9E94B85F-5E40-4A2B-93A1-007C4FBB58E2}</Project>
+      <Name>FileHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Jobs\JobClasses\JobClasses.csproj">
+      <Project>{B27A78AA-3B56-4176-B3E5-124025684393}</Project>
+      <Name>JobClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Logging\Logging.csproj">
+      <Project>{E640B94B-2908-4AAD-9F47-00DAFE871902}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\MMSWebControls\MMSWebControls.csproj">
+      <Project>{B5F25088-3160-4509-A926-461B02631A5B}</Project>
+      <Name>MMSWebControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Notifications\Notifications.csproj">
+      <Project>{818FA6B3-06B0-4B0A-84B3-02348904EE64}</Project>
+      <Name>Notifications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Transport\Transport.csproj">
+      <Project>{B2439195-5F67-4703-BC15-B544A700143C}</Project>
+      <Name>Transport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Workflow\Workflow.csproj">
+      <Project>{5BC86E5F-8852-42E0-A11D-E0C9BCFF0FC8}</Project>
+      <Name>Workflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Model.csproj">
+      <Project>{4E52102F-0F6F-4809-A522-85585A6409F5}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectControllers\ObjectControllers.csproj">
+      <Project>{9E8FA5ED-C193-4872-AC93-7E4356674B50}</Project>
+      <Name>ObjectControllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectLibrary\ObjectLibrary.csproj">
+      <Project>{7AB04DF6-D3F9-49A4-9841-5D216F747ED3}</Project>
+      <Name>ObjectLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PDMSDataExchange\PDMSDataExchange.csproj">
+      <Project>{6FD99E25-0152-49FF-A48A-395B53AC7E5C}</Project>
+      <Name>PDMSDataExchange</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PDMSWorkflow\PDMSWorkflow.csproj">
+      <Project>{D90A2FCE-51E5-4B6C-983E-04457426E063}</Project>
+      <Name>PDMSWorkflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Presentation\Presentation.csproj">
+      <Project>{6C65C790-AD71-40B0-B9BE-65A957C2C9E3}</Project>
+      <Name>Presentation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(_WebPublishTargetsPath)\Web\Microsoft.WebSite.Publishing.targets" />
+</Project>

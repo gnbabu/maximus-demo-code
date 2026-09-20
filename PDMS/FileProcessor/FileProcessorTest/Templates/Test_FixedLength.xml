@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<template type="import" fileformat="FixedLength" filenamepattern="^TestFixedLength_\d*.txt$" filterexp="" testfilenametemplate="TestFixedLength_{Rand}.txt"
+          lineProcessorClass="TestFixedLengthImportLineProcessor">
+  <fields>
+    <field type="String" start="1" end="1" validvalues="'A','C','D'">
+      <label>Operation</label>
+      <testvalue>{ValidValueOrBlank}</testvalue>
+    </field>
+    <field type="String" start="2" end="10" testrandomnumberformat="ddd-dd-dddd">
+      <label>SSN</label>
+      <testvalue></testvalue>
+    </field>
+    <field type="String" start="11" end="30">
+      <label>Last_Name</label>
+      <testvalue>{LastName}</testvalue>
+    </field>
+    <field type="String" start="31" end="34">
+      <label>Name_Suffix</label>
+      <testvalue></testvalue>
+    </field>
+    <field type="String" start="35" end="49">
+      <label>First_Name</label>
+      <testvalue>{FirstName}</testvalue>
+    </field>
+    <field type="String" start="50" end="64">
+      <label>Middle_Name</label>
+      <testvalue></testvalue>
+    </field>
+    <field type="String" start="65" end="65" validvalues="'V','P','N'">
+      <label>VP_Code</label>
+      <testvalue>{ValidValueOrBlank}</testvalue>
+    </field>
+    <field type="DateMMDDYYYY" start="66" end="73">
+      <label>Death_Date</label>
+      <testvalue>{Date}</testvalue>
+    </field>
+    <field type="DateMMDDYYYY" start="74" end="81">
+      <label>Birth_Date</label>
+      <testvalue>{Date}</testvalue>
+    </field>
+    <field type="Filler" start="82" end="100" />
+  </fields>
+</template>

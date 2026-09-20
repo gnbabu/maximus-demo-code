@@ -1,0 +1,25 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cos="http://mes.gov/costreports">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cos:SubmitCostReportResponse>
+         <cos:ResponsePayload>
+            <cos:MITSTrackingNumber>100123456789054</cos:MITSTrackingNumber>
+            <!--Optional:-->
+            <cos:Response>
+               <cos:SITransactionKey>1234567</cos:SITransactionKey>
+               <!--Optional:-->
+               <cos:ResponseType>4.6 Amended </cos:ResponseType>
+               <!--Optional:-->
+               <cos:ResponseMessage>XYZ</cos:ResponseMessage>
+            </cos:Response>
+            <!--Zero or more repetitions:-->
+            <cos:AttachmentData>
+               <!--Optional:-->
+               <cos:AttachmentID>10234d</cos:AttachmentID>
+               <!--Optional:-->
+               <cos:AttachmentType>XYZ</cos:AttachmentType>
+            </cos:AttachmentData>
+         </cos:ResponsePayload>
+      </cos:SubmitCostReportResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

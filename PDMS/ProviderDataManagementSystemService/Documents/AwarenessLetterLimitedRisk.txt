@@ -1,0 +1,61 @@
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<b>Subject: </b>Ohio Medicaid Provider Application Received
+</p>
+
+<p>
+Dear Provider:
+</p>	
+<p>
+
+This notice acknowledges receipt of your application to join the Ohio Medicaid Program. The Ohio Department of Medicaid (ODM), is pleased that you are interested in joining thousands of Ohio providers committed to serving the healthcare needs of millions of Ohio residents enrolled in the state's Medicaid program.
+ODM staff will review your application for completeness and verify the information you provided.
+<p>
+Thank you for your participation and your efforts to maintain and improve the health of Ohio residents. We welcome your feedback regarding your experience with the provider application process. <font color="red"> Please complete a brief survey to provide feedback on your provider web portal experience by clicking <a style="color:#FF0000;" href="https://maximus.surveymonkey.com/r/ZR2LK9W">here</a>. </font>
+</p>
+
+<p>If you have questions, please contact the Provider Enrollment Customer Service at 800-686-1516.
+</p>
+
+Sincerely,<br />
+    <br />
+Ohio Medicaid Provider Enrollment
+</td>
+</tr>
+</table>

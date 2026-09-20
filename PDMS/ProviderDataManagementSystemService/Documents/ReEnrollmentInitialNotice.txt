@@ -1,0 +1,62 @@
+
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+
+<br />
+
+<p>In accordance with (legal reference), all enrolled suppliers of durable medical equipment, prosthetics, orthotics, and supplies are required to re-enroll every three years and all other Medicaid providers are required to re-enroll every five years.  
+Our records indicate that your (State) Medicaid Provider Agreement will expire on [[ELIGIBILITYENDDATE]].  Please submit your re-enrollment package to the (Department/agency)
+at the address below prior to your enrollment end date to prevent your (State) Medicaid Provider Agreement from expiring. You may complete your re-enrollment online at
+[[PDMSURL]].  If you fail to re-enroll in accordance with (legal reference) effective [[ELIGIBILITYENDDATE]], your (State) Medicaid Provider Agreement will expire 
+and (department/agency) will cease reimbursement for services you provide to Medicaid beneficiaries because you do not have a valid (State) Medicaid Provider Agreement. 
+</p>
+<br />
+
+MAXIMUS Provider Screening and Enrollment<br />
+PO BOX xxxx, <br />
+(city,state,zip). <br />
+Phone:  <phone number>  (999-999-9999)<br />
+
+<p>If you have any questions, please contact the MAXIMUS Provider Screening and Enrollment Customer Service at 999-999-999 or email at <a href ="mailto:[[PDMSEMAIL]]">[[PDMSEMAIL]]</a>.</p>
+
+Regards,<br />
+    <br />
+MAXIMUS Provider Screening and Enrollment Customer Service
+</td>
+</tr>
+</table>

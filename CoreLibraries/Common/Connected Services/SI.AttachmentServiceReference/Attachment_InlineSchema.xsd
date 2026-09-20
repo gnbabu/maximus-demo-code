@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://mes.gov/attachment" elementFormDefault="qualified" targetNamespace="http://mes.gov/attachment" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="Attachment_Datatypes.xsd" />
+  <xsd:complexType name="SendAttachmentInformation">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="SourceId" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="AttachmentData" type="tns:SendAttachment" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendAttachment">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="Identifiers" type="tns:SendAttachmentData" />
+      <xsd:element minOccurs="1" name="DocumentType" type="xsd:string" />
+      <xsd:element minOccurs="1" name="DocumentName" type="xsd:string" />
+      <xsd:element minOccurs="1" name="DocumentExtension" type="xsd:string" />
+      <xsd:element minOccurs="1" name="AttachmentData64Binary" type="tns:AttachmentData" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendAttachmentData">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="DocXrefType" type="xsd:string" />
+      <xsd:element minOccurs="1" name="IndexId" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

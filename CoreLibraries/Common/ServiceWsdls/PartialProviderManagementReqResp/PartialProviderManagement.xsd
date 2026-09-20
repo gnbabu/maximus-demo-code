@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:provpart= "http://mes.gov/partialprovidermanagement" targetNamespace="http://mes.gov/partialprovidermanagement" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:tns="http://mes.gov/partialprovidermanagement">
+	<xsd:include schemaLocation="PartialProviderManagement_InlineSchema.xsd"/>
+	<xsd:include schemaLocation="PartialProviderManagement_MessageHeader.xsd"/>
+
+	<xsd:element ibmSchExtn:docRoot="true" name="SubmitPartialProvider">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="tns:MessageHeader"/>
+				<xsd:element name="Payload" type="tns:SubmitPartialProviderRequestPayload"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element> 
+	<xsd:element ibmSchExtn:docRoot="true" name="SubmitPartialProviderResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="0" name="SITransactionKey" type="tns:String32"/>
+				<xsd:element minOccurs="0" name="ModuleTransactionId" type="tns:String50"/>
+				<xsd:element minOccurs="0" name="AdditionalModuleTransactionId" type="tns:String50"/>
+				<xsd:element minOccurs="0" name="ODSProviderDemographicsId" type="xsd:integer"/>  <!-- This is not a repeated element? -->
+				<xsd:element maxOccurs="unbounded" minOccurs="1" name="Response" type="tns:PartialProviderResponse"/>
+				<!--<xsd:element minOccurs="0" name="ResponseCode" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="ResponseType" type="xsd:string"/>					
+				<xsd:element minOccurs="0" name="ResponseMessage" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="ResponseDetails" type="xsd:string"/>-->
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="PartialProviderResponse">
+		<xsd:sequence>
+				<!--<xsd:element name="IndexId" type="xsd:string" minOccurs="0"/>-->
+				<xsd:element minOccurs="0" name="ResponseCode" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="ResponseType" type="xsd:string"/>					
+				<xsd:element minOccurs="0" name="ResponseMessage" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="ResponseDetails" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+</xsd:schema>

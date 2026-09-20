@@ -1,0 +1,9 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<p><b>Provider Name: [[PROVIDER_NAME]]</b></p>
+<p><b>Medicaid ID: [[MEDICAID_ID]]</b></p>
+<p>Please log into your account at <a href="[[PDMS_URL]]">Login</a> to view a notice issued by the Ohio Department of Medicaid. You may be required to take action to maintain your Medicaid enrollment. </p>
+<p>Directions on how to locate your notices can be found on the Provider Education and Training Resource page, under Self Service Functions in PNM here: <a href="[[PDMS_RESOURCE_URL]]">[[PDMS_RESOURCE_URL]]</a>.</p>
+
+<p><b>REG_ID: [[REG_ID]]</b></p>
+
+</div>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://mes.gov/incidentmanagement" xmlns:tns="http://mes.gov/incidentmanagement">
+	<xsd:include schemaLocation="IncidentManagement_Datatypes.xsd"/>
+	<!--Start of Inquire Provider Request-->		
+
+	<!--Start of Create Provider Request -->	
+	<xsd:complexType name="SendProviderIncidentRequest">                            					         
+		<xsd:sequence> 
+		                     <xsd:element name="MedicaidProviderID" type="tns:String10" minOccurs="1"/>	
+                         <xsd:element name="ProviderName" type="tns:String255" minOccurs="0"/>	
+                         <xsd:element name="IMSCaseNumber" type="tns:String30" minOccurs="0"/>	
+                         <xsd:element name="CaseSubmissionDate" type="tns:DateType" minOccurs="0"/>	
+                         <xsd:element name="NODReferralDate" type="tns:DateType" minOccurs="0"/>
+                         <xsd:element name="ReasonForNOD" type="tns:String2500" minOccurs="0"/>
+                         <xsd:element name="ReferralSentBy" type="tns:String255" minOccurs="0"/>	
+                         <xsd:element name="IncidentDetails" minOccurs="1" maxOccurs="unbounded">
+                           <xsd:complexType>
+                            <xsd:sequence>
+                            <xsd:element name="IncidentCategory" type="tns:String255" minOccurs="0"/>	
+                        <xsd:element name="IncidentSubcategory" type="tns:String255" minOccurs="0"/>	   
+                        <xsd:element name="IncidentType" type="tns:String255" minOccurs="0"/>  
+                         <xsd:element name="IncidentID" type="tns:String30" minOccurs="0"/>
+                         <xsd:element name="Substantiated" minOccurs="0">
+<!--                          <xsd:simpleType>
+                           <xsd:restriction base="xsd:string">
+                              <xsd:enumeration value="Yes"/>
+			      <xsd:enumeration value="No"/>
+                              </xsd:restriction>
+			     </xsd:simpleType>-->
+                            </xsd:element> 
+                           <xsd:element name="IMSAssociateID" type="tns:String30" minOccurs="0"/>
+                            </xsd:sequence>
+                           </xsd:complexType>
+                         </xsd:element>
+			
+		</xsd:sequence>                            					         
+	</xsd:complexType>  	
+        <xsd:complexType name="UpdateProviderIncidentStatusInfo">                            					         
+		<xsd:sequence> 
+		                  	<xsd:element name="MedicaidProviderID" type="tns:string10" minOccurs="0"/>	
+                        <xsd:element name="ProviderName" type="tns:String255" minOccurs="0"/>	
+                        <xsd:element name="ProviderStatus" minOccurs="0">
+                     <!--   <xsd:simpleType>
+                           <xsd:restriction base="xsd:string">
+                              <xsd:enumeration value="Continue"/>
+			      <xsd:enumeration value="Elevated"/>
+                              <xsd:enumeration value="Screening"/>
+                              <xsd:enumeration value="Terminated"/>
+                              </xsd:restriction>
+			     </xsd:simpleType>-->
+                            </xsd:element>
+                        
+                        <xsd:element name="PAOMailedDate" type="tns:DateType" minOccurs="0"/>
+                         <xsd:element name="PAIUnclaimed" minOccurs="0">
+                       <!--   <xsd:simpleType>
+                           <xsd:restriction base="xsd:string">
+                              <xsd:enumeration value="True"/>
+			      <xsd:enumeration value="False"/>
+                              </xsd:restriction>
+			     </xsd:simpleType>-->
+                            </xsd:element>                                                              
+                           <xsd:element name="HearingRequestedDate" type="tns:DateType" minOccurs="0"/>  
+                           <xsd:element name="HearingRequestDueDate" type="tns:DateType" minOccurs="0"/> 
+                            <xsd:element name="SettlementReachedDate" type="tns:DateType" minOccurs="0"/>
+                            <xsd:element name="AODateIssued" type="tns:DateType" minOccurs="0"/> 
+                             <xsd:element name="IMSAssociateID" type="tns:string30" minOccurs="0"/>
+                             <xsd:element name="IMSCaseNumber" type="tns:string30" minOccurs="0"/>
+                              <xsd:element name="PNMNODID" type="tns:String30" minOccurs="0"/>
+                            <xsd:element name="ActionByDepartment" minOccurs="0">
+                        <!--  <xsd:simpleType>
+                           <xsd:restriction base="xsd:string">
+                              <xsd:enumeration value="Yes"/>
+			      <xsd:enumeration value="No"/>
+                              </xsd:restriction>
+			     </xsd:simpleType>-->
+                            </xsd:element> 
+                            <xsd:element name="DateNODIssued" type="tns:DateType" minOccurs="0"/> 
+                            <xsd:element name="PlanOfCorrectionDueDate" type="tns:DateType" minOccurs="0"/> 
+                            <xsd:element name="PlanOfCorrectionReceivedDate" type="tns:DateType" minOccurs="0"/>
+                            <xsd:element name="PlanOfCorrectionAcceptedDate" type="tns:DateType" minOccurs="0"/> 
+                            <xsd:element name="RevisedPlanOfCorrectionDate" type="tns:DateType" minOccurs="0"/> 
+                            <xsd:element name="RevisedPlanOfCorrectionDueDate" type="tns:DateType" minOccurs="0"/>   
+		</xsd:sequence>                            					         
+	</xsd:complexType>  	
+	
+</xsd:schema>

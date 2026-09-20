@@ -1,0 +1,69 @@
+
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<b>Subject: CHOP Acknowledgment [[EXITINGMEDICAIDID]] [[EXITINGNPI]] [[EXITINGFACILITYNAME]]</b>
+</p>
+<p><b>Dear Entering Provider Representative:</b>
+<p style="width:50%">The Bureau of Network Management received written notice on or about [[RISKALERTDATE]] of a change of operator for the ICF/IID doing business as [[FACILITYNAME]] with an anticipated effective date on or [[CHOPEFFECTIVEDATE]].  If no residents are to be relocated, the notice is considered timely if it is received 45 days prior to the transaction date. This letter contains information about what steps need to be taken by the entering and exiting operators (and sometimes the exiting and entering owners/landlords) in order for the Ohio Medicaid program to recognize and process our records to reassign the Medicaid nursing facility provider agreement.</p>
+<p style="width:50%">The most recent cost report on file for [[FACILITYNAME]] shows that the facility is owned by [[OWNERFROMCOSTREPORT]], and operated by [[EXITINGOPERATOR]]. Your notice indicates that the transaction resulting in the change in operators will be a Transfer of Operations of the facility. As well, the notice that you provided indicates that the entering operator will be, [[ENTERINGOPERATORNAME]].</p>
+<p style="width:50%">The process of issuing a new provider agreement and Medicaid ID requires actions to be taken by the entering and exiting operator (and sometimes landlords) and different offices within the Ohio Department of Medicaid, (ODM).</p>
+<p style="width:50%">Please complete an application for change of provider through the PNM web portal which can be accessed through the PNM website at [[PNMURL]]. As you complete the change of provider application through the web portal, you will find a checklist of all required documents and forms that must be scanned and uploaded with your application.</p>
+<p style="width:50%"><b>Pursuant to 42 CFR 455.104 and OAC 5160-1-17.3, all providers must provide ownership, managing employee and controlling interest disclosure.  This is required for all owners, Officers, Directors, agents, managing employees and shareholders with 5% or more controlling interest.  If your facility is run by a Board of Directors, we require disclosure of all Board members.  The term “managing employee” means a general manager, business manager, administrator, director or any other individuals who exercise operational, financial or managerial control over the day-to-day operations of the facility.  Please make sure you disclose this information on your Application under the section titled “Disclosure of Individuals Comprising an Entity”.</b></p>
+<p style="width:50%">When the Medicaid change of operator process is finalized for purposes of enrollment of the entering operator, and discontinuation of enrollment of the exiting operator, a different Ohio Medicaid Provider ID will be assigned, and a provider agreement will be issued to the entering operator.  However, the provider agreement is technically being assigned from the exiting operator to the entering operator, because all responsibility for any survey findings and implementation of any corrective action or enforcement remedy assigned to the exiting operator is assigned to the entering operator. If the entering operator does not accept assignment of the provider agreement from the exiting operator, then the operator must request to the Bureau of Network Management that a new certification survey be conducted by the Ohio Department of Health.</p>
+
+<p style="width:50%"> For questions please contact us at <a Href="mailto:LTCProviderManagement@medicaid.ohio.gov">LTCProviderManagement@medicaid.ohio.gov</a> and reference CHOP in the subject line. </p>
+</br>
+</br>
+<p>Sincerely,</p>
+<p>
+Long Term Care Provider Management Unit
+</p>
+<p>
+Bureau of Network Management
+</p>
+<p>
+Ohio Department of Medicaid
+</p>
+</br>
+
+</td>
+</tr>
+</table>
+

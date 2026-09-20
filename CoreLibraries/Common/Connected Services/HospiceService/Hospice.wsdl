@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://ohio.gov/SearchRequest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ohio.gov/Hospice" xmlns:ns4="http://ohio.gov/AddUpdateResponse" xmlns:ns0="http://ohio.gov/HospiceRequestResponse" xmlns:ns3="http://ohio.gov/SearchResponses" xmlns:ns1="http://ohio.gov/InquireRequest" name="Hospice" targetNamespace="http://ohio.gov/Hospice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import schemaLocation="HospiceRequestResponse.xsd" namespace="http://ohio.gov/HospiceRequestResponse" />
+      <xsd:import schemaLocation="InquireRequest.xsd" namespace="http://ohio.gov/InquireRequest" />
+      <xsd:import schemaLocation="InquireResponse.xsd" namespace="http://ohio.gov/HospiceRequestResponse" />
+      <xsd:import schemaLocation="SearchRequest.xsd" namespace="http://ohio.gov/SearchRequest" />
+      <xsd:import schemaLocation="SearchResponses.xsd" namespace="http://ohio.gov/SearchResponses" />
+      <xsd:import schemaLocation="AddUpdateResponse.xsd" namespace="http://ohio.gov/AddUpdateResponse" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AddUpdateRequest">
+    <wsdl:part name="parameters" element="ns0:HospiceRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdateResponse">
+    <wsdl:part name="parameters" element="ns4:AddUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="InquireRequest">
+    <wsdl:part name="parameters" element="ns1:InquireRequest" />
+  </wsdl:message>
+  <wsdl:message name="InquireResponse">
+    <wsdl:part name="parameters" element="ns0:InquireResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchRequest">
+    <wsdl:part name="parameters" element="ns2:SearchRequest" />
+  </wsdl:message>
+  <wsdl:message name="SearchResponses">
+    <wsdl:part name="parameters" element="ns3:SearchResponses" />
+  </wsdl:message>
+  <wsdl:portType name="portType">
+    <wsdl:operation name="AddUpdateHospice">
+      <wsdl:input name="AddUpdateRequest" message="tns:AddUpdateRequest" />
+      <wsdl:output name="AddUpdateResponse" message="tns:AddUpdateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="InquireHospice">
+      <wsdl:input name="InquireRequest" message="tns:InquireRequest" />
+      <wsdl:output name="InquireResponse" message="tns:InquireResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchHospice">
+      <wsdl:input name="SearchRequest" message="tns:SearchRequest" />
+      <wsdl:output name="SearchResponses" message="tns:SearchResponses" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPEventSourceBinding" type="tns:portType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddUpdateHospice">
+      <soap:operation soapAction="/Processes/Hospice/Starter/HospiceService.serviceagent/HospiceEndpoint/AddUpdateHospice" style="document" />
+      <wsdl:input name="AddUpdateRequest">
+        <soap:body use="literal" namespace="http://InputMessageNamespace" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="AddUpdateResponse">
+        <soap:body use="literal" namespace="http://OutputMessageNamespace" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquireHospice">
+      <soap:operation soapAction="/Processes/Hospice/Starter/HospiceService.serviceagent/HospiceEndpoint/InquireHospice" style="document" />
+      <wsdl:input name="InquireRequest">
+        <soap:body use="literal" namespace="http://InputMessageNamespace" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="InquireResponse">
+        <soap:body use="literal" namespace="http://OutputMessageNamespace" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchHospice">
+      <soap:operation soapAction="/Processes/Hospice/Starter/HospiceService.serviceagent/HospiceEndpoint/SearchHospice" style="document" />
+      <wsdl:input name="SearchRequest">
+        <soap:body use="literal" namespace="http://InputMessageNamespace" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="SearchResponse">
+        <soap:body use="literal" namespace="http://OutputMessageNamespace" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HospiceWS">
+    <wsdl:port name="SOAPEventSource" binding="tns:SOAPEventSourceBinding">
+      <soap:address location="http://localhost:7702/Processes/Hospice/Starter/HospiceService.serviceagent/HospiceEndpoint" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

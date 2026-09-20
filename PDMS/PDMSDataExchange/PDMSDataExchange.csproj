@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\SixLabors.ImageSharp.3.1.8\build\SixLabors.ImageSharp.props" Condition="Exists('..\packages\SixLabors.ImageSharp.3.1.8\build\SixLabors.ImageSharp.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6FD99E25-0152-49FF-A48A-395B53AC7E5C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MAXIMUS.DataExchange.PDMS</RootNamespace>
+    <AssemblyName>PDMSDataExchange</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Amazon.SecretsManager.Extensions.Caching, Version=1.0.0.0, Culture=neutral, PublicKeyToken=69d09c6fedf74bd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.SecretsManager.Caching.2.0.0\lib\netstandard2.0\Amazon.SecretsManager.Extensions.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.4.0.0.6\lib\net472\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.S3, Version=4.0.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.S3.4.0.0.6\lib\net472\AWSSDK.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SecretsManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.SecretsManager.4.0.0.4\lib\net472\AWSSDK.SecretsManager.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.6.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.105.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.105.0\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.Parser.2.0.0\lib\netstandard2.0\ClosedXML.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML.Report, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b5435ca1fa2ab9d6, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.Report.0.2.12\lib\netstandard2.0\ClosedXML.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.3.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.3.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.3.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.3.0\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Enums.NET, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7ea1c1650d506225, processorArchitecture=MSIL">
+      <HintPath>..\packages\Enums.NET.5.0.0\lib\net461\Enums.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtendedNumerics.BigDecimal, Version=3000.0.4.132, Culture=neutral, PublicKeyToken=65f1315a45ad8949, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExtendedNumerics.BigDecimal.3000.0.4.132\lib\net48\ExtendedNumerics.BigDecimal.dll</HintPath>
+    </Reference>
+    <Reference Include="FileHelpers, Version=3.5.2.0, Culture=neutral, PublicKeyToken=3e0c08d59cc3d657, processorArchitecture=MSIL">
+      <HintPath>..\packages\FileHelpers.3.5.2\lib\net45\FileHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.4.2.13, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.4.2\lib\netstandard2.0\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Irony, Version=1.1.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Irony.NetCore.1.1.11\lib\netstandard2.0\Irony.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cd8b63ad3d691a37, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.Signed.5.0.0\lib\net48\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.5\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.Cryptography, Version=9.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Cryptography.9.0.5\lib\net462\Microsoft.Bcl.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=9.0.0.5, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.9.0.5\lib\net462\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=9.0.0.5, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.9.0.5\lib\net462\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=9.0.0.3, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.9.0.5\lib\net462\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=9.0.0.5, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.9.0.5\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=9.0.0.5, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.9.0.5\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=9.0.0.5, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.9.0.5\lib\net462\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=9.0.0.5, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.9.0.5\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.1\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MiniExcel, Version=1.41.2.0, Culture=neutral, PublicKeyToken=e7310002a53eac39, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniExcel.1.41.2\lib\net45\MiniExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq, Version=4.4.0.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.4.4.0\lib\netstandard2.0\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.3\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.Core, Version=2.7.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.7.3\lib\net472\NPOI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.7.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.7.3\lib\net472\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.7.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.7.3\lib\net472\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.7.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.7.3\lib\net472\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="Quartz, Version=3.13.1.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.3.13.1\lib\net472\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, PublicKeyToken=c77e27b81f4d0187, processorArchitecture=MSIL">
+      <HintPath>..\packages\RBush.Signed.4.0.0\lib\net47\RBush.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.1\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.ImageSharp.2.1.4\lib\net472\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=9.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.9.0.5\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=9.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.9.0.5\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.9.0.5\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Formats.Asn1, Version=9.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Formats.Asn1.9.0.5\lib\net462\System.Formats.Asn1.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=9.0.0.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.9.0.5\lib\net462\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.5\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.6.4.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.6.4\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.6.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.1\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=9.0.0.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Pkcs.9.0.5\lib\net462\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=9.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.9.0.5\lib\net462\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=9.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.9.0.5\lib\net462\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=9.0.0.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.9.0.5\lib\net462\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.9.0.5\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=9.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.9.0.5\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.3\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="XLParser, Version=1.7.5.0, Culture=neutral, PublicKeyToken=63397e1e46bb91b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\XLParser.1.7.5\lib\net462\XLParser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArchiveFailedTransactionDocs.cs" />
+    <Compile Include="Attachments_ControlFile.cs" />
+    <Compile Include="AutomatedReports\AutoReportsHelper.cs" />
+    <Compile Include="AutomatedReports\AutoReportsProcess.cs" />
+    <Compile Include="AutomatedReports\AutoReportsModel.cs" />
+    <Compile Include="AutomatedReports\AutoReportsEmail.cs" />
+    <Compile Include="AutomatedReports\AutoReportsScheduler.cs" />
+    <Compile Include="EFTUpdateNotification.cs" />
+    <Compile Include="GenerateDailyAttachmentReport.cs" />
+    <Compile Include="GenerateProviderAgreement.cs" />
+    <Compile Include="GroupAffiliations\GroupAffiliations.cs" />
+    <Compile Include="GroupAffiliations\GroupAffiliationsHelper.cs" />
+    <Compile Include="HCPCLVL2\HCPCLVL2Helper.cs" />
+    <Compile Include="HCPCLVL2\HCPCLVL2Interface.cs" />
+    <Compile Include="HRSA\HRSAProcessHelper.cs" />
+    <Compile Include="HRSA\HRSAProcessInterface.cs" />
+    <Compile Include="LTCHomeProvider\LTCHomeProviderHelper.cs" />
+    <Compile Include="LTCHomeProvider\LTCHomeProviderInterface.cs" />
+    <Compile Include="MonthlyWorkflowPurge.cs" />
+    <Compile Include="NUBC\NubcHelper.cs" />
+    <Compile Include="NUBC\NubcImport.cs" />
+    <Compile Include="PAAttachments_ControlFile.cs" />
+    <Compile Include="MultipleControlIdDeletion.cs" />
+    <Compile Include="CMCProgram\CMCProgramNotice.cs" />
+    <Compile Include="CHCProviderExport.cs" />
+    <Compile Include="CPCCMCTermination.cs" />
+    <Compile Include="CredRoster\CredentialRosterXMLReference.cs" />
+    <Compile Include="CPCPracticeExport.cs" />
+    <Compile Include="CPCPracticeInterfaceFileRecord.cs" />
+    <Compile Include="onBaseDocUpload\OnBaseDocUploadHelper.cs" />
+    <Compile Include="onBaseDocUpload\OnBaseDocUploadInterface.cs" />
+    <Compile Include="onBaseDocUpload\OnBaseDocUploadInterface339.cs" />
+    <Compile Include="onBaseDocUpload\OnBaseDocUploadInterface339_1.cs" />
+    <Compile Include="onBaseDocUpload\OnBaseDocUploadInterface339_2.cs" />
+    <Compile Include="PASRR\PASRRProcessInterface.cs" />
+    <Compile Include="PMF\PMFShared.cs" />
+    <Compile Include="PMF\ProcessMasterFileData.cs" />
+    <Compile Include="PMF\ProcessPMFFile.cs" />
+    <Compile Include="PMF\ProcessSpecialtyFile.cs" />
+    <Compile Include="ProviderAgentBulkUpload\ProviderAgentBulkUploadProcessor.cs" />
+    <Compile Include="ProviderFileReport.cs" />
+    <Compile Include="PPRRNotice.cs" />
+    <Compile Include="CPCNotice.cs" />
+    <Compile Include="DelegateAffiliationInterface.cs" />
+    <Compile Include="DelegateAffiliationHelper.cs" />
+    <Compile Include="DelegateAffiliationsRecords.cs" />
+    <Compile Include="FeeScheduleFileConversion.cs" />
+    <Compile Include="CredRoster\CredentialRosterRecord.cs" />
+    <Compile Include="CredRoster\CredentialRosterExport.cs" />
+    <Compile Include="GenerateXMLandZip.cs" />
+    <Compile Include="PurgeClaimsExpiredRecords.cs" />
+    <Compile Include="RAConvertToPDFs\RAConvertToPDFs.cs" />
+    <Compile Include="RAConvertToPDFs\RAConvertToPDFsHelper.cs" />
+    <Compile Include="RemittanceAdviceMCE\RemittanceAdviceHelper.cs" />
+    <Compile Include="RemittanceAdviceMCE\RemittanceAdviceProcessor.cs" />
+    <Compile Include="ReSendNotices\ReSendNoticesHelper.cs" />
+    <Compile Include="ReSendNotices\ReSendNoticesInterface.cs" />
+    <Compile Include="ReSendNotices\ReSendNotificationHelper.cs" />
+    <Compile Include="ServiceNowPNM.cs" />
+    <Compile Include="eLicenseVerificationMonitor.cs" />
+    <Compile Include="ICDS\IcdOdaWaiverHelper.cs" />
+    <Compile Include="ICDS\IcdOdaWaiverServiceRecords.cs" />
+    <Compile Include="ICDS\IcdOdaWaiverInterface.cs" />
+    <Compile Include="MassEmailProcessor.cs" />
+    <Compile Include="MCPN\MCPEndTransmissionImport.cs" />
+    <Compile Include="MCPN\MCPInterestInterface.cs" />
+    <Compile Include="MCPN\MCPMainImport.cs" />
+    <Compile Include="MCPN\MCPProviderGroupRecord.cs" />
+    <Compile Include="MCPN\MCPProviderGroupImport.cs" />
+    <Compile Include="MCPN\MCPServiceLocationImport.cs" />
+    <Compile Include="MCPN\MCPServiceLocationRecord.cs" />
+    <Compile Include="MCPN\MCPFacilityAffiliationRecord.cs" />
+    <Compile Include="MCPN\MCPAffiliationRecord.cs" />
+    <Compile Include="MCPN\MCPFacilityAffiliationImport.cs" />
+    <Compile Include="MCPN\MCPAffiliationImport.cs" />
+    <Compile Include="MCPN\MCPShared.cs" />
+    <Compile Include="MCPN\RequiredIfAttribute.cs" />
+    <Compile Include="OnBaseFileUploader.cs" />
+    <Compile Include="LicenseRevalidationMonitor.cs" />
+    <Compile Include="NewRegMonitor.cs" />
+    <Compile Include="DataExchangeHelper.cs" />
+    <Compile Include="Bill2PayInterface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZIPCodeStaleUpdater.cs" />
+    <Compile Include="CAQH.cs" />
+    <Compile Include="CAQHProvider.cs" />
+    <Compile Include="CAQHProViewReturnRoster.cs" />
+    <Compile Include="CAQHProViewSubmitRoster.cs" />
+    <Compile Include="CAQHSubmitRosterRecord.cs" />
+    <Compile Include="CAQHSummaryFileRecord.cs" />
+    <Compile Include="CAQHReturnRosterRecord.cs" />
+    <Compile Include="CAQHRosterExceptionRecord.cs" />
+    <Compile Include="CAQHUpdateFileRecord.cs" />
+    <Compile Include="CAQHSubmitRosterRecordProView.cs" />
+    <Compile Include="CAQHReturnRosterRecordProView.cs" />
+    <Compile Include="CAQHRosterExceptionRecordProView.cs" />
+    <Compile Include="CAQHProViewRosterException.cs" />
+    <Compile Include="IMMISProcessResponse.cs" />
+    <Compile Include="MailInterface.cs" />
+    <Compile Include="MMISExecuteRetrieveTask.cs" />
+    <Compile Include="IMMISGetResponse.cs" />
+    <Compile Include="IMMISLoadDataSet.cs" />
+    <Compile Include="IMMISPopulateRequest.cs" />
+    <Compile Include="IMMISPopulateStagingTablesStep.cs" />
+    <Compile Include="IMMISPostProcessResponse.cs" />
+    <Compile Include="IMMISProcessErrors.cs" />
+    <Compile Include="IMMISPopulateResponseTestValues.cs" />
+    <Compile Include="IMMISProcessErrorStep.cs" />
+    <Compile Include="MMISInterface\CSVSerializer.cs" />
+    <Compile Include="MMISInterface\CSVSerializerWithHeader.cs" />
+    <Compile Include="MMISInterface\FileHelperConverters.cs" />
+    <Compile Include="MMISInterface\IMMISFile.cs" />
+    <Compile Include="MMISInterface\MMISRequest.cs" />
+    <Compile Include="MMISInterface\ProviderInterface.cs" />
+    <Compile Include="MMISInterface\RetrieveGroupAffiliation.cs" />
+    <Compile Include="MMISInterface\RetrieveProvider.cs" />
+    <Compile Include="MMISInterface\RetrieveWaiverProvider.cs" />
+    <Compile Include="MMISInterface\RetrieveWaiverServices.cs" />
+    <Compile Include="MMISInterface\SubmitGroupAffiliation.cs" />
+    <Compile Include="MMISInterface\SubmitProvider.cs" />
+    <Compile Include="MMISInterface\SubmitWaiverProvider.cs" />
+    <Compile Include="MMISInterface\SubmitWaiverServices.cs" />
+    <Compile Include="OnBaseInterface.cs" />
+    <Compile Include="PasswordExpiryNotifictions.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RetrieveBill2Pay.cs" />
+    <Compile Include="RetrieveBill2PayPaymentVerification.cs" />
+    <Compile Include="SendBill2PayRequest.cs" />
+    <Compile Include="SSAffiliations\SSAffiliations.cs" />
+    <Compile Include="SSAffiliations\SSAffiliationsHelper.cs" />
+    <Compile Include="SubmitOnBaseDocument.cs" />
+    <Compile Include="RemittanceAdviceProcessor.cs" />
+    <Compile Include="RemittanceAdviceZip.cs" />
+    <Compile Include="RevalidationMonitor.cs" />
+    <Compile Include="PMF\SuppBatchProcess.cs" />
+    <Compile Include="TaskData.cs" />
+    <Compile Include="MMISPopulateStagingTablesTask.cs" />
+    <Compile Include="MMISExecuteTransactionTask.cs" />
+    <Compile Include="IMMISUpdateTransaction.cs" />
+    <Compile Include="ITask.cs" />
+    <Compile Include="MMIS.cs" />
+    <Compile Include="MMISDCS.cs" />
+    <Compile Include="MMISRetrieveGroups.cs" />
+    <Compile Include="MMISShared.cs" />
+    <Compile Include="MMISSubmitGroups.cs" />
+    <Compile Include="MMISTransactionStep.cs" />
+    <Compile Include="NPPES.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CMCProgram\CMCProgramHelper.cs" />
+    <Compile Include="CMCProgram\CMCProgramInterface.cs" />
+    <Compile Include="CMCProgram\CMCProgramServiceRecords.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderCaqhSubmitRequestProviderGroupProviderGroups.cs" />
+    <Compile Include="ProviderNotification.cs" />
+    <Compile Include="RetrieveProviders_Request.cs">
+      <DependentUpon>RetrieveProviders_Request.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RetrieveProviders_Response.cs">
+      <DependentUpon>RetrieveProviders_Response.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TN_MMIS_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TN_MMIS_Service_Test\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SubmitProviders_Request.cs">
+      <DependentUpon>SubmitProviders_Request.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SubmitProviders_Response.cs">
+      <DependentUpon>SubmitProviders_Response.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TaxonomyLookup\Taxonomy.cs" />
+    <Compile Include="TaxonomyLookup\TaxonomyLookup.cs" />
+    <Compile Include="TaxonomyLookup\TaxonomyLookupHelper.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="WaiverRedirectTransactionMonitoring.cs" />
+    <Compile Include="ZIPCodeStaleUpdater.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CoreLibraries\AppSettings\AppSettings.csproj">
+      <Project>{99469857-55B2-4105-96F4-85C1B44E74D6}</Project>
+      <Name>AppSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Common\Common.csproj">
+      <Project>{8C8433D2-2E2C-4A6E-9F3F-82AD7665729F}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\DataAccess\DataAccess.csproj">
+      <Project>{B18C00DF-61BA-4650-ADC7-D8736741B5B8}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Exceptions\Exceptions.csproj">
+      <Project>{D9D2F83F-7A01-4FF1-92CC-6B6241195959}</Project>
+      <Name>Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\FileHelper\FileHelper.csproj">
+      <Project>{9E94B85F-5E40-4A2B-93A1-007C4FBB58E2}</Project>
+      <Name>FileHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Jobs\JobClasses\JobClasses.csproj">
+      <Project>{B27A78AA-3B56-4176-B3E5-124025684393}</Project>
+      <Name>JobClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Logging\Logging.csproj">
+      <Project>{E640B94B-2908-4AAD-9F47-00DAFE871902}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\MMSWebControls\MMSWebControls.csproj">
+      <Project>{B5F25088-3160-4509-A926-461B02631A5B}</Project>
+      <Name>MMSWebControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Notifications\Notifications.csproj">
+      <Project>{818FA6B3-06B0-4B0A-84B3-02348904EE64}</Project>
+      <Name>Notifications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Transport\Transport.csproj">
+      <Project>{B2439195-5F67-4703-BC15-B544A700143C}</Project>
+      <Name>Transport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectControllers\ObjectControllers.csproj">
+      <Project>{9E8FA5ED-C193-4872-AC93-7E4356674B50}</Project>
+      <Name>ObjectControllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectLibrary\ObjectLibrary.csproj">
+      <Project>{7AB04DF6-D3F9-49A4-9841-5D216F747ED3}</Project>
+      <Name>ObjectLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RetrieveProviders_Request.xsc">
+      <DependentUpon>RetrieveProviders_Request.xsd</DependentUpon>
+    </None>
+    <None Include="RetrieveProviders_Request.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RetrieveProviders_Request.xss">
+      <DependentUpon>RetrieveProviders_Request.xsd</DependentUpon>
+    </None>
+    <None Include="RetrieveProviders_Response.xsc">
+      <DependentUpon>RetrieveProviders_Response.xsd</DependentUpon>
+    </None>
+    <None Include="RetrieveProviders_Response.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RetrieveProviders_Response.xss">
+      <DependentUpon>RetrieveProviders_Response.xsd</DependentUpon>
+    </None>
+    <None Include="Service References\TN_MMIS_Service\CAQH_DOTNET_Webservice.wsdl" />
+    <None Include="Service References\TN_MMIS_Service\MAXIMUS.DataExchange.PDMS.TN_MMIS_Service.ProviderCaqhGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TN_MMIS_Service\MAXIMUS.DataExchange.PDMS.TN_MMIS_Service.ProviderCaqhSubmitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TN_MMIS_Service_Test\CAQH_DOTNET_Webservice1.wsdl" />
+    <None Include="Service References\TN_MMIS_Service_Test\MAXIMUS.DataExchange.PDMS.TN_MMIS_Service_Test.ProviderCaqhGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TN_MMIS_Service_Test\MAXIMUS.DataExchange.PDMS.TN_MMIS_Service_Test.ProviderCaqhSubmitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TN_MMIS_Service_Test\MAXIMUS.DataExchange.PDMS.TN_MMIS_Service_Test.ProviderGroupAffiliationsCaqhGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TN_MMIS_Service_Test\MAXIMUS.DataExchange.PDMS.TN_MMIS_Service_Test.ProviderGroupAffiliationsCaqhSubmitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TN_MMIS_Service_Test\MAXIMUS.DataExchange.PDMS.TN_MMIS_Service_Test.ProviderGroupCaqhGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TN_MMIS_Service_Test\MAXIMUS.DataExchange.PDMS.TN_MMIS_Service_Test.ProviderGroupCaqhSubmitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="SubmitProviders_Request.xsc">
+      <DependentUpon>SubmitProviders_Request.xsd</DependentUpon>
+    </None>
+    <None Include="SubmitProviders_Request.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SubmitProviders_Request.xss">
+      <DependentUpon>SubmitProviders_Request.xsd</DependentUpon>
+    </None>
+    <None Include="SubmitProviders_Response.xsc">
+      <DependentUpon>SubmitProviders_Response.xsd</DependentUpon>
+    </None>
+    <None Include="SubmitProviders_Response.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SubmitProviders_Response.xss">
+      <DependentUpon>SubmitProviders_Response.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TN_MMIS_Service\" />
+    <WCFMetadataStorage Include="Service References\TN_MMIS_Service_Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TN_MMIS_Service\CAQH_DOTNET_Webservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TN_MMIS_Service\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TN_MMIS_Service\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TN_MMIS_Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TN_MMIS_Service_Test\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TN_MMIS_Service_Test\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TN_MMIS_Service_Test\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TN_MMIS_Service_Test\CAQH_DOTNET_Webservice1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.S3.4.0.0.6\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+    <Analyzer Include="..\packages\AWSSDK.SecretsManager.4.0.0.4\analyzers\dotnet\cs\AWSSDK.SecretsManager.CodeAnalysis.dll" />
+    <Analyzer Include="..\packages\AWSSDK.SecretsManager.4.0.0.4\analyzers\dotnet\cs\SharedAnalysisCode.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets'))" />
+    <Error Condition="!Exists('..\packages\SixLabors.ImageSharp.3.1.8\build\SixLabors.ImageSharp.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SixLabors.ImageSharp.3.1.8\build\SixLabors.ImageSharp.props'))" />
+  </Target>
+  <Import Project="..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets" Condition="Exists('..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

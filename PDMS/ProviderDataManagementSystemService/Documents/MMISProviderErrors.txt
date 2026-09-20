@@ -1,0 +1,10 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+[[PROVIDERNAME]]<br />
+[[PROVIDERTYPE]]<br />
+[[NPI]]<br />
+[[CURRENTDATE]]<br /><br />
+
+The following errors were returned by the MMIS when attempting to process the above provider.<br />
+
+[[MMISERRORS]]<br />
+</div>

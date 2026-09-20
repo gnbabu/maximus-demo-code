@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="47d15d75-6f12-4b00-bf7f-c74a42748add" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\284904\Desktop\Hospice\LatestWSDLs\ProviderManagement\NewWsdls\ProviderManagement.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProviderManagement_Datatypes.xsd" MetadataType="Schema" ID="6c7ae4a6-59ec-4ecc-b3d8-650dc8d07770" SourceId="1" SourceUrl="file:///C:/Users/284904/Desktop/Hospice/LatestWSDLs/ProviderManagement/NewWsdls/ProviderManagement_Datatypes.xsd" />
+    <MetadataFile FileName="ProviderManagement.wsdl" MetadataType="Wsdl" ID="0e0e55d9-3814-4dc3-bcaf-3c7c7b078fd9" SourceId="1" SourceUrl="file:///C:/Users/284904/Desktop/Hospice/LatestWSDLs/ProviderManagement/NewWsdls/ProviderManagement.wsdl" />
+    <MetadataFile FileName="ProviderManagement.xsd" MetadataType="Schema" ID="aef034da-6581-4332-99be-15866e5bd8e4" SourceId="1" SourceUrl="file:///C:/Users/284904/Desktop/Hospice/LatestWSDLs/ProviderManagement/NewWsdls/ProviderManagement.xsd" />
+    <MetadataFile FileName="ProviderManagement_InlineSchema.xsd" MetadataType="Schema" ID="26da1d10-aad5-4bd5-9164-e8bc53701c53" SourceId="1" SourceUrl="file:///C:/Users/284904/Desktop/Hospice/LatestWSDLs/ProviderManagement/NewWsdls/ProviderManagement_InlineSchema.xsd" />
+    <MetadataFile FileName="ProviderManagement_MessageHeader.xsd" MetadataType="Schema" ID="8d35c4a3-d6c8-4df9-ab75-f0c25466d134" SourceId="1" SourceUrl="file:///C:/Users/284904/Desktop/Hospice/LatestWSDLs/ProviderManagement/NewWsdls/ProviderManagement_MessageHeader.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

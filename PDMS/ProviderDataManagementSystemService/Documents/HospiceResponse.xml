@@ -1,0 +1,116 @@
+<?xml version="1.0" standalone="yes"?>
+<HospiceRequestResponses>
+  <HospiceResponse>
+    <HospiceTrackNo>123456789</HospiceTrackNo>
+    <RecipID>INV123456789</RecipID>
+    <ActionType>New Enrollment</ActionType>
+    <ConsBirthDate>2020-07-05</ConsBirthDate>
+    <ConsFirstName>Test</ConsFirstName>
+    <ConsLastName>Test</ConsLastName>
+    <ServiceCountyStates>
+      <ServiceCountyState>
+        <County>Clinton</County>
+        <CountyEffDate>6/01/2020</CountyEffDate>
+        <CountyEndDate>6/30/2020</CountyEndDate>
+        <State>OH</State>
+        <SegmentIndicator>First 90 days period</SegmentIndicator>
+      </ServiceCountyState>
+    </ServiceCountyStates>
+    <ElectionDisenrollDatesList>
+      <ElectionDisenrollDates>
+        <DisenrollDate>2020-07-05</DisenrollDate>
+        <ElectionDate>2020-11-09</ElectionDate>
+      </ElectionDisenrollDates>
+    </ElectionDisenrollDatesList>
+    <LongTermCareFacilities>
+      <LongTermCareFacility>
+        <HLTCFProviderNPI>010101010</HLTCFProviderNPI>
+        <HLTCFProviderName>Ohio Riverside Hospice Care</HLTCFProviderName>
+        <HLTCFEffDate>2020-07-05</HLTCFEffDate>
+        <HLTCFEndDate>2020-09-05</HLTCFEndDate>
+        <HLTCFProvMedID>HLTCFPINVOICEOH</HLTCFProvMedID>
+      </LongTermCareFacility>
+    </LongTermCareFacilities>
+    <BenefitPeriods>
+      <AttendingPhysicianes>
+        <AttendingPhysician>
+          <PhyNPI>PhyscianNPITest</PhyNPI>
+          <PhyOralCertDate>2020-07-05</PhyOralCertDate>
+          <PhyWritCertDate>2020-09-05</PhyWritCertDate>
+          <SegmentIndicator>First 90 days period</SegmentIndicator>
+        </AttendingPhysician>
+      </AttendingPhysicianes>
+      <BenefitPeriodes>
+        <BenefitPeriod>
+          <BenPeriod>1234</BenPeriod>
+          <BenPeriodEffDate>2020-07-05</BenPeriodEffDate>
+          <BenPeriodEndDate>2020-09-05</BenPeriodEndDate>
+          <BenUpdateReason>4</BenUpdateReason>
+          <Status>P</Status>
+          <SegmentIndicator>First 90 days period</SegmentIndicator>
+        </BenefitPeriod>
+      </BenefitPeriodes>
+      <IDGPhysicianes>
+        <IDGPhysician>
+          <IDGPhyNPI>TestIDGPhysicin</IDGPhyNPI>
+          <IDGPhyOralCertDate>2020-07-05</IDGPhyOralCertDate>
+          <IDGPhyWritCertDate>2020-09-05</IDGPhyWritCertDate>
+          <SegmentIndicator>First 90 days period</SegmentIndicator>
+        </IDGPhysician>
+      </IDGPhysicianes>
+    </BenefitPeriods>
+    <DiagnosisCodesList>
+      <DiagnosisCodes>
+        <DiagEffDate>2020-07-05</DiagEffDate>
+        <DiagEndDate>2020-09-05</DiagEndDate>
+        <PrimeTermDiag>TestDiag</PrimeTermDiag>
+        <TermDiag2>TestDiag</TermDiag2>
+        <TermDiag3>TestDiag</TermDiag3>
+        <SegmentIndicator>First 90 days period</SegmentIndicator>
+      </DiagnosisCodes>
+    </DiagnosisCodesList>
+    <OtherPayerInfoList>
+      <OtherPayerInfo>
+        <PayerEffDate>2020-07-05</PayerEffDate>
+        <PayerEndDate>2020-09-05</PayerEndDate>
+        <PayerName>payernametest</PayerName>
+        <PayerType>PT</PayerType>
+        <SegmentIndicator>First 90 days period</SegmentIndicator>
+      </OtherPayerInfo>
+    </OtherPayerInfoList>
+    <ProvServices>
+      <ProvService>
+        <HospiceProvID>1</HospiceProvID>
+        <ProviderName>Test</ProviderName>
+        <SpanEffDate>2020-07-05</SpanEffDate>
+        <SpanEndDate>2020-09-05</SpanEndDate>
+        <SegmentIndicator>First 90 days period</SegmentIndicator>
+      </ProvService>
+    </ProvServices>
+    <AttachmentsList>
+      <Attachments>
+        <LineItem>01</LineItem>
+        <DocumentID>12345</DocumentID>
+        <AttachType>PDF</AttachType>
+        <Note>2020-09-05</Note>
+      </Attachments>
+    </AttachmentsList>
+    <EpisodeOfCares>
+      <EpisodeOfCare>
+        <PriceChangeDate>2020-07-05</PriceChangeDate>
+        <Sequence>1</Sequence>
+        <StartDate>2020-07-05</StartDate>
+        <EndDate>2020-07-05</EndDate>
+        <NoBenefitDays>2</NoBenefitDays>
+        <NoCalendarDays>2</NoCalendarDays>
+      </EpisodeOfCare>
+    </EpisodeOfCares>
+  </HospiceResponse>
+  <ServiceCountyState>
+    <County>Belmont</County>
+    <CountyEffDate>7/31/2020</CountyEffDate>
+    <CountyEndDate>7/31/2020</CountyEndDate>
+    <State>OH</State>
+    <SegmentIndicator>First 90 days period</SegmentIndicator>
+  </ServiceCountyState>
+</HospiceRequestResponses>

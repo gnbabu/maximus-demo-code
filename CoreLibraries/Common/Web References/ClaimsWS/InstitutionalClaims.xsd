@@ -1,0 +1,1427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://mes.gov/InstitutionalClaims" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://mes.gov/InstitutionalClaims" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="InstitutionalClaims">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="pUb92">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ubXover">
+                <xs:complexType>
+                  <xs:attribute name="amt_alwd_mcare">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:decimal">
+                        <xs:totalDigits value="10" />
+                        <xs:fractionDigits value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="amt_deduct_blood">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:decimal">
+                        <xs:totalDigits value="8" />
+                        <xs:fractionDigits value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="amt_deduct">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:decimal">
+                        <xs:totalDigits value="8" />
+                        <xs:fractionDigits value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="amt_coinsurance">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:decimal">
+                        <xs:totalDigits value="8" />
+                        <xs:fractionDigits value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="amt_paid_mcare">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:decimal">
+                        <xs:totalDigits value="10" />
+                        <xs:fractionDigits value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="dte_mcare_paid" type="xs:date" />
+                  <xs:attribute name="qty_days_coinsurance">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:integer" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="qty_days_lifetime_reserve">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:integer" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="condition">
+                <xs:complexType>
+                  <xs:attribute name="cde_cond">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="cde_cond_seq">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="value">
+                <xs:complexType>
+                  <xs:attribute name="cde_value">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="num_seq">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:integer" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="amt_value">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:float" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ubHdrKey">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="clmSbr">
+                      <xs:complexType>
+                        <xs:attribute name="cde_claim_filing_ind">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="cde_payer_responsib">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="clmQty">
+                      <xs:complexType>
+                        <xs:attribute name="qlf_quantity">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="num_quantity">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:decimal">
+                              <xs:totalDigits value="6" />
+                              <xs:fractionDigits value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="cde_unit_of_measure">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="clmEntity">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="clmEntNmAdr">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="clmNameNm1">
+                                  <xs:complexType>
+                                    <xs:attribute name="nam_last">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:minLength value="0" />
+                                          <xs:maxLength value="60" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="nam_first">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:maxLength value="35" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="nam_middle">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:maxLength value="25" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="partyIdentifier">
+                                  <xs:complexType>
+                                    <xs:attribute name="qlf_id_type">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:minLength value="0" />
+                                          <xs:maxLength value="2" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="cde_party_id">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:minLength value="0" />
+                                          <xs:maxLength value="20" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="ind_primary_id">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="1" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="qlf_entity_type" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="qlf_entity_type">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="0" />
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="cde_provider_type">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="0" />
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="cde_prov_taxonomy">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="0" />
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="qlf_type_org" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element maxOccurs="unbounded" name="instOthPyrHdr">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="clmPayerEntity">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="clmPyrEntnmadr">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="clmNameNm1">
+                                        <xs:complexType>
+                                          <xs:attribute name="nam_last">
+                                            <xs:simpleType>
+                                              <xs:restriction base="xs:string">
+                                                <xs:minLength value="0" />
+                                                <xs:maxLength value="60" />
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                          <xs:attribute name="nam_first">
+                                            <xs:simpleType>
+                                              <xs:restriction base="xs:string">
+                                                <xs:maxLength value="35" />
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                          <xs:attribute name="nam_middle">
+                                            <xs:simpleType>
+                                              <xs:restriction base="xs:string">
+                                                <xs:maxLength value="25" />
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="partyIdentifier">
+                                        <xs:complexType>
+                                          <xs:attribute name="cde_party_id">
+                                            <xs:simpleType>
+                                              <xs:restriction base="xs:string">
+                                                <xs:minLength value="0" />
+                                                <xs:maxLength value="80" />
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                          <xs:attribute name="qlf_id_type">
+                                            <xs:simpleType>
+                                              <xs:restriction base="xs:string">
+                                                <xs:minLength value="0" />
+                                                <xs:maxLength value="2" />
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="qlf_entity_type">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:minLength value="0" />
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="ind_primary_id">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:minLength value="0" />
+                                          <xs:maxLength value="1" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="clmRef">
+                                  <xs:complexType>
+                                    <xs:attribute name="qlf_reference_id">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:minLength value="0" />
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="cde_ref_id">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:minLength value="0" />
+                                          <xs:maxLength value="50" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="qlf_entity_type">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:minLength value="0" />
+                                          <xs:maxLength value="3" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="qlf_entity_type">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="3" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="qlf_type_org">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="2" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="clmSbr">
+                            <xs:complexType>
+                              <xs:attribute name="cde_claim_filing_ind">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="2" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="cde_insured_group_number">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="30" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="nam_insured_group">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="60" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="cde_payer_responsib">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="1" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="cde_ind_relationship">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="2" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="cde_insurance_type">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="3" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element maxOccurs="unbounded" name="clmAmt">
+                            <xs:complexType>
+                              <xs:attribute name="qlf_amount">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="3" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="amt_monetary">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="14" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="clmCas">
+                            <xs:complexType>
+                              <xs:attribute name="cde_clm_adj_reason">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="5" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="amt_adjustment">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="10" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="qty_adjustment">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="9" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="num_dtl">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="1" />
+                                    <xs:maxLength value="4" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="num_dtl_svd">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="1" />
+                                    <xs:maxLength value="4" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="cde_insured_group_number">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="50" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="num_cas_seq" />
+                              <xs:attribute name="cde_clm_adj_group" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="amt_alwd_oth_pyr">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="0" />
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="dte_adjudication" type="xs:date" />
+                        <xs:attribute name="dte_other_sub_dob" type="xs:date" />
+                        <xs:attribute name="qlf_adjudication_date">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="0" />
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="ind_benefits_assignment">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="0" />
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="cde_release_of_info">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="0" />
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="cde_other_sub_gender">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="0" />
+                              <xs:maxLength value="1" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="qlf_adjudication_dte_fmt">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="0" />
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="ind_release_of_info" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="clmRef">
+                      <xs:complexType>
+                        <xs:attribute name="qlf_reference_id">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="0" />
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="cde_ref_id">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="0" />
+                              <xs:maxLength value="50" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="clmNte">
+                      <xs:complexType>
+                        <xs:attribute name="cde_note">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="dsc_note">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="80" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="num_dtl">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:integer" />
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="clmPwk">
+                      <xs:complexType>
+                        <xs:attribute name="cde_rpt_transmission">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="cde_attachment_control">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="80" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="qlf_facility">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="cde_release_of_info">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="id_medicaid">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="12" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="clm_recip_fst_nam">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="clm_lst_nam_recip">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="60" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="qlf_sub_dob_fmt">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="dte_subscriber_dob" type="xs:date" />
+                  <xs:attribute name="cde_sub_gender">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="id_provider">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="0" />
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="id_pr_facility">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="0" />
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="ind_benefits_assignment">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="0" />
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="qlf_discharge_time">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="0" />
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="qlf_discharge_time_fmt">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="0" />
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="time_discharge">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="0" />
+                        <xs:maxLength value="4" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="qlf_statement_dt_fmt">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="0" />
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="detail">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ubDtlKey">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="clmPwk">
+                            <xs:complexType>
+                              <xs:attribute name="cde_rpt_transmission">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="2" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="cde_attachment_control">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="80" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="clmOthPyrDtl">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="clmCas">
+                                  <xs:complexType>
+                                    <xs:attribute name="cde_clm_adj_reason">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:minLength value="0" />
+                                          <xs:maxLength value="5" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="amt_adjustment">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:minLength value="0" />
+                                          <xs:maxLength value="10" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="qty_adjustment">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:minLength value="0" />
+                                          <xs:maxLength value="9" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="num_cas_seq">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:minLength value="1" />
+                                          <xs:maxLength value="4" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="num_dtl_svd">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:minLength value="1" />
+                                          <xs:maxLength value="4" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="num_dtl" />
+                                    <xs:attribute name="cde_clm_adj_group" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="num_dtl_svd" />
+                              <xs:attribute name="other_pyr_party_identifier">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="20" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="amt_service_paid">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="10" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="amt_alwd_oth_pyr">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="10" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="qlf_svc_adjud_dte">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="3" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="qlf_svc_adjud_dte_fmt">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="2" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="dte_service_adjud" type="xs:date" />
+                              <xs:attribute name="other_pyr_qlf_party_id" />
+                              <xs:attribute name="qty_service" />
+                              <xs:attribute name="cde_procedure" />
+                              <xs:attribute name="cde_revenue" />
+                              <xs:attribute name="qlf_procedure_code" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="clmNdcDtl">
+                            <xs:complexType>
+                              <xs:attribute name="cde_prod_serv_id">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="48" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="qty_units_svc">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="15" />
+                                    <xs:fractionDigits value="3" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="cde_unit_measure">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="2" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="amt_drug_unit_price">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="17" />
+                                    <xs:fractionDigits value="2" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="qlf_prod_serv_id">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="2" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="qlf_prescription_id">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="3" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="num_prescription_id">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="30" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="clmEntity">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="clmEntNmAdr">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="partyIdentifier">
+                                        <xs:complexType>
+                                          <xs:attribute name="qlf_id_type">
+                                            <xs:simpleType>
+                                              <xs:restriction base="xs:string">
+                                                <xs:minLength value="0" />
+                                                <xs:maxLength value="2" />
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                          <xs:attribute name="cde_party_id">
+                                            <xs:simpleType>
+                                              <xs:restriction base="xs:string">
+                                                <xs:minLength value="0" />
+                                                <xs:maxLength value="20" />
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="clmNameNm1">
+                                        <xs:complexType>
+                                          <xs:attribute name="nam_last">
+                                            <xs:simpleType>
+                                              <xs:restriction base="xs:string">
+                                                <xs:minLength value="0" />
+                                                <xs:maxLength value="60" />
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                          <xs:attribute name="nam_first">
+                                            <xs:simpleType>
+                                              <xs:restriction base="xs:string">
+                                                <xs:maxLength value="35" />
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                          <xs:attribute name="nam_middle">
+                                            <xs:simpleType>
+                                              <xs:restriction base="xs:string">
+                                                <xs:maxLength value="25" />
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="ind_primary_id">
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:minLength value="0" />
+                                          <xs:maxLength value="1" />
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="qlf_entity_type">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="3" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="cde_provider_type">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="3" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="cde_prov_taxonomy">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:minLength value="0" />
+                                    <xs:maxLength value="20" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="cde_proc">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="6" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="qlf_procedure_id">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="cde_uom">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="id_prov_attend">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="15" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="id_prov_other">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="15" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="id_prov_other_2">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="15" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="amt_non_covered">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:float" />
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="amt_unit_rate">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:float" />
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="modifier">
+                      <xs:complexType>
+                        <xs:attribute name="seq">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:integer" />
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="cde_modifier">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="num_dtl">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:integer" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="dte_first_svc" type="xs:date" />
+                  <xs:attribute name="dte_last_svc" type="xs:date" />
+                  <xs:attribute name="cde_revenue">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="qty_units_billed">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="amt_billed_ub92">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:float" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="amt_co_pay">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:float" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="amt_alwd">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:float" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="amt_detail_tpl">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:float" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="cde_clm_status">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="ind_sys_generate">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="cde_loc_pricing">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="ind_pr_override_other_2">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:length value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="payer">
+                <xs:complexType>
+                  <xs:attribute name="cde">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="num_seq">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:integer" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="amt_prior_payment">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:float" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="amt_due_est">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:float" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="proc">
+                <xs:complexType>
+                  <xs:attribute name="num_seq">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:integer" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="cde_proc_icd9">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="7" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="qlf_code_list">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="dte_icd_9_cm_proc" type="xs:date" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="occur">
+                <xs:complexType>
+                  <xs:attribute name="cde_occurrence">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="num_seq">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:integer" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="dte_occurrence" type="xs:date" />
+                  <xs:attribute name="dte_occ_to" type="xs:date" />
+                  <xs:attribute name="qlf_code_list">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="ubDiagX">
+                <xs:complexType>
+                  <xs:attribute name="cde_diag">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="7" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="cde_diag_seq">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="qlf_code_list">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="cde_poa">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="ind_carrier_denied">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="ind_encounter">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="cde_med_rec_num">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="50" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="ind_prov_sign">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="num_icn">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="13" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="num_dtl_total">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer" />
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="cde_clm_status">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="cde_clm_txn_typ">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="cde_clm_type">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="num_pat_acct">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="19" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="cde_type_of_bill">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="4" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dte_admission" type="xs:date" />
+            <xs:attribute name="cde_admit_hour">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="4" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="cde_admit_type">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="cde_patient_status">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="2" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="amt_pd_pat_ub92">
+              <xs:simpleType>
+                <xs:restriction base="xs:float" />
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dte_billed" type="xs:date" />
+            <xs:attribute name="amt_billed_ub92">
+              <xs:simpleType>
+                <xs:restriction base="xs:float" />
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dte_first_svc" type="xs:date" />
+            <xs:attribute name="dte_last_svc" type="xs:date" />
+            <xs:attribute name="id_prov_attend">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="15" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="id_prov_other">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="15" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="id_prov_other_2">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="15" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="num_days_covd">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="3" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="cde_county">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="2" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="ind_elect_clm">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="cde_admit_source">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="cde_claim_frequency">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="prov_billing">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer" />
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="num_days_ncovd">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:length value="3" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="clmTrailer">
+          <xs:complexType>
+            <xs:attribute name="icnRegionCode">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:length value="2" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

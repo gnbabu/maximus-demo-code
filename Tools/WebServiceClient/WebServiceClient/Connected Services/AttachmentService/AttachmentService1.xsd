@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Maximus.OHPNM.Services" elementFormDefault="qualified" targetNamespace="http://Maximus.OHPNM.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SendAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="MessageHeader" nillable="true" type="tns:SendAttachmentMessageHeader" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Payload" nillable="true" type="tns:SendAttachmentPayLoad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SendAttachmentMessageHeader">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InqMessageHeader">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="SITransactionKey" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InqMessageHeader">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="BusinessFlow" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="StateCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ModuleTransactionId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AdditionalModuleTransactionId" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="RequestorSystem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubscriberSystem" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="RequestTimestamp" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SendAttachmentPayLoad">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="AttachmentInfo" nillable="true" type="tns:SendAttachmentInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SendAttachmentInformation">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="SourceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttachmentData" nillable="true" type="tns:SendAttachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SendAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Identifiers" nillable="true" type="tns:SendAttachmentData" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocumentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocumentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocumentExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AttachmentData64Binary" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SendAttachmentData">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="DocXrefType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IndexId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SITransactionKey" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ModuleTransactionId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Response" type="tns:AttachmentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AttachmentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IndexId" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ResponseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ResponseType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ResponseDetails" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SendAttachmentFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendAttachmentFault" nillable="true" type="tns:SendAttachmentFault" />
+</xs:schema>

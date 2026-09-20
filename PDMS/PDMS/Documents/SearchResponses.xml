@@ -1,0 +1,15 @@
+﻿<SearchHospiceRequestResponses>
+  <SearchHospiceResponse>
+    <HospiceTrackNo>123456789</HospiceTrackNo>
+    <RecipID>INV123456789</RecipID>
+    <RecipName>Test</RecipName>
+    <RecipBirthDate>2020-07-05</RecipBirthDate>
+    <ElectionDate>2020-11-09</ElectionDate>
+    <SubmissionDate>2020-07-05</SubmissionDate>
+    <BenPeriodEffDate>2020-07-05</BenPeriodEffDate>
+    <BenPeriodEndDate>2020-09-05</BenPeriodEndDate>
+    <MedicaidBillingNumber>121212</MedicaidBillingNumber>
+    <Status>P</Status>
+    <DenialReason></DenialReason>
+  </SearchHospiceResponse>  
+</SearchHospiceRequestResponses>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:dt="http://mes.gov/financialservice" elementFormDefault="qualified" targetNamespace="http://mes.gov/financialservice" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="FinancialService_Datatypes.xsd" />
+  <xsd:element name="MessageHeader">
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="dt:InqMessageHeader">
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="SITransactionKey" type="dt:String32" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="InqMessageHeader">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="BusinessFlow">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="inquire1099" />
+            <xsd:enumeration value="inquireTransactionHistory" />
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="StateCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A|a][L|l]|[A|a][K|k]|[A|a][Z|z]|[A|a][R|r]|[C|c][A|a]|[C|c][O|o]|[C|c][T|t]|[D|d][E|e]|[F|f][L|l]|[G|g][A|a]|[H|h][I|i]|[I|i][D|d]|[I|i][L|l]|[I|i][N|n]|[I|i][A|a]|[K|k][S|s]|[K|k][Y|y]|[L|l][A|a]|[M|m][E|e]|[M|m][D|d]|[M|m][A|a]|[M|m][I|i]|[M|m][N|n]|[M|m][S|s]|[M|m][O|o]|[M|m][T|t]|[N|n][E|e]|[N|n][V|v]|[N|n][H|h]|[N|n][J|j]|[N|n][M|m]|[N|n][Y|y]|[N|n][C|c]|[N|n][D|d]|[O|o][H|h]|[O|o][K|k]|[O|o][R|r]|[P|p][A|a]|[R|r][I|i]|[S|s][C|c]|[S|s][D|d]|[T|t][N|n]|[T|t][X|x]|[U|u][T|t]|[V|v][T|t]|[V|v][A|a]|[W|w][A|a]|[W|w][V|v]|[W|w][I|i]|[W|w][Y|y]" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="RequestorSystem">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="PNM" />
+            <xsd:enumeration value="HealthCheck" />
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="SubscriberSystem" type="dt:SubMessageHeader" />
+      <xsd:element minOccurs="0" name="ModuleTransactionId" type="dt:String50" />
+      <xsd:element minOccurs="0" name="AdditionalModuleTransactionId" type="dt:String50" />
+      <xsd:element minOccurs="1" name="RequestTimestamp" type="dt:MDateTimeType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SubMessageHeader">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="10" name="Subscriber">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="FI" />
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Fault">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="detail">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ErrorCode" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ErrorDetail" type="xsd:string" />
+              <xsd:element minOccurs="0" name="SITransactionKey" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

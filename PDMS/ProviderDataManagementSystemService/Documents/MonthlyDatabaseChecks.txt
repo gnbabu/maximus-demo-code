@@ -1,0 +1,10 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<p>The monthly database checks process has completed.  A summary of the match results are listed below:</p>
+<p>Potential Matches on Groups/Entities/Facilities =</p>
+<p>Potential Matches on Individual Sole Proprietors Providers =</p>
+<p>Potential Matches on Individual Providers within a Group =</p>
+<p>Potential Matches on Owner/Managing Employees =</p>
+<p>If you have questions <b> or any of the above information is incorrect</b>, please contact (state) Medicaid at 1-999-111-2222  or email at <a href ="mailto:dcmedicaidPSE@maximus.com">dcmedicaidPSE@maximus.com</a>.</p>          
+Regards, <br>
+MAXIMUS Provider Screening and Enrollment Customer Service <br>
+</div>

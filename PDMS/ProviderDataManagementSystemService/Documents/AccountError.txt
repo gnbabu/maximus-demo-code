@@ -1,0 +1,12 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+Legal Name: [[LEGALNAME]]<br>
+Provider NPI: [[NPI]]<br>
+Issue Date: [[CURRENTDATE]] <br>
+<p>TennCare Provider Services - Accounting requires additional information to complete your ACH setup / update. Your request has been returned to you. Please review the return reasons below: <br />
+[[RETURNREASONs]]</p>
+<p>Please log into the District of Columbia Medicaid Provider Screening and Enrollment portal to complete and resubmit your request.<br><br />
+Please note the return reasons listed in this email will also be displayed in the portal identifying which pages need corrections or additional information.</p>
+<p>[[PDMSURL]]</p>
+<p> Regards,</p>
+MAXIMUS Provider Screening and Enrollment Customer Service <br>
+</div>

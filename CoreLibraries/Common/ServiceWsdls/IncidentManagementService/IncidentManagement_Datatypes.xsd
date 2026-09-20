@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://mes.gov/incidentmanagement" xmlns:tns="http://mes.gov/incidentmanagement">
+	<xsd:simpleType name="Char1">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+			<xsd:enumeration value=""/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="String1">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string1">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="1"/>
+			<xsd:pattern value="([\S+\s])*\S+\s*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string2">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="2"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="mstring2">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:pattern value="([\S+\s])*\S+\s*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="String2">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MString2">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2"/>
+			<xsd:pattern value="([\S+\s])*\S+\s*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="String3">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mstring3">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="3"/>
+			<xsd:pattern value="([\S+\s])*\S+\s*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string3">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="3"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>	
+	<xsd:simpleType name="String4">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mstring4">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="4"/>
+			<xsd:pattern value="([\S+\s])*\S+\s*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string4">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="4"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="String5">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="5"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mstring5">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="5"/>
+			<xsd:pattern value="([\S+\s])*\S+\s*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string5">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="5"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="String6">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+		<!--HMP-2784-->
+	<xsd:simpleType name="string6">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="6"/>
+			<xsd:pattern value="([\S+\s])*\S+\s*"/>
+		</xsd:restriction>
+	</xsd:simpleType>	
+	<xsd:simpleType name="String9">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="9"/>
+			<xsd:pattern value="([\S+\s])*\S+\s*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string9">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="9"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+        <xsd:simpleType name="string10">
+		<xsd:restriction base="xsd:string">
+                        <xsd:minLength value="1"/>
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="String10">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="String12">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="String16">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="16"/>
+		</xsd:restriction>
+	</xsd:simpleType>	
+	<xsd:simpleType name="String20">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string20">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>	
+	<xsd:simpleType name="String25">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string25">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="25"/>
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>	
+	<xsd:simpleType name="String30">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string30">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="30"/>
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="String32">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="32"/>
+		</xsd:restriction>
+	</xsd:simpleType>	
+		<xsd:simpleType name="String36">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="36" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="String40">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string40">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+			<xsd:pattern value="([\S+\s])*\S+\s*"/>
+		</xsd:restriction>
+	</xsd:simpleType>	
+	<xsd:simpleType name="String45">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="45"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="String50">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>	
+	<xsd:simpleType name="string50">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50"/>
+			<xsd:pattern value="([\S+\s])*\S+\s*"/>
+		</xsd:restriction>
+	</xsd:simpleType>	
+	<xsd:simpleType name="String100">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="String130">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="130"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="String255">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="255"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="String2000">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2000"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+        <xsd:simpleType name="String2500">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2500"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="String4000">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="4000"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DateType">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:date">
+					<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}"></xsd:pattern>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:dateTime">
+					<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}"></xsd:pattern>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="MDateType">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:date">
+					<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}"></xsd:pattern>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:dateTime">
+					<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}"></xsd:pattern>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="DateTimeType">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:dateTime">
+				<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="MDateTimeType">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:dateTime">
+				<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="Int">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="tns:Int19"/>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="Int19">
+		<xsd:restriction base="xsd:integer">
+			<xsd:totalDigits value="19"/>
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="9223372036854775806"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EmptyValue">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="decimal9-2">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:totalDigits value="9"/>
+			<xsd:fractionDigits value="2"/>
+			<xsd:minInclusive value="-9999999.99"/>
+			<xsd:maxInclusive value="9999999.99"/>
+			<xsd:pattern value = "(-?\d{1,9}|(-?\d{1,8})((\.\d{1})?)|(-?\d{1,7})((\.\d{1,2})?))"></xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Decimal9-2">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:totalDigits value="9"/>
+					<xsd:fractionDigits value="2"/>
+					<xsd:minInclusive value="-9999999.99"/>
+					<xsd:maxInclusive value="9999999.99"/>
+					<xsd:pattern value = "(-?\d{1,9}|(-?\d{1,8})((\.\d{1})?)|(-?\d{1,7})((\.\d{1,2})?))"></xsd:pattern>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>	
+	</xsd:simpleType>
+	<xsd:simpleType name="PDecimal8-2">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:totalDigits value="8"/>
+					<xsd:fractionDigits value="2"/>
+					<xsd:minInclusive value="0"/>
+					<xsd:maxInclusive value="999999.99"/>
+					<xsd:pattern value = "(\d{1,8}|(\d{1,7})((\.\d{1})?)|(\d{1,6})((\.\d{1,2})?))"></xsd:pattern>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>	
+	</xsd:simpleType>
+	<xsd:simpleType name="Decimal8-2">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:totalDigits value="8"/>
+					<xsd:fractionDigits value="2"/>
+					<xsd:minInclusive value="-999999.99"/>
+					<xsd:maxInclusive value="999999.99"/>
+					<xsd:pattern value = "(-?\d{1,8}|(-?\d{1,7})((\.\d{1})?)|(-?\d{1,6})((\.\d{1,2})?))"></xsd:pattern>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>	
+	</xsd:simpleType>
+	<xsd:simpleType name="Decimal13-2">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:totalDigits value="13"/>
+					<xsd:fractionDigits value="2"/>
+					<xsd:minInclusive value="-99999999999.99"/>
+					<xsd:maxInclusive value="99999999999.99"/>
+					<xsd:pattern value = "(-?\d{1,13}|(-?\d{1,12})((\.\d{1})?)|(-?\d{1,11})((\.\d{1,2})?))"></xsd:pattern>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>	
+	</xsd:simpleType>
+	<xsd:simpleType name="Decimal5-1">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+					<xsd:totalDigits value="5"/>
+					<xsd:fractionDigits value="1"/>
+					<xsd:minInclusive value="0"/>
+					<xsd:maxInclusive value="9999.9"/>
+					<xsd:pattern value = "(\d{1,5}|(\d{1,4})((\.\d{1})?))"></xsd:pattern>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>	
+	</xsd:simpleType>
+	<xsd:simpleType name="string19">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="19"/>
+			<xsd:minLength value="1"/>
+			<xsd:pattern value="([\S+\s])*\S+\s*"></xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>	
+</xsd:schema>

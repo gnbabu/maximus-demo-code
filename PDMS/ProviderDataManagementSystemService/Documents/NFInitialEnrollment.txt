@@ -1,0 +1,112 @@
+
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<b>Subject: </b>Nursing Facility - Initial Enrollment Welcome Letter
+</p>
+<p>
+Dear [[Name]]:
+</p>
+<p>Welcome to the Medicaid program!  Your facility has been approved for participation in the Title XIX Medicaid program effective December 19, 2019. ODH will conduct periodic surveys to determine whether your facility remains in compliance with Medicare/Medicaid requirements.</p>
+<p>Also, in accordance with Ohio Administrative Code, you are required to notify ODM within 30 days of any change to your provider information. In order to have a successful partnership, it is important that ODM has complete and accurate information. To ensure we have updated information, you are responsible for updating your demographic information, such as your mailing address and contact information, including your phone number, by logging onto the secure ODM Web Portal. Accurate enrollment information is vital to process claims transactions appropriately and to report income information to both you and the federal government. We appreciate your cooperation with this important requirement.</p>
+
+<p>If you have any questions, please contact Julie Moore at 614-752-3039 or e-mail at <a href="julie.moore@medicaid.ohio.gov">julie.moore@medicaid.ohio.gov</a>.</p>
+
+Sincerely,<br />
+    <br />
+Ohio Department of Medicaid<br />
+</br>
+Enclosure<br /><br />
+c:Bill Robbins, Section Chief, Bureau of Regulatory Operations, Office of Health Assurance & Licensing, ODH<br /><br />
+Brian Jackson, Supervisor, Certification Unit, Bureau of Information and Operational Support, ODH<br /><br />
+Beverley Laubert, State LTC Ombudsman, Ohio Dept. of Aging<br /><br />
+Deonne Clark, Chief, Claims Reconciliation Section, ODM<br /><br />
+Provider File<br /><br />
+<p>Attached is the welcome letter regarding Heritage Corner Nursing Home, #0383498.  Their initial certification date was 12/19/19 and they are active in MITS</p>
+Thanks.<br/ >
+<a href="OhioOmbudsman@age.ohio.gov">OhioOmbudsman@age.ohio.gov</a></br>
+<a href="BLaubert@age.ohio.gov">BLaubert@age.ohio.gov</a></br>
+<a href="liccert@odh.ohio.gov">liccert@odh.ohio.gov</a></br>
+<a href="Brian.Jackson@odh.ohio.gov">Brian.Jackson@odh.ohio.gov</a></br>
+<a href="Bill.Robbins@odh.ohio.gov">Bill.Robbins@odh.ohio.gov</a></br>
+<a href="Patrick.Tighe@medicaid.ohio.gov">Patrick.Tighe@medicaid.ohio.gov</a></br>
+<a href="Deonne.Clark@medicaid.ohio.gov">Deonne.Clark@medicaid.ohio.gov</a></br>
+<a href="Julie.Davis@medicaid.ohio.gov">Julie.Davis@medicaid.ohio.gov</a></br> 
+<a href="Terry.Moore@medicaid.ohio.gov">Terry.Moore@medicaid.ohio.gov</a></br>
+<a href="Lisa.Osborne@medicaid.ohio.gov">Lisa.Osborne@medicaid.ohio.gov</a></br>
+<a href="Mindi.Harris@medicaid.ohio.gov">Mindi.Harris@medicaid.ohio.gov</a></br>
+<a href="Colleen.Routte@medicaid.ohio.gov">Colleen.Routte@medicaid.ohio.gov</a></br>
+<a href="Nfstay@medicaid.ohio.gov">Nfstay@medicaid.ohio.gov</a></br>
+<a herf="Nathan.Price@medicaid.ohio.gov">Nathan.Price@medicaid.ohio.gov</a></br>
+
+<u>Aetna:</u><br/ >
+<a href="AetnaMyCare@AETNA.com. ">AetnaMyCare@AETNA.com. </a></br>
+<a href="McgradyR@AETNA.com">McgradyR@AETNA.com</a></br> (Network Manager for Aetna Better Health of Ohio)
+<a href="OH_ProviderServices@AETNA.com">OH_ProviderServices@AETNA.com</a></br> 
+<u>Buckeye:</u> <br/ >
+<a href="Buckeyecompliance@centene.com">Buckeyecompliance@centene.com</a></br>
+<a href="Dhettinger@centene.com">Dhettinger@centene.com</a></br>
+<a href="BKiss@centene.com">BKiss@centene.com</a></br>
+<a href="REYork@centene.com">REYork@centene.com</a></br>
+<a href="BArndt@centene.com">BArndt@centene.com</a></br>
+<u>CareSource:</u><br/ >
+<a href="odjfs@caresource.com">odjfs@caresource.com</a></br>
+<a href="MyCareOhio@caresource.com">MyCareOhio@caresource.com</a></br>
+<a href="Suzanne.Christie@caresource.com">Suzanne.Christie@caresource.com</a></br>
+<a href="MyCareManagementMailbox@caresource.com">MyCareManagementMailbox@caresource.com</a></br>
+<u>Molina:</u><br/ >
+<a href="MolinaGCMyCareOhio@MolinaHealthcare.com">MolinaGCMyCareOhio@MolinaHealthcare.com</a></br>
+<a href="GovernmentContracts.MHO@MolinaHealthCare.Com">GovernmentContracts.MHO@MolinaHealthCare.Com</a></br>
+<u>Paramount:</u><br/ >
+<a href="AdvantageCompliance@promedica.org">AdvantageCompliance@promedica.org</a></br>
+<a href="Marc.Kaspitzke@ProMedica.org">Marc.Kaspitzke@ProMedica.org</a></br>
+<u>United:</u><br/ >
+<a href="governmentaffairsohio@uhc.com">governmentaffairsohio@uhc.com</a></br>
+<a href="mycareohio@uhc.com">mycareohio@uhc.com</a></br>
+<a href="stephanieparsons@optum.com">stephanieparsons@optum.com</a></br>
+<a href="donna.schwieterman@optum.com">donna.schwieterman@optum.com</a></br>
+<a href="lisa_a_myers@optum.com">lisa_a_myers@optum.com</a></br>
+<u>Bureau of Managed Care</u><br/ >
+<a href="Jessica.Nienberg@medicaid.ohio.gov">Jessica.Nienberg@medicaid.ohio.gov</a></br>
+
+
+</td>
+</tr>
+</table>
+

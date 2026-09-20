@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.operationmgmt.fi/ClaimsService/dental" xmlns:reqrspd="http://schema.operationmgmt.fi.com/ClaimReqResp/dental" xmlns:chdr="http://schema.common.fi/Header" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:d837="http://schemas.fi.x12/837/dental" xmlns:rsp="http://schema.operationmgmt.fi.com/ClaimResponse/common" name="ClaimsService" targetNamespace="http://service.operationmgmt.fi/ClaimsService/dental" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.operationmgmt.fi/ClaimsService/dental">
+      <xsd:include schemaLocation="./CommonHeader.xsd" />
+      <xsd:include schemaLocation="./X12Dental.xsd" />
+      <xsd:include schemaLocation="./ClaimReqRespCommon.xsd" />
+      <xsd:include schemaLocation="./ClaimReqRespDental.xsd" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AddUpdateClaimsRequest">
+    <wsdl:part name="parameters" element="tns:AddUpdateClaimsRequest" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdateClaimsResponse">
+    <wsdl:part name="parameters" element="tns:AddUpdateClaimsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InquireClaimRequest">
+    <wsdl:part name="parameters" element="tns:InquireClaimRequest" />
+  </wsdl:message>
+  <wsdl:message name="InquireClaimResponse">
+    <wsdl:part name="parameters" element="tns:InquireClaimResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ClaimsServiceDental">
+    <wsdl:operation name="AddUpdateClaims">
+      <wsdl:input message="tns:AddUpdateClaimsRequest" />
+      <wsdl:output message="tns:AddUpdateClaimsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="InquireClaim">
+      <wsdl:input message="tns:InquireClaimRequest" />
+      <wsdl:output message="tns:InquireClaimResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClaimsServiceSOAP" type="tns:ClaimsServiceDental">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddUpdateClaims">
+      <soap:operation soapAction="http://service.operationmgmt.fi/ClaimsService/dental/AddUpdateClaims" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquireClaim">
+      <soap:operation soapAction="http://service.operationmgmt.fi/ClaimsService/dental/InquireClaim" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClaimsServiceDental">
+    <wsdl:port name="ClaimsServiceSOAP" binding="tns:ClaimsServiceSOAP">
+      <soap:address location="http://www.example.org/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

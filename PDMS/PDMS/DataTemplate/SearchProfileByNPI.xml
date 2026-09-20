@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='yes'?>
+<searchRequest xmlns="http://eprofiles.myama.com/core/">
+  <firstName/>
+  <lastName/>
+  <dateOfBirth/>
+  <npiNumber>NPITEMPLATE</npiNumber>
+</searchRequest>

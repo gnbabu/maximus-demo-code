@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) by John (DS) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mes.gov/financialservice" targetNamespace="http://mes.gov/financialservice" elementFormDefault="qualified">
+	<xsd:include schemaLocation="FinancialService_Datatypes.xsd"/>
+	<xsd:element name="Search1099">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="1" maxOccurs="1" name="TaxId" type="tns:String9"/>
+				<xsd:element minOccurs="1" maxOccurs="1" name="TaxIdType" type="tns:String1"/>
+				<xsd:element name="ProviderId" type="tns:string20" minOccurs="1" maxOccurs="1"/>
+				<xsd:element minOccurs="1" maxOccurs="1" name="ReqYear" type="tns:Integer4" />
+				<xsd:element name="Records" type="tns:Integer3" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="Inquire1099Information">
+		<xsd:sequence>
+			<xsd:element name="Information1099" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="TaxId" type="tns:String9" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="MedPymt" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="Fitw" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Data1099" minOccurs="0" maxOccurs="999">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="IssuedDate" type="tns:DateType" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="SystemEarningsAmount" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="ManualEarningsAmount" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="ClaimRefundAmount" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="NonClaimRefundsAmount" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="VoidAmount" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FicaAmount" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="BackupWithholdingAmount" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="NetEarningsAmount" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="AdjustReason" type="tns:String200" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="SearchTransactionHistory">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="1" maxOccurs="1" name="ProviderId" type="tns:string20"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="TransactionHistory">
+		<xsd:sequence>
+			<xsd:element name="TransactionHistoryInformation" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ProviderId" type="tns:String20" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="ClaimActivitySummary" minOccurs="0" maxOccurs="1">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="ClaimsPaidCurMonth" type="tns:Integer10" minOccurs="0" maxOccurs="1"/>
+									<xsd:element name="AmountPaidCurMonth" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+									<xsd:element name="ClaimsDeniedCurMonth" type="tns:Integer10" minOccurs="0" maxOccurs="1"/>
+									<xsd:element name="ClaimsPaidPast12Months" type="tns:Integer10" minOccurs="0" maxOccurs="1"/>
+									<xsd:element name="AmountPaidPast12Months" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+									<xsd:element name="ClaimsDeniedPast12Months" type="tns:Integer10" minOccurs="0" maxOccurs="1"/>
+									<xsd:element name="SuspendedClaims" type="tns:Integer10" minOccurs="0" maxOccurs="1"/>
+									<xsd:element name="ClaimsInFinalDisposition" type="tns:Integer10" minOccurs="0" maxOccurs="1"/>
+									<xsd:element name="RecentPaymentDate" type="tns:DateType" minOccurs="0" maxOccurs="1"/>
+									<xsd:element name="RecentPaymentType" type="tns:String50" minOccurs="0" maxOccurs="1"/>
+									<xsd:element name="RecentPaymentAmount" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+									<xsd:element name="TotalCreditBalanceAmount" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+									<xsd:element name="AmountTowardCreditBalance" type="tns:Decimal13-2" minOccurs="0" maxOccurs="1"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

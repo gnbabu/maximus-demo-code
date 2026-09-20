@@ -1,0 +1,829 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mem="http://mes.gov/membermanagement">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <mem:eligVerification>
+      <!--Zero or more repetitions:-->
+      <mem:eligRequest clientSecurityKey="?" transactionId="12">
+        <!--Zero or more repetitions:-->
+        <mem:eligInfoReceiver providerNumber="129865435"/>
+        <!--Zero or more repetitions:-->
+        <mem:eligSubscriber 
+          countyCaseworker="Oh" 
+          firstName="Kristen" 
+          lastName="Author"
+          numHic="2cd234DFE" 
+          procedureCD="ICD10" 
+          subscriberCounty="Franklin" 
+          subscriberAddress1="?" 
+          subscriberAddress2="?" 
+          subscriberCity="?" 
+          subscriberState="?" 
+          subscriberZip="?" 
+          subscriberDateOfBirth="03/20/1968" 
+          subscriberDateOfDeath="09/30/2020" 
+          subscriberGender="M" 
+          subscriberId="123456789"
+          subscriberSSN="987654321">
+          <!--Zero or more repetitions:-->
+          <mem:eligSubscriberDate fromDateOfService="09/30/2001" toDateOfService="09/30/2020"/>
+            <!--Zero or more repetitions:-->
+            <mem:eligResponse eligType="Medicaid">
+            <!--Zero or more repetitions:-->
+            <mem:eligInformation 
+              LOCdetermination="Nursing FacilityType"
+              amtSpenddown="100.00" 
+              applicationStatus="Approved" 
+              benefitCategoryDesc="Checking data" 
+              cdeTimePeriod="1:00pm" 
+              cdeTimeUnit="Ficial Year" 
+              coverageLevelCode="IND" 
+              dentalCoPay="?" 
+              dteAdmission="01/01/2020" 
+              dteAppReceived="?" 
+              dteDetermination="01/20/2020" 
+              dteDischarge="01/20/2020" 
+              dteLOCrequested="?" 
+              eligBenefitAmount="?" 
+              eligBenefitPlan="Pharmacy" 
+              eligBenefitPlanDescription="Data checking is coming" 
+              eligBenefitQuantity="two" 
+              eligIndicator="?" 
+              facilityType="?" 
+              financialPayer="?" 
+              hospProvName="?" 
+              idPlan="H5232" 
+              memberDOB="01/20/2020" 
+              memberFirstName="FirstName"
+              memberGender="Female" 
+              memberLastName="Last Name" 
+              memberMI="MI" 
+              memberMedicaidID="1234567tyh" 
+              namPlan="Ohio Healthcare,PartA" 
+              nextServiceDate="12/20/2020" 
+              optOutCode="?" 
+              optOutEndDate="09/30/2003" 
+              optOutType="?" 
+              optoutStartDate="09/30/2000" 
+              patLiabType="?" 
+              provName="?" 
+              provPhone="3423212345-1235" 
+              qtyLimitUnits="10" 
+              qtyLimitUnitsRemain="4" 
+              qtyLimitUnitsUsed="6" 
+              specialProgramDesc="?" 
+              statusOfRequest="?"
+              visionCoPay="?"/>
+            <!--Zero or more repetitions:-->
+            <mem:subscriberAddEligInfo 
+              carrierIdNaic="ANN2045" 
+              eligId="1234567894" 
+              eligIdQualifier="?"
+              numGroup="?" 
+              planSponsorName="?"   
+              subscriberRelationship="?"/>
+            <!--Zero or more repetitions:-->
+            <mem:eligDates dteVendorPayBegin="12/01/2019" dteVendorPayEnd="12/20/20" fromEligDate="09/30/2001" toEligDate="09/30/2020"/>
+            <!--Zero or more repetitions:-->
+            <mem:monthInfo month="?" monthlyWithheld="?" totalAmtPdPatUb92="$200.00"/>
+            <!--Zero or more repetitions:-->
+            <mem:subscriberBenefitRelatedEntityInfo contactNumber="?" firstName="?" orgName="CVS Pharmacy" referenceId="1010101010"/>
+          </mem:eligResponse>
+			<mem:eligResponse eligType="Managed Care">
+				<!--Zero or more repetitions:-->
+				<mem:eligInformation
+				  LOCdetermination="Nursing FacilityType"
+				  amtSpenddown="100.00"
+				  applicationStatus="Approved"
+				  benefitCategoryDesc="Checking data"
+				  cdeTimePeriod="1:00pm"
+				  cdeTimeUnit="Ficial Year"
+				  coverageLevelCode="IND"
+				  dentalCoPay="?"
+				  dteAdmission="01/01/2020"
+				  dteAppReceived="?"
+				  dteDetermination="01/20/2020"
+				  dteDischarge="01/20/2020"
+				  dteLOCrequested="?"
+				  eligBenefitAmount="?"
+				  eligBenefitPlan="Pharmacy"
+				  eligBenefitPlanDescription="Data checking is coming"
+				  eligBenefitQuantity="two"
+				  eligIndicator="?"
+				  facilityType="?"
+				  financialPayer="?"
+				  hospProvName="?"
+				  idPlan="H5232"
+				  memberDOB="01/20/2020"
+				  memberFirstName="FirstName"
+				  memberGender="Female"
+				  memberLastName="Last Name"
+				  memberMI="MI"
+				  memberMedicaidID="1234567tyh"
+				  namPlan="Ohio Healthcare,PartA"
+				  nextServiceDate="12/20/2020"
+				  optOutCode="?"
+				  optOutEndDate="09/30/2003"
+				  optOutType="?"
+				  optoutStartDate="09/30/2000"
+				  patLiabType="?"
+				  provName="?"
+				  provPhone="3423212345-1235"
+				  qtyLimitUnits="10"
+				  qtyLimitUnitsRemain="4"
+				  qtyLimitUnitsUsed="6"
+				  specialProgramDesc="?"
+				  statusOfRequest="?"
+				  visionCoPay="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberAddEligInfo
+				  carrierIdNaic="ANN2045"
+				  eligId="1234567894"
+				  eligIdQualifier="?"
+				  numGroup="?"
+				  planSponsorName="?"
+				  subscriberRelationship="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:eligDates dteVendorPayBegin="12/01/2019" dteVendorPayEnd="12/20/20" fromEligDate="09/30/2001" toEligDate="09/30/2020"/>
+				<!--Zero or more repetitions:-->
+				<mem:monthInfo month="?" monthlyWithheld="?" totalAmtPdPatUb92="$200.00"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberBenefitRelatedEntityInfo contactNumber="?" firstName="?" orgName="CVS Pharmacy" referenceId="1010101010"/>
+			</mem:eligResponse>
+			<mem:eligResponse eligType="TPL">
+				<!--Zero or more repetitions:-->
+				<mem:eligInformation
+				  LOCdetermination="Nursing FacilityType"
+				  amtSpenddown="100.00"
+				  applicationStatus="Approved"
+				  benefitCategoryDesc="Checking data"
+				  cdeTimePeriod="1:00pm"
+				  cdeTimeUnit="Ficial Year"
+				  coverageLevelCode="IND"
+				  dentalCoPay="?"
+				  dteAdmission="01/01/2020"
+				  dteAppReceived="?"
+				  dteDetermination="01/20/2020"
+				  dteDischarge="01/20/2020"
+				  dteLOCrequested="?"
+				  eligBenefitAmount="?"
+				  eligBenefitPlan="Pharmacy"
+				  eligBenefitPlanDescription="Data checking is coming"
+				  eligBenefitQuantity="two"
+				  eligIndicator="?"
+				  facilityType="?"
+				  financialPayer="?"
+				  hospProvName="?"
+				  idPlan="H5232"
+				  memberDOB="01/20/2020"
+				  memberFirstName="FirstName"
+				  memberGender="Female"
+				  memberLastName="Last Name"
+				  memberMI="MI"
+				  memberMedicaidID="1234567tyh"
+				  namPlan="Ohio Healthcare,PartA"
+				  nextServiceDate="12/20/2020"
+				  optOutCode="?"
+				  optOutEndDate="09/30/2003"
+				  optOutType="?"
+				  optoutStartDate="09/30/2000"
+				  patLiabType="?"
+				  provName="?"
+				  provPhone="3423212345-1235"
+				  qtyLimitUnits="10"
+				  qtyLimitUnitsRemain="4"
+				  qtyLimitUnitsUsed="6"
+				  specialProgramDesc="?"
+				  statusOfRequest="?"
+				  visionCoPay="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberAddEligInfo
+				  carrierIdNaic="ANN2045"
+				  eligId="1234567894"
+				  eligIdQualifier="?"
+				  numGroup="?"
+				  planSponsorName="?"
+				  subscriberRelationship="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:eligDates dteVendorPayBegin="12/01/2019" dteVendorPayEnd="12/20/20" fromEligDate="09/30/2001" toEligDate="09/30/2020"/>
+				<!--Zero or more repetitions:-->
+				<mem:monthInfo month="?" monthlyWithheld="?" totalAmtPdPatUb92="$200.00"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberBenefitRelatedEntityInfo contactNumber="?" firstName="?" orgName="CVS Pharmacy" referenceId="1010101010"/>
+			</mem:eligResponse>
+			<mem:eligResponse eligType="Patient Liability">
+				<!--Zero or more repetitions:-->
+				<mem:eligInformation
+				  LOCdetermination="Nursing FacilityType"
+				  amtSpenddown="100.00"
+				  applicationStatus="Approved"
+				  benefitCategoryDesc="Checking data"
+				  cdeTimePeriod="1:00pm"
+				  cdeTimeUnit="Ficial Year"
+				  coverageLevelCode="IND"
+				  dentalCoPay="?"
+				  dteAdmission="01/01/2020"
+				  dteAppReceived="?"
+				  dteDetermination="01/20/2020"
+				  dteDischarge="01/20/2020"
+				  dteLOCrequested="?"
+				  eligBenefitAmount="?"
+				  eligBenefitPlan="Pharmacy"
+				  eligBenefitPlanDescription="Data checking is coming"
+				  eligBenefitQuantity="two"
+				  eligIndicator="?"
+				  facilityType="?"
+				  financialPayer="?"
+				  hospProvName="?"
+				  idPlan="H5232"
+				  memberDOB="01/20/2020"
+				  memberFirstName="FirstName"
+				  memberGender="Female"
+				  memberLastName="Last Name"
+				  memberMI="MI"
+				  memberMedicaidID="1234567tyh"
+				  namPlan="Ohio Healthcare,PartA"
+				  nextServiceDate="12/20/2020"
+				  optOutCode="?"
+				  optOutEndDate="09/30/2003"
+				  optOutType="?"
+				  optoutStartDate="09/30/2000"
+				  patLiabType="?"
+				  provName="?"
+				  provPhone="3423212345-1235"
+				  qtyLimitUnits="10"
+				  qtyLimitUnitsRemain="4"
+				  qtyLimitUnitsUsed="6"
+				  specialProgramDesc="?"
+				  statusOfRequest="?"
+				  visionCoPay="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberAddEligInfo
+				  carrierIdNaic="ANN2045"
+				  eligId="1234567894"
+				  eligIdQualifier="?"
+				  numGroup="?"
+				  planSponsorName="?"
+				  subscriberRelationship="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:eligDates dteVendorPayBegin="12/01/2019" dteVendorPayEnd="12/20/20" fromEligDate="09/30/2001" toEligDate="09/30/2020"/>
+				<!--Zero or more repetitions:-->
+				<mem:monthInfo month="?" monthlyWithheld="?" totalAmtPdPatUb92="$200.00"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberBenefitRelatedEntityInfo contactNumber="?" firstName="?" orgName="CVS Pharmacy" referenceId="1010101010"/>
+			</mem:eligResponse>
+			<mem:eligResponse eligType="Long Term Care Facility">
+				<!--Zero or more repetitions:-->
+				<mem:eligInformation
+				  LOCdetermination="Nursing FacilityType"
+				  amtSpenddown="100.00"
+				  applicationStatus="Approved"
+				  benefitCategoryDesc="Checking data"
+				  cdeTimePeriod="1:00pm"
+				  cdeTimeUnit="Ficial Year"
+				  coverageLevelCode="IND"
+				  dentalCoPay="?"
+				  dteAdmission="01/01/2020"
+				  dteAppReceived="?"
+				  dteDetermination="01/20/2020"
+				  dteDischarge="01/20/2020"
+				  dteLOCrequested="?"
+				  eligBenefitAmount="?"
+				  eligBenefitPlan="Pharmacy"
+				  eligBenefitPlanDescription="Data checking is coming"
+				  eligBenefitQuantity="two"
+				  eligIndicator="?"
+				  facilityType="?"
+				  financialPayer="?"
+				  hospProvName="?"
+				  idPlan="H5232"
+				  memberDOB="01/20/2020"
+				  memberFirstName="FirstName"
+				  memberGender="Female"
+				  memberLastName="Last Name"
+				  memberMI="MI"
+				  memberMedicaidID="1234567tyh"
+				  namPlan="Ohio Healthcare,PartA"
+				  nextServiceDate="12/20/2020"
+				  optOutCode="?"
+				  optOutEndDate="09/30/2003"
+				  optOutType="?"
+				  optoutStartDate="09/30/2000"
+				  patLiabType="?"
+				  provName="?"
+				  provPhone="3423212345-1235"
+				  qtyLimitUnits="10"
+				  qtyLimitUnitsRemain="4"
+				  qtyLimitUnitsUsed="6"
+				  specialProgramDesc="?"
+				  statusOfRequest="?"
+				  visionCoPay="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberAddEligInfo
+				  carrierIdNaic="ANN2045"
+				  eligId="1234567894"
+				  eligIdQualifier="?"
+				  numGroup="?"
+				  planSponsorName="?"
+				  subscriberRelationship="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:eligDates dteVendorPayBegin="12/01/2019" dteVendorPayEnd="12/20/20" fromEligDate="09/30/2001" toEligDate="09/30/2020"/>
+				<!--Zero or more repetitions:-->
+				<mem:monthInfo month="?" monthlyWithheld="?" totalAmtPdPatUb92="$200.00"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberBenefitRelatedEntityInfo contactNumber="?" firstName="?" orgName="CVS Pharmacy" referenceId="1010101010"/>
+			</mem:eligResponse>
+			<mem:eligResponse eligType="Medicare A">
+				<!--Zero or more repetitions:-->
+				<mem:eligInformation
+				  LOCdetermination="Nursing FacilityType"
+				  amtSpenddown="100.00"
+				  applicationStatus="Approved"
+				  benefitCategoryDesc="Checking data"
+				  cdeTimePeriod="1:00pm"
+				  cdeTimeUnit="Ficial Year"
+				  coverageLevelCode="IND"
+				  dentalCoPay="?"
+				  dteAdmission="01/01/2020"
+				  dteAppReceived="?"
+				  dteDetermination="01/20/2020"
+				  dteDischarge="01/20/2020"
+				  dteLOCrequested="?"
+				  eligBenefitAmount="?"
+				  eligBenefitPlan="Pharmacy"
+				  eligBenefitPlanDescription="Data checking is coming"
+				  eligBenefitQuantity="two"
+				  eligIndicator="?"
+				  facilityType="?"
+				  financialPayer="?"
+				  hospProvName="?"
+				  idPlan="H5232"
+				  memberDOB="01/20/2020"
+				  memberFirstName="FirstName"
+				  memberGender="Female"
+				  memberLastName="Last Name"
+				  memberMI="MI"
+				  memberMedicaidID="1234567tyh"
+				  namPlan="Ohio Healthcare,PartA"
+				  nextServiceDate="12/20/2020"
+				  optOutCode="?"
+				  optOutEndDate="09/30/2003"
+				  optOutType="?"
+				  optoutStartDate="09/30/2000"
+				  patLiabType="?"
+				  provName="?"
+				  provPhone="3423212345-1235"
+				  qtyLimitUnits="10"
+				  qtyLimitUnitsRemain="4"
+				  qtyLimitUnitsUsed="6"
+				  specialProgramDesc="?"
+				  statusOfRequest="?"
+				  visionCoPay="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberAddEligInfo
+				  carrierIdNaic="ANN2045"
+				  eligId="1234567894"
+				  eligIdQualifier="?"
+				  numGroup="?"
+				  planSponsorName="?"
+				  subscriberRelationship="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:eligDates dteVendorPayBegin="12/01/2019" dteVendorPayEnd="12/20/20" fromEligDate="09/30/2001" toEligDate="09/30/2020"/>
+				<!--Zero or more repetitions:-->
+				<mem:monthInfo month="?" monthlyWithheld="?" totalAmtPdPatUb92="$200.00"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberBenefitRelatedEntityInfo contactNumber="?" firstName="?" orgName="CVS Pharmacy" referenceId="1010101010"/>
+			</mem:eligResponse>
+			<mem:eligResponse eligType="Medicare B">
+				<!--Zero or more repetitions:-->
+				<mem:eligInformation
+				  LOCdetermination="Nursing FacilityType"
+				  amtSpenddown="100.00"
+				  applicationStatus="Approved"
+				  benefitCategoryDesc="Checking data"
+				  cdeTimePeriod="1:00pm"
+				  cdeTimeUnit="Ficial Year"
+				  coverageLevelCode="IND"
+				  dentalCoPay="?"
+				  dteAdmission="01/01/2020"
+				  dteAppReceived="?"
+				  dteDetermination="01/20/2020"
+				  dteDischarge="01/20/2020"
+				  dteLOCrequested="?"
+				  eligBenefitAmount="?"
+				  eligBenefitPlan="Pharmacy"
+				  eligBenefitPlanDescription="Data checking is coming"
+				  eligBenefitQuantity="two"
+				  eligIndicator="?"
+				  facilityType="?"
+				  financialPayer="?"
+				  hospProvName="?"
+				  idPlan="H5232"
+				  memberDOB="01/20/2020"
+				  memberFirstName="FirstName"
+				  memberGender="Female"
+				  memberLastName="Last Name"
+				  memberMI="MI"
+				  memberMedicaidID="1234567tyh"
+				  namPlan="Ohio Healthcare,PartA"
+				  nextServiceDate="12/20/2020"
+				  optOutCode="?"
+				  optOutEndDate="09/30/2003"
+				  optOutType="?"
+				  optoutStartDate="09/30/2000"
+				  patLiabType="?"
+				  provName="?"
+				  provPhone="3423212345-1235"
+				  qtyLimitUnits="10"
+				  qtyLimitUnitsRemain="4"
+				  qtyLimitUnitsUsed="6"
+				  specialProgramDesc="?"
+				  statusOfRequest="?"
+				  visionCoPay="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberAddEligInfo
+				  carrierIdNaic="ANN2045"
+				  eligId="1234567894"
+				  eligIdQualifier="?"
+				  numGroup="?"
+				  planSponsorName="?"
+				  subscriberRelationship="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:eligDates dteVendorPayBegin="12/01/2019" dteVendorPayEnd="12/20/20" fromEligDate="09/30/2001" toEligDate="09/30/2020"/>
+				<!--Zero or more repetitions:-->
+				<mem:monthInfo month="?" monthlyWithheld="?" totalAmtPdPatUb92="$200.00"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberBenefitRelatedEntityInfo contactNumber="?" firstName="?" orgName="CVS Pharmacy" referenceId="1010101010"/>
+			</mem:eligResponse>
+			<mem:eligResponse eligType="Medicare C">
+				<!--Zero or more repetitions:-->
+				<mem:eligInformation
+				  LOCdetermination="Nursing FacilityType"
+				  amtSpenddown="100.00"
+				  applicationStatus="Approved"
+				  benefitCategoryDesc="Checking data"
+				  cdeTimePeriod="1:00pm"
+				  cdeTimeUnit="Ficial Year"
+				  coverageLevelCode="IND"
+				  dentalCoPay="?"
+				  dteAdmission="01/01/2020"
+				  dteAppReceived="?"
+				  dteDetermination="01/20/2020"
+				  dteDischarge="01/20/2020"
+				  dteLOCrequested="?"
+				  eligBenefitAmount="?"
+				  eligBenefitPlan="Pharmacy"
+				  eligBenefitPlanDescription="Data checking is coming"
+				  eligBenefitQuantity="two"
+				  eligIndicator="?"
+				  facilityType="?"
+				  financialPayer="?"
+				  hospProvName="?"
+				  idPlan="H5232"
+				  memberDOB="01/20/2020"
+				  memberFirstName="FirstName"
+				  memberGender="Female"
+				  memberLastName="Last Name"
+				  memberMI="MI"
+				  memberMedicaidID="1234567tyh"
+				  namPlan="Ohio Healthcare,PartA"
+				  nextServiceDate="12/20/2020"
+				  optOutCode="?"
+				  optOutEndDate="09/30/2003"
+				  optOutType="?"
+				  optoutStartDate="09/30/2000"
+				  patLiabType="?"
+				  provName="?"
+				  provPhone="3423212345-1235"
+				  qtyLimitUnits="10"
+				  qtyLimitUnitsRemain="4"
+				  qtyLimitUnitsUsed="6"
+				  specialProgramDesc="?"
+				  statusOfRequest="?"
+				  visionCoPay="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberAddEligInfo
+				  carrierIdNaic="ANN2045"
+				  eligId="1234567894"
+				  eligIdQualifier="?"
+				  numGroup="?"
+				  planSponsorName="?"
+				  subscriberRelationship="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:eligDates dteVendorPayBegin="12/01/2019" dteVendorPayEnd="12/20/20" fromEligDate="09/30/2001" toEligDate="09/30/2020"/>
+				<!--Zero or more repetitions:-->
+				<mem:monthInfo month="?" monthlyWithheld="?" totalAmtPdPatUb92="$200.00"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberBenefitRelatedEntityInfo contactNumber="?" firstName="?" orgName="CVS Pharmacy" referenceId="1010101010"/>
+			</mem:eligResponse>
+			<mem:eligResponse eligType="Lock-In">
+				<!--Zero or more repetitions:-->
+				<mem:eligInformation
+				  LOCdetermination="Nursing FacilityType"
+				  amtSpenddown="100.00"
+				  applicationStatus="Approved"
+				  benefitCategoryDesc="Checking data"
+				  cdeTimePeriod="1:00pm"
+				  cdeTimeUnit="Ficial Year"
+				  coverageLevelCode="IND"
+				  dentalCoPay="?"
+				  dteAdmission="01/01/2020"
+				  dteAppReceived="?"
+				  dteDetermination="01/20/2020"
+				  dteDischarge="01/20/2020"
+				  dteLOCrequested="?"
+				  eligBenefitAmount="?"
+				  eligBenefitPlan="Pharmacy"
+				  eligBenefitPlanDescription="Data checking is coming"
+				  eligBenefitQuantity="two"
+				  eligIndicator="?"
+				  facilityType="?"
+				  financialPayer="?"
+				  hospProvName="?"
+				  idPlan="H5232"
+				  memberDOB="01/20/2020"
+				  memberFirstName="FirstName"
+				  memberGender="Female"
+				  memberLastName="Last Name"
+				  memberMI="MI"
+				  memberMedicaidID="1234567tyh"
+				  namPlan="Ohio Healthcare,PartA"
+				  nextServiceDate="12/20/2020"
+				  optOutCode="?"
+				  optOutEndDate="09/30/2003"
+				  optOutType="?"
+				  optoutStartDate="09/30/2000"
+				  patLiabType="?"
+				  provName="?"
+				  provPhone="3423212345-1235"
+				  qtyLimitUnits="10"
+				  qtyLimitUnitsRemain="4"
+				  qtyLimitUnitsUsed="6"
+				  specialProgramDesc="?"
+				  statusOfRequest="?"
+				  visionCoPay="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberAddEligInfo
+				  carrierIdNaic="ANN2045"
+				  eligId="1234567894"
+				  eligIdQualifier="?"
+				  numGroup="?"
+				  planSponsorName="?"
+				  subscriberRelationship="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:eligDates dteVendorPayBegin="12/01/2019" dteVendorPayEnd="12/20/20" fromEligDate="09/30/2001" toEligDate="09/30/2020"/>
+				<!--Zero or more repetitions:-->
+				<mem:monthInfo month="?" monthlyWithheld="?" totalAmtPdPatUb92="$200.00"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberBenefitRelatedEntityInfo contactNumber="?" firstName="?" orgName="CVS Pharmacy" referenceId="1010101010"/>
+			</mem:eligResponse>
+			<mem:eligResponse eligType="Long Term Care">
+				<!--Zero or more repetitions:-->
+				<mem:eligInformation
+				  LOCdetermination="Nursing FacilityType"
+				  amtSpenddown="100.00"
+				  applicationStatus="Approved"
+				  benefitCategoryDesc="Checking data"
+				  cdeTimePeriod="1:00pm"
+				  cdeTimeUnit="Ficial Year"
+				  coverageLevelCode="IND"
+				  dentalCoPay="?"
+				  dteAdmission="01/01/2020"
+				  dteAppReceived="?"
+				  dteDetermination="01/20/2020"
+				  dteDischarge="01/20/2020"
+				  dteLOCrequested="?"
+				  eligBenefitAmount="?"
+				  eligBenefitPlan="Pharmacy"
+				  eligBenefitPlanDescription="Data checking is coming"
+				  eligBenefitQuantity="two"
+				  eligIndicator="?"
+				  facilityType="?"
+				  financialPayer="?"
+				  hospProvName="?"
+				  idPlan="H5232"
+				  memberDOB="01/20/2020"
+				  memberFirstName="FirstName"
+				  memberGender="Female"
+				  memberLastName="Last Name"
+				  memberMI="MI"
+				  memberMedicaidID="1234567tyh"
+				  namPlan="Ohio Healthcare,PartA"
+				  nextServiceDate="12/20/2020"
+				  optOutCode="?"
+				  optOutEndDate="09/30/2003"
+				  optOutType="?"
+				  optoutStartDate="09/30/2000"
+				  patLiabType="?"
+				  provName="?"
+				  provPhone="3423212345-1235"
+				  qtyLimitUnits="10"
+				  qtyLimitUnitsRemain="4"
+				  qtyLimitUnitsUsed="6"
+				  specialProgramDesc="?"
+				  statusOfRequest="?"
+				  visionCoPay="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberAddEligInfo
+				  carrierIdNaic="ANN2045"
+				  eligId="1234567894"
+				  eligIdQualifier="?"
+				  numGroup="?"
+				  planSponsorName="?"
+				  subscriberRelationship="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:eligDates dteVendorPayBegin="12/01/2019" dteVendorPayEnd="12/20/20" fromEligDate="09/30/2001" toEligDate="09/30/2020"/>
+				<!--Zero or more repetitions:-->
+				<mem:monthInfo month="?" monthlyWithheld="?" totalAmtPdPatUb92="$200.00"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberBenefitRelatedEntityInfo contactNumber="?" firstName="?" orgName="CVS Pharmacy" referenceId="1010101010"/>
+			</mem:eligResponse>
+			<mem:eligResponse eligType="ProcedureCode Benefit Limit">
+			<!--Zero or more repetitions:-->
+			<mem:eligInformation
+			  LOCdetermination="Nursing FacilityType"
+			  amtSpenddown="100.00"
+			  applicationStatus="Approved"
+			  benefitCategoryDesc="Checking data"
+			  cdeTimePeriod="1:00pm"
+			  cdeTimeUnit="Ficial Year"
+			  coverageLevelCode="IND"
+			  dentalCoPay="?"
+			  dteAdmission="01/01/2020"
+			  dteAppReceived="?"
+			  dteDetermination="01/20/2020"
+			  dteDischarge="01/20/2020"
+			  dteLOCrequested="?"
+			  eligBenefitAmount="?"
+			  eligBenefitPlan="Pharmacy"
+			  eligBenefitPlanDescription="Data checking is coming"
+			  eligBenefitQuantity="two"
+			  eligIndicator="?"
+			  facilityType="?"
+			  financialPayer="?"
+			  hospProvName="?"
+			  idPlan="H5232"
+			  memberDOB="01/20/2020"
+			  memberFirstName="FirstName"
+			  memberGender="Female"
+			  memberLastName="Last Name"
+			  memberMI="MI"
+			  memberMedicaidID="1234567tyh"
+			  namPlan="Ohio Healthcare,PartA"
+			  nextServiceDate="12/20/2020"
+			  optOutCode="?"
+			  optOutEndDate="09/30/2003"
+			  optOutType="?"
+			  optoutStartDate="09/30/2000"
+			  patLiabType="?"
+			  provName="?"
+			  provPhone="3423212345-1235"
+			  qtyLimitUnits="10"
+			  qtyLimitUnitsRemain="4"
+			  qtyLimitUnitsUsed="6"
+			  specialProgramDesc="?"
+			  statusOfRequest="?"
+			  visionCoPay="?"/>
+			<!--Zero or more repetitions:-->
+			<mem:subscriberAddEligInfo
+			  carrierIdNaic="ANN2045"
+			  eligId="1234567894"
+			  eligIdQualifier="?"
+			  numGroup="?"
+			  planSponsorName="?"
+			  subscriberRelationship="?"/>
+			<!--Zero or more repetitions:-->
+			<mem:eligDates dteVendorPayBegin="12/01/2019" dteVendorPayEnd="12/20/20" fromEligDate="09/30/2001" toEligDate="09/30/2020"/>
+			<!--Zero or more repetitions:-->
+			<mem:monthInfo month="?" monthlyWithheld="?" totalAmtPdPatUb92="$200.00"/>
+			<!--Zero or more repetitions:-->
+			<mem:subscriberBenefitRelatedEntityInfo contactNumber="?" firstName="?" orgName="CVS Pharmacy" referenceId="1010101010"/>
+		</mem:eligResponse>
+			<mem:eligResponse eligType="Restricted">
+				<!--Zero or more repetitions:-->
+				<mem:eligInformation
+				  LOCdetermination="Nursing FacilityType"
+				  amtSpenddown="100.00"
+				  applicationStatus="Approved"
+				  benefitCategoryDesc="Checking data"
+				  cdeTimePeriod="1:00pm"
+				  cdeTimeUnit="Ficial Year"
+				  coverageLevelCode="IND"
+				  dentalCoPay="?"
+				  dteAdmission="01/01/2020"
+				  dteAppReceived="?"
+				  dteDetermination="01/20/2020"
+				  dteDischarge="01/20/2020"
+				  dteLOCrequested="?"
+				  eligBenefitAmount="?"
+				  eligBenefitPlan="Pharmacy"
+				  eligBenefitPlanDescription="Data checking is coming"
+				  eligBenefitQuantity="two"
+				  eligIndicator="?"
+				  facilityType="?"
+				  financialPayer="?"
+				  hospProvName="?"
+				  idPlan="H5232"
+				  memberDOB="01/20/2020"
+				  memberFirstName="FirstName"
+				  memberGender="Female"
+				  memberLastName="Last Name"
+				  memberMI="MI"
+				  memberMedicaidID="1234567tyh"
+				  namPlan="Ohio Healthcare,PartA"
+				  nextServiceDate="12/20/2020"
+				  optOutCode="?"
+				  optOutEndDate="09/30/2003"
+				  optOutType="?"
+				  optoutStartDate="09/30/2000"
+				  patLiabType="?"
+				  provName="?"
+				  provPhone="3423212345-1235"
+				  qtyLimitUnits="10"
+				  qtyLimitUnitsRemain="4"
+				  qtyLimitUnitsUsed="6"
+				  specialProgramDesc="?"
+				  statusOfRequest="?"
+				  visionCoPay="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberAddEligInfo
+				  carrierIdNaic="ANN2045"
+				  eligId="1234567894"
+				  eligIdQualifier="?"
+				  numGroup="?"
+				  planSponsorName="?"
+				  subscriberRelationship="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:eligDates dteVendorPayBegin="12/01/2019" dteVendorPayEnd="12/20/20" fromEligDate="09/30/2001" toEligDate="09/30/2020"/>
+				<!--Zero or more repetitions:-->
+				<mem:monthInfo month="?" monthlyWithheld="?" totalAmtPdPatUb92="$200.00"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberBenefitRelatedEntityInfo contactNumber="?" firstName="?" orgName="CVS Pharmacy" referenceId="1010101010"/>
+			</mem:eligResponse>
+			<mem:eligResponse eligType="Associated Children">
+				<!--Zero or more repetitions:-->
+				<mem:eligInformation
+				  LOCdetermination="Nursing FacilityType"
+				  amtSpenddown="100.00"
+				  applicationStatus="Approved"
+				  benefitCategoryDesc="Checking data"
+				  cdeTimePeriod="1:00pm"
+				  cdeTimeUnit="Ficial Year"
+				  coverageLevelCode="IND"
+				  dentalCoPay="?"
+				  dteAdmission="01/01/2020"
+				  dteAppReceived="?"
+				  dteDetermination="01/20/2020"
+				  dteDischarge="01/20/2020"
+				  dteLOCrequested="?"
+				  eligBenefitAmount="?"
+				  eligBenefitPlan="Pharmacy"
+				  eligBenefitPlanDescription="Data checking is coming"
+				  eligBenefitQuantity="two"
+				  eligIndicator="?"
+				  facilityType="?"
+				  financialPayer="?"
+				  hospProvName="?"
+				  idPlan="H5232"
+				  memberDOB="01/20/2020"
+				  memberFirstName="FirstName"
+				  memberGender="Female"
+				  memberLastName="Last Name"
+				  memberMI="MI"
+				  memberMedicaidID="1234567tyh"
+				  namPlan="Ohio Healthcare,PartA"
+				  nextServiceDate="12/20/2020"
+				  optOutCode="?"
+				  optOutEndDate="09/30/2003"
+				  optOutType="?"
+				  optoutStartDate="09/30/2000"
+				  patLiabType="?"
+				  provName="?"
+				  provPhone="3423212345-1235"
+				  qtyLimitUnits="10"
+				  qtyLimitUnitsRemain="4"
+				  qtyLimitUnitsUsed="6"
+				  specialProgramDesc="?"
+				  statusOfRequest="?"
+				  visionCoPay="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberAddEligInfo
+				  carrierIdNaic="ANN2045"
+				  eligId="1234567894"
+				  eligIdQualifier="?"
+				  numGroup="?"
+				  planSponsorName="?"
+				  subscriberRelationship="?"/>
+				<!--Zero or more repetitions:-->
+				<mem:eligDates dteVendorPayBegin="12/01/2019" dteVendorPayEnd="12/20/20" fromEligDate="09/30/2001" toEligDate="09/30/2020"/>
+				<!--Zero or more repetitions:-->
+				<mem:monthInfo month="?" monthlyWithheld="?" totalAmtPdPatUb92="$200.00"/>
+				<!--Zero or more repetitions:-->
+				<mem:subscriberBenefitRelatedEntityInfo contactNumber="?" firstName="?" orgName="CVS Pharmacy" referenceId="1010101010"/>
+			</mem:eligResponse>
+		</mem:eligSubscriber>
+      </mem:eligRequest>
+      <!--Zero or more repetitions:-->
+      <mem:systemEligError errorCode="?" errorDescription="?"/>
+    </mem:eligVerification>
+  </soapenv:Body>
+</soapenv:Envelope>

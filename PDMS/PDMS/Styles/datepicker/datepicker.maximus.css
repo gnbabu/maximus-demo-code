@@ -1,0 +1,152 @@
+﻿/* ================= WRAPPER ================= */
+.maximus-date-wrapper {
+    position: relative;
+    width: 320px;
+}
+
+    /* ================= INPUT ================= */
+    .maximus-date-wrapper .maximus-date-input {
+        width: 100%;
+        height: 44px;
+        border: 1px solid #d9dbe3;
+        border-radius: 4px;
+        padding: 0 50px 0 18px;
+        font-size: 14px;
+        color: #333;
+        outline: none;
+    }
+
+        .maximus-date-wrapper .maximus-date-input::placeholder {
+            color: #bfbfbf;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+    /* ================= ICON ================= */
+    .maximus-date-wrapper .maximus-icon {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 28px;
+        height: 28px;
+        border-radius: 4px;
+        background: #e0736b;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+/* ================= CALENDAR (GLOBAL) =================
+   All class names below are prefixed with "maximus-" so this
+   stylesheet can be dropped into any Bootstrap 3 application without
+   colliding with that application's own ".day", ".month-select",
+   ".calendar-header", etc. classes. */
+.maximus-calendar {
+    position: fixed !important;
+    width: 280px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    overflow: hidden;
+    z-index: 999999 !important;
+}
+
+/* HEADER */
+.maximus-calendar-header {
+    background: #1b4c79;
+    color: #fff;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.maximus-month-year {
+    font-weight: 600;
+}
+
+/* NAV ICONS */
+.maximus-calendar-header .material-icons {
+    cursor: pointer;
+}
+
+/* ================= DROPDOWN ================= */
+.maximus-month-year-picker {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.maximus-month-select,
+.maximus-year-select {
+    background: #fff;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 6px;
+    font-size: 13px;
+    outline: none;
+    cursor: pointer;
+}
+
+    .maximus-month-select option,
+    .maximus-year-select option {
+        background: #fff;
+        color: #333;
+    }
+
+.maximus-month-select {
+    min-width: 90px;
+}
+
+.maximus-year-select {
+    width: 70px;
+}
+
+/* ================= DAYS ================= */
+.maximus-calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 10px;
+    gap: 6px;
+}
+
+.maximus-day {
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+    /* HOVER */
+    .maximus-day:hover {
+        background: #eee;
+    }
+
+    /* ACTIVE */
+    .maximus-day.active {
+        background: #1b4c79;
+        color: #fff;
+    }
+
+    /* TODAY */
+    .maximus-day.today {
+        border: 1px solid #1b4c79;
+        font-weight: bold;
+    }
+
+    /* DISABLED */
+    .maximus-day.disabled {
+        color: #ccc;
+        pointer-events: none;
+    }
+
+    /* EMPTY */
+    .maximus-day.empty {
+        visibility: hidden;
+    }

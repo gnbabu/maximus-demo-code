@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+    <siteMapNode roles="*">
+        <siteMapNode title="Skip To Main Content" url="~/Default.aspx#main_content" roles="*" />
+        <siteMapNode title="Medicaid Home" url="https://www.dhcs.ca.gov/Medi-Cal/Pages/home.aspx" roles="*" />
+        <siteMapNode title="Home" url="~/Default.aspx" roles="*"/>
+		<siteMapNode url="~/BoldReports/Reports.aspx" title="Report Management" />
+        <siteMapNode url="~/Process/MyQueue.aspx" title="My Queue" roles="CommitteeQualitySpecialist,ODMStateAdministrator,ProviderServices,Operator,ReadOnly,SiteVisitOperator,AppealSpecialist,CredentialingSpecialist, ComplianceSpecialist, EnrollmentSpecialist, SiteVisitAdministrator,LTCInitial/Revalidation,LTCCHOP,InternalApplicationsEntry" />
+        <siteMapNode url="~/Process/GroupReview.aspx" title="Provider Search" roles="ODMCredentialingSupervisor,CredentialingQualityAssurance,InternalApplicationsEntry,CredentialingSupervisor,ODMStateAdministrator,ProviderServices,Operator,ReadOnly,ProviderOper,AppealSpecialist,CredentialingSpecialist,ODMCredentialingSpecialist,CredentialCommitteeChair,CredentialCommitteeMember,EnrollmentSpecialist,LTCInitial/Revalidation,LTCCHOP,APMSpecialist,SiteVisitAdministrator,SiteVisitOperator" />
+        <siteMapNode url="~/Process/OwnerSearch.aspx" title="Owner Search" roles="CredentialingQualityAssurance,CredentialingSupervisor,LTCInitial/Revalidation,ODMStateAdministrator,LTCCHOP,APMSpecialist,EnrollmentSpecialist,ODMCredentialingSpecialist,InternalApplicationsEntry"/>
+        <siteMapNode url="~/Process/PublicSearch.aspx" title="Provider Directory" users="?" />
+        <siteMapNode url="~/Process/GISSearch.aspx" title="Provider Search - GIS" users="?" roles="*"/>
+        <siteMapNode url="~/Process/PaperApplication.aspx" title="Add Paper Request" roles="ProviderOper" />
+        <siteMapNode url="~/Account/MyProfile.aspx" title="My Profile" roles="ODMStateAdministrator,ProviderServices,Operator,ReadOnly,SiteVisitOperator,ProviderOper"/>
+        <siteMapNode url="~/Process/AdminHome.aspx" title="Dashboard" roles="ODMStateAdministrator"/>
+        <siteMapNode url="~/Process/SiteVisitAssignments.aspx" title="Site Visit Assignment" roles="ODMStateAdministrator,SiteVisitAdministrator,EnrollmentSpecialist" />
+        <siteMapNode url="~/Process/CredentialQueue.aspx" title="Committee Review" roles="CredentialingChair,CommitteeQualitySpecialist" />
+        <siteMapNode url="~/Process/TransactionSearch.aspx" title="Operations &amp; Transaction Hub" roles="ODMStateAdministrator,TechAdmin,EnrollmentSpecialist,PNMSuperUser" />
+        <siteMapNode url="~/Maintenance/User.aspx" title="User Administration" roles="TechAdmin" />
+        <siteMapNode url="~/Maintenance/ReferenceData.aspx" title="Configuration Management" roles="ODMStateAdministrator,TechAdmin" />
+        <siteMapNode url="~/Workflow/WF_EngineNew.aspx" title="Workflow Engine" roles="ODMStateAdministrator,TechAdmin" />
+        <siteMapNode url="~/Reports/ReportCriteria.aspx" title="Reports" roles="ComplianceSpecialist,CredentialingQualityAssurance,ODMCredentialingQualityAssurance,CredentialingSupervisor,ODMStateAdministrator,TechAdmin,EnrollmentSpecialist,LTCCHOP,APMSpecialist,ODMCredentialingSupervisor,Aetna,Humana,AmeriHealth,Anthem,Buckeye,Caresource,Molina,UnitedHealthCare,ODMNAReports,AetnaOhioRISE" />
+        <siteMapNode url="~/Maintenance/DesignStaticPages.aspx" title="Content Management" roles="PNMSuperUser" />
+        <siteMapNode url="~/Process/PaymentInnovationReports.aspx" title="Alternative Payment Model Information" roles="InternalPaymentInnovation,SiteVisitOperator,ProviderAdministrator,ODMStateAdministrator,APMSpecialist,ReadOnly, ProviderServices,SiteVisitAdministrator,CredentialingChair,CredentialingQualityAssurance,ODMCredentialingQualityAssurance,ComplianceSpecialist,CredentialingSupervisor,ODMCredentialingSpecialist" />
+		    <siteMapNode url="~/Process/ORProviderSearchMenu.aspx" title="Ordering, Referring and Prescribing Search" roles="EnrollmentSpecialist,ProviderRelationsManagement,ProviderRelations,ProviderServices,ODMStateAdministrator,PNMSuperUser" />
+        <siteMapNode url="~/Process/SearchEligibility.aspx" title="Recipient Eligibility" roles="RecipientEligibility,InfantMortalityLeadEntityAgent" />
+        <siteMapNode url="~/Process/RedirectToCMCDashboardLeftMenu.aspx" title="CMC Quality Metrics Dashboard" roles="InternalPaymentInnovation,ProviderAdministrator" />
+        <siteMapNode url="~/Process/SpecialtySearchMenu.aspx" title="Provider Specialty Search" roles="ODMCredentialingSupervisor,CredentialingQualityAssurance,InternalApplicationsEntry,CredentialingSupervisor,ODMStateAdministrator,ProviderServices,Operator,ReadOnly,ProviderOper,AppealSpecialist,CredentialingSpecialist,ODMCredentialingSpecialist,CredentialCommitteeChair,CredentialCommitteeMember,EnrollmentSpecialist,LTCInitial/Revalidation,LTCCHOP,APMSpecialist,SiteVisitAdministrator,SiteVisitOperator,ProviderAdministrator,ProviderAgent" />  
+        <siteMapNode title="Provider Ed &amp; Training Resources" url="~/Resources.aspx" roles="*" />
+        <siteMapNode title="Contact Us" url="~/Process/ContactUs.aspx" />
+		    <siteMapNode title="Fee Schedule" url="~/Process/FeeScheduleContact.aspx" />
+		    <siteMapNode title="Self Service" url="~/Process/FinancialProviderInformation.aspx" roles="ODECostReport,ODHCostReport,ODMHospitalCostReport,ODMFQHCCostReport,ODMRHCCostReport,ODMLeadInvestigationCostReport,ODMMSPCostReport,ODMOHFCostReport,EnrollmentSpecialist,ProviderRelationsManagement,ProviderRelations,ODMStateAdministrator,DODDRatesettingCostReportSupervisor,DODDCostReportStaff,ODMRatesetting,ODMCostReportStaff,ODMMDSSectionQReport"/>
+        <siteMapNode title="Webservice Connectivity" url="~/Process/WebserviceConnectivity.aspx" />
+        <siteMapNode title="Log Out" url="~/Account/Logout.aspx"  roles="ODMStateAdministrator,ProviderAdministrator,ProviderServices,Operator,ReadOnly,SiteVisitOperator,ProviderOper" />
+        <siteMapNode title="" url="" description="separator"   roles="ODMStateAdministrator,Operator,ProviderOper" />
+        <siteMapNode title="Call Tracker (opens new window)" url="~/Process/CallTracker.aspx?target=_blank"  roles="Operator,ProviderOper" target="_blank" />
+             
+    </siteMapNode>
+</siteMap>

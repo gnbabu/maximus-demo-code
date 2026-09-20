@@ -1,0 +1,40 @@
+
+
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+<tr><td>[[TOADDRESS]]</td></tr>
+</table>
+
+<br />
+<p>
+<b>Subject: </b>Cost report with tracking ID<< tracking ID>> is submitted 
+</p>
+<p>
+The <<Hospital or MSP or LTC>> cost report you uploaded with tracking ID <<  >>has been submitted to Ohio Department of Medicaid for approval</p>
+
+</div>

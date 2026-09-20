@@ -1,0 +1,72 @@
+
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<p>
+<br />
+Dear Provider:
+</p>
+<p>
+I have been advised that you were found guilty of one count of “Medicaid Fraud”, in violation of Revised Code 2913.40, a Felony of the Fourth Degree. Ohio Revised Code 5164.33, Section (A)(1)(2) states: “the Medicaid Director may do the following for any reason permitted or required by federal law and when the director determines that the action is in the best interests of Medicaid recipients or the state: deny, refuse to revalidate, suspend, or terminate a provider agreement or exclude an individual, provider of services or goods, or other entity from participation in the Medicaid program.” </p>
+<p>Furthermore, Ohio Revised Code, Section 5164.33(B)(1)(2)(3) specifies that “No individual, provider, or entity excluded from participation in the Medicaid program under this section shall do any of the following: Own, or provide services to, any other Medicaid provider or risk contractor; Arrange for, render, or order services for Medicaid recipients during the period of exclusion; or, During the period of exclusion, receive direct payments under the Medicaid program or indirect payments of Medicaid funds in the form of salary, shared fees, contracts, kickbacks, or rebates from or through any other Medicaid provider or risk contractor.”</p>
+
+<p>You are, therefore, advised that, based upon your conviction, you may not be associated with a Medicaid provider as an owner, officer, authorized agent, associate, manager or employee effective <Exclusion Date>. In addition, you may not receive any compensation, directly or indirectly for items or services furnished or rendered to recipients and reimbursed by the Ohio Medicaid program in the form of salary, shared fees, contracts, kickbacks, or rebates from or through any participating provider or risk contractor.</p>
+<p>Please note that this action does not affect your eligibility to receive any benefits to which you may be entitled as a Medicaid recipient.</p>
+<p>Ohio law affords no appeal of this action pursuant to Chapter 119 of the Revised Code. See Ohio Revised Code 5164.38(E)(3)(d) and Ohio Administrative Code Section 5160-70-02(C)(3)(d). If at some time in the future you become eligible to participate in title XVIII (Medicare), or title XIX (Medicaid), you or an entity with which you are associated, may reapply to the Ohio Medicaid program for provider status.</p>
+
+<p>If you disagree with this exclusion, you may request reconsideration pursuant to OAC 5160-70-02(D) that allows for reconsideration of actions not subject to hearing under Chapter 119 of the Revised Code. A request for reconsideration must be made no later than <b>thirty (30) calendar days after receipt of this notice.</b> The notice will be deemed received by the provider on the date that the return receipt from certified mail is signed. </p>
+
+<p>If the provider fails to claim the notice, the notice will be deemed received by the provider on the date that ODM receives a certificate of mailing.</p>
+<p>If you wish to request reconsideration, please send a written request including all information that you consider relevant to this action to:</p>
+
+<div style="text-align:center"><b>
+<p>Maureen M. Corcoran, Director</br>
+Ohio Department of Medicaid</br>
+PO Box 182709</br>
+Columbus, Ohio 43218-2709</br>
+</b></div>
+
+<p>If you require additional information or assistance, please contact Alan Kidder, Bureau of Network Management Compliance Unit at 614-752-3055</p>
+
+<br />
+Sincerely,
+<br />
+Ohio Medicaid Provider Enrollment
+</td>
+</tr>
+</table>

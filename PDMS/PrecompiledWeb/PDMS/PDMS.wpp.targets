@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\ExtensionPack\4.0\MSBuild.ExtensionPack.tasks"/>
+  <Import Project="..\.nuget\NuGet.targets" Condition="Exists('..\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\.nuget\NuGet.targets'))" />
+  </Target>
+  <Target Name="BeforeBuild" AfterTargets="EnsureNuGetPackageBuildImports">
+    <Exec Command="&quot;..\.nuget\NuGet&quot; install &quot;packages.config&quot; -o &quot;..\packages&quot;" />
+	<Copy SourceFiles="@(References->'%(FullPath)')" DestinationFolder="$(_FullSourceWebDir)\Bin\"  ContinueOnError="true" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)"/>
+  </Target>
+  <Target Name="CopyDeployFiles" AfterTargets="TransformAppSettings" >
+      <Message Text="Copy Deploy Files" />
+      <Message Text="DeployFilesDirectory = $(DeployFilesDirectory) PackageFileName = $(PackageFileName) WPPAllFilesInSingleFolder = $(WPPAllFilesInSingleFolder)" />
+      <MakeDir Directories="$(PackageUrl)" />
+      <MSBuild.ExtensionPack.Compression.Zip TaskAction="Create" CompressPath="$(WPPAllFilesInSingleFolder)" ZipFileName="$(PackageUrl)$(PackageFileName)" RemoveRoot="$(WPPAllFilesInSingleFolder)"/>
+  </Target>
+  <Target Name="TransformAppSettings" AfterTargets="CopyAllFilesToSingleFolderForPackage" Condition="exists('AppSettings.dll.$(PublishProfileName).config')">
+    <Message Importance="normal" Text="Transforming AppSettings.dll.config. Using AppSettings.dll.$(PublishProfileName).config to Transform $(WPPAllFilesInSingleFolder)\bin\AppSettings.dll.config" />
+    <TransformXml Source="$(WPPAllFilesInSingleFolder)\bin\AppSettings.dll.config" Destination="$(WPPAllFilesInSingleFolder)\bin\AppSettings.dll.config" Transform="AppSettings.dll.$(PublishProfileName).config" />
+  </Target>
+  <PropertyGroup>
+    <ExcludeFilesFromDeployment>
+      AppSettings.dll.Conv.config;AppSettings.dll.DevMax.config;AppSettings.dll.Integration03.config;AppSettings.dll.IntegrationMax.config;AppSettings.dll.Modern.config;AppSettings.dll.Production.config;AppSettings.dll.UAT.config
+    </ExcludeFilesFromDeployment>
+  </PropertyGroup>
+</Project>

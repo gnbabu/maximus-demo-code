@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://service.operationmgmt.fi/ClaimsService/search" elementFormDefault="qualified" targetNamespace="http://service.operationmgmt.fi/ClaimsService/search" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MessageHeader" type="tns:MessageHeaderType" />
+  <xs:element name="ResponseHeader" type="tns:ResponseHeaderType" />
+  <xs:complexType name="MessageHeaderType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="BusinessFlow">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+            <xs:enumeration value="SearchClaims" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="StateCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[A|a][L|l]|[A|a][K|k]|[A|a][Z|z]|[A|a][R|r]|[C|c][A|a]|[C|c][O|o]|[C|c][T|t]|[D|d][E|e]|[F|f][L|l]|[G|g][A|a]|[H|h][I|i]|[I|i][D|d]|[I|i][L|l]|[I|i][N|n]|[I|i][A|a]|[K|k][S|s]|[K|k][Y|y]|[L|l][A|a]|[M|m][E|e]|[M|m][D|d]|[M|m][A|a]|[M|m][I|i]|[M|m][N|n]|[M|m][S|s]|[M|m][O|o]|[M|m][T|t]|[N|n][E|e]|[N|n][V|v]|[N|n][H|h]|[N|n][J|j]|[N|n][M|m]|[N|n][Y|y]|[N|n][C|c]|[N|n][D|d]|[O|o][H|h]|[O|o][K|k]|[O|o][R|r]|[P|p][A|a]|[R|r][I|i]|[S|s][C|c]|[S|s][D|d]|[T|t][N|n]|[T|t][X|x]|[U|u][T|t]|[V|v][T|t]|[V|v][A|a]|[W|w][A|a]|[W|w][V|v]|[W|w][I|i]|[W|w][Y|y]" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="RequestorSystem">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="PNM" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="SubscriberSystem">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="10" name="Subscriber">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="50" />
+                  <xs:enumeration value="FI" />
+                  <xs:enumeration value="EDI" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ModuleTransactionId">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AdditionalModuleTransactionId">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" name="RequestTimestamp">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime">
+            <xs:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SITransactionKey">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="32" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResponseHeaderType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SITransactionKey">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="32" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ModuleTransactionId">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AdditionalModuleTransactionId">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ResponseCode">
+        <xs:annotation>
+          <xs:documentation>
+						This represents response code returning from SI
+						in all successful and
+						failure business scenarios.
+						(ex: 1001, 1000
+						etc..)
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ResponseType">
+        <xs:annotation>
+          <xs:documentation>
+						Success, Failure, Acknowledgement
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+            <xs:enumeration value="SUCCESS" />
+            <xs:enumeration value="FAILURE" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ResponseMessage">
+        <xs:annotation>
+          <xs:documentation>
+						The message returns for individual business
+						transaction in all
+						scenarios like successful, failure,
+						acknowledgement etc..
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1000" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ResponseDetails">
+        <xs:annotation>
+          <xs:documentation>
+						This represent the message, what a requestor
+						system can do if it has
+						failure message received from subscriber
+						systems.
+						(ex: message reprocessing with corrected request)
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1000" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

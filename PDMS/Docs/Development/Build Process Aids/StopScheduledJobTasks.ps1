@@ -1,0 +1,1 @@
+{Get-ScheduledTask -TaskPath "\" -TaskName "Job*" | Stop-ScheduledTask}

@@ -1,0 +1,42 @@
+﻿<%@ control language="C#" autoeventwireup="true" inherits="PopupControls_IntuitivePriorAuthMessageBox, App_Web_glma3lal" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+
+
+<!-- ModalPopupExtender -->
+<ajax:ModalPopupExtender ID="modalPAIntuitiveMPE" runat="server" TargetControlID="ButtonDummy"
+    CancelControlID="btnOK" BackgroundCssClass="modalBackground" 
+    PopupControlID="Panel1" PopupDragHandleControlID="pnlHeader" >
+</ajax:ModalPopupExtender>
+<asp:Panel ID="Panel1" runat="server" CssClass="modalPopup" align="center" style="display:none; width:auto; height:auto; min-height: 170px; min-width:270px;">
+    <asp:Panel ID="pnlHeader" CssClass="popHeader" runat="server" >
+        <table style="width: 100%" role="presentation">
+            <tr>
+                <td class="popTitle"><asp:Label ID="lblTitle" runat="server" Text="Title"  /> </td>
+                <td style="text-align: right">
+                    <asp:Label ID="lblCurrentDateTime" CssClass="bodyTextBold" runat="server" Text="Title" ForeColor="White" />
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>  
+    <asp:Panel ID="pnlLabel" runat="server">
+        <div style="text-align: left;padding: 15px">
+            <asp:Label id="lblMessage" runat="server" /><br /><br />
+                <asp:UpdatePanel runat="server" ID="up1" UpdateMode="Conditional">
+                    <ContentTemplate>
+                         <asp:Button id="btnShowMoreErrorMessage"  runat="server" Text="Show More" CssClass=".buttonPAShowMore" CausesValidation="false" OnClick="btnShowMoreErrorMessage_Click" />
+                            <asp:Panel ID="pnlShowMoreErrorMessage" runat="server" Visible="false">
+                                <div style="text-align: left;padding: 15px">
+                                    <asp:Label id="lblShowMoreErrorMessage" runat="server" Style="word-wrap: normal; word-break: break-all;" /><br /><br />            
+                                </div>
+                            </asp:Panel>
+                    </ContentTemplate>
+                </asp:UpdatePanel>           
+        </div>
+    </asp:Panel>
+
+    <div style="text-align: center">
+        <asp:Button id="btnOK"  runat="server" Text="OK" CssClass="buttonBox" CausesValidation="false" />
+    </div>
+    <br />
+</asp:Panel>
+<asp:Button runat="server" ID="ButtonDummy" Style="display: none" Text="ButtonDummy"/>

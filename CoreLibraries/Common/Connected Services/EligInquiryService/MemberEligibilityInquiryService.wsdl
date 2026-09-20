@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Copyright (c) 2021, Gainwell Technologies. All rights reserved. -->
+<wsdl:definitions
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://service.membermgmt.fi/MemberEligibilityInquiryService"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://service.membermgmt.fi/MemberEligibilityInquiryService"
+	name="MemberEligibilityInquiryService">
+	<wsdl:types>
+		<xsd:schema
+			targetNamespace="http://service.membermgmt.fi/MemberEligibilityInquiryService">
+			<xsd:include
+				schemaLocation="./MemberEligInquiryReqResp.xsd">
+			</xsd:include>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="InquireMemberEligibilityRequest">
+		<wsdl:part element="tns:InquireMemberEligibilityRequest"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="InquireMemberEligibilityResponse">
+		<wsdl:part element="tns:InquireMemberEligibilityResponse"
+			name="parameters" />
+	</wsdl:message>
+
+
+	<wsdl:portType name="MemberEligibilityInquiryService">
+
+		<wsdl:operation name="InquireMemberEligibility">
+			<wsdl:input message="tns:InquireMemberEligibilityRequest" />
+			<wsdl:output
+				message="tns:InquireMemberEligibilityResponse" />
+		</wsdl:operation>
+
+	</wsdl:portType>
+	<wsdl:binding name="MemberEligibilityInquiryServiceSOAP"
+		type="tns:MemberEligibilityInquiryService">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+
+		<wsdl:operation name="InquireMemberEligibility">
+			<soap:operation
+				soapAction="http://service.membermgmt.fi/MemberEligibilityInquiryService/InquireMemberEligibility" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="MemberEligibilityInquiryService">
+		<wsdl:port binding="tns:MemberEligibilityInquiryServiceSOAP"
+			name="MemberEligibilityInquiryServiceSOAP">
+			<soap:address location="http://www.example.org/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

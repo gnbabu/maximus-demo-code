@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://mes.gov/caremanagement" elementFormDefault="qualified" targetNamespace="http://mes.gov/caremanagement" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CareManagement_Datatypes.xsd" />
+  <xs:element name="SearchAuthorizationPayload">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="MemberID">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:EmptyValue tns:string19" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="MemberDOB">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:DateType" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="PriorAuthorizationID">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:EmptyValue tns:String15" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="1" name="ProviderID" type="tns:string20" />
+        <xs:element minOccurs="0" maxOccurs="1" name="AssignmentCode">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:EmptyValue tns:string50" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="PriorAuthorizationTypeCode">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:EmptyValue tns:string50" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="StatusCode">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:EmptyValue tns:string50" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderID">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:EmptyValue tns:String20" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="InpatientProcedure">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:EmptyValue tns:string50" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="ProcedureCode">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:EmptyValue tns:string50" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="RevenueCode">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:EmptyValue tns:string50" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="AuthSubmissionDate">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:DateType" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="Diagnosis">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:EmptyValue tns:string50" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="InputOffset">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:EmptyValue xs:integer" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="InputLimit">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:EmptyValue xs:integer" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" name="RecordStatusCode" type="tns:String50" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResponsePayload">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AuthorizationInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" name="PriorAuthorizationID" type="tns:string15" />
+              <xs:element minOccurs="1" name="MemberID" type="tns:string19" />
+              <xs:element minOccurs="1" name="AssignmentCode" type="tns:string50" />
+              <xs:element minOccurs="0" name="OrderingProviderID">
+                <xs:simpleType>
+                  <xs:union memberTypes="tns:EmptyValue tns:String20" />
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ODSPriorAuthorizationID" type="xs:integer" />
+              <xs:element minOccurs="0" name="CreatedDate" type="tns:DateTimeType" />
+              <xs:element minOccurs="0" name="CreatedBy" type="tns:String50" />
+              <xs:element minOccurs="0" name="LastModifiedDate" type="tns:DateTimeType" />
+              <xs:element minOccurs="0" name="LastModifiedBy" type="tns:String50" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="300" name="AuthorizationService">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ServiceStatusCode" type="tns:String50" />
+              <xs:element minOccurs="0" name="TypeOfServiceCode">
+                <xs:simpleType>
+                  <xs:union memberTypes="tns:EmptyValue tns:String50" />
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ServiceCode">
+                <xs:simpleType>
+                  <xs:union memberTypes="tns:EmptyValue tns:String50" />
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthorizationBeginDate">
+                <xs:simpleType>
+                  <xs:union memberTypes="tns:EmptyValue tns:DateType" />
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthorizationEndDate">
+                <xs:simpleType>
+                  <xs:union memberTypes="tns:EmptyValue tns:DateType" />
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ThruService">
+                <xs:simpleType>
+                  <xs:union memberTypes="tns:EmptyValue tns:string50" />
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthorizedUnits">
+                <xs:simpleType>
+                  <xs:union memberTypes="tns:EmptyValue tns:Int6" />
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthorizedDollars">
+                <xs:simpleType>
+                  <xs:union memberTypes="tns:EmptyValue tns:decimal" />
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ODSPriorAuthorizationServiceID" type="xs:integer" />
+              <xs:element minOccurs="0" name="CreatedDate" type="tns:DateTimeType" />
+              <xs:element minOccurs="0" name="CreatedBy" type="tns:String50" />
+              <xs:element minOccurs="0" name="LastModifiedDate" type="tns:DateTimeType" />
+              <xs:element minOccurs="0" name="LastModifiedBy" type="tns:String50" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="300" name="AuthorizationDiagnosis">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" name="DiagnosisCode" type="tns:String50" />
+              <xs:element minOccurs="0" name="ODSDiagnosisID" type="xs:integer" />
+              <xs:element minOccurs="0" name="CreatedDate" type="tns:DateTimeType" />
+              <xs:element minOccurs="0" name="CreatedBy" type="tns:String50" />
+              <xs:element minOccurs="0" name="LastModifiedDate" type="tns:DateTimeType" />
+              <xs:element minOccurs="0" name="LastModifiedBy" type="tns:String50" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InquireAuthorizationPayload">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PriorAuthorizationID" type="tns:String15" />
+        <xs:element minOccurs="1" name="ProviderID" type="tns:string20" />
+        <xs:element minOccurs="0" maxOccurs="1" name="InputOffset">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:EmptyValue xs:integer" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="InputLimit">
+          <xs:simpleType>
+            <xs:union memberTypes="tns:EmptyValue xs:integer" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" name="RecordStatusCode" type="tns:String50" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="InquireAuthorizationInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="500" name="AuthorizationInfo">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="tns:AuthorizationInfo">
+              <xs:sequence>
+                <xs:element minOccurs="0" name="ODSPriorAuthorizationID" type="xs:integer" />
+                <xs:element minOccurs="0" name="CreatedDate" type="tns:DateTimeType" />
+                <xs:element minOccurs="0" name="CreatedBy" type="tns:String50" />
+                <xs:element minOccurs="0" name="LastModifiedDate" type="tns:DateTimeType" />
+                <xs:element minOccurs="0" name="LastModifiedBy" type="tns:String50" />
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="500" name="AuthorizationReferral">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="tns:AuthorizationReferral">
+              <xs:sequence>
+                <xs:element minOccurs="0" name="ODSPriorAuthorizationReferralID" type="xs:integer" />
+                <xs:element minOccurs="0" name="CreatedDate" type="tns:DateTimeType" />
+                <xs:element minOccurs="0" name="CreatedBy" type="tns:String50" />
+                <xs:element minOccurs="0" name="LastModifiedDate" type="tns:DateTimeType" />
+                <xs:element minOccurs="0" name="LastModifiedBy" type="tns:String50" />
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="500" name="AuthorizationService">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="tns:AuthorizationService">
+              <xs:sequence>
+                <xs:element minOccurs="0" name="ODSPriorAuthorizationServiceID" type="xs:integer" />
+                <xs:element minOccurs="0" name="CreatedDate" type="tns:DateTimeType" />
+                <xs:element minOccurs="0" name="CreatedBy" type="tns:String50" />
+                <xs:element minOccurs="0" name="LastModifiedDate" type="tns:DateTimeType" />
+                <xs:element minOccurs="0" name="LastModifiedBy" type="tns:String50" />
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="500" name="AuthorizationTreatmentPlan">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="tns:AuthorizationTreatmentPlan">
+              <xs:sequence>
+                <xs:element minOccurs="0" name="ODSPriorAuthTreatmentPlanID" type="xs:integer" />
+                <xs:element minOccurs="0" name="CreatedDate" type="tns:DateTimeType" />
+                <xs:element minOccurs="0" name="CreatedBy" type="tns:String50" />
+                <xs:element minOccurs="0" name="LastModifiedDate" type="tns:DateTimeType" />
+                <xs:element minOccurs="0" name="LastModifiedBy" type="tns:String50" />
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="300" name="AuthorizationDiagnosis">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="tns:AuthorizationDiagnosis" />
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="99" name="ProviderNotes">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="tns:ProviderNotes" />
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="25" name="Attachments">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="tns:Attachments" />
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="99" name="ReviewerNotes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Note" type="tns:String500" />
+            <xs:element minOccurs="0" name="CreatedDate" type="tns:DateTimeType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateRequestPayload">
+    <xs:sequence>
+      <xs:element name="Authorization" type="tns:createAuthorization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UpdateRequestPayload">
+    <xs:sequence>
+      <xs:element name="Authorization" type="tns:updateAuthorization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createAuthorization">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AuthorizationInfo" type="tns:AuthorizationInfo" />
+      <xs:choice>
+        <xs:element minOccurs="1" maxOccurs="1" name="AuthorizationReferral" type="tns:AuthorizationReferral" />
+        <xs:element minOccurs="1" maxOccurs="500" name="AuthorizationService" type="tns:AuthorizationService" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AuthorizationTreatmentPlan" type="tns:AuthorizationTreatmentPlan" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="300" name="AuthorizationDiagnosis" type="tns:AuthorizationDiagnosis" />
+      <xs:element minOccurs="0" maxOccurs="99" name="ProviderNotes" type="tns:ProviderNotes" />
+      <xs:element minOccurs="0" maxOccurs="25" name="Attachments" type="tns:Attachments" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateAuthorization">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AuthorizationInfo" type="tns:AuthorizationInfo" />
+      <xs:choice minOccurs="0">
+        <xs:element minOccurs="0" maxOccurs="1" name="AuthorizationReferral" type="tns:AuthorizationReferral" />
+        <xs:element minOccurs="0" maxOccurs="500" name="AuthorizationService" type="tns:AuthorizationService" />
+        <xs:element minOccurs="0" maxOccurs="1" name="AuthorizationTreatmentPlan" type="tns:AuthorizationTreatmentPlan" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="300" name="AuthorizationDiagnosis" type="tns:AuthorizationDiagnosis" />
+      <xs:element minOccurs="0" maxOccurs="99" name="ProviderNotes" type="tns:ProviderNotes" />
+      <xs:element minOccurs="0" maxOccurs="25" name="Attachments" type="tns:Attachments" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AuthorizationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PriorAuthorizationID" type="tns:String15" />
+      <xs:element minOccurs="1" name="AssignmentCode" type="tns:string50" />
+      <xs:element minOccurs="1" name="PriorAuthorizationTypeCode" type="tns:string50" />
+      <xs:element minOccurs="1" name="MemberID" type="tns:string19" />
+      <xs:element minOccurs="0" name="ProviderID">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String20" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="OrderingProviderID">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String20" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="RenderingProviderID">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String20" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="StatusCode" type="tns:String2" />
+      <xs:element minOccurs="0" name="ReasonCode" type="tns:String2" />
+      <xs:element minOccurs="0" name="AuthorizationDate">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:DateType" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ApproverID" type="tns:String8" />
+      <xs:element minOccurs="0" name="AuthorizationSource" type="tns:String50" />
+      <xs:element minOccurs="0" name="DateOfBirth">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:DateType" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ContactNumber">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ContactName">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="AdmissionDate">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:DateType" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="LTCFDischargeDate">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:DateType" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="SpecialIndicator">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PatientEventTrackingNum">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsPriorAuthEditable">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:Char1" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="RecordStatusCode" type="tns:String50" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AuthorizationReferral">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PriorAuthorizationReferralTypeCode">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:string2" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ReferredProviderID">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String20" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="DiagnosisCode">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String8" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ICDType">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String4" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ProcedureCode">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String10" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="NumberOfVisit">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:Int15" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="RecordStatusCode" type="tns:String50" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AuthorizationService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RenderingProviderID">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String20" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PriorAuthorizationFrequencyCode">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:string50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ProcedureCode">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:string50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="FromProcedureCode">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:string50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ToProcedureCode">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:string50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ProcedureTypeCode">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:string50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ICDType">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String2" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ServiceLimit">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:Int15" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="LimitAmount">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:decimal" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="RateAmount">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:decimal" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ServiceStartDate" type="tns:DateTimeType" />
+      <xs:element minOccurs="0" name="ServiceEndDate" type="tns:DateTimeType" />
+      <xs:element minOccurs="0" name="ProcModifierCode" type="tns:String50" />
+      <xs:element minOccurs="0" name="ProcModifierCode1" type="tns:String50" />
+      <xs:element minOccurs="0" name="ProcModifierCode2" type="tns:String50" />
+      <xs:element minOccurs="0" name="ProcModifierCode3" type="tns:String50" />
+      <xs:element minOccurs="0" name="ToothSurfaceCode" type="tns:String50" />
+      <xs:element minOccurs="0" name="ToothNumCode" type="tns:String50" />
+      <xs:element minOccurs="0" name="ServiceStatusCode" type="tns:String50" />
+      <xs:element minOccurs="0" name="ServiceStatusReasonCode" type="tns:String50" />
+      <xs:element minOccurs="0" name="ServicesUsed" type="tns:String50" />
+      <xs:element minOccurs="0" name="AmountUsed">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:decimal" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="DetailLineNumber">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:string50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="FirstDiagnosisCode" type="tns:String50" />
+      <xs:element minOccurs="0" name="LastDiagnosisCode" type="tns:String50" />
+      <xs:element minOccurs="0" name="AuthorizedDollars">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:decimal" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="AuthorizedUnits">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:Int6" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BalanceDollars">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:decimal" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BalanceUnits">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:Int6" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BillDirectFromDate">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:DateType" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BillDirectToDate">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:DateType" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ToothExtractionDate">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:DateType" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="InitialPlacement">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String5" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ListPrice">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:decimal" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="CaloriesPerDayNum">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:Int9" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="DaysNum">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:Int9" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PricingFormula">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PriorPlacement">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ToothQuadrant">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="QuantityUsedAmount">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:decimal" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="QuantityUsedUnits">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:Int9" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="RequestedDollars">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:decimal" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="RequestedEffectiveDate">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:DateType" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="RequestedEndDate">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:DateType" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="RequestedUnits">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:Int9" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="TypeOfServiceCode">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ServiceCode">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="AuthorizationBeginDate">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:DateType" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="AuthorizationEndDate">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:DateType" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ThruService">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:string50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="NDCCode">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="InpatientProcedure">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="RevenueCode">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String50" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="RecordStatusCode" type="tns:String50" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AuthorizationTreatmentPlan">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PriorAuthorizationTypeCode">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:string2" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PriorAuthorizationFrequencyCode">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:string2" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="CareManager">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String30" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ProgramName">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String30" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PlanName">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String30" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PlanDescription">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:String4000" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="NumberOfVisit">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:Int15" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="RecordStatusCode" type="tns:String50" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AuthorizationDiagnosis">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ICDType" type="tns:String2" />
+      <xs:element minOccurs="0" name="DiagnosisCode" type="tns:String50" />
+      <xs:element minOccurs="0" name="DiagnosisTypeCode" type="tns:String50" />
+      <xs:element minOccurs="0" name="RecordStatusCode" type="tns:String50" />
+      <xs:element minOccurs="0" name="ODSDiagnosisID">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:IntE" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="CreatedDate" type="tns:DateTimeType" />
+      <xs:element minOccurs="0" name="CreatedBy" type="tns:String50" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="tns:DateTimeType" />
+      <xs:element minOccurs="0" name="LastModifiedBy" type="tns:String50" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProviderNotes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Note" type="tns:String500" />
+      <xs:element minOccurs="0" name="ODSProviderNoteID">
+        <xs:simpleType>
+          <xs:union memberTypes="tns:EmptyValue tns:IntE" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="CreatedDate" type="tns:DateTimeType" />
+      <xs:element minOccurs="0" name="CreatedBy" type="tns:String50" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="tns:DateTimeType" />
+      <xs:element minOccurs="0" name="LastModifiedBy" type="tns:String50" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Attachments">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttachmentType" type="tns:String50" />
+      <xs:element minOccurs="0" name="AttachmentID" type="tns:String50" />
+      <xs:element minOccurs="0" name="AttachmentDate" type="tns:DateTimeType" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

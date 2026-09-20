@@ -1,0 +1,4089 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://mes.gov/providermanagement" xmlns:tns="http://mes.gov/providermanagement">
+	<xsd:include schemaLocation="ProviderManagement_Datatypes.xsd"/>
+	<xsd:element name="SearchProvider">
+		<xsd:complexType>  
+			<xsd:sequence>                            					         
+				<xsd:element maxOccurs="1" minOccurs="0" name="NationalProviderIdentifier" type="tns:String10"/>
+				<!--STRY0010946:Increasing ProviderId length from 20 to 71-->
+				<xsd:element maxOccurs="1" minOccurs="0" name="ProviderId" type="tns:String71"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="CurrentTaxId" type="tns:String9"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="FirstName" type="tns:String40"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="LastName" type="tns:String40"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="BusinessStatusCode" type="tns:String50"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="InputOffset" type="tns:Int"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="InputLimit" type="tns:Int"/>
+				<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			</xsd:sequence>                            					         
+		</xsd:complexType>                           					             
+	</xsd:element> 
+	<xsd:element name="SearchProviderHistory">
+		<xsd:complexType>  
+			<xsd:sequence>       
+				<!--STRY0010946:Increasing ProviderId length from 20 to 71-->
+				<xsd:element maxOccurs="1" minOccurs="1" name="ProviderId" type="tns:string71"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="InputOffset" type="tns:Int"/>
+				<xsd:element maxOccurs="1" minOccurs="0" name="InputLimit" type="tns:Int"/>
+				<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>  
+			</xsd:sequence>                            					         
+		</xsd:complexType>                           					             
+	</xsd:element>
+
+	<xsd:complexType name="EnrollRequestPayload">                            					         
+		<xsd:sequence> 
+			<xsd:element name="ProviderInformation" type="tns:EnrollProviderInformation">
+                  <!--  <xsd:unique name="UniqueKeyCreate">
+                        <xsd:selector xpath="tns:ProviderOwnership"/>
+                        <xsd:field xpath="tns:OwnershipDetails/tns:OwnerIndividual/tns:SSN"/>
+                    </xsd:unique>
+                    <xsd:unique name="OwnerOrganizationUniqueKeyCreate">
+                        <xsd:selector xpath="tns:ProviderOwnership" />
+                        <xsd:field xpath="tns:OwnershipDetails/tns:OwnerOrganization/tns:OrgTaxIdNumber" />
+                    </xsd:unique> -->
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="UpdateRequestPayload">                            					         
+		<xsd:sequence> 
+			<xsd:element name="ProviderInformation" type="tns:UpdateProviderInformation">
+			        <!--<xsd:unique name="OwnerIndividualUniqueKeyUpdate">
+                        <xsd:selector xpath="tns:ProviderOwnership" />
+                        <xsd:field xpath="tns:OwnershipDetails/tns:OwnerIndividual/tns:SSN" />
+                    </xsd:unique>
+                    <xsd:unique name="OwnerOrganizationUniqueKeyUpdate">
+                        <xsd:selector xpath="tns:ProviderOwnership" />
+                        <xsd:field xpath="tns:OwnershipDetails/tns:OwnerOrganization/tns:OrgTaxIdNumber" />
+                    </xsd:unique> -->
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	
+
+	
+	<!-- Start of Create provider schema -->	
+	<xsd:complexType name="EnrollProviderInformation">                            					         
+		<xsd:sequence> 
+			<xsd:element name="ProviderDemographics" type="tns:EnrollProviderDemographics"/>	
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAddress">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Address" maxOccurs="50" minOccurs="0">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:EnrollProviderAddress">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ProvAddressSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+				<xsd:unique name="AddressUniqueKeyCreate">
+					<xsd:selector xpath="tns:Address"/>
+					<xsd:field xpath="tns:AddressType"/>
+					<!-- SCTASK0033390; Adding EffectiveDate as unique key -->
+					<xsd:field xpath="tns:EffectiveDate"/>
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderContact" type="tns:ProviderContactList">
+						<xsd:unique name="ContactUniqueKeyCreate">
+							<xsd:selector xpath="tns:Contact"/>
+							<xsd:field xpath="tns:ContactType"/>
+						</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderApplication" type="tns:enrollProviderApplicationList">
+					<xsd:unique name="ApplicationUniqueKeyCreate">
+							<xsd:selector xpath="tns:Application"/>
+							<xsd:field xpath="tns:ApplicationId"/>
+					</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAlternateIdentifiers" type="tns:ProviderAlternateIdList">
+					<xsd:unique name="AlternateIdentifierUniqueKeyCreate">
+						<xsd:selector xpath="tns:AlternateIdentifier"/>
+						<xsd:field xpath="tns:AlternateIdType"/>
+						<xsd:field xpath="tns:AlternateId"/>
+						<!-- STRY0011038; Adding EffectiveDate as unique key -->
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderType" type="tns:ProviderTypeList">
+					<xsd:unique name="TypeUniqueKeyCreate">
+						<xsd:selector xpath="tns:Type"/>
+						<xsd:field xpath="tns:ProviderTypeCode"/>
+					</xsd:unique>
+			</xsd:element>			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAffiliations" type="tns:ProviderAffiliationList">
+						<xsd:unique name="AffiliationsUniqueKeyCreate">
+							<xsd:selector xpath="tns:Affiliations"/>
+							<xsd:field xpath="tns:ProviderAffiliationTypeCode"/>				
+							<xsd:field xpath="tns:AffiliatedProviderId"/>							
+							<!-- STRY0011038; Adding EffectiveDate as unique key -->
+							<xsd:field xpath="tns:EffectiveDate"/>
+						</xsd:unique>
+			</xsd:element>	
+			<!--Provider Ownership change -->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderOwnerships">
+                         <xsd:complexType>
+                          <xsd:sequence>
+                           <xsd:element maxOccurs="500" minOccurs="0" name="ProviderOwnership" type="tns:ProviderOwnershipList"/>
+                           </xsd:sequence>
+                         </xsd:complexType>
+			 <!-- CR166 Start: Unique key contraints for Owner SSN and OrgTaxId-->
+			 <!-- PROGCR306: Add OwnerType field as unique contraint along with OrgTaxId -->
+				<xsd:unique name="OwnerOrgTaxIdNumberUniqueKeyCreate">
+						<xsd:selector xpath="tns:ProviderOwnership"/>
+						<xsd:field xpath="tns:OwnershipDetails/tns:OwnerType"/>
+						<xsd:field xpath="tns:OwnershipDetails/tns:OwnerOrganization/tns:OrgTaxIdNumber"/>
+				</xsd:unique>
+				<xsd:unique name="OwnerSSNUniqueKeyCreate">
+						<xsd:selector xpath="tns:ProviderOwnership"/>
+						<xsd:field xpath="tns:OwnershipDetails/tns:OwnerIndividual/tns:SSN"/>
+				</xsd:unique>
+			<!--CR166 End-->
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="OwnerRelationship" type="tns:OwnerRelationshipList">
+						<!-- OH PROGCR305: changing the unique Key for OwnerRelationship element -->
+						<xsd:unique name="RelationshipUniqueKeyCreate1">
+							<xsd:selector xpath="tns:Relationship"/>
+							<xsd:field xpath="tns:RelationType"/>
+							<xsd:field xpath="tns:Owner1SSN"/>
+							<xsd:field xpath="tns:Owner2SSN"/>
+						</xsd:unique>
+						<xsd:unique name="RelationshipUniqueKeyCreate2">
+							<xsd:selector xpath="tns:Relationship"/>
+							<xsd:field xpath="tns:RelationType"/>
+							<xsd:field xpath="tns:Owner1OrgTaxIdNumber"/>
+							<xsd:field xpath="tns:Owner2OrgTaxIdNumber"/>
+						</xsd:unique>
+						<xsd:unique name="RelationshipUniqueKeyCreate3">
+							<xsd:selector xpath="tns:Relationship"/>
+							<xsd:field xpath="tns:RelationType"/>
+							<xsd:field xpath="tns:Owner1SSN"/>
+							<xsd:field xpath="tns:Owner2OrgTaxIdNumber"/>
+						</xsd:unique>
+						<xsd:unique name="RelationshipUniqueKeyCreate4">
+							<xsd:selector xpath="tns:Relationship"/>
+							<xsd:field xpath="tns:RelationType"/>
+							<xsd:field xpath="tns:Owner1OrgTaxIdNumber"/>
+							<xsd:field xpath="tns:Owner2SSN"/>
+						</xsd:unique>
+						<xsd:unique name="RelationshipUniqueKeyCreate5">
+							<xsd:selector xpath="tns:Relationship"/>
+							<xsd:field xpath="tns:RelationType"/>
+							<xsd:field xpath="tns:Owner2SSN"/>
+							<xsd:field xpath="tns:Owner2OrgTaxIdNumber"/>
+						</xsd:unique>
+						<xsd:unique name="RelationshipUniqueKeyCreate6">
+							<xsd:selector xpath="tns:Relationship"/>
+							<xsd:field xpath="tns:RelationType"/>
+							<xsd:field xpath="tns:Owner1OrgTaxIdNumber"/>
+							<xsd:field xpath="tns:Owner1SSN"/>
+						</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderManagedEmployees" type="tns:ProviderManagedEmployeesList">
+						<xsd:unique name="ProviderManagedEmployeesUniqueKeyCreate">
+							<xsd:selector xpath="tns:ProviderManagedEmployee"/>
+							<!-- SCTASK0033390; FI-198 Defect fix modified the SSN tag below -->
+							<xsd:field xpath="tns:ManagedEmployee/tns:SSN"/>
+						</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderBusinessStatus" type="tns:ProviderBusinessStatusList">
+						<xsd:unique name="BusinessStatusUniqueKeyCreate">
+							<xsd:selector xpath="tns:BusinessStatus"/>
+							<xsd:field xpath="tns:BusinessStatusCode"/>
+							<xsd:field xpath="tns:EffectiveDate"/>
+						</xsd:unique>
+			</xsd:element>	
+						<!--End of Provider Ownership change -->
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTaxonomyClassification" type="tns:TaxonomyClassificationList">  <!--Added for TMSIS reporting-->
+						<xsd:unique name="TaxonomyClassificationUniqueKeyCreate">
+							<xsd:selector xpath="tns:TaxonomyClassification"/>
+							<xsd:field xpath="tns:ClassificationTypeCode"/>
+						</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderProgramAffiliations" type="tns:ProgramAffiliationsList">  <!--Added for TMSIS reporting-->
+						<xsd:unique name="ProgramAffiliationUniqueKeyCreate">
+							<xsd:selector xpath="tns:ProgramAffiliation"/>
+							<xsd:field xpath="tns:AffiliatedProgramId"/>
+							
+							<!-- STRY0011038; Adding EffectiveDate as unique key -->
+							<xsd:field xpath="tns:EffectiveDate"/>
+						</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderEFTEnrollment" type="tns:EFTEnrollmentList">
+						<xsd:unique name="EFTEnrollmentUniqueKeyCreate">
+							<xsd:selector xpath="tns:EFTEnrollment"/>
+							<xsd:field xpath="tns:EFTEnrollmentId"/>
+							<!-- SCTASK0033390; Removed EffectiveDate as unique key, because EFTEnrollmentId is the Unique identifier for this Node-->
+						</xsd:unique>
+			</xsd:element>
+			
+			<!--STRY0010932: OH- New provider field changes, OH new node elements-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderServices" type="tns:ProviderServicesList">
+			<xsd:unique name= "ServicesUniqueKeyCreate">
+					<xsd:selector xpath= "tns:Services"/>
+					<xsd:field xpath= "tns:ProviderServiceID"/>
+				</xsd:unique>
+			</xsd:element>
+			
+			<!--STRY0010932: OH- New provider field changes, OH new node elements-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderCHOP" type="tns:ProviderCHOPList">
+				<xsd:unique name= "CHOPUniqueKeyCreate">
+					<xsd:selector xpath= "tns:CHOP"/>
+					<xsd:field xpath= "tns:MedicaidProviderSellerId"/>
+				</xsd:unique>
+			</xsd:element>
+			
+			<!--STRY0010932: OH- New provider field changes, OH new node elements-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAttestations" type="tns:ProviderAttestationsList">
+			<xsd:unique name= "AttestationsUniqueKeyCreate">
+					<xsd:selector xpath= "tns:Attestations"/>
+					<xsd:field xpath= "tns:ProvAttestationCode"/>
+					<xsd:field xpath= "tns:ProvDateSigned"/>
+				</xsd:unique>
+			</xsd:element>
+			
+			<!--STRY0010932: OH- New provider field changes, OH new node elements-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderLanguage" type="tns:ProviderLanguageList">
+			<xsd:unique name= "LanguagesUniqueKeyCreate">
+					<xsd:selector xpath= "tns:Languages"/>
+					<xsd:field xpath= "tns:Language"/>
+				</xsd:unique>
+			</xsd:element>
+			
+			<!--STRY0010932: OH- New provider field changes, OH new node elements-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderReviews" type="tns:ProviderReviewsList">
+			<xsd:unique name= "ReviewUniqueKeyCreate">
+					<xsd:selector xpath= "tns:Review"/>
+					<xsd:field xpath= "tns:ProviderReviewID"/>
+				</xsd:unique>
+			</xsd:element>
+			<!--Added for HMP-3889 Changes start. Added ProviderIndicator: Start-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderIndicator" type="tns:ProviderIndicatorList">
+					<xsd:unique name="IndicatorUniqueKeyCreate">
+						<xsd:selector xpath="tns:Indicator"/>
+						<xsd:field xpath="tns:IndicatorType"/>
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>
+			<!--Added for HMP-3889 Changes end. Added ProviderIndicator: End--> 
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderServiceLocation">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="500" minOccurs="0" name="ServiceLocation" type="tns:EnrollProviderServiceLocation">
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+						<xsd:unique name="ServiceLocationUniqueKeyCreate">
+							<xsd:selector xpath="tns:ServiceLocation"/>
+							<xsd:field xpath="tns:LocationCode"/>
+							
+							<!-- STRY0011038; Adding EffectiveDate as unique key -->
+							<xsd:field xpath="tns:EffectiveDate"/>
+						</xsd:unique>
+			</xsd:element>			
+		</xsd:sequence>                            					         
+	</xsd:complexType> 
+	<xsd:complexType name="EnrollProviderDemographics">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+			<!--STRY0010946:Increasing ProviderId length from 20 to 71-->
+			<xsd:element minOccurs="1" name="ProviderId" type="tns:string20"/>
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<xsd:element minOccurs="0" name="TaxId" type="tns:String9"/>
+			<!--HMP-2964 (HEAL-17628) changes end-->
+			<!--STRY0010889:XSD ODS Discrepancies fix:Start-->
+			<xsd:element minOccurs="0" name="ProviderRoleCode" type="tns:String50"/>   <!--Change by shivi-->
+			<!--STRY0010889:XSD ODS Discrepancies fix:End-->
+			<xsd:element minOccurs="0" name="NationalProviderIdentifier" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="FirstName" type="tns:String40"/>
+			<xsd:element minOccurs="0" name="MiddleName" type="tns:String40"/>
+			<xsd:element minOccurs="0" name="LastName" type="tns:String40"/>
+			<!--STRY0010932: Length increased to 15-->
+			<xsd:element minOccurs="0" name="Prefix" type="tns:String15"/>   <!--Change by shivi-->
+			<xsd:element minOccurs="0" name="Suffix" type="tns:String10"/>
+			<!--HMP-5312:Updating Type from 'String09' to 'String9' -->
+			<xsd:element minOccurs="0" name="SSN" type="tns:String09"/>
+			<xsd:element minOccurs="0" name="Gender" type="tns:String50"/>
+			<xsd:element minOccurs="1" name="EntityType" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="OrganizationBusinessName" type="tns:String100"/>
+			<!--HMP-2964 (HEAL-17628) changes start-->   
+			<xsd:element minOccurs="0" name="LegalProviderName" type="tns:String100"/>
+			<!--HMP-2964 (HEAL-17628) changes end-->
+			<xsd:element minOccurs="0" name="ProviderBusinessName" type="tns:String100"/>  <!--TMSIS field-->
+			<xsd:element minOccurs="0" name="ProviderTaxName" type="tns:String100"/>  <!--TMSIS field-->
+			<xsd:element minOccurs="0" name="TeachingIndicator" type="tns:String1"/>  <!--TMSIS field-->
+			<xsd:element minOccurs="0" name="OwnershipCode" type="tns:String50"/>  <!--TMSIS field-->
+			<!--STRY0010932: OH new elements-->
+			<xsd:element minOccurs="0" name="PracticeTypeCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProviderProfitStatusCode" type="tns:String50"/>  <!--TMSIS field-->
+			<xsd:element minOccurs="0" name="NewPatientIndicator" type="tns:String1"/>  <!--TMSIS field-->
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<xsd:element minOccurs="0" name="EnrollmentType" type="tns:String50"/>     <!--till here-->
+			<!--HMP-2964 (HEAL-17628) changes end-->
+
+
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="DateOfBirth" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="DateOfDeath" type="tns:DateType"/>
+			<!--HMP-2967:Adding ProviderRace-->
+			<xsd:element minOccurs="0" name="Race" type="tns:String50"/>
+			<!--HMP-2965 (HEAL-15764) changes start-->
+			<xsd:element minOccurs="0" name="MedicareInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="PCPStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="PCPTermDate" type="tns:DateType"/>
+			<!--HMP-2965 (HEAL-15764) changes end-->
+			<!--STRY0010932: OH new elements-->
+			<xsd:element minOccurs="0" name="BirthCountry" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="BirthCity" type="tns:String50"/> 
+			<xsd:element minOccurs="0" name="BirthState" type="tns:String50"/> 
+			<xsd:element minOccurs="0" name="ProvRiskLevel" type="tns:String20"/> 
+			<xsd:element minOccurs="0" name="ProvDirectorySearchIndicator" type="tns:String1"/> 
+			<xsd:element minOccurs="0" name="PaymentTypeCode" type="tns:String50"/> 
+			<!--STRY0010932: OH end of new elements-->
+			<!-- Changed for HMP-3495 (HEAL-17380) start-->
+			<xsd:element minOccurs="0" name="ProvIHSAssoCode" type="tns:String50"/>   
+			<!-- Changed for HMP-3495 (HEAL-17380) end-->
+			<xsd:element minOccurs="0" name="ProvDemographicsSrcKey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>                           					             
+
+	<xsd:complexType name="EnrollProviderAddress">                            					         
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+			<xsd:element minOccurs="1" name="AddressType" type="tns:string50"/>
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<!--STRY0010932: Length increased to 60-->
+			<xsd:element minOccurs="0" name="AddressLine1" type="tns:String60"/>
+			<!--HMP-2964 (HEAL-17628) changes end-->
+			<!--STRY0010932: Length increased to 60-->
+			<xsd:element minOccurs="0" name="AddressLine2" type="tns:String60"/>
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<!--STRY0010932: Length increased to 50-->
+			<xsd:element minOccurs="0" name="City" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="State" type="tns:String50"/>
+			<!--HMP-3408 (HEAL-19413) changes start-->
+			<xsd:element minOccurs="0" name="CountyCode" type="tns:String50"/>
+			<!--HMP-3408 (HEAL-19413) changes end-->
+			<xsd:element minOccurs="0" name="ZipCode5" type="tns:String5"/>
+			<!--HMP-2964 (HEAL-17628) changes end-->
+			<xsd:element minOccurs="0" name="ZipCode4" type="tns:String4"/>
+			<xsd:element minOccurs="0" name="Country" type="tns:String20"/>
+			<xsd:element minOccurs="0" name="BorderStateIndicator" type="tns:String1"/> <!--TMSIS field-->
+			<!--STRY0010932: OH New elements mapping for Address-->
+			<xsd:element minOccurs="0" name="AddressNameTypeIndicator" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressName" type="tns:String100"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressFirstName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressMiddleName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressLastName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumber1" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumberExt1" type="tns:String5"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumber2" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumberExt2" type="tns:String5"/>
+			<xsd:element minOccurs="0" name="ProvOrgFaxNumber1" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvOrgFaxNumber2" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvAddressContactName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvEmail" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="HandicapAccessibilityIndicator" type="tns:String1"/>
+			<!--STRY0010932: end of new Address elements for OH-->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<!--HMP-3992: Added Latitude and Longitude-->
+			<xsd:element minOccurs="0" name="Latitude" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="Longitude" type="tns:String50"/>
+		</xsd:sequence>  
+	</xsd:complexType>
+	<xsd:complexType name="EnrollProviderLicense">                            					         
+		<xsd:sequence>   
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+			<xsd:element minOccurs="1" name="LicenseType" type="tns:string50"/>
+			<!--STRY0010889:XSD ODS Discrepancies fix:Start-->
+			<xsd:element minOccurs="1" name="LicenseNumber" type="tns:string25"/>
+			<!--STRY0010889:XSD ODS Discrepancies fix:End-->
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<xsd:element minOccurs="0" name="LicenseeStateCode" type="tns:String50"/>
+			<!--HMP-2964 (HEAL-17628) changes end-->
+			<xsd:element minOccurs="0" name="LicenseIssueBoardNotes" type="tns:String40"/>
+			<xsd:element minOccurs="0" name="Status" type="tns:String20"/>
+			<xsd:element minOccurs="0" name="StatusReason" type="tns:String20"/>
+			<!--STRY0010932: Start of OH addition of new elements-->
+			<xsd:element minOccurs="0" name="CountyCode" type="tns:String50"/>
+			<!--STRY0010932: End of OH addition of new elements-->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>                           					             
+	<xsd:complexType name="EnrollProviderServiceLocation">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<xsd:element minOccurs="0" name="LocationName" type="tns:String100"/>
+			<!--HMP-2964 (HEAL-17628) changes end-->
+			<xsd:element minOccurs="1" name="LocationCode" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="OrgStateOwnedIndicator" type="tns:String1"/>
+			<!--HMP-4010: Added RAPrintIndicator-->
+			<xsd:element minOccurs="0" name="RAPrintIndicator" type="tns:String1"/>
+			<!--Start of changes for HMP-4145 -->
+			<xsd:element minOccurs="0" name="AllAgesSeen" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="MaxAgeSeen" type="tns:Int3"/>
+			<xsd:element minOccurs="0" name="MinAgeSeen" type="tns:Int3"/>
+			<!--End of changes for HMP-4145 -->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ServiceLocationAddress">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Address" maxOccurs="200" minOccurs="0">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderAddressSvc">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="SvcLctnAdrsSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+							<xsd:unique name="ServiceLocationAddressUniqueKeyCreate">
+								<xsd:selector xpath="tns:Address"/>
+								<xsd:field xpath="tns:AddressType"/>
+								<xsd:field xpath="tns:EffectiveDate"/>
+							</xsd:unique>
+			</xsd:element>
+			<xsd:element name="ServiceLocationContact" maxOccurs="1" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Contact" maxOccurs="600" minOccurs="0">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderContact">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="SvcLctnCntctSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+					<xsd:unique name="ServiceLocationContactUniqueKeyCreate">
+						<xsd:selector xpath="tns:Contact"/>
+						<xsd:field xpath="tns:ContactType"/>
+					</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderLicense">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="License" maxOccurs="200" minOccurs="0">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:EnrollProviderLicense">
+										<xsd:sequence>
+										<!--STRY0010932: OH- New provider field changes. Start of License Certifications -->
+											<xsd:element maxOccurs="1" minOccurs="0" name="LicenseCertifications" type="tns:LicenseCertificationsList">
+											<xsd:unique name= "CertificationsUniqueKeyCreate">
+												<xsd:selector xpath= "tns:Certifications"/>
+												<xsd:field xpath= "tns:CertificationId"/>
+											</xsd:unique>	
+											</xsd:element>
+											<!-- OH End of License Certifications -->
+											<xsd:element minOccurs="0" name="ProvLicenseSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+					<xsd:unique name="LicenseUniqueKeyCreate">
+						<xsd:selector xpath="tns:License"/>
+						<xsd:field xpath="tns:LicenseType"/>
+						<!-- STRY0011038; Adding EffectiveDate as unique key -->
+						<xsd:field xpath="tns:EffectiveDate"/>
+							<xsd:field xpath="tns:LicenseNumber"/>
+					</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderCertification" type="tns:ProviderCertificationList">
+								<xsd:unique name="CertificationUniqueKeyCreate">
+									<xsd:selector xpath="tns:Certification"/>
+									<xsd:field xpath="tns:CertificateType"/>
+									<!-- STRY0011038; Adding EffectiveDate as unique key -->
+									<xsd:field xpath="tns:EffectiveDate"/>
+								</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderIdentifier" type="tns:ProviderIdentifierList">		<!--Added for TMSIS reporting-->
+								<xsd:unique name="IdentifierUniqueKeyCreate">
+									<xsd:selector xpath="tns:Identifier"/>
+									<xsd:field xpath="tns:IdentifierTypeCode"/>
+									<!-- STRY0011038; Adding EffectiveDate as unique key -->
+									<xsd:field xpath="tns:EffectiveDate"/>
+								</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderFacility" type="tns:ProviderFacilityList">   <!--Added for TMSIS reporting-->
+								<xsd:unique name="FacilityUniqueKeyCreate">
+									<xsd:selector xpath="tns:Facility"/>
+									<xsd:field xpath="tns:BedTypeCode"/>
+								</xsd:unique>
+			</xsd:element>
+					
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTaxonomy" type="tns:ProviderTaxonomyList">
+					<xsd:unique name="TaxonomyUniqueKeyCreate">
+						<xsd:selector xpath="tns:Taxonomy"/>
+						<xsd:field xpath="tns:TaxonomyCode"/>
+						<!-- STRY0011038; Adding EffectiveDate as unique key -->
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderSpecialty" type="tns:ProviderSpecialtyList">
+								<xsd:unique name="SpecialtyUniqueKeyCreate">
+									<xsd:selector xpath="tns:Specialty"/>
+									<xsd:field xpath="tns:SpecialtyCode"/>
+									<!-- STRY0011038; Adding EffectiveDate as unique key -->
+									<xsd:field xpath="tns:EffectiveDate"/>
+								</xsd:unique>
+			</xsd:element>			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderType" type="tns:ProviderTypeList">
+					<xsd:unique name="TypeUniqueKeyCreateSvcLocn">
+						<xsd:selector xpath="tns:Type"/>
+						<xsd:field xpath="tns:ProviderTypeCode"/>
+					</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderRestriction" type="tns:EnrollProviderRestrictionList">
+					<xsd:unique name="RestrictionUniqueKeyCreate">
+						<xsd:selector xpath="tns:Restriction"/>
+						<xsd:field xpath="tns:ReviewReason"/>
+						<xsd:field xpath="tns:ReviewType"/>
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>
+			
+			<!--STRY0010932: OH- New provider field changes. Start of OH new node-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="SiteVisits" type="tns:VisitList">
+				<xsd:unique name="VisitUniqueKeyCreate">
+					<xsd:selector xpath="tns:Visit"/>
+					<xsd:field xpath="tns:SiteVisitID"/>
+				</xsd:unique>
+			</xsd:element>
+			
+			<!--STRY0010932: OH- New provider field changes. Start of OH new node-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTraining" type="tns:ProviderTrainingList">
+			<xsd:unique name="TrainingUniqueKeyCreate">
+					<xsd:selector xpath="tns:Training"/>
+					<xsd:field xpath="tns:TrainingId"/>
+				</xsd:unique>
+			</xsd:element>
+			<!--Added for HMP-3889 changes. Added ProviderIndicator: Start-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderIndicator">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Indicator">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:IndicatorList">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ProvIndicatorSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+					<xsd:unique name="ServicecLocationIndicatorUniqueKeyCreate">
+						<xsd:selector xpath="tns:Indicator"/>
+						<xsd:field xpath="tns:IndicatorType"/>
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>
+			<!--Added for HMP-3889 changes. Added ProviderIndicator: End-->	
+			
+			<xsd:element minOccurs="0" name="ProvSvcLocationSrcKey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType> 
+
+	<xsd:complexType name="enrollProviderApplicationList">                            					         
+		<xsd:sequence> 
+			<xsd:element maxOccurs="25" minOccurs="0" name="Application" type="tns:enrollProviderApplication"/>	
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+
+	<xsd:complexType name="enrollProviderApplication">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<xsd:element minOccurs="1" name="ApplicationId" type="tns:String20"/>
+			<xsd:element minOccurs="0" name="ApplicationCreatedDate" type="tns:DateType"/>
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<xsd:element minOccurs="0" name="ApprovalDate" type="tns:DateType"/>
+			<!--HMP-2964 (HEAL-17628) changes end-->
+			<xsd:element minOccurs="0" name="StatePlanEnrollCode" type="tns:String50"/>   <!--TMSIS field-->
+			<xsd:element minOccurs="0" name="EnrollMethodCode" type="tns:String50"/>     <!--TMSIS field-->
+			<!--HMP-2965 (HEAL-15764) changes start-->
+			<xsd:element minOccurs="0" name="ProvEnrollStatusCode" type="tns:String50"/> 
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="CountyCode" type="tns:String50"/>
+			<!--HMP-2965 (HEAL-15764) changes end-->
+			<!--STRY0010932: OH addition of new elements-->
+			<xsd:element minOccurs="0" name="NonMedicaidApplicationProviderType" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="AdditionalApplicationId" type="tns:String20"/>			
+			<xsd:element minOccurs="0" name="ApplicationType" type="tns:String75"/>
+			<xsd:element minOccurs="0" name="ApplicationStatus" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ApplicationLegalStatus" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ApplicationFeeConfirmation" type="tns:String50"/>
+			<!--OMO-1670: Increased the Length of SingleSignOnAssignedID and SingleSignOnSelectedID to 255 -->
+			<xsd:element minOccurs="0" name="SingleSignOnAssignedID" type="tns:String255"/>
+			<xsd:element minOccurs="0" name="SingleSignOnSelectedID" type="tns:String255"/>
+			<xsd:element minOccurs="0" name="AdditionalUserID" type="tns:String30"/>
+			<xsd:element minOccurs="0" name="SingleSignOnRole" type="tns:String30"/>
+			<!--OMO-1670: Increased the Length of EmailAddress to 255 -->
+			<xsd:element minOccurs="0" name="EmailAddress" type="tns:String255"/>
+			<!--STRY0010932: End of OH addition of new elements-->
+			<xsd:element minOccurs="0" name="ProvApplicationSrcKey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	
+	<!--Added for HMP-3889 Changes start. Added ProviderIndicator: Start-->
+	<xsd:complexType name="ProviderIndicatorList">                            					         
+		<xsd:sequence> 
+			<xsd:element maxOccurs="50" minOccurs="0" name="Indicator">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:IndicatorList">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvIndicatorSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="IndicatorList">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="1" name="IndicatorType" type="tns:string50"/>   
+			<xsd:element minOccurs="1" name="IndicatorDetail" type="tns:string50"/> 
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>     
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--Added for HMP-3889 Changes end. Added ProviderIndicator: End-->
+	
+	<!-- End of Create provider schema -->	
+
+	<!-- Start of common objects for create, update-->
+	<xsd:complexType name="ServiceLocationContactList">                            					         
+		<xsd:sequence> 
+			<xsd:element name="Contact" maxOccurs="600" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProviderContact">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="SvcLctnCntctSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="ProviderContactList">                            					         
+		<xsd:sequence> 
+			<xsd:element name="Contact" maxOccurs="10" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProviderContact">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvContactSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                           					         
+	</xsd:complexType>		
+	<xsd:complexType name="ProviderCertificationList">                            					         
+		<xsd:sequence> 
+			<xsd:element name="Certification" maxOccurs="100" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProviderCertification">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvCrtfctnSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="ProviderAffiliationList">                            					         
+		<xsd:sequence> 
+				<!--PNM integration changed from 300 to 10000-->
+				<!-- SCTASK0033390; FI Integration change from 10000 to 50000 -->
+			<xsd:element maxOccurs="50000" minOccurs="0" name="Affiliations">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProviderAffiliation">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvAffiliationSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+
+	<xsd:complexType name="ProviderTypeList">                            					         
+		<xsd:sequence> 
+			<xsd:element name="Type" maxOccurs="50" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProviderType">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvTypeSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="EnrollProviderRestrictionList">                            					         
+		<xsd:sequence> 
+			<xsd:element name="Restriction" maxOccurs="10" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:EnrollProviderRestriction">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvRestrictionSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="ProviderRestrictionList">                            					         
+		<xsd:sequence> 
+			<xsd:element name="Restriction" maxOccurs="10" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProviderRestriction">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvRestrictionSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="ProviderAlternateIdList">                            					         
+		<xsd:sequence>
+			<!-- SCTASK0033390; FI Integration change from 500 to 1000 -->
+			<xsd:element maxOccurs="1000" minOccurs="0" name="AlternateIdentifier">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProviderAlternateId">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvAlternateIdSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>	
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="ProviderTaxonomyList">                            					         
+		<xsd:sequence> 
+			<xsd:element name="Taxonomy" maxOccurs="100" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProviderTaxonomy">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvTxnmySrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="ProviderSpecialtyList">                            					         
+		<xsd:sequence> 
+			<xsd:element name="Specialty" maxOccurs="100" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProviderSpecialty">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvSpcltySrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--Provider Ownership change -->
+	<xsd:complexType name="ProviderOwnershipList">                            					         
+		<xsd:sequence> 
+			<xsd:element name="OwnershipDetails" maxOccurs="1" minOccurs="1">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:Owner">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvOwnrDtlSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="OwnerAddress">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Address" maxOccurs="2500" minOccurs="0">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:EnrollOwnerAddress">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ProvOwnrAdrsSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+					<xsd:unique name="OwnerAddressUniqueKeyCreate">
+						<xsd:selector xpath="tns:Address"/>
+						<xsd:field xpath="tns:AddressType"/>
+						
+						<!-- STRY0011038; Adding EffectiveDate as unique key -->
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="UpdateProviderOwnershipList">                            					         
+		<xsd:sequence> 
+			<xsd:element name="OwnershipDetails" maxOccurs="1" minOccurs="1">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:Owner">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvOwnrDtlSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="OwnerAddress">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Address" maxOccurs="2500" minOccurs="0">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:UpdateOwnerAddress">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ProvOwnrAdrsSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+					<xsd:unique name="OwnerAddressUniqueKeyUpdate">
+						<xsd:selector xpath="tns:Address"/>
+						<xsd:field xpath="tns:AddressType"/>
+						<!-- STRY0011038; Adding EffectiveDate as unique key -->
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>
+		</xsd:sequence>                              					         
+	</xsd:complexType>
+	<xsd:complexType name="OwnerRelationshipList">
+		<xsd:sequence>
+			<xsd:element name="Relationship" maxOccurs="2500" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:OwnerRelationship">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="OwnrRltnshpSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ProviderManagedEmployeesList">
+		<xsd:sequence> 
+			<xsd:element maxOccurs="100000" minOccurs="0" name="ProviderManagedEmployee">
+				<xsd:complexType>
+					<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="ManagedEmployee">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ManageEmployee">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvMngdEmplySrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>	
+			<xsd:element maxOccurs="1" minOccurs="0" name="ManagedEmployeeAddress">
+				<!--<xsd:sequence>
+				<xsd:element maxOccurs="1" minOccurs="0" name="Address">-->
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Address">
+					<xsd:complexType>
+							<!--<xsd:sequence>-->
+						<xsd:complexContent>
+							<xsd:extension base="tns:EnrollOwnerAddress">
+								<xsd:sequence>
+									<xsd:element minOccurs="0" name="ProvOwnrAdrsSrcKey" type="tns:String36"/>
+								</xsd:sequence>
+							</xsd:extension>
+						</xsd:complexContent>
+				<!--</xsd:sequence>-->
+				</xsd:complexType>
+				</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+				<!--</xsd:element>
+				</xsd:sequence>-->
+				<!-- SCTASK0033390; Adding Unique Constraint for ManagedEmployeeAddress -->
+				<xsd:unique name="ManagedEmployeeAddressUniqueKeyCreate">
+					<xsd:selector xpath="tns:Address"/>
+					<xsd:field xpath="tns:AddressType"/>	
+					<xsd:field xpath="tns:EffectiveDate"/>
+				</xsd:unique>
+			</xsd:element>
+			</xsd:sequence>
+			</xsd:complexType>
+				</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="ProviderBusinessStatusList">
+		<xsd:sequence> 
+			<xsd:element name="BusinessStatus" maxOccurs="100" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:BusinessStatus">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvBsnsStatusSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of Provider Ownership change -->
+	<!--Start of TMSIS change -->
+	<xsd:complexType name="ProviderIdentifierList">
+		<xsd:sequence> 
+			<xsd:element name="Identifier" maxOccurs="200" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:Identifier">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvIdentifierSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>	
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="TaxonomyClassificationList">
+		<xsd:sequence> 
+			<xsd:element name="TaxonomyClassification" maxOccurs="50" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:TaxonomyClassification">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvTxnmyClsfctnSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="ProgramAffiliationsList">
+		<xsd:sequence> 
+			<xsd:element name="ProgramAffiliation" maxOccurs="200" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProgramAffiliation">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="PgmAffltnSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>	
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	
+	
+	<xsd:complexType name="EFTEnrollmentList">
+		<xsd:sequence> 
+			<xsd:element name="EFTEnrollment" maxOccurs="50" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:EFTEnrollment">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvEFTEnrollmentSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>	
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	
+	
+	<xsd:complexType name="ProviderFacilityList">
+		<xsd:sequence> 
+			<xsd:element name="Facility" maxOccurs="200" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:Facility">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvFacilitySrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	
+	<!--STRY0010932: OH- New provider field changes. OH ProviderServiceList start-->
+	<xsd:complexType name="ProviderServicesList">
+		<xsd:sequence> 
+			<xsd:element maxOccurs="1000" minOccurs="0" name="Services">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:Services">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="Provsvcsrckey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of OH ProviderServiceList-->
+	
+	<!--STRY0010932: OH- New provider field changes. Start of OH VisitsList-->
+	<xsd:complexType name="VisitList">                            					         
+		<xsd:sequence> 
+			<xsd:element maxOccurs="20" minOccurs="0" name="Visit">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:Visit">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="Provvstsrckey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of VisitList-->
+	
+	<!--STRY0010932: OH- New provider field changes. Start of ProviderCHOPList-->
+	<xsd:complexType name="ProviderCHOPList">                            					         
+		<xsd:sequence> 
+			<xsd:element maxOccurs="10" minOccurs="0" name="CHOP">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:CHOP">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="Provchopsrckey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--End of ProviderCHOPList-->
+	
+	<!--Start of ProviderAttestationList-->
+	<xsd:complexType name="ProviderAttestationsList">                            					         
+		<xsd:sequence> 
+			<xsd:element maxOccurs="200" minOccurs="0" name="Attestations">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:Attestations">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="Provattssrckey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of ProviderAttestationList-->
+	
+	<!--Start of ProviderTrainingList-->
+	<xsd:complexType name="ProviderTrainingList">                            					         
+		<xsd:sequence> 
+			<xsd:element maxOccurs="500" minOccurs="0" name="Training">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:Training">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="Provtrnsrckey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of ProviderTrainingList-->
+	
+	<!--Start of ProviderLanguageList-->
+	<xsd:complexType name="ProviderLanguageList">                            					         
+		<xsd:sequence> 
+		<!--PNM Integration changed from 10 to 500-->
+			<xsd:element maxOccurs="500" minOccurs="0" name="Languages">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:Languages">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="Provlngsrccode" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of ProviderLanguageList-->
+	
+	<!--Start of ProviderReviewsList-->
+	<xsd:complexType name="ProviderReviewsList">                            					         
+		<xsd:sequence> 
+			<xsd:element maxOccurs="10" minOccurs="0" name="Review">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:Review">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="Provrvwsrccode" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of ProviderReviewsList-->
+	
+	<!--STRY0010932: OH- New provider field changes. Start of LicenseCertificationsList-->
+	<xsd:complexType name="LicenseCertificationsList">                            					         
+		<xsd:sequence> 
+			<xsd:element maxOccurs="12" minOccurs="0" name="Certifications">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:Certifications">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvLicenseCertSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of LicenseCertificationsList-->
+	
+	<!--End of TMSIS change -->
+	<xsd:complexType name="ProviderContact">                            					         
+		<xsd:sequence>                 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+			<xsd:element minOccurs="1" name="ContactType" type="tns:string50"/>
+			<!--CR166 Start:ContactDetail length changed from 100 to 55 -->
+			<xsd:element minOccurs="0" name="ContactDetail" type="tns:String55"/>
+			<!--CR166 End-->
+			<xsd:element minOccurs="0" name="ContactInstruction" type="tns:String255"/>
+			<xsd:element minOccurs="0" name="PreferredContactIndicator" type="tns:String1"/>
+		</xsd:sequence>                           					         
+	</xsd:complexType>	
+	<xsd:complexType name="ProviderAffiliation">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+			<xsd:element minOccurs="1" name="AffiliatedProviderId" type="tns:string71"/>
+			<xsd:element minOccurs="0" name="NPI" type="tns:String10"/>
+			<xsd:element minOccurs="1" name="ProviderAffiliationTypeCode" type="tns:string50"/>
+			<!--STRY0010932: Start of OH addition of new elements-->
+			<xsd:element minOccurs="0" name="AdditionalInfo1" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="AdditionalInfo2" type="tns:String50"/>
+			<!--STRY0010932: End of OH addition of new elements-->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="ProviderCertification">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+			<xsd:element minOccurs="0" name="CertificateNumber" type="tns:String45"/>
+			<xsd:element minOccurs="1" name="CertificateType" type="tns:string50"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType> 
+	<xsd:complexType name="ProviderTaxonomy">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+			<xsd:element minOccurs="1" name="TaxonomyCode" type="tns:string10"/>
+			<xsd:element minOccurs="0" name="PrimaryTaxonomyIndicator" type="tns:String1"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType> 
+	<xsd:complexType name="ProviderType">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+			<xsd:element minOccurs="1" name="ProviderTypeCode" type="tns:string50"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="EnrollProviderRestriction">                            					         
+		<xsd:sequence>
+         <xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50" />
+         <xsd:element minOccurs="1" name="ReviewReason" type="tns:string50" />
+         <xsd:element minOccurs="1" name="ReviewType" type="tns:string50" />
+		 <xsd:element minOccurs="1" name="RestrictionClass" type="tns:string50" />
+		 <xsd:element minOccurs="0" name="ClaimType" type="tns:String20" />
+		 <!--HMP-3408 (HEAL-19413) changes start-->
+		 <xsd:element minOccurs="0" name="IncludeExcludeIndicator" type="tns:String1" />
+		 <!--HMP-3408 (HEAL-19413) changes end-->
+		 <xsd:element minOccurs="0" name="LowCode" type="tns:String20" />		 
+		 <xsd:element minOccurs="0" name="HighCode" type="tns:String20" />
+		 <xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType" />
+         <xsd:element minOccurs="0" name="EndDate" type="tns:DateType" />
+      </xsd:sequence>                           					         
+	</xsd:complexType>
+	<xsd:complexType name="ProviderRestriction">                            					         
+		<xsd:sequence>
+         <xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50" />
+         <xsd:element minOccurs="1" name="ReviewReason" type="tns:string50" />
+         <xsd:element minOccurs="1" name="ReviewType" type="tns:string50" />
+		 <xsd:element minOccurs="0" name="RestrictionClass" type="tns:String50" />
+		 <xsd:element minOccurs="0" name="ClaimType" type="tns:String20" />
+		 <!--HMP-3408 (HEAL-19413) changes start-->
+		 <xsd:element minOccurs="0" name="IncludeExcludeIndicator" type="tns:String1" />
+		 <!--HMP-3408 (HEAL-19413) changes end-->
+		 <xsd:element minOccurs="0" name="LowCode" type="tns:String20" />		 
+		 <xsd:element minOccurs="0" name="HighCode" type="tns:String20" />
+		 <xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType" />
+         <xsd:element minOccurs="0" name="EndDate" type="tns:DateType" />
+      </xsd:sequence>                           					         
+	</xsd:complexType>
+
+	<xsd:complexType name="ProviderAlternateId">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+			<xsd:element minOccurs="1" name="AlternateIdType" type="tns:string50"/>    <!--Change by shivi-->
+			<xsd:element minOccurs="1" name="AlternateId" type="tns:string20"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>	
+	<xsd:complexType name="ProviderSpecialty">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->  
+			<!--STRY0010932: Start of OH addition of new elements-->
+			<xsd:element minOccurs="0" name="PrimarySpecialityIndicator" type="tns:String1"/>
+			<!--STRY0010932: End of OH addition of new elements-->
+			<xsd:element minOccurs="1" name="SpecialtyCode" type="tns:string3"/>
+			<!--SCTASK0032239: Start of CR96 addition of new Elements-->
+			<xsd:element minOccurs="0" name="SpecialityStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="SpecialityStatusReasonCode" type="tns:String50"/>
+			<!--SCTASK0032239: End of CR96 addition of new Elements-->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--Provider Ownership change -->
+	<xsd:complexType name="Owner">
+		<xsd:complexContent>
+			<xsd:extension base="tns:OwnerCommon">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+					<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+					<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+					<xsd:choice>
+						<xsd:element name="OwnerIndividual" maxOccurs="1" minOccurs="1">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:OwnerIndividual">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="OwnerIndvSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="OwnerOrganization" maxOccurs="1" minOccurs="1">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:OwnerOrganization">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="OwnerOrgSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:choice>
+				</xsd:sequence>  
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="OwnerRelationship">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+			<xsd:choice>
+			<!--DFCT0010264: SSN Datatype fix:Start-->
+			<!-- CR: OH Defectfix Updated the dattype to string09 -->
+				<xsd:element minOccurs="1" name="Owner1SSN" type="tns:string09"/>
+			<!--DFCT0010264: SSN Datatype fix:End-->
+				<xsd:element minOccurs="1" name="Owner1OrgTaxIdNumber" type="tns:string09"/>
+			</xsd:choice>
+			<xsd:choice>
+				<xsd:element minOccurs="0" name="Owner2SSN" type="tns:String09"/>
+				<xsd:element minOccurs="0" name="Owner2OrgTaxIdNumber" type="tns:String9"/>
+			</xsd:choice>
+			<!-- HMP-3749: Defect fix - Datatype corrected for mandatory field -->
+			<xsd:element minOccurs="1" name="RelationType" type="tns:string50"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+
+	<xsd:complexType name="OwnerIndividual">
+		<xsd:sequence>		
+			<xsd:element minOccurs="0" name="FirstName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="MiddleName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="LastName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="DateOfBirth" type="tns:DateType"/>
+			<!--DFCT0010264: SSN Datatype fix:Start-->
+			<!-- OH Defectfix: Updated the datatype to string09 -->
+			<xsd:element minOccurs="1" name="SSN" type="tns:string09"/>
+			<!--DFCT0010264: SSN Datatype fix:End-->
+			<!-- CR166 Start: Add Title-->	
+			<xsd:element minOccurs="0" name="Title" type="tns:String50"/>
+			<!-- CR166 End-->	
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OwnerOrganization">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="OwnerOrgName" type="tns:String100"/>
+			<xsd:element minOccurs="1" name="OrgTaxIdNumber" type="tns:string09"/>
+			<!-- CR166 Start: Add Title-->	
+			<xsd:element minOccurs="0" name="Title" type="tns:String50"/>
+			<!-- CR166 End-->
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ManageEmployee">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="FirstName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="MiddleName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="LastName" type="tns:String50"/>
+			<xsd:element minOccurs="1" name="ManageEmployeesType" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="OwnerAffiliationType" type="tns:String50"/>
+			<!-- CR166 Start: ManagedEmployeeInd corrected to accept empty values-->
+			<xsd:element minOccurs="0" name="ManageEmployeesInd" type="tns:OChar1"/>
+			<!-- CR166 End -->
+			<xsd:element minOccurs="0" name="DateOfBirth" type="tns:DateType"/>
+			<!--DFCT0010264: SSN Datatype fix:Start-->
+			<!-- OH Defect: Changing the datatype to string09 to enable the minimum length validation -->
+			<xsd:element minOccurs="1" name="SSN" type="tns:string09"/>
+			<!--DFCT0010264: SSN Datatype fix:End-->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+                         <xsd:element minOccurs="0" name="SanctionInd" type="tns:String1"/>
+                         <xsd:element minOccurs="0" name="SanctionExplain" type="tns:String500"/>
+                          <xsd:element minOccurs="0" name="RelationshipInd" type="tns:String1"/>
+                          <xsd:element minOccurs="0" name="CriminalOffenseInd" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="CriminalOffenseExplain" type="tns:String500"/>
+                           <xsd:element minOccurs="0" name="LicenseSuspendInd" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="LicenseSuspendExplain" type="tns:String200"/>
+                           <xsd:element minOccurs="0" name="PenaltyInd" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="PenaltyExplain" type="tns:String200"/>
+                           <xsd:element minOccurs="0" name="CntrlIntrstOthrProvEntityInd" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="CntrlIntrstOthrProvEntityExplain" type="tns:String200"/>
+                           <xsd:element minOccurs="0" name="OwnrSubcntrctrTrnxInd" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="OwnrSubcntrctrDetails" type="tns:String200"/>
+                             <xsd:element minOccurs="0" name="OwnrSubcntrctrBsnssTrnxInd" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="OwnrSubcntrctrBsnssTrnxDetails" type="tns:String200"/>
+                             <xsd:element minOccurs="0" name="TransactionAmount" type="tns:Decimal11-2"/>
+                         <xsd:element minOccurs="0" name="TransactionDate" type="tns:DateType"/>
+                           <xsd:element minOccurs="0" name="OwnerOutOfStateResidentIndicator" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="OwnerOutOfStateResidentExplain" type="tns:String200"/>
+                             <xsd:element minOccurs="0" name="OwnerStateFederalOffenseInd" type="tns:String1"/>
+                           <xsd:element minOccurs="0" name="OwnerStateFederalOffenseExplain" type="tns:String500"/>
+                           <xsd:element minOccurs="0" name="FingerprintStatusIndicator" type="tns:String20"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OwnerCommon">
+		<xsd:sequence>
+			<!-- PROGCR306: Make the OwnerType field as mandaotory -->
+			<xsd:element minOccurs="1" name="OwnerType" type="tns:string50"/>
+                        <xsd:element minOccurs="0" name="OwnerAffiliationType" type="tns:String50"/>                        
+			<xsd:element minOccurs="0" name="OwnPercentage" type="tns:String3"/>
+			<xsd:element minOccurs="0" name="SanctionInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="SanctionExplain" type="tns:String500"/>
+                        <xsd:element minOccurs="0" name="RelationshipInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="CriminalOffenseInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="CriminalOffenseExplain" type="tns:String500"/>
+			<xsd:element minOccurs="0" name="LicenseSuspendInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="LicenseSuspendExplain" type="tns:String200"/>
+			<xsd:element minOccurs="0" name="PenaltyInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="PenaltyExplain" type="tns:String200"/>
+			<!--OH new elements-->
+			<xsd:element minOccurs="0" name="CntrlIntrstOthrProvEntityInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="CntrlIntrstOthrProvEntityExplain" type="tns:String200"/>
+			<xsd:element minOccurs="0" name="OwnrSubcntrctrTrnxInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="OwnrSubcntrctrDetails" type="tns:String200"/>
+			<xsd:element minOccurs="0" name="OwnrSubcntrctrBsnssTrnxInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="OwnrSubcntrctrBsnssTrnxDetails" type="tns:String200"/>
+                        <xsd:element minOccurs="0" name="TransactionAmount" type="tns:Decimal11-2"/>
+                         <xsd:element minOccurs="0" name="TransactionDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="OwnerOutOfStateResidentIndicator" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="OwnerOutOfStateResidentExplain" type="tns:String200"/>
+                        <xsd:element minOccurs="0" name="OwnerStateFederalOffenseInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="OwnerStateFederalOffenseExplain" type="tns:String500"/>
+			<xsd:element minOccurs="0" name="FingerprintStatusIndicator" type="tns:String20"/>
+			<!--End of OH new elements-->
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="BusinessStatus">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="1" name="BusinessStatusCode" type="tns:string50"/>
+			<!--STRY0010932: Start of OH addition of new elements-->
+			<xsd:element minOccurs="0" name="EnrollmentBusinessStatusReasonCode" type="tns:String50"/>
+			<!--STRY0010932: Start of OH addition of new elements-->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<!--HMP-2964 (HEAL-17628) changes end-->
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="EnrollOwnerAddress">                            					         
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+			<xsd:element minOccurs="1" name="AddressType" type="tns:string50"/>
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<xsd:element minOccurs="0" name="AddressLine1" type="tns:String60"/>
+			<!--HMP-2964 (HEAL-17628) changes end-->
+			<xsd:element minOccurs="0" name="AddressLine2" type="tns:String60"/>
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<xsd:element minOccurs="0" name="City" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="State" type="tns:String50"/>
+			<!--HMP-3408 (HEAL-19413) changes start-->
+			<xsd:element minOccurs="0" name="CountyCode" type="tns:String50"/>
+			<!--HMP-3408 (HEAL-19413) changes start-->
+			<xsd:element minOccurs="0" name="ZipCode5" type="tns:String5"/>
+			<!--HMP-2964 (HEAL-17628) changes end-->
+			<xsd:element minOccurs="0" name="ZipCode4" type="tns:String4"/>
+			<xsd:element minOccurs="0" name="Country" type="tns:String20"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<!--HMP-3992: Added Latitude and Longitude-->
+			<xsd:element minOccurs="0" name="Latitude" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="Longitude" type="tns:String50"/>
+		</xsd:sequence>  
+	</xsd:complexType>
+
+	<xsd:complexType name="UpdateOwnerAddress">                            					         
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="1" name="AddressType" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="AddressLine1" type="tns:String60"/>
+			<xsd:element minOccurs="0" name="AddressLine2" type="tns:String60"/>
+			<xsd:element minOccurs="0" name="City" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="State" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="CountyCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ZipCode5" type="tns:String5"/>
+			<xsd:element minOccurs="0" name="ZipCode4" type="tns:String4"/>
+			<xsd:element minOccurs="0" name="Country" type="tns:String20"/>			
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<!--HMP-3992: Added Latitude and Longitude-->
+			<xsd:element minOccurs="0" name="Latitude" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="Longitude" type="tns:String50"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>  
+
+	<!--End of Provider Ownership change -->
+	<!--Start of TMSIS change -->
+	<xsd:complexType name="Identifier">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="1" name="IdentifierTypeCode" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="IssuingEntityID" type="tns:String20"/>
+			<xsd:element minOccurs="0" name="IdentifierID" type="tns:String20"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="TaxonomyClassification">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="1" name="ClassificationTypeCode" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="ClassificationCode" type="tns:String50"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ProgramAffiliation">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="AffiliatedProgramCode" type="tns:String5"/>
+			<xsd:element minOccurs="0" name="API" type="tns:String10"/>
+			<xsd:element minOccurs="1" name="AffiliatedProgramId" type="tns:string50"/>
+			<!--STRY0010932: End of OH addition of new elements-->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<!--STRY0010932: Start of OH addition of new elements-->
+			<xsd:element minOccurs="0" name="ProgramAffiliationStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProgramAffiliationStatusReason" type="tns:String50"/>
+			<!--STRY0010932: End of OH addition of new elements-->
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="EFTEnrollment">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50" />
+		 <!-- HMP-3749: Defect fix - Datatype corrected for mandatory field -->
+         <xsd:element minOccurs="1" name="EFTEnrollmentId" type="tns:string10" />
+         <xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType" />
+         <xsd:element minOccurs="1" name="EndDate" type="tns:MDateType" />
+         <xsd:element minOccurs="1" name="FinancialInstitutionAccountNumber" type="tns:string50" />
+         <xsd:element minOccurs="1" name="FinancialInstitutionAccountType" type="tns:string50" />
+         <xsd:element minOccurs="1" name="FinancialInstitutionName" type="tns:string50" />
+         <xsd:element minOccurs="1" name="FinancialInstitutionRoutingNumber" type="tns:string09" />
+         <xsd:element minOccurs="1" name="ProviderContactFirstName" type="tns:string100" />
+         <xsd:element minOccurs="1" name="ProviderContactLastName" type="tns:string100" />
+         <xsd:element minOccurs="0" name="ProviderContactMiddleName" type="tns:String40" />
+         <xsd:element minOccurs="0" name="ProviderContactPhoneNumber" type="tns:String50" />
+         <xsd:element minOccurs="0" name="ProviderContactPhoneNumberExtension" type="tns:String5" />
+         <xsd:element minOccurs="0" name="ProviderContactTitle" type="tns:String50" />
+		 <!--HMP-3992: Added EFTStatus-->
+		 <xsd:element minOccurs="0" name="EFTStatus" type="tns:String2"/>
+</xsd:sequence>
+   </xsd:complexType>
+
+	<xsd:complexType name="Facility">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+			<!--OH new elements-->
+			<xsd:element minOccurs="0" name="FacilityId" type="tns:String50"/>
+			<!--End of OH new elements-->
+			<xsd:element minOccurs="1" name="BedTypeCode" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="BedCount">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:Int10"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		
+      </xsd:sequence>
+   </xsd:complexType>
+   
+   <!--STRY0010932: OH- New provider field changes. Start of OH ProviderServices-->
+	<xsd:complexType name="Services">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="ProviderService" type="tns:String100"/>			
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element minOccurs="1" name="ProviderServiceID" type="tns:string20"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--End of OH ProviderServices-->
+	
+	<!--STRY0010932: OH- New provider field changes. Start of OH Visit-->
+	<xsd:complexType name="Visit">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="0" name="SiteVisitResult" type="tns:String20"/>
+			<xsd:element minOccurs="0" name="SiteVisitText" type="tns:String200"/>
+			<xsd:element minOccurs="1" name="SiteVisitID" type="tns:string10"/>		
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of OH Visit-->
+	
+	<!--STRY0010932: OH- New provider field changes. Start of OH ProviderCHOP-->
+	<xsd:complexType name="CHOP">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="1" name="MedicaidProviderSellerId" type="tns:string20"/>
+			<xsd:element minOccurs="0" name="CHOPAmount" type="tns:Decimal11-2"/>
+			<xsd:element minOccurs="0" name="CHOPTypeCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="MasterLeaseAmount" type="tns:Decimal11-2"/>
+			<xsd:element minOccurs="0" name="SubLeaseAmount" type="tns:Decimal11-2"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of OH ProviderCHOP-->
+	
+	<!--STRY0010932: OH- New provider field changes. Start of OH Attestations-->
+	<xsd:complexType name="Attestations">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="0" name="ProvAttestationTypeIndicator" type="tns:String1"/>
+			<xsd:element minOccurs="1" name="ProvAttestationCode" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="ProvResponseIndicator" type="tns:String1"/>
+			<xsd:element minOccurs="1" name="ProvDateSigned" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of OH Attestations-->
+	
+	<!--STRY0010932: OH- New provider field changes. Start of OH Training-->
+	<xsd:complexType name="Training">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="0" name="TrainingType" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="TrainingCompleteIndicator" type="tns:String1"/>
+			<xsd:element minOccurs="1" name="TrainingId" type="tns:string10"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of OH Training-->
+	
+	<!--STRY0010932: OH- New provider field changes. Start of OH Languages-->
+	<xsd:complexType name="Languages">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="1" name="Language" type="tns:string50"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of OH Languages-->
+	
+	<!--STRY0010932: OH- New provider field changes. Start of OH Review-->
+	<xsd:complexType name="Review">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="0" name="ProviderReviewTypeCode" type="tns:String50"/>
+			<xsd:element minOccurs="1" name="ProviderReviewID" type="tns:string20"/>
+			<xsd:element minOccurs="0" name="ProposedEffectiveDate" type="tns:DateType"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of OH Review-->
+   
+   <!--STRY0010932: OH- New provider field changes. Start of OH Certifications-->
+	<xsd:complexType name="Certifications">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="1" name="CertificationId" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="CertifiyingOrg" type="tns:String75"/>
+			<xsd:element minOccurs="0" name="CertificationFocus" type="tns:String75"/>
+			<xsd:element minOccurs="0" name="CertificationSpeciality" type="tns:String75"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!--End of OH Certifications-->
+	<!--Start of Common SVCLocationAddress-->
+	<xsd:complexType name="ProviderAddressSvc">                            					         
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="1" name="AddressType" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="AddressLine1">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String60"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="AddressLine2">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String60"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="City">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String50"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="State">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String50"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="CountyCode">
+				<xsd:simpleType>
+					<!--HMP-3408 (HEAL-19413) changes start-->
+					<xsd:union memberTypes="tns:EmptyValue tns:String50"/>
+					<!--HMP-3408 (HEAL-19413) changes start-->
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ZipCode5">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String5"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ZipCode4">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String4"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Country">
+				<xsd:simpleType>
+					<xsd:union memberTypes="tns:EmptyValue tns:String20"/>
+				</xsd:simpleType>
+			</xsd:element>	
+			<xsd:element minOccurs="0" name="BorderStateIndicator" type="tns:String1"/> <!--TMSIS field-->			
+			<!--OH New elements mapping for Address-->
+			<xsd:element minOccurs="0" name="AddressNameTypeIndicator" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressName" type="tns:String100"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressFirstName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressMiddleName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressLastName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumber1" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumberExt1" type="tns:String5"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumber2" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumberExt2" type="tns:String5"/>
+			<xsd:element minOccurs="0" name="ProvOrgFaxNumber1" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvOrgFaxNumber2" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvAddressContactName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvEmail" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="HandicapAccessibilityIndicator" type="tns:String1"/>
+			<!--end of new Address elements for OH-->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="Latitude" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="Longitude" type="tns:String50"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--End of TMSIS change -->
+	<!-- End of common objects for create, update, inquire-->
+
+	<!-- Start of Update provider schema -->	
+	<xsd:complexType name="UpdateProviderInformation">                            					         
+		<xsd:sequence> 
+			<xsd:element name="ProviderDemographics">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProviderDemographics">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvDemographicsSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAddress" type="tns:ProviderAddressList">
+				<xsd:unique name="AddressUniqueKeyUpdate">
+					<xsd:selector xpath="tns:Address"/>
+					<xsd:field xpath="tns:AddressType"/>
+						<xsd:field xpath="tns:EffectiveDate"/>
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderContact" type="tns:ProviderContactList">
+					<xsd:unique name="ContactUniqueKeyUpdate">
+						<xsd:selector xpath="tns:Contact"/>
+						<xsd:field xpath="tns:ContactType"/>
+					</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderApplication" type="tns:updateProviderApplicationList">
+					<xsd:unique name="ApplicationUniqueKeyUpdate">
+						<xsd:selector xpath="tns:Application"/>
+						<xsd:field xpath="tns:ApplicationId"/>
+					</xsd:unique>
+		</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAlternateIdentifiers" type="tns:ProviderAlternateIdList">
+					<xsd:unique name="AlternateIdentifierUniqueKeyUpdate">
+						<xsd:selector xpath="tns:AlternateIdentifier"/>
+						<xsd:field xpath="tns:AlternateIdType"/>
+							<xsd:field xpath="tns:AlternateId"/>
+						<!-- STRY0011038; Adding EffectiveDate as unique key -->
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderType" type="tns:ProviderTypeList">
+					<xsd:unique name="TypeUniqueKeyUpdate">
+						<xsd:selector xpath="tns:Type"/>
+						<xsd:field xpath="tns:ProviderTypeCode"/>
+					</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAffiliations" type="tns:ProviderAffiliationList">
+						<xsd:unique name="AffiliationsUniqueKeyUpdate">
+							<xsd:selector xpath="tns:Affiliations"/>
+							<xsd:field xpath="tns:ProviderAffiliationTypeCode"/>
+							<!-- SCTASK0033390; Adding AffiliatedProviderId as unique key -->
+							<xsd:field xpath="tns:AffiliatedProviderId"/>
+							<!-- STRY0011038; Adding EffectiveDate as unique key -->
+							<xsd:field xpath="tns:EffectiveDate"/>
+						</xsd:unique>
+			</xsd:element>	
+			<!--Provider Ownership change -->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderOwnerships">
+                        <xsd:complexType>
+							 <xsd:sequence>
+								<xsd:element maxOccurs="500" minOccurs="0" name="ProviderOwnership" type="tns:UpdateProviderOwnershipList"/>
+							</xsd:sequence>
+                        </xsd:complexType>
+			<!-- CR166 Start: Unique key contraints for Owner SSN and OrgTaxId-->
+			<!-- PROGCR306: Add OwnerType field as unique contraint along with OrgTaxId -->
+				<xsd:unique name="OwnerOrgTaxIdNumberUniqueKeyUpdate">
+						<xsd:selector xpath="tns:ProviderOwnership"/>
+						<xsd:field xpath="tns:OwnershipDetails/tns:OwnerType"/>
+						<xsd:field xpath="tns:OwnershipDetails/tns:OwnerOrganization/tns:OrgTaxIdNumber"/>
+				</xsd:unique>
+				<xsd:unique name="OwnerSSNUniqueKeyUpdate">
+						<xsd:selector xpath="tns:ProviderOwnership"/>
+						<xsd:field xpath="tns:OwnershipDetails/tns:OwnerIndividual/tns:SSN"/>
+				</xsd:unique>
+			<!--CR166 End-->
+			</xsd:element>			
+			<xsd:element maxOccurs="1" minOccurs="0" name="OwnerRelationship" type="tns:OwnerRelationshipList">
+						<!-- OH PROGCR305: changing the unique Key for OwnerRelationship element -->
+						<xsd:unique name="RelationshipUniqueKeyUpdate1">
+							<xsd:selector xpath="tns:Relationship"/>
+							<xsd:field xpath="tns:RelationType"/>
+							<xsd:field xpath="tns:Owner1SSN"/>
+							<xsd:field xpath="tns:Owner2SSN"/>
+						</xsd:unique>
+						<xsd:unique name="RelationshipUniqueKeyUpdate2">
+							<xsd:selector xpath="tns:Relationship"/>
+							<xsd:field xpath="tns:RelationType"/>
+							<xsd:field xpath="tns:Owner1OrgTaxIdNumber"/>
+							<xsd:field xpath="tns:Owner2OrgTaxIdNumber"/>
+						</xsd:unique>
+						<xsd:unique name="RelationshipUniqueKeyUpdate3">
+							<xsd:selector xpath="tns:Relationship"/>
+							<xsd:field xpath="tns:RelationType"/>
+							<xsd:field xpath="tns:Owner1SSN"/>
+							<xsd:field xpath="tns:Owner2OrgTaxIdNumber"/>
+						</xsd:unique>
+						<xsd:unique name="RelationshipUniqueKeyUpdate4">
+							<xsd:selector xpath="tns:Relationship"/>
+							<xsd:field xpath="tns:RelationType"/>
+							<xsd:field xpath="tns:Owner1OrgTaxIdNumber"/>
+							<xsd:field xpath="tns:Owner2SSN"/>
+						</xsd:unique>
+						<xsd:unique name="RelationshipUniqueKeyUpdate5">
+							<xsd:selector xpath="tns:Relationship"/>
+							<xsd:field xpath="tns:RelationType"/>
+							<xsd:field xpath="tns:Owner2SSN"/>
+							<xsd:field xpath="tns:Owner2OrgTaxIdNumber"/>
+						</xsd:unique>
+						<xsd:unique name="RelationshipUniqueKeyUpdate6">
+							<xsd:selector xpath="tns:Relationship"/>
+							<xsd:field xpath="tns:RelationType"/>
+							<xsd:field xpath="tns:Owner1OrgTaxIdNumber"/>
+							<xsd:field xpath="tns:Owner1SSN"/>
+						</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderManagedEmployees" type="tns:ProviderManagedEmployeesList">
+						<xsd:unique name="ProviderManagedEmployeesUniqueKeyUpdate">
+							<xsd:selector xpath="tns:ProviderManagedEmployee"/>
+							<!-- SCTASK0033390; FI-198 Defect fix modified the SSN tag below -->
+							<xsd:field xpath="tns:ManagedEmployee/tns:SSN"/>
+						</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderBusinessStatus" type="tns:ProviderBusinessStatusList">
+						<xsd:unique name="BusinessStatusUniqueKeyUpdate">
+							<xsd:selector xpath="tns:BusinessStatus"/>
+							<xsd:field xpath="tns:BusinessStatusCode"/>
+							<xsd:field xpath="tns:EffectiveDate"/>
+						</xsd:unique>
+			</xsd:element>	
+			<!--End of Provider Ownership change -->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTaxonomyClassification" type="tns:TaxonomyClassificationList">  <!--Added for TMSIS reporting-->
+						<xsd:unique name="TaxonomyClassificationUniqueKeyUpdate">
+							<xsd:selector xpath="tns:TaxonomyClassification"/>
+							<xsd:field xpath="tns:ClassificationTypeCode"/>
+						</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderProgramAffiliations" type="tns:ProgramAffiliationsList">  <!--Added for TMSIS reporting-->
+						<xsd:unique name="ProgramAffiliationUniqueKeyUpdate">
+							<xsd:selector xpath="tns:ProgramAffiliation"/>
+							<xsd:field xpath="tns:AffiliatedProgramId"/>
+							<!-- STRY0011038; Adding EffectiveDate as unique key -->
+							<xsd:field xpath="tns:EffectiveDate"/>
+						</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderEFTEnrollment" type="tns:EFTEnrollmentList">
+						<xsd:unique name="EFTEnrollmentUniqueKeyUpdate">
+							<xsd:selector xpath="tns:EFTEnrollment"/>
+							<xsd:field xpath="tns:EFTEnrollmentId"/>
+							<!-- SCTASK0033390; Removed EffectiveDate as unique key, because EFTEnrollmentId is the Unique identifier for this Node-->
+						</xsd:unique>
+			</xsd:element>
+			
+			<!--STRY0010932: OH-New provider field changes. OH Start of new nodes-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderServices" type="tns:ProviderServicesList">
+			<xsd:unique name= "ServicesUniqueKeyUpdate">
+					<xsd:selector xpath= "tns:Services"/>
+					<xsd:field xpath= "tns:ProviderServiceID"/>
+				</xsd:unique>
+			</xsd:element>
+	
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderCHOP" type="tns:ProviderCHOPList">
+				<xsd:unique name= "CHOPUniqueKeyUpdate">
+					<xsd:selector xpath= "tns:CHOP"/>
+					<xsd:field xpath= "tns:MedicaidProviderSellerId"/>
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAttestations" type="tns:ProviderAttestationsList">
+			<xsd:unique name= "AttestationsUniqueKeyUpdate">
+					<xsd:selector xpath= "tns:Attestations"/>
+					<xsd:field xpath= "tns:ProvAttestationCode"/>
+					<xsd:field xpath= "tns:ProvDateSigned"/>
+				</xsd:unique>
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderLanguage" type="tns:ProviderLanguageList">
+			<xsd:unique name= "LanguagesUniqueKeyUpdate">
+					<xsd:selector xpath= "tns:Languages"/>
+					<xsd:field xpath= "tns:Language"/>
+				</xsd:unique>
+			</xsd:element>
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderReviews" type="tns:ProviderReviewsList">
+			<xsd:unique name= "ReviewUniqueKeyUpdate">
+					<xsd:selector xpath= "tns:Review"/>
+					<xsd:field xpath= "tns:ProviderReviewID"/>
+				</xsd:unique>
+			</xsd:element>
+			<!--End of OH new nodes-->
+			<!--Added for HMP-3889 changes start. Added ProviderIndicator: Start-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderIndicator" type="tns:ProviderIndicatorList">
+					<xsd:unique name="IndicatorUniqueKeyUpdate">
+						<xsd:selector xpath="tns:Indicator"/>
+						<xsd:field xpath="tns:IndicatorType"/>
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element> 
+			<!--Added for HMP-3889 changes end. Added ProviderIndicator: End-->
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderServiceLocation" type="tns:ProviderServiceLocationList">
+						<xsd:unique name="ServiceLocationUniqueKeyUpdate">
+							<xsd:selector xpath="tns:ServiceLocation"/>
+							<xsd:field xpath="tns:LocationCode"/>
+							<!-- STRY0011038; Adding EffectiveDate as unique key -->
+							<xsd:field xpath="tns:EffectiveDate"/>
+						</xsd:unique>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="ProviderAddressList">                            					         
+		<xsd:sequence> 
+			<xsd:element name="Address" maxOccurs="50" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProviderAddress">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ProvAddressSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType> 
+	<xsd:complexType name="ServiceLocationAddressList">                            					         
+		<xsd:sequence> 
+			<xsd:element name="Address" maxOccurs="200" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProviderAddressSvc">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="SvcLctnAdrsSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="ProviderLicenseList">                            					         
+		<xsd:sequence> 
+			<xsd:element name="License" maxOccurs="200" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProviderLicense">
+							<xsd:sequence>
+							<!--STRY0010932: OH- New provider field changes. OH Start of License Certifications -->
+								<xsd:element maxOccurs="1" minOccurs="0" name="LicenseCertifications" type="tns:LicenseCertificationsList">
+							<xsd:unique name= "CertificationsUniqueKeyUpdate">
+								<xsd:selector xpath= "tns:Certifications"/>
+								<xsd:field xpath= "tns:CertificationId"/>
+							</xsd:unique>
+							</xsd:element>
+							<!-- OH End of License Certifications -->
+								<xsd:element minOccurs="0" name="ProvLicenseSrcKey" type="tns:String36"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<xsd:complexType name="ProviderServiceLocationList">                            					         
+		<xsd:sequence> 
+			<xsd:element maxOccurs="500" minOccurs="0" name="ServiceLocation" type="tns:ProviderServiceLocation"/>	
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+
+	<xsd:complexType name="ProviderDemographics">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+			<!--STRY0010946:Increasing ProviderId length from 20 to 71-->
+			<xsd:element minOccurs="1" name="ProviderId" type="tns:string71"/>
+			<xsd:element minOccurs="0" name="TaxId" type="tns:String9"/>
+			<!--STRY0010889:XSD ODS Discrepancies fix:Start-->
+			<xsd:element minOccurs="0" name="ProviderRoleCode" type="tns:String50"/>   <!--Change by shivi-->
+			<!--STRY0010889:XSD ODS Discrepancies fix:End-->
+			<xsd:element minOccurs="0" name="NationalProviderIdentifier" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="FirstName" type="tns:String40"/>
+			<xsd:element minOccurs="0" name="MiddleName" type="tns:String40"/>
+			<xsd:element minOccurs="0" name="LastName" type="tns:String40"/>
+			<!--STRY0010932: Length increased to 15-->
+			<xsd:element minOccurs="0" name="Prefix" type="tns:String15"/>
+			<xsd:element minOccurs="0" name="Suffix" type="tns:String10"/>
+			<!--HMP-5312:Updating Type from 'String09' to 'String9' -->
+			<xsd:element minOccurs="0" name="SSN" type="tns:String09"/>
+			<xsd:element minOccurs="0" name="Gender" type="tns:String50"/>
+			<xsd:element minOccurs="1" name="EntityType" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="OrganizationBusinessName" type="tns:String100"/>   
+			<xsd:element minOccurs="0" name="LegalProviderName" type="tns:String100"/>
+			<xsd:element minOccurs="0" name="ProviderBusinessName" type="tns:String100"/>  <!--TMSIS field-->
+			<xsd:element minOccurs="0" name="ProviderTaxName" type="tns:String100"/>  <!--TMSIS field-->
+			<xsd:element minOccurs="0" name="TeachingIndicator" type="tns:String1"/>  <!--TMSIS field-->
+			<xsd:element minOccurs="0" name="OwnershipCode" type="tns:String50"/>  <!--TMSIS field-->
+			<!--STRY0010932: OH new element-->
+			<xsd:element minOccurs="0" name="PracticeTypeCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProviderProfitStatusCode" type="tns:String50"/>  <!--TMSIS field-->
+			<xsd:element minOccurs="0" name="NewPatientIndicator" type="tns:String1"/>  <!--TMSIS field-->
+			<xsd:element minOccurs="0" name="EnrollmentType" type="tns:String50"/>     <!--till here-->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="DateOfBirth" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="DateOfDeath" type="tns:DateType"/>
+			<!--HMP-2967:Adding ProviderRace -->
+			<xsd:element minOccurs="0" name="Race" type="tns:String50"/>
+			<!--HMP-2965 (HEAL-15764) changes start-->
+			<xsd:element minOccurs="0" name="MedicareInd" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="PCPStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="PCPTermDate" type="tns:DateType"/>
+			<!--HMP-2965 (HEAL-15764) changes end-->
+			<!--STRY0010932: OH new elements-->
+			<xsd:element minOccurs="0" name="BirthCountry" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="BirthCity" type="tns:String50"/> 
+			<xsd:element minOccurs="0" name="BirthState" type="tns:String50"/> 
+			<xsd:element minOccurs="0" name="ProvRiskLevel" type="tns:String20"/> 
+			<xsd:element minOccurs="0" name="ProvDirectorySearchIndicator" type="tns:String1"/> 
+			<xsd:element minOccurs="0" name="PaymentTypeCode" type="tns:String50"/> 
+			<!--STRY0010932: OH end of new elements-->
+			<!-- Changed for HMP-3495 (HEAL-17380) start-->
+			<xsd:element minOccurs="0" name="ProvIHSAssoCode" type="tns:String50"/>   
+			<!-- Changed for HMP-3495 (HEAL-17380) end-->
+		</xsd:sequence>                            					         
+	</xsd:complexType>                           					             
+	<xsd:complexType name="ProviderAddress">                            					         
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="1" name="AddressType" type="tns:string50"/>
+			<!--STRY0010932: Length increased to 60-->
+			<xsd:element minOccurs="0" name="AddressLine1" type="tns:String60"/>
+			<!--STRY0010932: Length increased to 60-->
+			<xsd:element minOccurs="0" name="AddressLine2" type="tns:String60"/>
+			<!--STRY0010932: Length increased to 50-->
+			<xsd:element minOccurs="0" name="City" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="State" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="CountyCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ZipCode5" type="tns:String5"/>
+			<xsd:element minOccurs="0" name="ZipCode4" type="tns:String4"/>
+			<xsd:element minOccurs="0" name="Country" type="tns:String20"/>
+			<xsd:element minOccurs="0" name="BorderStateIndicator" type="tns:String1"/> <!--TMSIS field-->
+			<!--STRY0010932: OH New elements mapping for Address-->
+			<xsd:element minOccurs="0" name="AddressNameTypeIndicator" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressName" type="tns:String100"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressFirstName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressMiddleName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvOrgAddressLastName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumber1" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumberExt1" type="tns:String5"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumber2" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvOrgPhoneNumberExt2" type="tns:String5"/>
+			<xsd:element minOccurs="0" name="ProvOrgFaxNumber1" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvOrgFaxNumber2" type="tns:String10"/>
+			<xsd:element minOccurs="0" name="ProvAddressContactName" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ProvEmail" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="HandicapAccessibilityIndicator" type="tns:String1"/>
+			<!--STRY0010932: end of new Address elements for OH-->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<!--HMP-3992: Added Latitude and Longitude-->
+			<xsd:element minOccurs="0" name="Latitude" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="Longitude" type="tns:String50"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>                           					             
+	<xsd:complexType name="ProviderLicense">                          					         
+		<xsd:sequence>  
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<xsd:element minOccurs="1" name="LicenseType" type="tns:string50"/>
+			<!--STRY0010889:XSD ODS Discrepancies fix:Start-->			
+			<xsd:element minOccurs="1" name="LicenseNumber" type="tns:string25"/>
+			<!--STRY0010889:XSD ODS Discrepancies fix:End-->
+			<xsd:element minOccurs="0" name="LicenseeStateCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="LicenseIssueBoardNotes" type="tns:String40"/>
+			<xsd:element minOccurs="0" name="Status" type="tns:String20"/>
+			<xsd:element minOccurs="0" name="StatusReason" type="tns:String20"/>
+			<!--STRY0010932: Start of OH addition of new elements-->
+			<xsd:element minOccurs="0" name="CountyCode" type="tns:String50"/>
+			<!--STRY0010932: End of OH addition of new elements-->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>  
+	<xsd:complexType name="ProviderServiceLocation">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="LocationName" type="tns:String100"/>
+			<xsd:element minOccurs="1" name="LocationCode" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="OrgStateOwnedIndicator" type="tns:String1"/>
+			<!--HMP-4010: Added RAPrintIndicator-->
+			<xsd:element minOccurs="0" name="RAPrintIndicator" type="tns:String1"/>
+			<!--Start of changes for HMP-4145 -->
+			<xsd:element minOccurs="0" name="AllAgesSeen" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="MaxAgeSeen" type="tns:Int3"/>
+			<xsd:element minOccurs="0" name="MinAgeSeen" type="tns:Int3"/>
+			<!--End of changes for HMP-4145 -->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ServiceLocationAddress" type="tns:ServiceLocationAddressList">
+					<xsd:unique name="ServiceLocationAddressUniqueKeyUpdate">
+						<xsd:selector xpath="tns:Address"/>
+						<xsd:field xpath="tns:AddressType"/>
+					</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ServiceLocationContact" type="tns:ServiceLocationContactList">
+					<xsd:unique name="ServiceLocationContactUniqueKeyUpdate">
+						<xsd:selector xpath="tns:Contact"/>
+						<xsd:field xpath="tns:ContactType"/>
+					</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderLicense" type="tns:ProviderLicenseList">
+					<xsd:unique name="LicenseUniqueKeyUpdate">
+						<xsd:selector xpath="tns:License"/>
+						<xsd:field xpath="tns:LicenseType"/>
+						<xsd:field xpath="tns:LicenseNumber"/>
+						<!-- STRY0011038; Adding EffectiveDate as unique key -->
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderCertification" type="tns:ProviderCertificationList">
+					<xsd:unique name="CertificationUniqueKeyUpdate">
+						<xsd:selector xpath="tns:Certification"/>
+						<xsd:field xpath="tns:CertificateType"/>
+						
+						<!-- STRY0011038; Adding EffectiveDate as unique key -->
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderIdentifier" type="tns:ProviderIdentifierList">
+					<xsd:unique name="IdentifierUniqueKeyUpdate">
+						<xsd:selector xpath="tns:Identifier"/>
+						<xsd:field xpath="tns:IdentifierTypeCode"/>
+						
+						<!-- STRY0011038; Adding EffectiveDate as unique key -->
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>		<!--Added for TMSIS reporting-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderFacility" type="tns:ProviderFacilityList">   <!--Added for TMSIS reporting-->
+					<xsd:unique name="FacilityUniqueKeyUpdate">
+						<xsd:selector xpath="tns:Facility"/>
+						<xsd:field xpath="tns:BedTypeCode"/>
+					</xsd:unique>
+			</xsd:element>
+						
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTaxonomy" type="tns:ProviderTaxonomyList">
+					<xsd:unique name="TaxonomyUniqueKeyUpdate">
+						<xsd:selector xpath="tns:Taxonomy"/>
+						<xsd:field xpath="tns:TaxonomyCode"/>
+						
+						<!-- STRY0011038; Adding EffectiveDate as unique key -->
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderSpecialty" type="tns:ProviderSpecialtyList">
+					<xsd:unique name="SpecialtyUniqueKeyUpdate">
+						<xsd:selector xpath="tns:Specialty"/>
+						<xsd:field xpath="tns:SpecialtyCode"/>
+						
+						<!-- STRY0011038; Adding EffectiveDate as unique key -->
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>	
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderType" type="tns:ProviderTypeList">
+					<xsd:unique name="TypeUniqueKeyUpdateServiceLocation">
+						<xsd:selector xpath="tns:Type"/>
+						<xsd:field xpath="tns:ProviderTypeCode"/>
+					</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderRestriction" type="tns:ProviderRestrictionList">
+					<xsd:unique name="RestrictionUniqueKeyUpdate">
+						<xsd:selector xpath="tns:Restriction"/>
+						<xsd:field xpath="tns:ReviewReason"/>
+						<xsd:field xpath="tns:ReviewType"/>
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>
+			<!--STRY0010932: OH- New provider field changes, Start of OH new node-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="SiteVisits" type="tns:VisitList">
+				<xsd:unique name= "VisitUniqueKeyUpdate">
+					<xsd:selector xpath= "tns:Visit"/>
+					<xsd:field xpath= "tns:SiteVisitID"/>
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTraining" type="tns:ProviderTrainingList">
+				<xsd:unique name= "TrainingUniqueKeyUpdate">
+					<xsd:selector xpath= "tns:Training"/>
+					<xsd:field xpath= "tns:TrainingId"/>
+				</xsd:unique>
+			</xsd:element>
+			<!--Added for HMP-3889 changes start. Added ProviderIndicator: Start-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderIndicator">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Indicator">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:IndicatorList">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ProvIndicatorSrcKey" type="tns:String36"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+					<xsd:unique name="ServiceLocationIndicatorUniqueKeyUpdate">
+						<xsd:selector xpath="tns:Indicator"/>
+						<xsd:field xpath="tns:IndicatorType"/>
+						<xsd:field xpath="tns:EffectiveDate"/>
+					</xsd:unique>
+			</xsd:element>
+			<!--Added for HMP-3889 changes end. Added ProviderIndicator: End-->
+			
+			<xsd:element minOccurs="0" name="ProvSvcLocationSrcKey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType> 
+	<xsd:complexType name="updateProviderApplicationList">                            					         
+		<xsd:sequence> 
+			<xsd:element maxOccurs="25" minOccurs="0" name="Application" type="tns:updateProviderApplication"/>	
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+
+	<xsd:complexType name="updateProviderApplication">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<xsd:element minOccurs="1" name="ApplicationId" type="tns:String20"/>   
+			<!--HMP-2964 (HEAL-17628) changes end-->
+			<xsd:element minOccurs="0" name="ApplicationCreatedDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="ApprovalDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="StatePlanEnrollCode" type="tns:String50"/>   <!--TMSIS field-->
+			<xsd:element minOccurs="0" name="EnrollMethodCode" type="tns:String50"/>     <!--TMSIS field-->
+			<!--HMP-2965 (HEAL-15764) changes start-->
+			<xsd:element minOccurs="0" name="ProvEnrollStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="CountyCode" type="tns:String50"/>
+			<!--HMP-2965 (HEAL-15764) changes end-->
+			<!--STRY0010932: OH addition of new elements-->
+			<xsd:element minOccurs="0" name="NonMedicaidApplicationProviderType" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="AdditionalApplicationId" type="tns:String20"/>			
+			<xsd:element minOccurs="0" name="ApplicationType" type="tns:String75"/>
+			<xsd:element minOccurs="0" name="ApplicationStatus" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ApplicationLegalStatus" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ApplicationFeeConfirmation" type="tns:String50"/>
+			<!--OMO-1670: Increased the Length of SingleSignOnAssignedID and SingleSignOnSelectedID to 255 -->
+			<xsd:element minOccurs="0" name="SingleSignOnAssignedID" type="tns:String255"/>
+			<xsd:element minOccurs="0" name="SingleSignOnSelectedID" type="tns:String255"/>
+			<xsd:element minOccurs="0" name="AdditionalUserID" type="tns:String30"/>
+			<xsd:element minOccurs="0" name="SingleSignOnRole" type="tns:String30"/>
+			<!--OMO-1670: Increased the Length of EmailAddress to 255 -->
+			<xsd:element minOccurs="0" name="EmailAddress" type="tns:String255"/>
+			<!--STRY0010932: End of OH addition of new elements-->
+			<xsd:element minOccurs="0" name="ProvApplicationSrcKey" type="tns:String36"/>
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+
+	<!-- End of Update provider schema -->	
+
+	<!-- Start of Inquire provider & Inquire provider History schema -->
+	<xsd:complexType name="InquireProviderInformation">                            					         
+		<xsd:sequence> 
+			<xsd:element name="ProviderDemographics">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="tns:ProviderDemographics">
+							<xsd:sequence>
+								<xsd:element minOccurs="0" name="ODSProviderDemographicsId" type="xsd:integer"/>
+								<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+								<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+								<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+								<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>					
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAddress">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="Address">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderAddress">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderAddressId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>	
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderContact">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="10" minOccurs="0" name="Contact">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderContact">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderContactId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence> 
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderApplication">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="25" minOccurs="0" name="Application">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderApplication">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderEnrollmentId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAlternateIdentifiers">
+				<xsd:complexType>
+					<xsd:sequence>
+						<!-- SCTASK0033390; FI Integration change from 500 to 1000 -->
+						<xsd:element maxOccurs="1000" minOccurs="0" name="AlternateIdentifier">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderAlternateId">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderAlternateId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			
+								
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderType">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="Type">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderType">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderTypeId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAffiliations">
+				<xsd:complexType>
+					<xsd:sequence>
+						<!-- SCTASK0033390; FI Integration change from 10000 to 50000 -->
+						<xsd:element maxOccurs="50000" minOccurs="0" name="Affiliations">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderAffiliation">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderAffiliationsId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--Provider Ownership change -->
+<xsd:element maxOccurs="1" minOccurs="0" name="ProviderOwnerships">
+	<xsd:complexType>
+		<xsd:sequence>			
+			<xsd:element maxOccurs="500" minOccurs="0" name="ProviderOwnership">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="OwnershipDetails">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:Owner">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderOwnerId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+						<xsd:element maxOccurs="1" minOccurs="0" name="OwnerAddress">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element maxOccurs="2500" minOccurs="0" name="Address">
+										<xsd:complexType>
+											<xsd:complexContent>
+												<xsd:extension base="tns:UpdateOwnerAddress">
+													<xsd:sequence>
+														<xsd:element minOccurs="0" name="ODSOwnerAddressId" type="xsd:integer"/>
+														<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+														<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+														<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+														<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+													</xsd:sequence>
+												</xsd:extension>
+											</xsd:complexContent>
+										</xsd:complexType>
+									</xsd:element>	
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="OwnerRelationship">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="2500" minOccurs="0" name="Relationship">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:OwnerRelationship">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSOwnerRelationshipId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderManagedEmployees">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100000" minOccurs="0" name="ProviderManagedEmployee">
+						<xsd:complexType>
+							<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="ManagedEmployee">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ManageEmployee">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderManagedEmployeeId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+								</xsd:element>
+								<xsd:element maxOccurs="1" minOccurs="0" name="ManagedEmployeeAddress">
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element maxOccurs="100" minOccurs="0" name="Address">
+								<xsd:complexType>
+									<xsd:complexContent>
+										<xsd:extension base="tns:EnrollOwnerAddress">
+											<xsd:sequence>
+												<xsd:element minOccurs="0" name="ODSOwnerAddressId" type="xsd:integer"/>
+												<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+												<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+												<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+												<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+											</xsd:sequence>
+										</xsd:extension>
+									</xsd:complexContent>
+								</xsd:complexType>
+								</xsd:element>
+								</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<!--End of InquireManagedEmployeeAddress-->		
+							</xsd:sequence>
+					</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderBusinessStatus">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="BusinessStatus">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:BusinessStatus">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderBusinessStatusId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTaxonomyClassification">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="TaxonomyClassification">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:TaxonomyClassification">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderTaxonomyClassificationId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderProgramAffiliations">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="ProgramAffiliation">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProgramAffiliation">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderProgramAffiliationId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderEFTEnrollment">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="EFTEnrollment">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:EFTEnrollment">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderEFTEnrollmentId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			
+			<!--STRY0010932: OH- New provider field changes, OH new nodes start -->	
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderServices">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element maxOccurs="1000" minOccurs="0" name="Services">
+								<xsd:complexType>
+									<xsd:complexContent>
+										<xsd:extension base="tns:Services">
+											<xsd:sequence>
+												<xsd:element minOccurs="0" name="ODSProviderServiceId" type="xsd:integer"/>
+												<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+												<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+												<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+												<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+											</xsd:sequence>
+										</xsd:extension>
+									</xsd:complexContent>
+								</xsd:complexType>
+							</xsd:element>	
+						</xsd:sequence>
+					</xsd:complexType>
+			</xsd:element>
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderCHOP">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element maxOccurs="10" minOccurs="0" name="CHOP">
+								<xsd:complexType>
+									<xsd:complexContent>
+										<xsd:extension base="tns:CHOP">
+											<xsd:sequence>
+												<xsd:element minOccurs="0" name="ODSProviderCHOPId" type="xsd:integer"/>
+												<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+												<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+												<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+												<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+											</xsd:sequence>
+										</xsd:extension>
+									</xsd:complexContent>
+								</xsd:complexType>
+							</xsd:element>	
+						</xsd:sequence>
+					</xsd:complexType>
+			</xsd:element>
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAttestations">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element maxOccurs="200" minOccurs="0" name="Attestations">
+								<xsd:complexType>
+									<xsd:complexContent>
+										<xsd:extension base="tns:Attestations">
+											<xsd:sequence>
+												<xsd:element minOccurs="0" name="ODSProviderAttestationId" type="xsd:integer"/>
+												<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+												<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+												<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+												<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+											</xsd:sequence>
+										</xsd:extension>
+									</xsd:complexContent>
+								</xsd:complexType>
+							</xsd:element>	
+						</xsd:sequence>
+					</xsd:complexType>
+			</xsd:element>
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderLanguage">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element maxOccurs="500" minOccurs="0" name="Languages">
+								<xsd:complexType>
+									<xsd:complexContent>
+										<xsd:extension base="tns:Languages">
+											<xsd:sequence>
+												<xsd:element minOccurs="0" name="ODSProviderLanguageId" type="xsd:integer"/>
+												<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+												<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+												<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+												<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+											</xsd:sequence>
+										</xsd:extension>
+									</xsd:complexContent>
+								</xsd:complexType>
+							</xsd:element>	
+						</xsd:sequence>
+					</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderReviews">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element maxOccurs="10" minOccurs="0" name="Review">
+								<xsd:complexType>
+									<xsd:complexContent>
+										<xsd:extension base="tns:Review">
+											<xsd:sequence>
+												<xsd:element minOccurs="0" name="ODSProviderReviewId" type="xsd:integer"/>
+												<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+												<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+												<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+												<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+											</xsd:sequence>
+										</xsd:extension>
+									</xsd:complexContent>
+								</xsd:complexType>
+							</xsd:element>	
+						</xsd:sequence>
+					</xsd:complexType>
+			</xsd:element>
+			<!--STRY0010932: OH- New provider field changes, OH new nodes start -->		
+			<!--Added for HMP-3889 Changes start. Added ProviderIndicatorr: Start-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderIndicator">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="Indicator">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:IndicatorList">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderIndicatorId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateTimeType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateTimeType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--Added for HMP-3889 Changes end. Added ProviderIndicator: End-->
+
+			<!--End of Provider Ownership change -->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderServiceLocation">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="500" minOccurs="0" name="ServiceLocation">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:InquireProviderServiceLocation">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSServiceLocationId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element> 
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!-- Start of Inquire provider History schema -->
+	<xsd:complexType name="InquireProviderHistoryInformation">                                                                   
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderDemographicsHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ProviderDemographics" minOccurs="1" maxOccurs="1">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderDemographics">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderDemographicsId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>                
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAddressHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="Address">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderAddress">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderAddressId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>    
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderContactHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="10" minOccurs="0" name="Contact">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderContact">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderContactId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>    
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderApplicationHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="25" minOccurs="0" name="Application">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderApplication">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderEnrollmentId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>    
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAlternateIdentifiersHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<!-- SCTASK0033390; FI Integration change from 500 to 1000 -->
+						<xsd:element maxOccurs="1000" minOccurs="0" name="AlternateIdentifier">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderAlternateId">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderAlternateId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>    
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			 			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTypeHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="Type">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderType">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderTypeId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>    
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAffiliationHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<!-- SCTASK0033390; FI Integration change from 10000 to 50000 -->
+						<xsd:element maxOccurs="50000" minOccurs="0" name="Affiliations">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderAffiliation">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderAffiliationsId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>    
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--Provider Ownership change -->
+<xsd:element maxOccurs="1" minOccurs="0" name="ProviderOwnershipsHistory">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element maxOccurs="500" minOccurs="0" name="ProviderOwnership">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="OwnershipDetails">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:Owner">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderOwnerId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+						<xsd:element maxOccurs="1" minOccurs="0" name="OwnerAddress">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element maxOccurs="2500" minOccurs="0" name="Address">
+										<xsd:complexType>
+											<xsd:complexContent>
+												<xsd:extension base="tns:UpdateOwnerAddress">
+													<xsd:sequence>
+														<xsd:element minOccurs="0" name="ODSOwnerAddressId" type="xsd:integer"/>
+														<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+														<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+														<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+														<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+													</xsd:sequence>
+												</xsd:extension>
+											</xsd:complexContent>
+										</xsd:complexType>
+									</xsd:element>	
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>		
+	</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="OwnerRelationshipHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="2500" minOccurs="0" name="Relationship">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:OwnerRelationship">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSOwnerRelationshipId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderManagedEmployeesHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100000" minOccurs="0" name="ProviderManagedEmployee">
+						<xsd:complexType>
+							<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="ManagedEmployee">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ManageEmployee">
+										<xsd:sequence>
+										<!--CR166 Start: ManagedEmployeeInd corrected to accept empty values-->
+											<xsd:element minOccurs="0" name="ManageEmployeesInd" type="tns:OChar1"/>
+										<!--CR166 End-->	
+											<xsd:element minOccurs="0" name="ODSProviderManagedEmployeeId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+								</xsd:element>
+								<xsd:element maxOccurs="1" minOccurs="0" name="ManagedEmployeeAddress">
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element maxOccurs="100" minOccurs="0" name="Address">
+								<xsd:complexType>
+									<xsd:complexContent>
+										<xsd:extension base="tns:EnrollOwnerAddress">
+											<xsd:sequence>
+												<xsd:element minOccurs="0" name="ODSOwnerAddressId" type="xsd:integer"/>
+												<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+												<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+												<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+												<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+											</xsd:sequence>
+										</xsd:extension>
+									</xsd:complexContent>
+								</xsd:complexType>
+								</xsd:element>
+								</xsd:sequence>
+				</xsd:complexType>
+				</xsd:element>
+							<!--End of InquireManagedEmployeeAddress-->	
+					</xsd:sequence>
+					</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTaxonomyClassificationHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="TaxonomyClassification">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:TaxonomyClassification">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderTaxonomyClassificationId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderProgramAffiliationHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="ProgramAffiliation">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProgramAffiliation">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderProgramAffiliationId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderEFTEnrollmentHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="EFTEnrollment">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:EFTEnrollment">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderEFTEnrollmentId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			
+			
+			
+
+			<!--End of Provider Ownership change -->
+			
+			<!--STRY0010932: OH- New provider field changes, OH new nodes start -->	
+		<xsd:element maxOccurs="1" minOccurs="0" name="ProviderServicesHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1000" minOccurs="0" name="Services">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:Services">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderServiceId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+		</xsd:element>
+		
+		<xsd:element maxOccurs="1" minOccurs="0" name="ProviderCHOPHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="10" minOccurs="0" name="CHOP">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:CHOP">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderCHOPId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+		</xsd:element>
+		
+		<xsd:element maxOccurs="1" minOccurs="0" name="ProviderAttestationsHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="Attestations">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:Attestations">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderAttestationId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+		</xsd:element>
+		
+		<xsd:element maxOccurs="1" minOccurs="0" name="ProviderLanguageHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="500" minOccurs="0" name="Languages">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:Languages">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderLanguageId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+		</xsd:element>
+
+		<xsd:element maxOccurs="1" minOccurs="0" name="ProviderReviewsHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="10" minOccurs="0" name="Review">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:Review">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderReviewId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+		</xsd:element>
+		<!--STRY0010932: OH- New provider field changes, OH new nodes start -->
+		<!--Added for HMP-3889 changes start. Added ProviderIndicator: Start-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderIndicatorHistory">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="50" minOccurs="0" name="Indicator">
+							<xsd:complexType>
+								<xsd:complexContent>
+                                    <xsd:extension base="tns:IndicatorList">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderIndicatorId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateTimeType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateTimeType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+                                        </xsd:sequence>
+                                    </xsd:extension>
+                                </xsd:complexContent>
+                            </xsd:complexType>
+                        </xsd:element>    
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <!--Added for HMP-3889 changes end. Added ProviderIndicator: End-->	
+			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderServiceLocationHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="500" minOccurs="0" name="ServiceLocation">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:InquireProviderServiceLocationHistory">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSServiceLocationId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element> 
+
+		</xsd:sequence>                                                                   
+	</xsd:complexType>
+
+	<xsd:complexType name="InquireProviderServiceLocation">                            					         
+		<xsd:sequence>
+			<!--DFCT0010387: Correcting RecordStatusCode position in the inquire response to match create/enroll structure-->
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="LocationName" type="tns:String100"/>
+			<xsd:element minOccurs="1" name="LocationCode" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="OrgStateOwnedIndicator" type="tns:String1"/>
+			<!--HMP-4010: Added RAPrintIndicator-->
+			<xsd:element minOccurs="0" name="RAPrintIndicator" type="tns:String1"/>
+			<!--Start of changes for HMP-4145 -->
+			<xsd:element minOccurs="0" name="AllAgesSeen" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="MaxAgeSeen" type="tns:Int3"/>
+			<xsd:element minOccurs="0" name="MinAgeSeen" type="tns:Int3"/>
+			<!--End of changes for HMP-4145 -->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ServiceLocationAddress">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="Address">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderAddress">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderAddressId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ServiceLocationContact">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="600" minOccurs="0" name="Contact">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderContact">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderContactId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderLicense">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="License">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderLicense">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderLicenseId" type="xsd:integer"/>											
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+											<!--STRY0010932: OH- New provider field changes. OH Start of License Certifications -->
+											<xsd:element maxOccurs="1" minOccurs="0" name="LicenseCertifications">
+													<xsd:complexType>
+														<xsd:sequence>
+															<xsd:element maxOccurs="12" minOccurs="0" name="Certifications">
+																<xsd:complexType>
+																	<xsd:complexContent>
+																		<xsd:extension base="tns:Certifications">
+																			<xsd:sequence>
+																				<xsd:element minOccurs="0" name="ODSProvCertId" type="xsd:integer"/>
+																				<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+																				<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+																				<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+																				<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+																			</xsd:sequence>
+																		</xsd:extension>
+																	</xsd:complexContent>
+																</xsd:complexType>
+															</xsd:element>	
+														</xsd:sequence>
+													</xsd:complexType>
+											</xsd:element>	
+											<!-- OH End of License Certifications -->
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderCertification">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Certification">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderCertification">
+										<xsd:sequence>											
+											<xsd:element minOccurs="0" name="ODSProviderCertificationId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderIdentifier">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="Identifier">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:Identifier">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderIdentifierId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderFacility">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="Facility">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:Facility">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderFacilityId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			 			
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTaxonomy">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Taxonomy">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderTaxonomy">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderTaxonomyId" type="xsd:integer"/>										
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderSpecialty">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Specialty">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderSpecialty">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderSpecialtyId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderType">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="Type">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderType">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderTypeId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderRestriction">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="10" minOccurs="0" name="Restriction">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderRestriction">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderRestrictionId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--STRY0010932: OH- New provider field changes. OH Start of Site Visits -->
+			<xsd:element maxOccurs="1" minOccurs="0" name="SiteVisits">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="20" minOccurs="0" name="Visit">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:Visit">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderSiteVisitId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--OH End of Site Visits -->
+			<!--STRY0010932: OH- New provider field changes. OH Start of Provider Training -->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTraining">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="500" minOccurs="0" name="Training">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:Training">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderTrainingId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--OH End of Provider Training -->
+			<!--Added for HMP-3889 changes start. Added ProviderIndicator: Start-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderIndicator">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="100" minOccurs="0" name="Indicator">
+							<xsd:complexType>
+								<xsd:complexContent>
+                                    <xsd:extension base="tns:IndicatorList">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderIndicatorId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateTimeType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateTimeType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+                                        </xsd:sequence>
+                                    </xsd:extension>
+                                </xsd:complexContent>
+                            </xsd:complexType>
+                        </xsd:element>    
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <!--Added for HMP-3889 changes end. Added ProviderIndicator: End-->
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	
+	<xsd:complexType name="InquireProviderServiceLocationHistory">                            					         
+		<xsd:sequence>
+			<!--DFCT0010387: Correcting RecordStatusCode position in the inquire response to match create/enroll structure-->
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="LocationName" type="tns:String100"/>
+			<xsd:element minOccurs="1" name="LocationCode" type="tns:string50"/>
+			<xsd:element minOccurs="0" name="OrgStateOwnedIndicator" type="tns:String1"/>
+			<!--HMP-4010: Added RAPrintIndicator-->
+			<xsd:element minOccurs="0" name="RAPrintIndicator" type="tns:String1"/>
+			<!--Start of changes for HMP-4145 -->
+			<xsd:element minOccurs="0" name="AllAgesSeen" type="tns:String1"/>
+			<xsd:element minOccurs="0" name="MaxAgeSeen" type="tns:Int3"/>
+			<xsd:element minOccurs="0" name="MinAgeSeen" type="tns:Int3"/>
+			<!--End of changes for HMP-4145 -->
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ServiceLocationAddressHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="Address">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderAddress">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderAddressId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ServiceLocationContactHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="600" minOccurs="0" name="Contact">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderContact">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderContactId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderLicenseHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="License">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderLicense">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderLicenseId" type="xsd:integer"/>											
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+											<!--STRY0010932: OH- New provider field changes. OH Start of License Certifications -->
+											<xsd:element maxOccurs="1" minOccurs="0" name="LicenseCertificationsHistory">
+													<xsd:complexType>
+														<xsd:sequence>
+															<xsd:element maxOccurs="12" minOccurs="0" name="Certifications">
+																<xsd:complexType>
+																	<xsd:complexContent>
+																		<xsd:extension base="tns:Certifications">
+																			<xsd:sequence>
+																				<xsd:element minOccurs="0" name="ODSProvCertId" type="xsd:integer"/>
+																				<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+																				<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+																				<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+																				<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+																			</xsd:sequence>
+																		</xsd:extension>
+																	</xsd:complexContent>
+																</xsd:complexType>
+															</xsd:element>	
+														</xsd:sequence>
+													</xsd:complexType>
+											</xsd:element>	
+											<!-- OH End of License Certifications -->
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderCertificationHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Certification">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderCertification">
+										<xsd:sequence>											
+											<xsd:element minOccurs="0" name="ODSProviderCertificationId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderIdentifierHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="Identifier">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:Identifier">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderIdentifierId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderFacilityHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="200" minOccurs="0" name="Facility">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:Facility">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderFacilityId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+						
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTaxonomyHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Taxonomy">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderTaxonomy">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderTaxonomyId" type="xsd:integer"/>										
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderSpecialtyHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="100" minOccurs="0" name="Specialty">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderSpecialty">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderSpecialtyId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTypeHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="50" minOccurs="0" name="Type">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderType">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderTypeId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--OH End of Provider Training -->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderRestrictionHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="10" minOccurs="0" name="Restriction">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:ProviderRestriction">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderRestrictionId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--STRY0010932: OH- New provider field changes. OH Start of Site Visits -->
+			<xsd:element maxOccurs="1" minOccurs="0" name="SiteVisitsHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="20" minOccurs="0" name="Visit">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:Visit">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderSiteVisitId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--OH End of Site Visits -->
+			<!--STRY0010932: OH- New provider field changes. OH Start of Provider Training -->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderTrainingHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="500" minOccurs="0" name="Training">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:Training">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderTrainingId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--Added for HMP-3889 changes start. Added ProviderIndicator: Start-->
+			<xsd:element maxOccurs="1" minOccurs="0" name="ProviderIndicatorHistory">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="100" minOccurs="0" name="Indicator">
+							<xsd:complexType>
+								<xsd:complexContent>
+                                    <xsd:extension base="tns:IndicatorList">
+										<xsd:sequence>
+											<xsd:element minOccurs="0" name="ODSProviderIndicatorId" type="xsd:integer"/>
+											<xsd:element minOccurs="0" name="CreatedDate" type="tns:DateTimeType"/> 
+											<xsd:element minOccurs="0" name="CreatedBy" type="tns:String50"/>
+											<xsd:element minOccurs="0" name="LastModifiedDate" type="tns:DateTimeType"/> 
+											<xsd:element minOccurs="0" name="LastModifiedBy" type="tns:String50"/>
+                                        </xsd:sequence>
+                                    </xsd:extension>
+                                </xsd:complexContent>
+                            </xsd:complexType>
+                        </xsd:element>    
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <!--Added for HMP-3889 changes end. Added ProviderIndicator: End--> 
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	
+	<xsd:complexType name="ProviderApplicationList">                            					         
+		<xsd:sequence> 
+			<xsd:element maxOccurs="1" minOccurs="0" name="Application" type="tns:ProviderApplication"/>	
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+
+	<xsd:complexType name="ProviderApplication">                            					         
+		<xsd:sequence> 
+			<xsd:element minOccurs="0" name="RecordStatusCode" type="tns:String50"/>   <!--Change by shivi-->
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<xsd:element minOccurs="1" name="ApplicationId" type="tns:String20"/>   
+			<!--HMP-2964 (HEAL-17628) changes end-->
+			<xsd:element minOccurs="0" name="ApplicationCreatedDate" type="tns:DateType"/>
+			<!--HMP-2964 (HEAL-17628) changes start-->
+			<xsd:element minOccurs="0" name="ApprovalDate" type="tns:DateType"/>
+			<!--HMP-2964 (HEAL-17628) changes end-->
+			<xsd:element minOccurs="0" name="StatePlanEnrollCode" type="tns:String50"/>   <!--TMSIS field-->
+			<xsd:element minOccurs="0" name="EnrollMethodCode" type="tns:String50"/>     <!--TMSIS field-->
+			<!--HMP-2965 (HEAL-15764) changes start-->
+			<xsd:element minOccurs="0" name="ProvEnrollStatusCode" type="tns:String50"/>
+			<xsd:element minOccurs="1" name="EffectiveDate" type="tns:MDateType"/>
+			<xsd:element minOccurs="0" name="EndDate" type="tns:DateType"/>
+			<xsd:element minOccurs="0" name="CountyCode" type="tns:String50"/>
+			<!--HMP-2965 (HEAL-15764) changes end-->
+			<!--STRY0010932: OH addition of new elements-->
+			<xsd:element minOccurs="0" name="NonMedicaidApplicationProviderType" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="AdditionalApplicationId" type="tns:String20"/>			
+			<xsd:element minOccurs="0" name="ApplicationType" type="tns:String75"/>
+			<xsd:element minOccurs="0" name="ApplicationStatus" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ApplicationLegalStatus" type="tns:String50"/>
+			<xsd:element minOccurs="0" name="ApplicationFeeConfirmation" type="tns:String50"/>
+			<!--OMO-1670: Increased the Length of SingleSignOnAssignedID and SingleSignOnSelectedID to 255 -->
+			<xsd:element minOccurs="0" name="SingleSignOnAssignedID" type="tns:String255"/>
+			<xsd:element minOccurs="0" name="SingleSignOnSelectedID" type="tns:String255"/>
+			<xsd:element minOccurs="0" name="AdditionalUserID" type="tns:String30"/>
+			<xsd:element minOccurs="0" name="SingleSignOnRole" type="tns:String30"/>
+			<!--OMO-1670: Increased the Length of EmailAddress to 255 -->
+			<xsd:element minOccurs="0" name="EmailAddress" type="tns:String255"/>
+			<!--STRY0010932: End of OH addition of new elements-->
+		</xsd:sequence>                            					         
+	</xsd:complexType>
+	<!-- End of inquire provider & Inquire Provider History schema -->
+</xsd:schema>
+
+<!--Version: 1.11.11-->
+<!--Change Description: OMO-1670: Increase the length of field SingleSignOnAssignedID, SingleSignOnSelectedID
+                                   EmailAddress under ProviderApplication node to 255 -->
+<!--Change by: Vinay Shet-->
+<!--Last updated: 04/05/2023-->
+<!--Updated Date: 11/30/2023-->
+<!--SAM537 Restriction Business Key Change 12/20/2024-->
+<!--ApplicationId Change to Mandatory under update and Enroll ProviderApplication 12/20/2024-->

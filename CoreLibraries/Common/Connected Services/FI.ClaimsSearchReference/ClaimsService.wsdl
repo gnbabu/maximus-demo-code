@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.operationmgmt.fi/ClaimsService/search" xmlns:chdr="http://schema.common.fi/Header" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rsp="http://schema.operationmgmt.fi.com/ClaimResponse/common" name="ClaimsService" targetNamespace="http://service.operationmgmt.fi/ClaimsService/search" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.operationmgmt.fi/ClaimsService/search">
+      <xsd:include schemaLocation="./CommonHeader.xsd" />
+      <xsd:include schemaLocation="./ClaimReqRespCommon.xsd" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SearchClaimsRequest">
+    <wsdl:part name="parameters" element="tns:SearchClaimsRequest" />
+  </wsdl:message>
+  <wsdl:message name="SearchClaimsResponse">
+    <wsdl:part name="parameters" element="tns:SearchClaimsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ClaimsSearchService">
+    <wsdl:operation name="SearchClaims">
+      <wsdl:input message="tns:SearchClaimsRequest" />
+      <wsdl:output message="tns:SearchClaimsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClaimsSearchServiceSOAP" type="tns:ClaimsSearchService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchClaims">
+      <soap:operation soapAction="http://service.operationmgmt.fi/ClaimsService/SearchClaims" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClaimsSearchService">
+    <wsdl:port name="ClaimsSearchServiceSOAP" binding="tns:ClaimsSearchServiceSOAP">
+      <soap:address location="http://www.example.org/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

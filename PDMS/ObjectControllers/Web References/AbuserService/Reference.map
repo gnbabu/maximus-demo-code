@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://itsws.prodapps.dodd.ohio.gov/Abuser/Abuser.wsdl" filename="Abuser.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://itsws.prodapps.dodd.ohio.gov/Abuser/xsd1.xsd" filename="xsd1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://itsws.prodapps.dodd.ohio.gov/Abuser/xsd0.xsd" filename="xsd0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://itsws.prodapps.dodd.ohio.gov/Abuser/xsd2.xsd" filename="xsd2.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

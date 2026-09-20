@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Maximus.OHPNM.Services" elementFormDefault="qualified" targetNamespace="http://Maximus.OHPNM.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost:44337/IncidentReport.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models" />
+  <xs:element name="SendProviderIncident">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models" minOccurs="0" name="Incident" nillable="true" type="q1:ProviderIncidentReportModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendProviderIncidentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models" minOccurs="0" name="SendProviderIncidentResult" nillable="true" type="q2:SendProviderIncidentResponseModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,18 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+[[PROVIDERNAME]]<br />
+[[NPI]]<br />
+[[CURRENTDATE]]<br />
+
+Your information has been received from CAQH and you have been added to the District of Columbia Medicaid roster. <br /><br />
+    However, information received from CAQH indicates data which is required by District of Columbia in order to maintain your District of Columbia Medicaid ID is discrepant, incorrect or missing in your CAQH profile.  <br /><br />
+    Your CAQH profile needs correction of the following item(s):<br />
+[[REASON]]<br /><br />
+
+Please log in to your CAQH account to complete profile data correction. <br /><br />
+    Failure to update your CAQH profile will continue to delay the processing of your registration request, and could prevent your enrollment in the District of Columbia Medicaid program.<br /><br />
+    Please remember to click Re-attest once your information is updated.
+
+<p>If you have questions, please contact District of Columbia Medicaid at 1-888-111-2222 or email at <a href ="mailto:dcmedicaidPSE@maximus.com">dcmedicaidPSE@maximus.com</a>.</p>          
+Regards, <br>
+MAXIMUS Provider Screening and Enrollment Customer Service <br>
+</div>

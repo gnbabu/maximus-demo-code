@@ -1,0 +1,88 @@
+﻿<header>
+<style type="text/css">
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+<tr>
+	<td class="left">
+    [[TOADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>
+     
+ <tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<b>Subject: </b>Comprehensive Primary Care Invitation 
+</p>
+
+<p>
+Dear Provider:
+</p>
+
+<p>We are pleased to inform you that you are invited to participate in the Ohio Comprehensive Primary Care (CPC) program year [[upcoming_program_year]]. For those of you who were in CPC this year, thank you for your participation and we hope you will continue your great work!</p>
+
+<p>If your organization elects to continue as an individual entity or as the convener to an established practice partnership, you will need to re-attest that you will continue to meet CPC activity requirements for the upcoming year. If your organization wishes to become a part of a new practice partnership, the convener must enroll the partnership. For those of you who will be newly joining CPC as an individual entity, your organization will need to enroll. All participating CPC practices earn financial incentives from Medicaid for doing more to keep Ohioans healthier, all while keeping the total cost of care low.</p>
+
+<p>Practices who elect to participate in CPC individually or through a practice partnership must agree to meet the Ohio CPC program requirements in order to receive enhanced payments beginning January [[upcoming_program_year]] .Some may also be eligible for a retrospective bonus payment for reducing total cost of care, paid after the close of the program year based on performance. </p> 
+
+<p>Some CPC practices may be eligible to participate in the voluntary CPC for Kids program.</p>
+
+<p> Eligible practices that elect to participate, will receive additional incentive payments and bonus payment eligibility. Those not eligible to participate in CPC for Kids individually, may qualify as part of a  practice partnership.</p>
+
+<p>Before re-attesting or enrolling in Ohio’s CPC program, please review the Ohio CPC, Practice Partnerships, and CPC for Kids information found on the Ohio Department of Medicaid (ODM) website at CPC webpage <a Href="[[CPC_AdditionalInfo_Link]]">here</a>.</p>
+
+<p>In order to be eligible to participate in CPC and/or CPC for Kids, a provider must meet certain criteria as specified in the Ohio Administrative Code. Eligibility is determined using a provider’s 7-digit Ohio Medicaid billing ID. the ID eligible to apply is <b>[[MedicaidID]]</b>.</p>
+
+<p><b>Below is the level of CPC program participation your Medicaid ID qualifies for in program year [[upcoming_program_year]] :</b></p>
+[[conditional_paragraph]]
+<p></p>
+<p>The open enrollment period for the [[upcoming_program_year]] is [[enrollment_date]]. The eligible Medicaid ID listed in this letter MUST either re-attest to meeting activity requirements for [[upcoming_program_year]] or be newly enrolled in Ohio’s CPC program, no later than [[last_full_date]].Failure to do so by [[last_full_date]] will jeopardize the opportunity to participate in Ohio’s CPC program for [[upcoming_program_year]].</p>
+
+<p>The links to enroll and/or re-attest can be found under the Program Selections section of the appropriate Medicaid provider file.</p>
+
+<p>For detailed instructions on the enrollment process, please refer to the CPC User Guide, located under the Learning Section in PNM and the CPC enrollment webpage here. Access the Absorb learning management system (LMS) here, for virtual and self-paced PNM training sessions. For additional questions feel free to contact us at (800) 868-1516 or <a href="mailto:IHD@medicaid.ohio.gov">IHD@medicaid.ohio.gov</a>.</p>
+
+<p>To receive communications specific to CPC open enrollment, subscribe to our CPC communications by completing the ODM Subscribe Form <a Href="[[CMC_ODM_Subscribe_Form_Link]]">here</a>!</p>
+
+<p><b>Please note:</b>If you are the convener you are responsible to add/delete any practices for [[upcoming_program_year]], as applicable. All practices must complete designated forms, found on the ODM website link previously provided, if applicable .</p> 
+
+<p>*If the box is unselected, your practice may still quality for CPC for Kids as part of a practice partnership</p>
+
+
+Sincerely,<br/>
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Director_Signature.png" style="margin-bottom:1px;text-align:center;" /></p></div><br/>
+Ohio Medicaid Provider Network Management <br/>
+</td>
+</tr>
+</table>

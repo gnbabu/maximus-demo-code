@@ -1,0 +1,12 @@
+{
+		"success":"true",
+		"last_name": "Smith"
+		"first_name": "Sara",
+		"dob": "01/01/1980",
+		"OtherwiseKnownas": "",
+		"registrycategory": "",
+		"registrydate": "",
+		"criminaldata": "",
+		"arbitrationIndicator": ""
+		
+}

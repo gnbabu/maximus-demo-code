@@ -1,0 +1,99 @@
+<header>
+<style type="text/css">
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left" style="font-family:'Times New Roman';font-size:12pt">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+ <tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<b>Subject: </b>[[subject]]
+</p>
+
+<p>
+Dear Provider:
+</p>
+
+<p>The Ohio Department of Medicaid (ODM) is pleased to welcome you as a provider to the Ohio Medicaid program. You are joining providers across Ohio to serve nearly 3 million residents. This letter serves as notification that your application has been approved. This provider agreement is time-limited and is effective through [[AGREEMENTENDDATE]]. Prior to the expiration date of this agreement, you will be required to revalidate in order to maintain an active status. ODM will send you a revalidation notice 120-days prior to the expiration date. ODM will include instructions regarding revalidation procedures in the notice.</p>
+
+[[CredentialingResults]]
+
+<p>According to the information processed on your application,<b> unless you enrolled as Ordering, Referring or Prescribing (ORP) ONLY provider</b>, you may bill ODM for services rendered on or after [[EFFECTIVEDATE]] for the following type of health care services:</p>
+
+<p><b>Provider Type: [[PROVIDER_TYPE_NAME]]</b></p>
+
+<p><b>Specialties: [[PROVIDER_SPECIALTIES]]</b></p>
+
+
+<p><b>Please note, any information in this letter regarding claims submission or claims processing <u>does not apply</u> to non-billing Ordering, Referring or Prescribing ONLY providers.</b></p>
+
+<p>The National Provider Identifier (NPI) reported on your application is [[NPI]]. Your corresponding Ohio Medicaid Provider Number is [[MEDICAID_ID]]. Your NPI number is required on all claims. IT IS IMPORTANT THAT YOU USE THESE NUMBERS APPROPRIATELY. Incorrect use of your NPI and/or Medicaid Legacy Number will result in denied claims or reimbursement errors that result in incorrect reporting to the federal government of wage earnings on the 1099 Form.</p>
+
+<p>The Provider Network Management (PNM) system allows billing providers to submit claims and view remittance advices and allows all providers (including ORP only providers) to update demographic information. Access these features by logging into your existing PNM account and following the system options.</p>
+
+<p><b>Electronic Visit Verification for Providers of Long-Term Services and Supports</b></p>
+
+<p>Electronic Visit Verification (EVV) uses technology to document certain <a href="https://dam.assets.ohio.gov/image/upload/medicaid.ohio.gov/Providers/EVV/Providers/ODM_EVV_Covered_Programs_and_Services.pdf">services</a> in the home or community by electronically recording the time, date, and detail of services provided to members.</br></br><a href="https://codes.ohio.gov/ohio-administrative-code/chapter-5160-32">Ohio Administrative Code Chapter 5160-32</a> informs providers of EVV requirements. The Ohio Department of Medicaid has partnered with a vendor to implement an EVV solution. While you have completed the required EVV training prior to enrollment as a Medicaid provider, access to the EVV system and the capture of visits is required before claims for services subject to EVV may be paid. </br></br>It is important that you create an EVV account on the <a href="https://evv-registration.sandata.com/">EVV self-registration portal</a> if you haven't already done so. Please contact the EVV help desk at 855-805-3505 with any questions on getting started with EVV. See the <a href="https://medicaid.ohio.gov/resources-for-providers/special-programs-and-initiatives/electronic-visit-verification">Ohio Medicaid EVV webpage</a> for helpful information on EVV. </p>
+
+<p><b>Changes to Provider Information</b></p>
+
+<p>In accordance with Ohio Administrative Code 5160-1-17.2, you are required to notify ODM within 30 days of any change to your provider information. In order to have a successful partnership, it is important that ODM has complete and accurate information. To ensure we have updated information, you are responsible for updating your demographic information, such as your address, and phone number, by logging onto the secure ODM Web Portal. Should anything else change, for example your tax ID, licensure, certification, or group membership information, you need to notify the ODM Provider Enrollment Unit within 30 days of the change. It is essential that your enrollment information is current in order to process claim transactions appropriately and report accurate income information to both you and the federal government. We appreciate your cooperation with this important requirement</p>
+
+<p><b>Records</b></p>
+
+<p>Medicaid providers are required to maintain clinical and administrative records for a six-year period. These records must document medical necessity and indicate the need for the type, extent, and level of the service you provided for the patient. These records may be requested by ODM for audit purposes and will be reviewed to assure program compliance. Please note, in the event of a unfavorable audit finding, you may be required to repay ODM for reimbursement received that lacked required supporting documentation for services deemed medically necessary.</p>
+
+<p><b>Resources</b></p>
+
+<p>General information for Medicaid providers, provider manuals that govern Ohio Medicaid, billing instructions, contact information and addresses, provider training schedules and registration can be found on our website at <a href="[[Medicaid_URL]]">[[Medicaid_URL]]</a>.</p>
+
+<p><b>Direct Deposit of Payment</b></p>
+<p>As of January 1, 2013, most providers are required to receive payments via EFT, in accordance with ORC 5164.46. For those providers, failure to enroll for EFT will result in non-payment of claims.</p>
+
+<p>Instructions on how to enroll for Electronic Funds Transfer (EFT) can be found on ODM’s website at <a href="[[Medicaid_URL]]">[[Medicaid_URL]]</a>. Once at the website, under the Provider tab, select Billing and then Direct Deposit. For assistance navigating the website, visit <a href="[[Medicaid_URL]]">[[Medicaid_URL]]</a>. For Information about scheduled training events and links to materials click <a href="[[PDMS-URL]]">here</a>.</p>
+
+<p>Individuals who work for a group and are reimbursed through the group rather than reimbursed directly from Medicaid, do not need to sign up for an EFT.</p>
+
+<p>Thank you for your participation and your efforts to maintain and improve the health of Ohio residents. We welcome your feedback regarding your experience with the provider enrollment process. <font color="red">Please complete a brief survey to provide feedback on your provider web portal experience by clicking <a style="color:#FF0000;" href="[[Survey_Monkey]]">here</a>.</font></p>
+
+<p>If you do not have access to the internet, or have any questions regarding this letter, or the requirements, please contact Provider Enrollment Customer Service at 800-686-1516. We look forward to working together to serve the health care needs of Ohioans.</p>
+
+
+
+
+Sincerely, <br />
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Director_Signature.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<br />
+The Ohio Department of Medicaid<br />
+</td>
+</tr>
+</table>

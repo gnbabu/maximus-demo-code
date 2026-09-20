@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Maximus.OHPNM.Services" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://Maximus.OHPNM.Services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Maximus.OHPNM.Services/Imports">
+      <xsd:import schemaLocation="https://localhost:44337/DocumentService/AttachmentService.svc?xsd=xsd0" namespace="http://Maximus.OHPNM.Services" />
+      <xsd:import schemaLocation="https://localhost:44337/DocumentService/AttachmentService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SendAttachmentRequestMsg">
+    <wsdl:part name="parameters" element="tns:SendAttachment" />
+  </wsdl:message>
+  <wsdl:message name="SendAttachmentResponseMsg">
+    <wsdl:part name="parameters" element="tns:SendAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AttachmentService_SendAttachment_SendAttachmentFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:SendAttachmentFault" />
+  </wsdl:message>
+  <wsdl:portType name="AttachmentService">
+    <wsdl:operation name="SendAttachment">
+      <wsdl:input wsaw:Action="SendAttachment" name="SendAttachmentRequestMsg" message="tns:SendAttachmentRequestMsg" />
+      <wsdl:output wsaw:Action="http://Maximus.OHPNM.Services/AttachmentService/SendAttachmentResponse" name="SendAttachmentResponseMsg" message="tns:SendAttachmentResponseMsg" />
+      <wsdl:fault wsaw:Action="http://Maximus.OHPNM.Services/AttachmentService/SendAttachmentSendAttachmentFaultFault" name="SendAttachmentFaultFault" message="tns:AttachmentService_SendAttachment_SendAttachmentFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

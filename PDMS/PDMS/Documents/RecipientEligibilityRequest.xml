@@ -1,0 +1,31 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mem="http://mes.gov/membermanagement">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <mem:eligVerificationRequest>
+      <mem:MessageHeader>
+        <mem:BusinessFlow>?</mem:BusinessFlow>
+        <mem:StateCode>OH</mem:StateCode>
+        <mem:RequestorSystem>PNM</mem:RequestorSystem>
+        <!--Optional:-->
+        <mem:SubscriberSystem>?</mem:SubscriberSystem>
+        <!--Optional:-->
+        <mem:ModuleTransactionId>1</mem:ModuleTransactionId>
+        <!--Optional:-->
+        <mem:AdditonalModuleTransactionId>?</mem:AdditonalModuleTransactionId>
+        <mem:RequestTimestamp>2000-03-30T08:45:30</mem:RequestTimestamp>
+        <!--Optional:-->
+        <mem:SITransactionKey>02</mem:SITransactionKey>
+      </mem:MessageHeader>
+      <!--Zero or more repetitions:-->
+      <mem:eligRequest clientSecurityKey="21" transactionId="12">
+        <!--Zero or more repetitions:-->
+        <mem:eligInfoReceiver providerNumber="123876543"/>
+        <!--Zero or more repetitions:-->
+        <mem:eligSubscriber procedureCD="ICD10" subscriberDateOfBirth="03/11/1965" subscriberId="9999999999" subscriberSSN="123456789">
+          <!--Zero or more repetitions:-->
+          <mem:eligSubscriberDate fromDateOfService="09/30/2001" toDateOfService="09/30/2020"/>
+        </mem:eligSubscriber>
+      </mem:eligRequest>
+    </mem:eligVerificationRequest>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,66 @@
+
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+ <tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<b>Subject: </b>Provider Screening and Enrollment Registration-Action Required 
+</p>
+
+<p>
+Dear Provider:
+</p>
+<p>Your Ohio Medicaid Provider Application/Agreement could not be processed as submitted. Your provider enrollment application has been returned because the Ohio Medicaid Enrollment requires additional information in order to process the application. <br /><br />Please see the return reasons below:<br>[[RETURNREASONS]]<br></p>
+<p>Within the next 10 days, please log into the Provider Network Management system [[PDMSURL]] to complete and resubmit your provider enrollment application request. Failure to do so within 10 days of this communication will result in the closure of the application <b>and termination of your provider agreement.</b> </p>
+<p>Please note the return reasons listed in this email will also be displayed in the portal identifying the pages that need correction or require additional information. If you have any questions, please contact the Provider Enrollment Customer Service at 1-800-686-1516.</p>
+
+<p>If you are mailing paper copies of required documentation, please send to the following address:</p>
+<p>Provider Enrollment Unit<br/>
+P.O. Box 1461<br/>
+Columbus, Ohio 43216-1461</p>
+
+
+
+
+Sincerely,<br />
+    <br />
+Ohio Medicaid Provider Enrollment
+</td>
+</tr>
+</table>

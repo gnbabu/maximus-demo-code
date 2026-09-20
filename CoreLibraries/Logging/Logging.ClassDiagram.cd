@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MAXIMUS.Core.Libraries.Logging">
+    <Position X="4.75" Y="2" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="MAXIMUS.Core.Libraries.Logging.LogPriority" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Logging.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IQACIAgAAQQgAAAAAAgAAAAAAAAAAAAAEQIAAAAAAAA=</HashCode>
+      <FileName>Logging.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

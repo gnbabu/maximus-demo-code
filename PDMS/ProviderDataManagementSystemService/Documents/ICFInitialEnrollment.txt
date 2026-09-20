@@ -1,0 +1,39 @@
+
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<table id="Table1" style="width: 8.4in;">
+
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<b>Subject: </b>Intermediate Care Facility Change of Operator Enrollment Welcome Letter
+</p>
+<p>
+Dear [[ProviderName]]:
+</p>
+
+<p>Welcome to Ohio Medicaid! As a result of the recent change of operator for [[EXITINGFACILITYNAME]] a new Medicaid ID has been assigned to [[ENTERINGOPERATORNAME]], the legal entity which took over operations effective [[CHOPEFFECTIVEDATE]].</p>
+
+<p>Effective [[CHOPEFFECTIVEDATE]], the Ohio Medicaid legacy number assigned to [[ENTERINGOPERATORNAME]] to operate [[FACILITYNAME]] is: [[EXITINGMEDICAIDID]]. This number must be used for all billings for dates of service on and after [[CHOPEFFECTIVEDATE]]. The previous number [[EXITINGMEDICAIDID]] may only be used to process claims for dates of service on or before [[CURRENTDATE]] delivered by [[EXITINGFACILITYNAME]] [[EXITINGMEDICAIDID]]. Please keep in mind that the deadline for claims submission is one year from the date of service.</p>
+
+<p>Federal law requires providers of health care and health plans to comply with the National Provider Identifier (NPI) regulations. ICF/IID claims submitted to ODM (Ohio Department of Medicaid) will be denied if the facility's NPI number is not in the required field(s) on the claim. Additional information regarding NPIs can be obtained by accessing the ODM website: http://medicaid.ohio.gov/</p>
+
+<p>If you have any questions, please contact <a href="mailto:LTCProviderManagement@medicaid.ohio.gov">LTCProviderManagement@medicaid.ohio.gov</a></p>
+
+Sincerely, <br />
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Director_Signature.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<br />
+
+
+</td>
+</tr>
+</table>
+

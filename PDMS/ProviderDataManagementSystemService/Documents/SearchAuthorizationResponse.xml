@@ -1,0 +1,65 @@
+<?xml version="1.0" standalone="yes"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header />
+  <soapenv:Body>
+    <car:SearchAuthorizationResponse xmlns:car="http://mes.gov/caremanagement">
+      <car:SITransactionKey>270</car:SITransactionKey>
+      <car:ModuleTransactionId>12</car:ModuleTransactionId>
+      <car:ResponseCode>200</car:ResponseCode>
+      <car:ResponseType>Success</car:ResponseType>
+      <car:ResponseMessage>No Response Message</car:ResponseMessage>
+      <car:ResponseDetails>No Response Details</car:ResponseDetails>
+      <car:MessageHeader />
+      <car:MessageHeader>
+        <car:ModuleTransactionId>1</car:ModuleTransactionId>
+        <car:AdditionalModuleTransactionId>1</car:AdditionalModuleTransactionId>
+        <car:RequestorSystem>?</car:RequestorSystem>
+        <car:RequestTimestamp>?</car:RequestTimestamp>
+        <car:SITransactionKey>?</car:SITransactionKey>
+        <car:StateCode>OH</car:StateCode>
+        <car:SubscriberSystem>MITS</car:SubscriberSystem>
+      </car:MessageHeader>
+      <car:ResponsePayload>
+        <car:AuthorizationInfo>
+          <car:PriorAuthorizationID>1234567890</car:PriorAuthorizationID>
+          <car:MemberID>123456789012</car:MemberID>
+          <car:AssignmentCode>11 Orthotics/Prosthetics (Nurses)</car:AssignmentCode>
+          <car:AuthorizationBeginDate>2020-10-10</car:AuthorizationBeginDate>
+          <car:AuthorizationEndDate>2020-10-10</car:AuthorizationEndDate>
+          <car:AuthSubmissionDate>2020-12-31</car:AuthSubmissionDate>
+          <car:OrderingProviderID>9876543210</car:OrderingProviderID>
+          <car:ODSPriorAuthorizationID>123456</car:ODSPriorAuthorizationID>
+          <car:CreatedDate>2020-01-01 00:00:00.000000</car:CreatedDate>
+          <car:CreatedBy>PNM</car:CreatedBy>
+          <car:LastModifiedDate>2020-01-01 00:00:00.000000</car:LastModifiedDate>
+          <car:LastModifiedBy>MITS</car:LastModifiedBy>
+          <car:RenderingProviderID>2020-01-01 00:00:00.00000</car:RenderingProviderID>
+          <car:RenderingProviderID>MITS</car:RenderingProviderID>
+        </car:AuthorizationInfo>
+        <car:AuthorizationService>
+          <car:ServiceStatusCode>Revenue Code</car:ServiceStatusCode>
+          <car:StatusCode>Approved Per Hearing</car:StatusCode>
+          <car:TypeOfServiceCode>C</car:TypeOfServiceCode>
+          <car:ServiceCode>99203</car:ServiceCode>
+          <car:ThruService>123456</car:ThruService>
+          <car:DetailLineNumber>abcde</car:DetailLineNumber>
+          <car:AuthorizedUnits>11</car:AuthorizedUnits>
+          <car:AuthorizedDollars>11.11</car:AuthorizedDollars>
+          <car:ODSPriorAuthorizationServiceID>1111</car:ODSPriorAuthorizationServiceID>
+          <car:CreatedDate>PNM</car:CreatedDate>
+          <car:CreatedBy>2020-01-01 00:00:00.000000</car:CreatedBy>
+          <car:LastModifiedDate>2020-01-01 00:00:00.000000</car:LastModifiedDate>
+          <car:LastModifiedBy>MITS</car:LastModifiedBy>
+        </car:AuthorizationService>
+        <car:AuthorizationDiagnosis>
+          <car:DiagnosisCode>1234567</car:DiagnosisCode>
+          <car:ODSDiagnosisID>ICD 10</car:ODSDiagnosisID>
+          <car:CreatedDate>2020-01-01 00:00:00.000000</car:CreatedDate>
+          <car:CreatedBy>PNM</car:CreatedBy>
+          <car:LastModifiedDate>2020-01-01 00:00:00.000000</car:LastModifiedDate>
+          <car:LastModifiedBy>MITS</car:LastModifiedBy>
+        </car:AuthorizationDiagnosis>
+      </car:ResponsePayload>
+    </car:SearchAuthorizationResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

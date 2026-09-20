@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="yes"?>
+<Persons>
+  <xs:schema id="Persons" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="Persons" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Person">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="PersonId" type="xs:int" minOccurs="0" />
+                <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+                <xs:element name="MiddleName" type="xs:string" minOccurs="0" />
+                <xs:element name="LastName" type="xs:string" minOccurs="0" />
+                <xs:element name="Gender" type="xs:string" minOccurs="0" />
+                <xs:element name="Suffix" type="xs:string" minOccurs="0" />
+                <xs:element name="BirthDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="ProviderTypeId" type="xs:int" minOccurs="0" />
+                <xs:element name="ProviderTypeAbbreviation" type="xs:string" minOccurs="0" />
+                <xs:element name="ProviderTypeName" type="xs:string" minOccurs="0" />
+                <xs:element name="ProviderSpecialtyId" type="xs:int" minOccurs="0" />
+                <xs:element name="ProviderSpecialtyName" type="xs:string" minOccurs="0" />
+                <xs:element name="NPI" type="xs:string" minOccurs="0" />
+                <xs:element name="UPIN" type="xs:string" minOccurs="0" />
+                <xs:element name="MedicareProviderFlag" type="xs:string" minOccurs="0" />
+                <xs:element name="HospitalBasedFlag" type="xs:string" minOccurs="0" />
+                <xs:element name="HospitalPrivilegeFlag" type="xs:string" minOccurs="0" />
+                <xs:element name="LastModifiedDateTime" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LastModifiedUser" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="RecordStatus" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Person>
+    <PersonId>15</PersonId>
+    <FirstName>Brett</FirstName>
+    <MiddleName>L</MiddleName>
+    <LastName>Ferrell</LastName>
+    <Gender>M</Gender>
+    <BirthDate>2012-06-01T15:56:13.413-05:00</BirthDate>
+    <NPI>1356646434</NPI>
+    <LastModifiedDateTime>2012-06-01T15:56:13.413-05:00</LastModifiedDateTime>
+    <LastModifiedUser>e7854515-e84d-419b-b30e-720ae2c7ee4d</LastModifiedUser>
+    <RecordStatus>1</RecordStatus>
+  </Person>
+</Persons>

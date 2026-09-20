@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://mes.gov/claims" elementFormDefault="qualified" targetNamespace="http://mes.gov/claims" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="Claims_Datatypes.xsd" />
+  <xs:element name="MessageHeader">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" name="BusinessFlow" type="xs:string" />
+        <xs:element minOccurs="1" default="OH" name="StateCode" type="xs:string" />
+        <xs:element minOccurs="1" default="PNM" name="RequestorSystem" type="tns:String50" />
+        <xs:element minOccurs="0" name="SubscriberSystem" type="tns:string50" />
+        <xs:element minOccurs="0" name="ModuleTransactionId" type="tns:String20" />
+        <xs:element minOccurs="0" name="AdditionalModuleTransactionId" type="tns:String50" />
+        <xs:element minOccurs="1" name="RequestTimestamp" type="tns:DateTimeType" />
+        <xs:element minOccurs="0" name="SITransactionKey" type="tns:String32" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fault">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="faultcode" type="xs:string" />
+        <xs:element minOccurs="0" name="faultstring" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

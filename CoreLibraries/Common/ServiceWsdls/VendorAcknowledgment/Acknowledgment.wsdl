@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://mes.gov/acknowledgment" xmlns:ack="http://mes.gov/acknowledgment" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://mes.gov/acknowledgment" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <documentation>
+    <appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="acknowledgmentSoap" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </appinfo>
+  </documentation>
+
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://mes.gov/acknowledgment">
+			<xsd:include schemaLocation="Acknowledgment.xsd"/>
+		</xsd:schema>
+	</types>
+
+	<message name="acknowledgmentRequestMsg">
+		<part element="tns:VendorAcknowledgmentRequest" name="parameters"/>
+	</message>
+	<message name="acknowledgmentResponseMsg">
+		<part element="tns:VendorAcknowledgmentResponse" name="parameters"/>
+	</message>
+	
+	<message name="acknowledgmentFault">
+		<part element="tns:VendorAcknowledgmentRequest" name="parameters"/>
+	</message>
+	
+	<portType name="AcknowledgmentSoapPortType">
+		<operation name="vendorAcknowledgment">
+			<input message="tns:acknowledgmentRequestMsg"/>
+			<output message="tns:acknowledgmentResponseMsg"/>
+			<fault name="fault" message="tns:acknowledgmentFault"/>
+		</operation>
+	</portType>
+	<binding name="acknowledgmentSoap" type="tns:AcknowledgmentSoapPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="vendorAcknowledgment">
+			<soap:operation soapAction="http://mes.gov/vendorAcknowledgment" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+            <fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</fault>
+        </operation>
+	</binding>
+	<service name="AcknowledgmentService">
+		<port binding="tns:acknowledgmentSoap" name="acknowledgmentSoap">
+			<soap:address location="http://localhost:7800/acknowledgment/serviceentrypoint"/>
+		</port>
+	</service>
+</definitions>

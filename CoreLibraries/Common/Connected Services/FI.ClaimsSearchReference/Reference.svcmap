@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="861e689a-e7cd-4de6-aade-a49d8d60b668" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="D:\Users\403245\Favorites\Downloads\ClaimSearch_WSDL\ClaimsSearchService.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ClaimReqRespCommon.xsd" MetadataType="Schema" ID="b8779521-7215-419e-894a-d3a928f48efc" SourceId="1" SourceUrl="file:///D:/Users/403245/Favorites/Downloads/ClaimSearch_WSDL/ClaimReqRespCommon.xsd" />
+    <MetadataFile FileName="CommonHeader.xsd" MetadataType="Schema" ID="5cadada7-bbbc-475d-a833-eacdd7430390" SourceId="1" SourceUrl="file:///D:/Users/403245/Favorites/Downloads/ClaimSearch_WSDL/CommonHeader.xsd" />
+    <MetadataFile FileName="ClaimsService.wsdl" MetadataType="Wsdl" ID="f13de42d-e035-4cb5-8d28-936768b40996" SourceId="1" SourceUrl="file:///D:/Users/403245/Favorites/Downloads/ClaimSearch_WSDL/ClaimsSearchService.wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

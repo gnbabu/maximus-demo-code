@@ -1,0 +1,13 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<p>
+<b>Subject: </b>Username Recovery
+</p>
+
+<p>
+Dear Provider:
+</p>
+<p>Per your request, your Ohio Department of Medicaid Provider Network Module User ID is: [[USERNAME]]</p>
+<p>If you did not submit this request, please contact Provider Assistance Customer Service immediately at 800-686-1516. </p>          
+<p> Regards,</p>
+Ohio Department of Medicaid <br>
+</div>

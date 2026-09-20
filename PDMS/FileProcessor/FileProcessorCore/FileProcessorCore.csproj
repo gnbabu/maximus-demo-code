@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21086612-3F2C-491A-8BC7-A58F7121A8FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FileProcessorCore</RootNamespace>
+    <AssemblyName>FileProcessorCore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authorization.cs" />
+    <Compile Include="BatchProcessor.cs" />
+    <Compile Include="ConnectionFactory.cs" />
+    <Compile Include="DatabaseRecord.cs" />
+    <Compile Include="DatabaseRecordProcessor.cs" />
+    <Compile Include="EmailHelper.cs" />
+    <Compile Include="EWSConfiguration.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="FileProcessor.cs" />
+    <Compile Include="FileProcessorConfig.cs" />
+    <Compile Include="FolderMonitor.cs" />
+    <Compile Include="Format.cs" />
+    <Compile Include="FormatFileField.cs" />
+    <Compile Include="GenericFileReader.cs" />
+    <Compile Include="ICSVTemplateField.cs" />
+    <Compile Include="IFixedDelimitedTemplateField.cs" />
+    <Compile Include="ImportRecord.cs" />
+    <Compile Include="ITemplateField.cs" />
+    <Compile Include="LineRecordExportFileProcessor.cs" />
+    <Compile Include="LineRecordExportLineProcessor.cs" />
+    <Compile Include="LineRecordImportFileProcessor.cs" />
+    <Compile Include="LineRecordImportLineProcessor.cs" />
+    <Compile Include="LineRecordLineProcessor.cs" />
+    <Compile Include="LogFile.cs" />
+    <Compile Include="Lookup.cs" />
+    <Compile Include="NoticeData.cs" />
+    <Compile Include="NoticeRecord.cs" />
+    <Compile Include="Parse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Record.cs" />
+    <Compile Include="TemplateField.cs" />
+    <Compile Include="XmlUtility.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

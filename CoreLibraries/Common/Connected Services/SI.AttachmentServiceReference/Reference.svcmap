@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ca300e7a-7411-4b5e-8588-9bc90eae37f5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\284904\Desktop\Hospice\Attachment1_3_Jan_2022\Attachment Schemas\Attachment.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Attachment_MessageHeader.xsd" MetadataType="Schema" ID="71d75190-f486-436b-803e-f14ce05ca553" SourceId="1" SourceUrl="file:///C:/Users/284904/Desktop/Hospice/Attachment1_3_Jan_2022/Attachment Schemas/Attachment_MessageHeader.xsd" />
+    <MetadataFile FileName="Attachment_Datatypes.xsd" MetadataType="Schema" ID="81665fe9-cc63-4d84-bde9-5e51d6eabe36" SourceId="1" SourceUrl="file:///C:/Users/284904/Desktop/Hospice/Attachment1_3_Jan_2022/Attachment Schemas/Attachment_Datatypes.xsd" />
+    <MetadataFile FileName="Attachment.wsdl" MetadataType="Wsdl" ID="ed47ca77-648f-4209-896f-6d5fceb3091b" SourceId="1" SourceUrl="file:///C:/Users/284904/Desktop/Hospice/Attachment1_3_Jan_2022/Attachment Schemas/Attachment.wsdl" />
+    <MetadataFile FileName="Attachment_InlineSchema.xsd" MetadataType="Schema" ID="406c173c-b3a5-4942-aaf0-bad8d4295c4f" SourceId="1" SourceUrl="file:///C:/Users/284904/Desktop/Hospice/Attachment1_3_Jan_2022/Attachment Schemas/Attachment_InlineSchema.xsd" />
+    <MetadataFile FileName="Attachment.xsd" MetadataType="Schema" ID="db86cc5e-b3cc-4c61-ac23-42d410b4f131" SourceId="1" SourceUrl="file:///C:/Users/284904/Desktop/Hospice/Attachment1_3_Jan_2022/Attachment Schemas/Attachment.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

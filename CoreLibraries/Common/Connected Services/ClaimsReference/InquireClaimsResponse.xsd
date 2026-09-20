@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns2="http://mes.gov/DentalClaims" xmlns:ns1="http://mes.gov/InstitutionalClaims" xmlns:ns4="http://mes.gov/ClaimResponse" xmlns:ns0="http://mes.gov/PhysicianClaims" xmlns="http://mes.gov/InquireClaimsResponse" xmlns:ns3="http://mes.gov/PharmClaims" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://mes.gov/InquireClaimsResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="PhysicianClaims.xsd" namespace="http://mes.gov/PhysicianClaims" />
+  <xs:import schemaLocation="InstitutionalClaims.xsd" namespace="http://mes.gov/InstitutionalClaims" />
+  <xs:import schemaLocation="DentalClaims.xsd" namespace="http://mes.gov/DentalClaims" />
+  <xs:import schemaLocation="PharmClaims.xsd" namespace="http://mes.gov/PharmClaims" />
+  <xs:import schemaLocation="ClaimResponse.xsd" namespace="http://mes.gov/ClaimResponse" />
+  <xs:element name="InquireClaimsResponse">
+    <xs:annotation>
+      <xs:documentation>
+This element contains the response elements to inquire the detail for an existing Claims in MITS.
+</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="ns0:PhysicianClaims" />
+        <xs:element minOccurs="0" ref="ns1:InstitutionalClaims" />
+        <xs:element minOccurs="0" ref="ns2:DentalClaims" />
+        <xs:element minOccurs="0" ref="ns3:PharmClaims" />
+        <xs:element ref="ns4:ClaimResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,17 @@
+﻿<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+Legal Name: [[LEGAL_NAME]]<br>
+Provider NPI: [[NPI]]<br>
+Site Visit Type: [[SITEVISITTYPE]] <br>
+
+Provider Status: [[NEWORREVALIDATION]] <br>
+
+<p>The MAXIMUS Site Visit Coordinator has determined that the above Provider has failed at least one of the required site visit checklist requirements in order to 
+    be considered as an approved provider within the (state) Medicaid program.<br /><br />
+This provider requires further review from the State Medicaid Program Integrity to determine if this provider should be either denied or terminated from the State Medicaid program.</p>
+<p>Please log into the Medicaid Screening and Enrollment portal to complete a review of this provider and take the next appropriate action. <br />
+[[PDMSURL]]</p>
+
+<p>Regards,<br>
+MAXIMUS Provider Screening and Enrollment Customer Service
+</p>
+</div>

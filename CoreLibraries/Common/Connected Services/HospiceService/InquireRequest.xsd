@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://ohio.gov/InquireRequest" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ohio.gov/InquireRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>
+This document contains the elements to inquire the detail for an existing Hospice application from MITS.
+</xs:documentation>
+  </xs:annotation>
+  <xs:element name="InquireRequest">
+    <xs:annotation>
+      <xs:documentation>
+This element contains the request elements to inquire the detail for an existing Hospice application from MITS.
+</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="HospiceTrackNo" type="xs:int" />
+        <xs:element name="ProvMedID" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

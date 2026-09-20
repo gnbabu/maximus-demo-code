@@ -1,0 +1,41 @@
+
+
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+<tr><td>[[TOADDRESS]]</td></tr>
+</table>
+
+<br />
+<p>
+<b>Subject: </b>New LTC Cost Report have been uploaded for provider ID [[Medicaid_ID]]
+
+<p>
+Dear Provider:
+</p>	
+<p>
+There is a LTC Cost Report on the PNM Cost Report Review and Submission panel that needs your review/approval for Provider ID [[Medicaid_ID]] and Tracking#<<Tracking Number>>.</p>
+
+</div>

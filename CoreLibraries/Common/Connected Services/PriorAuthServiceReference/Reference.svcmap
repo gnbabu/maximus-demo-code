@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="3675015a-5856-4ace-8371-7762e01f2acb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="D:\src\ohpnm-src\CoreLibraries\Common\Connected Services\PriorAuthServiceReference\PriorAuthorizationService.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CommonHeader.xsd" MetadataType="Schema" ID="ed51cbd5-dd8c-4bc9-8b5b-85afb348d638" SourceId="1" SourceUrl="file:///D:/src/ohpnm-src/CoreLibraries/Common/Connected Services/PriorAuthServiceReference/CommonHeader.xsd" />
+    <MetadataFile FileName="X12PARequest.xsd" MetadataType="Schema" ID="ad084536-f32f-4bfb-9659-ca831d3b1707" SourceId="1" SourceUrl="file:///D:/src/ohpnm-src/CoreLibraries/Common/Connected Services/PriorAuthServiceReference/X12PARequest.xsd" />
+    <MetadataFile FileName="HeaderX12Schema.xsd" MetadataType="Schema" ID="01c91f4b-f802-449a-91e7-2cf503dc9fd1" SourceId="1" SourceUrl="file:///D:/src/ohpnm-src/CoreLibraries/Common/Connected Services/PriorAuthServiceReference/HeaderX12Schema.xsd" />
+    <MetadataFile FileName="PriorAuthRequestResponse.xsd" MetadataType="Schema" ID="e1571dff-c6b6-4ec3-99c6-37d954937f83" SourceId="1" SourceUrl="file:///D:/src/ohpnm-src/CoreLibraries/Common/Connected Services/PriorAuthServiceReference/PriorAuthRequestResponse.xsd" />
+    <MetadataFile FileName="PriorAuthService.wsdl" MetadataType="Wsdl" ID="0e94d59c-efbc-45c8-ae51-3cda6f318d7f" SourceId="1" SourceUrl="file:///D:/src/ohpnm-src/CoreLibraries/Common/Connected Services/PriorAuthServiceReference/PriorAuthorizationService.wsdl" />
+    <MetadataFile FileName="X12PAResponse.xsd" MetadataType="Schema" ID="89b57713-4683-4f64-968c-2c406ee582ee" SourceId="1" SourceUrl="file:///D:/src/ohpnm-src/CoreLibraries/Common/Connected Services/PriorAuthServiceReference/X12PAResponse.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

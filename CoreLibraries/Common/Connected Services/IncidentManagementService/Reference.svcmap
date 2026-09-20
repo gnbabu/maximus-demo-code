@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ace9496c-3409-4f2c-834c-113d28c147fe" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\CA_OHPNM_DEV_7\source\repos\GIT\DEV\CoreLibraries\Common\ServiceWsdls\IncidentManagementService\IncidentManagement.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="IncidentManagement.wsdl" MetadataType="Wsdl" ID="fc902c67-570f-4a89-b5e3-0899093eeec3" SourceId="1" SourceUrl="file:///C:/Users/CA_OHPNM_DEV_7/source/repos/GIT/DEV/CoreLibraries/Common/ServiceWsdls/IncidentManagementService/IncidentManagement.wsdl" />
+    <MetadataFile FileName="IncidentManagement_InlineSchema.xsd" MetadataType="Schema" ID="ccb5184b-c09e-4f7e-9477-469bd8dd872e" SourceId="1" SourceUrl="file:///C:/Users/CA_OHPNM_DEV_7/source/repos/GIT/DEV/CoreLibraries/Common/ServiceWsdls/IncidentManagementService/IncidentManagement_InlineSchema.xsd" />
+    <MetadataFile FileName="IncidentManagement_Datatypes.xsd" MetadataType="Schema" ID="4cf2ea99-59d8-4cb5-95fc-76d6918e58cf" SourceId="1" SourceUrl="file:///C:/Users/CA_OHPNM_DEV_7/source/repos/GIT/DEV/CoreLibraries/Common/ServiceWsdls/IncidentManagementService/IncidentManagement_Datatypes.xsd" />
+    <MetadataFile FileName="IncidentManagement.xsd" MetadataType="Schema" ID="4ca4297d-d2ef-48a0-92cd-d5b1a42a05a7" SourceId="1" SourceUrl="file:///C:/Users/CA_OHPNM_DEV_7/source/repos/GIT/DEV/CoreLibraries/Common/ServiceWsdls/IncidentManagementService/IncidentManagement.xsd" />
+    <MetadataFile FileName="IncidentManagement_MessageHeader.xsd" MetadataType="Schema" ID="d121bea9-5164-4fce-a6c6-ec490c1bed01" SourceId="1" SourceUrl="file:///C:/Users/CA_OHPNM_DEV_7/source/repos/GIT/DEV/CoreLibraries/Common/ServiceWsdls/IncidentManagementService/IncidentManagement_MessageHeader.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

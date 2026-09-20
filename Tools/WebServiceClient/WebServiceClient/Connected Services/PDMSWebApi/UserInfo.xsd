@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Maximus.OHPNM.Services" elementFormDefault="qualified" targetNamespace="http://Maximus.OHPNM.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost:44337/UserInfo.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models" />
+  <xs:element name="GetUserInfoTKN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AuthToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoTKNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models" minOccurs="0" name="GetUserInfoTKNResult" nillable="true" type="q1:UserDetailModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EncryptedPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models" minOccurs="0" name="GetUserInfoResult" nillable="true" type="q2:UserDetailModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAgentProvAssnDataTKN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AuthToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAgentProvAssnDataTKNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models" minOccurs="0" name="GetUserAgentProvAssnDataTKNResult" nillable="true" type="q3:UserAgentProvAssnModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAgentProvAssnData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WebRoleNameSearch" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FilterRole" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAgentProvAssnDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PDMSWebAPI.Models" minOccurs="0" name="GetUserAgentProvAssnDataResult" nillable="true" type="q4:UserAgentProvAssnModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EchoSoapRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="input" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EchoSoapRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EchoSoapRequestResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

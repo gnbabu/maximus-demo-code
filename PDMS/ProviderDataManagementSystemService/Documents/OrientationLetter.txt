@@ -1,0 +1,272 @@
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<b>Subject: </b>[[RISKLEVEL]] Provider Orientation Notice
+</p>
+
+<p>
+Dear Provider:
+</p>
+    <p>
+	
+        Congratulations! [[LEGALNAME]] has successfully completed the initial phase of the (state)'s Medicaid Provider Enrollment process for [[RISKLEVEL]] Providers.  
+        <b>You have thirty business (30) days from the date of this letter to attend a mandatory Medicaid [[RISKLEVEL]] Provider Orientation. At the completion of orientation, MAXIMUS will forward a copy of the attendance signature form and your application will then and only then be approved.</b>
+    </p>
+
+    <p>
+        Below are details related to the orientation and final phase of the enrollment process.  Please read this information carefully. 
+Remember to bring the required documentation with you to Orientation.
+    </p>
+
+    <p><b><u>Required Orientation Attendees </u></b> </p>
+
+    <p>
+        Required Attendees at the Mandatory Provider Orientation  for companies located <u>within</u> the geographic boundaries of the 
+District of Columbia:
+    </p>
+    <ul>
+        <li>At least <b>two</b> (2) company representatives are required to attend:
+    <ul>
+        <li>One company representative <b><u>must</u></b> have fiduciary authority.</li>
+        <li>The second company representative <b><u>must</u></b> have responsibility for Medicaid billing or claims processing.</li>
+    </ul>
+        </li>
+    </ul>
+
+    <p>Required Attendees at the Mandatory Provider Orientation for  companies located <b><u>outside</u></b> the geographic boundaries of the District of Columbia (one (1) of the following):</p>
+    <ul>
+        <li>At least one (1) company representative is required to attend:
+    <ul>
+        <li>The Registered Agent listed in the approved provider application.</li>
+        <li>A person with responsibility for Medicaid billing or claims processing. In the absence of a billing or claims representative, 
+	  a person who assumes responsibility for communicating billing or claims processing requirements to the appropriate company official.</li>
+	
+		[[OUTSIDEREP]]
+    </ul>
+        </li>
+    </ul>
+    <ul>
+        <li>If the company representative is unable to attend in person, the representative(s) may participate in the orientation via webinar:
+    <ul>
+        <li>The email address for all attendees <b><u>must</u></b> be provided.</li>
+        <li>Webinar information provided upon receipt of the registration form.</li>
+    </ul>
+        </li>
+    </ul>
+
+    <p><b>All representatives must attend the same Medicaid Provider Orientation session, provide proper identification and stay for the entire orientation session.</b></p>
+
+   <div style="text-align: center;">
+		<b><u>DC Medicaid [[RISKLEVEL]] Provider Orientation Location</u></b><br />
+        The Medicaid [[RISKLEVEL]] Provider Enrollment Orientation will be conducted at:<br />
+        (title)<br />
+        (address)<br />
+        (city,state,zip)
+
+        <br />  <br /> <br />     
+	
+
+		<b><u>Medicaid [[RISKLEVEL]] Provider Orientation Registration and Confirmation</u></b>
+		<br/><br/>
+	</div>
+
+     The Medicaid [[RISKLEVEL]] Provider Orientation Schedule is shown below.
+	 <p> </p>
+	[[TRAININGDETAILS]]
+	 
+    <br />
+    <br />
+    <p>Select your 1st, 2nd and 3rd choice of Orientation dates/time and return the below completed form to:</p>
+    <span style="text-align: center; width: 100%;">ATTN:  Provider Registration<br />
+        Medicaid [[RISKLEVEL]] Provider Enrollment Orientation<br />
+        (title)<br />
+        P.O. Box xxx<br />
+        (city,state,zip)<br />
+        Phone:  (999) 999-9999<br />
+        Fax:  (999) 999-9999<br />
+        Email:  (email)<br />
+    </span>
+    <br />
+    <br />
+
+    <p>A confirmation of your orientation registration will be faxed to you at the number listed on your registration form.  </p>
+
+
+    <p><strong>IMPORTANT!!!</strong></p>
+   
+    <p><strong>** Attendance at one Medicaid [[RISKLEVEL]] Provider Orientation is mandatory to complete enrollment.</strong></p>
+
+    <p><strong>** Complete and Return the Medicaid [[RISKLEVEL]] Provider Orientation Registration Form within 30 business days of the date of this letter.</strong></p>
+
+    <p>COMPANY INFORMATION</p>
+    <p>
+        _______________________________________________________________________<br />
+        Company Name (as it appears on your application)
+    </p>
+    <p>
+        _______________________________________________________________________<br />
+        Company Address
+    </p>
+    <p>
+        _______________________________________________________________________<br />
+        Fax Number (where confirmation should be sent)
+    </p>
+    <p>
+        _______________________________________________________________________<br />
+        Email Address
+    </p>
+    <p>Check one:</p>
+    <p>ORIENTATION DATES: In Person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WEBINAR</p>
+    <p><em>Review the Medicaid [[RISKLEVEL]] Provider Orientation Schedule and indicate your 1<sup>st</sup>, 2<sup>nd</sup> and 3<sup>rd</sup> choice of orientation dates and times in the spaces below. <strong>Attendance in one orientation is required for enrollment.</strong></em></p>
+    <table>
+        <tbody>
+            <tr>
+                <td>1<sup>st</sup> Choice</td>
+                <td>
+                    <p>
+                        _____________________________________<br />
+                        <em>Date </em>
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        ________________________<br />
+                        <em>Time</em>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>2<sup>nd</sup> Choice</td>
+                <td>
+                    <p>
+                        _____________________________________<br />
+                        <em>Date </em>
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        ________________________<br />
+                        <em>Time</em>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>3<sup>rd</sup> Choice</td>
+                <td>
+                    <p>
+                        _____________________________________<br />
+                        <em>Date </em>
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        ________________________<br />
+                        <em>Time</em>
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p><u>ATTENDEES</u></p>
+    <p><em>Print legibly the names of your company&rsquo;s representatives attending the [[RISKLEVEL]] Provider Orientation.</em></p>
+    <table style="width: 85%;">
+        <tbody>
+             [[FIDUCIARY]]
+            <tr>
+                <td style="width: 50%;">
+                    <p>
+                        ____________________________________________<br />
+                        Name/Title of Billing/Claims Representative
+                    </p>
+                </td>
+                <td style="width: 50%;">
+                    <p>
+                        ____________________________________________<br />
+                        Email address of Billing/Claims Representative
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p>
+                        ____________________________________________________________________________________
+                        <br />
+                        Name/Fax Number of Corporate Agent (for Out-of-state companies only)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p>
+                        ____________________________________________________________________________________<br />
+                        Name/Telephone/Telephone Number of Person completing this form, if not listed above.
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Return the completed form to: </p>
+
+   
+ATTN: Provider Registration<br />
+	Medicaid [[RISKLEVEL]] Provider Enrollment Orientation <br>
+    (name)/>
+    (address)<br />
+	(city,state,zip) <br/>
+	Phone:  (999) 999-9999 <br/>
+    Fax:  (999) 999-99999<br />
+	Email: <a href ="mailto:(email)">(email)</a> <br/>
+    <br />
+
+
+
+
+<p>A confirmation of your Medicaid [[RISKLEVEL]] Provider Orientation registration will be faxed or emailed to you at the number 
+	or email address listed on your registration form for the individual with fiduciary authority in the company. </p>
+
+<p>If you have any questions, please contact the MAXIMUS Provider Screening and Enrollment Customer Service at 999-999-999 or email at <a href ="mailto:[[PDMSEMAIL]]">[[PDMSEMAIL]]</a>.</p>
+
+Regards,<br />
+    <br />
+MAXIMUS Provider Screening and Enrollment Customer Service
+</td>
+</tr>
+</table>

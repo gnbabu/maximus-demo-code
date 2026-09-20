@@ -1,0 +1,227 @@
+<?xml version="1.0" standalone="yes"?>
+<ROSTER_EXCEPTIONs>
+  <xs:schema id="ROSTER_EXCEPTIONs" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="ROSTER_EXCEPTIONs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ROSTER_EXCEPTION">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ROSTER_EXCEPTION_PK" type="xs:int" minOccurs="0" />
+                <xs:element name="LAST_MODIFIED_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LAST_MODIFIED_USER" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="LOAD_FILE_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="LOAD_FILE_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="PLAN_ID" type="xs:decimal" minOccurs="0" />
+                <xs:element name="EXCEPTION_DESCRIPTION" type="xs:string" minOccurs="0" />
+                <xs:element name="PROVIDER_ID" type="xs:decimal" minOccurs="0" />
+                <xs:element name="PROD_PROVIDER_ID" type="xs:decimal" minOccurs="0" />
+                <xs:element name="PLAN_PROVIDER_ID" type="xs:decimal" minOccurs="0" />
+                <xs:element name="PROD_PLAN_PROVIDER_ID" type="xs:decimal" minOccurs="0" />
+                <xs:element name="LAST_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="FIRST_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="MIDDLE_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="ADDRESS" type="xs:string" minOccurs="0" />
+                <xs:element name="CITY" type="xs:string" minOccurs="0" />
+                <xs:element name="STATE" type="xs:string" minOccurs="0" />
+                <xs:element name="ZIP" type="xs:string" minOccurs="0" />
+                <xs:element name="EXT_ZIP" type="xs:string" minOccurs="0" />
+                <xs:element name="BIRTH_DATE" type="xs:string" minOccurs="0" />
+                <xs:element name="SSN" type="xs:string" minOccurs="0" />
+                <xs:element name="DEA_NUMBER" type="xs:string" minOccurs="0" />
+                <xs:element name="UPIN" type="xs:string" minOccurs="0" />
+                <xs:element name="LICENSE_NUMBER" type="xs:string" minOccurs="0" />
+                <xs:element name="PROVIDER_STATUS" type="xs:string" minOccurs="0" />
+                <xs:element name="EXCEPTION_DATE" type="xs:string" minOccurs="0" />
+                <xs:element name="PROVIDER_TYPE_ABBREVIATION" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="SUBMIT_ROSTER_ONLINE_FORM">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="SUBMIT_ROSTER_PK" type="xs:int" minOccurs="0" />
+                <xs:element name="LAST_MODIFIED_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LAST_MODIFIED_USER" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="FIRST_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="LAST_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="MIDDLE_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="SUFFIX" type="xs:string" minOccurs="0" />
+                <xs:element name="BIRTHDATE" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="PROVIDER_TYPE" type="xs:string" minOccurs="0" />
+                <xs:element name="PRIMARY_PRACTICE_STATE" type="xs:string" minOccurs="0" />
+                <xs:element name="PROVIDER_NPI" type="xs:decimal" minOccurs="0" />
+                <xs:element name="ADDRESS" type="xs:string" minOccurs="0" />
+                <xs:element name="ADDRESS2" type="xs:string" minOccurs="0" />
+                <xs:element name="CITY" type="xs:string" minOccurs="0" />
+                <xs:element name="STATE" type="xs:string" minOccurs="0" />
+                <xs:element name="ZIP" type="xs:string" minOccurs="0" />
+                <xs:element name="EXT_ZIP" type="xs:string" minOccurs="0" />
+                <xs:element name="PHONE" type="xs:decimal" minOccurs="0" />
+                <xs:element name="PHONE_EXT" type="xs:decimal" minOccurs="0" />
+                <xs:element name="EMAIL_ADDRESS" type="xs:string" minOccurs="0" />
+                <xs:element name="SSN" type="xs:decimal" minOccurs="0" />
+                <xs:element name="LICENSE_NO" type="xs:string" minOccurs="0" />
+                <xs:element name="LICENSE_STATE" type="xs:string" minOccurs="0" />
+                <xs:element name="DEA" type="xs:string" minOccurs="0" />
+                <xs:element name="UPIN" type="xs:string" minOccurs="0" />
+                <xs:element name="CAQH_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="SUBMITTED_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="Constraint1">
+        <xs:selector xpath=".//ROSTER_EXCEPTION" />
+        <xs:field xpath="FIRST_NAME" />
+      </xs:unique>
+      <xs:unique name="Constraint2">
+        <xs:selector xpath=".//ROSTER_EXCEPTION" />
+        <xs:field xpath="LAST_NAME" />
+      </xs:unique>
+      <xs:keyref name="ROSTER_EXCEPTION2_1SUBMIT_ROSTER_ONLINE_FORM" refer="Constraint1">
+        <xs:selector xpath=".//SUBMIT_ROSTER_ONLINE_FORM" />
+        <xs:field xpath="FIRST_NAME" />
+      </xs:keyref>
+      <xs:keyref name="ROSTER_EXCEPTION2_2SUBMIT_ROSTER_ONLINE_FORM" refer="Constraint2">
+        <xs:selector xpath=".//SUBMIT_ROSTER_ONLINE_FORM" />
+        <xs:field xpath="LAST_NAME" />
+      </xs:keyref>
+    </xs:element>
+  </xs:schema>
+  <ROSTER_EXCEPTION>
+    <ROSTER_EXCEPTION_PK>1</ROSTER_EXCEPTION_PK>
+    <LAST_MODIFIED_DATE_TIME>2012-06-12T16:51:51.36-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+    <LOAD_FILE_NAME>RosterException_20120302.txt</LOAD_FILE_NAME>
+    <LOAD_FILE_DATE_TIME>2012-06-12T16:51:46.11-05:00</LOAD_FILE_DATE_TIME>
+    <PLAN_ID>594</PLAN_ID>
+    <EXCEPTION_DESCRIPTION>Roster Provider Deleted: Missing Identifiers</EXCEPTION_DESCRIPTION>
+    <LAST_NAME>Demoss</LAST_NAME>
+    <FIRST_NAME>Dana</FIRST_NAME>
+    <STATE xml:space="preserve">  </STATE>
+    <EXCEPTION_DATE>02/29/2012 </EXCEPTION_DATE>
+    <PROVIDER_TYPE_ABBREVIATION xml:space="preserve">    </PROVIDER_TYPE_ABBREVIATION>
+  </ROSTER_EXCEPTION>
+  <ROSTER_EXCEPTION>
+    <ROSTER_EXCEPTION_PK>2</ROSTER_EXCEPTION_PK>
+    <LAST_MODIFIED_DATE_TIME>2012-06-12T16:51:52.047-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+    <LOAD_FILE_NAME>RosterException_20120302.txt</LOAD_FILE_NAME>
+    <LOAD_FILE_DATE_TIME>2012-06-12T16:51:46.11-05:00</LOAD_FILE_DATE_TIME>
+    <PLAN_ID>594</PLAN_ID>
+    <EXCEPTION_DESCRIPTION>Roster Provider Deleted: Missing Identifiers</EXCEPTION_DESCRIPTION>
+    <LAST_NAME>Harper</LAST_NAME>
+    <FIRST_NAME>Jennifer</FIRST_NAME>
+    <STATE xml:space="preserve">  </STATE>
+    <EXCEPTION_DATE>02/29/2012 </EXCEPTION_DATE>
+    <PROVIDER_TYPE_ABBREVIATION xml:space="preserve">    </PROVIDER_TYPE_ABBREVIATION>
+  </ROSTER_EXCEPTION>
+  <ROSTER_EXCEPTION>
+    <ROSTER_EXCEPTION_PK>3</ROSTER_EXCEPTION_PK>
+    <LAST_MODIFIED_DATE_TIME>2012-06-12T16:51:52.64-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+    <LOAD_FILE_NAME>RosterException_20120302.txt</LOAD_FILE_NAME>
+    <LOAD_FILE_DATE_TIME>2012-06-12T16:51:46.11-05:00</LOAD_FILE_DATE_TIME>
+    <PLAN_ID>594</PLAN_ID>
+    <EXCEPTION_DESCRIPTION>Roster Provider Deleted: Missing Identifiers</EXCEPTION_DESCRIPTION>
+    <LAST_NAME>Nguyen</LAST_NAME>
+    <FIRST_NAME>My</FIRST_NAME>
+    <STATE xml:space="preserve">  </STATE>
+    <EXCEPTION_DATE>02/29/2012 </EXCEPTION_DATE>
+    <PROVIDER_TYPE_ABBREVIATION xml:space="preserve">    </PROVIDER_TYPE_ABBREVIATION>
+  </ROSTER_EXCEPTION>
+  <SUBMIT_ROSTER_ONLINE_FORM>
+    <SUBMIT_ROSTER_PK>1</SUBMIT_ROSTER_PK>
+    <LAST_MODIFIED_DATE_TIME>2012-06-05T11:52:56-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+    <FIRST_NAME>Jennifer</FIRST_NAME>
+    <LAST_NAME>Harper</LAST_NAME>
+    <MIDDLE_NAME>C</MIDDLE_NAME>
+    <SUFFIX>None</SUFFIX>
+    <BIRTHDATE>2000-05-29T00:00:00-05:00</BIRTHDATE>
+    <PROVIDER_TYPE>A</PROVIDER_TYPE>
+    <PRIMARY_PRACTICE_STATE>TX</PRIMARY_PRACTICE_STATE>
+    <PROVIDER_NPI>987654321</PROVIDER_NPI>
+    <ADDRESS>123 My Street</ADDRESS>
+    <CITY>Anytown</CITY>
+    <STATE>TX</STATE>
+    <ZIP>75000</ZIP>
+    <PHONE>9032345678</PHONE>
+    <PHONE_EXT>0</PHONE_EXT>
+    <EMAIL_ADDRESS>j@j.com</EMAIL_ADDRESS>
+    <SSN>987544321</SSN>
+    <LICENSE_NO>TX123</LICENSE_NO>
+    <LICENSE_STATE>TX</LICENSE_STATE>
+    <DEA>12345</DEA>
+    <UPIN>13456</UPIN>
+    <CAQH_ID>9877655443</CAQH_ID>
+  </SUBMIT_ROSTER_ONLINE_FORM>
+  <SUBMIT_ROSTER_ONLINE_FORM>
+    <SUBMIT_ROSTER_PK>2</SUBMIT_ROSTER_PK>
+    <LAST_MODIFIED_DATE_TIME>2012-06-05T12:38:24-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>00000000-0000-0000-0000-000000000000</LAST_MODIFIED_USER>
+    <FIRST_NAME>Jennifer</FIRST_NAME>
+    <LAST_NAME>Harper</LAST_NAME>
+    <MIDDLE_NAME>Max</MIDDLE_NAME>
+    <BIRTHDATE>1982-06-05T00:00:00-05:00</BIRTHDATE>
+    <PROVIDER_TYPE>A</PROVIDER_TYPE>
+    <PRIMARY_PRACTICE_STATE>TN</PRIMARY_PRACTICE_STATE>
+    <PROVIDER_NPI>9876543210</PROVIDER_NPI>
+    <ADDRESS>3819 Any Street</ADDRESS>
+    <CITY>Anytown</CITY>
+    <STATE>TN</STATE>
+    <ZIP>55443</ZIP>
+    <PHONE>1112223344</PHONE>
+    <PHONE_EXT>0</PHONE_EXT>
+    <EMAIL_ADDRESS>myemail@my3819.com</EMAIL_ADDRESS>
+    <SSN>555443322</SSN>
+    <LICENSE_NO>TN3819</LICENSE_NO>
+    <LICENSE_STATE>TN</LICENSE_STATE>
+  </SUBMIT_ROSTER_ONLINE_FORM>
+  <SUBMIT_ROSTER_ONLINE_FORM>
+    <SUBMIT_ROSTER_PK>9</SUBMIT_ROSTER_PK>
+    <LAST_MODIFIED_DATE_TIME>2012-06-12T14:59:03.48-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>00000000-0000-0000-0000-000000000000</LAST_MODIFIED_USER>
+    <FIRST_NAME>Dana</FIRST_NAME>
+    <LAST_NAME>Demoss</LAST_NAME>
+    <MIDDLE_NAME>Max</MIDDLE_NAME>
+    <BIRTHDATE>1950-01-01T00:00:00-06:00</BIRTHDATE>
+    <PROVIDER_TYPE>ADD</PROVIDER_TYPE>
+    <PRIMARY_PRACTICE_STATE>TN</PRIMARY_PRACTICE_STATE>
+    <PROVIDER_NPI>9876543210</PROVIDER_NPI>
+    <ADDRESS>5824 Any Street</ADDRESS>
+    <CITY>Anytown</CITY>
+    <STATE>TN</STATE>
+    <ZIP>55443</ZIP>
+    <PHONE>1112223344</PHONE>
+    <PHONE_EXT>0</PHONE_EXT>
+    <EMAIL_ADDRESS>myemail@my5824.com</EMAIL_ADDRESS>
+    <SSN>555443322</SSN>
+    <LICENSE_NO>TN5824</LICENSE_NO>
+    <LICENSE_STATE>TN</LICENSE_STATE>
+  </SUBMIT_ROSTER_ONLINE_FORM>
+  <SUBMIT_ROSTER_ONLINE_FORM>
+    <SUBMIT_ROSTER_PK>13</SUBMIT_ROSTER_PK>
+    <LAST_MODIFIED_DATE_TIME>2012-06-12T16:12:36.64-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>00000000-0000-0000-0000-000000000000</LAST_MODIFIED_USER>
+    <FIRST_NAME>My</FIRST_NAME>
+    <LAST_NAME>Nguyen</LAST_NAME>
+    <MIDDLE_NAME>MName</MIDDLE_NAME>
+    <BIRTHDATE>1950-01-01T00:00:00-06:00</BIRTHDATE>
+    <PROVIDER_TYPE>ADD</PROVIDER_TYPE>
+    <PRIMARY_PRACTICE_STATE>TN</PRIMARY_PRACTICE_STATE>
+    <PROVIDER_NPI>9876543210</PROVIDER_NPI>
+    <ADDRESS>1200 Any Street</ADDRESS>
+    <CITY>Anytown</CITY>
+    <STATE>TN</STATE>
+    <ZIP>55443</ZIP>
+    <PHONE>1112223344</PHONE>
+    <PHONE_EXT>0</PHONE_EXT>
+    <EMAIL_ADDRESS>myemail@my1200.com</EMAIL_ADDRESS>
+    <SSN>555443322</SSN>
+    <LICENSE_NO>TN1200</LICENSE_NO>
+    <LICENSE_STATE>TN</LICENSE_STATE>
+  </SUBMIT_ROSTER_ONLINE_FORM>
+</ROSTER_EXCEPTIONs>

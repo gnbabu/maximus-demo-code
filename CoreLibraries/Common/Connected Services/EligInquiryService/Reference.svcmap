@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="9aaccced-6640-426c-932f-7ee19b66ab49" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="D:\Temp\Member Eligibility Inquiry Schemas\NewSchema\MemberEligInquiryService.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MemberEligInquiryReqResp.xsd" MetadataType="Schema" ID="d7393c32-04d6-42da-8d79-fb8fc9525ff6" SourceId="1" SourceUrl="file:///D:/Temp/Member Eligibility Inquiry Schemas/NewSchema/MemberEligInquiryReqResp.xsd" />
+    <MetadataFile FileName="CommonHeader.xsd" MetadataType="Schema" ID="5dd1d817-9f07-4088-be99-9ac9914184c0" SourceId="1" SourceUrl="file:///D:/Temp/Member Eligibility Inquiry Schemas/NewSchema/CommonHeader.xsd" />
+    <MetadataFile FileName="MemberEligibilityInquiryService.wsdl" MetadataType="Wsdl" ID="37b3b34c-1652-4e6c-a34e-aafd2ce5302c" SourceId="1" SourceUrl="file:///D:/Temp/Member Eligibility Inquiry Schemas/NewSchema/MemberEligInquiryService.wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

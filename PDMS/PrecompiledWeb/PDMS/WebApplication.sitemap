@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode roles="*">
+    <siteMapNode title="Provider File" url="#1" disable="true">
+      
+        <siteMapNode url="~/Process/Registration.aspx?Step=1" title="Provider Information" status="true"/>
+        <siteMapNode url="~/Process/Registration.aspx?Step=2" title="Primary Contact Information" status="true" />
+        
+      
+        <siteMapNode url="~/Process/Registration.aspx?Step=3"  title="Specialties" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=4" title="Taxonomies" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=5" title="Certifications CLIA" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=6" title="Professional Liability Insurance" status="true" />
+      <siteMapNode url="~/Process/Registration.aspx?Step=7" title="Professional Licenses" status="true" />
+      <siteMapNode url="~/Process/Registration.aspx?Step=42" title="Federal DEA Registration" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=9" title="Nursing Professional Certification" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=10" title="Number Of Beds" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=11" title="CPR" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=12" title="Dental Licenses" status="true" />
+      <!--17 is reserved for application fee-->
+        <siteMapNode url="~/Process/Registration.aspx?Step=43" title="State CDS Number" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=18" title="Vision Providers" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=19"  title="Category Of Service" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=21" title="Behavioral Health Information" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=24" title="Pharmacy Providers" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=25" title="Reimbursement Rates" status="true" />
+      <siteMapNode url="~/Process/Registration.aspx?Step=26" title="Medicare Number" status="true" />
+      
+      
+      
+      
+      
+      
+        <siteMapNode url="~/Process/Registration.aspx?Step=27" title="Primary Service Address" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=28" title="Billing Payment Contact Information" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=29" title="Correspondence Information" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=30" title="Remittance Address" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=31" title="Other Address" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=32" title="Office Hours" status="true" />
+      
+        <siteMapNode url="~/Process/Registration.aspx?Step=33" title="Group And Facility Affiliations" status="true" />
+        <!--<siteMapNode url="~/Process/Registration.aspx?Step=27" title="Confirmed Group Affiliations" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=28" title="Health Care Affiliations" status="true" />-->
+      
+      
+      <!--<siteMapNode url="~/Process/Registration.aspx?Step=28" title="Services" status="true" />-->
+      <!--<siteMapNode url="~/Process/Registration.aspx?Step=29" title="Household Members" status="true" />-->
+      
+        <siteMapNode url="~/Process/Registration.aspx?Step=34" title="Affiliations" status="true" />
+      <siteMapNode url="~/Process/Registration.aspx?Step=47" title="MCO Affiliations" status="true" />
+        <!--<siteMapNode url="~/Process/Registration.aspx?Step=30" title="Identifying Information" status="true" />-->
+        <siteMapNode url="~/Process/Registration.aspx?Step=35" title="Owner Information" status="true" />
+        <!--<siteMapNode url="~/Process/Registration.aspx?Step=32" title="Additional Addresses" status="true" />-->
+        <!--<siteMapNode url="~/Process/Registration.aspx?Step=33" title="Questions" status="true" />-->
+        
+        <siteMapNode url="~/Process/Registration.aspx?Step=36" title="W9 Form" status="true" />
+        <!--<siteMapNode url="~/Process/Registration.aspx?Step=37" title="Additional Questions DME" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=33" title="Profit Status" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=34" title="Type Of Entity" status="true" />
+        <siteMapNode url="~/Process/Registration.aspx?Step=35" title="Practice Type" status="true" />-->
+      
+        
+        <!--<siteMapNode url="~/Process/Registration.aspx?Step=30" title="Substitute W4 Form" status="true" />-->
+        <!--<siteMapNode url="~/Process/Registration.aspx?Step=21" title="ACH Authorization" status="true" />-->
+        <!--<siteMapNode url="~/Process/Registration.aspx?Step=31" title="Certification" status="true" />-->
+        <!--<siteMapNode url="~/Process/Registration.aspx?Step=11" title="Contracts" status="true" />-->
+        <siteMapNode url="~/Process/Registration.aspx?Step=17" title="Application Fee" status="true" />
+      
+        <siteMapNode url="~/Process/Registration.aspx?Step=37" title="DME" status="true" />
+      
+        
+        <siteMapNode url="~/Process/Registration.aspx?Step=38" title="Waiver Services" status="true" />
+        
+          
+      <siteMapNode url="~/Process/Registration.aspx?Step=39" title="Malpractice Claims History" status="true" />
+      <siteMapNode url="~/Process/Registration.aspx?Step=44" title="Required Documents" status="true" />
+      <siteMapNode url="~/Process/Registration.aspx?Step=47" title="Appeals" status="true" />
+            
+      <siteMapNode url="~/Process/Registration.aspx?Step=40" title="Agreement Questions" status="true" />
+            
+              
+      <siteMapNode url="~/Process/Registration.aspx?Step=41" title="Streamlined Agreement" status="true" />
+
+      <siteMapNode url="~/Process/Registration.aspx?Step=45" title="ACH Authorization" status="true" />
+
+      <siteMapNode url="~/Process/Registration.aspx?Step=8" title="Agreements" status="true" />
+          
+
+      </siteMapNode>
+    <siteMapNode title="Provider Screening" url="#2" status="true">
+      <siteMapNode url="~/Process/Registration.aspx?Step=13" title="Provider Screening" status="true" />
+      <siteMapNode url="~/Process/Registration.aspx?Step=14" title="Individual Member Screening" status="true" />
+      <siteMapNode url="~/Process/Registration.aspx?Step=15" title="Owner Screening" status="true" />
+      <siteMapNode url="~/Process/Registration.aspx?Step=20" title="Household Member Screening" status="true" />
+      <siteMapNode url="~/Process/Registration.aspx?Step=99" title="Workflow Steps" status="true"/>
+
+    </siteMapNode>
+    <siteMapNode title="Fingerprint and Background Check" url="#4" disable="true">
+      <siteMapNode url="~/Process/Registration.aspx?Step=22" title="Fingerprint Check" status="true" />
+    </siteMapNode>
+    <!--Hide parent node for provider screening and site visit in RefreshTree() in MasterWorkflowPageMaster.cs.  if change these titles, will need to update that method.-->
+    <siteMapNode title="Provider Site Visit" url="#3" disable="true">
+      <siteMapNode url="~/Process/Registration.aspx?Step=16" title="Site Visit Screening" status="true" />
+    </siteMapNode>
+    <siteMapNode title="Orientation Session" url="#5" disable="true">
+      <siteMapNode url="~/Process/Registration.aspx?Step=23" title="Orientation Session Screening" status="true" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

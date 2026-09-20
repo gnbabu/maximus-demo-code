@@ -1,0 +1,56 @@
+﻿
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">       
+        <p> <b>Notice of Criminal Record Check Requirement  </b> </p>
+        <p> <b>Per Ohio Administrative Code 5160-1-17.8 (3)(b)   </b> </p>
+        <p> <b>Ohio Revised Code 5164.34   </b> </p>       
+        <p> <b>IMMEDIATE ACTION REQUIRED – COMPLIANCE DUE DATE WITHIN 30 DAYS</b> </p>        
+    </td>
+</tr>	
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>In order to enroll or maintain as an Ohio Medicaid provider, certain individual(s) of an organization must complete a criminal background ** check. As mandated in the 42 CFR 455.434, the Fingerprint-Based Criminal Background Checks are part of the enhanced screening and enrollment provisions included in the Provider Screening and Enrollment State Plan Amendment.</p>   
+<P>If the required Fingerprint-Based Criminal Background Checks are not submitted to the Ohio Department of Medicaid (ODM) within 30 days, your Ohio Medicaid Provider Agreement will be terminated, or your Enrollment Application will be denied.</p>    
+<p>Since you reside in Ohio, you must have your background check completed by the Bureau of Criminal Identification and Investigation (BCI).</p>								
+<p>A complete list of BCI WebCheck vendors is available at the Ohio Attorney General website: <a href="https://www.ohioattorneygeneral.gov/">https://www.ohioattorneygeneral.gov/</a>.  Under the “Business” heading (at bottom of page), select “Background Check”.</p>
+<p>Each individual must instruct the WebCheck vendor that they need an Ohio background check for the purpose of <b>reasoning code 5164.34.</b> Additionally, instruct the WebCheck vendor that the BCI must mail the background check results directly to:</p>
+<br/>
+<p>The Ohio Department of Medicaid</p>					
+<p>Attention: BCII Coordinator</p>
+<p>P.O. Box 183017</p>
+<p>Columbus, Ohio 43218-3017 </p>
+<p><br/> </p>					
+<p>The Oho Department of Medicaid can ONLY accept background check results from the BCI.</p>  
+<br/>  
+<p>In addition, you should request a receipt as proof the background check was completed.  If ODM does not receive the BCI results within 30 days, you will have to submit proof that a background check was completed within the required timeframe.   </p>
+<br/>  
+<p>If you have questions, please contact <a href="mailto:bureaunetworkmanagement@medicaid.ohio.gov">bureaunetworkmanagement@medicaid.ohio.gov</a></p>
+<p>Ohio Department of Medicaid
+</br >Bureau of Network Management 
+<br />REG # [[REGID]]</p>
+</td>
+</tr>
+</table>
+
+</body>
+</html>
+
+

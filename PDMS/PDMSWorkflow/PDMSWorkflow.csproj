@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D90A2FCE-51E5-4B6C-983E-04457426E063}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PDMSWorkflow</RootNamespace>
+    <AssemblyName>PDMSWorkflow</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="WFAddNursingSpecialty.cs" />
+    <Compile Include="WFCheckAddNursingSpecialty.cs" />
+    <Compile Include="WFCheckClosureFinalStatusFromDoDD.cs" />
+    <Compile Include="WFCheckEnrolledProvider_2.cs" />
+    <Compile Include="WFCheckForComplianceReview.cs" />
+    <Compile Include="WFCheckForDelegateChange.cs" />
+    <Compile Include="WFCheckForSiteVisitDisposition.cs" />
+    <Compile Include="WFCheckIfAssignSiteVisit.cs" />
+    <Compile Include="WFCheckIfDODDAppReqReview.cs" />
+    <Compile Include="WFCheckIfReapplicationWorkflow.cs" />
+    <Compile Include="WFCheckIfSendNotProcessedNotice.cs" />
+    <Compile Include="WFCheckIfMedicaidRegistration.cs" />
+    <Compile Include="WFCheckLTCProviderType.cs" />
+    <Compile Include="WFCheckProcessWaiverQueuedTransactions.cs" />
+    <Compile Include="WFCheckSendPayloadDODD.cs" />
+    <Compile Include="WFCheckSendPayloadODA.cs" />
+    <Compile Include="WFCheckSendTermPayloadODA.cs" />
+    <Compile Include="WFCheckNPPESExclusionMatch.cs" />
+    <Compile Include="WfCheckDoddAbuserRegistryMatch.cs" />
+    <Compile Include="WfCheckFedExclusionsMatch.cs" />
+    <Compile Include="WFCheckForNewCPCMember.cs" />
+    <Compile Include="WFCheckForNewOrRevalidation.cs" />
+    <Compile Include="WFCheckForOwnerChange.cs" />
+    <Compile Include="WFCheckForDODDOrODAUpdates.cs" />
+    <Compile Include="WFCheckIfsendApprovedSpecialtyNotice.cs" />
+    <Compile Include="WFCheckSendPayloadCPCConvener.cs" />
+    <Compile Include="WFCheckSendPayloadCPCMembers.cs" />
+    <Compile Include="WFCheckSendToMITS.cs" />
+    <Compile Include="WFCheckWavierAppReqReview.cs" />
+    <Compile Include="WFCHOPCheckProviderType.cs" />
+    <Compile Include="WFCHOPEnDataSentToSI.cs" />
+    <Compile Include="WFCHOPEnReceiveResponseMMIS.cs" />
+    <Compile Include="WFCHOPExDataSentToSI.cs" />
+    <Compile Include="WFCHOPExReceiveResponseMMIS.cs" />
+    <Compile Include="WFCHOPExTermDataReceivedFromSI.cs" />
+    <Compile Include="WFCHOPExTermDataSentToSI.cs" />
+    <Compile Include="WFCHOPPPEnDataReceivedFromSI.cs" />
+    <Compile Include="WFCHOPPPEnDataSentToSI.cs" />
+    <Compile Include="WFCHOPUpdateDODDContract.cs" />
+    <Compile Include="WFCHOPUpdateRRFromSI.cs" />
+    <Compile Include="WFClosureApproveRRFromSI.cs" />
+    <Compile Include="WFClosureApproveSendToSI.cs" />
+    <Compile Include="WFCMCAddSpecialtyContract.cs" />
+    <Compile Include="WFCMCReceiveResponseFromSI.cs" />
+    <Compile Include="WFCMCSendTransactionToSI.cs" />
+    <Compile Include="WFClosureBuildingAckReceiveFromSI.cs" />
+    <Compile Include="WFClosureBuildingUpdateSendToSI.cs" />
+    <Compile Include="WFCPCUpdateContract.cs" />
+    <Compile Include="WFDataReceivedFromDODD.cs" />
+    <Compile Include="WFDataReceivedIssueNOD.cs" />
+    <Compile Include="WFInitiateOrReturnToBCI.cs" />
+    <Compile Include="WFSendToApplicationDisposition.cs" />
+    <Compile Include="WFIssue10DaysReminderNoticeBCII.cs" />
+    <Compile Include="WFAddContract.cs" />
+    <Compile Include="WFApproveEnteringProvider.cs" />
+    <Compile Include="WFApproveEnteringProviderCheck.cs" />
+    <Compile Include="WFAssignMedicaidID.cs" />
+    <Compile Include="WFAssignProviderRiskLevel.cs" />
+    <Compile Include="WFChangeAffiliationStatus.cs" />
+    <Compile Include="WFChangeRiskLevelToModerate.cs" />
+    <Compile Include="WFCheckBCIILetterNeeded.cs" />
+    <Compile Include="WFCheckEnrolledProvider.cs" />
+    <Compile Include="WFCheckForNameOwnerPracticeChange.cs" />
+    <Compile Include="WFCheckForSpecialtyChange.cs" />
+    <Compile Include="WFCheckHearingRights.cs" />
+    <Compile Include="WFCheckIfDODDorODA.cs" />
+    <Compile Include="WFCheckIfMedicaid.cs" />
+    <Compile Include="WFCheckIfNursingFacility.cs" />
+    <Compile Include="WFCheckProviderCategoryType.cs" />
+    <Compile Include="WFCheckReconsiderationRecieved.cs" />
+    <Compile Include="WFCheckRiskLevelIncreased.cs" />
+    <Compile Include="WFCreateLTRegistration.cs" />
+    <Compile Include="WFCredentialCheckReturntoSupervisor.cs" />
+    <Compile Include="WFCredentialCheckRiskLevel.cs" />
+    <Compile Include="WFCredentialCommittee.cs" />
+    <Compile Include="WFCredentialingCheck.cs" />
+    <Compile Include="WFCredentialProvider.cs" />
+    <Compile Include="WFDataSentToSI.cs" />
+    <Compile Include="WFDisEnrollmentCheck.cs" />
+    <Compile Include="WFHighRiskCheck.cs" />
+    <Compile Include="WFLTCUpdateDODDContract.cs" />
+    <Compile Include="WFModerateHighRiskCheck.cs" />
+    <Compile Include="WFPartialDaysNoticeRRFromDODD.cs" />
+    <Compile Include="WFPendingClosureRRFromSI.cs" />
+    <Compile Include="WFPendingClosureSendToSI.cs" />
+    <Compile Include="WFProviderReviewComplete.cs" />
+    <Compile Include="WFReceiveAckFromDODD.cs" />
+    <Compile Include="WFReceiveAckFromODA.cs" />
+    <Compile Include="WFReceiveClosureDisposition.cs" />
+    <Compile Include="WFReceiveClosureNotice.cs" />
+    <Compile Include="WFReceiveCPCConvenerAckMITS.cs" />
+    <Compile Include="WFReceiveCPCMemberAckMITS.cs" />
+    <Compile Include="WFReceiveLTCResponseDODD.cs" />
+    <Compile Include="WFReceiveLTCResponseMITS.cs" />
+    <Compile Include="WFReceiveResponseDODD.cs" />
+    <Compile Include="WFReceiveResponseFromPCW.cs" />
+    <Compile Include="WFReceiveResponseIssueNOD.cs" />
+    <Compile Include="WFReceiveResponseMMIS.cs" />
+    <Compile Include="WFReceiveResponseReconsiderationDODD.cs" />
+    <Compile Include="WFReceiveResponseSIMITS.cs" />
+    <Compile Include="WFReceiveWaiverAcknowledgmentEnd.cs" />
+    <Compile Include="WFReconsiderationComplete.cs" />
+    <Compile Include="WFRemoveRiskAlert.cs" />
+    <Compile Include="WFResendOrientationNotification.cs" />
+    <Compile Include="WFApprovedServicesCheck.cs" />
+    <Compile Include="WFCheckProviderExist.cs" />
+    <Compile Include="WFCheckForPracticelocationChange.cs" />
+    <Compile Include="WFReturnedFromCredentialing.cs" />
+    <Compile Include="WFReturnToInitializingWF.cs" />
+    <Compile Include="WFReturnToWorkflow.cs" />
+    <Compile Include="WFRiskLevelReceiveResponseSI.cs" />
+    <Compile Include="WFScreeningCheck.cs" />
+    <Compile Include="WFScreenProvider.cs" />
+    <Compile Include="WFSendCHOPUpdateToSI.cs" />
+    <Compile Include="WFSendCHOPWithdrawUpdateRRFromSI.cs" />
+    <Compile Include="WFSendCHOPWithdrawUpdateToSI.cs" />
+    <Compile Include="WFSendLTCTransactionToDODD.cs" />
+    <Compile Include="WFSendLTCTransactionToSI.cs" />
+    <Compile Include="WFSendNODToDODD.cs" />
+    <Compile Include="WFSendPartialDaysNoticeToDODD.cs" />
+    <Compile Include="WFSendPayloadConvenerMembers.cs" />
+    <Compile Include="WFSendPayloadCPCConvener.cs" />
+    <Compile Include="WFSendPayloadCPCMembers.cs" />
+    <Compile Include="WFSendPayloadDODD.cs" />
+    <Compile Include="WFSendPayloadODA.cs" />
+    <Compile Include="WFSendPayloadToSI.cs" />
+    <Compile Include="WFSendReconsiderationTransactionToDODD.cs" />
+    <Compile Include="WFReSendRedirectionToDODD.cs" />
+    <Compile Include="WFSendToMITS.cs" />
+    <Compile Include="WFReSendRedirectionToODA.cs" />
+    <Compile Include="WFSendUpdateDODD.cs" />
+    <Compile Include="WFSendUpdateSIMITS.cs" />
+    <Compile Include="WFTerminateProvidersInPDE.cs" />
+    <Compile Include="WFOrientationProviderTypeCheck.cs" />
+    <Compile Include="WFDDSReviewRequired.cs" />
+    <Compile Include="PDMSWorkflowController.cs" />
+    <Compile Include="WFCheckForGroupMemberRetroReview.cs" />
+    <Compile Include="WFFCBCCheck.cs" />
+    <Compile Include="WFGeneratePDF.cs" />
+    <Compile Include="WFSendSpecialties.cs" />
+    <Compile Include="WFMoratoriaCheck.cs" />
+    <Compile Include="WFCheckForRetroReview.cs" />
+    <Compile Include="WFCheckForReturnToProcessAppeal.cs" />
+    <Compile Include="WFCheckOnTerminate.cs" />
+    <Compile Include="WFPerformPeriodicDBChecks.cs" />
+    <Compile Include="WFDenyTermProvider.cs" />
+    <Compile Include="WFCompleteWorkflow.cs" />
+    <Compile Include="WFDefineProviderRiskLevel.cs" />
+    <Compile Include="WFAffiliationStatusCheck.cs" />
+    <Compile Include="WFReceiveOrganizationID.cs" />
+    <Compile Include="WFSendToNFOCUS.cs" />
+    <Compile Include="WFPaymentPendingCheck.cs" />
+    <Compile Include="WFAccountingReview.cs" />
+    <Compile Include="WFBillingIndicator.cs" />
+    <Compile Include="WFContractSignature.cs" />
+    <Compile Include="WFCreateWorkQueue.cs" />
+    <Compile Include="WFEmailMMISErrors.cs" />
+    <Compile Include="WFGenerateDocument.cs" />
+    <Compile Include="WFSeedSwimLane.cs" />
+    <Compile Include="WFReceiveMedicaidID.cs" />
+    <Compile Include="WFRequestMedicaidID.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WFLoadFromActive.cs" />
+    <Compile Include="WFPromoteToActive.cs" />
+    <Compile Include="WFRequiresReview.cs" />
+    <Compile Include="WFSendAffiliations.cs" />
+    <Compile Include="WFSendDIDDContracts.cs" />
+    <Compile Include="WFSendPayment.cs" />
+    <Compile Include="WFSendToMMIS.cs" />
+    <Compile Include="WFSetPagePending.cs" />
+    <Compile Include="WFSiteVisitCheck.cs" />
+    <Compile Include="WFUpdateBuildingEnrollSpan.cs" />
+    <Compile Include="WFUpdateDODDContract.cs" />
+    <Compile Include="WFUpdateOwnership.cs" />
+    <Compile Include="WFWaitForLegalStatus.cs" />
+    <Compile Include="WFWaiverDataReceivedFromSI.cs" />
+    <Compile Include="WFWaiverEndDataReceivedFromSI.cs" />
+    <Compile Include="WFWaiverSendUpdateToSI.cs" />
+    <Compile Include="WFWelcomeLetterCheck.cs" />
+    <Compile Include="WFSendPayloadForToSIDisenrollDetour.cs" />
+    <Compile Include="WFReceiveResponseMMISDisenrollDetour.cs" />
+    <Compile Include="Workflows\ADHP.cs" />
+    <Compile Include="Workflows\AdminUpdate.cs" />
+    <Compile Include="Workflows\EPD.cs" />
+    <Compile Include="Workflows\GroupMemberProfile.cs" />
+    <Compile Include="Workflows\PeriodicDatabaseChecks.cs" />
+    <Compile Include="Workflows\RegistrationDIDDReferral.cs" />
+    <Compile Include="Workflows\RegistrationExpressTermination.cs" />
+    <Compile Include="Workflows\RegistrationNew.cs" />
+    <Compile Include="Workflows\RegistrationRevalidation.cs" />
+    <Compile Include="Workflows\RegistrationUpdateOwner.cs" />
+    <Compile Include="Workflows\RegistrationUpdateProvider.cs" />
+    <Compile Include="Workflows\UpdateAffiliates.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CoreLibraries\AppSettings\AppSettings.csproj">
+      <Project>{99469857-55B2-4105-96F4-85C1B44E74D6}</Project>
+      <Name>AppSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Common\Common.csproj">
+      <Project>{8C8433D2-2E2C-4A6E-9F3F-82AD7665729F}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\DataAccess\DataAccess.csproj">
+      <Project>{B18C00DF-61BA-4650-ADC7-D8736741B5B8}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Exceptions\Exceptions.csproj">
+      <Project>{D9D2F83F-7A01-4FF1-92CC-6B6241195959}</Project>
+      <Name>Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Logging\Logging.csproj">
+      <Project>{E640B94B-2908-4AAD-9F47-00DAFE871902}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Notifications\Notifications.csproj">
+      <Project>{818FA6B3-06B0-4B0A-84B3-02348904EE64}</Project>
+      <Name>Notifications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Workflow\Workflow.csproj">
+      <Project>{5BC86E5F-8852-42E0-A11D-E0C9BCFF0FC8}</Project>
+      <Name>Workflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectControllers\ObjectControllers.csproj">
+      <Project>{9E8FA5ED-C193-4872-AC93-7E4356674B50}</Project>
+      <Name>ObjectControllers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/caremanagement" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Char1">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1" />
+      <xs:enumeration value="Y" />
+      <xs:enumeration value="N" />
+      <xs:enumeration value="" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String1">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string1">
+    <xs:restriction base="xs:string">
+      <xs:length value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String2">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string2">
+    <xs:restriction base="xs:string">
+      <xs:length value="2" />
+      <xs:pattern value="([\S+\s])*\S+\s*" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String3">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string3">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3" />
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String4">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="4" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string4">
+    <xs:restriction base="xs:string">
+      <xs:length value="4" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String5">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string5">
+    <xs:restriction base="xs:string">
+      <xs:length value="5" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String7">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="7" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string7">
+    <xs:restriction base="xs:string">
+      <xs:length value="7" />
+      <xs:pattern value="([\S+\s])*\S+\s*" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String8">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="8" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String9">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="9" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string9">
+    <xs:restriction base="xs:string">
+      <xs:length value="9" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String10">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string10">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10" />
+      <xs:minLength value="1" />
+      <xs:pattern value="([\S+\s])*\S+\s*" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String13">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="13" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String15">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="15" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String12">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="12" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string15">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="15" />
+      <xs:minLength value="1" />
+      <xs:pattern value="([\S+\s])*\S+\s*" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string19">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="19" />
+      <xs:minLength value="1" />
+      <xs:pattern value="([\S+\s])*\S+\s*" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String20">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string20">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20" />
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String25">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="25" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String30">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string30">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30" />
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String32">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="32" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String40">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="40" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string40">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="40" />
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String45">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="45" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string45">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="45" />
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String50">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string50">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50" />
+      <xs:minLength value="1" />
+      <xs:pattern value="([\S+\s])*\S+\s*" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String100">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String255">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="255" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String500">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="500" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String2000">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2000" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String4000">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="4000" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DateType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:date" />
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="0" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="DateTimeType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:dateTime" />
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="0" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="MDateTimeType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:dateTime">
+          <xs:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="NonEmptyString">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EmptyValue">
+    <xs:restriction base="xs:string">
+      <xs:length value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="IntE">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Int19">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="19" />
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="9223372036854775806" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Int15">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="15" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Int10">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="10" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Int9">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="6" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Int6">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="6" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="decimal">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="11" />
+      <xs:fractionDigits value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

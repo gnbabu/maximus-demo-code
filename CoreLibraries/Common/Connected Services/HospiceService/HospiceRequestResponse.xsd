@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://ohio.gov/HospiceRequestResponse" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ohio.gov/HospiceRequestResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>
+This document contains the request elements to add or update a Hospice application into the MITS system and response elements for an inquiry for an existing Hospice applicatin. 
+</xs:documentation>
+  </xs:annotation>
+  <xs:element name="HospiceRequestResponse">
+    <xs:annotation>
+      <xs:documentation>
+This element contains the request or response elements of a Hospice application.
+</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HospiceTrackNo" type="xs:int" />
+        <xs:element name="RecipID" type="xs:string" />
+        <xs:element name="ActionType" type="xs:string" />
+        <xs:element name="ConsBirthDate" type="xs:date" />
+        <xs:element name="ConsFirstName" type="xs:string" />
+        <xs:element name="ConsLastName" type="xs:string" />
+        <xs:element maxOccurs="unbounded" name="ServiceCountyState">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="County" type="xs:string" />
+              <xs:element name="CountyEffDate" type="xs:date" />
+              <xs:element name="CountyEndDate" type="xs:date" />
+              <xs:element name="State" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="ElectionDisenrollDates">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="DisenrollDate" type="xs:date" />
+              <xs:element name="ElectionDate" type="xs:date" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="LongTermCareFacility">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HLTCFEffDate" type="xs:date" />
+              <xs:element name="HLTCFEndDate" type="xs:date" />
+              <xs:element name="HLTCFProvMedID" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="BenefitPeriods">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PhyNPI" type="xs:string" />
+              <xs:element name="PhyOralCertDate" type="xs:date" />
+              <xs:element name="PhyWritCertDate" type="xs:date" />
+              <xs:element name="BenPeriod" type="xs:int" />
+              <xs:element name="BenPeriodEffDate" type="xs:date" />
+              <xs:element name="BenPeriodEndDate" type="xs:date" />
+              <xs:element minOccurs="0" name="BenUpdateReason" type="xs:string" />
+              <xs:element name="Status" type="str1" />
+              <xs:element name="IDGPhyNPI" type="xs:string" />
+              <xs:element name="IDGPhyOralCertDate" type="xs:date" />
+              <xs:element name="IDGPhyWritCertDate" type="xs:date" />
+              <xs:element minOccurs="0" name="SubmissionDate" type="xs:date" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="DiagnosisCodes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DiagEffDate" type="xs:date" />
+              <xs:element name="DiagEndDate" type="xs:date" />
+              <xs:element name="PrimeTermDiag" type="xs:string" />
+              <xs:element minOccurs="0" name="TermDiag2" type="xs:string" />
+              <xs:element minOccurs="0" name="TermDiag3" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="OtherPayerInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PayerEffDate" type="xs:date" />
+              <xs:element name="PayerEndDate" type="xs:date" />
+              <xs:element name="PayerName" type="xs:string" />
+              <xs:element name="PayerType" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="ProvService">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HospiceProvID" type="xs:string" />
+              <xs:element name="SpanEffDate" type="xs:date" />
+              <xs:element name="SpanEndDate" type="xs:date" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Attachments">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="AttachID" type="xs:string" />
+              <xs:element name="AttachType" type="xs:string" />
+              <xs:element minOccurs="0" name="AttachDate" type="xs:date" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="str1">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

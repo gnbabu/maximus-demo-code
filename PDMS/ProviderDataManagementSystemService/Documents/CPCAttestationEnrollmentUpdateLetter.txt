@@ -1,0 +1,67 @@
+﻿<header>
+<style type="text/css">
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[TOADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+
+     
+ <tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<p><b>Subject:</b>Comprehensive Primary Care Re-Attestation/Enrollment Update Notification </p>
+</p>
+
+<p>
+Dear Provider:
+</p>
+
+<p>This letter serves as notification that the following change(s) have been made to your organization’s re-attestation/enrollment, for the
+[[cpcProgramYear]] Ohio Comprehensive Primary Care (CPC) program. The following change(s) were made and approved:</p> 
+
+[[conditionalParagraph]] 
+
+<p>Thank you for your participation in the Ohio CPC Program!  </p> 
+
+
+Sincerely,<br/> 
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Director_Signature.png" style="margin-bottom:1px;text-align:center;" /></p></div><br/>
+</td>
+</tr>
+</table>

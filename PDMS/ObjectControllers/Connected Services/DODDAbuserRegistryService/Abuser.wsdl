@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Abuser" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://itsws.prodapps.dodd.ohio.gov/Abuser/xsd0.xsd" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://itsws.prodapps.dodd.ohio.gov/Abuser/xsd1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://itsws.prodapps.dodd.ohio.gov/Abuser/xsd2.xsd" namespace="http://schemas.datacontract.org/2004/07/ITS_WS.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAbuser_GetAbuserList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbuserList" />
+  </wsdl:message>
+  <wsdl:message name="IAbuser_GetAbuserList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbuserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAbuser_GetAbuserListSuccessfulBySSN_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbuserListSuccessfulBySSN" />
+  </wsdl:message>
+  <wsdl:message name="IAbuser_GetAbuserListSuccessfulBySSN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbuserListSuccessfulBySSNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAbuser_GetAbuserListByLastNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbuserListByLastNames" />
+  </wsdl:message>
+  <wsdl:message name="IAbuser_GetAbuserListByLastNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbuserListByLastNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAbuser_GetAbuserListByLastNames_ResultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/ITS_WS.DTO" name="detail" element="q1:Result" />
+  </wsdl:message>
+  <wsdl:message name="IAbuser_GetAbuserListSuccessfulByLastNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbuserListSuccessfulByLastNames" />
+  </wsdl:message>
+  <wsdl:message name="IAbuser_GetAbuserListSuccessfulByLastNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbuserListSuccessfulByLastNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAbuser_GetAbuserListBySSNAndLastName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbuserListBySSNAndLastName" />
+  </wsdl:message>
+  <wsdl:message name="IAbuser_GetAbuserListBySSNAndLastName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbuserListBySSNAndLastNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAbuser_GetAbuserListBySSN_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbuserListBySSN" />
+  </wsdl:message>
+  <wsdl:message name="IAbuser_GetAbuserListBySSN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbuserListBySSNResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAbuser">
+    <wsdl:operation name="GetAbuserList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAbuser/GetAbuserList" message="tns:IAbuser_GetAbuserList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAbuser/GetAbuserListResponse" message="tns:IAbuser_GetAbuserList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAbuserListSuccessfulBySSN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAbuser/GetAbuserListSuccessfulBySSN" message="tns:IAbuser_GetAbuserListSuccessfulBySSN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAbuser/GetAbuserListSuccessfulBySSNResponse" message="tns:IAbuser_GetAbuserListSuccessfulBySSN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAbuserListByLastNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAbuser/GetAbuserListByLastNames" message="tns:IAbuser_GetAbuserListByLastNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAbuser/GetAbuserListByLastNamesResponse" message="tns:IAbuser_GetAbuserListByLastNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAbuser/GetAbuserListByLastNamesResultFault" name="ResultFault" message="tns:IAbuser_GetAbuserListByLastNames_ResultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAbuserListSuccessfulByLastNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAbuser/GetAbuserListSuccessfulByLastNames" message="tns:IAbuser_GetAbuserListSuccessfulByLastNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAbuser/GetAbuserListSuccessfulByLastNamesResponse" message="tns:IAbuser_GetAbuserListSuccessfulByLastNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAbuserListBySSNAndLastName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAbuser/GetAbuserListBySSNAndLastName" message="tns:IAbuser_GetAbuserListBySSNAndLastName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAbuser/GetAbuserListBySSNAndLastNameResponse" message="tns:IAbuser_GetAbuserListBySSNAndLastName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAbuserListBySSN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAbuser/GetAbuserListBySSN" message="tns:IAbuser_GetAbuserListBySSN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAbuser/GetAbuserListBySSNResponse" message="tns:IAbuser_GetAbuserListBySSN_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ITS_WS.Abuser" type="tns:IAbuser">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAbuserList">
+      <soap:operation soapAction="http://tempuri.org/IAbuser/GetAbuserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAbuserListSuccessfulBySSN">
+      <soap:operation soapAction="http://tempuri.org/IAbuser/GetAbuserListSuccessfulBySSN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAbuserListByLastNames">
+      <soap:operation soapAction="http://tempuri.org/IAbuser/GetAbuserListByLastNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResultFault">
+        <soap:fault use="literal" name="ResultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAbuserListSuccessfulByLastNames">
+      <soap:operation soapAction="http://tempuri.org/IAbuser/GetAbuserListSuccessfulByLastNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAbuserListBySSNAndLastName">
+      <soap:operation soapAction="http://tempuri.org/IAbuser/GetAbuserListBySSNAndLastName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAbuserListBySSN">
+      <soap:operation soapAction="http://tempuri.org/IAbuser/GetAbuserListBySSN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Abuser">
+    <wsdl:port name="ITS_WS.Abuser" binding="tns:ITS_WS.Abuser">
+      <soap:address location="https://itsws.prodapps.dodd.ohio.gov/Abuser/Abuser.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

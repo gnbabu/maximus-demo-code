@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="1cc078b0-06aa-4231-8b27-d23fb7ce108b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="D:\wsdl\FinancialService\FinancialService.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FinancialService_Datatypes.xsd" MetadataType="Schema" ID="544866fb-fa4a-4041-9c15-2215748f8049" SourceId="1" SourceUrl="file:///D:/wsdl/FinancialService/FinancialService_Datatypes.xsd" />
+    <MetadataFile FileName="FinancialService_InlineSchema.xsd" MetadataType="Schema" ID="e0f20b4d-2ba8-4185-9091-70f40bef393e" SourceId="1" SourceUrl="file:///D:/wsdl/FinancialService/FinancialService_InlineSchema.xsd" />
+    <MetadataFile FileName="FinancialService_MessageHeader.xsd" MetadataType="Schema" ID="de11cc92-c7a8-4719-89b6-7a4a8cdddc87" SourceId="1" SourceUrl="file:///D:/wsdl/FinancialService/FinancialService_MessageHeader.xsd" />
+    <MetadataFile FileName="FinancialService.xsd" MetadataType="Schema" ID="b9d18fe8-8f3f-4859-9f94-77d460d9406b" SourceId="1" SourceUrl="file:///D:/wsdl/FinancialService/FinancialService.xsd" />
+    <MetadataFile FileName="FinancialService.wsdl" MetadataType="Wsdl" ID="f769d9b6-2d56-424d-b382-d60e752acc70" SourceId="1" SourceUrl="file:///D:/wsdl/FinancialService/FinancialService.wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration9.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

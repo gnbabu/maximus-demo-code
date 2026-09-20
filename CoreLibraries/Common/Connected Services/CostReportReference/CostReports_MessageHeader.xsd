@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://mes.gov/costreports" elementFormDefault="qualified" targetNamespace="http://mes.gov/costreports" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CostReports_Datatypes.xsd" />
+  <xs:element name="MessageHeader">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" name="BusinessFlow">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="[S|s][U|u][B|b][M|m][I|i][T|t][C|c][O|o][S|s][T|t][R|r][E|e][P|p][O|o][R|r][T|t]|[S|s][U|u][B|b][M|m][I|i][T|t][C|c][O|o][S|s][T|t][S|s][E|e][T|t][T|t][L|l][E|e][M|m][E|e][N|n][T|t][R|r][E|e][P|p][O|o][R|r][T|t]|[C|c][O|o][S|s][T|t][R|r][E|e][P|p][O|o][R|r][T|t][S|s][E|e][A|a][R|r][C|c][H|h]|[C|c][O|o][S|s][T|t][R|r][E|e][P|p][O|o][R|r][T|t][D|d][U|u][E|e][D|d][A|a][T|t][E|e][S|s][E|e][A|a][R|r][C|c][H|h]" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="1" name="StateCode">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="[A|a][L|l]|[A|a][K|k]|[A|a][Z|z]|[A|a][R|r]|[C|c][A|a]|[C|c][O|o]|[C|c][T|t]|[D|d][E|e]|[F|f][L|l]|[G|g][A|a]|[H|h][I|i]|[I|i][D|d]|[I|i][L|l]|[I|i][N|n]|[I|i][A|a]|[K|k][S|s]|[K|k][Y|y]|[L|l][A|a]|[M|m][E|e]|[M|m][D|d]|[M|m][A|a]|[M|m][I|i]|[M|m][N|n]|[M|m][S|s]|[M|m][O|o]|[M|m][T|t]|[N|n][E|e]|[N|n][V|v]|[N|n][H|h]|[N|n][J|j]|[N|n][M|m]|[N|n][Y|y]|[N|n][C|c]|[N|n][D|d]|[O|o][H|h]|[O|o][K|k]|[O|o][R|r]|[P|p][A|a]|[R|r][I|i]|[S|s][C|c]|[S|s][D|d]|[T|t][N|n]|[T|t][X|x]|[U|u][T|t]|[V|v][T|t]|[V|v][A|a]|[W|w][A|a]|[W|w][V|v]|[W|w][I|i]|[W|w][Y|y]" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="1" name="RequestorSystem">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:minLength value="1" />
+              <xs:maxLength value="50" />
+              <xs:pattern value="[P][N][M]|[M][I][T][S]" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="1" name="SubscriberSystem">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:minLength value="1" />
+              <xs:maxLength value="50" />
+              <xs:pattern value="[P][N][M]|[M][I][T][S]" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" name="ModuleTransactionId" type="tns:String20" />
+        <xs:element minOccurs="0" name="AdditionalModuleTransactionId" type="tns:String50" />
+        <xs:element minOccurs="1" name="RequestTimestamp" type="tns:MDateTimeType" />
+        <xs:element minOccurs="0" name="SITransactionKey" type="tns:String32" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fault">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="faultcode" type="xs:string" />
+        <xs:element minOccurs="0" name="faultstring" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

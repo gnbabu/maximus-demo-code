@@ -1,0 +1,105 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="Main_MasterPage, App_Web_hfuk2c4i" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" lang="en" xml:lang="en" />
+        <link runat="server" id="lnkTNFile1" rel="stylesheet" type="text/css" media="screen" />
+        <link runat="server" id="lnkTNFile2" rel="stylesheet" type="text/css" media="print" />
+        <link runat="server" id="lnkTNFile3" rel="stylesheet" type="text/css" media="handheld" />
+        <script src="/js/TNmenu.js" type="text/javascript" ></script>
+        <script src="/js/jquery.js" type="text/javascript" ></script>
+        <script src="/js/jqAlternate-bg.js" type="text/javascript" ></script>
+        <link runat="server" id="lnkTNFile4" rel="stylesheet" type="text/css" media="screen"/>
+        <link href="Styles/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <script src="Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+        <script src="Scripts/jquery-ui.js" type="text/javascript"></script>
+        <title>PDMS - Phase II</title>
+        <script type="text/javascript">
+            function checkShortcut(opt) {
+                //event.keyCode == 8 this is Backspace. For now this is the only thing disabled.
+                //event.keyCode == 13 this is Enter.
+                if (event.keyCode == 8) {
+                    if (opt == 1) return false;
+                    else return true;
+                }
+            }
+        </script>
+        <link href="Styles/style_vertical.css" rel="stylesheet" type="text/css" />
+        <script src="Scripts/jquery.easing.1.3.js" type="text/javascript"></script>
+        <!--
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>		
+        -->
+        <script src="Scripts/jquery.min.js" type="text/javascript"></script>
+
+    </head>
+    <body>
+        <form id="form1" runat="server">
+            <cc1:ToolkitScriptManager ID="ToolkitScriptManager1"  runat="server" />
+		    <div id="SkipToContent"><a href="#MainContent">Skip to Content</a></div>
+            <div id="PageHeader" class="NoPhoto">		
+                <div id="TNLogo"><a href="http://www.tn.gov">
+                    <asp:Image ID="imgTNLogo" runat="server" AlternateText="TN.GOV Logo" /></a> </div>
+                <h1><a href="http://www.tn.gov/tenncare/index.shtml" class="TNCare">TennCare</a><br />
+                <span id="CommissionerName"><a href="http://www.tn.gov/tenncare/quick-bio.shtml" class="TNCare">Darin Gordon, Deputy Commissioner</a></span></h1>
+                <div id="Sidebar2"> <!-- Opens the Sidebar DIV -->
+                    <!-- DO NOT REMOVE THIS INCLUDE -->
+                    <div id="GovernorBox2">
+                        <div style="text-align: left;padding-left: 160px;padding-top:4px">
+                            <div style="font-size: 9px; text-transform: uppercase">GOVERNOR</div>
+                            <div style="font-size: 11pt;font-weight:bold">Bill Haslam</div>
+                            <div><asp:HyperLink ID="lnkGov" runat="server" CssClass="TNCare" NavigateUrl="http://www.tn.gov/governor/" 
+                                Text="Visit Bill's Web Site" Target="_blank" /></div>
+                        </div>
+                    </div>
+                </div> <!-- Closes the Sidebar DIV -->
+            </div> <!-- OPENS THE PAGE HEADER DIV -->	 
+            <div id="mainForm">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <colgroup>
+                        <col width="20%" />
+                        <col width="1%" />
+                        <col width="79%" />
+                    </colgroup>
+                    <tr valign="top">
+                        <td>
+                            <asp:Panel ID="pnlLeftBox" CssClass="LeftBox" runat="server">
+                                <div id="bug2258_Default" runat="server">
+                                    <asp:HyperLink ID="hyperIndivProv" runat="server" NavigateUrl="#" Text="Provider Person Registration" /><br />
+                                    <asp:HyperLink ID="hyperGroupProv" runat="server" NavigateUrl="#" Text="Provider Group/Entity Registration" />
+                                </div>
+                            </asp:Panel>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>
+                            <asp:Panel ID="pnlRightBox" CssClass="RightBox" runat="server">
+		                        <asp:Panel ID="pnlPageHeader" runat="server" CssClass="pageHeader">
+			                        <center><asp:contentplaceholder id="PageLabelContent" runat="server">
+                                        </asp:contentplaceholder></center>
+		                        </asp:Panel>
+                                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                            </asp:Panel>
+                        </td>
+                    </tr>
+                </table>
+                <center>
+                    <div id="Footer"> <!-- Opens the Footer DIV -->
+                        <div id="ContactInfo">
+                            <ul>
+                                <li>TennCare</li>
+                                <li>310 Great Circle Rd.</li>
+                                <li>Nashville, TN 37243 </li>
+                                <li>1-800-342-3145</li>
+                                <li><a href="#">Tenn.Care@tn.gov</a></li>
+                                <li class="LastListItem"><asp:Label ID="lblVersion" runat="server" Text="Version 2.0.0" /></li>
+                            </ul>
+                        </div> <!-- Closes the ContactInfo DIV -->
+                    </div> <!-- Closes the Footer DIV -->
+                </center>
+            </div>
+        </form>
+    </body>
+<!-- InstanceEnd -->
+</html>

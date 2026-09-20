@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://mes.gov/SearchClaimsResponses" xmlns:cdt="http://mes.gov/claims" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://mes.gov/SearchClaimsResponses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Claims_Datatypes.xsd" namespace="http://mes.gov/claims" />
+  <xs:annotation>
+    <xs:documentation>
+			This document contains the response elements to search for an existing Claims in MITS. 
+		</xs:documentation>
+  </xs:annotation>
+  <xs:element name="SearchClaimsResponses">
+    <xs:annotation>
+      <xs:documentation>
+				This element contains the response elements.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Response">
+          <xs:annotation>
+            <xs:documentation>
+						This element contains the response elements.
+					</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ICN" type="str20" />
+              <xs:element minOccurs="0" name="MedicaidBillingNumber" type="str50" />
+              <xs:element minOccurs="0" name="FromDOS" type="DateType" />
+              <xs:element minOccurs="0" name="ThruDOS" type="DateType" />
+              <xs:element minOccurs="0" name="ClaimType" type="str10" />
+              <xs:element minOccurs="0" name="Status" type="str10" />
+              <xs:element minOccurs="0" name="RADate" type="DateType" />
+              <xs:element minOccurs="0" name="AmountBilled" type="Decimal13-2" />
+              <xs:element minOccurs="0" name="AmountPaid" type="Decimal13-2" />
+              <xs:element minOccurs="0" name="ClaimAdjudicationDate" type="DateType" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SITransactionKey" type="cdt:String32" />
+        <xs:element name="ResponseType" type="cdt:String3" />
+        <xs:element name="ResponseMessage" type="cdt:String30" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="str10">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="str20">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="str50">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DateType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:date">
+          <xs:pattern value="\d{4}[-]\d{2}[-]\d{2}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:dateTime">
+          <xs:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="0" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="Decimal13-2">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:decimal">
+          <xs:totalDigits value="13" />
+          <xs:fractionDigits value="2" />
+          <xs:minInclusive value="-99999999999.99" />
+          <xs:maxInclusive value="99999999999.99" />
+          <xs:pattern value="(-?\d{1,13}|(-?\d{1,12})((\.\d{1})?)|(-?\d{1,11})((\.\d{1,2})?))" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="0" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="EmptyValue">
+    <xs:restriction base="xs:string">
+      <xs:length value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

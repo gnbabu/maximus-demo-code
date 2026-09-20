@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://mes.gov/InquireClaimsRequest" xmlns:msh="http://mes.gov/claims" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://mes.gov/InquireClaimsRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Claims_MessageHeader.xsd" namespace="http://mes.gov/claims" />
+  <xs:element name="InquireClaimsRequest">
+    <xs:annotation>
+      <xs:documentation>
+This element contains the request elements to inquire the detail for an existing Claims in MITS.
+</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" ref="msh:MessageHeader" />
+        <xs:element minOccurs="1" name="ICN" type="str20" />
+        <xs:element minOccurs="1" name="BillingProviderID" type="str50" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="str20">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="str50">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

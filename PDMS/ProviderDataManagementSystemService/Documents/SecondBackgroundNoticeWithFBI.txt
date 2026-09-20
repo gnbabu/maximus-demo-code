@@ -1,0 +1,69 @@
+﻿
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<p>
+<br />
+<b>Subject:</b> Fingerprint-Based Criminal Background Check Notice
+</p>								
+
+<p>The Affordable Care Act requires that all newly enrolling Medicaid providers and suppliers adhere to the new enrollment and safeguard screening requirements. In accordance with 42 CFR 455.434, high risk level providers must consent to fingerprint-based federal criminal background checks. </p>
+
+<p>The provider in the application as well as each individual with a five percent (5%) or greater direct or indirect ownership interest in a provider or supplier must provide fingerprints within thirty (30) calendar days of this notice.</p>
+<p>To obtain a background check, visit or contact a Web Check location. A complete list of BCI WebCheck vendors is available at the Ohio Attorney General website: https://www.ohioattorneygeneral.gov/. Under the “Business” heading (at bottom of page), select “Background Check”.   You must instruct the WebCheck vendor that you need an Ohio background check for the purpose of “Application for Medicaid Provider/Owner and Employee and/or code 3701.881.” Additionally, instruct the WebCheck vendor that the BCI must mail the background check results directly to: </p>
+ <br /> <br />
+<p class="center">The Ohio Department of Medicaid </p>
+<p class="center">Attention: BCII Coordinator </p>
+<p class="center">P.O. Box 183017 </p>
+<p class="center">Columbus, Ohio 43218-3017</p>
+ <br /> <br />
+
+<p>The provider and owners who must provide fingerprints within thirty (30) calendar days, or by [[EXPIREDATE]] are: </p>
+[[PROVIDER_LIST]]
+<p>Please note the submission of fingerprints is at the cost of the provider or individual(s) with the ownership interest. If we do not receive your fingerprints by [[EXPIREDATE]], your enrollment with Medicaid will be terminated, and you will not be eligible to provide services or receive reimbursement.</p>
+
+<p>Please contact bureaunetworkmanagement</p>
+<p>If you have any questions, please email <a href="mailto:bureaunetworkmanagement@medicaid.ohio.gov ">bureaunetworkmanagement@medicaid.ohio.gov </a>. if you have any questions regarding this notice</p>
+Sincerely,<br />
+    <br />
+Ohio Medicaid Provider Compliance
+
+</td>
+</tr>
+</table>

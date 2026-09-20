@@ -1,0 +1,320 @@
+﻿table.maximus-base-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 14px;
+    background: #fff;
+    border: 1px solid #e2dff0;
+}
+
+    /* ================= HEADER ================= */
+
+    table.maximus-base-table thead th {
+        background: #ffffff; /* light grey-purple like screenshot */
+        color: #444;
+        font-weight: 700;
+        font-size: 14px !important;
+        padding: 10px 14px;
+        border-bottom: 1px solid #ddd !important;
+        white-space: nowrap;
+        vertical-align: middle;
+        min-width: 200px !important;
+    }
+
+    /* ================= FILTER INPUT ================= */
+
+    table.maximus-base-table thead .filter-input {
+        font-size: 12px;
+        padding: 3px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc !important;
+    }
+
+    /* ================= BODY CELLS ================= */
+
+    table.maximus-base-table tbody td {
+        padding: 11px 14px;
+        border-bottom: 1px solid #eceaf4;
+        color: #444;
+        vertical-align: middle;
+    }
+
+    /* ================= ZEBRA ROW COLORS ================= */
+
+    table.maximus-base-table tbody tr.dg-data-row:nth-child(odd) {
+        background-color: #ffffff;
+    }
+
+    table.maximus-base-table tbody tr.dg-data-row:nth-child(even) {
+        background-color: #efedf5; /* lavender stripe like screenshot */
+    }
+
+    /* ================= ROW HOVER ================= */
+
+    table.maximus-base-table tbody tr.dg-data-row:hover {
+        background-color: #e4e0f2;
+    }
+
+    /* ================= LINKS ================= */
+
+    table.maximus-base-table tbody td a {
+        color: #56337f;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+        table.maximus-base-table tbody td a:hover {
+            text-decoration: underline;
+        }
+
+    table.maximus-base-table tbody tr.dg-data-row:nth-of-type(odd) {
+        background: #f7f5fa;
+    }
+
+    table.maximus-base-table tbody tr.dg-data-row:nth-of-type(even) {
+        background: #ffffff;
+    }
+
+    table.maximus-base-table tbody tr.dg-data-row:hover {
+        background: #f4f5fa;
+    }
+
+    /* ================= NO DATA ================= */
+
+    table.maximus-base-table tbody tr td.text-center {
+        color: #444;
+        font-style: italic;
+    }
+
+/* ================= PAGINATION ================= */
+.pagination-inner-scroll {
+    overflow-x: auto;
+    display: flex !important;
+    justify-content: flex-start; /* Stretches pagination to available space */
+    align-items: center;
+}
+.pagination {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start; /* Align pagination to the left */
+    white-space: nowrap;
+    min-width: max-content;
+}
+
+    .pagination .page-item.active .page-link {
+        background-color: #56337f;
+        border-color: #56337f;
+        color: #fff;
+    }
+
+    .pagination .page-link {
+        color: #56337f;
+        font-size: 14px;
+    }
+
+/* Scrollbar styling */
+.pagination-inner-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.pagination-inner-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.pagination-inner-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+    .pagination-inner-scroll::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+.sort-icon {
+    font-size: 16px;
+    vertical-align: middle;
+    margin-left: 4px;
+    color: #444;
+}
+
+th:hover .sort-icon {
+    color: #444;
+}
+
+.grid-btn-purple {
+    background-color: #5b2d8b;
+    color: #fff;
+    border: none;
+}
+
+    .grid-btn-purple:hover {
+        background-color: #4a2372;
+        color: #fff;
+    }
+
+table.maximus-base-table th, td {
+    /* border: 1px solid #ddd; */
+    border: none !important;
+    padding: 8px;
+    text-align: left;
+    font-family: 'NunitoSans';
+    font-size: 14px;
+}
+
+.btn-outline-purple {
+    border: 1px solid #5c2d91 !important;
+    color: #5c2d91 !important;
+    font-size: 13px;
+}
+
+    .btn-outline-purple:hover {
+        /*border: 1px solid #5c2d91 !important;*/
+        color: #5c2d91 !important;
+        font-size: 13px;
+    }
+
+.form-select-custom {
+    line-height: 2 !important;
+}
+
+.dg-even {
+    background: #efedf5;
+}
+
+.dg-odd {
+    background: #ffffff;
+}
+
+/* ================= PAGINATION ================= */
+
+.dg-pagination-wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    gap: 6px;
+    width: 100%;
+}
+
+/* Fixed sections */
+.dg-page-prev,
+.dg-page-next {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+/* ================= WRAPPER (KEY FIX) ================= */
+
+.dg-page-numbers-wrapper {
+    max-width: 300px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding-bottom: 6px;
+}
+
+/* ================= SCROLL AREA ================= */
+
+.dg-page-numbers {
+    scrollbar-width: auto; /* ✅ thicker than default */
+    scrollbar-color: #999 #f1f1f1;
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 4px;
+    margin-bottom: 0; /* 🔥 cancels scrollbar height */
+
+    scroll-behavior: smooth;
+}
+
+    /* Scrollbar */
+    .dg-page-numbers::-webkit-scrollbar {
+        height: 14px;
+    }
+
+    .dg-page-numbers::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 10px;
+    }
+
+/* ================= COMMON ================= */
+
+.dg-page-num,
+.dg-prev-btn,
+.dg-next-btn {
+    height: 32px;
+    min-width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #56337f;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    border-radius:0px !important;
+}
+
+/* ================= PAGE NUMBERS ================= */
+
+.dg-page-num {
+    padding: 0 10px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+    .dg-page-num.active {
+        background-color: #56337f;
+        color: #fff;
+        border-color: #56337f;
+    }
+
+
+
+/* ================= BUTTONS ================= */
+
+.dg-prev-btn,
+.dg-next-btn {
+    padding: 0 12px;
+    cursor: pointer;
+}
+
+    .dg-prev-btn:hover,
+    .dg-next-btn:hover {
+        background: #efedf5 !important;
+        border: 1px solid #ddd !important;
+        background: #fff !important;
+        color: #56337f !important;
+        box-sizing: border-box !important;
+        box-shadow:none !important;
+    }
+
+    /* Disabled */
+    .dg-prev-btn.disabled,
+    .dg-next-btn.disabled {
+        /*opacity: 0.5;*/
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    .btn-margin{
+        margin:0 !important;
+    }
+
+table.maximus-base-table .dropdown-menu li {
+    width: 100%;
+    display: block;
+}
+table.maximus-base-table .filter-input-between {
+    margin-bottom: 10px !important;
+    font-size: 12px !important;
+    padding: 3px 8px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ccc !important;
+    height:32px !important;
+}
+.ui-datepicker {
+    z-index: 9999 !important; /* stay above dropdown */
+}

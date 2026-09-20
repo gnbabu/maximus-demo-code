@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://mes.gov/attachment" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://mes.gov/attachment" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/attachment" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="Attachment.xsd" />
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/attachment" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="Attachment_MessageHeader.xsd" />
+    </xsd:schema>
+  </types>
+  <message name="sendAttachmentRequestMsg">
+    <part name="parameters" element="tns:SendAttachment" />
+  </message>
+  <message name="sendAttachmentResponseMsg">
+    <part name="parameters" element="tns:SendAttachmentResponse" />
+  </message>
+  <message name="sendAttachmentFault">
+    <part name="parameters" element="tns:Fault" />
+  </message>
+  <portType name="AttachmentSoapPortType">
+    <operation name="sendAttachment">
+      <input message="tns:sendAttachmentRequestMsg" />
+      <output message="tns:sendAttachmentResponseMsg" />
+      <fault name="fault" message="tns:sendAttachmentFault" />
+    </operation>
+  </portType>
+  <binding name="AttachmentSoap" type="tns:AttachmentSoapPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="sendAttachment">
+      <soap:operation soapAction="http://mes.gov/sendAttachment" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="AttachmentService">
+    <port name="AttachmentSoap" binding="tns:AttachmentSoap">
+      <soap:address location="http://localhost:7800/attachment/serviceentrypoint" />
+    </port>
+  </service>
+</definitions>

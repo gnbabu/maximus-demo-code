@@ -1,0 +1,269 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inq="http://mes.gov/InquireClaimsResponse" xmlns:phy="http://mes.gov/PhysicianClaims" xmlns:ins="http://mes.gov/InstitutionalClaims" xmlns:den="http://mes.gov/DentalClaims" xmlns:phar="http://mes.gov/PharmClaims" xmlns:cla="http://mes.gov/ClaimResponse">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <inq:AddUpdateClaimsResponse>
+      <!--Optional:-->
+      <phy:PhysicianClaims>
+        <pPhys ind_attachment="Y" dte_accident="2020-02-02" num_dtl_total="0123456789" cde_clm_status="Y" cde_clm_type="Y" tpl_amt="1234567890123" dte_billed="2020-02-02" amt_billed="1234567890121.23" amt_patnt_liab="1234567890123.00" num_pat_acct="PATACCOUNTPHYSICANS" dte_first_svc="2020-02-02" dte_last_svc="2020-02-02" dte_to_hosp="2020-02-02" amt_net_billed="1234567890123.00" amt_co_pay="1234567890123.00" ind_accident="A" cde_county="US" cde_claim_frequency="Y" prov_billing="123456789008" num_icn="ICN1234567885SDFGHWQ" ind_prov_sign="A" ind_encounter="A" cde_med_rec_num="A" ind_carrier_denied="A">
+          <physHdrKey cde_special_program="SPL" id_medicaid="1003000191" clm_recip_fst_nam="Test" clm_lst_nam_recip="Test" qlf_sub_dob_fmt="SUB" dte_subscriber_dob="2020-02-02" cde_subscriber_gender="F" cde_med_assignment="S" ind_benefits_Assignment="S" cde_release_information="I" cde_patient_signature="S" ind_benefits_assignment="S" cde_accident_state="OH" cde_accident_country="CH" id_provider="PROVIDERINFO" id_perf_prov="PROVIDERINFO" id_prov_refer="PROVIDERINFO" id_prov_referring_2="PROVIDERINFO" cde_related_cause_1="P">
+            <!--Optional:-->
+            <clmSbr cde_payer_responsib="S"/>
+            <!--1 or more repetitions:-->
+            <clmEntity qlf_entity_type="DK" qlf_type_org="OR" cde_provider_type="PRO" cde_prov_taxonomy="TAX1234565667">
+              <clmEntNmAdr ind_primary_id="P" qlf_entity_type="TYP">
+                <partyIdentifier qlf_id_type="ID" cde_party_id="PA"/>
+                <clmNameNm1 nam_last="TEST" nam_first="TEST" nam_middle="TEST"/>
+              </clmEntNmAdr>
+            </clmEntity>
+            <!--1 or more repetitions:-->
+            <profOthPyrHdr ind_release_of_info="R" ind_ben_assignment="B" dte_other_sub_dob="2020-02-02" cde_release_of_info="R" amt_alwd_oth_pyr="1345.00" cde_other_sub_gender="F" ind_benefits_assignment="B" dte_clm_adjudication="2020-02-02" qlf_claim_adjud_dt="DAT" qlf_clm_adjud_dt_fmt="DAT">
+              <!--1 or more repetitions:-->
+              <clmPayerEntity qlf_entity_type="TYP" qlf_type_org="TY">
+                <clmPyrEntnmadr ind_primary_id="I" qlf_entity_type="LIC" nam_last="TEST">
+                  <clmNameNm1 nam_last="TEST" nam_first="TEST" nam_middle="TEST"/>
+                  <partyIdentifier cde_party_id="TEST1234" qlf_id_type="ID"/>
+                </clmPyrEntnmadr>
+                <!--Optional:-->
+                <clmRef qlf_reference_id="REF" cde_ref_id="ICN34567788" qlf_entity_type="TYP"/>
+              </clmPayerEntity>
+              <clmSbr cde_claim_filing_ind="CI" cde_insured_group_number="INC4566585857588888" cde_payer_responsib="P" cde_ind_relationship="18" cde_insurance_type="OT" nam_insured_group="INC456746865TGBB46455454"/>
+              <!--1 or more repetitions:-->
+              <clmAmt qlf_amount="B6" amt_monetary="1435253454"/>
+              <!--1 or more repetitions:-->
+              <clmCas cde_clm_adj_reason="PREVS" cde_clm_adj_group="PREVS" amt_adjustment="1323423.44" qty_adjustment="ADJUST" num_cas_seq="CO" num_dtl_svd="1" num_dtl="1"/>
+            </profOthPyrHdr>
+            <!--Zero or more repetitions:-->
+            <clmNte cde_note="TES" dsc_note="Test notes for claims" num_dtl="1"/>
+            <!--Zero or more repetitions:-->
+            <clmRef qlf_reference_id="G1" cde_ref_id="test ref"/>
+            <!--Zero or more repetitions:-->
+            <clmDtp qlf_date_time="DTE" dte_time_period="2020-02-02"/>
+            <!--Zero or more repetitions:-->
+            <clmPwk cde_rpt_transmission="AC" cde_attachment_control="Testattachment"/>
+            <!--Zero or more repetitions:-->
+            <clmCrc cde_category="CA" cde_condition="TEST" ind_condition="P"/>
+          </physHdrKey>
+          <!--Optional:-->
+          <clmHdrDelivery dte_delivery="2020-02-02"/>
+          <!--1 or more repetitions:-->
+          <detail amt_detail_tpl="100.20" amt_co_pay="100.50" cde_diag_treat_ind="S " ind_pregnancy="P" num_dtl="45612345" dte_first_svc="2020-02-02" dte_last_svc="2020-02-02" qty_billed="1000.33" qty_allowed="1300.33" ind_emergency="E" cde_proc_mod="1T" cde_modifier_2="2T" cde_modifier_3="3T" amt_billed="1000.33" amt_alwd="1000.33" cde_pos="TT" cde_clm_status="S" cde_modifier_4="TT" cde_prov_spec="TES" cde_epsdt_fp="E">
+            <physDtlKey cde_proc="Test" ind_less_90="Y" cde_pos_sub="TT" qlf_procedure_qlf="TT" qlf_svc_line_dte_fmt="TT" id_perf_prov="TestProv" id_prov_referring="TestProvRef">
+              <!--Zero or more repetitions:-->
+              <clmEntity qlf_type_org="TS" qlf_entity_type="tst" cde_provider_type="Pro" cde_prov_taxonomy="testtaxomony">
+                <!--Zero or more repetitions:-->
+                <clmEntNmAdr qlf_entity_type="tes" ind_primary_id="P">
+                  <!--Optional:-->
+                  <partyIdentifier qty_billed_sub="1000.33" qty_billed_orig="1000.33" cde_proc_sub="testpr" qlf_id_type="ts" cde_party_id="test123455"/>
+                  <clmNameNm1 nam_last="test" nam_first="test" nam_middle="test"/>
+                </clmEntNmAdr>
+              </clmEntity>
+              <!--Zero or more repetitions:-->
+              <clmNdcDtl sak_short="234" cde_prod_serv_id="test" qty_units_svc="100000.45" cde_unit_measure="TS" amt_drug_unit_price="1000000.45" qlf_prod_serv_id="Ts" qlf_prescription_id="tst" num_prescription_id="test"/>
+            </physDtlKey>
+            <!--Optional:-->
+            <clmEapgDtl cde_eapg_sub="test"/>
+          </detail>
+          <!--Zero or more repetitions:-->
+          <diag_xref qlf_code_list="ICD" cde_diag_seq="ts" cde_diag="ts"/>
+        </pPhys>
+        <!--Optional:-->
+        <clmTrailer icnRegionCode="IC"/>
+      </phy:PhysicianClaims>
+      <!--Optional:-->
+      <ins:InstitutionalClaims>
+        <pUb92 ind_carrier_denied="I" ind_encounter="I" cde_med_rec_num="I" ind_prov_sign="I" num_icn="Inctest" num_dtl_total="1000" cde_clm_status="Y" cde_clm_txn_typ="Y" cde_clm_type="Y" num_pat_acct="test" cde_type_of_bill="test" dte_admission="2020-02-02" cde_admit_hour="test" cde_admit_type="Y" cde_patient_status="YS" amt_pd_pat_ub92="10000.34" dte_billed="2020-02-02" amt_billed_ub92="10000.45" dte_first_svc="2020-02-02" dte_last_svc="2020-02-02" id_prov_attend="test" id_prov_other="test" id_prov_other_2="test" num_days_covd="tes" cde_county="us" ind_elect_clm="t" cde_admit_source="c" cde_claim_frequency="c" prov_billing="11" num_days_ncovd="tes">
+          <!--Optional:-->
+          <ubXover amt_alwd_mcare="10000.34" amt_deduct_blood="10000.34" amt_deduct="10000.34" amt_coinsurance="10000.34" amt_paid_mcare="10000.34" dte_mcare_paid="2020-02-02" qty_days_coinsurance="1234" qty_days_lifetime_reserve="1234"/>
+          <!--Zero or more repetitions:-->
+          <condition cde_cond="cd" cde_cond_seq="cd"/>
+          <!--Zero or more repetitions:-->
+          <value cde_value="cd" num_seq="1000" amt_value="10000.45"/>
+          <ubHdrKey qlf_facility="qt" cde_release_of_info="C" id_medicaid="test" clm_recip_fst_nam="test123456" clm_lst_nam_recip="test123456" qlf_sub_dob_fmt="qt1" dte_subscriber_dob="2020-02-02" cde_sub_gender="F" id_provider="test1235465" id_pr_facility="test1235465" ind_benefits_assignment="A" qlf_discharge_time="QT1" qlf_discharge_time_fmt="QT2" time_discharge="test" qlf_statement_dt_fmt="tes">
+            <!--Optional:-->
+            <clmSbr cde_claim_filing_ind="cd" cde_payer_responsib="cd"/>
+            <!--Zero or more repetitions:-->
+            <clmQty qlf_quantity="qt" num_quantity="100.45" cde_unit_of_measure="cd"/>
+            <!--Zero or more repetitions:-->
+            <clmEntity qlf_entity_type="qty" cde_provider_type="qty" cde_prov_taxonomy="test" qlf_type_org="Q">
+              <!--1 or more repetitions:-->
+              <clmEntNmAdr ind_primary_id="Y" qlf_entity_type="PR">
+                <clmNameNm1 nam_last="test" nam_first="test" nam_middle="test"/>
+                <partyIdentifier qlf_id_type="qt" cde_party_id="test"/>
+              </clmEntNmAdr>
+            </clmEntity>
+            <!--1 or more repetitions:-->
+            <instOthPyrHdr amt_alwd_oth_pyr="10000.45" dte_adjudication="2020-02-02" dte_other_sub_dob="2020-02-02" qlf_adjudication_date="tes" ind_benefits_assignment="A" cde_release_of_info="C" cde_other_sub_gender="c" qlf_adjudication_dte_fmt="qty" ind_release_of_info="I">
+              <!--1 or more repetitions:-->
+              <clmPayerEntity qlf_entity_type="IL" qlf_type_org="ts">
+                <clmPyrEntnmadr qlf_entity_type="PR" ind_primary_id="Y">
+                  <clmNameNm1 nam_last="test" nam_first="test" nam_middle="test"/>
+                  <partyIdentifier cde_party_id="test" qlf_id_type="QA"/>
+                </clmPyrEntnmadr>
+                <!--Optional:-->
+                <clmRef qlf_reference_id="F8" cde_ref_id="ICN1234567" qlf_entity_type="qty"/>
+              </clmPayerEntity>
+              <clmSbr cde_claim_filing_ind="cd" cde_insured_group_number="test" nam_insured_group="test123456" cde_payer_responsib="P" cde_ind_relationship="18" cde_insurance_type="OT"/>
+              <!--1 or more repetitions:-->
+              <clmAmt qlf_amount="B6" amt_monetary="1000.45"/>
+              <!--Zero or more repetitions:-->
+              <clmCas cde_clm_adj_reason="test" amt_adjustment="1000000.45" qty_adjustment="test" num_dtl="test" num_dtl_svd="1" cde_insured_group_number="test" num_cas_seq="1" cde_clm_adj_group="test"/>
+            </instOthPyrHdr>
+            <!--Optional:-->
+            <clmRef qlf_reference_id="F8" cde_ref_id="ICNtest"/>
+            <!--Zero or more repetitions:-->
+            <clmNte cde_note="tes" dsc_note="test12345667" num_dtl="1"/>
+            <!--Zero or more repetitions:-->
+            <clmPwk cde_rpt_transmission="AC" cde_attachment_control="test1234567"/>
+          </ubHdrKey>
+          <!--Zero or more repetitions:-->
+          <detail num_dtl="1" dte_first_svc="2020-02-02" dte_last_svc="2020-02-02" cde_revenue="test" qty_units_billed="test" amt_billed_ub92="1000.35" amt_co_pay="1000.35" amt_alwd="10000.35" amt_detail_tpl="10000.35" cde_clm_status="c" ind_sys_generate="c" cde_loc_pricing="cde" ind_pr_override_other_2="c">
+            <ubDtlKey cde_proc="test" qlf_procedure_id="ID" cde_uom="CD" id_prov_attend="test123" id_prov_other="test123" id_prov_other_2="test123" amt_non_covered="10000.35" amt_unit_rate="10000.35">
+              <!--Zero or more repetitions:-->
+              <clmPwk cde_rpt_transmission="cd" cde_attachment_control="test1234567test"/>
+              <!--Zero or more repetitions:-->
+              <clmOthPyrDtl num_dtl_svd="1" other_pyr_party_identifier="test1234" amt_service_paid="1000.35" amt_alwd_oth_pyr="10000.35" qlf_svc_adjud_dte="dte" qlf_svc_adjud_dte_fmt="dt" dte_service_adjud="2020-02-02" other_pyr_qlf_party_id="test123455677test" qty_service="1" cde_procedure="1" cde_revenue="1" qlf_procedure_code="1">
+                <!--1 or more repetitions:-->
+                <clmCas cde_clm_adj_reason="test" amt_adjustment="1000.35" qty_adjustment="test1234" num_cas_seq="test" num_dtl_svd="test" num_dtl="test" cde_clm_adj_group="cd"/>
+              </clmOthPyrDtl>
+              <!--Zero or more repetitions:-->
+              <clmNdcDtl cde_prod_serv_id="testtesttesttesttest" qty_units_svc="100000000.55" cde_unit_measure="cd" amt_drug_unit_price="100000.35" qlf_prod_serv_id="qt" qlf_prescription_id="qty" num_prescription_id="testtesttest"/>
+              <!--Zero or more repetitions:-->
+              <clmEntity qlf_entity_type="qty" cde_provider_type="cde" cde_prov_taxonomy="test123456788">
+                <!--Zero or more repetitions:-->
+                <clmEntNmAdr ind_primary_id="I">
+                  <partyIdentifier qlf_id_type="qt" cde_party_id="test1234567"/>
+                  <clmNameNm1 nam_last="test" nam_first="test" nam_middle="test"/>
+                </clmEntNmAdr>
+              </clmEntity>
+            </ubDtlKey>
+            <!--Zero or more repetitions:-->
+            <modifier seq="1234" cde_modifier="cd"/>
+          </detail>
+          <!--Zero or more repetitions:-->
+          <payer cde="c" num_seq="100" amt_prior_payment="100000.45" amt_due_est="1000000.45"/>
+          <!--Zero or more repetitions:-->
+          <proc num_seq="1" cde_proc_icd9="1" qlf_code_list="1" dte_icd_9_cm_proc="2020-02-02"/>
+          <!--Zero or more repetitions:-->
+          <occur cde_occurrence="cd" num_seq="1" dte_occurrence="2020-02-02" dte_occ_to="2020-02-02" qlf_code_list="qt"/>
+          <!--Zero or more repetitions:-->
+          <ubDiagX cde_diag="test12" cde_diag_seq="cd" qlf_code_list="qt" cde_poa="c"/>
+        </pUb92>
+        <!--Optional:-->
+        <clmTrailer icnRegionCode="cd"/>
+      </ins:InstitutionalClaims>
+      <!--Optional:-->
+      <den:DentalClaims clmElapsedTime="2020-02-02" sak_claim="test" type="test">
+        <pDntl ind_encounter="I" ind_carrier_denied="D" ind_prov_sign="S" num_icn="ICN123456" num_dtl_total="1" cde_clm_status="P" cde_clm_type="P" amt_net_billed="10000.45" tpl_amt="1000" dte_billed="2020-02-02" amt_billed="100000.45" num_pat_acct="test1234567" dte_first_svc="2020-02-02" dte_last_svc="2020-02-02" amt_patnt_liab="10000.45" cde_pos="cd" ind_emergency="I" ind_accident="I" cde_county="US" cde_claim_frequency="7" prov_billing="100000">
+          <dntlHdrKey cde_release_info="c" cde_related_cause_1="c" ind_benefits_assignment="B" cde_accident_country="cd" cde_sub_gender="f" id_medicaid="test1234567" clm_recip_fst_nam="test123345434" dte_subscriber_dob="2020-02-02" clm_lst_nam_recip="test123456" cde_accident_state="OH" id_provider="test1234" id_perf_prov="test2234" id_prov_referring="test1234567" id_prov_referring_2="test123456789" cde_special_program="cd">
+            <!--Zero or more repetitions:-->
+            <clmRef qlf_reference_id="qty" cde_ref_id="test1234567"/>
+            <!--Zero or more repetitions:-->
+            <clmDtp qlf_date_time="dte" qlf_dte_time_prd_fmt="2020-02-02" dte_time_period="2020-02-02"/>
+            <!--Zero or more repetitions:-->
+            <clmNte cde_note="cde" dsc_note="test1234567890" num_dtl="123"/>
+            <!--Zero or more repetitions:-->
+            <clmPwk cde_rpt_transmission="cd" cde_attachment_control="test123456789"/>
+            <!--Zero or more repetitions:-->
+            <clmSbr cde_claim_filing_ind="CI" cde_insured_group_number="test1234567890" cde_payer_responsib="P" cde_ind_relationship="18" cde_insurance_type="OT"/>
+            <!--Zero or more repetitions:-->
+            <clmEntity qlf_entity_type="85" cde_provider_type="typ" cde_prov_taxonomy="test1234567890" qlf_type_org="qt">
+              <clmEntNmAdr qlf_entity_type="85" ind_primary_id="I">
+                <!--Optional:-->
+                <partyIdentifier qlf_id_type="XX" cde_party_id="test123456"/>
+                <!--Optional:-->
+                <clmNameNm1 nam_last="test" nam_first="test" nam_middle="test"/>
+              </clmEntNmAdr>
+            </clmEntity>
+            <!--1 or more repetitions:-->
+            <dntlOthPyrHdr cde_release_of_info="1" ind_ben_assignment="1" dte_other_sub_dob="2020-02-02" cde_other_sub_gender="1" qlf_claim_adjud_dt="1" qlf_clm_adjud_dt_fmt="1" dte_clm_adjudication="2020-02-02" amt_alwd_oth_pyr="1">
+              <!--Zero or more repetitions:-->
+              <clmPayerEntity qlf_entity_type="IL" qlf_type_org="1">
+                <clmPyrEntnmadr ind_primary_id="Y" qlf_entity_type="PR">
+                  <!--Optional:-->
+                  <clmNameNm1 nam_last="test" nam_first="test" nam_middle="test"/>
+                  <partyIdentifier cde_party_id="test123456689" qlf_id_type="MI"/>
+                </clmPyrEntnmadr>
+                <!--Optional:-->
+                <clmRef qlf_reference_id="FB" cde_ref_id="ICN1234566788" qlf_entity_type="qty"/>
+              </clmPayerEntity>
+              <!--Zero or more repetitions:-->
+              <clmSbr nam_insured_group="testinc" cde_claim_filing_ind="CI" cde_insured_group_number="test" cde_payer_responsib="P" cde_ind_relationship="18" cde_insurance_type="OT"/>
+              <!--Zero or more repetitions:-->
+              <clmAmt qlf_amount="B6" amt_monetary="10000.35"/>
+              <!--Zero or more repetitions:-->
+              <clmCas cde_clm_adj_reason="P" amt_adjustment="100000.35" cde_clm_adj_group="CO" qty_adjustment="test" num_dtl="0" num_dtl_svd="1" num_cas_seq="1"/>
+            </dntlOthPyrHdr>
+          </dntlHdrKey>
+          <!--Zero or more repetitions:-->
+          <diag_xref cde_diag_seq="C" cde_diag="test"/>
+          <!--1 or more repetitions:-->
+          <detail num_dtl="1" dte_first_svc="2020-02-02" amt_billed="1000" amt_alwd="10000.35" amt_detail_tpl="10000.35" cde_clm_status="P" cde_tooth_nbr="10" qty_billed="100" qty_allowed="10000.35" cde_prov_spec="pro" cde_quadrant="12" ind_pr_override_perf="Y">
+            <dntlDtlKey qlf_procedure_code="AD" cde_proc="cd" qlf_svc_date_fmt="qt" id_prov_perf="test123">
+              <!--Zero or more repetitions:-->
+              <clmOthPyrDtl amt_alwd_oth_pyr="100000.35" dte_service_adjud="2020-02-02">
+                <!--Zero or more repetitions:-->
+                <clmAmt qlf_amount="AAE" amt_monetary="10000.35"/>
+                <!--Zero or more repetitions:-->
+                <clmCas cde_clm_adj_reason="cde" amt_adjustment="10000.35" cde_clm_adj_group="CO" qty_adjustment="test" num_dtl="0" num_dtl_svd="1" num_cas_seq="qt"/>
+              </clmOthPyrDtl>
+              <!--Zero or more repetitions:-->
+              <clmEntity qlf_entity_type="82" cde_provider_type="cde" cde_prov_taxonomy="test">
+                <!--Zero or more repetitions:-->
+                <clmEntNmAdr ind_primary_id="I" qlf_entity_type="82" qlf_type_org="qt">
+                  <partyIdentifier qlf_id_type="XX" cde_party_id="1237899009999"/>
+                  <!--Optional:-->
+                  <clmNameNm1 nam_last="test" nam_first="test" nam_middle="test"/>
+                </clmEntNmAdr>
+              </clmEntity>
+            </dntlDtlKey>
+            <!--Zero or more repetitions:-->
+            <surface num_seq="1" cde_tooth_surface="C"/>
+            <!--Zero or more repetitions:-->
+            <modifier seq="01" cde_modifier="CD"/>
+          </detail>
+        </pDntl>
+        <!--Optional:-->
+        <clmTrailer icnRegionCode="58"/>
+      </den:DentalClaims>
+      <!--Optional:-->
+      <phar:PharmClaims>
+        <pPhrm num_icn="ICN234567890" id_prov_prescrb="1" amt_cost_ingredient="1" amt_billed="1" ind_pregnancy="1" ind_encounter="1" ind_emergency="1" ind_nurse_home="1" ind_carrier_denied="1" cde_clarification="1" id_prov_rendering="1" ind_prov_sign="1" cde_clm_type="1" num_prscrip="1" dte_dispense="2020-02-02" dte_prescribe="2020-02-02" qty_refill="1" num_day_supply="1" ind_brand_med_nec="1" tpl_amt="1" amt_ndc_profee="1" cde_dur_intrvntn="1" cde_dur_outcome="1" cde_ncpdp_conflict="1" num_dtl_total="1" cde_clm_status="1" dte_final="2020-02-02" amt_tot_reimb="1">
+          <!--Zero or more repetitions:-->
+          <detail num_dtl="1" qty_dispense="1" amt_billed="1" amt_awp="1">
+            <phrmDtlKey cde_ndc="1" cde_ndc_sub="1" qty_dispense_sub="1"/>
+            <!--Zero or more repetitions:-->
+            <clmCopayX amt_copay="1"/>
+          </detail>
+          <phrmHdrKey id_medicaid="1" clm_recip_fst_nam="1" clm_lst_nam_recip="1" cde_patient_location="1" id_provider="1" id_prov_rendering="1" num_prscrip_sub="1" num_pa="1"/>
+          <!--Optional:-->
+          <phrmHdrOpt amt_dispense="1"/>
+          <!--Optional:-->
+          <phrmCobCount op_count="1"/>
+          <!--Optional:-->
+          <phrmCobXref cnt_other_payer="1" cde_payer_id="1" dte_other_payer="2020-02-02" num_op_icn="1">
+            <!--Zero or more repetitions:-->
+            <phrmCob cnt_other_payer="1" cnt_op_amt_paid="1" amt_op_paid="1"/>
+          </phrmCobXref>
+          <!--Zero or more repetitions:-->
+          <diag_xref qlf_code_list="1" cde_diag_seq="1" cde_diag="1"/>
+        </pPhrm>
+      </phar:PharmClaims>
+      <cla:ClaimResponse>
+        <header amt_copay="100" amt_paid="100" amt_tpl="100" num_icn="1234" cde_clm_status="P">
+          <hdrPlan cde_pgm_health="P" amt_encountered="100" qty_allowed="1" amt_allowed="1000" amt_paid="500" amt_copay="100" amt_state_share="20" cde_fund_code="F" cde_aid_category="test"/>
+          <!--Zero or more repetitions:-->
+          <error index="1" cde_esc="0" dsc_error_stat="test" cde_eob="10" cde_adj_rsn="EOB"/>
+          <!--1 or more repetitions:-->
+          <detail num_dtl="10" qty_units_allowed="10" amt_allowed="100" cde_clm_status="P" amt_copay="50" amt_tpl="500">
+            <detailPlan cde_pgm_health="test" amt_encountered="1000" qty_allowed="1" ind_pricing="100" amt_allowed="100" amt_paid="100" amt_copay="20" amt_state_share="15" cde_fund_code="H" cde_aid_category="D" cde_rate_type="T"/>
+            <!--Zero or more repetitions:-->
+            <error index="1" cde_esc="0" cde_eob="1" cde_adj_rsn="EOB" num_dtl="1"/>
+          </detail>
+        </header>
+        <SITransactionKey>1</SITransactionKey>
+        <ResponseType>1</ResponseType>
+        <ResponseMessage>1</ResponseMessage>
+      </cla:ClaimResponse>
+    </inq:AddUpdateClaimsResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProviderCaqhSubmitRequest" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="ProviderCaqhSubmitRequest" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="provider">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="providerId" type="xs:string" minOccurs="0" />
+              <xs:element name="caqhId" type="xs:string" minOccurs="0" />
+              <xs:element name="deaId" type="xs:string" minOccurs="0" />
+              <xs:element name="ssnId" type="xs:string" minOccurs="0" />
+              <xs:element name="npiId" type="xs:string" minOccurs="0" />
+              <xs:element name="medicareId" type="xs:string" minOccurs="0" />
+              <xs:element name="taxId" type="xs:string" minOccurs="0" />
+              <xs:element name="action" type="xs:string" minOccurs="0" />
+              <xs:element name="lastName" type="xs:string" minOccurs="0" />
+              <xs:element name="middleName" type="xs:string" minOccurs="0" />
+              <xs:element name="firstName" type="xs:string" minOccurs="0" />
+              <xs:element name="suffixName" type="xs:string" minOccurs="0" />
+              <xs:element name="payToName" type="xs:string" minOccurs="0" />
+              <xs:element name="mailToName" type="xs:string" minOccurs="0" />
+              <xs:element name="servicingName" type="xs:string" minOccurs="0" />
+              <xs:element name="phoneVoice" type="xs:string" minOccurs="0" />
+              <xs:element name="phoneFax" type="xs:string" minOccurs="0" />
+              <xs:element name="country" type="xs:string" minOccurs="0" />
+              <xs:element name="birthDateTime" type="xs:string" minOccurs="0" />
+              <xs:element name="attestDateTime" type="xs:string" minOccurs="0" />
+              <xs:element name="license" type="xs:string" minOccurs="0" />
+              <xs:element name="stateLicenceCode" type="xs:string" minOccurs="0" />
+              <xs:element name="licenseTypeCode" type="xs:string" minOccurs="0" />
+              <xs:element name="licenseEffectiveDateTime" type="xs:string" minOccurs="0" />
+              <xs:element name="licenseEndDateTime" type="xs:string" minOccurs="0" />
+              <xs:element name="deaEffectiveDateTime" type="xs:string" minOccurs="0" />
+              <xs:element name="deaEndDateTime" type="xs:string" minOccurs="0" />
+              <xs:element name="providerTypeCode" type="xs:string" minOccurs="0" />
+              <xs:element name="providerSpecialtyCode" type="xs:string" minOccurs="0" />
+              <xs:element name="taxonomyCode" type="xs:string" minOccurs="0" />
+              <xs:element name="disclosureRec" type="xs:string" minOccurs="0" />
+              <xs:element name="disclosureDateTime" type="xs:string" minOccurs="0" />
+              <xs:element name="enrollmentStatusCode" type="xs:string" minOccurs="0" />
+              <xs:element name="termDateTime" type="xs:string" minOccurs="0" />
+              <xs:element name="statusCode" type="xs:string" minOccurs="0" />
+              <xs:element name="primaryAddress" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="street1" type="xs:string" minOccurs="0" />
+                    <xs:element name="street2" type="xs:string" minOccurs="0" />
+                    <xs:element name="city" type="xs:string" minOccurs="0" />
+                    <xs:element name="state" type="xs:string" minOccurs="0" />
+                    <xs:element name="zip" type="xs:string" minOccurs="0" />
+                    <xs:element name="email" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="payToAddress" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="street1" type="xs:string" minOccurs="0" />
+                    <xs:element name="street2" type="xs:string" minOccurs="0" />
+                    <xs:element name="city" type="xs:string" minOccurs="0" />
+                    <xs:element name="state" type="xs:string" minOccurs="0" />
+                    <xs:element name="zip" type="xs:string" minOccurs="0" />
+                    <xs:element name="email" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="mailingAddress" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="street1" type="xs:string" minOccurs="0" />
+                    <xs:element name="street2" type="xs:string" minOccurs="0" />
+                    <xs:element name="city" type="xs:string" minOccurs="0" />
+                    <xs:element name="state" type="xs:string" minOccurs="0" />
+                    <xs:element name="zip" type="xs:string" minOccurs="0" />
+                    <xs:element name="email" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="servicingAddress" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="street1" type="xs:string" minOccurs="0" />
+                    <xs:element name="street2" type="xs:string" minOccurs="0" />
+                    <xs:element name="city" type="xs:string" minOccurs="0" />
+                    <xs:element name="state" type="xs:string" minOccurs="0" />
+                    <xs:element name="zip" type="xs:string" minOccurs="0" />
+                    <xs:element name="email" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="groups" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ProviderGroup" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="serviceName" type="xs:string" minOccurs="0" />
+                          <xs:element name="medicareId" type="xs:string" minOccurs="0" />
+                          <xs:element name="npiId" type="xs:string" minOccurs="0" />
+                          <xs:element name="taxId" type="xs:string" minOccurs="0" />
+                          <xs:element name="groupEndDateTime" type="xs:string" minOccurs="0" />
+                          <xs:element name="serviceAddress" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="street1" type="xs:string" minOccurs="0" />
+                                <xs:element name="street2" type="xs:string" minOccurs="0" />
+                                <xs:element name="city" type="xs:string" minOccurs="0" />
+                                <xs:element name="state" type="xs:string" minOccurs="0" />
+                                <xs:element name="zip" type="xs:string" minOccurs="0" />
+                                <xs:element name="email" type="xs:string" minOccurs="0" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

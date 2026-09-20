@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:req278="http://schemas.x12.com/278/request" xmlns:tns="http://service.caremgmt.fi/PriorAuthService" xmlns:resp278="http://schemas.x12.com/278/response" xmlns:chdr="http://schema.common.fi/Header" elementFormDefault="qualified" targetNamespace="http://service.caremgmt.fi/PriorAuthService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="./CommonHeader.xsd" />
+  <xs:include schemaLocation="./X12PARequest.xsd" />
+  <xs:include schemaLocation="./X12PAResponse.xsd" />
+  <xs:element name="AddUpdatePriorAuthRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" name="MessageHeader" type="tns:MessageHeaderType" />
+        <xs:element minOccurs="1" ref="tns:PriorAuthRequest278" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element id="AddUpdatePriorAuthResponse" name="AddUpdatePriorAuthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="ResponseHeader" type="tns:ResponseHeaderType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ResponsePayload" type="tns:AddUpdatePriorAuthResponsePayloadType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ErrorsType">
+          <xs:annotation>
+            <xs:documentation>In case of error the
+							Error Code and Description
+							should be sent.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AddUpdatePriorAuthResponsePayloadType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PriorAuthNumber">
+        <xs:annotation>
+          <xs:documentation>
+						This is the PriorAuth Number should be returned
+						in case there is no error for FI
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PriorAuthStatus">
+        <xs:annotation>
+          <xs:documentation>
+						This is the status of the claim
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ErrorsType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="10" name="ErrorDetails" type="tns:ErrorDetailsType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ErrorDetailsType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="ErrorCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ErrorDescription">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1000" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchPriorAuthRequest">
+    <xs:annotation>
+      <xs:documentation>
+				This element contains the request elements to
+				search for an existing PriorAuth in FI.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" name="MessageHeader" type="tns:MessageHeaderType" />
+        <xs:element minOccurs="1" name="RequestPayload" type="tns:SearchPriorAuthRequestPayloadType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SearchPriorAuthRequestPayloadType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="PayorType">
+        <xs:annotation>
+          <xs:documentation>
+						This is to specify if the search is for FFS
+						or ID
+						of the MCE.
+						The ID for the MCE should be consistent between what we
+						get back from MCE, what is saved in FI and gets used in PNM
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PriorAuthNumber">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Internal Control Number or claim
+						Number should be returned in case there is
+						no error
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PatientEventTrackingNumber">
+        <xs:annotation>
+          <xs:documentation>
+						Maps to TRN02
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MemberMedicaidId">
+        <xs:annotation>
+          <xs:documentation>
+						This is the medicaid id of the member
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PAStatus">
+        <xs:annotation>
+          <xs:documentation>
+						INPROCESS, APPROVED, DENIED, PEND, MEDREVIEW,
+						CLOSED
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="3" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AssignmentTypeCode">
+        <xs:annotation>
+          <xs:documentation>
+						2 Character code in 2000E MSG-01 first 2
+						characters
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceTypeCode">
+        <xs:annotation>
+          <xs:documentation>
+						2 Character code in 2000F UMO-03
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ICDProcedureCode">
+        <xs:annotation>
+          <xs:documentation>
+						Maps to ICD Proedure code on PNM UI
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="7" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CPTHCPCSServiceCode">
+        <xs:annotation>
+          <xs:documentation>
+						Maps to Procedure Code on PNM
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="6" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RevenueCode">
+        <xs:annotation>
+          <xs:documentation>
+						Revenue Code
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="6" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DiagnosisCode">
+        <xs:annotation>
+          <xs:documentation>
+						Diagnosis Code
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="6" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="SubmittedDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>
+						This is date on which when PA was submitted
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PAStartDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>
+						This is search for PA starting on specific
+						date
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PAEndDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>
+						This is search for PA ending on specific
+						date
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderID">
+        <xs:annotation>
+          <xs:documentation>
+						This is the NPI of the Requesting Provider
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="RequestingProviderID">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Requesting Provider Id
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Date of Birth of the Member
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Offset" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>
+						Offset to determine the PA row location. Default will be 0.
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PageSize">
+        <xs:annotation>
+          <xs:documentation>
+						Number of records should be returned in the response.
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="100" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchPriorAuthResponse">
+    <xs:annotation>
+      <xs:documentation>
+				This element contains the request elements to
+				search for an existing PriorAuth in FI.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="ResponseHeader" type="tns:ResponseHeaderType" />
+        <xs:element minOccurs="0" maxOccurs="100" name="ResponsePayload" type="tns:PriorAuthSearchResponsePayloadType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Offset" type="xs:integer">
+          <xs:annotation>
+            <xs:documentation>
+							Offset to determine the PA row location. If -1 then can't fetch next records
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="TotalRecords" type="xs:integer">
+          <xs:annotation>
+            <xs:documentation>
+							Total number of records available for search criteria.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ErrorsType">
+          <xs:annotation>
+            <xs:documentation>In case of error the
+							Error Code and Description
+							should be sent.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PriorAuthSearchResponsePayloadType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="PayorType">
+        <xs:annotation>
+          <xs:documentation>
+						This is to specify if the search is for FFS
+						or ID
+						of the MCE.
+						The ID for the MCE should be consistent between what we
+						get back from MCE, what is saved in FI and gets used in PNM
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PriorAuthNumber">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Internal Control Number or claim
+						Number should be returned in case there is
+						no error
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PatientEventTrackingNumber">
+        <xs:annotation>
+          <xs:documentation>
+						Patient Event tracking Number will come in at
+						2000E - TRN02
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MemberMedicaidId">
+        <xs:annotation>
+          <xs:documentation>
+						This is the medicaid id of the member
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MemberFirstName">
+        <xs:annotation>
+          <xs:documentation>
+						This is the first name of the member
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MemberMiddleName">
+        <xs:annotation>
+          <xs:documentation>
+						This is the middle name of the member
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="25" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="MemberLastName">
+        <xs:annotation>
+          <xs:documentation>
+						This is the surname of the member
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="60" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PAStatus">
+        <xs:annotation>
+          <xs:documentation>
+						INPROCESS, APPROVED, DENIED, PEND, MEDREVIEW,
+						CLOSED
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="3" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AssignmentTypeCode">
+        <xs:annotation>
+          <xs:documentation>
+						This is the PA assignment type code
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="2" />
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceTypeCode">
+        <xs:annotation>
+          <xs:documentation>
+						2 Character code in 2000F UMO-03
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ICDProcedureCode">
+        <xs:annotation>
+          <xs:documentation>
+						Maps to ICD Proedure code on PNM UI
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="7" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CPTHCPCSServiceCode">
+        <xs:annotation>
+          <xs:documentation>
+						Maps to Procedure Code on PNM
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="6" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RevenueCode">
+        <xs:annotation>
+          <xs:documentation>
+						Revenue Code
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="6" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DiagnosisCode">
+        <xs:annotation>
+          <xs:documentation>
+						Diagnosis Code
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="6" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="SubmittedDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>
+						This is date when PA was submitted
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ReviewedDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>
+						This is from part of date range to search
+						when PA
+						was reviewed
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PAStartDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>
+						This is search for PA starting on specific
+						date
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PAEndDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>
+						This is search for PA ending on specific
+						date
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RequestingProviderID">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Requesting Provider Id
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RenderingProviderID">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Rendering Provider Id
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderID">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Ordering Provider Id and can be
+						different than referring Provider Id
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Date of Birth of the Member
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NotesListType">
+    <xs:annotation>
+      <xs:documentation>
+				This is a container for the list of notes
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="10" name="Notes">
+        <xs:annotation>
+          <xs:documentation>
+						Code for Explanation of Benefit returned by payer
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="500" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InquirePriorAuthRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" name="MessageHeader" type="tns:MessageHeaderType" />
+        <xs:element minOccurs="1" name="RequestPayload" type="tns:InquirePriorAuthRequestPayloadType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="InquirePriorAuthRequestPayloadType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="PayorType">
+        <xs:annotation>
+          <xs:documentation>
+						This is to specify if the search is for FFS
+						or ID
+						of the MCE.
+						The ID for the MCE should be consistent between what we
+						get back from MCE, what is saved in FI and gets used in PNM
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="PriorAuthNumber">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Internal Control Number or claim
+						Number should be returned in case there is no
+						error
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="ProviderId">
+        <xs:annotation>
+          <xs:documentation>
+						This is the NPI or API in case NPI is not there
+						for the provider
+						whose claim is being inquired
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="7" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element id="InquirePriorAuthResponse" name="InquirePriorAuthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="ResponseHeader" type="tns:ResponseHeaderType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ResponsePayload">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="1" ref="tns:PriorAuthRequest278" />
+              <xs:element minOccurs="0" maxOccurs="1" ref="tns:PriorAuthResponse278" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ErrorsType">
+          <xs:annotation>
+            <xs:documentation>In case of error the
+							Error Code and Description
+							should be sent.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element id="ReceivePriorAuthUpdatesRequest" name="ReceivePriorAuthUpdatesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="MessageHeader" type="tns:MessageHeaderType" />
+        <xs:element minOccurs="1" maxOccurs="1" ref="tns:PriorAuthResponse278" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element id="ReceivePriorAuthUpdatesResponse" name="ReceivePriorAuthUpdatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="ResponseHeader" type="tns:ResponseHeaderType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ErrorsType">
+          <xs:annotation>
+            <xs:documentation>In case of error the
+							Error Code and Description
+							should be sent.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

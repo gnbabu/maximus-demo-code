@@ -1,0 +1,66 @@
+﻿
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }	
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="https://dev-documents-test.s3.us-west-2.amazonaws.com/Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<table id="Table1" width="100%" style="padding-left:0.25in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+
+<p>The Ohio Department of Medicaid (ODM) has matched your name or tax ID on one of the exclusion lists ODM is required to search at the time of enrollment, revalidation, and on an on-going basis. These lists include the Medicare Exclusion Database (MED), Office of Inspector General (U.S. Department of Health and Human Services) List of Excluded Individuals/Entities (LEIE) and the System for Award Management (SAM) maintained by the General Services Administration (GSA). When a provider or applicant appears on one of these lists, federal statutes and regulations prohibit States from paying for items or services furnished, ordered or prescribed by the individual or agency.  Because your name or tax ID has appeared on an exclusion list, ODM is denying your application or is terminating your current Medicaid Provider Agreement.</p>
+
+<p>Your termination or denial is effective immediately, and neither you nor any entity with which you are associated as an owner, officer, authorized agent, associate, manager, or employee may receive any compensation, directly or indirectly, for items or services furnished or rendered by you to recipients and reimbursed by ODM.</p>
+
+<p>Please note that this termination can be caused by a new applicant, revalidating applicant, or a current provider submitting an incorrect or invalid tax ID. If this has occurred, contact ODM to correct any errors.</p>
+
+<p>Ohio law affords no appeal of this action pursuant to Chapter 119 of the Revised Code.  See Ohio Revised Code 5164.38 and Ohio Administrative Code (OAC) Section 5160-70-02. If you disagree with this termination, you may request reconsideration pursuant to OAC 5164.33 that allows for reconsideration of actions not subject to hearing under Chapter 119 of the Revised Code.</p>
+
+<p>If you wish to request reconsideration, please send a written request including all information that you consider relevant to this action to:</p>
+
+<p align="center">
+<b>Office of the Director</b><br/>
+<b>Ohio Department of Medicaid</b><br/>
+<b>PO Box 182709</b><br/>
+<b>Columbus, Ohio  43218-2709</b><br/>
+</p>
+
+<p>If you require additional information or assistance, please contact Provider Enrollment Customer Service at 800-686-1516.</p>
+
+<br />
+Sincerely,
+<br />
+Ohio Medicaid Provider Enrollment
+</td>
+</tr>
+</table>

@@ -1,0 +1,60 @@
+
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<b>Subject: </b>Medicaid Application Closed
+</p>
+
+<p>
+Dear [[ProviderName]]:
+</p>
+<p>
+This is to notify you that your Medicaid Provider Application was closed due to inactivity. An application must be completed within [[TIME_ELAPSE_DAYS]] days of initiation of the application. In addition, any requests for additional information must be received within [[TIME_ELAPSE_DAYS]] days of request. Because [[TIME_ELAPSE_DAYS]] days have passed, the application has been closed.  </p>
+
+<p>If you would like to participate in the OH Medicaid Program, you will need to submit a new application through the Provider Network Module located at [[PDMSURL]] .</p>
+
+<p>If you have any questions, please contact Provider Enrollment Customer Service at 1-800-686-1516. </p>
+
+Sincerely,<br />
+    <br />
+Ohio Medicaid Provider Enrollment
+</td>
+</tr>
+</table>

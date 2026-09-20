@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<template type="import" fileformat="FixedLength" lineLength="588" filenamepattern="^TEST_NE_NFO_TO_PSE_CONV_PRVD_20150608.TXT$" filterexp="" testfilenametemplate="TEST_NE_NFO_TO_PSE_CONV_PRVD_{Rand:8}.txt"
+          lineProcessorClass="MMISImportLineProcessor"  insertStoredProc="T_ISTG_NFOCUS_SERVICES_ELIG_Insert">
+  <fields>
+    <field type="String" start="1" end="8" validregex="\d{8}" testrandomnumberformat="dddddddd">
+      <label>ProviderNumber</label>
+      <testvalue></testvalue>
+    </field>
+    <field type="String" start="9" end="10">
+      <label>ProgramCode</label>
+      <testvalue></testvalue>
+    </field>
+    <field type="String" start="11" end="14" validregex="\d{4}" testrandomnumberformat="dddd">
+      <label>ServiceType</label>
+      <testvalue></testvalue>
+    </field>
+    <field type="DateYYYYMMDDDash" start="15" end="24">
+      <label>ServiceBeginDate</label>
+      <testvalue>{Date}</testvalue>
+    </field>
+  </fields>
+  <lookups>
+    <lookup name="PracticeType">
+      <code key="00" value="No value present on file" />
+      <code key="01" value="Group Practice, Hospital Affiliated, Members Not Billing Independently" />
+      <code key="02" value="Group Practice, Partnership, Members Not Billing Independently" />
+      <code key="03" value="Group Practice, Corporation, Members Not Billing Independently" />
+      <code key="04" value="Group Practice, Health Maintenance Organization, Not Billing Independently" />
+      <code key="05" value="Group Practice, Group Practice, Members Not Billing Independently" />
+      <code key="06" value="Group Practice, Reserved" />
+      <code key="07" value="Professional Pharmacy" />
+      <code key="08" value="Independent Pharmacy" />
+      <code key="09" value="Small Chain Pharmacy" />
+      <code key="10" value="Large Chain Pharmacy" />
+      <code key="11" value="Other Pharmacy" />
+      <code key="12" value="Rehabilitation Facility (Hospital Only)" />
+      <code key="13" value="Alcohol (CDU) Facility (Hospital Only)" />
+      <code key="14" value="Children's Facility (Hospital Only)" />
+      <code key="20" value="Unit Dose, Large Chain Pharmacy" />
+      <code key="21" value="Unit Dose, Other Pharmacy" />
+      <code key="27" value="Unit Dose, Professional Pharmacy" />
+      <code key="28" value="Unit Dose, Independent Pharmacy" />
+      <code key="29" value="Unit Dose, Small Chain Pharmacy" />
+      <code key="31" value="Group Practice Member, Hospital Affiliated,  Members Not Billing Independently" />
+      <code key="32" value="Group Practice Member, Partnership, Members Not Billing Independently" />
+      <code key="33" value="Group Practice Member, Corporation, Members Not Billing Independently" />
+      <code key="34" value="Group Practice Member, Health Maintenance  Organization" />
+      <code key="35" value="Group Practice Member, Group Practice, Members Not Billing Independently" />
+      <code key="36" value="Group Practice Member, Reserved" />
+      <code key="40" value="Centralized Qualified Health Maintenance Organization" />
+      <code key="41" value="Decentralized Qualified Health Maintenance  Organization" />
+      <code key="42" value="Centralized Provisional Health Maintenance  Organization" />
+      <code key="43" value="Decentralized Provisional Health Maintenance Organization" />
+      <code key="44" value="Centralized Health Insuring Organization" />
+      <code key="45" value="Decentralized Health Insuring Organization" />
+      <code key="46" value="Case Management/Individual Practice" />
+      <code key="47" value="Case Management/Partnership, Corporation, Group Practice" />
+      <code key="48" value="Case Management/Hospital Affiliated" />
+      <code key="49" value="Preferred Provider Organization (PPO)/Individual Practice" />
+      <code key="50" value="Preferred Provider Organization (PPO)/Partnership," />
+      <code key="51" value="Preferred Provider Organization (PPO)/Hospital Affiliated" />
+      <code key="52" value="Other Prepaid Health Plan" />
+      <code key="53" value="Volume Purchase" />
+      <code key="61" value="Hospital Based Practitioner, Hospital Affiliated,Billing Independently" />
+      <code key="62" value=" Individual or Solo Practice, Members Billing  Independently" />
+      <code key="63" value="Partnership/Non-Solo Practice, Members Billing Independently" />
+      <code key="64" value="Corporation/Non-Solo Practice, Members Billing Independently" />
+      <code key="65" value="Health Maintenance Organization, Members Billing Independently" />
+      <code key="66" value="Group Practice, Members Billing Independently" />
+    </lookup>
+    <lookup name="ProviderType">
+      <code key="01" value="PHYSICIANS (MD)" />
+      <code key="02" value="DOCTORS OF OSTEOPATHY (DO)" />
+      <code key="04" value="DOCTORS OF SURGICAL CHIROPODY (DSC)" />
+      <code key="05" value="DOCTORS OF CHIROPRACTIC MEDICINE (DC)" />
+      <code key="06" value="OPTOMETRISTS (OD)" />
+      <code key="07" value="DOCTORS OF PODIATRIC MEDICINE (DPM)" />
+      <code key="09" value="AMBULATORY SURGICAL CENTERS (ASC)" />
+      <code key="10" value="HOSPITALS (HOSP)" />
+      <code key="11" value="NURSING HOMES (NH)" />
+      <code key="12" value="CLINIC (CLNC) (HOSPITAL BASED CLINIC, LICENSED MENTAL HEALTH CENTERS)" />
+      <code key="13" value="PROFESSIONAL CLINIC (PC)" />
+      <code key="14" value="HOME HEALTH AGENCY (HHAG)" />
+      <code key="15" value="ANESTHESIOLOGIST (ANES)" />
+      <code key="16" value="LABORATORY (LAB) (INDEPENDENT)" />
+      <code key="17" value="FEDERALLY QUALIFIED HEALTH CENTER (FQHC)" />
+      <code key="18" value="MR WAIVER HABILITATION AND CASE MANAGEMENT PROVIDER (MR)" />
+      <code key="19" value="RURAL HEALTH CLINIC-PROVIDER BASED (PRHC)(LESS THAN 50 BEDS)" />
+      <code key="20" value="RURAL HEALTH CLINIC-INDEPENDENT (IRHC)" />
+      <code key="21" value="DISPENSING PHYSICIAN (MD)" />
+      <code key="22" value="PHYSICIAN ASSISTANT (PA)" />
+      <code key="23" value="RURAL HEALTH CLINIC-PROVIDER BASED (RHCP) (OVER 50 BEDS)" />
+      <code key="24" value="HOME HEALTH AGENCY SUPPLIER" />
+      <code key="25" value="INDIAN HEALTH HOSPITAL CLINIC (IHSH)" />
+      <code key="26" value="TRIBAL 638 CLINIC (T638)" />
+      <code key="28" value="NURSE MIDWIFE (NW)" />
+      <code key="29" value="NURSE PRACTITIONER (NP)" />
+      <code key="30" value="REGISTERED NURSE (RN)" />
+      <code key="31" value="LICENSED PRACTICAL NURSE (LPN)" />
+      <code key="32" value="REGISTERED PHYSICAL THERAPIST (RPT)" />
+      <code key="33" value="PERSONAL CARE AIDE (PCA)" />
+      <code key="34" value="MENTAL HEALTH PERSONAL CARE AIDE (CTAI)" />
+      <code key="35" value="MENTAL HEALTH HOME HEALTH CARE PROVIDER (CT)" />
+      <code key="36" value="LICENSED MENTAL HEALTH PRACTITIONER (LMHP)" />
+      <code key="37" value="MENTAL HEALTH PROFESSIONAL/MASTERS LEVEL EQUIVALENT (MHP)" />
+      <code key="38" value="PHD CANDIDATE (PHDC)" />
+      <code key="39" value="LICENSED INDEPENDENT MENTAL HEALTH PRACTITIONER" />
+      <code key="40" value="DOCTOR OF DENTAL SURGERY - DENTIST (DDS)" />
+      <code key="41" value="ASSERTIVE COMMUNITY TREATMENT (ACT) MRO PROGRAM" />
+      <code key="42" value="LICENSED DENTAL HYGIENIST (LDH)" />
+      <code key="44" value="COMMUNITY SUPPORT (CSW) MRO PROGRAM" />
+      <code key="45" value="DAY REHABILITATION (DAYR) MRO PROGRAM" />
+      <code key="46" value="RESIDENTIAL REHABILITATION (REST)" />
+      <code key="47" value="SUBSTANCE ABUSE TREATMENT CENTER (SATC)" />
+      <code key="48" value="ADULT SUBSTANCE ABUSE" />
+      <code key="49" value="PHARMACIST (PHMS)" />
+      <code key="50" value="PHARMACY (PHCY)" />
+      <code key="51" value="PHARMACY SPECIAL RATE (PHSR)" />
+      <code key="52" value="MEDICAL TRANSPORTATION (TRAN)" />
+      <code key="57" value="PROVISIONALLY LICENSED PHD-PPHD" />
+      <code key="58" value="PROVISIONALLY LICENSED DRUG &amp; ALCOHOL COUNSELORS (PDAC)" />
+      <code key="59" value="HOSPICE (HSPC)" />
+      <code key="60" value="HEARING AID DEALER (HEAR)" />
+      <code key="61" value="TRANSPORTATION (TRAN)" />
+      <code key="62" value="RENTAL AND RETAIL SUPPLIER (RTLR)" />
+      <code key="63" value="LICENSED MEDICAL NUTRITION THERAPIST (LMNT)" />
+      <code key="64" value="SPECIALLY LICENSED PHD/PSYCHOLOGY RESIDENT (SPHD)" />
+      <code key="65" value="ORTHOPEDIC DEVICE SUPPLIER (ORTH)" />
+      <code key="66" value="OPTICAL SUPPLIER (OPTC)" />
+      <code key="67" value="LICENSED PSYCHOLOGIST (PHD)" />
+      <code key="68" value="SPEECH THERAPY HEALTH SERVICE" />
+      <code key="69" value="OCCUPATIONAL THERAPY HEALTH SERVICES (OTHS)" />
+      <code key="70" value="QUALIFIED HEALTH MAINTENANCE ORGANIZATION (QHMO)" />
+      <code key="71" value="PROVISIONAL HEALTH MAINTENANCE ORGANIZATION (PHMO)" />
+      <code key="72" value="HEALTH INSURING ORGANIZATION (HIO)" />
+      <code key="73" value="PREFERRED PROVIDER ORGANIZATION (PPO)" />
+      <code key="74" value="CASE MANAGEMENT HEALTH PLAN (CMHP)" />
+      <code key="75" value="OTHER PREPAID HEALTH PLAN (OPHP)" />
+      <code key="76" value="VOLUME PURCHASE CONTRACT (VPC)" />
+      <code key="77" value="DAY TREATMENT PROVIDER (DAY)" />
+      <code key="78" value="LICENSED DRUG &amp; ALCOHOL COUNSELOR (LDAC)" />
+      <code key="79" value="TREATMENT CRISIS INTERVENTION (TCI)" />
+      <code key="80" value="TREATMENT FOSTER CARE (TFC)" />
+      <code key="81" value="TREATMENT GROUP HOME (TGH)" />
+      <code key="82" value="RESIDENTIAL TREATMENT CENTER (RTC)" />
+      <code key="83" value="AUTISM WAIVER SUPERVISING BEHAVIOR THERAPIST" />
+      <code key="84" value="AUTISM WAIVER LEAD THERAPIST" />
+      <code key="85" value="AUTISM WAIVER APPLIED BEHAVIORAL ANALYSIS TECHNICIAN" />
+      <code key="86" value="PROFESSIONAL RESOURCE FAMILY CARE" />
+      <code key="87" value="PSYCHIATRIC RESIDENTIAL TREATMENT FACILITY" />
+      <code key="88" value="FREE STANDING BIRTHING CENTER" />
+    </lookup>
+    <lookup name="ProviderSpecialty">
+      <code key="01" value="GENERAL PRACTICE" />
+      <code key="02" value="GENERAL SURGERY" />
+      <code key="03" value="ALLERGY" />
+      <code key="04" value="OTOLOGY, LARYNGOLOGY, RHINOLOGY (ENT)" />
+      <code key="05" value="ANESTHESIOLOGY" />
+      <code key="06" value="CARDIOVASCULAR DISEASE" />
+      <code key="07" value="DERMATOLOGY" />
+      <code key="08" value="FAMILY PRACTICE" />
+      <code key="09" value="RESERVED" />
+      <code key="10" value="GASTROENTEROLOGY" />
+      <code key="11" value="INTERNAL MEDICINE (INCLUDES GERIATRICS AND NEPHROLOGY)" />
+      <code key="12" value="INTERNAL MEDICINE (RESTRICTED TO GROUP WITH MULTI SPEC)(DOES NOT INCLUDE SPEC 01, 02, 11, 37 AND 39)" />
+      <code key="13" value="NEUROLOGY" />
+      <code key="14" value="NEUROLOGICAL SURGERY" />
+      <code key="15" value="RESERVED" />
+      <code key="16" value="OB-GYN" />
+      <code key="17" value="OPHTHAMOLOGY, OTOLOGY, LARYNGOLOGY, RHINOLOGY (EENT)" />
+      <code key="18" value="OPHTHAMOLOGY" />
+      <code key="19" value="ORAL SURGERY (DENTISTS ONLY)" />
+      <code key="20" value="ORTHOPEDIC SURGERY" />
+      <code key="21" value="RESERVED" />
+      <code key="22" value="PATHOLOGY - LAB" />
+      <code key="23" value="PERIPHERAL VASCULAR DISEASE OR SURGERY" />
+      <code key="24" value="PLASTIC SURGERY" />
+      <code key="25" value="PHYSICAL MEDICINE AND REHABILITATION" />
+      <code key="26" value="PSYCHIATRY/MENTAL HEALTH/SUBSTANCE ABUSE" />
+      <code key="27" value="RESERVED" />
+      <code key="28" value="PROCTOLOGY" />
+      <code key="29" value="PULMONARY DISEASE" />
+      <code key="30" value="RADIOLOGY - X-RAY" />
+      <code key="31" value="RESERVED" />
+      <code key="32" value="RADIATION THERAPY" />
+      <code key="33" value="THORACIC SURGERY" />
+      <code key="34" value="UROLOGY" />
+      <code key="35" value="CHIROPRACTORS (LICENSED EFFECTIVE JULY, 1973)" />
+      <code key="36" value="NUCLEAR MEDICINE (FOR MDS ONLY)" />
+      <code key="37" value="PEDIATRICS" />
+      <code key="38" value="ENDOCRINOLOGY, DIABETES" />
+      <code key="39" value="GERONTOLOGY" />
+      <code key="40" value="HAND SURGERY" />
+      <code key="41" value="ONCOLOGY/HEMATOLOGY" />
+      <code key="42" value="EPIDEMIOLOGY/INFECTIOUS DISEASE" />
+      <code key="43" value="CERTIFIED REGISTERED NURSE ANESTHETIST (CRNA)" />
+      <code key="44" value="NEPHROLOGY" />
+      <code key="45" value="NEONATOLOGY" />
+      <code key="46" value="RHEUMATOLOGY" />
+      <code key="47" value="PHYSIOLOGICAL LABS (INDEPENDENT)" />
+      <code key="48" value="PODIATRIST - SURGICAL CHIROPODIST" />
+      <code key="49" value="MISCELLANEOUS" />
+      <code key="50" value="RESERVED" />
+      <code key="51" value="MEDICAL SUPPLY COMPANY W/CERTIFIED ORTHOTIST (CO) CERTIFICATION" />
+      <code key="52" value="MEDICAL SUPPLY COMPANY W/CERTIFIED PROSTHETIST (CP) CERTIFICATION" />
+      <code key="53" value="MEDICAL SUPPLY COMPANY W/CERTIFIED ORTHOTIST-PROSTHETIST (CPO)CERTIFICATION" />
+      <code key="54" value="MEDICAL SUPPLY COMPANY NOT INCLUDED IN 51, 52, OR 53." />
+      <code key="55" value="INDIVIDUAL CERTIFIED ORTHOTIST (CO)" />
+      <code key="56" value="INDIVIDUAL CERTIFIED PROSTHETIST (CP)" />
+      <code key="57" value="INDIVIDUAL CERTIFIED ORTHOTIST-PROSTHETIST (CPO)" />
+      <code key="58" value="INDIVIDUAL NOT INCLUDED IN 55, 56, OR 57." />
+      <code key="59" value="AMBULANCE" />
+      <code key="60" value="PUBLIC HEALTH OR WELFARE AGENCIES (FEDERAL, STATE, AND LOCAL)" />
+      <code key="61" value="VOLUNTARY HEALTH OR CHARITABLE AGENCIES (E.G., NATIONAL CANCER SOCIETY, NATIONAL HEART ASSOCIATION, ETC.)" />
+      <code key="62" value="LICENSED PSYCHOLOGIST (CLINICAL)" />
+      <code key="63" value="PORTABLE X-RAY SUPPLIER (BILLING INDEPENDENTLY)" />
+      <code key="64" value="AUDIOLOGISTS (BILLING INDEPENDENTLY)" />
+      <code key="65" value="PHYSICAL THERAPIST (BILLING INDEPENDENTLY)" />
+      <code key="66" value="HOSPITALS (DEFINED BY DEPARTMENT OF SOCIAL SERVICES)" />
+      <code key="67" value="RESERVED" />
+      <code key="68" value="RESERVED" />
+      <code key="69" value="INDEPENDENT LABORATORY (BILLING INDEPENDENTLY)" />
+      <code key="70" value="CLINIC" />
+      <code key="71" value="DIAGNOSTIC X-RAY CLINIC" />
+      <code key="72" value="DIAGNOSTIC LABORATORY CLINIC" />
+      <code key="73" value="PHYSIOTHERAPY" />
+      <code key="74" value="OCCUPATIONAL THERAPY" />
+      <code key="75" value="ASSISTED LIVING SERVICES" />
+      <code key="76" value="OTHER PHYSICIAN SPECIALIST FOR HEALTH CHECK FOLLOW-UP (NOT TO BE USED ON JOB211-CLAIMS PROCESSING ONLY)" />
+      <code key="77" value="OTHER PROVIDER (NON-MD) FOR HEALTH CHECK FOLLOW-UP (NOT TO BE USED ON JOB211-CLAIMS PROCESSING ONLY)" />
+      <code key="78" value="SCREENING PHYSICIAN &amp; OTHER PHYSICIAN SPECIALIST FOR HEALTH CHECK FOLLOW-UP (NOT TO BE USED ON JOB211-CLAIMS PROCESSING ONLY)" />
+      <code key="79" value="ADULT DAY CARE" />
+      <code key="80" value="REHAB PROVIDERS (MRO) (DPI)" />
+      <code key="81" value="RESERVED" />
+      <code key="82" value="HOSPICE" />
+      <code key="83" value="AUTISM PROVIDER" />
+      <code key="84" value="RESERVED" />
+      <code key="85" value="RESERVED" />
+      <code key="86" value="RESERVED" />
+      <code key="87" value="ALL OTHER" />
+      <code key="88" value="UNKNOWN - SUPPLIERS" />
+      <code key="89" value="CHEMICAL DEPENDENCY" />
+      <code key="90" value="NURSE MIDWIFE" />
+      <code key="91" value="NURSE PRACTITIONER" />
+      <code key="92" value="RESERVED" />
+      <code key="93" value="RESERVED" />
+      <code key="94" value="PSC EXEMPT" />
+      <code key="95" value="COMMERCIAL NET" />
+      <code key="96" value="INDIVIDUAL NET" />
+      <code key="97" value="RESERVED" />
+      <code key="98" value="RESERVED" />
+      <code key="99" value="UNKNOWN - PRACTITIONERS" />
+    </lookup>
+    <lookup name="PostalCode">
+      <code key="01" value="Alabama (AL)" />
+      <code key="02" value="Alaska (AK)" />
+      <code key="03" value="Arizona (AZ)" />
+      <code key="04" value="Arkansas (AR)" />
+      <code key="05" value="California (CA)" />
+      <code key="06" value="Colorado (CO)" />
+      <code key="07" value="Connecticut (CT)" />
+      <code key="08" value="Delaware (DE)" />
+      <code key="09" value="District of Columbia (DC)" />
+      <code key="10" value="Florida (FL)" />
+      <code key="11" value="Georgia (GA)" />
+      <code key="12" value="Hawaii (HI)" />
+      <code key="13" value="Idaho (ID)" />
+      <code key="14" value="Illinois (IL)" />
+      <code key="15" value="Indiana (IN)" />
+      <code key="16" value="Iowa (IA)" />
+      <code key="17" value="Kansas (KS)" />
+      <code key="18" value="Kentucky (KY)" />
+      <code key="19" value="Louisiana (LA)" />
+      <code key="20" value="Maine (ME)" />
+      <code key="21" value="Maryland (MD)" />
+      <code key="22" value="Massachusetts (MA)" />
+      <code key="23" value="Michigan" />
+      <code key="24" value="Minnesota (MN)" />
+      <code key="25" value="Mississippi (MS)" />
+      <code key="26" value="Missouri (MO)" />
+      <code key="27" value="Montana (MT)" />
+      <code key="28" value="Nebraska (NE)" />
+      <code key="29" value="Nevada (NV)" />
+      <code key="30" value="New Hampshire (NH)" />
+      <code key="31" value="New Jersey (NJ)" />
+      <code key="32" value="New Mexico (NM)" />
+      <code key="33" value="New York (NY)" />
+      <code key="34" value="North Carolina (NC)" />
+      <code key="35" value="North Dakota (ND)" />
+      <code key="36" value="Ohio (OH)" />
+      <code key="37" value="Oklahoma (OK)" />
+      <code key="38" value="Oregon (OR)" />
+      <code key="39" value="Pennsylvania (PA)" />
+      <code key="40" value="Puerto Rico (PR)" />
+      <code key="41" value="Rhode Island (RI)" />
+      <code key="42" value="South Caroline (SC)" />
+      <code key="43" value="South Dakota (SD)" />
+      <code key="44" value="Tennessee (TN)" />
+      <code key="45" value="Texas (TX)" />
+      <code key="46" value="Utah (UT)" />
+      <code key="47" value="Vermont (VT)" />
+      <code key="48" value="Virgin Islands (VI)" />
+      <code key="49" value="Virginia (VA)" />
+      <code key="50" value="Washington (WA)" />
+      <code key="51" value="West Virginia (WV)" />
+      <code key="52" value="Wisconsin (WI)" />
+      <code key="53" value="Wyoming (WY)" />
+      <code key="54" value="Reserved" />
+      <code key="55" value="California - Skilled Nursing Facilities" />
+      <code key="56" value="Canada, All Provinces" />
+      <code key="57" value="Reserved" />
+      <code key="58" value="Reserved" />
+      <code key="59" value="Mexico" />
+      <code key="60" value="Reserved" />
+      <code key="61" value="Reserved" />
+      <code key="62" value="Reserved" />
+      <code key="63" value="Reserved" />
+      <code key="64" value="American Samoa" />
+      <code key="65" value="Guam (GU)" />
+    </lookup>
+    <lookup name="TaxonomyCode">
+      <code key="0000000000" value="" />
+      <code key="208000000X" value="Pediatrics" />
+      <code key="2080A0000X" value="Adolescent Medicine" />
+      <code key="2080C0008X" value="Child Abuse Pediatrics" />
+      <code key="2080I0007X" value="Clinical &amp; Laboratory Immunology" />
+      <code key="2080P0006X" value="Developmental - Behavioral Pediatrics" />
+      <code key="2080H0002X" value="Hospice and Palliative Medicine" />
+      <code key="2080T0002X" value="Medical Toxicology" />
+      <code key="2080N0001X" value="Pediatrics, Neonatal-Perinatal Medicine" />
+      <code key="2080P0008X" value="Pediatrics, Neurodevelopmental Disabilities" />
+      <code key="2080P0201X" value="Pediatrics, Pediatric Allergy &amp; Immunology" />
+      <code key="2080P0202X" value="Pediatrics, Pediatric Cardiology" />
+      <code key="2080P0203X" value="Pediatrics, Pediatric Critical Care Medicine" />
+      <code key="2080P0204X" value="Pediatrics, Pediatric Emergency Medicine" />
+      <code key="2080P0205X" value="Pediatrics, Pediatric Endocrinology" />
+      <code key="2080P0206X" value="Pediatrics, Pediatric Gastroenterology" />
+      <code key="2080P0207X" value="Pediatrics, Pediatric Hematology-Oncology" />
+      <code key="2080P0208X" value="Pediatrics, Pediatric Infectious Diseases" />
+      <code key="2080P0210X" value="Pediatrics, Pediatric Nephrology" />
+      <code key="2080P0214X" value="Pediatrics, Pediatric Pulmonology" />
+      <code key="2080P0216X" value="Pediatrics, Pediatric Rheumatology" />
+      <code key="2080T0004X" value="Pediatrics, Pediatric Transplant Hepatology" />
+      <code key="2080S0012X" value="Pediatrics, Sports Medicine" />
+      <code key="2080S0010X" value="Pediatrics, Sleep Medicine" />
+    </lookup>
+  </lookups>
+</template>

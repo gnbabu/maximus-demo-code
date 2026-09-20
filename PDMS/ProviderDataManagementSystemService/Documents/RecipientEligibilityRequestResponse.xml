@@ -1,0 +1,101 @@
+<?xml version="1.0" standalone="yes"?>
+<RecipientEligibilityRequestResponse>
+<RecipientInformationResponse>
+    <subscriberId>123456789123</subscriberId>
+    <subscriberSSN>123456789</subscriberSSN>
+    <subscriberDateOfBirth>02/13/1980</subscriberDateOfBirth>
+    <subscriberDateOfDeath>2020-07-05</subscriberDateOfDeath>
+    <firstName>John</firstName>
+    <lastName>smith</lastName>
+  </RecipientInformationResponse>
+  <BenefitPlanResponse>
+    <fromEligDate>2019-7-29</fromEligDate>
+    <toEligDate>2020-7-29</toEligDate>
+    <eligBenefitPlanDescription>Test</eligBenefitPlanDescription>
+  </BenefitPlanResponse>  
+  <ManagedCareResponse>
+    <eligType>ManagedCare</eligType>
+	<optoutStartDate>2019-7-29</optoutStartDate>
+    <optOutEndDate>2020-7-29</optOutEndDate>
+    <benefitCategoryDesc>Test2</benefitCategoryDesc>
+	<benefitPlanDesc>Plan desc</benefitPlanDesc>
+  </ManagedCareResponse>
+   <ThirdPartyInsuranceResponse>
+   <eligType>RobertMANS</eligType>
+    <namPlan>OhioHealthcare</namPlan>
+	<eligId>123456789</eligId>
+    <carrierIdNaic>ANN2005</carrierIdNaic>
+	<planSponsorName>Child</planSponsorName>
+  </ThirdPartyInsuranceResponse>
+     <LockInPlanResponse>
+   <eligBenefitPlan></eligBenefitPlan>
+    <provLoc>Pharmacy</provLoc>
+	<optoutStartDate>2019-7-29</optoutStartDate>
+    <optOutEndDate>2020-7-29</optOutEndDate>
+	<provName>DR Albert John</provName>
+	<referenceId>123456789</referenceId>
+  </LockInPlanResponse>
+  <PatientLiabilityResponse>
+   <financialPayer>Default</financialPayer>
+   <eligBenefitAmount></eligBenefitAmount>
+   <monthlyWithheld></monthlyWithheld>
+    <totalAmtPdPatUb92>$2000</totalAmtPdPatUb92>
+	<optoutStartDate>2019-7-29</optoutStartDate>
+    <optOutEndDate>2020-7-29</optOutEndDate>
+	<patLiabType>LTCF</patLiabType>
+  </PatientLiabilityResponse>
+    <LongTermCareFacilityPlacementsResponse>
+   <facilityType>Nursing Facility</facilityType>
+   <dteAdmission>01/01/2020</dteAdmission>
+   <dteDischarge>01/20/2020</dteDischarge>
+    <dteVendorPayBegin>12/01/2019</dteVendorPayBegin>
+	<dteVendorPayEnd>12/20/2019</dteVendorPayEnd>
+  </LongTermCareFacilityPlacementsResponse>
+   <MedicareResponse>
+   <eligType>Part B</eligType>
+   <dteVendorPayBegin>01/01/2020</dteVendorPayBegin>
+   <dteVendorPayEnd>01/20/2020</dteVendorPayEnd>
+    <namPlan>OH Advantage Medicare plan</namPlan>
+  </MedicareResponse>
+   <LevelofCareDeterminationResponse>
+   <facilityType>Part B</facilityType>
+   <statusOfRequest></statusOfRequest>
+   <dteDetermination>01/20/2020</dteDetermination>
+    <LOCdetermination>NF</LOCdetermination>
+	 <specialProgramDesc>Intermediate(ILOC)</specialProgramDesc>
+    <dteLOCrequested>01/20/2020</dteLOCrequested>
+	<dteAdmission>12/20/2020</dteAdmission>
+  </LevelofCareDeterminationResponse>
+  
+   <ServiceLimitationResponse>
+   <procedureCD>99203</procedureCD>
+   <specialProgramDesc>Office Visit</specialProgramDesc>
+   <benefitCategoryDesc>Benefit Description</benefitCategoryDesc>
+    <qtyLimitUnits>10</qtyLimitUnits>
+	 <qtyLimitUnitsUsed>4</qtyLimitUnitsUsed>
+    <qtyLimitUnitsRemain>6</qtyLimitUnitsRemain>
+	<cdeTimeUnit>Fical Year</cdeTimeUnit>
+	<nextServiceDate>12/20/2020</nextServiceDate>
+  </ServiceLimitationResponse>
+     <RestrictedCoverageResponse>
+   <fromEligDate>01/20/2020</fromEligDate>
+   <toEligDate>12/20/2020</toEligDate>
+  </RestrictedCoverageResponse>
+     <SpecialProgramResponse>
+   <eligType>Special Program</eligType>
+   <dteAppReceived>01/20/2020</dteAppReceived>
+   <applicationStatus>Application Status</applicationStatus>
+    <provName>Provide Name</provName>
+	 <provPhone>234-345-2925</provPhone>
+    <optoutStartDate>01/20/2020</optoutStartDate>
+	<optOutEndDate>12/20/2020</optOutEndDate>
+  </SpecialProgramResponse>
+    <AssociatedChildrenResponse>
+   <memberMedicaidID>123456789123</memberMedicaidID>
+   <memberFirstName>First Name</memberFirstName>
+   <memberMI>MI</memberMI>
+    <memberLastName>Last Name</memberLastName>
+	 <memberGender>Female</memberGender>
+    <memberDOB>01/20/2020</memberDOB>
+  </AssociatedChildrenResponse>
+</RecipientEligibilityRequestResponse>

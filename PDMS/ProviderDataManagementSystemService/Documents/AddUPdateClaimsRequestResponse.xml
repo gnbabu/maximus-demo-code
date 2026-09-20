@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope
+	xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2000/10/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" >
+  <soap:Body>
+    <soapProcessClaimResponse>
+      <soapProcessClaimResult>
+        <schema>
+          <claimList>
+            <DentalClaims clmElapsedTime="text" sak_claim="2148056704" type="text" >
+              <pDntl>
+                <dntlHdrKey ind_benefits_assignment=" " cde_sub_gender="M" id_medicaid="9999999999" dte_subscriber_dob="1976-08-01" clm_lst_nam_recip="XXXXXX" id_perf_prov="" cde_release_info="Y" cde_related_cause_1="   " clm_recip_fst_nam="XXXXXXXX" id_provider="1174529952" id_prov_referring="" >
+                  <clmDtp dte_time_period="2020-08-24"/>
+                  <clmEntity qlf_entity_type="82" cde_provider_type="30" qlf_type_org="1" >
+                    <clmEntNmAdr qlf_entity_type="82">
+                      <partyIdentifier qlf_id_type="XX" cde_party_id="1356310056" />
+                      <clmNameNm1 nam_last="MELUCH" nam_first="RALPH" nam_middle="E" />
+                    </clmEntNmAdr>
+                  </clmEntity>
+                </dntlHdrKey>
+                <detail dte_first_svc="2020-08-24" amt_billed="1400" cde_tooth_nbr="09" qty_billed="1" qty_allowed="1" cde_prov_spec="300" cde_quadrant="I" num_dtl="1" amt_alwd="0" amt_detail_tpl="0" ind_pr_override_perf="N" >
+                  <dntlDtlKey qlf_procedure_code="AD" cde_proc="D0140" qlf_svc_date_fmt="" id_prov_perf="1356310056" num_dtl="1" >
+                    <clmEntity qlf_entity_type="82" num_dtl="1" >
+                      <clmEntNmAdr qlf_entity_type="82" qlf_type_org="1" num_dtl="1" >
+                        <partyIdentifier qlf_id_type="XX" cde_party_id="1356310056" num_dtl="1" />
+                        <clmNameNm1 nam_last="MELUCH" nam_first="RALPH" nam_middle="E" num_dtl="1" />
+                      </clmEntNmAdr>
+                    </clmEntity>
+                  </dntlDtlKey>
+                  <surface num_seq="1" cde_tooth_surface="B" num_dtl="1" />
+                </detail>
+              </pDntl>
+              <clmTrailer icnRegionCode="22"/>
+            </DentalClaims>
+          </claimList>
+          <ClaimResponse>
+            <header amt_tpl="0.00" amt_paid="22.58" num_icn="2220356000017" cde_clm_status="P" >
+              <detail qty_units_allowed="1.00" cde_clm_status="P" num_dtl="0" >
+                <detailPlan amt_encountered="0.00" qty_allowed="1.00" ind_pricing="MAXFEE" amt_allowed="22.58" cde_fund_code="4540REG" amt_paid="22.58" amt_copay="0.00" amt_state_share="0.00" cde_aid_category="4009" cde_rate_type="DEF" />
+                <error index="1" cde_eob="9918" cde_adj_rsn="45" cde_remark="M16" num_dtl="0" cde_esc="0" cde_disp_status=" " />
+              </detail>
+            </header>
+          </ClaimResponse>
+        </schema>
+      </soapProcessClaimResult>
+    </soapProcessClaimResponse>
+  </soap:Body>
+</soap:Envelope>

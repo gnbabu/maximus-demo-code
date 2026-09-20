@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/Projects/PA WSDL FILE/REV2/REV3/CareManagement.wsdl" filename="CareManagement.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Projects/PA WSDL FILE/REV2/REV3/CareManagement.xsd" filename="CareManagement.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Projects/PA WSDL FILE/REV2/REV3/CareManagement_MessageHeader.xsd" filename="CareManagement_MessageHeader.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Projects/PA WSDL FILE/REV2/REV3/CareManagement_InlineSchema.xsd" filename="CareManagement_InlineSchema.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Projects/PA WSDL FILE/REV2/REV3/CareManagement_Datatypes.xsd" filename="CareManagement_Datatypes.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

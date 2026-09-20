@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///D:/wsdl/FinancialService/FinancialService.wsdl" filename="FinancialService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/wsdl/FinancialService/FinancialService_InlineSchema.xsd" filename="FinancialService_InlineSchema.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/wsdl/FinancialService/FinancialService_Datatypes.xsd" filename="FinancialService_Datatypes.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/wsdl/FinancialService/FinancialService_MessageHeader.xsd" filename="FinancialService_MessageHeader.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/wsdl/FinancialService/FinancialService.xsd" filename="FinancialService.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

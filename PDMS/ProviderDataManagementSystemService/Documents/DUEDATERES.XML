@@ -1,0 +1,32 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cos="http://mes.gov/costreports">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cos:CostReportDueDateSearchResponse>
+         <!--Optional:-->
+         <cos:ResponsePayload>
+            <!--Optional:-->
+            <cos:IdProvider>?</cos:IdProvider>
+            <!--Optional:-->
+            <cos:CurrentCostReportEffectiveDate>10/13/2019</cos:CurrentCostReportEffectiveDate>
+            <!--Optional:-->
+            <cos:CurrentCostReportEndDate>06/20/2020</cos:CurrentCostReportEndDate>
+            <!--Optional:-->
+            <cos:CurrentCostReportDueDate>09/13/2020</cos:CurrentCostReportDueDate>
+            <!--Optional:-->
+            <cos:PreviousCostReportEffectiveDate>?</cos:PreviousCostReportEffectiveDate>
+            <!--Optional:-->
+            <cos:PreviousCostReportEndDate>?</cos:PreviousCostReportEndDate>
+            <!--Optional:-->
+            <cos:PreviousCostReportDueDate>?</cos:PreviousCostReportDueDate>
+            <!--Optional:-->
+            <cos:Response>
+               <cos:SITransactionKey>1234</cos:SITransactionKey>
+               <!--Optional:-->
+               <cos:ResponseType>2345</cos:ResponseType>
+               <!--Optional:-->
+               <cos:ResponseMessage>34468</cos:ResponseMessage>
+            </cos:Response>
+         </cos:ResponsePayload>
+      </cos:CostReportDueDateSearchResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

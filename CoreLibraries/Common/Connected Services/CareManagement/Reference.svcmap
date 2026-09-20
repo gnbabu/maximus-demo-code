@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b7ae2aab-12f5-463a-aa3d-98f511095387" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Tem\PA WSDL 12 23 2020\Prior Authorization\WSDL_XSDs\CareManagement.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CareManagement_Datatypes.xsd" MetadataType="Schema" ID="c2aea718-3caf-483b-b704-5a2d9883aae0" SourceId="1" SourceUrl="file:///C:/Tem/PA WSDL 12 23 2020/Prior Authorization/WSDL_XSDs/CareManagement_Datatypes.xsd" />
+    <MetadataFile FileName="CareManagement_MessageHeader.xsd" MetadataType="Schema" ID="2a4c4ca8-7c85-480f-aeae-552267f24d3b" SourceId="1" SourceUrl="file:///C:/Tem/PA WSDL 12 23 2020/Prior Authorization/WSDL_XSDs/CareManagement_MessageHeader.xsd" />
+    <MetadataFile FileName="CareManagement.wsdl" MetadataType="Wsdl" ID="178bfbe3-4ab6-4d0b-9ace-e73d151c73ce" SourceId="1" SourceUrl="file:///C:/Tem/PA WSDL 12 23 2020/Prior Authorization/WSDL_XSDs/CareManagement.wsdl" />
+    <MetadataFile FileName="CareManagement_InlineSchema.xsd" MetadataType="Schema" ID="1fc867e9-d87f-446b-8e8c-896468d8afc4" SourceId="1" SourceUrl="file:///C:/Tem/PA WSDL 12 23 2020/Prior Authorization/WSDL_XSDs/CareManagement_InlineSchema.xsd" />
+    <MetadataFile FileName="CareManagement.xsd" MetadataType="Schema" ID="fd5e75f0-b286-48e3-9bdf-ac656b081cca" SourceId="1" SourceUrl="file:///C:/Tem/PA WSDL 12 23 2020/Prior Authorization/WSDL_XSDs/CareManagement.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

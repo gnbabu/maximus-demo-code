@@ -1,0 +1,71 @@
+﻿<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+
+<p>
+<b>Subject: Comprehensive Maternal Care Invitation</b>
+</p>
+
+<p>Dear [[Practice_Name]]:</p>
+
+<p>We are pleased to inform you that you are invited to participate in the Ohio Comprehensive Maternal Care (CMC) Program for [[Upcoming_Prog_Year]]! All participating CMC practices earn financial incentives from Medicaid for doing more to improve maternal and infant outcomes and reducing racial health disparities. </p>
+
+<p>Practices who elect to participate in CMC must agree to meet the Ohio CMC Program requirements in order to receive enhanced payments beginning [[Upcoming_Prog_Month]] [[Upcoming_Prog_Year]]. Some may also be eligible for a retrospective bonus payment for proven improvements in outcomes, paid after the close of the program year based on performance. For additional information regarding the Ohio CMC Program visit the Ohio Department of Medicaid (ODM) CMC webpage <a Href="[[CMC_ODM_WebSite]]">here</a>.</p>
+
+<p>In order to be eligible to participate in CMC, a provider must meet certain criteria as specified in the Ohio Administrative Code 5160-19-03. A CMC entity must have at least 150 CMC attributed members under the same Tax Identification Number (TIN) to be eligible for enrollment. The CMC attribution methodology uses an enrollment lookback period that includes claims with dates of service from August 1 of the prior year through July 31 of the year your invitation is received. You must enroll a combination of the below eligible Medicaid IDs, or at least a single Medicaid ID, that meets the 150 threshold. The Ohio Medicaid ID(s) eligible to enroll under your TIN include:</p>
+
+<p>For TIN ending in: <b>[[Last_4_TIN]]</b></p>
+
+[[MED_ID_TABLE]]
+
+<br />
+<p>The open enrollment period for the [[Upcoming_Prog_Year]] is [[Start_Full_Date]] to [[Last_Full_Date]]. The eligible Medicaid ID(s) listed in this letter MUST attest to meeting activity requirements for [[Upcoming_Prog_Year]], no later than [[Last_Full_Date]]. Failure to do so by [[Last_Full_Date]] will jeopardize the opportunity to participate in Ohio’s CMC Program for [[Upcoming_Prog_Year]]. </p>
+
+<p>The link to enroll and the CMC attributed member count for each eligible Medicaid ID can be found under the <i>Program Selections</i> section of the appropriate Medicaid provider file. For detailed instructions on the enrollment process, please refer to the CMC User Guide, located under the <i>Learning</i> tab in PNM and the CMC enrollment webpage <a Href="[[CMC_Enrollment_Weblink]]">here</a>. For additional questions feel free to contact us at (800) 686-1516 or IHD@medicaid.ohio.gov.</p>
+
+<p>To receive communications specific to CMC open enrollment, subscribe to our CMC communications by completing the ODM Subscribe Form <a Href="[[CMC_ODM_Subscribe_Form_Link]]">here</a>!</p>
+
+<br />
+Sincerely,<br/>
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Director_Signature.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<br />
+Bureau of Network Management<br/>
+</td>
+</tr>
+</table>

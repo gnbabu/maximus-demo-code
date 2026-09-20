@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DB Connection"
+  DTS:DTSID="{0F4AAD4C-6E8A-43B7-9998-5E397141E383}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=UORADMMSQL01OHP.MAXCORP.MAXIMUS, 26000;User ID=ohpdms;Initial Catalog=DP_OH_DEV01;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAHdc1jbz1LEOkctlFDxL/twAAAAACAAAAAAADZgAAwAAAABAAAADo+bphPMNJAjfnS1SOsba4AAAAAASAAACgAAAAEAAAANeDdH52F2gbTl5HWhp90x2AAAAASNTvtRxidgL/X+SU6RvaBJCP7tZ15iiMUh23SPw3Nvl1skqq+qNyPPgVqTcrAHjd5RzO/EG7t3yGWQzGY8jenGLfpaPZNWXe+9QB00WmGVh0UnKUXuxRC3DgWFwnwIrbMv0rXMCRrGoW2QDe/LQOI07X8ZHDU7/oW34EEisefWAUAAAA0VezMTyeiNHICYorKBuQDWNcVxs=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

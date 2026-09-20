@@ -1,0 +1,265 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Haven Tokens and UserInfo",
+		"_postman_id": "9e5f284d-059c-f8e7-367d-320d2b523dd9",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetTestToken (E2E)",
+			"request": {
+				"url": {
+					"raw": "https://webapi.ohpnm-testing.omes.maximus.com:10443/Token/GetTestToken?APIKey=t$rD2AKJpJ=hHFm8cU!gB^Ut!wzL76gjRUwLkT7mza%23H@DXmqaYCj%23UUeJrSZdHa&UserName=Havenadmin04",
+					"protocol": "https",
+					"host": [
+						"webapi",
+						"ohpnm-testing",
+						"omes",
+						"maximus",
+						"com"
+					],
+					"port": "10443",
+					"path": [
+						"Token",
+						"GetTestToken"
+					],
+					"query": [
+						{
+							"key": "APIKey",
+							"value": "t$rD2AKJpJ=hHFm8cU!gB^Ut!wzL76gjRUwLkT7mza%23H@DXmqaYCj%23UUeJrSZdHa"
+						},
+						{
+							"key": "UserName",
+							"value": "Havenadmin04"
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GetTestToken (localhost)",
+			"request": {
+				"url": {
+					"raw": "http://localhost:62789/Token/GetTestToken?APIKey=t$rD2AKJpJ=hHFm8cU!gB^Ut!wzL76gjRUwLkT7mza%23H@DXmqaYCj%23UUeJrSZdHa&UserName=M8200397",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "62789",
+					"path": [
+						"Token",
+						"GetTestToken"
+					],
+					"query": [
+						{
+							"key": "APIKey",
+							"value": "t$rD2AKJpJ=hHFm8cU!gB^Ut!wzL76gjRUwLkT7mza%23H@DXmqaYCj%23UUeJrSZdHa"
+						},
+						{
+							"key": "UserName",
+							"value": "M8200397"
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "HealthCheck (prod)",
+			"request": {
+				"url": "https://webapi.ohpnm-testing.omes.maximus.com:10443/HealthCheck",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "HealthCheck (localhost)",
+			"request": {
+				"url": "http://localhost:62789/HealthCheck",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserInfo (localhost)",
+			"request": {
+				"url": "http://localhost:62789/UserInfo.svc",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <s:Header>\r\n    <Action s:mustUnderstand=\"1\" xmlns=\"http://schemas.microsoft.com/ws/2005/05/addressing/none\">http://Maximus.OHPNM.Services/UserInfo/GetUserInfoTKN</Action>\r\n  </s:Header>\r\n  <s:Body>\r\n    <GetUserInfoTKN xmlns=\"http://Maximus.OHPNM.Services\">\r\n      <AuthToken>eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJNODIwMDM5NyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvdXNlcmRhdGEiOiJENkFENTY0OC0yNEI5LTQ2OTMtOTZBNy1DNDQxNjU2MThFRjYiLCJuYmYiOjE2MDE2NTY0MzksImV4cCI6MTYwMTY2MDAzOSwiaWF0IjoxNjAxNjU2NDM5LCJpc3MiOiJNYXhpbXVzIiwiYXVkIjoiUERNUyJ9.aNYCj_q4dJpPtpHfTNw7fjthN9dQWZ5pVHeBRaoy_Xp2nxiv0018ASnnCpB6kQXhfXU_aFRhpNOyvcxW__j_Rw</AuthToken>\r\n    </GetUserInfoTKN>\r\n  </s:Body>\r\n</s:Envelope>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserInfo (prod)",
+			"request": {
+				"url": "https://webapi.ohpnm-testing.omes.maximus.com:10443/UserInfo.svc",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://Maximus.OHPNM.Services/UserInfo/GetUserInfoTKN",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:max=\"http://Maximus.OHPNM.Services\" xmlns:a=\"http://www.w3.org/2005/08/addressing\">\r\n   <soap:Header>\r\n      <wsse:Security soap:mustUnderstand=\"true\" xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">\r\n         <wsse:UsernameToken wsu:Id=\"UsernameToken-625A9F114FAA7FD90616031216529791\">\r\n            <wsse:Username>MCD-mitpnmhtssit</wsse:Username>\r\n            <wsse:Password Type=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText\">EQ\\z53V?\\C[c</wsse:Password>\r\n            <wsse:Nonce EncodingType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary\">Vt1caW9Y0Qv9ff8jmWsHbg==</wsse:Nonce>\r\n            <wsu:Created>2020-10-19T15:34:12.976Z</wsu:Created>\r\n         </wsse:UsernameToken>\r\n      </wsse:Security>\r\n   </soap:Header>\r\n   <soap:Body>\r\n      <max:GetUserInfoTKN>\r\n         <!--Optional:-->\r\n         <max:AuthToken>eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJNOTAwMDM4OCAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoiMThDM0Y4MEUtNDlENi00RkU5LThBODMtRTNFNzAxNDAxMjEyIiwibmJmIjoxNjAzMjkwMzk0LCJleHAiOjE2MDMyOTM5OTQsImlhdCI6MTYwMzI5MDM5NCwiaXNzIjoiTWF4aW11cyIsImF1ZCI6IlBETVMifQ.W_ytu2T-B_yBwJ8bce_50iFdgflAp_tJ6oLyQPQ4Avo_MM6z3orj3LJ9Dq8xBbC28hqqX6sKGj_lSfu7zOufug</max:AuthToken>\r\n      </max:GetUserInfoTKN>\r\n   </soap:Body>\r\n</soap:Envelope>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "CheckToken (E2E)",
+			"request": {
+				"url": {
+					"raw": "https://webapi.ohpnm-testing.omes.maximus.com:10443/Token/CheckToken?AuthToken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJNODIwMDM5NyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvdXNlcmRhdGEiOiJDQkNDNDIzMi0yRUFFLTQwQjMtOUU3OC0xRTJCMDI1QzlGMkQiLCJuYmYiOjE2MDMzODgxOTYsImV4cCI6MTYwMzM5MTc5NiwiaWF0IjoxNjAzMzg4MTk2LCJpc3MiOiJNYXhpbXVzIiwiYXVkIjoiUERNUyJ9.scHr82La5esT_3uTgeTW6aQYnTLXdboCnrs2Bukc8h-VBka6uXGjp3V6DzXtCQifqbGdM677lETBxZUj17qCDQ",
+					"protocol": "https",
+					"host": [
+						"webapi",
+						"ohpnm-testing",
+						"omes",
+						"maximus",
+						"com"
+					],
+					"port": "10443",
+					"path": [
+						"Token",
+						"CheckToken"
+					],
+					"query": [
+						{
+							"key": "AuthToken",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJNODIwMDM5NyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvdXNlcmRhdGEiOiJDQkNDNDIzMi0yRUFFLTQwQjMtOUU3OC0xRTJCMDI1QzlGMkQiLCJuYmYiOjE2MDMzODgxOTYsImV4cCI6MTYwMzM5MTc5NiwiaWF0IjoxNjAzMzg4MTk2LCJpc3MiOiJNYXhpbXVzIiwiYXVkIjoiUERNUyJ9.scHr82La5esT_3uTgeTW6aQYnTLXdboCnrs2Bukc8h-VBka6uXGjp3V6DzXtCQifqbGdM677lETBxZUj17qCDQ"
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJNODIwMDM5NyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvdXNlcmRhdGEiOiJDQkNDNDIzMi0yRUFFLTQwQjMtOUU3OC0xRTJCMDI1QzlGMkQiLCJuYmYiOjE2MDMzODgxOTYsImV4cCI6MTYwMzM5MTc5NiwiaWF0IjoxNjAzMzg4MTk2LCJpc3MiOiJNYXhpbXVzIiwiYXVkIjoiUERNUyJ9.scHr82La5esT_3uTgeTW6aQYnTLXdboCnrs2Bukc8h-VBka6uXGjp3V6DzXtCQifqbGdM677lETBxZUj17qCDQ",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "CheckToken (localhost)",
+			"request": {
+				"url": {
+					"raw": "http://localhost:62789/Token/CheckToken?AuthToken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJNU0FZTE9SMCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvdXNlcmRhdGEiOiI3NjM4NjgwRS1BMDEzLTRERkItQTE2My1DMkJFOUZEN0Q3NjAiLCJuYmYiOjE2MDU4NjA1MjAsImV4cCI6MTYwNTg2NDEyMCwiaWF0IjoxNjA1ODYwNTIwLCJpc3MiOiJNYXhpbXVzIiwiYXVkIjoiUERNUyJ9.MJ5o2huUaZptvoqIbRHaAW4P3NLG0mn8pBau9oMMBqAfVjR8VGKNeEOv35ABiXyAMBu-JtvrkJxjhjtnzqlaqw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "62789",
+					"path": [
+						"Token",
+						"CheckToken"
+					],
+					"query": [
+						{
+							"key": "AuthToken",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJNU0FZTE9SMCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvdXNlcmRhdGEiOiI3NjM4NjgwRS1BMDEzLTRERkItQTE2My1DMkJFOUZEN0Q3NjAiLCJuYmYiOjE2MDU4NjA1MjAsImV4cCI6MTYwNTg2NDEyMCwiaWF0IjoxNjA1ODYwNTIwLCJpc3MiOiJNYXhpbXVzIiwiYXVkIjoiUERNUyJ9.MJ5o2huUaZptvoqIbRHaAW4P3NLG0mn8pBau9oMMBqAfVjR8VGKNeEOv35ABiXyAMBu-JtvrkJxjhjtnzqlaqw"
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJNODIwMDM5NyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvdXNlcmRhdGEiOiJDQkNDNDIzMi0yRUFFLTQwQjMtOUU3OC0xRTJCMDI1QzlGMkQiLCJuYmYiOjE2MDMzODgxOTYsImV4cCI6MTYwMzM5MTc5NiwiaWF0IjoxNjAzMzg4MTk2LCJpc3MiOiJNYXhpbXVzIiwiYXVkIjoiUERNUyJ9.scHr82La5esT_3uTgeTW6aQYnTLXdboCnrs2Bukc8h-VBka6uXGjp3V6DzXtCQifqbGdM677lETBxZUj17qCDQ",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GetAuthTypeForUserName (localhost)",
+			"request": {
+				"url": {
+					"raw": "?UserName=DMCCANN2",
+					"query": [
+						{
+							"key": "UserName",
+							"value": "DMCCANN2"
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

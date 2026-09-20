@@ -1,0 +1,62 @@
+﻿<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+
+<p>
+<b>Subject:</b> Comprehensive Maternal Care Non-Renewal Notification
+</p>
+
+<p>Dear [[Practice_Name]]:</p>
+
+<p>Your Comprehensive Maternal Care (CMC) provider number [[MedicaidID]] was not renewed for the [[Prog_Year]] CMC program year. Your organization did not agree to meet the attestation requirements specified in rule 5160-19-03 of the Ohio Administrative Code(OAC) to continue your participation. As a result, your organization, [[MedicaidID]] will no longer be participating in Ohio’s CMC Program as of [[FullDateProgYear]].</p>
+
+<p>If you disagree, you may request an administrative review pursuant to OAC 5160-70-02 that allows for reconsideration of actions not subject to hearing under Chapter 119 of the Revised Code.</p>
+
+<p style="page-break-before: always;">If you would like an administrative review, please send a written request including all information that you consider relevant to this action to: <a href="mailto:Ohio-CMC-Enrollment@medicaid.ohio.gov">Ohio-CMC-Enrollment@medicaid.ohio.gov</a></p>
+
+<p>Thank you for your past participation in Ohio’s Comprehensive Maternal Care Program. More information and updates about program participation can be found at on the Ohio Department of Medicaid(ODM) CMC webpage <a Href="[[CMC_ODM_WebSite]]">here</a>. If you have any questions, feel free to contact us at (800) 686-1516 or IHD@medicaid.ohio.gov.</p>
+
+<br />
+Sincerely,<br/>
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Director_Signature.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<br />
+Bureau of Network Management<br/>
+</td>
+</tr>
+</table>

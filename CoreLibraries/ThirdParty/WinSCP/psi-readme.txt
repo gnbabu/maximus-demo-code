@@ -1,0 +1,1 @@
+When originally downloaded the folder name was winscp20120204

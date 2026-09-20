@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ca336edd-ff53-42d7-bd63-77b9633122c1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="D:\Users\403245\Favorites\Downloads\Dental\Dental\ClaimsServiceDental.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CommonHeader1.xsd" MetadataType="Schema" ID="89975c29-95f5-4480-83c8-b1a2cec731c4" SourceId="1" SourceUrl="file:///D:/Users/403245/Favorites/Downloads/Dental/Dental/CommonHeader.xsd" />
+    <MetadataFile FileName="ClaimsService1.wsdl" MetadataType="Wsdl" ID="f2064bb7-2e21-439a-8e13-e054220d462f" SourceId="1" SourceUrl="file:///D:/Users/403245/Favorites/Downloads/Dental/Dental/ClaimsServiceDental.wsdl" />
+    <MetadataFile FileName="ClaimReqRespDental1.xsd" MetadataType="Schema" ID="7453cd5b-1ba3-4a22-9253-617bb26bcb8a" SourceId="1" SourceUrl="file:///D:/Users/403245/Favorites/Downloads/Dental/Dental/ClaimReqRespDental.xsd" />
+    <MetadataFile FileName="X12Dental1.xsd" MetadataType="Schema" ID="43fe3896-ab5a-4d29-9983-e60edd003e91" SourceId="1" SourceUrl="file:///D:/Users/403245/Favorites/Downloads/Dental/Dental/X12Dental.xsd" />
+    <MetadataFile FileName="HeaderX12Schema1.xsd" MetadataType="Schema" ID="225c41f0-0f64-47a6-816d-e87a286a2e7e" SourceId="1" SourceUrl="file:///D:/Users/403245/Favorites/Downloads/Dental/Dental/HeaderX12Schema.xsd" />
+    <MetadataFile FileName="ClaimReqRespCommon1.xsd" MetadataType="Schema" ID="a95afe6a-03fd-41f0-a78d-87428bcc5ce3" SourceId="1" SourceUrl="file:///D:/Users/403245/Favorites/Downloads/Dental/Dental/ClaimReqRespCommon.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

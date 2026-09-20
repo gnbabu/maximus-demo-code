@@ -1,0 +1,72 @@
+﻿<header>
+<style type="text/css">
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+<td class="left">
+    [[TOADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>
+
+     
+ <tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<p><b>Subject:</b> Comprehensive Primary Care Final Invitation Reminder  </p>
+</p>
+
+<p>
+Dear Provider:
+</p>
+
+<p>This is a final reminder that your organization received an invitation last month to be in the Ohio Comprehensive Primary Care (CPC) program year [[upcoming_program_year]]. The open enrollment period for the [[upcoming_program_year]] CPC programyear is still open through [[final_enrollment_date]]. All enrollments and re-attestations must be done during this timeframe, in order to participate for the upcoming program year.</p>
+
+ 
+
+<p>All Medicaid providers who met the eligibility criteria were emailed a notification of their invitation letter in September. The invitation letter identified the Medicaid ID that is eligible, and at this time we do not have record of Medicaid ID [[MedicaidId]] being enrolled for the [[upcoming_program_year]] CPC program.</p> 
+
+ 
+
+<p>If you wish to participate in Ohio CPC for the upcoming program year, refer to the additional information found in your invitation letter. Your invitation can be accessed at any time under your <i>Enrollment Correspondence</i>. If you have recently completed your re-attestation or enrollment, please allow time for processing and disregard this reminder.</p>
+
+
+
+
+Sincerely,<br/>
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Director_Signature.png" style="margin-bottom:1px;text-align:center;" /></p></div><br/>
+Ohio Medicaid Provider Network Management <br/>
+</td>
+</tr>
+</table>

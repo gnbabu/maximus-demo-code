@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FileProcessorConfig>
+  <Folders>
+    <Folder path="C:\delthis\FileWatcher\SSMDF" templateFile="Test_FixedLength.xml" archiveFolder="C:\delthis\FileWatcher\SSMDF_Archive" errorFolder="C:\delthis\FileWatcher\SSMDF_Errors" />
+    <Folder path="C:\delthis\FileWatcher\SAM" templateFile="Test_FixedLength.xml" archiveFolder="C:\delthis\FileWatcher\SAM_Archive" errorFolder="C:\delthis\FileWatcher\SAM_Errors" />
+  </Folders>
+</FileProcessorConfig>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DownloadTaskConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Tasks>
+    <DownloadTask>
+      <name>OIG LEIE Exclusions Update</name>
+      <urlPattern>http://oig.hhs.gov/exclusions/downloadables/{yyyy}/sanc{yy}{MM}.zip</urlPattern>
+      <seedStartValue xsi:nil="true" />
+      <seedStartDate>2014-05-29T00:00:00-06:00</seedStartDate>
+      <seedIncrement xsi:nil="true" />
+      <yearOffset>0</yearOffset>
+      <monthOffset>-1</monthOffset>
+      <dayOffset>0</dayOffset>
+    </DownloadTask>
+    <DownloadTask>
+      <name>OIG LEIE Reinstatements Update</name>
+      <urlPattern>http://oig.hhs.gov/exclusions/downloadables/{yyyy}/rein{yy}{MM}.zip</urlPattern>
+      <seedStartValue xsi:nil="true" />
+      <seedStartDate xsi:nil="true" />
+      <seedIncrement xsi:nil="true" />
+      <yearOffset>0</yearOffset>
+      <monthOffset>-1</monthOffset>
+      <dayOffset>0</dayOffset>
+    </DownloadTask>
+    <DownloadTask>
+      <name>SAM Exclusions</name>
+      <urlPattern>https://www.sam.gov/public-extracts/SAM-Public/SAM_Exclusions_Public_Extract_{Seed}.ZIP</urlPattern>
+      <seedStartValue>15072</seedStartValue>
+      <seedStartDate>2015-03-13T00:00:00</seedStartDate>
+      <seedIncrement>1</seedIncrement>
+      <yearOffset xsi:nil="true" />
+      <monthOffset xsi:nil="true" />
+      <dayOffset xsi:nil="true" />
+    </DownloadTask>
+    <DownloadTask>
+      <name>SSDMF Update</name>
+      <urlPattern>https://dmf.ntis.gov/dmldata/monthly/MA{yy}{MM}01</urlPattern>
+      <seedStartValue xsi:nil="true" />
+      <seedStartDate xsi:nil="true" />
+      <seedIncrement xsi:nil="true" />
+      <yearOffset xsi:nil="true" />
+      <monthOffset xsi:nil="true" />
+      <dayOffset xsi:nil="true" />
+    </DownloadTask>
+  </Tasks>
+</DownloadTaskConfig>

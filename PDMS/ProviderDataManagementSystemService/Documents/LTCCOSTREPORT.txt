@@ -1,0 +1,40 @@
+
+
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+<tr><td>[[TOADDRESS]]</td></tr>
+</table>
+
+<br />
+<p>
+<b>Subject: </b> New Cost Report have been uploaded for provider ID [[OhioMedicaidID]]
+
+<p>
+There is a Cost Report on the PNM Cost Report Review and Submission panel that needs your review/approval for Provider ID [[OhioMedicaidID]] and Tracking#[[TrackingNumber]].</p>
+
+</div>

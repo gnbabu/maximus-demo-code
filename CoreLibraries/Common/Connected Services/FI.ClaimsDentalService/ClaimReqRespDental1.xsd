@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:crsp="http://schema.operationmgmt.fi.com/ClaimResponse/common" xmlns:d837="http://schemas.fi.x12/837/dental" xmlns:tns="http://service.operationmgmt.fi/ClaimsService/dental" xmlns:chdr="http://schema.common.fi/Header" elementFormDefault="qualified" targetNamespace="http://service.operationmgmt.fi/ClaimsService/dental" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="./X12Dental.xsd" />
+  <xs:include schemaLocation="./ClaimReqRespCommon.xsd" />
+  <xs:include schemaLocation="./CommonHeader.xsd" />
+  <xs:element name="InquireClaimRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MessageHeader" type="tns:MessageHeaderType" />
+        <xs:element minOccurs="0" name="RequestPayload" type="tns:InquireClaimRequestPayloadType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="InquireClaimRequestPayloadType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="PayorType">
+        <xs:annotation>
+          <xs:documentation>
+						This is to specify if the search is for FFS
+						or MCE
+						claims and the Id of the MCE in case of MCE claims.
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="ICN">
+        <xs:annotation>
+          <xs:documentation>
+						This is the Internal Control Number or claim
+						Number should be returned in case there is no
+						error
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="7" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="ProviderId">
+        <xs:annotation>
+          <xs:documentation>
+						This is the NPI or API in case NPI is not there
+						for the provider
+						whose claim is being inquired
+					</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="7" />
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element id="InquireClaimResponse" name="InquireClaimResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="ResponseHeader" type="tns:ResponseHeaderType">
+          <xs:annotation>
+            <xs:documentation>
+							This is the response message which will have the
+							Status and the transaction ids
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="ClaimHeaderResponse" type="tns:ClaimHeaderResponseType">
+          <xs:annotation>
+            <xs:documentation>
+							This is the claim response header.
+							This should
+							always exist other than in case of error.
+							In that case
+							ErrorDetails should be populated
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="ClaimLinesResponse" type="tns:ClaimLinesResponseType">
+          <xs:annotation>
+            <xs:documentation>
+							This is the container for claim Line Level
+							response.
+							This should always exist other than in case of error.
+							In
+							that case ErrorDetails should be populated
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="DentalClaim837" type="tns:DentalClaim837Type" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ErrorsType">
+          <xs:annotation>
+            <xs:documentation>In case of error the
+							Error Code and Description
+							should be sent.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUpdateClaimsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MessageHeader" type="tns:MessageHeaderType" />
+        <xs:element minOccurs="1" ref="tns:DentalClaim837" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element id="AddUpdateClaimsResponse" name="AddUpdateClaimsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="ResponseHeader" type="tns:ResponseHeaderType">
+          <xs:annotation>
+            <xs:documentation>
+							This is the response message which will have the
+							Status and the transaction ids
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="ClaimHeaderResponse" type="tns:ClaimHeaderResponseType">
+          <xs:annotation>
+            <xs:documentation>
+							This is the claim response header.
+							This should
+							always exist other than in case of error.
+							In that case
+							ErrorDetails should be populated
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="ClaimLinesResponse" type="tns:ClaimLinesResponseType">
+          <xs:annotation>
+            <xs:documentation>
+							This is the container for claim Line Level
+							response.
+							This should always exist other than in case of error.
+							In
+							that case ErrorDetails should be populated
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="DentalClaim837" type="tns:DentalClaim837Type" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ErrorsType">
+          <xs:annotation>
+            <xs:documentation>In case of error the
+							Error Code and Description
+							should be sent.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

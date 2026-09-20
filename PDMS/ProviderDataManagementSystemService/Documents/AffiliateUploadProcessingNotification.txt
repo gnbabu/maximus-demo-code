@@ -1,0 +1,7 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<p>Per your request, your Affiliate Update file has been processed. </p> 
+<p>If you wish to view the outcome of the upload, please log into your account in the Ohio Department of Medicaid Provider Network Module and view the response. </p>
+<p>If you did not submit this request, please contact Provider Assistance Customer Service immediately at 800-686-1516. </p>
+<p>Sincerely, </p><br>
+<p>Ohio Department of Medicaid  </p>
+</div>

@@ -1,0 +1,8 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+Issue Date: [[CURRENTDATE]] <br>
+<p>Thank you for beginning the (State) Medicaid provider application process in the Provider Data Management System (PDMS). This notice is to make you aware that you have 10 days to complete the online application that you started in the PDMS system. After 10 days, the data you entered will be deleted and you must begin a new application using the same account. 
+</p> 
+<p>Thank you for your interest in the (State) Medicaid program. If you have any questions or need additional information, please call the MAXIMUS Provider Screening and Enrollment Customer Service at 999-999-999. </p>          
+Regards, <br>
+MAXIMUS Provider Screening and Enrollment Customer Service <br>
+</div>

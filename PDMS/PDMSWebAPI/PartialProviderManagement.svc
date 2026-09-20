@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="PDMSWebAPI.PartialProviderManagement.PartialProviderManagementService" CodeBehind="PartialProviderManagement.svc.cs" %>

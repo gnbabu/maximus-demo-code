@@ -1,0 +1,41 @@
+
+
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+<tr><td>[[TOADDRESS]]</td></tr>
+</table>
+
+<br />
+<p>
+<b>Subject: </b>" Medicaid Provider Number [[Medicaid_ID]]: Cost Report Documents are available for viewing
+
+<p>
+Dear Provider:
+</p>	
+<p>
+As a LTC provider, you are being notified that you have cost report information available in the PNM portal for your review or cost report information that needs your attention:</p>
+
+</div>

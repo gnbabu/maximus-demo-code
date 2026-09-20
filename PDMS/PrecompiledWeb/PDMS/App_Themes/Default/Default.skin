@@ -1,0 +1,31 @@
+﻿<%-- Put all Gridview Skins here --%>
+<asp:GridView 
+	runat="server" 
+	GridLines="Horizontal" 
+	CssClass="gridView">
+	<FooterStyle CssClass="gridViewFooter" />
+	<RowStyle CssClass="gridViewRow" />
+	<EditRowStyle CssClass="gridViewSelected"/>
+	<SelectedRowStyle CssClass="gridViewSelected"/>
+	<PagerStyle CssClass="gridViewPager" />
+	<HeaderStyle CssClass="gridViewHeader" />
+	<AlternatingRowStyle CssClass="gridViewAltRow" />
+	<EmptyDataRowStyle CssClass="gridViewEmptyRow" />
+    <SortedAscendingHeaderStyle CssClass = "sort-asc" />
+     <SortedDescendingHeaderStyle CssClass = "sort-desc" />
+</asp:GridView>
+
+
+<asp:GridView 
+    SkinID="GridViewMinimum"
+	runat="server" 
+	Width="50%" 
+	GridLines="Horizontal" 
+	cssClass="gvwClass">
+	<FooterStyle  />
+	<RowStyle CssClass="odd" HorizontalAlign="Left" />
+	<SelectedRowStyle CssClass="highlight"/>
+	<PagerStyle HorizontalAlign="Right" />
+	<HeaderStyle HorizontalAlign="Left" />
+	<AlternatingRowStyle CssClass="even"  HorizontalAlign="Left" />
+</asp:GridView>

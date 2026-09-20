@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0e0a62f5-a257-417c-92f3-1836e911eb41" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\CA_OHPNM_DEV_14\source\repos\wsdl2\Attachment Schemas\Attachment.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Attachment.wsdl" MetadataType="Wsdl" ID="ca971c6c-c8eb-4616-a614-a456402fb667" SourceId="1" SourceUrl="file:///C:/Users/CA_OHPNM_DEV_14/source/repos/wsdl2/Attachment Schemas/Attachment.wsdl" />
+    <MetadataFile FileName="Attachment_InlineSchema.xsd" MetadataType="Schema" ID="c2b7b053-7095-4374-8a0f-7580dc7e8774" SourceId="1" SourceUrl="file:///C:/Users/CA_OHPNM_DEV_14/source/repos/wsdl2/Attachment Schemas/Attachment_InlineSchema.xsd" />
+    <MetadataFile FileName="Attachment_Datatypes.xsd" MetadataType="Schema" ID="3198e34b-12e7-4ccc-b520-335ab3cd038a" SourceId="1" SourceUrl="file:///C:/Users/CA_OHPNM_DEV_14/source/repos/wsdl2/Attachment Schemas/Attachment_Datatypes.xsd" />
+    <MetadataFile FileName="Attachment_MessageHeader.xsd" MetadataType="Schema" ID="b5c9a6f0-b86e-4139-8222-f6ab128bea41" SourceId="1" SourceUrl="file:///C:/Users/CA_OHPNM_DEV_14/source/repos/wsdl2/Attachment Schemas/Attachment_MessageHeader.xsd" />
+    <MetadataFile FileName="Attachment.xsd" MetadataType="Schema" ID="6ad0c17c-6f57-4a8d-951b-114cc3c2937c" SourceId="1" SourceUrl="file:///C:/Users/CA_OHPNM_DEV_14/source/repos/wsdl2/Attachment Schemas/Attachment.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

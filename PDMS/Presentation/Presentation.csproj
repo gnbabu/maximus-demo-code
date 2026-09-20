@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C65C790-AD71-40B0-B9BE-65A957C2C9E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Presentation</RootNamespace>
+    <AssemblyName>Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BillingPaymentAddressPresenter.cs" />
+    <Compile Include="CallTrackerPresenter.cs" />
+    <Compile Include="Check.cs" />
+    <Compile Include="CommunicationHistoryPresenter.cs" />
+    <Compile Include="CallReportPresenter.cs" />
+    <Compile Include="CategoryOfServicePresenter.cs" />
+    <Compile Include="BoardCertificationsPresenter.cs" />
+    <Compile Include="CorrespondenceAddressPresenter.cs" />
+    <Compile Include="Form1099AddressPresenter.cs" />
+    <Compile Include="FormW9Presenter.cs" />
+    <Compile Include="HomeOfficeAddressPresenter.cs" />
+    <Compile Include="HospitalAddressPresenter.cs" />
+    <Compile Include="Interfaces\BoardCertificationsView .cs" />
+    <Compile Include="Interfaces\IFormW9View.cs" />
+    <Compile Include="Interfaces\IOwnerInfoView.cs" />
+    <Compile Include="Interfaces\IProfessionalLicenseView.cs" />
+    <Compile Include="Interfaces\IAddress.cs" />
+    <Compile Include="Interfaces\IBillingPaymentAddressView.cs" />
+    <Compile Include="Interfaces\ICorrespondenceAddressView.cs" />
+    <Compile Include="Interfaces\IForm1099AddressView.cs" />
+    <Compile Include="Interfaces\IHomeOfficeAddressView.cs" />
+    <Compile Include="Interfaces\IHospitalAddressView.cs" />
+    <Compile Include="Interfaces\INursingFacilityAddressView.cs" />
+    <Compile Include="Interfaces\IOtherAddressView.cs" />
+    <Compile Include="Interfaces\IPrimaryContactView.cs" />
+    <Compile Include="Interfaces\IPrimaryServiceAddressView.cs" />
+    <Compile Include="Interfaces\IProviderReactivationView.cs" />
+	<Compile Include="Interfaces\INPIandMedIdView.cs" />
+    <Compile Include="OwnerInfoPresenter.cs" />
+    <Compile Include="ProfessionalLicensePresenter.cs" />
+    <Compile Include="NursingFacillityAddressPresenter.cs" />
+    <Compile Include="OtherAddressPresenter.cs" />
+    <Compile Include="PrimaryServiceAddressPresenter.cs" />
+    <Compile Include="ProviderReactivationPresenter.cs" />
+    <Compile Include="CPRCertificationsPresenter.cs" />
+    <Compile Include="Interfaces\CategoryOfServiceView.cs" />
+    <Compile Include="Interfaces\CPRCertificationsView.cs" />
+    <Compile Include="NursingProfessionalCertificationsPresenter.cs" />
+    <Compile Include="Interfaces\NursingProfessionalCertificationsView.cs" />
+    <Compile Include="Interfaces\IMalpracticeClaimView.cs" />
+    <Compile Include="MalpracticeClaimInfoPresenter.cs" />
+    <Compile Include="OwnerConvictionOnBehalfPresenter.cs" />
+    <Compile Include="Interfaces\IOwnerConvictionOnBehalfView.cs" />
+    <Compile Include="Interfaces\IOwnerIdentifyingInfoView.cs" />
+    <Compile Include="OwnerIdentifyingInfoPresenter.cs" />
+    <Compile Include="HealthCareAffiliationsPresenter.cs" />
+    <Compile Include="Interfaces\IHealthCareAffiliationsView.cs" />
+    <Compile Include="Interfaces\IPendingGroupAffiliationsView.cs" />
+    <Compile Include="PendingGroupAffiliationsPresenter.cs" />
+    <Compile Include="GroupAndFacilityAffiliationsPresenter.cs" />
+    <Compile Include="Interfaces\IGroupAndFacilityAffiliationsView.cs" />
+    <Compile Include="Interfaces\ICallReportView.cs" />
+    <Compile Include="Interfaces\ICallTrackerView.cs" />
+    <Compile Include="ProviderTerminationPresenter.cs" />
+    <Compile Include="Interfaces\IProviderTerminateView.cs" />
+    <Compile Include="ProviderRetroEffectivePresenter.cs" />
+    <Compile Include="Interfaces\IProviderRetroEffectiveView.cs" />
+    <Compile Include="ProviderDisenrollmentPresenter.cs" />
+    <Compile Include="Interfaces\IProviderDisenrollmentView.cs" />
+    <Compile Include="Interfaces\ICommunicationHistoryView.cs" />
+    <Compile Include="PaperRequestDocumentPresenter.cs" />
+    <Compile Include="Interfaces\IPaperRequestDocumentView.cs" />
+    <Compile Include="ProviderOperatorPresenter.cs" />
+    <Compile Include="Interfaces\IProviderOperatorView.cs" />
+    <Compile Include="PaperRequestAddPresenter.cs" />
+    <Compile Include="Interfaces\IPaperRequestAddView.cs" />
+    <Compile Include="ProviderAddPresenter.cs" />
+    <Compile Include="Interfaces\IProviderAddView.cs" />
+    <Compile Include="ProviderManagementDetailsPresenter.cs" />
+    <Compile Include="Interfaces\IProviderManagementDetailsView.cs" />
+    <Compile Include="UserAccountInformationPresenter.cs" />
+    <Compile Include="Interfaces\IUserAccountInformationView.cs" />
+    <Compile Include="Interfaces\IProviderManagerView.cs" />
+    <Compile Include="Interfaces\IAchFeeEditView.cs" />
+    <Compile Include="Interfaces\IAchFeeExportView.cs" />
+    <Compile Include="Interfaces\IAchFeeSearchView.cs" />
+    <Compile Include="Interfaces\IAchFeeView.cs" />
+    <Compile Include="Interfaces\IPartyEligibilityEditView.cs" />
+    <Compile Include="Interfaces\IPartyEligibilityView.cs" />
+    <Compile Include="Interfaces\IDCSAdminSearchView.cs" />
+    <Compile Include="Interfaces\IPresenter.cs" />
+    <Compile Include="Interfaces\IView.cs" />
+    <Compile Include="PresenterBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProviderManagerPresenter.cs" />
+    <Compile Include="ValidationConstants.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CoreLibraries\AppSettings\AppSettings.csproj">
+      <Project>{99469857-55b2-4105-96f4-85c1b44e74d6}</Project>
+      <Name>AppSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Common\Common.csproj">
+      <Project>{8c8433d2-2e2c-4a6e-9f3f-82ad7665729f}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\DataAccess\DataAccess.csproj">
+      <Project>{b18c00df-61ba-4650-adc7-d8736741b5b8}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Logging\Logging.csproj">
+      <Project>{E640B94B-2908-4AAD-9F47-00DAFE871902}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibraries\Workflow\Workflow.csproj">
+      <Project>{5bc86e5f-8852-42e0-a11d-e0c9bcff0fc8}</Project>
+      <Name>Workflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Model.csproj">
+      <Project>{4e52102f-0f6f-4809-a522-85585a6409f5}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectControllers\ObjectControllers.csproj">
+      <Project>{9e8fa5ed-c193-4872-ac93-7e4356674b50}</Project>
+      <Name>ObjectControllers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

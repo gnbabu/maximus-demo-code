@@ -1,0 +1,5 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<p>This is to inform you that [[provider]] has submitted an updated practice location.</p>
+<p>Regards,<br />
+MAXIMUS Provider Screening and Enrollment Customer Service
+</div>

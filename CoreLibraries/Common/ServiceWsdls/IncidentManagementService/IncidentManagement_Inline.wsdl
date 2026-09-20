@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://mes.gov/incidentmanagement"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:tns="http://mes.gov/incidentmanagement" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<documentation>
+		<appinfo source="WMQI_APPINFO">
+			<MRWSDLAppInfo imported="true">
+				<binding hasEncoding="false" imported="true" name="incidentManagementSoap"
+					originalBindingStyle="document"/>
+			</MRWSDLAppInfo>
+		</appinfo>
+	</documentation>
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+			targetNamespace="http://mes.gov/incidentmanagement"
+			xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions"
+			xmlns:tns="http://mes.gov/incidentmanagement">
+			<xsd:simpleType name="Char1">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="1"/>
+					<xsd:enumeration value="Y"/>
+					<xsd:enumeration value="N"/>
+					<xsd:enumeration value=""/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String1">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="1"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="string1">
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="1"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="string2">
+				<xsd:restriction base="xsd:string">
+							<xsd:length value="2"/>
+							<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+				<!--<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="2"/>
+							<xsd:pattern value="([\S+\s])*\S+\s*"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+					<xsd:simpleType name="cstring2"> --><!-- added name="cstring2" by siva-->
+					<!--	<xsd:restriction base="xsd:string">
+							<xsd:length value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union>-->
+			</xsd:simpleType>
+			<xsd:simpleType name="mstring2">
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="2"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String2">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="2"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="MString2">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="2"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String3">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="3"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="mstring3">
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="3"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="string3">
+			    <xsd:restriction base="xsd:string">
+							<xsd:length value="3"/>
+							<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+				<!--<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="3"/>
+							<xsd:pattern value="([\S+\s])*\S+\s*"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+					<xsd:simpleType name="cstring3"> --><!-- added name="cstring3" by siva-->
+					<!--	<xsd:restriction base="xsd:string">
+							<xsd:length value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union>-->
+			</xsd:simpleType>
+			<xsd:simpleType name="String4">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="4"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="mstring4">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="4"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="string4">
+			    <xsd:restriction base="xsd:string">
+							<xsd:length value="4"/>
+							<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+				<!--<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="4"/>
+							<xsd:pattern value="([\S+\s])*\S+\s*"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+					<xsd:simpleType name="cstring4">--><!-- added name="cstring4" by siva-->
+					<!--	<xsd:restriction base="xsd:string">
+							<xsd:length value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union>-->
+			</xsd:simpleType>
+			<xsd:simpleType name="String5">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="5"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="mstring5">
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="5"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="string5">
+			<xsd:restriction base="xsd:string">
+							<xsd:length value="5"/>
+							<xsd:pattern value="([\S+\s])*\S+\s*"/>
+			</xsd:restriction>
+				<!--<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="5"/>
+							<xsd:pattern value="([\S+\s])*\S+\s*"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+					<xsd:simpleType name="cstring5">--><!-- added name="cstring5" by siva-->
+					<!--	<xsd:restriction base="xsd:string">
+							<xsd:length value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union> -->
+			</xsd:simpleType>
+			<xsd:simpleType name="String6">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="6"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<!--HMP-2784-->
+			<xsd:simpleType name="string6">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="6"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String9">
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="9"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="string9">
+			<xsd:restriction base="xsd:string">
+							<xsd:length value="9"/>
+							<xsd:pattern value="([\S+\s])*\S+\s*"/>
+			</xsd:restriction>
+				<!--<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="9"/>
+							<xsd:pattern value="([\S+\s])*\S+\s*"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+					<xsd:simpleType name="cstring9">--><!-- added name="cstring9" by siva-->
+					<!--	<xsd:restriction base="xsd:string">
+							<xsd:length value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union>-->
+			</xsd:simpleType>
+			<xsd:simpleType name="string10">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1"/>
+					<xsd:maxLength value="10"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String10">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="10"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String12">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="12"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String16">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="16"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String20">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="20"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="string20">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="20"/>
+					<xsd:minLength value="1"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String25">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="25"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="string25">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="25"/>
+					<xsd:minLength value="1"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String30">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="30"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="string30">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="30"/>
+					<xsd:minLength value="1"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String32">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="32"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String36">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="36"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String40">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="40"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="string40">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="40"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String45">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="45"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String50">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="50"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="string50">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="50"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String100">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="100"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String130">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="130"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String255">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="255"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String2000">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="2000"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String2500">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="2500"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="String4000">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="4000"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="DateType">
+			   <xsd:restriction base="xsd:date">
+							<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}"/>
+						</xsd:restriction>
+				<!--<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:date">
+							<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+					<xsd:simpleType name="c1DateType">--><!-- added name="c1DateType" by siva-->
+					<!--	<xsd:restriction base="xsd:dateTime">
+							<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+					<xsd:simpleType name="c2DateType"> added name="c2DateType" by siva
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union>-->
+			</xsd:simpleType>
+			<xsd:simpleType name="MDateType">
+			    <xsd:restriction base="xsd:date">
+							<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}"/>
+						</xsd:restriction>
+				<!--<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:date">
+							<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+					<xsd:simpleType name="cMDateType"> added name="cMDateType" by siva
+						<xsd:restriction base="xsd:dateTime">
+							<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union>-->
+			</xsd:simpleType>
+			<xsd:simpleType name="DateTimeType">
+			
+						<xsd:restriction base="xsd:dateTime">
+							<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}"/>
+						</xsd:restriction>
+					
+				<!--<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:dateTime">
+							<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+					<xsd:simpleType name="cDateTimeType"> added name="cDateTimeType" by siva
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union> -->
+			</xsd:simpleType>
+			<xsd:simpleType name="MDateTimeType">
+				<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:dateTime">
+							<xsd:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union>
+			</xsd:simpleType>
+			<xsd:simpleType name="Int">
+			    <xsd:restriction base="tns:Int19"/>
+				<!--<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="tns:Int19"/>
+					</xsd:simpleType>
+					<xsd:simpleType name="cInt"> added name="cInt" by siva
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union>-->
+			</xsd:simpleType>
+			<xsd:simpleType name="Int19">
+				<xsd:restriction base="xsd:integer">
+					<xsd:totalDigits value="19"/>
+					<xsd:minInclusive value="0"/>
+					<xsd:maxInclusive value="9223372036854775806"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="EmptyValue">
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="decimal9-2">
+				<xsd:restriction base="xsd:decimal">
+					<xsd:totalDigits value="9"/>
+					<xsd:fractionDigits value="2"/>
+					<xsd:minInclusive value="-9999999.99"/>
+					<xsd:maxInclusive value="9999999.99"/>
+					<xsd:pattern
+						value="(-?\d{1,9}|(-?\d{1,8})((\.\d{1})?)|(-?\d{1,7})((\.\d{1,2})?))"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="Decimal9-2">
+				<xsd:restriction base="xsd:decimal">
+							<xsd:totalDigits value="9"/>
+							<xsd:fractionDigits value="2"/>
+							<xsd:minInclusive value="-9999999.99"/>
+							<xsd:maxInclusive value="9999999.99"/>
+							<xsd:pattern
+								value="(-?\d{1,9}|(-?\d{1,8})((\.\d{1})?)|(-?\d{1,7})((\.\d{1,2})?))"
+							/>
+				</xsd:restriction>			
+				<!--<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+							<xsd:totalDigits value="9"/>
+							<xsd:fractionDigits value="2"/>
+							<xsd:minInclusive value="-9999999.99"/>
+							<xsd:maxInclusive value="9999999.99"/>
+							<xsd:pattern
+								value="(-?\d{1,9}|(-?\d{1,8})((\.\d{1})?)|(-?\d{1,7})((\.\d{1,2})?))"
+							/>
+						</xsd:restriction>
+					</xsd:simpleType>
+					<xsd:simpleType name="cDecimal9-2"> added name="cDecimal9-2" by siva
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union>-->
+			</xsd:simpleType>
+			<xsd:simpleType name="PDecimal8-2">
+			<xsd:restriction base="xsd:decimal">
+							<xsd:totalDigits value="8"/>
+							<xsd:fractionDigits value="2"/>
+							<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999.99"/>
+							<xsd:pattern
+								value="(\d{1,8}|(\d{1,7})((\.\d{1})?)|(\d{1,6})((\.\d{1,2})?))"/>
+						</xsd:restriction>
+				<!--<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+							<xsd:totalDigits value="8"/>
+							<xsd:fractionDigits value="2"/>
+							<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="999999.99"/>
+							<xsd:pattern
+								value="(\d{1,8}|(\d{1,7})((\.\d{1})?)|(\d{1,6})((\.\d{1,2})?))"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+					<xsd:simpleType name="cPDecimal8-2"> added name="cPDecimal8-2" by siva
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union>-->
+			</xsd:simpleType>
+			<xsd:simpleType name="Decimal8-2">
+			<xsd:restriction base="xsd:decimal">
+							<xsd:totalDigits value="8"/>
+							<xsd:fractionDigits value="2"/>
+							<xsd:minInclusive value="-999999.99"/>
+							<xsd:maxInclusive value="999999.99"/>
+							<xsd:pattern
+								value="(-?\d{1,8}|(-?\d{1,7})((\.\d{1})?)|(-?\d{1,6})((\.\d{1,2})?))"
+							/>
+				</xsd:restriction>			
+				<!--<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+							<xsd:totalDigits value="8"/>
+							<xsd:fractionDigits value="2"/>
+							<xsd:minInclusive value="-999999.99"/>
+							<xsd:maxInclusive value="999999.99"/>
+							<xsd:pattern
+								value="(-?\d{1,8}|(-?\d{1,7})((\.\d{1})?)|(-?\d{1,6})((\.\d{1,2})?))"
+							/>
+						</xsd:restriction>
+					</xsd:simpleType>
+					<xsd:simpleType name="cDecimal8-2"> added name="cDecimal8-2" by siva
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union>-->
+			</xsd:simpleType>
+			<xsd:simpleType name="Decimal13-2">
+			<xsd:restriction base="xsd:decimal">
+							<xsd:totalDigits value="13"/>
+							<xsd:fractionDigits value="2"/>
+							<xsd:minInclusive value="-99999999999.99"/>
+							<xsd:maxInclusive value="99999999999.99"/>
+							<xsd:pattern
+								value="(-?\d{1,13}|(-?\d{1,12})((\.\d{1})?)|(-?\d{1,11})((\.\d{1,2})?))"
+							/>
+					</xsd:restriction>		
+				<!--<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+							<xsd:totalDigits value="13"/>
+							<xsd:fractionDigits value="2"/>
+							<xsd:minInclusive value="-99999999999.99"/>
+							<xsd:maxInclusive value="99999999999.99"/>
+							<xsd:pattern
+								value="(-?\d{1,13}|(-?\d{1,12})((\.\d{1})?)|(-?\d{1,11})((\.\d{1,2})?))"
+							/>
+						</xsd:restriction>
+					</xsd:simpleType>
+					<xsd:simpleType name="cDecimal13-2"> added name="cPDecimal3-2" by siva
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union>-->
+			</xsd:simpleType>
+			<xsd:simpleType name="Decimal5-1">
+			<xsd:restriction base="xsd:decimal">
+							<xsd:totalDigits value="5"/>
+							<xsd:fractionDigits value="1"/>
+							<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="9999.9"/>
+							<xsd:pattern value="(\d{1,5}|(\d{1,4})((\.\d{1})?))"/>
+						</xsd:restriction>
+				<!--<xsd:union>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+							<xsd:totalDigits value="5"/>
+							<xsd:fractionDigits value="1"/>
+							<xsd:minInclusive value="0"/>
+							<xsd:maxInclusive value="9999.9"/>
+							<xsd:pattern value="(\d{1,5}|(\d{1,4})((\.\d{1})?))"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+					<xsd:simpleType name="Decimal5-1">added name="cPDecimal5-2" by siva
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:union>-->
+			</xsd:simpleType>
+			<xsd:simpleType name="string19">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="19"/>
+					<xsd:minLength value="1"/>
+					<xsd:pattern value="([\S+\s])*\S+\s*"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xs:element name="MessageHeader">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="BusinessFlow" minOccurs="1">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="SendProviderIncident"/>
+									<xs:enumeration value="UpdateProviderIncidentStatus"/>
+									<xs:minLength value="1"/>
+									<xs:maxLength value="50"/>	
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element minOccurs="1" name="StateCode" >
+							<xs:simpleType>
+								<xs:restriction base="xsd:string">
+									<xs:pattern value="[A|a][L|l]|[A|a][K|k]|[A|a][Z|z]|[A|a][R|r]|[C|c][A|a]|[C|c][O|o]|[C|c][T|t]|[D|d][E|e]|[F|f][L|l]|[G|g][A|a]|[H|h][I|i]|[I|i][D|d]|[I|i][L|l]|[I|i][N|n]|[I|i][A|a]|[K|k][S|s]|[K|k][Y|y]|[L|l][A|a]|[M|m][E|e]|[M|m][D|d]|[M|m][A|a]|[M|m][I|i]|[M|m][N|n]|[M|m][S|s]|[M|m][O|o]|[M|m][T|t]|[N|n][E|e]|[N|n][V|v]|[N|n][H|h]|[N|n][J|j]|[N|n][M|m]|[N|n][Y|y]|[N|n][C|c]|[N|n][D|d]|[O|o][H|h]|[O|o][K|k]|[O|o][R|r]|[P|p][A|a]|[R|r][I|i]|[S|s][C|c]|[S|s][D|d]|[T|t][N|n]|[T|t][X|x]|[U|u][T|t]|[V|v][T|t]|[V|v][A|a]|[W|w][A|a]|[W|w][V|v]|[W|w][I|i]|[W|w][Y|y]"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element minOccurs="1" name="RequestorSystem">
+                     <xs:simpleType>
+						<xs:restriction base="xs:string">
+                            <xs:enumeration value="PNM"/>
+						    <xs:enumeration value="IMS"/>
+							<xs:enumeration value="HealthCheck"/>							
+						</xs:restriction>
+					</xs:simpleType>
+                </xs:element>
+				<!-- HMP-4088: Start of changes -->	
+				<xs:element name="SubscriberSystem" minOccurs="1" maxOccurs="1">
+					<xs:complexType >                           					         
+						<xs:sequence>
+							<xs:element name="Subscriber" minOccurs="1" maxOccurs="10">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="PNM"/>
+										<xs:enumeration value="IMS"/>	
+										<xs:minLength value="1"/>
+										<xs:maxLength value="50"/>										
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>                            					         
+					</xs:complexType>
+				</xs:element>	
+				<!-- HMP-4088: End of changes -->
+				<xs:element name="ModuleTransactionId" type="tns:String50" minOccurs="0"/>
+                <xs:element name="AdditionalModuleTransactionId" type="tns:String50" minOccurs="0"/>
+				<xs:element name="RequestTimestamp" type="tns:MDateTimeType" minOccurs="1"/>
+				<xs:element name="SITransactionKey" type="tns:String32" minOccurs="0"/> 
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+			<xs:element name="Fault">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="faultcode" type="xs:string" minOccurs="0"/>
+						<xs:element name="faultstring" type="xs:string" minOccurs="0"/>
+						<!--<xs:element name="detail"> 
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ErrorCode" type="xs:string" minOccurs="0"/>
+							<xs:element name="ErrorDetail" type="xs:string" minOccurs="0"/>
+							<xs:element name="SITransactionKey" type="xs:string" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element> -->
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<!--Start of Inquire Provider Request-->
+
+			<!--Start of Create Provider Request -->
+			<xsd:complexType name="SendProviderIncidentRequest">
+				<xsd:sequence>
+					<xsd:element name="MedicaidProviderID" type="tns:String10" minOccurs="1"/>
+					<xsd:element name="ProviderName" type="tns:String255" minOccurs="0"/>
+					<xsd:element name="IMSCaseNumber" type="tns:String30" minOccurs="0"/>
+					<xsd:element name="CaseSubmissionDate" type="tns:DateType" minOccurs="0"/>
+					<xsd:element name="NODReferralDate" type="tns:DateType" minOccurs="0"/>
+					<xsd:element name="ReasonForNOD" type="tns:String2500" minOccurs="0"/>
+					<xsd:element name="ReferralSentBy" type="tns:String255" minOccurs="0"/>
+					<xsd:element name="IncidentDetails" minOccurs="1" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="IncidentCategory" type="tns:String255"
+									minOccurs="0"/>
+								<xsd:element name="IncidentSubcategory" type="tns:String255"
+									minOccurs="0"/>
+								<xsd:element name="IncidentType" type="tns:String255" minOccurs="0"/>
+								<xsd:element name="IncidentID" type="tns:String30" minOccurs="0"/>
+								<xsd:element name="Substantiated"  type="tns:String255" minOccurs="0"> <!-- changes added by siva -->
+								<!--<xsd:simpleType>
+                           <xsd:restriction base="xsd:string">
+                              <xsd:enumeration value="Yes"/>
+			      <xsd:enumeration value="No"/>
+                              </xsd:restriction>
+			     </xsd:simpleType>-->
+								</xsd:element>
+								<xsd:element name="IMSAssociateID" type="tns:String30" minOccurs="0"
+								/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="UpdateProviderIncidentStatusInfo">
+				<xsd:sequence>
+					<xsd:element name="MedicaidProviderID" type="tns:string10" minOccurs="0"/>
+					<xsd:element name="ProviderName" type="tns:String255" minOccurs="0"/>
+					<xsd:element name="ProviderStatus" type="tns:String255" minOccurs="0"><!-- changes added by siva -->
+						 <!--<xsd:simpleType>
+                           <xsd:restriction base="xsd:string">
+                              <xsd:enumeration value="Continue"/>
+							  <xsd:enumeration value="Elevated"/>
+                              <xsd:enumeration value="Screening"/>
+                              <xsd:enumeration value="Terminated"/>
+                              </xsd:restriction>
+			     </xsd:simpleType>-->
+					</xsd:element>
+
+					<xsd:element name="PAOMailedDate" type="tns:DateType" minOccurs="0"/>
+					<xsd:element name="PAIUnclaimed" type="tns:String255" minOccurs="0"><!-- changes added by siva -->
+						<!--<xsd:simpleType>
+                           <xsd:restriction base="xsd:string">
+                              <xsd:enumeration value="True"/>
+							  <xsd:enumeration value="False"/>
+                              </xsd:restriction>
+			     </xsd:simpleType>-->
+					</xsd:element>
+					<xsd:element name="HearingRequestedDate" type="tns:DateType" minOccurs="0"/>
+					<xsd:element name="HearingRequestDueDate" type="tns:DateType" minOccurs="0"/>
+					<xsd:element name="SettlementReachedDate" type="tns:DateType" minOccurs="0"/>
+					<xsd:element name="AODateIssued" type="tns:DateType" minOccurs="0"/>
+					<xsd:element name="IMSAssociateID" type="tns:string30" minOccurs="0"/>
+					<xsd:element name="IMSCaseNumber" type="tns:string30" minOccurs="0"/>
+					<xsd:element name="PNMNODID" type="tns:String30" minOccurs="0"/>
+					<xsd:element name="ActionByDepartment" type="tns:String255" minOccurs="0"><!-- changes added by siva -->
+					<!--	 <xsd:simpleType>
+                           <xsd:restriction base="xsd:string">
+                              <xsd:enumeration value="Yes"/>
+			      <xsd:enumeration value="No"/>
+                              </xsd:restriction>
+			     </xsd:simpleType>-->
+					</xsd:element>
+					<xsd:element name="DateNODIssued" type="tns:DateType" minOccurs="0"/>
+					<xsd:element name="PlanOfCorrectionDueDate" type="tns:DateType" minOccurs="0"/>
+					<xsd:element name="PlanOfCorrectionReceivedDate" type="tns:DateType"
+						minOccurs="0"/>
+					<xsd:element name="PlanOfCorrectionAcceptedDate" type="tns:DateType"
+						minOccurs="0"/>
+					<xsd:element name="RevisedPlanOfCorrectionDate" type="tns:DateType"
+						minOccurs="0"/>
+					<xsd:element name="RevisedPlanOfCorrectionDueDate" type="tns:DateType"
+						minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element ibmSchExtn:docRoot="true" name="SendProviderIncidentRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="tns:MessageHeader" minOccurs="1"/>
+						<xsd:element name="Payload">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="SendProviderIncidentInfo"
+										type="tns:SendProviderIncidentRequest"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ibmSchExtn:docRoot="true" name="SendProviderIncidentResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+				<xsd:element name="SITransactionKey" type="tns:String32" minOccurs="0"/>
+				<xsd:element name="ModuleTransactionId" type="tns:String50" minOccurs="0"/>
+				<xsd:element name="AdditionalModuleTransactionId" type="tns:String50" minOccurs="0"/>
+				<xsd:element name="ResponseCode" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ResponseType" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="Success"/>
+							<xsd:enumeration value="Failure"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="ResponseMessage" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ResponseDetails" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ibmSchExtn:docRoot="true" name="UpdateProviderIncidentStatusRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="tns:MessageHeader" minOccurs="1"/>
+						<xsd:element name="Payload">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="UpdateProviderIncidentStatusInfo"
+										type="tns:UpdateProviderIncidentStatusInfo"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ibmSchExtn:docRoot="true" name="UpdateProviderIncidentStatusResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+				<xsd:element name="SITransactionKey" type="tns:String32" minOccurs="0"/>
+				<xsd:element name="ModuleTransactionId" type="tns:String50" minOccurs="0"/>
+				<xsd:element name="AdditionalModuleTransactionId" type="tns:String50" minOccurs="0"/>
+				<xsd:element name="ResponseCode" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ResponseType" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="Success"/>
+							<xsd:enumeration value="Failure"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="ResponseMessage" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ResponseDetails" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</types>
+
+	<message name="sendProviderIncidentRequestMsg">
+		<part element="tns:SendProviderIncidentRequest" name="parameters"/>
+	</message>
+	<message name="sendProviderIncidentResponseMsg">
+		<part element="tns:SendProviderIncidentResponse" name="parameters"/>
+	</message>
+	<message name="updateProviderIncidentStatusRequestMsg">
+		<part element="tns:UpdateProviderIncidentStatusRequest" name="parameters"/>
+	</message>
+	<message name="updateProviderIncidentStatusResponseMsg">
+		<part element="tns:UpdateProviderIncidentStatusResponse" name="parameters"/>
+	</message>
+
+
+	<message name="sendProviderIncidentFault">
+		<part element="tns:Fault" name="parameters"/>
+	</message>
+	<message name="updateProviderIncidentStatusFault">
+		<part element="tns:Fault" name="parameters"/>
+	</message>
+
+
+	<portType name="IncidentManagementSoapPortType">
+		<operation name="sendProviderIncident">
+			<input message="tns:sendProviderIncidentRequestMsg"/>
+			<output message="tns:sendProviderIncidentResponseMsg"/>
+			<fault message="tns:sendProviderIncidentFault" name="fault"/>
+		</operation>
+		<operation name="updateProviderIncidentStatus">
+			<input message="tns:updateProviderIncidentStatusRequestMsg"/>
+			<output message="tns:updateProviderIncidentStatusResponseMsg"/>
+			<fault message="tns:updateProviderIncidentStatusFault" name="fault"/>
+		</operation>
+
+	</portType>
+	<binding name="incidentManagementSoap" type="tns:IncidentManagementSoapPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="sendProviderIncident">
+			<soap:operation soapAction="http://mes.gov/sendProviderIncident" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="updateProviderIncidentStatus">
+			<soap:operation soapAction="http://mes.gov/updateProviderIncidentStatus"
+				style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</fault>
+		</operation>
+
+	</binding>
+	<service name="IncidentManagementService">
+		<port binding="tns:incidentManagementSoap" name="incidentManagementSoap">
+			<soap:address location="http://localhost:7800/incidentManagement/serviceentrypoint"/>
+		</port>
+	</service>
+
+</definitions>

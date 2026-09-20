@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://ohio.gov/AddUpdateResponse" xmlns:tns="http://xmlns.example.com/1590693688436" xmlns:ns4="http://ohio.gov/SearchResponses" xmlns:ns0="http://ohio.gov/InquireRequest" xmlns:ns3="http://ohio.gov/SearchRequest" xmlns:ns1="http://ohio.gov/HospiceRequestResponse" name="Untitled" targetNamespace="http://xmlns.example.com/1590693688436" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns="http://ohio.gov/AddUpdateResponse" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ohio.gov/AddUpdateResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:annotation>
+        <xs:documentation>
+This document contains the response elements when a Hospice application is added or updated into the MITS system 
+</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType name="str1">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="AddUpdateResponse">
+        <xs:annotation>
+          <xs:documentation>
+					This element contains the response elements.
+			</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ResponseHeader">
+              <xs:annotation>
+                <xs:documentation>
+									This element contains the response header elements.
+								</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="SITransactionKey">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="32" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="ModuleTransactionId">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="AdditionalModuleTransactionId">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="ResponseCode" type="xs:string" />
+                  <xs:element minOccurs="0" name="ResponseType">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="Success" />
+                        <xs:enumeration value="Failure" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="ResponseMessage" type="xs:string" />
+                  <xs:element minOccurs="0" name="ResponseDetails" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Response">
+              <xs:annotation>
+                <xs:documentation>
+						This element contains the response elements.
+						</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="HospiceTrackNo" type="xs:int" />
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Attachments">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="AttachID" type="xs:string" />
+                        <xs:element name="AttachType" type="xs:string" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" name="BenefitPeriods">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="PhyNPI" type="xs:string" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                        <xs:element name="BenPeriodType" type="xs:int" />
+                        <xs:element name="BenPeriodEffDate" type="xs:date" />
+                        <xs:element name="BenPeriodEndDate" type="xs:date" />
+                        <xs:element minOccurs="0" name="BenUpdateReason" type="xs:string" />
+                        <xs:element name="IDGPhyNPI" type="xs:string" />
+                        <xs:element name="EnrollStatus" type="ns2:str1" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Errors">
+              <xs:annotation>
+                <xs:documentation>
+							This element contains the error response 
+						</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ErrorCode" type="xs:string" />
+                  <xs:element name="SevCode" type="xs:string" />
+                  <xs:element name="ErrorDesc" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns="http://ohio.gov/SearchRequest" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ohio.gov/SearchRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:annotation>
+        <xs:documentation>
+			This document contains the elements to search for existing Hospice applications in MITS. 
+		</xs:documentation>
+      </xs:annotation>
+      <xs:element name="SearchRequest">
+        <xs:annotation>
+          <xs:documentation>
+				This element contains the request elements to to search for existing Hospice applications in MITS.
+			</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="MessageHeader">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="1" name="BusinessFlow">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:pattern value="[S|s][E|e][A|a][R|r][C|c][H|h][H|h][O|o][S|s][P|p][I|i][C|c][E|e]" />
+                        <xs:minLength value="1" />
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="1" name="StateCode">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:pattern value="[A|a][L|l]|[A|a][K|k]|[A|a][Z|z]|[A|a][R|r]|[C|c][A|a]|[C|c][O|o]|[C|c][T|t]|[D|d][E|e]|[F|f][L|l]|[G|g][A|a]|[H|h][I|i]|[I|i][D|d]|[I|i][L|l]|[I|i][N|n]|[I|i][A|a]|[K|k][S|s]|[K|k][Y|y]|[L|l][A|a]|[M|m][E|e]|[M|m][D|d]|[M|m][A|a]|[M|m][I|i]|[M|m][N|n]|[M|m][S|s]|[M|m][O|o]|[M|m][T|t]|[N|n][E|e]|[N|n][V|v]|[N|n][H|h]|[N|n][J|j]|[N|n][M|m]|[N|n][Y|y]|[N|n][C|c]|[N|n][D|d]|[O|o][H|h]|[O|o][K|k]|[O|o][R|r]|[P|p][A|a]|[R|r][I|i]|[S|s][C|c]|[S|s][D|d]|[T|t][N|n]|[T|t][X|x]|[U|u][T|t]|[V|v][T|t]|[V|v][A|a]|[W|w][A|a]|[W|w][V|v]|[W|w][I|i]|[W|w][Y|y]" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="1" name="RequestorSystem">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="PNM" />
+                        <xs:enumeration value="HealthCheck" />
+                        <xs:minLength value="1" />
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="1" maxOccurs="1" name="SubscriberSystem">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="1" maxOccurs="10" name="Subscriber">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="MITS" />
+                              <xs:minLength value="1" />
+                              <xs:maxLength value="50" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="ModuleTransactionId">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="AdditionalModuleTransactionId">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="1" name="RequestTimestamp">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:dateTime">
+                        <xs:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="SITransactionKey">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="32" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Payload">
+              <xs:annotation>
+                <xs:documentation>
+						This element contains the request or response elements of a Hospice application.
+							</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="HospiceTrackNo" type="xs:int" />
+                  <xs:element minOccurs="0" name="RecipID" type="xs:string" />
+                  <xs:element name="ProvMedID" type="xs:string" />
+                  <xs:element minOccurs="0" name="ProvNPI" type="xs:string" />
+                  <xs:element minOccurs="0" default="1" name="Offset" type="xs:int" />
+                  <xs:element minOccurs="0" name="Count" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns="http://ohio.gov/SearchResponses" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ohio.gov/SearchResponses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:annotation>
+        <xs:documentation>
+			This document contains the elements to search for existing Hospice applications in MITS. 
+		</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType name="str1">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="SearchResponses">
+        <xs:annotation>
+          <xs:documentation>
+				This element contains the response elements.
+			</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ResponseHeader">
+              <xs:annotation>
+                <xs:documentation>
+									This element contains the response header elements.
+								</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="SITransactionKey">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="32" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="ModuleTransactionId">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="AdditionalModuleTransactionId">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="ResponseCode" type="xs:string" />
+                  <xs:element minOccurs="0" name="ResponseType">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="Success" />
+                        <xs:enumeration value="Failure" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="ResponseMessage" type="xs:string" />
+                  <xs:element minOccurs="0" name="ResponseDetails" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Response">
+              <xs:annotation>
+                <xs:documentation>
+						This element contains the response elements.
+					</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="HospiceTrackNo" type="xs:int" />
+                  <xs:element name="RecipID" type="xs:string" />
+                  <xs:element name="RecipName" type="xs:string" />
+                  <xs:element name="RecipBirthDate" type="xs:date" />
+                  <xs:element name="ElectionDate" type="xs:date" />
+                  <xs:element name="SubmissionDate" type="xs:date" />
+                  <xs:element name="BenPeriodEffDate" type="xs:date" />
+                  <xs:element name="BenPeriodEndDate" type="xs:date" />
+                  <xs:element name="Status" type="ns4:str1" />
+                  <xs:element name="DenialReason" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Errors">
+              <xs:annotation>
+                <xs:documentation>
+								This element contains the error response 
+						</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ErrorCode" type="xs:string" />
+                  <xs:element name="SevCode" type="xs:string" />
+                  <xs:element name="ErrorDesc" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns="http://ohio.gov/HospiceRequestResponse" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ohio.gov/HospiceRequestResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="InquireResponse">
+        <xs:annotation>
+          <xs:documentation>
+This element contains the response elements to inquire the detail for an existing Hospice application from MITS.
+</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ResponseHeader">
+              <xs:annotation>
+                <xs:documentation>
+									This element contains the response header elements.
+								</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="SITransactionKey">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="32" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="ModuleTransactionId">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="AdditionalModuleTransactionId">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="ResponseCode" type="xs:string" />
+                  <xs:element minOccurs="0" name="ResponseType">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="Success" />
+                        <xs:enumeration value="Failure" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="ResponseMessage" type="xs:string" />
+                  <xs:element minOccurs="0" name="ResponseDetails" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="HospiceRequestResponse">
+              <xs:annotation>
+                <xs:documentation>
+This element contains the request or response elements of a Hospice application.
+</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="HospiceTrackNo" type="xs:int" />
+                  <xs:element name="RecipID" type="xs:string" />
+                  <xs:element name="ActionType" type="xs:string" />
+                  <xs:element name="ConsBirthDate" type="xs:date" />
+                  <xs:element name="ConsFirstName" type="xs:string" />
+                  <xs:element name="ConsLastName" type="xs:string" />
+                  <xs:element maxOccurs="unbounded" name="ServiceCountyState">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="County" type="xs:string" />
+                        <xs:element name="CountyEffDate" type="xs:date" />
+                        <xs:element name="CountyEndDate" type="xs:date" />
+                        <xs:element name="State" type="xs:string" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ElectionDisenrollDates">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="DisenrollDate" type="xs:date" />
+                        <xs:element name="ElectionDate" type="xs:date" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="LongTermCareFacility">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="HLTCFEffDate" type="xs:date" />
+                        <xs:element name="HLTCFEndDate" type="xs:date" />
+                        <xs:element name="HLTCFProvMedID" type="xs:string" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" name="BenefitPeriods">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="PhyNPI" type="xs:string" />
+                        <xs:element minOccurs="0" name="PhyOralCertDate" type="xs:date" />
+                        <xs:element name="PhyWritCertDate" type="xs:date" />
+                        <xs:element name="BenPeriodType" type="xs:int" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                        <xs:element name="BenPeriodEffDate" type="xs:date" />
+                        <xs:element name="BenPeriodEndDate" type="xs:date" />
+                        <xs:element minOccurs="0" name="BenUpdateReason" type="xs:string" />
+                        <xs:element name="Status" type="ns1:str1" />
+                        <xs:element name="IDGPhyNPI" type="xs:string" />
+                        <xs:element minOccurs="0" name="IDGPhyOralCertDate" type="xs:date" />
+                        <xs:element name="IDGPhyWritCertDate" type="xs:date" />
+                        <xs:element minOccurs="0" name="SubmissionDate" type="xs:date" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" name="DiagnosisCodes">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="DiagEffDate" type="xs:date" />
+                        <xs:element name="DiagEndDate" type="xs:date" />
+                        <xs:element name="PrimeTermDiag" type="xs:string" />
+                        <xs:element minOccurs="0" name="TermDiag2" type="xs:string" />
+                        <xs:element minOccurs="0" name="TermDiag3" type="xs:string" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="OtherPayerInfo">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="PayerEffDate" type="xs:date" />
+                        <xs:element name="PayerEndDate" type="xs:date" />
+                        <xs:element name="PayerName" type="xs:string" />
+                        <xs:element name="PayerType" type="xs:string" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" name="ProvService">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="HospiceProvID" type="xs:string" />
+                        <xs:element name="SpanEffDate" type="xs:date" />
+                        <xs:element name="SpanEndDate" type="xs:date" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Attachments">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="AttachID" type="xs:string" />
+                        <xs:element name="AttachType" type="xs:string" />
+                        <xs:element minOccurs="0" name="AttachDate" type="xs:date" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="EpisodeOfCare">
+              <xs:annotation>
+                <xs:documentation>
+								This element contains the Episode of Care elements.
+							</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="PriceChangeDate" type="xs:date" />
+                  <xs:element name="Sequence" type="xs:int" />
+                  <xs:element name="StartDate" type="xs:date" />
+                  <xs:element name="EndDate" type="xs:date" />
+                  <xs:element name="NoBenefitDays" type="xs:int" />
+                  <xs:element name="NoCalendarDays" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Errors">
+              <xs:annotation>
+                <xs:documentation>
+								This element contains the error response 
+						</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ErrorCode" type="xs:string" />
+                  <xs:element name="SevCode" type="xs:string" />
+                  <xs:element name="ErrorDesc" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:simpleType name="str1">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="HospiceRequestResponse">
+        <xs:annotation>
+          <xs:documentation>
+					This element contains the request or response elements of a Hospice application.
+					</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="MessageHeader">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="1" name="BusinessFlow">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:pattern value="[A|a][D|d][D|d][U|u][P|p][D|d][A|a][T|t][E|e][H|h][O|o][S|s][P|p][I|i][C|c][E|e]" />
+                        <xs:minLength value="1" />
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="1" name="StateCode">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:pattern value="[A|a][L|l]|[A|a][K|k]|[A|a][Z|z]|[A|a][R|r]|[C|c][A|a]|[C|c][O|o]|[C|c][T|t]|[D|d][E|e]|[F|f][L|l]|[G|g][A|a]|[H|h][I|i]|[I|i][D|d]|[I|i][L|l]|[I|i][N|n]|[I|i][A|a]|[K|k][S|s]|[K|k][Y|y]|[L|l][A|a]|[M|m][E|e]|[M|m][D|d]|[M|m][A|a]|[M|m][I|i]|[M|m][N|n]|[M|m][S|s]|[M|m][O|o]|[M|m][T|t]|[N|n][E|e]|[N|n][V|v]|[N|n][H|h]|[N|n][J|j]|[N|n][M|m]|[N|n][Y|y]|[N|n][C|c]|[N|n][D|d]|[O|o][H|h]|[O|o][K|k]|[O|o][R|r]|[P|p][A|a]|[R|r][I|i]|[S|s][C|c]|[S|s][D|d]|[T|t][N|n]|[T|t][X|x]|[U|u][T|t]|[V|v][T|t]|[V|v][A|a]|[W|w][A|a]|[W|w][V|v]|[W|w][I|i]|[W|w][Y|y]" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="1" name="RequestorSystem">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="PNM" />
+                        <xs:enumeration value="HealthCheck" />
+                        <xs:minLength value="1" />
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="1" maxOccurs="1" name="SubscriberSystem">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="1" maxOccurs="10" name="Subscriber">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="MITS" />
+                              <xs:minLength value="1" />
+                              <xs:maxLength value="50" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="ModuleTransactionId">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="AdditionalModuleTransactionId">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="1" name="RequestTimestamp">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:dateTime">
+                        <xs:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="SITransactionKey">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="32" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Payload">
+              <xs:annotation>
+                <xs:documentation>
+								This element contains the request or response elements of a Hospice application.
+								</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="HospiceTrackNo" type="xs:int" />
+                  <xs:element name="RecipID" type="xs:string" />
+                  <xs:element name="ActionType" type="xs:string" />
+                  <xs:element name="ConsBirthDate" type="xs:date" />
+                  <xs:element name="ConsFirstName" type="xs:string" />
+                  <xs:element name="ConsLastName" type="xs:string" />
+                  <xs:element maxOccurs="unbounded" name="ServiceCountyState">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="County" type="xs:string" />
+                        <xs:element name="CountyEffDate" type="xs:date" />
+                        <xs:element name="CountyEndDate" type="xs:date" />
+                        <xs:element name="State" type="xs:string" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ElectionDisenrollDates">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="DisenrollDate" type="xs:date" />
+                        <xs:element name="ElectionDate" type="xs:date" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="LongTermCareFacility">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="HLTCFEffDate" type="xs:date" />
+                        <xs:element name="HLTCFEndDate" type="xs:date" />
+                        <xs:element name="HLTCFProvMedID" type="xs:string" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" name="BenefitPeriods">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="PhyNPI" type="xs:string" />
+                        <xs:element minOccurs="0" name="PhyOralCertDate" type="xs:date" />
+                        <xs:element name="PhyWritCertDate" type="xs:date" />
+                        <xs:element name="BenPeriodType" type="xs:int" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                        <xs:element name="BenPeriodEffDate" type="xs:date" />
+                        <xs:element name="BenPeriodEndDate" type="xs:date" />
+                        <xs:element minOccurs="0" name="BenUpdateReason" type="xs:string" />
+                        <xs:element name="Status" type="ns1:str1" />
+                        <xs:element name="IDGPhyNPI" type="xs:string" />
+                        <xs:element minOccurs="0" name="IDGPhyOralCertDate" type="xs:date" />
+                        <xs:element name="IDGPhyWritCertDate" type="xs:date" />
+                        <xs:element minOccurs="0" name="SubmissionDate" type="xs:date" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" name="DiagnosisCodes">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="DiagEffDate" type="xs:date" />
+                        <xs:element name="DiagEndDate" type="xs:date" />
+                        <xs:element name="PrimeTermDiag" type="xs:string" />
+                        <xs:element minOccurs="0" name="TermDiag2" type="xs:string" />
+                        <xs:element minOccurs="0" name="TermDiag3" type="xs:string" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="OtherPayerInfo">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="PayerEffDate" type="xs:date" />
+                        <xs:element name="PayerEndDate" type="xs:date" />
+                        <xs:element name="PayerName" type="xs:string" />
+                        <xs:element name="PayerType" type="xs:string" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" name="ProvService">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="HospiceProvID" type="xs:string" />
+                        <xs:element name="SpanEffDate" type="xs:date" />
+                        <xs:element name="SpanEndDate" type="xs:date" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Attachments">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="AttachID" type="xs:string" />
+                        <xs:element name="AttachType" type="xs:string" />
+                        <xs:element minOccurs="0" name="AttachDate" type="xs:date" />
+                        <xs:element name="BenPeriod" type="xs:int" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns="http://ohio.gov/InquireRequest" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ohio.gov/InquireRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:annotation>
+        <xs:documentation>
+This document contains the elements to inquire the detail for an existing Hospice application from MITS.
+</xs:documentation>
+      </xs:annotation>
+      <xs:element name="InquireRequest">
+        <xs:annotation>
+          <xs:documentation>
+This element contains the request elements to inquire the detail for an existing Hospice application from MITS.
+</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="MessageHeader">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="1" name="BusinessFlow">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:pattern value="[I|i][N|n][Q|q][U|u][I|i][R|r][E|e][H|h][O|o][S|s][P|p][I|i][C|c][E|e]" />
+                        <xs:minLength value="1" />
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="1" name="StateCode">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:pattern value="[A|a][L|l]|[A|a][K|k]|[A|a][Z|z]|[A|a][R|r]|[C|c][A|a]|[C|c][O|o]|[C|c][T|t]|[D|d][E|e]|[F|f][L|l]|[G|g][A|a]|[H|h][I|i]|[I|i][D|d]|[I|i][L|l]|[I|i][N|n]|[I|i][A|a]|[K|k][S|s]|[K|k][Y|y]|[L|l][A|a]|[M|m][E|e]|[M|m][D|d]|[M|m][A|a]|[M|m][I|i]|[M|m][N|n]|[M|m][S|s]|[M|m][O|o]|[M|m][T|t]|[N|n][E|e]|[N|n][V|v]|[N|n][H|h]|[N|n][J|j]|[N|n][M|m]|[N|n][Y|y]|[N|n][C|c]|[N|n][D|d]|[O|o][H|h]|[O|o][K|k]|[O|o][R|r]|[P|p][A|a]|[R|r][I|i]|[S|s][C|c]|[S|s][D|d]|[T|t][N|n]|[T|t][X|x]|[U|u][T|t]|[V|v][T|t]|[V|v][A|a]|[W|w][A|a]|[W|w][V|v]|[W|w][I|i]|[W|w][Y|y]" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="1" name="RequestorSystem">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="PNM" />
+                        <xs:enumeration value="HealthCheck" />
+                        <xs:minLength value="1" />
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="1" maxOccurs="1" name="SubscriberSystem">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="1" maxOccurs="10" name="Subscriber">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="MITS" />
+                              <xs:minLength value="1" />
+                              <xs:maxLength value="50" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="ModuleTransactionId">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="AdditionalModuleTransactionId">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="1" name="RequestTimestamp">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:dateTime">
+                        <xs:pattern value="\d{4}[-]\d{2}[-]\d{2}[T]\d{2}[:]\d{2}[:]\d{2}" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="SITransactionKey">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="32" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Payload">
+              <xs:annotation>
+                <xs:documentation>
+									This element contains the request or response elements of a Hospice application.
+									</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="HospiceTrackNo" type="xs:int" />
+                  <xs:element name="ProvMedID" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="InquireRequest">
+    <wsdl:part name="parameters" element="ns0:InquireRequest" />
+  </wsdl:message>
+  <wsdl:message name="InquireResponse">
+    <wsdl:part name="parameters" element="ns1:InquireResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdateRequest">
+    <wsdl:part name="parameters" element="ns1:HospiceRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdateResponse">
+    <wsdl:part name="parameters" element="ns2:AddUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchRequest">
+    <wsdl:part name="parameters" element="ns3:SearchRequest" />
+  </wsdl:message>
+  <wsdl:message name="SearchResponses">
+    <wsdl:part name="parameters" element="ns4:SearchResponses" />
+  </wsdl:message>
+  <wsdl:portType name="portType">
+    <wsdl:operation name="InquireHospice">
+      <wsdl:input message="tns:InquireRequest" />
+      <wsdl:output message="tns:InquireResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdateHospice">
+      <wsdl:input message="tns:AddUpdateRequest" />
+      <wsdl:output message="tns:AddUpdateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchHospice">
+      <wsdl:input message="tns:SearchRequest" />
+      <wsdl:output message="tns:SearchResponses" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HospiceEndpointBinding" type="tns:portType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InquireHospice">
+      <soap:operation soapAction="/Processes/Hospice/Starter/HospiceService.serviceagent/HospiceEndpoint/InquireHospice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdateHospice">
+      <soap:operation soapAction="/Processes/Hospice/Starter/HospiceService.serviceagent/HospiceEndpoint/AddUpdateHospice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchHospice">
+      <soap:operation soapAction="/Processes/Hospice/Starter/HospiceService.serviceagent/HospiceEndpoint/SearchHospice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HospiceService">
+    <wsdl:port name="HospiceEndpoint" binding="tns:HospiceEndpointBinding">
+      <soap:address location="http://localhost:4001/Processes/Hospice/Starter/HospiceService.serviceagent/HospiceEndpoint" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

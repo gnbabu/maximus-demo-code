@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://mes.gov/ClaimResponse" xmlns:cdt="http://mes.gov/claims" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://mes.gov/ClaimResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Claims_Datatypes.xsd" namespace="http://mes.gov/claims" />
+  <xs:element name="ClaimResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="1" name="hdrPlan">
+                <xs:complexType>
+                  <xs:attribute name="cde_pgm_health" type="xs:string" use="required" />
+                  <xs:attribute name="amt_encountered" type="xs:decimal" />
+                  <xs:attribute name="qty_allowed" type="xs:decimal" />
+                  <xs:attribute name="amt_allowed" type="xs:decimal" />
+                  <xs:attribute name="amt_paid" type="xs:decimal" />
+                  <xs:attribute name="amt_copay" type="xs:decimal" />
+                  <xs:attribute name="amt_state_share" type="xs:decimal" />
+                  <xs:attribute name="cde_fund_code" type="xs:string" use="required" />
+                  <xs:attribute name="cde_aid_category" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="error">
+                <xs:complexType>
+                  <xs:attribute name="index" type="xs:short" use="required" />
+                  <xs:attribute name="cde_esc" type="xs:short" use="required" />
+                  <xs:attribute name="cde_eob" type="xs:string" use="required" />
+                  <xs:attribute name="cde_adj_rsn" type="xs:string" use="required" />
+                  <xs:attribute name="cde_remark" type="xs:string" />
+                  <xs:attribute name="cde_preAdjudicationError" type="xs:string" />
+                  <xs:attribute name="preAdjudicationParms" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element maxOccurs="unbounded" name="detail">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="detailPlan">
+                      <xs:complexType>
+                        <xs:attribute name="cde_pgm_health" type="xs:string" use="required" />
+                        <xs:attribute name="amt_encountered" type="xs:decimal" />
+                        <xs:attribute name="qty_allowed" type="xs:decimal" />
+                        <xs:attribute name="ind_pricing" type="xs:string" />
+                        <xs:attribute name="amt_allowed" type="xs:decimal" />
+                        <xs:attribute name="amt_paid" type="xs:decimal" />
+                        <xs:attribute name="amt_copay" type="xs:decimal" />
+                        <xs:attribute name="amt_state_share" type="xs:decimal" />
+                        <xs:attribute name="cde_fund_code" type="xs:string" use="required" />
+                        <xs:attribute name="cde_aid_category" type="xs:string" use="required" />
+                        <xs:attribute name="cde_rate_type" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="error">
+                      <xs:complexType>
+                        <xs:attribute name="index" type="xs:short" />
+                        <xs:attribute name="cde_esc" type="xs:short" />
+                        <xs:attribute name="cde_eob" type="xs:string" />
+                        <xs:attribute name="cde_adj_rsn" type="xs:string" />
+                        <xs:attribute name="num_dtl" type="xs:int" />
+                        <xs:attribute name="cde_remark" type="xs:string" />
+                        <xs:attribute name="cde_preAdjudicationError" type="xs:string" />
+                        <xs:attribute name="preAdjudicationParms" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="num_dtl" type="xs:decimal" />
+                  <xs:attribute name="qty_units_allowed" type="xs:decimal" />
+                  <xs:attribute name="amt_allowed" type="xs:decimal" />
+                  <xs:attribute name="cde_clm_status" type="xs:string" />
+                  <xs:attribute name="amt_copay" type="xs:decimal" />
+                  <xs:attribute name="amt_tpl" type="xs:decimal" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="amt_paid" type="xs:decimal" use="required" />
+            <xs:attribute name="num_icn" type="xs:long" use="required" />
+            <xs:attribute name="cde_clm_status" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SITransactionKey" type="cdt:String32" />
+        <xs:element name="ResponseType" type="cdt:String3" />
+        <xs:element name="ResponseMessage" type="cdt:String30" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

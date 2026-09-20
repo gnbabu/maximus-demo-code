@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://itsws.prodapps.dodd.ohio.gov/Abuser/xsd2.xsd" namespace="http://schemas.datacontract.org/2004/07/ITS_WS.DTO" />
+  <xs:element name="GetAbuserList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hitCount" type="xs:int" />
+        <xs:element minOccurs="0" name="totalCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbuserListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ITS_WS.DTO" minOccurs="0" name="GetAbuserListResult" nillable="true" type="q1:ArrayOfAbuser" />
+        <xs:element minOccurs="0" name="totalCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbuserListSuccessfulBySSN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ssn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbuserListSuccessfulBySSNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ITS_WS.DTO" minOccurs="0" name="GetAbuserListSuccessfulBySSNResult" nillable="true" type="q2:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbuserListByLastNames">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbuserListByLastNamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ITS_WS.DTO" minOccurs="0" name="GetAbuserListByLastNamesResult" nillable="true" type="q3:ArrayOfAbuser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbuserListSuccessfulByLastNames">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbuserListSuccessfulByLastNamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ITS_WS.DTO" minOccurs="0" name="GetAbuserListSuccessfulByLastNamesResult" nillable="true" type="q4:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbuserListBySSNAndLastName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ssn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="emailAdress" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbuserListBySSNAndLastNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ITS_WS.DTO" minOccurs="0" name="GetAbuserListBySSNAndLastNameResult" nillable="true" type="q5:ArrayOfAbuser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbuserListBySSN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ssn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="emailaddress" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbuserListBySSNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ITS_WS.DTO" minOccurs="0" name="GetAbuserListBySSNResult" nillable="true" type="q6:Abuser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://ohio.gov/AddUpdateResponse" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ohio.gov/AddUpdateResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>
+This document contains the response elements when a Hospice application is added or updated into the MITS system 
+</xs:documentation>
+  </xs:annotation>
+  <xs:element name="AddUpdateResponse">
+    <xs:annotation>
+      <xs:documentation>
+					This element contains the response elements.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" name="Response">
+          <xs:annotation>
+            <xs:documentation>
+						This element contains the response elements.
+						</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HospiceTrackNo" type="xs:int" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="Attachments">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AttachID" type="xs:string" />
+                    <xs:element name="AttachType" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element maxOccurs="unbounded" name="BenefitPeriods">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PhyNPI" type="xs:string" />
+                    <xs:element name="BenPeriod" type="xs:int" />
+                    <xs:element name="BenPeriodEffDate" type="xs:date" />
+                    <xs:element name="BenPeriodEndDate" type="xs:date" />
+                    <xs:element minOccurs="0" name="BenUpdateReason" type="xs:string" />
+                    <xs:element name="IDGPhyNPI" type="xs:string" />
+                    <xs:element name="EnrollStatus" type="str1" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Errors">
+          <xs:annotation>
+            <xs:documentation>
+							This element contains the error response 
+						</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ErrorCode" type="xs:string" />
+              <xs:element name="SevCode" type="xs:string" />
+              <xs:element name="ErrorDesc" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="str1">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

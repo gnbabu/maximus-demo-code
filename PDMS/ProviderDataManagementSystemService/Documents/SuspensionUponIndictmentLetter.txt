@@ -1,0 +1,75 @@
+
+<header>
+<style type="text/css">								
+#Mytable{font-family:'Arial'; font-size:[[FONTSIZE]];width:100%}										
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+     
+<tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<p>
+<br />
+Dear Provider:
+</p>
+<p>
+Pursuant to Ohio Revised Code (ORC) Section 5164.37 and Ohio Administrative Code (OAC) 5160-1-17.5(B), this certified letter, return receipt requested, serves as notice upon you that the Ohio Department of Medicaid (ODM) has suspended your Medicaid Provider Agreement, (Medicaid ID) in Ohio effective Month, Day Year.</p>
+<p>On or about Month, Day Year an indictment was issued to you in the Common Pleas Court of [[CountyName]] County, Ohio for “offense type”, in violation of Ohio Revised Code, (O.R.C.) Code.</p>
+
+<p>The offense in the indictment meets the criteria established in ORC Section 5164.37, and in OAC 5160-1-17.5(B)(2), that require ODM to suspend the provider agreement held by (Name of Provider). ODM has obtained a copy of the indictment. As a result of the indictment, ODM is required to suspend Medicaid Provider agreement number [[MEDICAID_ID]] until the proceedings in the criminal case are completed through conviction, dismissal of the indictment, plea, or finding of not guilty. If ODM commences a process to terminate the provider agreement, the suspension will remain in effect until the termination process is complete.</p>
+<p>While under suspension, you are prohibited from doing any of the following: (1) providing, arranging for, or ordering services to Medicaid consumers <u>including those for which it may have received prior authorization but not yet provided;</u> (2) providing services to, or owning, any other Medicaid provider or risk contractor; or (3) receiving reimbursement for any services in the form of direct payments from ODM or indirect payments of Medicaid funds in the form of salary, shared fees, contracts, kickbacks, or rebates from or through any participating provider or risk contractor.</p>
+<p><b>Please note that this is not an audit of your claims and does not preclude an audit of your records.  ODM and/or Auditor of State may conduct an audit of this time period, which may include these records, at some time in the future. </b></p>
+<p>Under ORC Section 5164.36 you may request a reconsideration of your suspension. A request for reconsideration is not subject to a hearing pursuant to Chapter 119 of the Revised Code. A request for reconsideration must be made no later than <b>thirty (30) calendar days after receipt of this notice.</b> The notice will be deemed received by the provider on the date that the return receipt from certified mail is signed.  If the provider fails to claim the notice, the notice will be deemed received by the provider on the date that ODM receives a certificate of mailing.  In requesting a reconsideration, the provider must submit written information and documents to ODM. The information and documents may pertain to any of the following issues:</p>
+<p>
+<ol>
+<li>Whether the determination to suspend the provider agreement was based on a mistake of fact, other than the validity of the indictment;</li>
+<li>Whether any offense charged in the indictment resulted from an offense specified in division (A)(3)(a) to (e) of section 109.572 of the Revised Code.</li>
+<li>Whether the provider can demonstrate that the provider did not directly or indirectly sanction the action of its authorized agent that resulted in the indictment.</li>
+</ol>
+</p>
+<p>A request for reconsideration must be submitted to:</p>
+<div style="text-align:center"><b>
+<p>Maureen M. Corcoran, Director</br>
+Ohio Department of Medicaid</br>
+PO Box 182709</br>
+Columbus, Ohio 43218-2709</br>
+</b></div>
+
+<p>The information and documents submitted in the request for reconsideration will be reviewed. After the review, the suspension may be affirmed, reversed, or modified. ODM will notify the affected provider of the result of the review no later than forty-five (45) days after receiving the request.  Decisions made by the deputy director of ODM are not appealable or subject to further reconsideration. If you have any questions regarding this notice, please contact Alan Kidder, Bureau of Network Management Compliance Unit at (614) 752-3055.</p>
+
+<br />
+Sincerely,
+<br />
+Ohio Medicaid Provider Enrollment
+</td>
+</tr>
+</table>

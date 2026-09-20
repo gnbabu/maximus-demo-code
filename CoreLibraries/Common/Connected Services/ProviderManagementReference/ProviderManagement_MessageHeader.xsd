@@ -1,0 +1,159 @@
+<xs:schema elementFormDefault="qualified" targetNamespace="http://mes.gov/providermanagement" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mes.gov/providermanagement">
+   <xs:include schemaLocation="ProviderManagement_Datatypes.xsd"/>
+   <xs:element name="MessageHeader">
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="tns:InqMessageHeader">
+               <xs:sequence>
+                  <xs:element name="SITransactionKey" type="tns:String32" minOccurs="0" maxOccurs="1"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:complexType name="InqMessageHeader">
+      <xs:sequence>
+         <xs:element name="BusinessFlow" minOccurs="1" maxOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:pattern value="[E|e][N|n][R|r][O|o][L|l][L|l][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[T|t][E|e][R|r][M|m][I|i][N|n][A|a][T|t][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[C|c][R|r][E|e][A|a][T|t][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[U|u][P|p][D|d][A|a][T|t][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[D|d][I|i][S|s][E|e][N|n][R|r][O|o][L|l][L|l][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[M|m][E|e][R|r][G|g][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[U|u][N|n][M|m][E|e][R|r][G|g][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[I|i][N|n][Q|q][U|u][I|i][R|r][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[I|i][N|n][Q|q][U|u][I|i][R|r][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r][H|h][I|i][S|s][T|t][O|o][R|r][Y|y]|[C|c][R|r][E|e][A|a][T|t][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r][R|r][A|a][T|t][E|e][S|s]|[U|u][P|p][D|d][A|a][T|t][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r][R|r][A|a][T|t][E|e][S|s]"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="StateCode" minOccurs="1" maxOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:pattern value="[A|a][L|l]|[A|a][K|k]|[A|a][Z|z]|[A|a][R|r]|[C|c][A|a]|[C|c][O|o]|[C|c][T|t]|[D|d][E|e]|[F|f][L|l]|[G|g][A|a]|[H|h][I|i]|[I|i][D|d]|[I|i][L|l]|[I|i][N|n]|[I|i][A|a]|[K|k][S|s]|[K|k][Y|y]|[L|l][A|a]|[M|m][E|e]|[M|m][D|d]|[M|m][A|a]|[M|m][I|i]|[M|m][N|n]|[M|m][S|s]|[M|m][O|o]|[M|m][T|t]|[N|n][E|e]|[N|n][V|v]|[N|n][H|h]|[N|n][J|j]|[N|n][M|m]|[N|n][Y|y]|[N|n][C|c]|[N|n][D|d]|[O|o][H|h]|[O|o][K|k]|[O|o][R|r]|[P|p][A|a]|[R|r][I|i]|[S|s][C|c]|[S|s][D|d]|[T|t][N|n]|[T|t][X|x]|[U|u][T|t]|[V|v][T|t]|[V|v][A|a]|[W|w][A|a]|[W|w][V|v]|[W|w][I|i]|[W|w][Y|y]"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="RequestorSystem" minOccurs="1" maxOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="50"/>
+                  <xs:pattern value="([\S+\s])*\S+\s*"/>
+                  <xs:enumeration value="MITS"/>
+                  <xs:enumeration value="FI"/>
+                  <xs:enumeration value="SPBM"/>
+                  <xs:enumeration value="PSM"/>
+                  <xs:enumeration value="PCW"/>
+                  <xs:enumeration value="PNM"/>
+                  <xs:enumeration value="HealthCheck"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <!--HMP-4088: Start of changes-->
+         <xs:element name="SubscriberSystem" minOccurs="1" maxOccurs="1">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="Subscriber" minOccurs="1" maxOccurs="10">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:minLength value="1"/>
+                           <xs:maxLength value="50"/>
+                           <xs:pattern value="([\S+\s])*\S+\s*"/>
+                           <xs:enumeration value="PSM"/>
+                           <xs:enumeration value="PCW"/>
+                           <xs:enumeration value="FI"/>
+                           <xs:enumeration value="MITS"/>
+                           <xs:enumeration value="SPBM"/>
+						   <xs:enumeration value="EVV"/>
+                           <xs:enumeration value="ALL"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <!--HMP-4088: End of changes-->
+         <xs:element name="ModuleTransactionId" type="tns:String50" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="AdditionalModuleTransactionId" type="tns:String50" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="RequestTimestamp" type="tns:MDateType" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="Fault">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="faultcode" type="xs:string" minOccurs="0"/>
+            <xs:element name="faultstring" type="xs:string" minOccurs="0"/>
+            <!--<xs:element name="detail"> 
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ErrorCode" type="xs:string" minOccurs="0"/>
+							<xs:element name="ErrorDetail" type="xs:string" minOccurs="0"/>
+							<xs:element name="SITransactionKey" type="xs:string" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>-->
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <!--CR166 Make all fields in InquireResponse MessageHeader as optional-->
+   <xs:complexType name="InqResMessageHeader">
+      <xs:sequence>
+         <xs:element name="BusinessFlow" minOccurs="0" maxOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:pattern value="[E|e][N|n][R|r][O|o][L|l][L|l][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[T|t][E|e][R|r][M|m][I|i][N|n][A|a][T|t][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[C|c][R|r][E|e][A|a][T|t][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[U|u][P|p][D|d][A|a][T|t][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[D|d][I|i][S|s][E|e][N|n][R|r][O|o][L|l][L|l][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[M|m][E|e][R|r][G|g][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[U|u][N|n][M|m][E|e][R|r][G|g][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[I|i][N|n][Q|q][U|u][I|i][R|r][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r]|[I|i][N|n][Q|q][U|u][I|i][R|r][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r][H|h][I|i][S|s][T|t][O|o][R|r][Y|y]|[C|c][R|r][E|e][A|a][T|t][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r][R|r][A|a][T|t][E|e][S|s]|[U|u][P|p][D|d][A|a][T|t][E|e][P|p][R|r][O|o][V|v][I|i][D|d][E|e][R|r][R|r][A|a][T|t][E|e][S|s]"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="StateCode" minOccurs="0" maxOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:pattern value="[A|a][L|l]|[A|a][K|k]|[A|a][Z|z]|[A|a][R|r]|[C|c][A|a]|[C|c][O|o]|[C|c][T|t]|[D|d][E|e]|[F|f][L|l]|[G|g][A|a]|[H|h][I|i]|[I|i][D|d]|[I|i][L|l]|[I|i][N|n]|[I|i][A|a]|[K|k][S|s]|[K|k][Y|y]|[L|l][A|a]|[M|m][E|e]|[M|m][D|d]|[M|m][A|a]|[M|m][I|i]|[M|m][N|n]|[M|m][S|s]|[M|m][O|o]|[M|m][T|t]|[N|n][E|e]|[N|n][V|v]|[N|n][H|h]|[N|n][J|j]|[N|n][M|m]|[N|n][Y|y]|[N|n][C|c]|[N|n][D|d]|[O|o][H|h]|[O|o][K|k]|[O|o][R|r]|[P|p][A|a]|[R|r][I|i]|[S|s][C|c]|[S|s][D|d]|[T|t][N|n]|[T|t][X|x]|[U|u][T|t]|[V|v][T|t]|[V|v][A|a]|[W|w][A|a]|[W|w][V|v]|[W|w][I|i]|[W|w][Y|y]"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="RequestorSystem" minOccurs="0" maxOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="50"/>
+                  <xs:pattern value="([\S+\s])*\S+\s*"/>
+                  <xs:enumeration value="MITS"/>
+                  <xs:enumeration value="FI"/>
+                  <xs:enumeration value="SPBM"/>
+                  <xs:enumeration value="PSM"/>
+                  <xs:enumeration value="PCW"/>
+                  <xs:enumeration value="PNM"/>
+                  <xs:enumeration value="HealthCheck"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <!--HMP-4088: Start of changes-->
+         <xs:element name="SubscriberSystem" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="Subscriber" minOccurs="0" maxOccurs="10">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:minLength value="1"/>
+                           <xs:maxLength value="50"/>
+                           <xs:pattern value="([\S+\s])*\S+\s*"/>
+                           <xs:enumeration value="PSM"/>
+                           <xs:enumeration value="PCW"/>
+                           <xs:enumeration value="FI"/>
+                           <xs:enumeration value="MITS"/>
+                           <xs:enumeration value="SPBM"/>
+						   <xs:enumeration value="EVV"/>
+                           <xs:enumeration value="ALL"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <!--HMP-4088: End of changes-->
+         <xs:element name="ModuleTransactionId" type="tns:String50" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="AdditionalModuleTransactionId" type="tns:String50" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="RequestTimestamp" type="tns:MDateType" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>
+<!--Version: 1.11.5-->
+<!--Change Description: CR 166-->
+<!--Change by: Gopala Yarram-->
+<!--Last updated: 1/20/2022-->
+<!--Updated Date: 04/05/2022-->

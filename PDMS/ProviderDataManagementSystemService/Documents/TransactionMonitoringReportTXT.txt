@@ -1,0 +1,37 @@
+﻿<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>[[REPORT_TITLE]]</title>
+			</head>
+			<body style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f9f9f9;">
+				<img src="data:image/png;base64,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" alt="MaximusLogo"/>
+				<br/>
+				<br/>
+				<table style="width: 100%; border-collapse: collapse; background-color: white; border: 1px solid #ddd;">
+					<!-- Header Section -->
+					<tr style="background-color: #345888; color: white;">
+						<td colspan="4" style="font-size: 16px; font-weight: bold; padding: 5px; text-align: left;">[[REPORT_TITLE]]</td>
+					</tr>
+					<!-- Status Section -->
+					<tr style="background-color: #e7e6e6;">
+						<td style="padding: 8px; font-weight: bold; border: 1px solid #ddd; width: 15%">Date:</td>
+						<td style="padding: 8px; border: 1px solid #ddd;width: 40%">[[REPORT_DATE]]</td>
+						<td style="padding: 8px; font-weight: bold; border: 1px solid #ddd;">Completed by:</td>
+						<td style="padding: 8px; border: 1px solid #ddd;">[[REPORT_USER]]</td>
+					</tr>
+					<tr style="background-color: #e7e6e6;">
+						<td colspan="1" style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Description:</td>
+						<td colspan="3" style="padding: 8px; border: 1px solid #ddd;">[[REPORT_DESCP]]</td>
+					</tr>
+				</table>
+				<br/>
+				<!-- Main Table -->
+		[[REPORT_TABLE]]
+		
+		<br/>
+				<br/>
+				<!-- Attachment Notes -->
+				<span style="font-style: italic">[[FINAL_NOTE]]</span>
+			</body>
+		</html>

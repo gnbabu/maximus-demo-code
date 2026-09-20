@@ -1,0 +1,10 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<p>Dear [[USERNAME]], </p>
+<p>The following provider's CMC or CPC primary Medicaid ID was terminated, please take appropriate action.</p>
+ 
+<p>MED ID: [[MEDICAIDID]].</p> 
+
+
+<p>Regards,<br />
+MAXIMUS Provider Screening and Enrollment Customer Service
+</div>

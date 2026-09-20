@@ -1,0 +1,140 @@
+<?xml version="1.0" standalone="yes"?>
+<PROVIDER_STAGINGs>
+  <xs:schema id="PROVIDER_STAGINGs" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="PROVIDER_STAGINGs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="PROVIDER_STAGING">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="PROVIDER_STAGING_PK" type="xs:int" minOccurs="0" />
+                <xs:element name="LAST_MODIFIED_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LAST_MODIFIED_USER" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="LAST_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="MIDDLE_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="FIRST_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="SUFFIX_NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="PHONE_VOICE" type="xs:decimal" minOccurs="0" />
+                <xs:element name="PHONE_FAX" type="xs:decimal" minOccurs="0" />
+                <xs:element name="COUNTRY" type="xs:string" minOccurs="0" />
+                <xs:element name="BIRTH_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="ATTEST_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LICENSE" type="xs:string" minOccurs="0" />
+                <xs:element name="STATE_LICENSE_CODE" type="xs:string" minOccurs="0" />
+                <xs:element name="LICENSE_TYPE_CODE" type="xs:string" minOccurs="0" />
+                <xs:element name="LICENSE_EFFECTIVE_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LICENSE_END_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="DEA_EFFECTIVE_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="DEA_END_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="PROVIDER_TYPE_CODE" type="xs:string" minOccurs="0" />
+                <xs:element name="PROVIDER_SPECIALTY_CODE" type="xs:string" minOccurs="0" />
+                <xs:element name="TAXONOMY_CODE" type="xs:string" minOccurs="0" />
+                <xs:element name="DISCLOSURE_REC" type="xs:string" minOccurs="0" />
+                <xs:element name="DISCLOSURE_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="ENROLLMENT_STATUS_CODE" type="xs:string" minOccurs="0" />
+                <xs:element name="TERM_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="PROVIDER_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="CAQH_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="DEA_NUMBER" type="xs:string" minOccurs="0" />
+                <xs:element name="SSN_ID" type="xs:decimal" minOccurs="0" />
+                <xs:element name="NPI_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="MEDICARE_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="TAX_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="STAGING_STATUS_ID" type="xs:int" minOccurs="0" />
+                <xs:element name="SAK_TRANS" type="xs:decimal" minOccurs="0" />
+                <xs:element name="CORRELATION_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="COUNTY_CODE" type="xs:decimal" minOccurs="0" />
+                <xs:element name="ERROR_CODE" type="xs:string" minOccurs="0" />
+                <xs:element name="STATUS_CODE" type="xs:string" minOccurs="0" />
+                <xs:element name="RecordStatus" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="PROVIDER_GROUP_STAGING">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="PROVIDER_GROUP_STAGING" type="xs:int" minOccurs="0" />
+                <xs:element name="PROVIDER_STAGING_PK" type="xs:int" minOccurs="0" />
+                <xs:element name="PROVIDER_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="NPI_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="TAX_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="GROUP_END_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LAST_MODIFIED_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LAST_MODIFIED_USER" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="RecordStatus" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ADDRESS_STAGING">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ADDRESS_STAGING_PK" type="xs:int" minOccurs="0" />
+                <xs:element name="PROVIDER_STAGING_PK" type="xs:int" minOccurs="0" />
+                <xs:element name="ADDRESS_STAGING_TYPE_ID" type="xs:int" minOccurs="0" />
+                <xs:element name="ADDRESS_STAGING_TYPE" type="xs:string" minOccurs="0" />
+                <xs:element name="NAME" type="xs:string" minOccurs="0" />
+                <xs:element name="ADDRESS_STREET1" type="xs:string" minOccurs="0" />
+                <xs:element name="ADDRESS_STREET2" type="xs:string" minOccurs="0" />
+                <xs:element name="ADDRESS_CITY" type="xs:string" minOccurs="0" />
+                <xs:element name="ADDRESS_STATE" type="xs:string" minOccurs="0" />
+                <xs:element name="ADDRESS_ZIP" type="xs:decimal" minOccurs="0" />
+                <xs:element name="ADDRESS_EMAIL" type="xs:string" minOccurs="0" />
+                <xs:element name="LAST_MODIFIED_DATE_TIME" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LAST_MODIFIED_USER" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+                <xs:element name="RecordStatus" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="Constraint1">
+        <xs:selector xpath=".//PROVIDER_STAGING" />
+        <xs:field xpath="PROVIDER_STAGING_PK" />
+      </xs:unique>
+      <xs:keyref name="PROVIDER_STAGING2ADDRESS_STAGING" refer="Constraint1">
+        <xs:selector xpath=".//ADDRESS_STAGING" />
+        <xs:field xpath="PROVIDER_STAGING_PK" />
+      </xs:keyref>
+      <xs:keyref name="PROVIDER_STAGING2PROVIDER_GROUP_STAGING" refer="Constraint1">
+        <xs:selector xpath=".//PROVIDER_GROUP_STAGING" />
+        <xs:field xpath="PROVIDER_STAGING_PK" />
+      </xs:keyref>
+    </xs:element>
+  </xs:schema>
+  <PROVIDER_STAGING>
+    <PROVIDER_STAGING_PK>3</PROVIDER_STAGING_PK>
+    <LAST_MODIFIED_DATE_TIME>2012-06-21T15:42:04-05:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+    <LAST_NAME>Johnson</LAST_NAME>
+    <FIRST_NAME>Don</FIRST_NAME>
+    <PHONE_VOICE>1112224444</PHONE_VOICE>
+    <RecordStatus>1</RecordStatus>
+  </PROVIDER_STAGING>
+  <PROVIDER_GROUP_STAGING>
+    <PROVIDER_GROUP_STAGING>1</PROVIDER_GROUP_STAGING>
+    <PROVIDER_STAGING_PK>3</PROVIDER_STAGING_PK>
+    <PROVIDER_ID>PROVIDER_ID1</PROVIDER_ID>
+    <NPI_ID>NPI_ID1</NPI_ID>
+    <TAX_ID>TAX_ID1</TAX_ID>
+    <GROUP_END_DATE_TIME>1900-01-01T01:01:01-06:00</GROUP_END_DATE_TIME>
+    <LAST_MODIFIED_DATE_TIME>1900-01-01T01:01:01-06:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+    <RecordStatus>1</RecordStatus>
+  </PROVIDER_GROUP_STAGING>
+  <ADDRESS_STAGING>
+    <ADDRESS_STAGING_PK>2</ADDRESS_STAGING_PK>
+    <PROVIDER_STAGING_PK>3</PROVIDER_STAGING_PK>
+    <ADDRESS_STAGING_TYPE_ID>2</ADDRESS_STAGING_TYPE_ID>
+    <ADDRESS_STAGING_TYPE>Mail To</ADDRESS_STAGING_TYPE>
+    <NAME>NAME1</NAME>
+    <ADDRESS_STREET1>ADDRESS_STREET11</ADDRESS_STREET1>
+    <ADDRESS_STREET2>ADDRESS_STREET21</ADDRESS_STREET2>
+    <ADDRESS_CITY>ADDRESS_CITY1</ADDRESS_CITY>
+    <ADDRESS_STATE>TN</ADDRESS_STATE>
+    <ADDRESS_ZIP>12345</ADDRESS_ZIP>
+    <ADDRESS_EMAIL>ADDRESS_EMAIL1</ADDRESS_EMAIL>
+    <LAST_MODIFIED_DATE_TIME>1900-01-01T01:01:01-06:00</LAST_MODIFIED_DATE_TIME>
+    <LAST_MODIFIED_USER>e7854515-e84d-419b-b30e-720ae2c7ee4d</LAST_MODIFIED_USER>
+    <RecordStatus>1</RecordStatus>
+  </ADDRESS_STAGING>
+</PROVIDER_STAGINGs>

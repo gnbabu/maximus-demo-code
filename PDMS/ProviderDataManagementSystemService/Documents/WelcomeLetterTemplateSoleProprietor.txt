@@ -1,0 +1,54 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<br />								
+<DIV ALIGN=CENTER>DISTRICT OF COLUMBIA</DIV>
+<Center>MEDICAID PROGRAM</Center>
+<style type="text/css">
+#Mytable{font-family:Arial; font-size:10pt; margin:auto;width:85%;}
+#Mytable .left{text-align:left;}
+#Mytable .right{text-align:right;}
+</style>
+<table id="Mytable">
+<tr>
+<td class="left">[[CURRENTDATE]]</td>
+<td class="right">&nbsp</td>
+</tr>
+<tr>
+<td class="left">&nbsp</td>
+<td class="right">&nbsp</td>
+</tr>
+<td class="left">Provider Name: [[PROVIDERNAME]]</td>
+<td class="right">Credentialing Contact: [[CREDENTIALCONTACTNAME]]</td>
+</tr>
+<tr>
+<td class="left">Type 1 NPI: [[INDIVIDUALNPI]]</td>
+<td class="right">[[CREDENTIALCONTACTADDRESS1]]</td>
+</tr>
+<tr>
+<td class="left">Medicaid #: [[INDIVIDUALMEDICAID]</td>
+<td class="right">[[CREDENTIALCONTACTADDRESS2]]</td>
+</tr>
+<tr>
+<td class="left">Effective Date: [[EFFECTIVEDATE]]</td>
+<td class="right">[[CREDENTIALCITYSTATEZIP]]</td>
+</tr>
+</table>
+<br>
+Dear Provider:<br />									
+<br />										
+Thank you for your interest in the (State) Medicaid program.  	<br />
+Your (State) Medicaid Provider ID is [[MEDICAID]].  Your effective date for participation is [[EFFECTIVEDATE]]. 	<br />
+You will be required to revalidate your enrollment profile on [[REVALDATE]]. 
+You will receive correspondence from the (state) Medicaid Provider Data Management System in advance of your next re-enrollment due date.	<br />									
+<p>Provider Physical Address:	<br />							
+[[PRACTICENAME]]	<br />										
+[[PRACTICEADDRESS1]]	<br />									
+[[PRACTICEADDRESS2]]	<br />								
+[[PRACTICECITYSTATEZIP]]
+</p>									
+<p>Please log in to the (state) Medicaid Provider Registration Portal to maintain your provider file when appropriate. </p>										
+<p><a href="[[PDMSURL]]">[[PDMSURL]]</a></p>										
+<p>If you have questions, <b> or any of the above information is incorrect</b>, please contact (State) Medicaid at 1-999-111-2222  or email <a href ="mailto:dcmedicaidPSE@maximus.com">dcmedicaidPSE@maximus.com</a> .</p>          
+Regards, <br>
+<br>
+MAXIMUS Provider Screening and Enrollment Customer Service
+</div>								

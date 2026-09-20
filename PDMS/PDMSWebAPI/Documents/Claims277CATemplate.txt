@@ -1,0 +1,139 @@
+﻿    <style type="text/css">
+        .auto-style1 {
+            width: 151px;
+        }
+
+        .auto-style3 {
+            width: 100%;
+        }
+
+        .auto-style4 {
+            width: 263px;
+        }
+
+        .auto-style5 {
+            width: 350px;
+        }
+
+        .auto-style6 {
+            width: 302px;
+        }
+        .blank_row {
+        	height: 10px;
+            background-color: #FFFFFF;
+        }
+	.alnright {
+		text-align: right;
+		margin-right: 1em; 
+	}
+    </style>
+    <table style="width: 100%; border: 2px solid #45a8c6">
+        <tr>
+            <td>
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="auto-style4">
+                            <img id="imgSeal" src="https://dev-documents-test.s3.us-west-2.amazonaws.com/Images/Ohio_Header.png" /></td>
+                        <td style="font-size: x-large">CLAIM ACKNOWLEDGMENT REPORT</td>
+                    </tr>
+                </table>
+                <table class="auto-style3">
+		    <tr class="blank_row"><td colspan="5"></td></tr>
+                    <tr>
+                        <td>Billing Provider Medicaid ID: [[BillProvMedID]]</td>
+                        <td class="auto-style1" colspan="3">Billing Provider NPI: [[BillProvNPI]]</td>
+                        <td>Billing Provider Name: [[BillProvName]]</td>
+                    </tr>
+		   <tr class="blank_row"><td colspan="5"></td></tr>
+                    <tr>
+                        <td colspan="2"><b>Response Date and Time:</b> [[RespDT]]</td>
+                        <td colspan="3"><b>Claim ICN:</b> [[ClaimICN]]</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="5"></td></tr>
+                </table>
+                <table style="width: 100%;">
+                	
+                    <tr>
+                        <td colspan="2" style="background-color: #45a8c6; color: white; font-weight: bold;">DESTINATION PAYER INFORMATION</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="2"></td></tr>
+                    <tr>
+                        <td><b>Payer Name:</b> [[PayerContactName]]</td>
+                        <td><b>Payer Contact No:</b> [[PayerContactNo]]</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="2"></td></tr>
+                    <tr>
+                        <td><b>Payer ID:</b> [[PayerID]]</td>
+                        <td><b>Payer Email ID:</b> [[PayerEmail]]</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="2"></td></tr>
+                </table>
+		<table style="width: 100%;">
+                    <tr>
+                        <td colspan="6" style="background-color: #45a8c6; color: white; font-weight: bold;">ERRORS AND EXCEPTIONS</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="6"></td></tr>
+                    <tr>
+                        <td class="alnright"><b>Receiver Level Error Category Code:</b></td><td></td><td> [[RLECCode]]</td>
+                        <td class="alnright"><b>Receiver Level Error Category Description:</b></td><td></td><td> [[RLECDesc]]</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="6"></td></tr>
+                    <tr>
+                        <td class="alnright"><b>Receiver Level Error Code:</b></td><td></td><td> [[RLECode]]</td>
+                        <td class="alnright"><b>Receiver Level Error Code Description:</b></td><td></td><td> [[RLEDesc]]</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="6"></td></tr>
+		   <tr>
+                        <td class="alnright"><b>Provider Level Error Category Code:</b></td><td></td><td> [[PLECCode]]</td>
+                        <td class="alnright"><b>Provider Level Error Category Description:</b></td><td></td><td> [[PLECDesc]]</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="6"></td></tr>
+                    <tr>
+                        <td class="alnright"><b>Provider Level Error Code:</b></td><td></td><td> [[PLECode]]</td>
+                        <td class="alnright"><b>Provider Level Error Code Description:</b></td><td></td><td> [[PLEDesc]]</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="6"></td></tr>
+                </table>
+                <table style="width: 100%;">
+                    <tr>
+                        <td colspan="4" style="background-color: #45a8c6; color: white; font-weight: bold;">CLAIM INFORMATION</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="4"></td></tr>
+                    <tr>
+                        <td class="auto-style6"><b>ICN:</b> [[ICN]]</td>
+                        <td colspan="2"><b>Submitted Charges:</b> [[SubCharges]]</td>
+                        <td><b>Claim Paid Date:</b> [[CPaidDate]]</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="4"></td></tr>
+                    <tr>
+                        <td class="auto-style5" colspan="2"><b>Patient Control Number:</b> [[PtCNum]]</td>
+                        <td colspan="2"><b>Paid Amount:</b> [[PaidAmt]]</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="4"></td></tr>
+                </table>
+                <table style="width: 100%;">
+                    <tr>
+                        <td colspan="4" style="background-color: #45a8c6; color: white; font-weight: bold;">CLAIM STATUS IN HEADER</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="4"></td></tr>
+                    <tr>
+                        <td class="alnright" ><b>Claim Status Category Code:</b></td><td> [[CSCCode]]</td>
+                        <td class="alnright"><b>Claim Status Category Description:</b></td><td> [[CSCDesp]]</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="4"></td></tr>
+                    <tr>
+                        <td class="alnright"><b>Claim Status Code:</b></td><td> [[CSCode]]</td>
+                        <td class="alnright"><b>Claim Status Category Description:</b></td><td> [[CSCCDesp]]</td>
+                    </tr>
+                    <tr class="blank_row"><td colspan="4"></td></tr>                    
+                </table>
+                <table style="width: 100%;">
+                    <tr>
+                        <td colspan="9" style="background-color: #45a8c6; color: white; font-weight: bold;">CLAIM STATUS IN SERVICE DETAIL</td>
+                    </tr>
+                    
+                    [[ServiceDetails]]
+                </table>
+        </tr>
+        </td>
+    </table>

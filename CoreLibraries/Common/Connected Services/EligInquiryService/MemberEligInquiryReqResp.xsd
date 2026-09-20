@@ -1,0 +1,1275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2021, Gainwell Technologies. All rights reserved. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://service.membermgmt.fi/MemberEligibilityInquiryService"
+	targetNamespace="http://service.membermgmt.fi/MemberEligibilityInquiryService"
+	elementFormDefault="qualified">
+	<xs:include schemaLocation="./CommonHeader.xsd"></xs:include>
+
+
+
+	<xs:element name="InquireMemberEligibilityRequest">
+		<xs:annotation>
+			<xs:documentation>
+				This element contains the request elements to
+				search for an existing MemberEligibilityInquiry in FI.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MessageHeader"
+					type="tns:MessageHeaderType" minOccurs="0" />
+				<xs:element name="RequestPayload"
+					type="tns:InquireMemberEligibilityRequestPayloadType" minOccurs="1"
+					maxOccurs="1">
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType
+		name="InquireMemberEligibilityRequestPayloadType">
+		<xs:sequence>
+			<xs:element name="MedicaidId" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Medicaid id of the recipient
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"></xs:minLength>
+						<xs:maxLength value="20"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SSN" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						This is SSN of the Member to search
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+
+						<xs:minLength value="0"></xs:minLength>
+						<xs:maxLength value="9"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DateOfBirth" minOccurs="1" maxOccurs="1"
+				type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Date of Birth of Member
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FromDateOfService" minOccurs="1"
+				maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						From Date of Service to search Eligibilities
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ToDateOfService" minOccurs="1"
+				maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						To Date of Service to search Eligibilities
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="ProcedureCode" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Procedure code to perform
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"></xs:minLength>
+						<xs:maxLength value="20"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="InquireMemberEligibilityResponse"
+		type="tns:InquireMemberEligibilityResponseType">
+		<xs:annotation>
+			<xs:documentation>
+				This element contains the request elements to
+				search for an existing MemberEligibilityInquiry in FI.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType
+		name="InquireMemberEligibilityResponseType">
+		<xs:sequence>
+			<xs:element name="ResponseHeader" minOccurs="0"
+				maxOccurs="1" type="tns:ResponseHeaderType"></xs:element>
+
+			<xs:element name="MemberEligibilityInfo" minOccurs="0"
+				maxOccurs="1" type="tns:MemberEligibilityInfoType"></xs:element>
+			<xs:element name="Errors" minOccurs="0" maxOccurs="1"
+				type="tns:ErrorsType"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="MemberEligibilityInfo"
+		type="tns:MemberEligibilityInfoType">
+		<xs:annotation>
+			<xs:documentation>
+				This element contains the request elements to
+				search for an existing MemberEligibilityInquiry in FI.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="MemberEligibilityInfoType">
+		<xs:sequence>
+			<xs:element name="RecipientInfo" minOccurs="1"
+				maxOccurs="1" type="tns:RecipientInfoType">
+				<xs:annotation>
+					<xs:documentation>
+						Recipients demographic information
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ListOfBenefitAssignmentPlans"
+				minOccurs="0" maxOccurs="1"
+				type="tns:ListOfBenefitAssignmentPlansType">
+				<xs:annotation>
+					<xs:documentation>
+						Recipients demographic information
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ListOfManagedCarePlan" minOccurs="0"
+				maxOccurs="1" type="tns:ListOfManagedCarePlanType">
+				<xs:annotation>
+					<xs:documentation>
+						Container for the Managed Care Plans
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ListOfThirdPartyLiability" minOccurs="0"
+				maxOccurs="1" type="tns:ListOfThirdPartyLiabilityType">
+				<xs:annotation>
+					<xs:documentation>
+						Container for the Third Party Liability
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ListOfPatientLiability" minOccurs="0"
+				maxOccurs="1" type="tns:ListOfPatientLiabilityType">
+				<xs:annotation>
+					<xs:documentation>
+						Recipients demographic information
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ListOfLTCFPlacement" minOccurs="0"
+				maxOccurs="1" type="tns:ListOfLTCFPlacementType">
+				<xs:annotation>
+					<xs:documentation>
+						Container for LTCF Placement
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ListOfLockinDetail" minOccurs="0"
+				maxOccurs="1" type="tns:ListOfLockinDetailType">
+				<xs:annotation>
+					<xs:documentation>
+						Container for Lockin detais
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ListOfMedicareCoverageDetail"
+				minOccurs="0" maxOccurs="1"
+				type="tns:ListOfMedicareCoverageDetailType">
+				<xs:annotation>
+					<xs:documentation>
+						Container for Medicare Coverage
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ListOfSNIFlOCDetail" minOccurs="0"
+				maxOccurs="1" type="tns:ListOfSNIFlOCDetailType">
+				<xs:annotation>
+					<xs:documentation>
+						Container for SNIF LOC Details
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ListOfServiceLimitations" minOccurs="0"
+				maxOccurs="1" type="tns:ListOfServiceLimitationsType">
+				<xs:annotation>
+					<xs:documentation>
+						Container for Service Limits Effective and End
+						dates
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ListOfRestictedCoverage" minOccurs="0"
+				maxOccurs="1" type="tns:ListOfRestictedCoverageType">
+				<xs:annotation>
+					<xs:documentation>
+						Container for Restricted Coverage
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ListOfMembersOnCaseUnder19"
+				minOccurs="0" maxOccurs="1" type="tns:ListOfFamilyMemberInfoType">
+				<xs:annotation>
+					<xs:documentation>
+						Container for List of Member on same case under
+						19 years
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="RecipientInfoType">
+		<xs:sequence>
+			<xs:element name="MedicaidId" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Medicaid id of the recipient
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="20"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DateOfBirth" minOccurs="1" maxOccurs="1"
+				type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Date of Birth of Member
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DateOfDeath" minOccurs="0" maxOccurs="1"
+				type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Date of Death of Member
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FirstName" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						First name of the recipient
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="35"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MiddleName" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Middle name of the recipient
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="25"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LastName" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Last name of the recipient
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="60"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SSN" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						This is SSN of the Member to search
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="9"></xs:length>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Gender" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Gender of the Member
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MemberAddress" minOccurs="0"
+				maxOccurs="1" type="tns:MemberAddressType">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ListOfBenefitAssignmentPlansType">
+		<xs:sequence>
+			<xs:element name="BenefitAssignmentPlan"
+				type="tns:BenefitAssignmentPlanType" minOccurs="0" maxOccurs="100">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="BenefitAssignmentPlanType">
+		<xs:sequence>
+			<xs:element name="AssignmentPlan" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Name of the assignment Plan
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="20"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="EffectiveDate" minOccurs="1"
+				maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Effective Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EndDate" minOccurs="1" maxOccurs="1"
+				type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						End Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ListOfManagedCarePlanType">
+		<xs:sequence>
+			<xs:element name="ManagedCarePlan"
+				type="tns:ManagedCarePlanType" minOccurs="0" maxOccurs="100">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ManagedCarePlanType">
+		<xs:sequence>
+			<xs:element name="ManagedCarePlanId" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Name of the Managed Care Plan
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="15"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PlanName" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Name of the Managed Care Plan
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PlanDescription" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Name of the Managed Care Plan
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="100"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="EffectiveDate" minOccurs="1"
+				maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Effective Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EndDate" minOccurs="1" maxOccurs="1"
+				type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						End Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ManagedCareBenefits" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Name of the Managed Care Plan
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="100"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="ListOfThirdPartyLiabilityType">
+		<xs:sequence>
+			<xs:element name="ThirdPartyLiability"
+				type="tns:ThirdPartyLiabilityType" minOccurs="0" maxOccurs="100">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ThirdPartyLiabilityType">
+		<xs:sequence>
+			<xs:element name="CarrierName" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Name of the Carrier
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CarrierNumber" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Carrier Number
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="20"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PolicyNumber" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Policy Number
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PolicyHolder" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Name of the Policy Holder First Name + Last Name
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="150"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CoverageType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						default it Individual Coverage
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Coverage" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Some sample values are
+						INPATIENT COVERAGE
+						PHYSICIAN/OUTPATIENT COVERAGE
+						RX PHARMACY COVERAGE
+						VISION
+						DENTAL
+						NURSING HOME
+						CANCER
+						BEHAVIORAL
+						HEALTH/OPIOID TREATMENT
+						PODIATRY
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="EffectiveDate" minOccurs="1"
+				maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Effective Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EndDate" minOccurs="1" maxOccurs="1"
+				type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						End Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GroupNumber" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Group Number
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ListOfPatientLiabilityType">
+		<xs:sequence>
+			<xs:element name="PatientLiability"
+				type="tns:PatientLiabilityType" minOccurs="0" maxOccurs="100">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PatientLiabilityType">
+		<xs:sequence>
+			<xs:element name="PatientLiabilityFinancialPayer"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Name of the financial Payer
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MonthlyAmount" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Name of the assignment Plan
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Type" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Name of the assignment Plan
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="EffectiveDate" minOccurs="1"
+				maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Effective Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EndDate" minOccurs="1" maxOccurs="1"
+				type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						End Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ListOfLTCFPlacementType">
+		<xs:sequence>
+			<xs:element name="LTCFPlacement"
+				type="tns:LTCFPlacementType" minOccurs="0" maxOccurs="100">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="LTCFPlacementType">
+		<xs:sequence>
+			<xs:element name="FacilityType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						FacilityType
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="EffectiveDate" minOccurs="1"
+				maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Effective Date of the LTCF Placement
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EndDate" minOccurs="0" maxOccurs="1"
+				type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						End Date of the LTCF Placement
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EffectiveDateMedicaidCoverage"
+				minOccurs="1" maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Effective Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EndDateMedicaidCoverage" minOccurs="1"
+				maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						End Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ListOfLockinDetailType">
+		<xs:sequence>
+			<xs:element name="LockinDetail"
+				type="tns:LockinDetailType" minOccurs="0" maxOccurs="100">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="LockinDetailType">
+		<xs:sequence>
+			<xs:element name="LockinPlan" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						FacilityType
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LockinType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						FacilityType
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="EffectiveDate" minOccurs="1"
+				maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Effective Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EndDate" minOccurs="1" maxOccurs="1"
+				type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						End Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProviderNPI" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						NPI of the provider
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="10"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ProviderName" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Name of the provider
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="100"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ProviderPhoneNumber" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Phone number of the provider
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="10"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ListOfMedicareCoverageDetailType">
+		<xs:sequence>
+			<xs:element name="MedicareCoverageDetail"
+				type="tns:MedicareCoverageDetailType" minOccurs="0" maxOccurs="100">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MedicareCoverageDetailType">
+		<xs:sequence>
+			<xs:element name="Coverage" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Medicare coverage type
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PlanId" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Medicare Plan Id
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PlanName" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Name of the Medicare Plan
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="100"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MedicareId" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						MedicareId
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="15"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="EffectiveDate" minOccurs="1"
+				maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Effective Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EndDate" minOccurs="1" maxOccurs="1"
+				type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						End Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ListOfSNIFlOCDetailType">
+		<xs:sequence>
+			<xs:element name="SNIFlOCDetail"
+				type="tns:SNIFlOCDetailType" minOccurs="0" maxOccurs="100">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SNIFlOCDetailType">
+		<xs:sequence>
+			<xs:element name="FacilityType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						FacilityType
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Status" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Status is always returned blank
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="20"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DeterminationDate" minOccurs="1"
+				maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Effective Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LOCDetermination" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						LOC Determination
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="100"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Description" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						LOC Description
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="100"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="StartDate" minOccurs="1"
+				maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Start Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EndDate" minOccurs="1" maxOccurs="1"
+				type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						End Date of the plan
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ListOfServiceLimitationsType">
+		<xs:sequence>
+			<xs:element name="ServiceLimitations"
+				type="tns:ServiceLimitationsType" minOccurs="0" maxOccurs="100">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceLimitationsType">
+		<xs:sequence>
+			<xs:element name="ProcedureCode" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Procedure Code
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ServiceLimitDescription" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Service Limit Description
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="100"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BenefitDescription" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Benefit Description
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="100"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TotalLimits" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Procedure Code
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="UsedLimits" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Procedure Code
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RemainingLimits" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Remaining Limit
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Timeframe" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Time frame
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="100"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DateOfNextService" minOccurs="0"
+				maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Date of next service
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ListOfRestictedCoverageType">
+		<xs:sequence>
+			<xs:element name="RestictedCoverage"
+				type="tns:RestictedCoverageType" minOccurs="0" maxOccurs="100">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RestictedCoverageType">
+		<xs:sequence>
+
+			<xs:element name="EffectiveDate" minOccurs="1"
+				maxOccurs="1" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Effective Date of the restriction
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EndDate" minOccurs="1" maxOccurs="1"
+				type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						End Date of the restriction
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ListOfFamilyMemberInfoType">
+		<xs:sequence>
+			<xs:element name="FamilyMemberInfo"
+				type="tns:FamilyMemberInfoType" minOccurs="0" maxOccurs="100">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="FamilyMemberInfoType">
+		<xs:sequence>
+			<xs:element name="MedicaidId" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Medicaid id of the recipient
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="20"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DateOfBirth" minOccurs="1" maxOccurs="1"
+				type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						Date of Birth of Member
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FirstName" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						First name of the recipient
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="35"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MiddleName" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Middle name of the recipient
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="25"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LastName" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Last name of the recipient
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+						<xs:maxLength value="60"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Gender" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Gender of the Member
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ErrorsType">
+		<xs:sequence>
+			<xs:element name="ErrorDetails"
+				type="tns:ErrorDetailsType" minOccurs="1" maxOccurs="10"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ErrorDetailsType">
+		<xs:sequence>
+			<xs:element name="ErrorCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+			</xs:element>
+			<xs:element name="ErrorDescription" minOccurs="1"
+				maxOccurs="1" type="xs:string">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="MemberAddressType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="AddressLine1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" name="AddressLine2">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" name="City">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" name="StateCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" name="ZipCode5">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="5"></xs:maxLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

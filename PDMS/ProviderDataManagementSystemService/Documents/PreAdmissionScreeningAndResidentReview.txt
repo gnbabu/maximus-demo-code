@@ -1,0 +1,30 @@
+﻿<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<p>
+    Hello [[MedicaidProviderID]],    
+</p>
+<p>
+    Please check your provider portal for a report of Preadmission Screening and Resident Review (PASRR) cases for your facility, dated [[DATE]]. 
+    These reports highlight cases where federal PASRR requirements may not have been met for residents at your facility. 
+    ODM encourages you to take the appropriate actions in HENS for any cases where you can intervene.
+</p>
+<p>
+    To download the report for [[MedicaidProviderID]], please log into the Ohio PNM Provider portal. 
+    Note that only the PNM Administrator or a designated agent is authorized to download the report for this provider. 
+</p>
+<p>
+    If you have questions, please contact <a href="mailto:PASRR@medicaid.ohio.gov">PASRR@medicaid.ohio.gov</a>.
+</p>
+<br />
+<p>
+    Thank you,
+    <br /><br />
+    Ohio Department of Medicaid
+    <br />
+    Front Door Policy Unit
+    <br />
+    Preadmission Screen & Resident Review Program
+</p>
+
+</div>

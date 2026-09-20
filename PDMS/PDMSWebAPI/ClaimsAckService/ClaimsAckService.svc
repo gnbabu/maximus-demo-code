@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="PDMSWebAPI.ClaimsAckService.ClaimsAckService" CodeBehind="ClaimsAckService.svc.cs" %>

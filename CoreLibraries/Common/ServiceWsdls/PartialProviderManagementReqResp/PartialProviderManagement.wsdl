@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:provpart= "http://mes.gov/partialprovidermanagement" targetNamespace="http://mes.gov/partialprovidermanagement" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://mes.gov/partialprovidermanagement" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <documentation>
+    <appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="partialProviderManagementSoap" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </appinfo>
+  </documentation>
+
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://mes.gov/partialprovidermanagement">
+<xsd:include schemaLocation="PartialProviderManagement.xsd"/>
+</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://mes.gov/partialprovidermanagement">
+<xsd:include schemaLocation="PartialProviderManagement_MessageHeader.xsd"/>
+</xsd:schema>
+	</types>
+
+
+	<message name="submitPartialProviderRequestMsg">
+		<part element="tns:SubmitPartialProvider" name="parameters"/>
+	</message>
+	<message name="submitPartialProviderResponseMsg">
+		<part element="tns:SubmitPartialProviderResponse" name="parameters"/>
+	</message>
+	
+	
+	<message name="submitPartialProviderFault">
+		<part element="tns:Fault" name="parameters"/>
+	</message>
+	
+	<portType name="PartialProviderManagementSoapPortType">
+		<operation name="submitPartialProvider">
+			<input message="tns:submitPartialProviderRequestMsg"/>
+			<output message="tns:submitPartialProviderResponseMsg"/>
+			<fault message="tns:submitPartialProviderFault" name="fault"/>
+		</operation>
+		
+	</portType>
+	<binding name="partialProviderManagementSoap" type="tns:PartialProviderManagementSoapPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		
+		<operation name="submitPartialProvider">
+			<soap:operation soapAction="http://mes.gov/submitPartialProviderReqRes" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+            		<fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+        </operation>
+		
+	</binding>
+	<service name="PartialProviderManagementService">
+		<port binding="tns:partialProviderManagementSoap" name="partialProviderManagementSoap">
+			<soap:address location="http://localhost:7800/partialProviderManagement/ReqRes"/>
+		</port>
+	</service>
+
+</definitions>

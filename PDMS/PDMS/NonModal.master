@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="NonModal_MasterPage" Codebehind="NonModal.master.cs" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+<%@ Register Src="~/UserControls/UserHeader.ascx" TagName="UserHeader" TagPrefix="usrHdr" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" lang="en" xml:lang="en" />
+    <script src="<%# Page.ResolveClientUrl("~/Scripts/jquery-1.9.1.js") %>"></script>
+    
+    <link href="<%# Page.ResolveClientUrl("~/Content/bootstrap.min.css") %>" rel="stylesheet" />
+    <link href="<%# Page.ResolveClientUrl("~/Content/bootstrap-custom.css") %>" rel="stylesheet" />
+
+    <title>Provider Registration Portal</title>
+    <script type="text/javascript">
+        //debugger;
+        window.resizeTo(780, 800);
+
+    </script>
+</head>
+<body style="padding:5px; font-family: Arial Narrow; font-size:12pt !important; width: 100vw; overflow: scroll">
+    <form id="formNM" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <%--<ajax:ToolkitScriptManager ID="tsmNM" runat="server"  ScriptMode="Release"/>--%>
+         <div id="wrapper">
+        <div id="NewMainForm" style="padding:0px;">
+            <div class="pageHeader">
+                <p style="text-align: center"  class="container clear-top">
+                <asp:ContentPlaceHolder ID="PageLabelContent" runat="server"> </asp:ContentPlaceHolder></p>
+            </div>
+            <div style="text-align:left;">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+        </div>
+             </div>
+    </form>
+</body>
+</html>

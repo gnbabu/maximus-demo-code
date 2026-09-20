@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Tem/Package5/Claims 9 22 2020 WSDL_XSDs/WSDL_XSDs/PharmClaims.xsd" filename="PharmClaims.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Tem/Package5/Claims 9 22 2020 WSDL_XSDs/WSDL_XSDs/InstitutionalClaims.xsd" filename="InstitutionalClaims.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Tem/Package5/Claims 9 22 2020 WSDL_XSDs/WSDL_XSDs/DentalClaims.xsd" filename="DentalClaims.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Tem/Package5/Claims 9 22 2020 WSDL_XSDs/WSDL_XSDs/InquireClaimsRequest.xsd" filename="InquireClaimsRequest.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Tem/Package5/Claims 9 22 2020 WSDL_XSDs/WSDL_XSDs/AddUpdateClaimsResponse.xsd" filename="AddUpdateClaimsResponse.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Tem/Package5/Claims 9 22 2020 WSDL_XSDs/WSDL_XSDs/InquireClaimsResponse.xsd" filename="InquireClaimsResponse.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Tem/Package5/Claims 9 22 2020 WSDL_XSDs/WSDL_XSDs/SearchClaimsRequest.xsd" filename="SearchClaimsRequest.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/Tem/Package5/Claims 9 22 2020 WSDL_XSDs/WSDL_XSDs/ClaimsWS.wsdl" filename="Claims.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Tem/Package5/Claims 9 22 2020 WSDL_XSDs/WSDL_XSDs/AddUpdateClaimsRequest.xsd" filename="AddUpdateClaimsRequest.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Tem/Package5/Claims 9 22 2020 WSDL_XSDs/WSDL_XSDs/PhysicianClaims.xsd" filename="PhysicianClaims.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Tem/Package5/Claims 9 22 2020 WSDL_XSDs/WSDL_XSDs/Claims_MessageHeader.xsd" filename="Claims_MessageHeader.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Tem/Package5/Claims 9 22 2020 WSDL_XSDs/WSDL_XSDs/SearchClaimsResponses.xsd" filename="SearchClaimsResponses.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Tem/Package5/Claims 9 22 2020 WSDL_XSDs/WSDL_XSDs/ClaimResponse.xsd" filename="ClaimResponse.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Tem/Package5/Claims 9 22 2020 WSDL_XSDs/WSDL_XSDs/Claims_Datatypes.xsd" filename="Claims_Datatypes.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

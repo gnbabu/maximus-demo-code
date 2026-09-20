@@ -1,0 +1,8 @@
+body
+{
+}
+
+#PRINT ,#CLOSE, #btnResend, #btnCancel, #btnPrint
+{
+	visibility:hidden;
+}

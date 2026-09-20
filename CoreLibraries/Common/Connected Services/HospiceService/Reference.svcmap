@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4255e38e-3eb0-45a3-9bde-a86543ceb736" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\308589\Desktop\WSDL\MITS Hospice XSDs\HospiceWS.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SearchResponses.xsd" MetadataType="Schema" ID="7136e4f7-e8fa-46b4-b185-8855a662cf59" SourceId="1" SourceUrl="file:///C:/Users/308589/Desktop/WSDL/MITS Hospice XSDs/SearchResponses.xsd" />
+    <MetadataFile FileName="InquireResponse.xsd" MetadataType="Schema" ID="85feb7aa-75e9-47f7-a4ec-e01ae83078fb" SourceId="1" SourceUrl="file:///C:/Users/308589/Desktop/WSDL/MITS Hospice XSDs/InquireResponse.xsd" />
+    <MetadataFile FileName="Hospice.wsdl" MetadataType="Wsdl" ID="207fe630-86bd-4308-a905-67ba3e3ae7bf" SourceId="1" SourceUrl="file:///C:/Users/308589/Desktop/WSDL/MITS Hospice XSDs/HospiceWS.wsdl" />
+    <MetadataFile FileName="AddUpdateResponse.xsd" MetadataType="Schema" ID="c754805c-3587-49a7-b9c7-60ed099fd084" SourceId="1" SourceUrl="file:///C:/Users/308589/Desktop/WSDL/MITS Hospice XSDs/AddUpdateResponse.xsd" />
+    <MetadataFile FileName="InquireRequest.xsd" MetadataType="Schema" ID="6f0ba2b8-f7b7-4de6-a405-d480bc3c9c5f" SourceId="1" SourceUrl="file:///C:/Users/308589/Desktop/WSDL/MITS Hospice XSDs/InquireRequest.xsd" />
+    <MetadataFile FileName="HospiceRequestResponse.xsd" MetadataType="Schema" ID="d6ff3967-3359-4c67-b616-a080c10e519d" SourceId="1" SourceUrl="file:///C:/Users/308589/Desktop/WSDL/MITS Hospice XSDs/HospiceRequestResponse.xsd" />
+    <MetadataFile FileName="SearchRequest.xsd" MetadataType="Schema" ID="2027e3ca-4b9c-4fae-9e43-b0136ff216e8" SourceId="1" SourceUrl="file:///C:/Users/308589/Desktop/WSDL/MITS Hospice XSDs/SearchRequest.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

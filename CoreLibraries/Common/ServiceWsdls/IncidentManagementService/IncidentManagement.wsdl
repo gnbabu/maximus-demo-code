@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://mes.gov/incidentmanagement" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://mes.gov/incidentmanagement" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <documentation>
+    <appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="incidentManagementSoap" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </appinfo>
+  </documentation>
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://mes.gov/incidentmanagement">
+<xsd:include schemaLocation="IncidentManagement.xsd"/>
+</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://mes.gov/incidentmanagement">
+<xsd:include schemaLocation="IncidentManagement_MessageHeader.xsd"/>
+</xsd:schema>
+	</types>
+
+	<message name="sendProviderIncidentRequestMsg">
+		<part element="tns:SendProviderIncidentRequest" name="parameters"/>
+	</message>
+	<message name="sendProviderIncidentResponseMsg">
+		<part element="tns:SendProviderIncidentResponse" name="parameters"/>
+	</message>
+	<message name="updateProviderIncidentStatusRequestMsg">
+		<part element="tns:UpdateProviderIncidentStatusRequest" name="parameters"/>
+	</message>
+	<message name="updateProviderIncidentStatusResponseMsg">
+		<part element="tns:UpdateProviderIncidentStatusResponse" name="parameters"/>
+	</message>
+
+
+	<message name="sendProviderIncidentFault">
+		<part element="tns:Fault" name="parameters"/>
+	</message>
+	<message name="updateProviderIncidentStatusFault">
+		<part element="tns:Fault" name="parameters"/>
+	</message>
+	
+
+	<portType name="IncidentManagementSoapPortType">
+		<operation name="sendProviderIncident">
+			<input message="tns:sendProviderIncidentRequestMsg"/>
+			<output message="tns:sendProviderIncidentResponseMsg"/>
+			<fault message="tns:sendProviderIncidentFault" name="fault"/>
+		</operation>
+		<operation name="updateProviderIncidentStatus">
+			<input message="tns:updateProviderIncidentStatusRequestMsg"/>
+			<output message="tns:updateProviderIncidentStatusResponseMsg"/>
+			<fault message="tns:updateProviderIncidentStatusFault" name="fault"/>
+		</operation>
+		
+	</portType>
+	<binding name="incidentManagementSoap" type="tns:IncidentManagementSoapPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="sendProviderIncident">
+			<soap:operation soapAction="http://mes.gov/sendProviderIncident" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+            		<fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+        </operation>
+		<operation name="updateProviderIncidentStatus">
+			<soap:operation soapAction="http://mes.gov/updateProviderIncidentStatus" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+            		<fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </fault>
+        </operation>
+	
+	</binding>
+	<service name="IncidentManagementService">
+		<port binding="tns:incidentManagementSoap" name="incidentManagementSoap">
+			<soap:address location="http://localhost:7800/incidentManagement/serviceentrypoint"/>
+		</port>
+	</service>
+
+</definitions>

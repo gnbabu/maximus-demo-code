@@ -1,0 +1,52 @@
+<header>
+<style type="text/css">								
+						
+#Mytable .left{text-align:left; vertical-align:top }
+#Mytable p {margin:0; padding:0; margin-bottom:0;}									
+#Mytable .right{text-align:right; vertical-align:top }									
+</style></header>	
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+
+<table id="Table1" style="width: 8.4in;">
+<tr>
+	<td class="left">
+    [[DISPLAYOMR]]
+    <br />
+    <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+        [[CURRENTDATE]] 
+        <br />
+        <br />
+    </td>
+</tr>
+<tr>
+	<td class="left">
+    [[FROMADDRESS]]
+    <br /> 
+    <br/>  
+    <br/>
+    <br/>
+    </td>
+</tr>	 
+
+[[TOADDRESS]]
+     
+ <tr>
+<td class="left" valign=top colspan="3" style="width:100%"; >
+<br />
+<p>
+<b>Subject: EFT Update Notification </b>
+</p>
+
+<p>
+<p><b>Dear [[ProviderName]]</b>
+</p>
+<p>This is an informational notice to inform you that the EFT information on the account has been updated. Please verify that this update was expected by logging into the Provider Network Management portal at [[PDMSURL]].  If you have a question or concern, please contact the Provider Hotline at 1-800-686-1516. Please note, Medicaid staff do not have access to bank account information and cannot view or modify this information on your behalf. Thank you for your immediate attention to this matter. </P>
+
+</td>
+</tr>
+</table>

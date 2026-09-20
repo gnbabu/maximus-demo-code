@@ -1,0 +1,31 @@
+<div style="font-family:Arial; font-size:10pt; margin-left: 20px;  margin-top: 10px; margin-bottom:20px; margin-right:0px;">
+<div style="float:left; width:100%"><p><img id="imgSeal" src="../Images/Ohio_Header.png" style="margin-bottom:1px;text-align:center;" /></p></div>
+
+<p>
+    Hello,    
+</p>
+<p>
+    The Ohio Department of Medicaid is pleased to inform you that a [[ReportType]] hospital-specific Potentially Preventable Readmissions (PPR) report is now available for download. 
+    Please log into the Ohio PNM Provider portal to download the excel file created for [[HospitalName]], Ohio Medicaid Provider Number [[MedicaidProviderID]]
+</p>
+<p>
+    As the PNM Provider Administrator, you are the only person permitted to download the PPR report for this hospital. 
+    We recommend that the PPR report be shared with the hospital staff responsible for tracking readmission rates at your hospital.
+</p>
+<p>
+    Please do not reply to this message. If you have any questions about your PPR report, you may send your questions to <a href="mailto:PPR@medicaid.ohio.gov">PPR@medicaid.ohio.gov</a>.
+</p>
+<br />
+<p>
+    Thank you,
+    <br /><br />
+    Ohio Department of Medicaid
+    <br />
+    Hospital Policy Section
+    <br />
+    P.O. Box 182709
+    <br />
+    Columbus, Ohio 43218-2709
+</p>
+
+</div>
