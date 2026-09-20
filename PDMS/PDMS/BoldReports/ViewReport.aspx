@@ -5,9 +5,19 @@
 
     <link href="<%= ResolveUrl("~/Content/bold-reports/v2.0/tailwind-light/bold.report-designer.min.css") %>" rel="stylesheet" />
 
+    <!-- The Bold Reports SDK requires jQuery 3.x internally. Load it here, let the
+         SDK bind its plugins to it, then hand control back to the MasterPage's own
+         jQuery 2.0.3 (which Bootstrap 3 / modalPlugin / the hamburger menu depend
+         on) via noConflict so the two versions never clash on this page. -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="<%= ResolveUrl("~/Scripts/bold-reports/v2.0/common/bold.reports.common.min.js") %>"></script>
     <script src="<%= ResolveUrl("~/Scripts/bold-reports/v2.0/common/bold.reports.widgets.min.js") %>"></script>
     <script src="<%= ResolveUrl("~/Scripts/bold-reports/v2.0/bold.report-viewer.min.js") %>"></script>
+    <script>
+        // Restore window.$ / jQuery to the MasterPage's jQuery 2.0.3; jq3 keeps
+        // the jQuery 3.6 instance the Bold Reports SDK above just bound itself to.
+        var jq3 = jQuery.noConflict(true);
+    </script>
 
     <style>
         #viewer {
@@ -90,13 +100,13 @@
 
         const interval = setInterval(() => {
 
-            if (typeof $.fn.boldReportViewer === "function") {
+            if (typeof jq3.fn.boldReportViewer === "function") {
 
                 clearInterval(interval);
 
                 log("✅ Viewer ready, initializing...");
 
-                $("#viewer").boldReportViewer({
+                jq3("#viewer").boldReportViewer({
                     reportServiceUrl: REPORT_SERVICE_URL,
                     reportPath: reportPath,
                     serviceAuthorizationToken: "bearer " + token,

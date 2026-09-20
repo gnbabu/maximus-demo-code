@@ -7,9 +7,19 @@
 
     <link href="<%= ResolveUrl("~/Content/bold-reports/v2.0/tailwind-light/bold.report-designer.min.css") %>" rel="stylesheet" />
 
+    <!-- The Bold Reports SDK requires jQuery 3.x internally. Load it here, let the
+         SDK bind its plugins to it, then hand control back to the MasterPage's own
+         jQuery 2.0.3 (which Bootstrap 3 / modalPlugin / the hamburger menu depend
+         on) via noConflict so the two versions never clash on this page. -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="<%= ResolveUrl("~/Scripts/bold-reports/v2.0/common/bold.reports.common.min.js") %>"></script>
     <script src="<%= ResolveUrl("~/Scripts/bold-reports/v2.0/common/bold.reports.widgets.min.js") %>"></script>
     <script src="<%= ResolveUrl("~/Scripts/bold-reports/v2.0/bold.report-designer.min.js") %>"></script>
+    <script>
+        // Restore window.$ / jQuery to the MasterPage's jQuery 2.0.3; jq3 keeps
+        // the jQuery 3.6 instance the Bold Reports SDK above just bound itself to.
+        var jq3 = jQuery.noConflict(true);
+    </script>
 
     <div id="queryDesigner" style="height: 800px;"></div>
 
@@ -37,13 +47,13 @@
 
             const interval = setInterval(() => {
 
-                if (typeof $.fn.boldReportQueryDesigner === "function") {
+                if (typeof jq3.fn.boldReportQueryDesigner === "function") {
 
                     clearInterval(interval);
 
                     log("✅ Query Designer ready");
 
-                    $("#queryDesigner").boldReportQueryDesigner({
+                    jq3("#queryDesigner").boldReportQueryDesigner({
 
                         serviceUrl: REPORT_SERVICE_URL,
 
@@ -54,7 +64,7 @@
 
                             console.log("✅ Query Designer initialized");
 
-                            const obj = $("#queryDesigner").data("boldReportQueryDesigner");
+                            const obj = jq3("#queryDesigner").data("boldReportQueryDesigner");
 
                             try {
 
@@ -164,7 +174,7 @@
             }
         }
 
-        $(document).ready(function () {
+        jq3(document).ready(function () {
             loadQueryDesigner();
         });
 

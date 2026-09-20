@@ -74,16 +74,26 @@
     </asp:Panel>
 
     <!-- Scripts -->
+    <!-- The Bold Reports SDK requires jQuery 3.x internally. Load it here, let the
+         SDK bind its plugins to it, then hand control back to the MasterPage's own
+         jQuery 2.0.3 (which Bootstrap 3 / modalPlugin / the hamburger menu depend
+         on) via noConflict so the two versions never clash on this page. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.boldreports.com/11.1.10/scripts/v2.0/common/bold.reports.common.min.js"></script>
     <script src="https://cdn.boldreports.com/11.1.10/scripts/v2.0/common/bold.reports.widgets.min.js"></script>
     <script src="https://cdn.boldreports.com/11.1.10/scripts/v2.0/bold.report-viewer.min.js"></script>
+    <script>
+        // Restore window.$ / jQuery to the MasterPage's jQuery 2.0.3; jq3 keeps
+        // the jQuery 3.6 instance the Bold Reports SDK above just bound itself to.
+        var jq3 = jQuery.noConflict(true);
+    </script>
 
     <script type="text/javascript">
-        $(function () {
+        jq3(function () {
 
-            var reportPath = $("#<%= hfReportPath.ClientID %>").val();
-            var authToken = $("#<%= hfAuthToken.ClientID %>").val();
-            var reportServiceUrl = $("#<%= hfReportServiceUrl.ClientID %>").val();
+            var reportPath = jq3("#<%= hfReportPath.ClientID %>").val();
+            var authToken = jq3("#<%= hfAuthToken.ClientID %>").val();
+            var reportServiceUrl = jq3("#<%= hfReportServiceUrl.ClientID %>").val();
 
             if (!reportPath) {
                 console.log("View-all mode, skipping report viewer init");
@@ -96,7 +106,7 @@
             }
 
             try {
-                $("#report-viewer").boldReportViewer({
+                jq3("#report-viewer").boldReportViewer({
                     reportServiceUrl: reportServiceUrl,
                     reportPath: reportPath,
                     serviceAuthorizationToken: authToken,
