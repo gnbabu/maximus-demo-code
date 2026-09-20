@@ -74,8 +74,6 @@
     </asp:Panel>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <script src="https://cdn.boldreports.com/11.1.10/scripts/v2.0/common/bold.reports.common.min.js"></script>
     <script src="https://cdn.boldreports.com/11.1.10/scripts/v2.0/common/bold.reports.widgets.min.js"></script>
     <script src="https://cdn.boldreports.com/11.1.10/scripts/v2.0/bold.report-viewer.min.js"></script>

@@ -2,7 +2,7 @@
 let currentRequest = null;
 
 $(function () {
-
+  try {
     const params = new URLSearchParams(window.location.search);
     console.log(params);
     const reportName = params.get('reportName');
@@ -32,6 +32,13 @@ $(function () {
 
     currentRequest = request;
     loadReports(request);
+  } catch (e) {
+    // Never let a page-init error here block other $(document).ready
+    // handlers registered later on the page (e.g. MasterPage.master's
+    // hamburger menu binding), since jQuery fires all ready callbacks
+    // in one synchronous pass.
+    console.error('[report-viewer.js] initialization error:', e);
+  }
 });
 
 
@@ -307,7 +314,7 @@ $('#btnMyDrafts').click(function () {
         mydrafts: true,
     });
 
-    const href = appHref(`MesCred/Reports/Reports.aspx?${query}`);
+    const href = appHref(`BoldReports/Reports.aspx?${query}`);
 
     window.location.href = href;
 });

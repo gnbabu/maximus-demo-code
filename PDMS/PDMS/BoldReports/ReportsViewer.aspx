@@ -8,16 +8,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-
+    <link href="<%= ResolveUrl("~/Styles/datagrid/datagrid.maximus.css") %>" rel="stylesheet" />
 
     <style>
         :root {
-            --purple-dark: #3a0e6e;
-            --purple-main: #5c1a8c;
-            --purple-light: #6a1b9a;
-            --purple-lighter: #f3e5f5;
-            --purple-footer: #3a0e6e;
+            --purple-dark: #1b4c79;
+            --purple-main: #4a4a90;
+            --purple-light: #56337f;
+            --purple-lighter: #F7F4FA;
+            --purple-footer: #1b4c79;
             --text-dark: #333;
             --text-muted: #666;
             --bg-page: #f0f0f0;
@@ -51,14 +50,14 @@
 
         /* Header styles */
         h1 {
-            color: #6f42c1;
+            color: #4a4a90;
             font-size: 24px;
             font-weight: bold;
         }
 
         /* Button styling in header */
         .header-buttons .btn {
-            background-color: #6f42c1;
+            background-color: #4a4a90;
             color: white;
             font-size: 14px;
             padding: 8px 15px;
@@ -69,7 +68,7 @@
         }
 
             .header-buttons .btn:hover {
-                background-color: #5a2c9f;
+                background-color: #123a5e;
             }
 
         .header-buttons .material-icons {
@@ -78,7 +77,7 @@
 
         /* Card header styles */
         .card-header {
-            background-color: #6f42c1;
+            background-color: #4a4a90;
             color: white;
             font-size: 16px;
             font-weight: 600;
@@ -131,7 +130,7 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background-color: #5c1a8c;
+            background-color: #4a4a90;
             color: #fff;
             display: flex;
             align-items: center;
@@ -147,13 +146,13 @@
         .page-title {
             font-size: 20px;
             font-weight: 700;
-            color: #5c1a8c;
+            color: #4a4a90;
         }
 
         /* Action buttons */
         .btn-action-outline {
-            border: 1.5px solid #5c1a8c;
-            color: #5c1a8c;
+            border: 1.5px solid #4a4a90;
+            color: #4a4a90;
             background: #fff;
             border-radius: 8px;
             font-size: 13px;
@@ -167,12 +166,12 @@
 
         .btn-action-outline:hover {
             background-color: var(--purple-lighter);
-            color: #5c1a8c;
-            border-color: #5c1a8c;
+            color: #4a4a90;
+            border-color: #4a4a90;
         }
 
         .btn-action-filled {
-            background-color: #5c1a8c;
+            background-color: #4a4a90;
             color: #fff;
             border: none;
             border-radius: 8px;
@@ -213,7 +212,7 @@
             }
 
             .report-item .report-icon {
-                color: #5c1a8c;
+                color: #4a4a90;
                 flex-shrink: 0;
                 display: flex;
                 align-items: center;
@@ -262,7 +261,7 @@
         .btn-icon {
             background: none;
             border: none;
-            color: #5c1a8c;
+            color: #4a4a90;
             padding: 4px;
             cursor: pointer;
             border-radius: 4px;
@@ -288,7 +287,7 @@
 
             .report-left h1 {
                 font-size: 24px;
-                color: #6f42c1; /* Purple color */
+                color: #4a4a90; /* Purple color */
                 margin: 0;
             }
 
@@ -309,19 +308,19 @@
 
             .report-right h2 {
                 font-size: 20px;
-                color: #6f42c1; /* Purple color */
+                color: #4a4a90; /* Purple color */
                 margin-bottom: 10px;
             }
 
             .report-right .date-label {
                 font-size: 12px;
-                color: #6f42c1;
+                color: #4a4a90;
                 margin-bottom: 0 !important;
             }
 
             .report-right .date-value {
                 font-size: 10px;
-                color: #6f42c1;
+                color: #4a4a90;
                 margin-bottom: 1px;
             }
 
@@ -362,20 +361,127 @@
             box-shadow: none !important;
         }
 
+        /* =========================================================
+   BOOTSTRAP 3 PAGE HEADER OVERRIDES
+   ========================================================= */
+
+        .d-none {
+            display: none !important;
+        }
+
+        .page-container {
+            width: 100%;
+            padding: 20px 15px;
+            margin: 0 0 20px;
+            background-color: #f7f4fa;
+            border: 1px solid #e6e4f2;
+            border-radius: 6px;
+        }
+
+            .page-container:before,
+            .page-container:after {
+                display: table;
+                content: " ";
+            }
+
+            .page-container:after {
+                clear: both;
+            }
+
+        .page-heading {
+            display: table;
+        }
+
+            .page-heading .page-title-icon,
+            .page-heading .page-title {
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+            .page-heading .page-title-icon {
+                width: 36px;
+                height: 36px;
+                color: #ffffff;
+                text-align: center;
+                background-color: #4a4a90;
+                border-radius: 50%;
+            }
+
+                .page-heading .page-title-icon .material-icons-outlined {
+                    display: block;
+                    font-size: 20px;
+                    line-height: 36px;
+                }
+
+            .page-heading .page-title {
+                padding-left: 12px;
+                margin: 0;
+                color: #4a4a90;
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 36px;
+            }
+
+        .action-buttons {
+            display: block;
+            padding-top: 1px;
+            white-space: nowrap;
+        }
+
+            .action-buttons .btn {
+                display: inline-block;
+                margin-left: 8px;
+                vertical-align: middle;
+            }
+
+                .action-buttons .btn:first-child {
+                    margin-left: 0;
+                }
+
+        @media (max-width: 767px) {
+
+            .page-container {
+                padding: 15px;
+            }
+
+            .page-heading,
+            .action-buttons {
+                float: none !important;
+                width: 100%;
+            }
+
+            .action-buttons {
+                padding-top: 0;
+                margin-top: 15px;
+                white-space: normal;
+            }
+
+                .action-buttons .btn {
+                    display: block;
+                    width: 100%;
+                    margin: 0 0 10px;
+                    text-align: center;
+                }
+
+                    .action-buttons .btn:last-child {
+                        margin-bottom: 0;
+                    }
+        }
+
     </style>
 
     <div id="myDrafts" class="container content-card">
 
         <!-- Page Title Row -->
-        <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between gap-3 page-container">
-            <div class="d-flex align-items-center gap-3">
+        <div class="page-container clearfix">
+            <div class="page-heading pull-left">
                 <div class="page-title-icon">
                     <span class="material-icons-outlined">assessment</span>
                 </div>
-                <h1 class="page-title mb-0">Standalone Reports</h1>
+                <h1 class="page-title">Standalone Reports</h1>
             </div>
-            <div class="gap-3 action-buttons">
-                
+            <div class="action-buttons pull-right">
+
                 <button type="button" class="btn btn-action-outline download-btn" data-format="pdf">
                     <span class="material-icons-outlined">picture_as_pdf</span> PDF
                 </button>
@@ -384,7 +490,6 @@
                 </button>
                 <button class="btn btn-action-filled" type="button">
                     <span class="material-icons-outlined">note_add</span> New Report
-           
                 </button>
             </div>
         </div>
@@ -430,7 +535,7 @@
 
     
     <!-- Help Links Strip -->
-    <section class="help-strip mt-4" aria-label="Help Links">
+    <section class="help-strip" style="margin-top: 20px;" aria-label="Help Links">
         <div class="help-strip__inner">
             <!-- Left header -->
             <div class="help-strip__label">
@@ -485,11 +590,6 @@
     </section>
 
 
-    <!-- Vendor JS -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     
      <script>
 
@@ -544,13 +644,15 @@
          }
 
          $(document).ready(function () {
-
+           try {
              $("#helpDialog").draggable({
                  handle: "#helpModalHeader",   // ✅ drag only by header
                  containment: "window",        // ✅ stay inside screen
                  scroll: false
              });
-
+           } catch (e) {
+             console.error('[ReportsViewer.aspx] draggable init error:', e);
+           }
          });
 
          window.onclick = function (e) {
@@ -562,7 +664,7 @@
 
          // ✅ Reliable click binding (fixes your issue)
          $(document).ready(function () {
-
+           try {
              $('.help-tile-need-help').on('click', function (e) {
                  e.preventDefault();
 
@@ -570,7 +672,9 @@
 
                  showHelp();
              });
-
+           } catch (e) {
+             console.error('[ReportsViewer.aspx] help-tile click binding error:', e);
+           }
          });
 
      </script>

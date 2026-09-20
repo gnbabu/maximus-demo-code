@@ -5,7 +5,6 @@
 
     <link href="<%= ResolveUrl("~/Content/bold-reports/v2.0/tailwind-light/bold.report-designer.min.css") %>" rel="stylesheet" />
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="<%= ResolveUrl("~/Scripts/bold-reports/v2.0/common/bold.reports.common.min.js") %>"></script>
     <script src="<%= ResolveUrl("~/Scripts/bold-reports/v2.0/common/bold.reports.widgets.min.js") %>"></script>
     <script src="<%= ResolveUrl("~/Scripts/bold-reports/v2.0/bold.report-designer.min.js") %>"></script>
@@ -14,9 +13,10 @@
     <div id="designer" style="height: 800px;"></div>
 
     <div class="modal fade" id="saveSuccessModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h3 class="modal-title">Success</h3>
                 </div>
                 <div class="modal-body">
@@ -25,7 +25,7 @@
                 <div class="modal-footer">
                     <button type="button"
                         class="btn btn-primary"
-                        data-bs-dismiss="modal">
+                        data-dismiss="modal">
                         OK
                     </button>
                 </div>
@@ -81,12 +81,7 @@
 
                 reportSaved: function () {
 
-                    const modal =
-                        new bootstrap.Modal(
-                            document.getElementById('saveSuccessModal')
-                        );
-
-                    modal.show();
+                    $('#saveSuccessModal').modal('show');
                 },
 
                 ajaxBeforeLoad: function (args) {

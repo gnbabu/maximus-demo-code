@@ -4,6 +4,7 @@ let selectedReportName = null;
 
 
 $(function () {
+  try {
     const params = new URLSearchParams(window.location.search);
     console.log(params);
     const mydrafts = params.get('mydrafts');
@@ -372,4 +373,11 @@ $(function () {
         $modal.find('#reportName').removeClass('is-invalid');
 
     });
+  } catch (e) {
+    // Never let a page-init error here block other $(document).ready
+    // handlers registered later on the page (e.g. MasterPage.master's
+    // hamburger menu binding), since jQuery fires all ready callbacks
+    // in one synchronous pass.
+    console.error('[report-management.js] initialization error:', e);
+  }
 });

@@ -17,11 +17,11 @@
 
     <style>
         :root {
-            --purple-dark: #3a0e6e;
-            --purple-main: #5c1a8c;
-            --purple-light: #6a1b9a;
-            --purple-lighter: #f3e5f5;
-            --purple-footer: #3a0e6e;
+            --purple-dark: #1b4c79;
+            --purple-main: #4a4a90;
+            --purple-light: #56337f;
+            --purple-lighter: #F7F4FA;
+            --purple-footer: #1b4c79;
             --text-dark: #333;
             --text-muted: #666;
             --bg-page: #f0f0f0;
@@ -53,14 +53,14 @@
 
         /* Header styles */
         h1 {
-            color: #6f42c1;
+            color: #4a4a90;
             font-size: 24px;
             font-weight: bold;
         }
 
         /* Button styling in header */
         .header-buttons .btn {
-            background-color: #6f42c1;
+            background-color: #4a4a90;
             color: white;
             font-size: 14px;
             padding: 8px 15px;
@@ -71,7 +71,7 @@
         }
 
             .header-buttons .btn:hover {
-                background-color: #5a2c9f;
+                background-color: #123a5e;
             }
 
         .header-buttons .material-icons {
@@ -80,7 +80,7 @@
 
         /* Card header styles */
         .card-header {
-            background-color: #6f42c1;
+            background-color: #4a4a90;
             color: white;
             font-size: 16px;
             font-weight: 600;
@@ -133,7 +133,7 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background-color: #5c1a8c;
+            background-color: #4a4a90;
             color: #fff;
             display: flex;
             align-items: center;
@@ -147,13 +147,13 @@
         .page-title {
             font-size: 20px;
             font-weight: 700;
-            color: #5c1a8c;
+            color: #4a4a90;
         }
 
         /* Action buttons */
         .btn-action-outline {
-            border: 1.5px solid #5c1a8c;
-            color: #5c1a8c;
+            border: 1.5px solid #4a4a90;
+            color: #4a4a90;
             background: #fff;
             border-radius: 8px;
             font-size: 13px;
@@ -167,12 +167,12 @@
 
             .btn-action-outline:hover {
                 background-color: var(--purple-lighter);
-                color: #5c1a8c;
-                border-color: #5c1a8c;
+                color: #4a4a90;
+                border-color: #4a4a90;
             }
 
         .btn-action-filled {
-            background-color: #5c1a8c;
+            background-color: #4a4a90;
             color: #fff;
             border: none;
             border-radius: 8px;
@@ -186,7 +186,7 @@
         }
 
             .btn-action-filled:hover {
-                background-color: #5c1a8c;
+                background-color: #4a4a90;
                 color: #fff;
             }
 
@@ -213,7 +213,7 @@
             }
 
             .report-item .report-icon {
-                color: #5c1a8c;
+                color: #4a4a90;
                 flex-shrink: 0;
                 display: flex;
                 align-items: center;
@@ -264,7 +264,7 @@
         .btn-icon {
             background: none;
             border: none;
-            color: #5c1a8c;
+            color: #4a4a90;
             padding: 4px;
             cursor: pointer;
             border-radius: 4px;
@@ -315,8 +315,8 @@
             }
 
                 .report-dropdown .dropdown-item:hover {
-                    background-color: #f3e5f5;
-                    color: #5c1a8c;
+                    background-color: #F7F4FA;
+                    color: #4a4a90;
                 }
 
             .report-dropdown .material-icons-outlined {
@@ -324,8 +324,8 @@
             }
 
         .report-item.active {
-            background-color: #f3e5f5; /* soft purple */
-            border-color: #5c1a8c;
+            background-color: #F7F4FA; /* soft purple */
+            border-color: #4a4a90;
             box-shadow: 0 2px 6px rgba(92, 26, 140, 0.15);
         }
 
@@ -410,7 +410,7 @@
                 height: 36px;
                 color: #ffffff;
                 text-align: center;
-                background-color: #5c1a8c;
+                background-color: #4a4a90;
                 border-radius: 50%;
             }
 
@@ -423,7 +423,7 @@
             .page-heading .page-title {
                 padding-left: 12px;
                 margin: 0;
-                color: #5c1a8c;
+                color: #4a4a90;
                 font-size: 20px;
                 font-weight: 700;
                 line-height: 36px;
@@ -460,9 +460,9 @@
 
             .action-buttons .btn-action-outline {
                 padding: 7px 16px;
-                color: #5c1a8c;
+                color: #4a4a90;
                 background-color: #ffffff;
-                border: 1px solid #5c1a8c;
+                border: 1px solid #4a4a90;
                 border-radius: 6px;
                 font-size: 13px;
                 font-weight: 600;
@@ -471,9 +471,9 @@
                 .action-buttons .btn-action-outline:hover,
                 .action-buttons .btn-action-outline:focus,
                 .action-buttons .btn-action-outline:active {
-                    color: #5c1a8c;
-                    background-color: #f3e5f5;
-                    border-color: #5c1a8c;
+                    color: #4a4a90;
+                    background-color: #F7F4FA;
+                    border-color: #4a4a90;
                     text-decoration: none;
                     outline: none;
                 }
@@ -483,7 +483,7 @@
             .action-buttons .btn-action-filled {
                 padding: 8px 18px;
                 color: #ffffff;
-                background-color: #5c1a8c;
+                background-color: #4a4a90;
                 border: 0;
                 border-radius: 6px;
                 font-size: 13px;
@@ -494,7 +494,7 @@
                 .action-buttons .btn-action-filled:focus,
                 .action-buttons .btn-action-filled:active {
                     color: #ffffff;
-                    background-color: #48146e;
+                    background-color: #123a5e;
                     text-decoration: none;
                     outline: none;
                 }
@@ -638,7 +638,7 @@
                 height: 36px;
                 color: #ffffff;
                 text-align: center;
-                background-color: #5c1a8c;
+                background-color: #4a4a90;
                 border-radius: 50%;
             }
 
@@ -651,7 +651,7 @@
             .page-heading .page-title {
                 margin: 0;
                 padding-left: 12px;
-                color: #5c1a8c;
+                color: #4a4a90;
                 font-size: 20px;
                 font-weight: 700;
                 line-height: 36px;
@@ -686,9 +686,9 @@
 
             .action-buttons .btn-action-outline {
                 padding: 7px 16px;
-                color: #5c1a8c;
+                color: #4a4a90;
                 background-color: #ffffff;
-                border: 1px solid #5c1a8c;
+                border: 1px solid #4a4a90;
                 border-radius: 6px;
                 font-size: 13px;
                 font-weight: 600;
@@ -697,9 +697,9 @@
                 .action-buttons .btn-action-outline:hover,
                 .action-buttons .btn-action-outline:focus,
                 .action-buttons .btn-action-outline:active {
-                    color: #5c1a8c;
-                    background-color: #f3e5f5;
-                    border-color: #5c1a8c;
+                    color: #4a4a90;
+                    background-color: #F7F4FA;
+                    border-color: #4a4a90;
                     text-decoration: none;
                     outline: none;
                 }
@@ -707,8 +707,8 @@
             .action-buttons .btn-action-filled {
                 padding: 8px 18px;
                 color: #ffffff;
-                background-color: #5c1a8c;
-                border: 1px solid #5c1a8c;
+                background-color: #4a4a90;
+                border: 1px solid #4a4a90;
                 border-radius: 6px;
                 font-size: 13px;
                 font-weight: 600;
@@ -718,8 +718,8 @@
                 .action-buttons .btn-action-filled:focus,
                 .action-buttons .btn-action-filled:active {
                     color: #ffffff;
-                    background-color: #48146e;
-                    border-color: #48146e;
+                    background-color: #123a5e;
+                    border-color: #123a5e;
                     text-decoration: none;
                     outline: none;
                 }
@@ -756,7 +756,7 @@
 
             .report-item .report-icon {
                 width: 34px;
-                color: #5c1a8c;
+                color: #4a4a90;
             }
 
             .report-item .report-name {
@@ -1021,25 +1021,25 @@
 
         <!-- Modal 2: Select Template -->
         <div class="modal fade" id="selectTemplateModal" tabindex="-1" aria-labelledby="selectTemplateLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h3 class="modal-title" id="selectTemplateLabel">Select Template</h3>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="templateSelect" class="form-label">Template*</label>
-                            <select class="form-select" style="height: 42px;" id="templateSelect" required="required">
+                        <div class="form-group">
+                            <label for="templateSelect" class="control-label">Template*</label>
+                            <select class="form-control" style="height: 42px;" id="templateSelect" required="required">
                                 <option value="" selected="selected">Select Template</option>
                             </select>
                             <div id="templateError" class="text-danger small" style="display: none;">
                                 Template is required
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="reportTypeSelect" class="form-label">Report Type*</label>
-                            <select class="form-select" style="height: 42px;" id="reportTypeSelect" required="required">
+                        <div class="form-group">
+                            <label for="reportTypeSelect" class="control-label">Report Type*</label>
+                            <select class="form-control" style="height: 42px;" id="reportTypeSelect" required="required">
                                 <option value="" selected="selected">Select Report Type</option>
                                 <option value="Standard Reports">Standard Reports</option>
                                 <option value="Custom Reports">Custom Reports</option>
@@ -1049,8 +1049,8 @@
                                 Report Type is required
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="reportName" class="form-label">Report Name*</label>
+                        <div class="form-group">
+                            <label for="reportName" class="control-label">Report Name*</label>
                             <input type="text" class="form-control" style="color: #424242 !important;" id="reportName" maxlength="100" placeholder="Enter Report Name" required="required" />
                             <div id="reportNameError" class="text-danger small" style="display: none;">
                                 Report Name is required
@@ -1059,12 +1059,12 @@
                     </div>
                     <div class="modal-footer">
                         <!-- Cancel button with Material Icon -->
-                        <button type="button" class="btn btn-secondary popup-button" id="cancelSelectTemplate" data-bs-dismiss="modal">
-                            <span class="material-icons me-2">cancel</span> Cancel
+                        <button type="button" class="btn btn-secondary popup-button" id="cancelSelectTemplate" data-dismiss="modal">
+                            <span class="material-icons" style="margin-right: 8px;">cancel</span> Cancel
                         </button>
                         <!-- Save and Close button with Material Icon -->
                         <button type="button" class="btn btn-secondary popup-button" id="saveAndCloseTemplate">
-                            <span class="material-icons me-2">check_circle</span> Confirm
+                            <span class="material-icons" style="margin-right: 8px;">check_circle</span> Confirm
                         </button>
                     </div>
                 </div>
@@ -1083,7 +1083,7 @@
         </div>
 
         <!-- Help Links Strip -->
-        <%--<section class="help-strip mt-4" aria-label="Help Links">
+        <%--<section class="help-strip" style="margin-top: 20px;" aria-label="Help Links">
             <div class="help-strip__inner">
                 <!-- Left header -->
                 <div class="help-strip__label">
@@ -1098,7 +1098,7 @@
                     </span>
                 </a>
                 <!-- Tile: Policies & Guidelines -->
-                <asp:HyperLink runat="server" ID="lnkPoliciesURLID" class="help-tile" NavigateUrl="~/MesCred/Policies.aspx" aria-label="close_fullscreen Policies Guidelines View Maximus Policies Guidelines.">
+                <asp:HyperLink runat="server" ID="lnkPoliciesURLID" class="help-tile" NavigateUrl="~/Policies.aspx" aria-label="close_fullscreen Policies Guidelines View Maximus Policies Guidelines.">
                     <span class="material-symbols-outlined2 help-tile__icon">close_fullscreen
                     </span>
                     <span class="help-tile__content">
@@ -1371,7 +1371,7 @@
 
                 if ($('#standardReportsByCategory').children().length === 0) {
                     $('#standardReportsByCategory').html(`
-                            <div class="text-center text-muted py-4">
+                            <div class="text-center text-muted" style="padding: 20px 0;">
                                 There are no reports to display
                             </div>
                         `);
@@ -1379,7 +1379,7 @@
 
                 if ($('#customReportsByCategory').children().length === 0) {
                     $('#customReportsByCategory').html(`
-                            <div class="text-center text-muted py-4">
+                            <div class="text-center text-muted" style="padding: 20px 0;">
                                 There are no reports to display
                             </div>
                         `);
@@ -1387,7 +1387,7 @@
 
                 if ($('#draftReportsByCategory').children().length === 0) {
                     $('#draftReportsByCategory').html(`
-                            <div class="text-center text-muted py-4">
+                            <div class="text-center text-muted" style="padding: 20px 0;">
                                 There are no reports to display
                             </div>
                         `);
@@ -1481,6 +1481,7 @@
 
         // ✅ INIT
         $(document).ready(function () {
+          try {
             loadBoldReportsByCategory();
 
 
@@ -1488,7 +1489,9 @@
                 $('#newReportBtn').hide();
                 $('#newReportBtn2').hide();
             }
-
+          } catch (e) {
+            console.error('[Reports.aspx] init error:', e);
+          }
         });
 
         function showHelp() {
@@ -1541,13 +1544,15 @@
         }
 
         $(document).ready(function () {
-
+          try {
             $("#helpDialog").draggable({
                 handle: "#helpModalHeader",   // ✅ drag only by header
                 containment: "window",        // ✅ stay inside screen
                 scroll: false
             });
-
+          } catch (e) {
+            console.error('[Reports.aspx] draggable init error:', e);
+          }
         });
 
         window.onclick = function (e) {
@@ -1559,7 +1564,7 @@
 
         // ✅ Reliable click binding (fixes your issue)
         $(document).ready(function () {
-
+          try {
             $('.help-tile-need-help').on('click', function (e) {
                 e.preventDefault();
 
@@ -1567,7 +1572,9 @@
 
                 showHelp();
             });
-
+          } catch (e) {
+            console.error('[Reports.aspx] help-tile click binding error:', e);
+          }
         });
 
         $(document).on('click', '.report-menu-toggle', function (e) {

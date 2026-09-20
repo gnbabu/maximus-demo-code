@@ -58,7 +58,7 @@ public partial class BoldReports_BoldReports : WorkflowPage
                 return;
             }
 
-            Response.Redirect("~/MesCred/Reports/BoldReports.aspx?reportPath=" + Server.UrlEncode(reportPath));
+            Response.Redirect("~/BoldReports/BoldReports.aspx?reportPath=" + Server.UrlEncode(reportPath));
         }
     }
 
