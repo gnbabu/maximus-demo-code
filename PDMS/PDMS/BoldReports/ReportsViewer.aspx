@@ -111,14 +111,6 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             padding: 0px;
         }
-        /* Title area */
-        .page-container {
-            padding: 20px 10px;
-            background: #F7F4FA;
-            margin-bottom: 20px;
-            border: 1px solid #e6e4f2;
-        }
-
         .page-title-icon {
             width: 36px;
             height: 36px;
@@ -369,7 +361,7 @@
             flex-wrap: wrap;
             gap: 12px;
             width: 100%;
-            padding: 20px 15px;
+            padding: 24px 20px;
             margin: 0 0 20px;
             background-color: #f7f4fa;
             border: 1px solid #e6e4f2;
@@ -452,6 +444,14 @@
                     .action-buttons .btn:last-child {
                         margin-bottom: 0;
                     }
+        }
+
+        /* MasterPage.master pulls the site footer up with a negative
+           margin-top (#footer-font { margin-top: -150px; }), which
+           overlaps/hides the footer's headers and logo on this page.
+           Neutralize it here rather than touching the shared master CSS. */
+        #footer-font {
+            margin-top: 0;
         }
 
     </style>
